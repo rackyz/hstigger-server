@@ -1,0 +1,20 @@
+[2020-05-23T06:52:07.539] [ERROR] app - TypeError: Cannot read property 'length' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:21:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-23T08:02:47.763] [ERROR] app - 401
+[2020-05-23T08:02:47.766] [ERROR] app - 401
+[2020-05-23T08:03:29.087] [ERROR] app - 401
+[2020-05-23T08:03:29.090] [ERROR] app - 401
+[2020-05-23T08:03:51.108] [ERROR] app - 401
+[2020-05-23T08:03:51.110] [ERROR] app - 401
+[2020-05-23T08:07:12.061] [ERROR] app - 403
+[2020-05-23T08:07:19.745] [ERROR] app - 401
+[2020-05-23T08:07:19.748] [ERROR] app - 401
+[2020-05-23T08:10:21.618] [ERROR] app - 403
+[2020-05-23T08:10:27.264] [ERROR] app - 401
+[2020-05-23T08:10:27.269] [ERROR] app - 401
+[2020-05-23T08:17:22.797] [ERROR] app - 403
+[2020-05-23T08:19:51.092] [ERROR] app - 401
+[2020-05-23T09:59:30.369] [ERROR] app - 401
+[2020-05-23T09:59:30.372] [ERROR] app - 401
+[2020-05-23T09:59:30.375] [ERROR] app - 401

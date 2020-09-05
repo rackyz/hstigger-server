@@ -1,0 +1,84 @@
+[2020-06-23T09:30:01.153] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column 'manageState' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'manageState\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'update `contract` set `manageState` = 2 where `id` = \'CT00000000000ECC\'' }
+[2020-06-23T09:30:28.370] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column 'manageState' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'manageState\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'update `contract` set `manageState` = 2 where `id` = \'CT00000000000ECC\'' }
+[2020-06-23T11:02:18.326] [ERROR] app - 401
+[2020-06-23T11:02:24.133] [ERROR] app - 401
+[2020-06-23T11:02:24.136] [ERROR] app - 401
+[2020-06-23T13:35:44.378] [ERROR] app - TypeError: Cannot read property 'length' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:21:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-23T13:36:02.135] [ERROR] app - 401
+[2020-06-23T13:36:08.288] [ERROR] app - 401
+[2020-06-23T13:36:08.291] [ERROR] app - 401
+[2020-06-23T13:36:35.898] [ERROR] app - 401
+[2020-06-23T13:36:35.901] [ERROR] app - 401
+[2020-06-23T13:36:39.918] [ERROR] app - 401
+[2020-06-23T13:37:04.776] [ERROR] app - 401
+[2020-06-23T13:37:04.780] [ERROR] app - 401

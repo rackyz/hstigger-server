@@ -1,0 +1,1042 @@
+[2020-09-03T08:28:01.735] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'content' in 'field list'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.utils.sendMessage (C:\Users\BIM02\Desktop\ServerKT\models\util.js:53:4)
+    at async Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:131:3)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'content' in 'field list'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "insert into `message` (`content`, `created_at`, `from`, `to`) values ('欢迎登录系统', '2020-09-03 08:28:01', 'system', 'sys_root')"
+}
+[2020-09-03T08:32:22.302] [ERROR] app - 用户名不存在
+[2020-09-03T08:58:14.877] [ERROR] app - 用户未登录
+[2020-09-03T08:58:25.030] [ERROR] app - 用户未登录
+[2020-09-03T09:04:24.505] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:05:55.807] [ERROR] app - 用户未登录
+[2020-09-03T09:09:47.158] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:09:59.734] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:12:31.493] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:17:42.081] [ERROR] app - 用户未登录
+[2020-09-03T09:18:02.136] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:19:31.815] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:19:48.918] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:20:03.849] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:25:47.277] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:26:46.966] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:27:11.069] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:32:15.821] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:39:33.817] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:40:16.824] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:44:43.278] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:45:17.329] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:46:55.699] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:47:30.325] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:47:33.751] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:47:56.044] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:49:37.651] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:52:32.092] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'message_id' in 'on clause'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'message_id' in 'on clause'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `message_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T09:53:07.126] [ERROR] app - 用户未登录
+[2020-09-03T10:00:40.708] [ERROR] app - Error: ER_NON_UNIQ_ERROR: Column 'created_at' in order clause is ambiguous
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_NON_UNIQ_ERROR',
+  errno: 1052,
+  sqlMessage: "Column 'created_at' in order clause is ambiguous",
+  sqlState: '23000',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `msg_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T10:12:20.486] [ERROR] app - Error: ER_NON_UNIQ_ERROR: Column 'created_at' in order clause is ambiguous
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_NON_UNIQ_ERROR',
+  errno: 1052,
+  sqlMessage: "Column 'created_at' in order clause is ambiguous",
+  sqlState: '23000',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `msg_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T10:12:24.055] [ERROR] app - Error: ER_NON_UNIQ_ERROR: Column 'created_at' in order clause is ambiguous
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_NON_UNIQ_ERROR',
+  errno: 1052,
+  sqlMessage: "Column 'created_at' in order clause is ambiguous",
+  sqlState: '23000',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `msg_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T10:24:33.717] [ERROR] app - Error: ER_NON_UNIQ_ERROR: Column 'created_at' in order clause is ambiguous
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24
+    at async Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\messages.js:8:13)
+    at async RestfulAPIMethods.<computed> (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:34)
+    at async C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:13
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:3)
+    at async module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\response.js:12:9)
+    at async cors (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa2-cors\dist\index.js:91:9)
+    at async C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-log4\koa-logger.js:86:7 {
+  code: 'ER_NON_UNIQ_ERROR',
+  errno: 1052,
+  sqlMessage: "Column 'created_at' in order clause is ambiguous",
+  sqlState: '23000',
+  index: 0,
+  sql: "select * from `message` left outer join `message_user_readed` on `msg_id` = `message`.`id` where `to` in ('sys_root', 'all') order by `created_at` desc"
+}
+[2020-09-03T10:25:29.599] [ERROR] app - 用户未登录
+[2020-09-03T10:31:40.246] [ERROR] app - 用户未登录
+[2020-09-03T10:32:13.844] [ERROR] app - 用户未登录
+[2020-09-03T10:32:59.547] [ERROR] app - 用户未登录
+[2020-09-03T10:55:22.627] [ERROR] app - 登录已过期
+[2020-09-03T10:55:23.495] [ERROR] app - 用户未登录
+[2020-09-03T10:55:23.512] [ERROR] app - 用户未登录
+[2020-09-03T10:55:23.540] [ERROR] app - 用户未登录
+[2020-09-03T10:55:23.555] [ERROR] app - 用户未登录
+[2020-09-03T10:55:23.563] [ERROR] app - 用户未登录

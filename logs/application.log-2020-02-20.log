@@ -1,0 +1,23 @@
+[2020-02-20T14:53:36.036] [ERROR] app - 403
+[2020-02-20T16:23:05.203] [INFO] app - API_OBJECT_UNDEFINED:object=[object Object]
+[2020-02-20T22:40:35.926] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-02-20T22:40:42.363] [INFO] app - API_OBJECT_UNDEFINED:object=[object Object]
+[2020-02-20T22:41:31.036] [ERROR] app - ReferenceError: dateId is not defined
+    at Object.Delete (D:\able_project\CloudServer\models\kernel.js:188:9)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:49:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-02-20T22:42:56.110] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***

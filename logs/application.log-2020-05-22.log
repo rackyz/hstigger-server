@@ -1,0 +1,15 @@
+[2020-05-22T08:23:34.851] [ERROR] app - TypeError: Cannot read property 'length' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:21:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-22T08:23:35.586] [ERROR] app - TypeError: Cannot read property 'length' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:21:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-22T08:24:28.270] [ERROR] app - TypeError: Cannot read property 'length' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:21:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-22T09:27:08.742] [ERROR] app - 401
+[2020-05-22T09:27:08.759] [ERROR] app - 401
+[2020-05-22T09:27:18.530] [INFO] app - INCORRECT_PASSWORD:
+[2020-05-22T09:27:18.532] [ERROR] app - 密码错误
+[2020-05-22T09:29:08.729] [ERROR] app - 401
+[2020-05-22T16:54:58.654] [ERROR] app - 合约id(BL00000000000PFH)不存在

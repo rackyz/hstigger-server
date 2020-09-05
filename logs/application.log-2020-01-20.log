@@ -1,0 +1,1179 @@
+[2020-01-19T08:32:20.229] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T08:32:20.234] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T08:32:20.244] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T08:32:20.266] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27963 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:00:19.109] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T09:00:32.097] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T09:06:10.067] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:06:10.115] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:06:10.427] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:06:10.523] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27979 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:06:14.911] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:06:14.928] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:06:14.935] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:06:14.948] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27979 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:07:07.402] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:07.437] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:07.464] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:07.481] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27979 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:08.533] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:08.618] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:08.628] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:08.659] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27979 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:10.683] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:11.457] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:12.791] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:20.447] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:07:20.476] [ERROR] app - { Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `gy_id` = 'UID00000001'' at line 1
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1125:42)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1124:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:120:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage:
+   'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'where `gy_id` = \'UID00000001\'\' at line 1',
+  sqlState: '42000',
+  index: 0,
+  sql: 'update `user` set  where `gy_id` = \'UID00000001\'' }
+[2020-01-19T09:07:20.481] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 368 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:47.806] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:47.844] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:47.861] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:47.878] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27978 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:48.621] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:48.632] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:48.695] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:48.728] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27978 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:50.818] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:50.830] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:08:54.424] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:09:04.077] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:09:04.090] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:15:27.159] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:15:27.407] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:15:54.823] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:15:54.834] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:18:49.076] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:18:49.087] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:19:01.548] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:19:01.563] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:19:03.670] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:19:05.325] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:19:06.961] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:19:06.985] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:19:09.142] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:22:46.534] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:22:46.550] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:22:46.557] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:22:46.576] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27978 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T09:37:17.466] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:37:17.470] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:37:17.477] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T09:37:17.495] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27978 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T10:19:06.104] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:19:06.107] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:19:06.115] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:19:06.146] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27978 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:34:59.449] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:34:59.681] [ERROR] app - Request without token
+[2020-01-19T10:34:59.683] [ERROR] app - 403
+[2020-01-19T10:34:59.684] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 403 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:36:39.346] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:36:39.362] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:36:39.370] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:36:39.388] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 27978 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:40:02.609] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:40:03.026] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:40:10.924] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:40:10.981] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:40:19.231] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T10:40:19.255] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T11:12:07.956] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:12:07.960] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:12:07.969] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:12:08.006] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:21.521] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:21.524] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:21.532] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:21.564] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:27.482] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:28.006] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:32.381] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:32.384] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:32.427] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T11:14:32.456] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:23.471] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:23.538] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:23.548] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:23.583] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:24.268] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:46:24.280] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:46:24.333] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:46:24.351] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:46:26.410] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:26.421] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:26.508] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:46:26.528] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:03.680] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:03.683] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:03.685] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:54:03.692] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:54:03.695] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:03.702] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:54:03.704] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:03.728] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:54:03.731] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:54:55.884] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:55.887] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:54:55.889] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:55.909] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:54:55.912] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:54:55.919] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:54:55.921] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:54:55.929] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:54:55.932] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:56:33.891] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:56:33.894] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:56:33.897] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:56:33.903] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:56:33.907] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:56:33.928] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:56:33.930] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:56:33.937] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:56:33.941] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.077] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:10.081] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:10.104] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.108] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.143] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.154] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.181] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:10.204] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.239] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:10.297] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.300] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:10.312] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:57:10.316] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:10.337] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:57:10.341] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.505] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.606] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.645] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.731] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:10.751] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:57:10.754] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:55.864] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:55.867] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:55.870] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:55.891] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:57:55.894] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T13:57:55.900] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:57:55.902] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T13:57:55.909] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T13:57:55.927] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:29.221] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:08:29.224] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:08:29.229] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:29.253] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:08:29.277] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:08:29.341] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:08:29.552] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:29.561] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T14:08:29.566] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:08:29.592] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:29.621] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:29.709] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:29.748] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T14:08:29.760] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:30.236] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:30.248] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:30.325] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:30.354] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:30.417] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:08:30.456] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T14:08:30.461] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:09:32.291] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:09:32.295] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:09:32.298] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:09:32.304] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T14:09:32.307] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:09:32.330] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T14:09:32.334] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:09:32.339] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T14:09:32.345] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:10:51.853] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:11:14.966] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:11:27.991] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:11:33.371] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:11:33.377] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:11:33.577] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-01-19T14:11:33.580] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:11:33.591] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-01-19T14:11:33.593] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:11:45.436] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:11:56.818] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:11:57.032] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-01-19T14:11:57.034] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:12:14.668] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:12:16.845] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:12:16.873] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-01-19T14:12:16.875] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:07.675] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:13:09.676] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:09.854] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:09.938] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:09.971] [ERROR] app - { BadRequestError: Bad Request
+    at Object.throw (D:\able_project\CloudServer\node_modules\koa\lib\context.js:96:11)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:37:18)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'Bad Request' }
+[2020-01-19T14:13:09.977] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 400 86 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:35.201] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:13:39.519] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:39.525] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:39.616] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:39.711] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:39.769] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:13:39.783] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:10.837] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:10.844] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:10.851] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:10.880] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:10.926] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:10.977] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:11.130] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:11.138] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:11.201] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:11.226] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:11.300] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:11.320] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:28.644] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:28.649] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:28.663] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:28.672] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:28.709] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:28.792] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:28.804] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:28.982] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.065] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.117] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.154] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.179] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.209] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.229] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.280] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.318] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.321] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:29.340] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:44.241] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:44.250] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:44.255] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:44.265] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:44.301] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:44.555] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:44.559] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:44.574] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:16:44.688] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:44.727] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:44.827] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:44.861] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:45.215] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:45.243] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:45.298] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:45.339] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65905 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:45.406] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:16:45.422] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:21:21.175] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:21:21.194] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:21:21.199] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:21:21.207] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:21:21.215] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:21:21.235] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:42:27.714] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:27.718] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:42:27.721] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:42:27.731] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:27.753] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:42:27.761] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:42:35.673] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:35.737] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:41.813] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:41.817] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:41.823] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:41.858] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122216 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:41.903] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:41.915] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:54.141] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/coshttp HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:42:54.163] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/coshttp HTTP/1.1" 200 256 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:45:22.023] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:45:22.029] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:45:22.037] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:45:22.066] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122216 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:51:37.949] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:51:52.995] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:51:57.674] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:51:57.679] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:51:57.759] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:51:57.848] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122233 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T14:52:12.783] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:52:13.020] [ERROR] app - ReferenceError: gy_user is not defined
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:118:5)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-19T14:52:13.025] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:53:52.512] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:53:52.521] [ERROR] app - ReferenceError: gy_user is not defined
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:118:5)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-19T14:53:52.524] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:54:31.005] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T14:54:32.913] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T14:54:33.070] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:02:26.064] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:02:26.098] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 376 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:02:38.377] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:02:38.684] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:03:00.987] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:03:00.999] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:03:08.212] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:03:08.223] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:03:23.079] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:03:23.111] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:26:20.429] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:26:20.432] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:26:20.449] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:26:20.471] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65198 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:45:41.869] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:45:41.910] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:45:41.924] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:45:41.955] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65198 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-19T15:46:13.897] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T15:46:13.933] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:27:34.870] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:27:34.898] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:27:53.808] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:27:53.819] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:44:20.519] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:44:20.534] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:44:20.541] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:44:20.562] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65199 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:44:23.287] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:44:23.302] [ERROR] app - { Error: ER_DUP_ENTRY: Duplicate entry 'ceshi' for key 'nickyname'
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1125:42)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1124:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:129:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'ceshi\' for key \'nickyname\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'update `user` set `ps_nickyname` = \'ceshi\' where `gy_id` = \'UID00000004\'' }
+[2020-01-19T16:44:23.310] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 258 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:47:02.204] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-19T16:47:07.691] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-19T16:47:07.846] [ERROR] app - TypeError: Cannot read property 'includes' of undefined
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:135:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-19T16:47:07.848] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:18:15.929] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:18:21.617] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:18:22.249] [ERROR] app - TypeError: Cannot read property 'includes' of undefined
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:135:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-20T08:18:22.252] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:18:44.719] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:18:48.569] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:18:48.725] [ERROR] app - TypeError: e.includes is not a function
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:135:10)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-20T08:18:48.728] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:19:13.534] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:19:16.657] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:19:16.822] [ERROR] app - TypeError: e.includes is not a function
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:135:10)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-20T08:19:16.826] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:20:00.987] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:20:07.563] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:20:07.731] [ERROR] app - 该名称已被占用
+[2020-01-20T08:20:07.748] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 45 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:12.773] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:12.776] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:12.801] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:12.830] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 65199 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:52.236] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:52.249] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:54.144] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:22:56.725] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:23:09.238] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:23:09.250] [ERROR] app - { Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `gy_id` = 'UID00000004'' at line 1
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1125:42)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1124:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:130:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage:
+   'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'where `gy_id` = \'UID00000004\'\' at line 1',
+  sqlState: '42000',
+  index: 0,
+  sql: 'update `user` set  where `gy_id` = \'UID00000004\'' }
+[2020-01-20T08:23:09.258] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 368 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:23:51.199] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:23:51.448] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:23:59.228] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:23:59.240] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:25:14.573] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:27:10.143] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:27:25.315] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:27:25.441] [ERROR] app - TypeError: gy_user.test is not a function
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:120:18)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:46:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-20T08:27:25.458] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:29:00.394] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:29:01.391] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:31:26.659] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:31:31.481] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:31:31.653] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:33:19.188] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:33:42.323] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-20T08:34:09.067] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:34:09.208] [ERROR] app - 用户名不能为纯数字
+[2020-01-20T08:34:09.210] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 51 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:34:20.942] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:34:20.950] [ERROR] app - 用户名不能为纯数字
+[2020-01-20T08:34:20.953] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 51 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:35:04.124] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:35:04.202] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:35:32.719] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:35:32.746] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:35:36.743] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:37:25.868] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:37:26.113] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:37:53.997] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000004 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T08:37:54.008] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000004 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:02:37.893] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:02:37.897] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:02:37.904] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:02:37.923] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 19071 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:18:43.972] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:18:43.981] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:18:56.822] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:18:56.826] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:18:56.834] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:18:56.865] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 19071 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:41:29.782] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T09:41:29.821] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 122234 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T10:24:13.829] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:13.832] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:13.840] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:13.879] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122234 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:52.999] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:53.002] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:53.018] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:53.022] [ERROR] app - Request without token
+[2020-01-20T10:24:53.023] [ERROR] app - 403
+[2020-01-20T10:24:53.025] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 403 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:56.484] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:24:56.504] [INFO] app - UNREISGTERED_ACCOUNT: root
+[2020-01-20T10:24:56.513] [ERROR] app - 用户未注册
+[2020-01-20T10:24:56.514] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 39 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:25:04.655] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:25:04.682] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 122234 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T10:49:01.427] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T10:49:01.660] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T10:51:13.896] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T10:51:13.910] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T10:51:36.464] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/UID00000001 HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T10:51:36.476] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/UID00000001 HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:08:02.382] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:08:02.386] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:08:02.394] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:08:02.417] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:13:37.511] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T14:13:37.515] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T14:13:37.522] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T14:13:37.545] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-20T14:27:08.864] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:27:08.868] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:27:08.876] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:27:08.910] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:32:44.507] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:32:44.511] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:32:44.518] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:32:44.545] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:33:36.035] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:33:36.051] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:33:36.057] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:33:36.082] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:40:47.936] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:40:47.940] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:40:47.947] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:40:47.985] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:48:30.191] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:48:30.194] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:48:30.213] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:48:30.242] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:49:02.082] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:49:02.098] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:49:02.106] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T14:49:02.128] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:07:25.160] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:07:25.177] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:07:25.185] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:07:25.209] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:15:28.401] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:15:28.405] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:15:28.424] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:15:28.453] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:26:17.468] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:26:17.471] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:26:17.479] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:26:17.525] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:32:57.738] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:32:57.742] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:32:57.749] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:32:57.788] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:38:29.205] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:38:29.207] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:38:29.216] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:38:29.253] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:41:40.221] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:41:40.223] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:41:40.231] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:41:40.272] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:43:43.321] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:43:43.325] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:43:43.333] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:43:43.372] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:58:23.074] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:58:23.078] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:58:23.099] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T15:58:23.122] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:02:17.780] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:02:17.783] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:02:17.791] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:02:17.818] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:08:49.594] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:08:49.610] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:08:49.618] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:08:49.644] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:22:18.433] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:22:18.437] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:22:18.443] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:22:18.485] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:35:19.156] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:35:19.161] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:35:19.169] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:35:19.195] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:38:00.592] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:38:00.595] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:38:00.614] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:38:00.638] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:49:44.064] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:49:44.067] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:49:44.073] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:49:44.113] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:50:56.255] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:50:56.258] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:50:56.264] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:50:56.306] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:52:36.134] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:52:36.137] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:52:36.145] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:52:36.174] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:07.702] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:07.705] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:07.712] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:07.736] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:55.080] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:55.083] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:55.090] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:53:55.120] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:55:19.728] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:55:19.730] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:55:19.738] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-20T16:55:19.759] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"

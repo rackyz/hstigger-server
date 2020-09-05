@@ -1,0 +1,221 @@
+[2020-05-16T08:40:12.813] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-16T08:40:12.829] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-16T08:40:16.586] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-16T08:40:47.622] [ERROR] app - 401
+[2020-05-16T08:40:47.628] [ERROR] app - 401
+[2020-05-16T08:48:29.429] [ERROR] app - ReferenceError: mysql is not defined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:12:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T08:48:31.347] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud2.contract' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud2.contract\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select * from `contract`' }
+[2020-05-16T08:51:26.768] [ERROR] app - ReferenceError: mysql is not defined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:12:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T08:51:28.714] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud2.contract' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud2.contract\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select * from `contract`' }
+[2020-05-16T08:52:04.990] [ERROR] app - ReferenceError: mysql is not defined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:12:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T08:52:36.066] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'zzlatm.projectanme' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'zzlatm.projectanme\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectanme`' }
+[2020-05-16T09:04:57.368] [ERROR] app - ReferenceError: Ding is not defined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:11:21)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\gzcloud2\Server\middlewares\auth.js:59:9)
+[2020-05-16T09:05:22.158] [ERROR] app - TypeError: Cannot destructure property `status_list` of 'undefined' or 'null'.
+    at Object.api.getEmloyeeIds (D:\able_project\gzcloud2\Server\tools\ding.js:117:21)
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:11:35)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+[2020-05-16T09:07:02.320] [ERROR] app - TypeError: Cannot read property 'join' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:12:57)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T09:07:59.522] [ERROR] app - TypeError: Cannot read property 'join' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:12:57)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T10:28:00.314] [ERROR] app - TypeError: Cannot destructure property `data_list` of 'undefined' or 'null'.
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:13:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T10:28:46.756] [ERROR] app - TypeError: Cannot read property 'join' of undefined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:13:57)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T10:29:31.465] [ERROR] app - TypeError: user_list.join is not a function
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:13:57)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T10:31:23.592] [ERROR] app - TypeError: user_list.join is not a function
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:13:57)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T10:48:42.759] [ERROR] app - Request without token
+[2020-05-16T10:48:42.763] [ERROR] app - 没有访问权限
+[2020-05-16T10:48:42.812] [ERROR] app - Request without token
+[2020-05-16T10:48:42.814] [ERROR] app - 没有访问权限
+[2020-05-16T10:51:06.173] [ERROR] app - Request without token
+[2020-05-16T10:51:06.179] [ERROR] app - 没有访问权限
+[2020-05-16T10:51:06.226] [ERROR] app - Request without token
+[2020-05-16T10:51:06.227] [ERROR] app - 没有访问权限
+[2020-05-16T11:02:04.745] [ERROR] app - TypeError: DingAPI.getEmployeeInfoList is not a function
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\settings.js:12:31)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\gzcloud2\Server\middlewares\auth.js:59:9)
+[2020-05-16T11:02:39.535] [ERROR] app - ReferenceError: userid_list is not defined
+    at Object.api.getEmployeeInfoList (D:\able_project\gzcloud2\Server\tools\ding.js:157:5)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-16T11:03:07.698] [ERROR] app - { Error: self signed certificate
+    at TLSSocket.onConnectSecure (_tls_wrap.js:1049:34)
+    at TLSSocket.emit (events.js:182:13)
+    at TLSSocket._finishInit (_tls_wrap.js:631:8)
+  code: 'DEPTH_ZERO_SELF_SIGNED_CERT',
+  config:
+   { adapter: [Function: httpAdapter],
+     transformRequest: { '0': [Function: transformRequest] },
+     transformResponse: { '0': [Function: transformResponse] },
+     timeout: 0,
+     xsrfCookieName: 'XSRF-TOKEN',
+     xsrfHeaderName: 'X-XSRF-TOKEN',
+     maxContentLength: -1,
+     validateStatus: [Function: validateStatus],
+     headers:
+      { Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'User-Agent': 'axios/0.15.3' },
+     method: 'post',
+     url:
+      'https: //oapi.dingtalk.com/user/listbypage?access_token=d605887aaf8436aa8504d5b826fb2816&department_id=1',
+     data: undefined },
+  response: undefined }
+[2020-05-16T11:04:01.025] [ERROR] app - 401
+[2020-05-16T11:04:01.033] [ERROR] app - 401

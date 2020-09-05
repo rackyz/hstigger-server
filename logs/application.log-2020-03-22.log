@@ -1,0 +1,141 @@
+[2020-03-22T12:43:37.836] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T12:43:52.299] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T12:46:30.722] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T12:49:35.670] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T12:50:46.488] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:07:10.824] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:09:12.728] [ERROR] app - TypeError: Cannot read property 'id' of undefined
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:39:27)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:50:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-03-22T14:10:01.140] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:10:17.891] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (D:\able_project\CloudServer\node_modules\bookshelf\lib\helpers.js:64:24)
+    at Child.query (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1332:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (D:\able_project\CloudServer\node_modules\bookshelf\lib\bookshelf.js:353:28)
+    at Object.m.getPasswordByPhone (D:\able_project\CloudServer\modules\v0\user.js:195:27)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:38:30)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:50:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-03-22T14:10:38.632] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:10:42.757] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:13:29.618] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (D:\able_project\CloudServer\node_modules\bookshelf\lib\helpers.js:64:24)
+    at Child.query (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1332:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (D:\able_project\CloudServer\node_modules\bookshelf\lib\bookshelf.js:353:28)
+    at Object.m.getPasswordByPhone (D:\able_project\CloudServer\modules\v0\user.js:194:27)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:38:30)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:50:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-03-22T14:14:12.477] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (D:\able_project\CloudServer\node_modules\bookshelf\lib\helpers.js:64:24)
+    at Child.query (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1332:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (D:\able_project\CloudServer\node_modules\bookshelf\lib\bookshelf.js:353:28)
+    at Object.m.getPasswordByPhone (D:\able_project\CloudServer\modules\v0\user.js:194:27)
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:38:30)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:50:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-03-22T14:17:13.896] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:17:21.395] [ERROR] app - Error: Undefined binding(s) detected when compiling SELECT query: select `gy_password` from `user` where `user`.`gy_phone` = ? limit ?
+    at QueryCompiler_MySQL.toSQL (D:\able_project\CloudServer\node_modules\knex\lib\query\compiler.js:131:13)
+    at Builder.toSQL (D:\able_project\CloudServer\node_modules\knex\lib\query\builder.js:115:44)
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-03-22T14:18:41.044] [ERROR] app - Error: Undefined binding(s) detected when compiling SELECT query: select `gy_password` from `user` where `user`.`gy_phone` = ? limit ?
+    at QueryCompiler_MySQL.toSQL (D:\able_project\CloudServer\node_modules\knex\lib\query\compiler.js:131:13)
+    at Builder.toSQL (D:\able_project\CloudServer\node_modules\knex\lib\query\builder.js:115:44)
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-03-22T14:19:09.995] [ERROR] app - Error: Undefined binding(s) detected when compiling SELECT query: select `gy_password` from `user` where `user`.`gy_phone` = ? limit ?
+    at QueryCompiler_MySQL.toSQL (D:\able_project\CloudServer\node_modules\knex\lib\query\compiler.js:131:13)
+    at Builder.toSQL (D:\able_project\CloudServer\node_modules\knex\lib\query\builder.js:115:44)
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-03-22T14:19:55.985] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:20:02.986] [ERROR] app - Unexpected parameter-phone:电话为空
+[2020-03-22T14:22:16.544] [ERROR] app - Unexpected parameter-phone:电话为空
+[2020-03-22T14:22:21.945] [ERROR] app - Unexpected parameter-phone:电话为空
+[2020-03-22T14:24:04.410] [ERROR] app - Unexpected parameter-phone:电话为空
+[2020-03-22T14:25:31.767] [ERROR] app - Unexpected parameter-phone:电话为空
+[2020-03-22T14:27:01.026] [ERROR] app - Unexpected parameter-phone:电话为空
+[2020-03-22T14:27:26.754] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:27:35.045] [ERROR] app - 您输入的手机号未和账号绑定
+[2020-03-22T14:51:20.948] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:51:39.087] [ERROR] app - 您输入的手机号未和账号绑定
+[2020-03-22T14:52:00.667] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:52:19.902] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:52:40.410] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T14:52:49.389] [ERROR] app - 您输入的手机号未和账号绑定
+[2020-03-22T14:55:31.204] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-22T15:12:35.481] [ERROR] app - 您输入的手机号未和账号绑定

@@ -1,0 +1,9 @@
+[2020-05-14T09:44:09.783] [ERROR] app - 401
+[2020-05-14T09:44:09.791] [ERROR] app - 401
+[2020-05-14T10:42:31.888] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-14T10:42:31.909] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-14T10:42:34.533] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-14T10:42:39.273] [ERROR] app - 401
+[2020-05-14T10:42:39.277] [ERROR] app - 401
+[2020-05-14T10:42:41.145] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-14T16:56:37.508] [ERROR] app - 401

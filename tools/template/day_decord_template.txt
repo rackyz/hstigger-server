@@ -1,0 +1,147 @@
+<!--////////////////////////////////////////////////////////////////////////////////////-->
+	<!--////////////////////////////////////////////////////////////////////////////////////-->
+	<!--////////////////////////////////////////////////////////////////////////////////////-->
+	<!--///////////////////////////////////////////////////////////////////////////////////-->
+<p class="MsoNormal" style="text-align:center;" align="center">
+	<b><u><span style="font-size:16pt;line-height:200%;font-family:黑体;"> %project% </span></u></b><b><span style="font-size:16pt;line-height:200%;font-family:黑体;">项目管理日志</span></b><b><span style="font-size:12pt;line-height:200%;font-family:黑体;"></span></b> 
+</p>
+<div align="center">
+	<table class="MsoNormalTable" style="border-collapse:collapse;border:1.5pt double;width:460pt;">
+		<tbody>
+			<tr>
+				<td width="472" colspan="2" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal">
+						<span style="font-size:12pt;font-family:宋体;">日期:%date%</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td width="332" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal">
+						<span style="font-size:12pt;font-family:宋体;"> %weekday% </span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td width="472" colspan="2" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal">
+						<span style="font-size:12pt;font-family:宋体;">气温：低</span><u><span style="font-size:12pt;font-family:Arial;"> </span></u><span style="font-size:12pt;font-family:宋体;">℃</span><span style="font-size:12pt;font-family:Arial;"> <span class="apple-converted-space"> </span></span><span style="font-size:12pt;font-family:宋体;">高</span><u><span style="font-size:12pt;font-family:Arial;"> </span></u><span style="font-size:12pt;font-family:宋体;">℃</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td width="332" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal">
+						<span style="font-size:12pt;font-family:宋体;">天气：</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+			</tr>
+		</tbody>
+		<tbody>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">前期工作情况</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2" style="border:1.0000pt solid windowtext;">
+					<div id="early"><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" > <span style="font-size:12pt;" > <br><br><br></span><span style="font-size:12pt;font-family:宋体;">记录人：</span > <span style="font-size:12pt;" ></span> </p ></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">设计工作情况</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2" style="border:1.0000pt solid windowtext;">
+					<div id="design"><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" > <span style="font-size:12pt;" > <br><br><br></span><span style="font-size:12pt;font-family:宋体;">记录人：</span > <span style="font-size:12pt;" ></span> </p ></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">招投标及合同情况</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2" style="border:1.0000pt solid windowtext;">
+					<div id="contract"><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" > <span style="font-size:12pt;" > <br><br><br></span><span style="font-size:12pt;font-family:宋体;">记录人：</span > <span style="font-size:12pt;" ></span> </p ></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">预算编制情况</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2" style="border:1.0000pt solid windowtext;">
+					<div id="budget"><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" > <span style="font-size:12pt;" > <br><br><br></span><span style="font-size:12pt;font-family:宋体;">记录人：</span > <span style="font-size:12pt;" ></span> </p ></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">机电安装配合情况</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2" style="border:1.0000pt solid windowtext;">
+					<div id="installation"><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" > <span style="font-size:12pt;" > <br><br><br></span><span style="font-size:12pt;font-family:宋体;">记录人：</span > <span style="font-size:12pt;" ></span> </p ></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">现场施工情况</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2">
+					<div id="buildingSite"><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" > <span style="font-size:12pt;" > <br><br><br></span><span style="font-size:12pt;font-family:宋体;">记录人：</span > <span style="font-size:12pt;" ></span> </p ></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">项目经理/其它</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2" style="border:1.0000pt solid windowtext;">
+					<div id="other"><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" style='margin-left:1em;' > <span style="font-size:12pt;" ></span> </p ><p class="MsoNormal" > <span style="font-size:12pt;" > <br><br><br></span><span style="font-size:12pt;font-family:宋体;">记录人：</span > <span style="font-size:12pt;" ></span> </p ></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="67" style="border:1.0000pt solid windowtext;">
+					<p class="MsoNormal" style="text-align:center;" align="center">
+						<span style="font-size:12pt;font-family:宋体;">任务跟踪</span><span style="font-size:12pt;"></span> 
+					</p>
+				</td>
+				<td align="left" width="737" colspan="2" style="border:1.0000pt solid windowtext;">
+					<div>
+						<p class="MsoNormal">
+							<span style="font-size:12pt;"></span> 
+						</p>
+						<div id="taskTracking">
+						</div>
+						<p>
+							<br />
+						</p>
+						<p class="MsoNormal">
+							<span style="font-size:12pt;"></span> 
+						</p>
+						<p class="MsoNormal">
+							<span style="font-size:12pt;"></span> 
+						</p>
+						<p class="MsoNormal">
+							<span style="font-size:12pt;"><br />
+<br />
+<br />
+</span><span style="font-size:12pt;font-family:宋体;"></span><span style="font-size:12pt;"></span> 
+						</p>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<p>
+	<br />
+</p>
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<!--/////////////////////////////////////////////////////////////////////////////-->
+	<!--/////////////////////////////////////////////////////////////////////////////-->
+	<!--/////////////////////////////////////////////////////////////////////////////-->

@@ -1,0 +1,566 @@
+[2020-01-21T08:20:26.367] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:20:26.370] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:20:26.391] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:20:26.424] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:21:29.379] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:21:29.382] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:21:29.390] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:21:29.422] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T08:32:49.580] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:32:49.599] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:32:49.608] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:32:49.647] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:51:15.858] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:53:22.116] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:54:31.540] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:54:40.822] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:54:50.664] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:55:37.001] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:55:37.012] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:55:37.146] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:55:37.151] [ERROR] app - TypeError: Cannot read property 'id' of undefined
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:40:20)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-21T08:55:37.155] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:17.255] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:17.258] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:17.266] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:17.269] [ERROR] app - TypeError: Cannot read property 'id' of undefined
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:40:20)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-21T08:56:17.272] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:32.187] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:32.190] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:32.211] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:32.214] [ERROR] app - TypeError: Cannot read property 'id' of undefined
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:40:20)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-21T08:56:32.216] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:38.231] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:38.340] [INFO] app - ::ffff:192.168.14.40 - - "POST /sessions HTTP/1.1" 200 122259 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:49.954] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:56:50.194] [ERROR] app - TypeError: Cannot read property 'id' of undefined
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:40:20)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-21T08:56:50.196] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:57:12.640] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:57:26.073] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:57:28.609] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:57:28.780] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:151:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T08:57:28.786] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:58:28.727] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T08:59:12.127] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:59:12.322] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:151:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T08:59:12.336] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:59:15.880] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:59:15.979] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:59:16.014] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T08:59:16.044] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column 'ps_qq' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'ps_qq\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'select `ps_nickyname`, `gy_name`, `ps_avatar`, `ps_sign`, `ps_frame`, `gy_lastlogintime`, `gy_user`, `gy_name`, `gy_company`, `ps_qq`, `gy_wechat`, `gy_phone`, `gy_profile_lock` from `user` where `user`.`gy_id` = \'UID00000001\' limit 1' }
+[2020-01-21T08:59:16.053] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 421 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:09.820] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:09.823] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:09.832] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:09.844] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column 'gy_wechat' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'gy_wechat\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'select `ps_nickyname`, `gy_name`, `ps_avatar`, `ps_sign`, `ps_frame`, `gy_lastlogintime`, `gy_user`, `gy_name`, `gy_company`, `ps_qq`, `gy_wechat`, `gy_phone`, `gy_profile_lock` from `user` where `user`.`gy_id` = \'UID00000001\' limit 1' }
+[2020-01-21T09:00:09.850] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 425 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:45.011] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:45.015] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:45.024] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:45.048] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122352 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:54.658] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:00:54.669] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:151:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T09:00:54.673] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:07:47.848] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:08:08.497] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:08:13.326] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:08:13.334] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:08:13.428] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:08:13.523] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122352 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:08:20.191] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:08:57.302] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:08:57.344] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:153:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T09:08:57.350] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:09:46.113] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:09:52.646] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:09:52.802] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:153:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T09:09:52.807] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:11:29.297] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:11:32.005] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:11:32.174] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:153:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T09:11:32.180] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:11:50.103] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:11:53.720] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:11:53.876] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:153:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T09:11:53.882] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:12:16.858] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:12:34.027] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:12:36.433] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:12:36.591] [ERROR] app - { CustomError: No Rows Updated
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1136:25)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1127:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:153:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:94:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:31:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:96:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:55:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Updated' }
+[2020-01-21T09:12:36.597] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 94 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:13:45.864] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:14:25.003] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:14:25.651] [ERROR] app - 用户未注册
+[2020-01-21T09:14:25.654] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 39 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:15:03.542] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:15:48.528] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:15:53.893] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:15:54.051] [ERROR] app - 账户不存在，可能该用户未注册
+[2020-01-21T09:15:54.069] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 66 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:16:39.755] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:16:50.362] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:16:59.682] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:16:59.889] [ERROR] app - 账户不存在，可能该用户未注册
+[2020-01-21T09:16:59.891] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 66 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:17:27.147] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:17:30.837] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:17:30.990] [ERROR] app - 账户不存在，可能该用户未注册
+[2020-01-21T09:17:30.994] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 66 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:18:04.885] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:18:06.987] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:18:07.140] [ERROR] app - 账户不存在，可能该用户未注册
+[2020-01-21T09:18:07.142] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 66 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:19:20.346] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:19:56.019] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:20:18.295] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:21:55.655] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:21:58.750] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:22:22.236] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:22:27.854] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:22:28.390] [ERROR] app - ReferenceError: uid is not defined
+    at module.exports (D:\able_project\CloudServer\middlewares\authRouter.js:6:24)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:49:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-01-21T09:22:28.409] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 36 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:22:46.557] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:22:48.709] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:22:51.379] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:22:51.540] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T09:23:50.551] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:24:32.195] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:25:00.845] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:25:01.078] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:28:40.380] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:28:57.835] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:28:57.841] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:28:57.967] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:28:58.070] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122363 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:38:59.632] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:38:59.897] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:39:07.716] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:39:07.733] [ERROR] app - { Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `gy_id` = 'UID00000001'' at line 1
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1125:42)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1124:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (D:\able_project\CloudServer\node_modules\bookshelf\lib\model.js:1020:10)
+From previous event:
+    at Object.m.updateInfo (D:\able_project\CloudServer\modules\v0\User.js:161:8)
+    at Object.Patch (D:\able_project\CloudServer\restful\v0\users.js:95:16)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at module.exports (D:\able_project\CloudServer\middlewares\authRouter.js:13:10)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:49:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_PARSE_ERROR',
+  errno: 1064,
+  sqlMessage:
+   'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'where `gy_id` = \'UID00000001\'\' at line 1',
+  sqlState: '42000',
+  index: 0,
+  sql: 'update `user` set  where `gy_id` = \'UID00000001\'' }
+[2020-01-21T09:39:07.739] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 368 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:39:33.602] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T09:39:36.417] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:39:36.572] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:48:43.901] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:48:44.139] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:59:53.420] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:59:53.424] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:59:53.435] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T09:59:53.467] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122370 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:06:57.715] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:06:57.718] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:06:57.727] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:06:57.767] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122370 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:14:29.607] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:14:29.611] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:14:29.621] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:14:29.661] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122370 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:17:19.981] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:17:19.984] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:17:20.010] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:17:20.035] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122370 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:24:55.888] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:24:55.892] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:24:55.902] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:24:55.942] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122370 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T10:25:24.716] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:25:24.720] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:25:24.728] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:25:24.749] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122370 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:29:43.053] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:29:43.057] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:29:43.067] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:29:43.102] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122370 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:42:06.657] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-01-21T10:42:15.387] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:42:15.395] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:42:15.521] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T10:42:15.616] [INFO] app - ::ffff:192.168.14.40 - - "GET /sessions/whoami HTTP/1.1" 200 122397 "http://192.168.14.40/" "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Mobile Safari/537.36"
+[2020-01-21T11:03:46.653] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T11:03:46.681] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T11:04:36.311] [INFO] app - ::ffff:192.168.14.40 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T11:04:36.339] [INFO] app - ::ffff:192.168.14.40 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+[2020-01-21T14:45:20.930] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T14:45:20.959] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T14:45:20.993] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T14:45:21.046] [ERROR] app - Request without token
+[2020-01-21T14:45:21.050] [ERROR] app - 403
+[2020-01-21T14:45:21.051] [INFO] app - ::ffff:192.168.14.52 - - "GET /sessions/whoami HTTP/1.1" 403 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T14:45:34.256] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T14:45:34.310] [INFO] app - ::ffff:192.168.14.52 - - "POST /sessions HTTP/1.1" 200 122388 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:08:10.814] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:08:10.851] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions HTTP/1.1" 200 46 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:08:10.892] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions/whoami HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:08:10.957] [INFO] app - ::ffff:192.168.14.52 - - "GET /sessions/whoami HTTP/1.1" 200 122388 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:08:24.150] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /users/self HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:08:24.181] [INFO] app - ::ffff:192.168.14.52 - - "PATCH /users/self HTTP/1.1" 200 40 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:11:32.975] [INFO] app - ::ffff:192.168.14.52 - - "OPTIONS /sessions HTTP/1.1" 204 - "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"
+[2020-01-21T15:11:33.006] [INFO] app - ::ffff:192.168.14.52 - - "POST /sessions HTTP/1.1" 200 122388 "http://192.168.14.40/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36"

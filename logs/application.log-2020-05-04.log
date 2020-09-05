@@ -1,0 +1,153 @@
+[2020-05-04T09:41:14.329] [ERROR] app - 401
+[2020-05-04T09:50:42.199] [ERROR] app - 401
+[2020-05-04T09:52:43.589] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:53:13.527] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:53:26.477] [ERROR] app - 401
+[2020-05-04T09:54:19.747] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:54:21.141] [ERROR] app - 401
+[2020-05-04T09:55:18.653] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:56:43.492] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:56:45.889] [ERROR] app - TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be one of type string, TypedArray, or DataView. Received type number
+    at Hmac.update (internal/crypto/hash.js:58:11)
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:23:66)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+[2020-05-04T09:56:45.897] [ERROR] app - 401
+[2020-05-04T09:57:10.570] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:57:14.398] [ERROR] app - 401
+[2020-05-04T09:58:15.330] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:58:19.759] [ERROR] app - 401
+[2020-05-04T09:59:17.424] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T09:59:18.842] [ERROR] app - 401
+[2020-05-04T10:00:20.275] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:00:21.883] [ERROR] app - 401
+[2020-05-04T10:01:02.951] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:01:05.626] [ERROR] app - TypeError: Assignment to constant variable.
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:25:19)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\gzcloud2\Server\middlewares\auth.js:32:13)
+[2020-05-04T10:01:05.636] [ERROR] app - 401
+[2020-05-04T10:01:28.189] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:01:30.772] [ERROR] app - 401
+[2020-05-04T10:02:03.610] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:02:13.162] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:02:19.805] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:02:31.486] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:02:32.818] [ERROR] app - TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be one of type string, TypedArray, or DataView. Received type number
+    at Hmac.update (internal/crypto/hash.js:58:11)
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:23:64)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+[2020-05-04T10:02:32.828] [ERROR] app - 401
+[2020-05-04T10:02:47.038] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T10:02:49.216] [ERROR] app - 401
+[2020-05-04T10:03:15.318] [ERROR] app - 401
+[2020-05-04T10:07:20.906] [ERROR] app - 401
+[2020-05-04T21:24:45.847] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T21:29:19.421] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T21:29:29.612] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T21:29:42.530] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T21:58:13.627] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T21:58:15.110] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T22:57:22.387] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T22:57:51.240] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T22:58:43.559] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T22:58:58.956] [ERROR] app - 401
+[2020-05-04T22:59:12.299] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-04T22:59:12.301] [ERROR] app - 401
+[2020-05-04T23:00:45.763] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:01:46.025] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-04T23:01:46.029] [ERROR] app - 401
+[2020-05-04T23:03:33.494] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:03:46.230] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-04T23:03:46.251] [ERROR] app - 401
+[2020-05-04T23:04:07.016] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:04:10.682] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-04T23:04:10.686] [ERROR] app - 401
+[2020-05-04T23:05:15.888] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-04T23:05:15.891] [ERROR] app - 401
+[2020-05-04T23:05:49.307] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:05:51.624] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-04T23:05:51.630] [ERROR] app - 401
+[2020-05-04T23:06:20.172] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:06:24.202] [ERROR] app - 401
+[2020-05-04T23:06:24.379] [ERROR] app - TypeError: Cannot read property 'userinfo' of undefined
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:35:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-04T23:08:15.793] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:08:51.526] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:08:55.387] [ERROR] app - 401
+[2020-05-04T23:08:55.588] [ERROR] app - TypeError: Cannot read property 'errcode' of undefined
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:35:26)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-04T23:40:14.692] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:40:27.940] [ERROR] app - 401
+[2020-05-04T23:40:28.163] [ERROR] app - TypeError: Cannot read property 'errcode' of undefined
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:36:26)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-04T23:41:02.005] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:41:06.695] [ERROR] app - 401
+[2020-05-04T23:41:06.898] [ERROR] app - 不存在的临时授权码
+[2020-05-04T23:41:21.111] [ERROR] app - 401
+[2020-05-04T23:41:40.529] [ERROR] app - 401
+[2020-05-04T23:41:40.749] [ERROR] app - TypeError: Cannot read property 'userinfo' of undefined
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:40:39)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-04T23:42:15.045] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:42:37.846] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:42:39.870] [ERROR] app - 401
+[2020-05-04T23:42:40.063] [ERROR] app - 不存在的临时授权码
+[2020-05-04T23:42:48.149] [ERROR] app - 401
+[2020-05-04T23:42:55.423] [ERROR] app - 401
+[2020-05-04T23:42:55.635] [ERROR] app - TypeError: Cannot destructure property `unionid` of 'undefined' or 'null'.
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:40:34)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-04T23:43:50.895] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:44:01.863] [ERROR] app - 401
+[2020-05-04T23:44:08.220] [ERROR] app - 401
+[2020-05-04T23:45:53.541] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-04T23:46:27.898] [ERROR] app - 401
+[2020-05-04T23:46:28.090] [ERROR] app - 不存在的临时授权码
+[2020-05-04T23:46:41.449] [ERROR] app - 401
+[2020-05-04T23:46:46.121] [ERROR] app - 401
+[2020-05-04T23:47:47.523] [ERROR] app - 401
+[2020-05-04T23:47:54.850] [ERROR] app - 401
+[2020-05-04T23:50:38.627] [ERROR] app - 401
+[2020-05-04T23:50:48.478] [ERROR] app - 401

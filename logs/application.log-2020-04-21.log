@@ -1,0 +1,119 @@
+[2020-04-20T00:09:36.829] [ERROR] app - Request without token
+[2020-04-20T00:09:36.831] [ERROR] app - 没有访问权限
+[2020-04-20T00:13:53.793] [ERROR] app - Request without token
+[2020-04-20T00:13:53.795] [ERROR] app - 没有访问权限
+[2020-04-20T00:14:48.276] [ERROR] app - Request without token
+[2020-04-20T00:14:48.277] [ERROR] app - 没有访问权限
+[2020-04-20T00:15:19.040] [ERROR] app - Request without token
+[2020-04-20T00:15:19.042] [ERROR] app - 没有访问权限
+[2020-04-20T00:17:15.842] [ERROR] app - Request without token
+[2020-04-20T00:17:15.844] [ERROR] app - 没有访问权限
+[2020-04-20T00:18:04.518] [ERROR] app - Request without token
+[2020-04-20T00:18:04.520] [ERROR] app - 没有访问权限
+[2020-04-20T00:18:12.350] [ERROR] app - Request without token
+[2020-04-20T00:18:12.370] [ERROR] app - 没有访问权限
+[2020-04-20T00:18:54.664] [ERROR] app - Request without token
+[2020-04-20T00:18:54.666] [ERROR] app - 没有访问权限
+[2020-04-20T00:19:00.666] [ERROR] app - Request without token
+[2020-04-20T00:19:00.668] [ERROR] app - 没有访问权限
+[2020-04-20T00:22:45.071] [ERROR] app - Request without token
+[2020-04-20T00:22:45.073] [ERROR] app - 没有访问权限
+[2020-04-20T00:24:53.572] [ERROR] app - Request without token
+[2020-04-20T00:24:53.575] [ERROR] app - 没有访问权限
+[2020-04-20T00:25:04.180] [ERROR] app - Request without token
+[2020-04-20T00:25:04.182] [ERROR] app - 没有访问权限
+[2020-04-20T00:25:32.668] [ERROR] app - Request without token
+[2020-04-20T00:25:32.670] [ERROR] app - 没有访问权限
+[2020-04-20T00:30:53.137] [ERROR] app - Request without token
+[2020-04-20T00:30:53.140] [ERROR] app - 没有访问权限
+[2020-04-20T00:31:23.433] [ERROR] app - Request without token
+[2020-04-20T00:31:23.435] [ERROR] app - 没有访问权限
+[2020-04-20T08:48:01.473] [ERROR] app - Request without token
+[2020-04-20T08:48:01.476] [ERROR] app - 没有访问权限
+[2020-04-20T08:48:02.866] [ERROR] app - Request without token
+[2020-04-20T08:48:02.868] [ERROR] app - 没有访问权限
+[2020-04-20T08:48:25.677] [ERROR] app - Request without token
+[2020-04-20T08:48:25.679] [ERROR] app - 没有访问权限
+[2020-04-20T08:49:33.100] [ERROR] app - Request without token
+[2020-04-20T08:49:33.102] [ERROR] app - 没有访问权限
+[2020-04-20T08:57:03.662] [ERROR] app - Request without token
+[2020-04-20T08:57:03.663] [ERROR] app - 没有访问权限
+[2020-04-20T09:00:06.008] [ERROR] app - Request without token
+[2020-04-20T09:00:06.026] [ERROR] app - 没有访问权限
+[2020-04-20T09:08:23.363] [ERROR] app - Request without token
+[2020-04-20T09:08:23.366] [ERROR] app - 没有访问权限
+[2020-04-20T09:08:28.283] [ERROR] app - Request without token
+[2020-04-20T09:08:28.284] [ERROR] app - 没有访问权限
+[2020-04-20T09:10:18.525] [ERROR] app - Request without token
+[2020-04-20T09:10:18.527] [ERROR] app - 没有访问权限
+[2020-04-20T09:14:01.863] [ERROR] app - Request without token
+[2020-04-20T09:14:01.865] [ERROR] app - 没有访问权限
+[2020-04-20T09:15:19.639] [ERROR] app - Request without token
+[2020-04-20T09:15:19.641] [ERROR] app - 没有访问权限
+[2020-04-20T09:16:17.893] [ERROR] app - Request without token
+[2020-04-20T09:16:17.896] [ERROR] app - 没有访问权限
+[2020-04-20T09:17:48.717] [ERROR] app - Request without token
+[2020-04-20T09:17:48.720] [ERROR] app - 没有访问权限
+[2020-04-20T09:19:24.841] [ERROR] app - Request without token
+[2020-04-20T09:19:24.843] [ERROR] app - 没有访问权限
+[2020-04-20T09:21:47.550] [ERROR] app - Request without token
+[2020-04-20T09:21:47.552] [ERROR] app - 没有访问权限
+[2020-04-20T09:22:08.808] [ERROR] app - Request without token
+[2020-04-20T09:22:08.810] [ERROR] app - 没有访问权限
+[2020-04-20T09:51:35.165] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:51:54.658] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:52:50.547] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:53:56.138] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:54:47.868] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:54:59.262] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:54:59.272] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:55:54.822] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-20T09:56:01.073] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:58:29.664] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-20T09:58:34.725] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T09:59:17.155] [ERROR] app - 401
+[2020-04-20T09:59:24.763] [ERROR] app - 401
+[2020-04-20T09:59:35.169] [INFO] app - API_METHOD_UNDEFINED:object=orders,method=Get
+[2020-04-20T10:00:49.449] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-20T10:00:50.953] [ERROR] app - { Error: ER_NON_UNIQ_ERROR: Column 'id' in where clause is ambiguous
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NON_UNIQ_ERROR',
+  errno: 1052,
+  sqlMessage: 'Column \'id\' in where clause is ambiguous',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'select * from `order` left outer join `order_data` on `order_data`.`id` = `order`.`id` where `id` = \'order000000000VQ\'' }
+[2020-04-20T10:01:17.253] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-20T10:01:49.570] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-20T10:53:20.997] [ERROR] app - 401
+[2020-04-21T10:54:04.393] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-21T10:56:22.792] [ERROR] app - 401
+[2020-04-21T10:56:22.795] [ERROR] app - 401
+[2020-04-21T11:03:05.231] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***

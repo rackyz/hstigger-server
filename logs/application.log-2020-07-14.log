@@ -1,0 +1,55 @@
+[2020-07-14T10:24:10.016] [ERROR] app - TypeError: Session.forge(...).del is not a function
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:59:10)
+[2020-07-14T10:24:13.426] [ERROR] app - TypeError: Session.forge(...).del is not a function
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:59:10)
+[2020-07-14T10:25:11.587] [ERROR] app - TypeError: Session.forge(...).destory is not a function
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:59:10)
+[2020-07-14T10:26:56.759] [ERROR] app - TypeError: Session.forge(...).destory is not a function
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:59:10)
+[2020-07-14T10:27:40.810] [ERROR] app - Error: A model cannot be destroyed without a "where" clause or an idAttribute.
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\sync.js:238:13)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1302:23)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1301:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:59:10)
+[2020-07-14T15:27:08.644] [ERROR] app - 没有访问权限
+[2020-07-14T15:27:08.650] [ERROR] app - 没有访问权限
+[2020-07-14T15:33:11.459] [ERROR] app - TypeError: this.fetchAll is not a function
+    at Function.List (C:\Users\BIM02\Desktop\ServerKT\models\index.js:143:22)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:9)
+[2020-07-14T15:33:34.565] [ERROR] app - TypeError: this.fetchAll is not a function
+    at Function.List (C:\Users\BIM02\Desktop\ServerKT\models\index.js:143:22)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:84:9)

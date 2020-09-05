@@ -1,0 +1,266 @@
+[2020-06-28T09:57:56.902] [ERROR] app - Error: Undefined binding(s) detected when compiling SELECT. Undefined column(s): [session.user_id] query: select `id`, `expire_time` from `session` where `session`.`user_id` = ? and `session`.`client_device` = ? limit ?
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\compiler.js:99:13)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\builder.js:72:44)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:31:36
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (C:\Users\BIM02\Desktop\Server - KT\node_modules\bookshelf\lib\model.js:702:19)
+    at Object.out.Post (C:\Users\BIM02\Desktop\Server - KT\restful\v0\sessions.js:26:71)
+[2020-06-28T10:00:04.136] [ERROR] app - Incorrect Password
+[2020-06-28T10:01:12.988] [ERROR] app - ReferenceError: E is not defined
+    at Function.Login (C:\Users\BIM02\Desktop\Server - KT\models\index.js:47:11)
+[2020-06-28T10:01:35.117] [ERROR] app - ReferenceError: E is not defined
+    at Function.Login (C:\Users\BIM02\Desktop\Server - KT\models\index.js:47:11)
+[2020-06-28T10:02:05.488] [ERROR] app - TypeError: Cannot read property 'message' of undefined
+    at Function.Login (C:\Users\BIM02\Desktop\Server - KT\models\index.js:49:17)
+[2020-06-28T10:02:54.375] [ERROR] app - TypeError: Cannot read property 'message' of undefined
+    at Function.Login (C:\Users\BIM02\Desktop\Server - KT\models\index.js:51:17)
+[2020-06-28T10:03:15.538] [ERROR] app - undefined
+[2020-06-28T10:12:23.178] [ERROR] app - undefined
+[2020-06-28T10:12:41.204] [ERROR] app - undefined
+[2020-06-28T10:13:05.502] [ERROR] app - undefined
+[2020-06-28T10:15:22.417] [ERROR] app - 用户名不存在
+[2020-06-28T10:15:27.249] [ERROR] app - 用户名不存在
+[2020-06-28T10:15:49.123] [ERROR] app - 提交信息有误
+[2020-06-28T10:16:23.377] [ERROR] app - 数据传输错误,请联系管理员
+[2020-06-28T10:16:41.112] [ERROR] app - undefined
+[2020-06-28T10:17:32.939] [ERROR] app - 密码错误
+[2020-06-28T10:18:14.482] [ERROR] app - 密码错误
+[2020-06-28T10:18:48.732] [ERROR] app - 密码错误
+[2020-06-28T10:19:11.083] [ERROR] app - 密码错误
+[2020-06-28T10:19:40.999] [ERROR] app - 密码错误
+[2020-06-28T10:25:26.160] [ERROR] app - 没有访问权限
+[2020-06-28T10:28:11.749] [ERROR] app - 没有访问权限
+[2020-06-28T10:34:17.381] [ERROR] app - 非法访问
+[2020-06-28T10:37:13.871] [ERROR] app - 用户未登录
+[2020-06-28T13:48:51.238] [ERROR] app - 用户未登录
+[2020-06-28T13:49:19.790] [ERROR] app - TypeError: session.JSON is not a function
+    at Object.out.Get (C:\Users\BIM02\Desktop\Server - KT\restful\v0\sessions.js:78:37)
+[2020-06-28T14:16:43.832] [ERROR] app - TypeError: session.JSON is not a function
+    at Object.out.Get (C:\Users\BIM02\Desktop\Server - KT\restful\v0\sessions.js:78:37)
+[2020-06-28T14:47:22.981] [ERROR] app - { Error: insert into `user` (`avatar`, `create_by`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', '0000000', '胡佳翰', '881234', '19888821112', 'hujiahan') - ER_BAD_FIELD_ERROR: Unknown column 'create_by' in 'field list'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\Server - KT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\Server - KT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\Server - KT\restful\v0\users.js:14:38)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\Server - KT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\Server - KT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\Server - KT\node_modules\koa-compose\index.js:42:32)
+    at module.exports (C:\Users\BIM02\Desktop\Server - KT\middlewares\auth.js:76:9)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'create_by\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `create_by`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', \'0000000\', \'胡佳翰\', \'881234\', \'19888821112\', \'hujiahan\')' }
+[2020-06-28T14:52:46.895] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T14:55:18.182] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T14:55:46.124] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T14:56:05.952] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T14:56:10.833] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\Server - KT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T15:09:00.201] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T15:13:06.946] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T15:13:10.011] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T15:13:18.543] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T15:55:53.285] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T15:56:22.852] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T22:05:35.593] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T22:10:57.130] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T22:11:29.742] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T22:15:19.358] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-28T22:16:10.962] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)

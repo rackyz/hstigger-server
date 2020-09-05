@@ -1,0 +1,47 @@
+[2020-05-05T00:10:19.039] [ERROR] app - 401
+[2020-05-05T00:10:26.228] [ERROR] app - 401
+[2020-05-05T00:14:43.769] [ERROR] app - 401
+[2020-05-05T00:15:55.549] [ERROR] app - 401
+[2020-05-05T00:17:22.968] [ERROR] app - 401
+[2020-05-05T00:17:30.818] [ERROR] app - 401
+[2020-05-05T06:44:31.691] [ERROR] app - 401
+[2020-05-05T06:44:31.859] [ERROR] app - 签名的accessKey为空或者不合法
+[2020-05-05T06:45:20.200] [ERROR] app - 401
+[2020-05-05T06:45:20.383] [ERROR] app - 签名的accessKey为空或者不合法
+[2020-05-05T06:45:30.557] [ERROR] app - 401
+[2020-05-05T06:48:17.542] [ERROR] app - 401
+[2020-05-05T06:53:24.235] [ERROR] app - 401
+[2020-05-05T06:53:24.408] [ERROR] app - 不存在的临时授权码
+[2020-05-05T06:53:38.776] [ERROR] app - 401
+[2020-05-05T06:53:47.167] [ERROR] app - 401
+[2020-05-05T06:55:22.299] [ERROR] app - 401
+[2020-05-05T06:55:29.177] [ERROR] app - 401
+[2020-05-05T06:56:41.526] [ERROR] app - 401
+[2020-05-05T06:56:48.737] [ERROR] app - 401
+[2020-05-05T07:01:56.117] [ERROR] app - 401
+[2020-05-05T07:02:02.554] [ERROR] app - 401
+[2020-05-05T07:03:05.107] [ERROR] app - 401
+[2020-05-05T07:03:05.238] [ERROR] app - 不存在的临时授权码
+[2020-05-05T07:04:47.994] [ERROR] app - 不存在的临时授权码
+[2020-05-05T07:04:53.580] [ERROR] app - 401
+[2020-05-05T07:04:53.745] [ERROR] app - 不存在的临时授权码
+[2020-05-05T07:05:22.175] [ERROR] app - 不存在的临时授权码
+[2020-05-05T07:05:28.534] [ERROR] app - 401
+[2020-05-05T07:05:38.392] [ERROR] app - 401
+[2020-05-05T09:28:02.846] [ERROR] app - 401
+[2020-05-05T09:28:10.389] [ERROR] app - 401
+[2020-05-05T09:28:10.984] [ERROR] app - ReferenceError: DEBUG is not defined
+    at Object.m.loginWithDD (D:\able_project\gzcloud2\Server\modules\v0\user.js:68:5)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-05T09:29:20.282] [ERROR] app - 401
+[2020-05-05T09:29:27.580] [ERROR] app - 401
+[2020-05-05T09:29:28.190] [ERROR] app - ReferenceError: DEBUG is not defined
+    at Object.m.loginWithDD (D:\able_project\gzcloud2\Server\modules\v0\user.js:68:5)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-05T09:29:57.657] [ERROR] app - 401
+[2020-05-05T09:30:04.148] [ERROR] app - 401
+[2020-05-05T09:31:55.027] [ERROR] app - 401
+[2020-05-05T09:32:03.832] [ERROR] app - 401
+[2020-05-05T09:35:41.581] [ERROR] app - TypeError: Cannot set property 'coskey' of undefined
+    at Object.Get (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:49:25)
+    at process._tickCallback (internal/process/next_tick.js:68:7)

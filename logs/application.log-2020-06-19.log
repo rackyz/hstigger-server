@@ -1,0 +1,401 @@
+[2020-06-19T08:42:14.623] [ERROR] app - 401
+[2020-06-19T08:42:20.033] [ERROR] app - 401
+[2020-06-19T08:42:20.051] [ERROR] app - 401
+[2020-06-19T08:43:01.902] [ERROR] app - 401
+[2020-06-19T08:43:01.909] [ERROR] app - 401
+[2020-06-19T08:44:25.536] [ERROR] app - 401
+[2020-06-19T08:44:25.538] [ERROR] app - 401
+[2020-06-19T08:44:34.620] [ERROR] app - 401
+[2020-06-19T08:44:39.767] [ERROR] app - 401
+[2020-06-19T08:44:39.769] [ERROR] app - 401
+[2020-06-19T08:45:08.979] [ERROR] app - 401
+[2020-06-19T08:45:08.986] [ERROR] app - 401
+[2020-06-19T08:46:31.194] [ERROR] app - 401
+[2020-06-19T08:46:31.211] [ERROR] app - 401
+[2020-06-19T08:46:33.522] [ERROR] app - 401
+[2020-06-19T08:47:07.088] [ERROR] app - 401
+[2020-06-19T08:47:07.090] [ERROR] app - 401
+[2020-06-19T08:47:59.890] [ERROR] app - 401
+[2020-06-19T08:47:59.892] [ERROR] app - 401
+[2020-06-19T08:48:04.374] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T08:48:32.587] [ERROR] app - 401
+[2020-06-19T08:48:32.589] [ERROR] app - 401
+[2020-06-19T08:50:57.782] [ERROR] app - 401
+[2020-06-19T08:50:57.785] [ERROR] app - 401
+[2020-06-19T08:51:45.368] [ERROR] app - 401
+[2020-06-19T08:51:49.539] [ERROR] app - 401
+[2020-06-19T08:51:49.542] [ERROR] app - 401
+[2020-06-19T08:54:03.451] [ERROR] app - 401
+[2020-06-19T08:54:14.219] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T08:54:26.904] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T09:24:51.447] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T09:27:18.545] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T09:34:47.987] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T09:44:40.363] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T10:35:10.199] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T15:22:36.527] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T16:14:23.376] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }
+[2020-06-19T16:17:16.522] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud.projectname' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud.projectname\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select `pid` as `id`, `项目名称` as `name` from `projectname`' }

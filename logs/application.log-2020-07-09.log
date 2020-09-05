@@ -1,0 +1,319 @@
+[2020-07-09T08:11:53.891] [ERROR] app - ReferenceError: maches is not defined
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:23:11)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T08:12:13.534] [ERROR] app - TypeError: matches is not iterable
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:24:34)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T08:12:48.924] [ERROR] app - TypeError: matches is not iterable
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:24:34)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T08:13:20.986] [ERROR] app - TypeError: matches is not iterable
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:24:34)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T08:19:09.856] [ERROR] app - TypeError: matches is not iterable
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:24:34)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T08:49:42.239] [ERROR] app - 没有访问权限
+[2020-07-09T08:50:44.370] [ERROR] app - 没有访问权限
+[2020-07-09T08:50:49.038] [ERROR] app - 没有访问权限
+[2020-07-09T08:51:26.033] [ERROR] app - 没有访问权限
+[2020-07-09T08:51:36.074] [ERROR] app - 没有访问权限
+[2020-07-09T08:51:54.086] [ERROR] app - 登录已过期
+[2020-07-09T10:13:35.594] [ERROR] app - SyntaxError: Invalid regular expression: /(\[.*\])\s(\[.*\])\s(.*)-(.*))/: Unmatched ')'
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:20:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T10:13:35.614] [ERROR] app - SyntaxError: Invalid regular expression: /(\[.*\])\s(\[.*\])\s(.*)-(.*))/: Unmatched ')'
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:20:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T10:13:36.385] [ERROR] app - SyntaxError: Invalid regular expression: /(\[.*\])\s(\[.*\])\s(.*)-(.*))/: Unmatched ')'
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:20:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T10:13:36.399] [ERROR] app - SyntaxError: Invalid regular expression: /(\[.*\])\s(\[.*\])\s(.*)-(.*))/: Unmatched ')'
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:20:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T10:13:42.841] [ERROR] app - SyntaxError: Invalid regular expression: /(\[.*\])\s(\[.*\])\s(.*)-(.*))/: Unmatched ')'
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:20:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T10:13:42.875] [ERROR] app - SyntaxError: Invalid regular expression: /(\[.*\])\s(\[.*\])\s(.*)-(.*))/: Unmatched ')'
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:20:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-09T10:41:32.064] [ERROR] app - { Error: ENOENT: no such file or directory, open 'C:\Users\BIM02\Desktop\ServerKT\logs/当前日志'
+    at Object.openSync (fs.js:436:3)
+    at Object.readFileSync (fs.js:341:35)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:17:17)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: 'C:\\Users\\BIM02\\Desktop\\ServerKT\\logs/当前日志' }
+[2020-07-09T10:41:32.095] [ERROR] app - { Error: ENOENT: no such file or directory, open 'C:\Users\BIM02\Desktop\ServerKT\logs/当前日志'
+    at Object.openSync (fs.js:436:3)
+    at Object.readFileSync (fs.js:341:35)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:17:17)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: 'C:\\Users\\BIM02\\Desktop\\ServerKT\\logs/当前日志' }
+[2020-07-09T10:53:31.289] [ERROR] app - { Error: ENOENT: no such file or directory, open 'C:\Users\BIM02\Desktop\ServerKT\logs/[object Object]'
+    at Object.openSync (fs.js:436:3)
+    at Object.readFileSync (fs.js:341:35)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:17:17)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: 'C:\\Users\\BIM02\\Desktop\\ServerKT\\logs/[object Object]' }
+[2020-07-09T10:53:31.314] [ERROR] app - { Error: ENOENT: no such file or directory, open 'C:\Users\BIM02\Desktop\ServerKT\logs/[object Object]'
+    at Object.openSync (fs.js:436:3)
+    at Object.readFileSync (fs.js:341:35)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:17:17)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: 'C:\\Users\\BIM02\\Desktop\\ServerKT\\logs/[object Object]' }
+[2020-07-09T10:53:32.379] [ERROR] app - { Error: ENOENT: no such file or directory, open 'C:\Users\BIM02\Desktop\ServerKT\logs/[object Object]'
+    at Object.openSync (fs.js:436:3)
+    at Object.readFileSync (fs.js:341:35)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:17:17)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: 'C:\\Users\\BIM02\\Desktop\\ServerKT\\logs/[object Object]' }
+[2020-07-09T10:53:32.394] [ERROR] app - { Error: ENOENT: no such file or directory, open 'C:\Users\BIM02\Desktop\ServerKT\logs/[object Object]'
+    at Object.openSync (fs.js:436:3)
+    at Object.readFileSync (fs.js:341:35)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:17:17)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+  errno: -4058,
+  syscall: 'open',
+  code: 'ENOENT',
+  path: 'C:\\Users\\BIM02\\Desktop\\ServerKT\\logs/[object Object]' }

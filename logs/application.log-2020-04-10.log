@@ -1,0 +1,61 @@
+[2020-04-10T08:37:44.843] [ERROR] app - Request without token
+[2020-04-10T08:37:44.845] [ERROR] app - 没有访问权限
+[2020-04-10T08:39:08.205] [ERROR] app - Request without token
+[2020-04-10T08:39:08.207] [ERROR] app - 没有访问权限
+[2020-04-10T08:39:22.782] [ERROR] app - Request without token
+[2020-04-10T08:39:22.784] [ERROR] app - 没有访问权限
+[2020-04-10T08:47:59.765] [ERROR] app - Request without token
+[2020-04-10T08:47:59.766] [ERROR] app - 没有访问权限
+[2020-04-10T08:51:48.025] [ERROR] app - { Error: ER_BAD_DB_ERROR: Unknown database 'oa'
+    at Handshake.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Handshake.js:124:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:118:18)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:106:18
+From previous event:
+    at Client_MySQL.acquireRawConnection (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:104:12)
+    at Object.create (D:\able_project\CloudServer\node_modules\knex\lib\client.js:239:16)
+    at Pool._createResource (D:\able_project\CloudServer\node_modules\generic-pool\lib\generic-pool.js:354:17)
+    at Pool.dispense [as _dispense] (D:\able_project\CloudServer\node_modules\generic-pool\lib\generic-pool.js:314:10)
+    at Pool.acquire (D:\able_project\CloudServer\node_modules\generic-pool\lib\generic-pool.js:436:8)
+    at D:\able_project\CloudServer\node_modules\knex\lib\client.js:289:19
+From previous event:
+    at Client_MySQL.acquireConnection (D:\able_project\CloudServer\node_modules\knex\lib\client.js:280:12)
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:208:30
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:206:35
+From previous event:
+    at Runner.ensureConnection (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:205:34)
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:42)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_DB_ERROR',
+  errno: 1049,
+  sqlMessage: 'Unknown database \'oa\'',
+  sqlState: '42000',
+  fatal: true }
+[2020-04-10T08:52:48.098] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-10T08:52:51.340] [ERROR] app - Request without token
+[2020-04-10T08:52:51.343] [ERROR] app - 没有访问权限
+[2020-04-10T08:56:07.694] [ERROR] app - Request without token
+[2020-04-10T08:56:07.696] [ERROR] app - 没有访问权限
+[2020-04-10T08:56:45.262] [ERROR] app - Request without token
+[2020-04-10T08:56:45.263] [ERROR] app - 没有访问权限
+[2020-04-10T08:56:46.238] [ERROR] app - Request without token
+[2020-04-10T08:56:46.239] [ERROR] app - 没有访问权限
+[2020-04-10T08:57:05.843] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-04-10T08:57:12.075] [ERROR] app - Request without token
+[2020-04-10T08:57:12.078] [ERROR] app - 没有访问权限
+[2020-04-10T15:02:19.442] [ERROR] app - 401
+[2020-04-10T15:02:29.790] [ERROR] app - 401

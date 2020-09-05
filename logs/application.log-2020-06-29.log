@@ -1,0 +1,1158 @@
+[2020-06-29T07:29:06.575] [ERROR] app - TypeError: Cannot read property 'v4' of undefined
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:115:38)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:115:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:56:32
+From previous event:
+    at Runner.run (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\interface.js:35:43)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+[2020-06-29T07:32:13.730] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, '胡佳翰', '881234', '19888821112', 'hujiahan') - ER_DUP_ENTRY: Duplicate entry 'hujiahan' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:14:38)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'胡佳翰\', \'881234\', \'19888821112\', \'hujiahan\')' }
+[2020-06-29T08:13:42.466] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, 'e08241a0-6d72-4769-ad1c-acdbf887faa1', '胡佳翰', '881234', '19888821112', 'hujiahan') - ER_DUP_ENTRY: Duplicate entry 'hujiahan' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:14:38)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'e08241a0-6d72-4769-ad1c-acdbf887faa1\', \'胡佳翰\', \'881234\', \'19888821112\', \'hujiahan\')' }
+[2020-06-29T08:20:43.118] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, '60320c2f-55ea-4d30-91a5-8cc36dae4243', '胡佳翰', '881234', '19888821112', 'hujiahan') - ER_DUP_ENTRY: Duplicate entry 'hujiahan' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:27:38)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'60320c2f-55ea-4d30-91a5-8cc36dae4243\', \'胡佳翰\', \'881234\', \'19888821112\', \'hujiahan\')' }
+[2020-06-29T08:20:53.510] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, 'f01aae1e-1f42-40a8-b043-d61e3cb2b089', '胡佳翰', '881234', '19888821112', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry '19888821112' for key 'user_phone_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:27:38)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage:
+   'Duplicate entry \'19888821112\' for key \'user_phone_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'f01aae1e-1f42-40a8-b043-d61e3cb2b089\', \'胡佳翰\', \'881234\', \'19888821112\', \'hujiahan3\')' }
+[2020-06-29T08:21:00.840] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, '9a2ff2e3-fc37-4b36-ac03-62f4bb5c5f22', '胡佳翰', '881234', '198888211126', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry '胡佳翰' for key 'user_name_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:27:38)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'胡佳翰\' for key \'user_name_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'9a2ff2e3-fc37-4b36-ac03-62f4bb5c5f22\', \'胡佳翰\', \'881234\', \'198888211126\', \'hujiahan3\')' }
+[2020-06-29T08:21:30.679] [ERROR] app - TypeError: model.deps.attach is not a function
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:29:30)
+[2020-06-29T08:22:11.737] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, '8e84a947-b67b-4484-aab2-d4946dd3e454', '胡佳翰2', '881234', '198888211126', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry 'hujiahan3' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:27:38)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan3\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'8e84a947-b67b-4484-aab2-d4946dd3e454\', \'胡佳翰2\', \'881234\', \'198888211126\', \'hujiahan3\')' }
+[2020-06-29T08:28:28.848] [ERROR] app - TypeError: Cannot read property 'transaction' of undefined
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:27:23)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+[2020-06-29T08:28:36.510] [ERROR] app - TypeError: model.deps.attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:30:35)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:28:47.992] [ERROR] app - TypeError: model.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:30:37)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:29:13.787] [ERROR] app - TypeError: model.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:31:37)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:29:31.867] [ERROR] app - TypeError: model.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:31:37)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:34:34.294] [ERROR] app - TypeError: model.deps(...).attach is not a function
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:31:37)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:45:33.587] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:31:35)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:46:20.294] [ERROR] app - TypeError: (intermediate value).deps(...).attach is not a function
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:31:45)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:48:28.687] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:32:36)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:49:33.696] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:32:36)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:52:56.217] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:32:36)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:53:58.929] [ERROR] app - TypeError: userObject.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:32:42)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T08:54:06.631] [ERROR] app - Error: Transaction query already complete, run with DEBUG=knex:tx for more info
+    at completedError (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:354:9)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:320:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:316:12)
+    at Transaction_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\transaction.js:12:8)
+    at Transaction_MySQL.commit (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:90:17)
+    at Function.transactor.commit (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:277:40)
+    at Child.result.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:191:35)
+    at Child.tryCatcher (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\node_modules\bluebird\js\release\async.js:102:5)
+[2020-06-29T08:55:33.815] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, 'b3570fc4-9c81-4dd7-8215-0af9523d04f8', '胡佳翰2', '881234', '198888211126', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry 'hujiahan3' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:321:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:316:12)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:29)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan3\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'b3570fc4-9c81-4dd7-8215-0af9523d04f8\', \'胡佳翰2\', \'881234\', \'198888211126\', \'hujiahan3\')' }
+[2020-06-29T08:56:00.291] [ERROR] app - TypeError: userObject.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:32:42)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:07:32.417] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:43:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:14:12.165] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:44:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:14:39.227] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:44:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:14:52.719] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:44:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:15:21.056] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:44:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:15:55.581] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:44:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:17:41.545] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:44:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:50:20.161] [ERROR] app - TypeError: user.deps(...).attach is not a function
+    at Child.User.forge.save.then (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:44:26)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:58)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:53:03.406] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, '1f5feeea-2ccd-4464-a9ab-2e94af742d35', '胡佳翰2', '881234', '198888211126', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry 'hujiahan3' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:321:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:316:12)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:29)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan3\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'1f5feeea-2ccd-4464-a9ab-2e94af742d35\', \'胡佳翰2\', \'881234\', \'198888211126\', \'hujiahan3\')' }
+[2020-06-29T09:53:22.054] [ERROR] app - Error: Transaction query already complete, run with DEBUG=knex:tx for more info
+    at completedError (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:354:9)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:320:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:316:12)
+    at Transaction_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\transaction.js:12:8)
+    at Transaction_MySQL.rollback (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:98:25)
+    at transactor.rollback (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:278:42)
+[2020-06-29T09:53:53.660] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, 'fb5b85da-0efb-4eee-ace8-4e37e418b751', '胡佳翰2', '881234', '198888211126', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry 'hujiahan3' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:321:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:316:12)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:29)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan3\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'fb5b85da-0efb-4eee-ace8-4e37e418b751\', \'胡佳翰2\', \'881234\', \'198888211126\', \'hujiahan3\')' }
+[2020-06-29T09:54:04.446] [ERROR] app - TypeError: model.toJSON is not a function
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:46:16)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T09:54:30.427] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, '977cbfef-985c-4a2e-9a0e-41c255cf68b7', '胡佳翰2', '881234', '198888211126', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry 'hujiahan3' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:321:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:316:12)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:29)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan3\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'977cbfef-985c-4a2e-9a0e-41c255cf68b7\', \'胡佳翰2\', \'881234\', \'198888211126\', \'hujiahan3\')' }
+[2020-06-29T10:03:15.642] [ERROR] app - TypeError: User.forge(...).destory is not a function
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:64:8)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T10:04:08.217] [ERROR] app - Error: Undefined binding(s) detected when compiling DEL. Undefined column(s): [user_id] query: delete from `dep_user` where `user_id` = ?
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:99:13)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:72:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:31:36
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\relation.js:840:36)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\relation.js:794:50)
+From previous event:
+    at Promise.try.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\relation.js:720:24)
+From previous event:
+    at Child.detach (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\relation.js:720:8)
+    at Child.User.forge.destroy.then.user (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:65:35)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:64:35)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T10:25:21.784] [ERROR] app - TypeError: sql.dumpSQL is not a function
+    at Object.out.Delete (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:74:13)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+[2020-06-29T10:26:42.372] [ERROR] app - TypeError: sql.dumpSQL is not a function
+    at Object.out.Delete (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:75:13)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+[2020-06-29T10:27:58.329] [ERROR] app - TypeError: sql.dumpSQL is not a function
+    at Object.out.Delete (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:76:13)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+[2020-06-29T10:37:53.566] [ERROR] app - { CustomError: No Rows Deleted
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1306:19)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1304:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:65:28)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Deleted' }
+[2020-06-29T10:38:37.440] [ERROR] app - { CustomError: No Rows Deleted
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1306:19)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1304:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:65:28)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Deleted' }
+[2020-06-29T10:46:33.008] [ERROR] app - { CustomError: No Rows Deleted
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1306:19)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1304:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:65:28)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Deleted' }
+[2020-06-29T10:46:43.079] [ERROR] app - { Error: insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values ('https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png', DEFAULT, 'b25c41cd-63d4-4dd5-9f99-bc2fc4462e7c', '胡佳翰2', '881234', '198888211126', 'hujiahan3') - ER_DUP_ENTRY: Duplicate entry 'hujiahan3' for key 'user_user_unique'
+    at Query.Sequence._packetToError (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\mysql\lib\Connection.js:198:25)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\client.js:169:17)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:321:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:316:12)
+    at Runner.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:134:36)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:40:23
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:28:29)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: 'Duplicate entry \'hujiahan3\' for key \'user_user_unique\'',
+  sqlState: '23000',
+  index: 0,
+  sql:
+   'insert into `user` (`avatar`, `created_by`, `id`, `name`, `password`, `phone`, `user`) values (\'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/admin.png\', DEFAULT, \'b25c41cd-63d4-4dd5-9f99-bc2fc4462e7c\', \'胡佳翰2\', \'881234\', \'198888211126\', \'hujiahan3\')' }
+[2020-06-29T13:21:48.756] [ERROR] app - TypeError: User.fetchAll(...).where is not a function
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:12:59)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+[2020-06-29T13:22:11.103] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\helpers.js:170:24)
+    at Child.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1387:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\bookshelf.js:551:28)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:12:26)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+[2020-06-29T13:23:49.538] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\helpers.js:170:24)
+    at Child.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1387:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\bookshelf.js:551:28)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:12:26)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+[2020-06-29T13:24:41.004] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\helpers.js:170:24)
+    at Child.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1387:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\bookshelf.js:551:28)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:12:26)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+[2020-06-29T13:26:25.619] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\helpers.js:170:24)
+    at Child.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1387:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\bookshelf.js:551:28)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:14:23)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+[2020-06-29T13:26:32.718] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\helpers.js:170:24)
+    at Child.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1387:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\bookshelf.js:551:28)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:14:23)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+[2020-06-29T13:26:48.094] [ERROR] app - TypeError: Cannot read property 'apply' of undefined
+    at Object.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\helpers.js:170:24)
+    at Child.query (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1387:22)
+    at Function.Model.(anonymous function).Collection.(anonymous function) [as query] (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\bookshelf.js:551:28)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:15:23)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+[2020-06-29T15:22:31.019] [ERROR] app - Error: Undefined binding(s) detected when compiling WHERE. Undefined column(s): [phone] query: where `phone` = ?
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:99:13)
+    at Formatter.compileCallback (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\formatter.js:228:21)
+    at Formatter.rawOrFn (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\formatter.js:167:36)
+    at QueryCompiler_MySQL.whereWrapped (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:683:32)
+    at QueryCompiler_MySQL.where (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:383:34)
+    at components.map (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:116:69)
+    at Array.map (<anonymous>)
+    at QueryCompiler_MySQL.select (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:116:35)
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:62:29)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:72:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:31:36
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\sync.js:204:8)
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\sync.js:66:17)
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:713:12)
+    at Child.fetch (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:702:19)
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:37:8)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+From previous event:
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:702:19)
+    at Object.out.Post (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:37:8)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T15:22:31.052] [ERROR] app - Error: Undefined binding(s) detected when compiling SELECT. Undefined column(s): [user.id] query: select `avatar`, `phone`, `name` from `user` where `user`.`id` = ? limit ?
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:99:13)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:72:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:31:36
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\sync.js:204:8)
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\sync.js:66:17)
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:713:12)
+    at Child.fetch (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:702:19)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:148:8)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+From previous event:
+    at Sync.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:702:19)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\sessions.js:148:8)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at parseBody.then.body (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-bodyparser\index.js:74:14)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-29T15:22:31.155] [ERROR] app - { CustomError: No Rows Deleted
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1306:19)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1304:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:80:28)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7) message: 'No Rows Deleted' }

@@ -1,0 +1,27 @@
+[2020-03-05T16:23:53.243] [ERROR] app - 403
+[2020-03-06T14:38:14.846] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-06T14:39:53.157] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-06T14:40:03.160] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-06T14:40:22.692] [INFO] app - API_VERSION_MISSED
+[2020-03-06T14:40:23.087] [INFO] app - API_VERSION_MISSED
+[2020-03-06T14:40:54.506] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-06T14:40:57.724] [INFO] app - API_VERSION_MISSED
+[2020-03-06T14:41:18.857] [ERROR] app - TypeError: knex is not a function
+    at Object.List (D:\able_project\CloudServer\models\kernel.js:134:21)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:50:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-03-06T14:42:09.224] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***

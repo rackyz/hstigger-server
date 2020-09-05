@@ -1,0 +1,19 @@
+[2020-05-01T23:28:32.083] [INFO] app - *** SYSTEM STARTUP on PORT (6060) ***
+[2020-05-01T23:28:49.355] [ERROR] app - ReferenceError: code is not defined
+    at Object.Post (D:\able_project\gzcloud2\Server\restful\v0\sessions.js:22:20)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\gzcloud2\Server\middlewares\auth.js:32:13)
+[2020-05-01T23:28:49.363] [ERROR] app - 401

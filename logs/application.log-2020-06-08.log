@@ -1,0 +1,66 @@
+[2020-06-08T08:32:51.408] [ERROR] app - 401
+[2020-06-08T08:40:05.848] [ERROR] app - 401
+[2020-06-08T08:46:04.345] [ERROR] app - 401
+[2020-06-08T08:46:04.349] [ERROR] app - 401
+[2020-06-08T09:05:58.014] [ERROR] app - 401
+[2020-06-08T09:05:58.015] [ERROR] app - 401
+[2020-06-08T09:24:39.621] [ERROR] app - 401
+[2020-06-08T09:27:23.115] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-06-08T09:28:04.229] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-06-08T09:31:04.063] [ERROR] app - error
+[2020-06-08T09:31:26.730] [ERROR] app - TypeError: Cannot read property '0' of undefined
+    at Patch.contracts.forEach.v (D:\able_project\gzcloud2\Server\restful\v0\oa.js:184:31)
+    at Array.forEach (<anonymous>)
+    at Object.Patch (D:\able_project\gzcloud2\Server\restful\v0\oa.js:174:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-08T09:34:09.687] [ERROR] app - TypeError: Cannot read property 'forEach' of undefined
+    at Patch.contracts.forEach.v (D:\able_project\gzcloud2\Server\restful\v0\oa.js:190:13)
+    at Array.forEach (<anonymous>)
+    at Object.Patch (D:\able_project\gzcloud2\Server\restful\v0\oa.js:174:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-08T09:35:42.356] [ERROR] app - ReferenceError: dc is not defined
+    at Patch.contracts.forEach.v (D:\able_project\gzcloud2\Server\restful\v0\oa.js:206:58)
+    at Array.forEach (<anonymous>)
+    at Object.Patch (D:\able_project\gzcloud2\Server\restful\v0\oa.js:174:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-08T09:36:04.010] [ERROR] app - ReferenceError: proFinishedDate is not defined
+    at Patch.contracts.forEach.v (D:\able_project\gzcloud2\Server\restful\v0\oa.js:224:19)
+    at Array.forEach (<anonymous>)
+    at Object.Patch (D:\able_project\gzcloud2\Server\restful\v0\oa.js:174:15)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-06-08T09:42:55.558] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzcloud2.contract_copy1' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzcloud2.contract_copy1\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'update `contract_copy1` set `proFinishedDate` = \'2020-08-31 00:00:00.000\', `proStartDate` = \'2016-01-04 00:00:00.000\', `state` = 3 where `id` = \'CRT00000000000V9\'' }
+[2020-06-08T10:08:39.116] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]

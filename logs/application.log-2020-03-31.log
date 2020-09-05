@@ -1,0 +1,60 @@
+[2020-03-31T08:09:05.970] [ERROR] app - 401
+[2020-03-31T08:15:02.978] [ERROR] app - 401
+[2020-03-31T08:23:37.150] [ERROR] app - 401
+[2020-03-31T08:37:22.525] [ERROR] app - 401
+[2020-03-31T09:00:28.841] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T09:02:14.035] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T09:03:28.835] [ERROR] app - 401
+[2020-03-31T09:03:29.996] [INFO] app - API_OBJECT_UNDEFINED:object=kernel
+[2020-03-31T09:03:51.400] [ERROR] app - 401
+[2020-03-31T09:03:55.389] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column 'id' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'id\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql: 'select `id`, `name`, `avatar` from `user`' }
+[2020-03-31T09:04:17.522] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T09:05:13.234] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T09:05:19.769] [ERROR] app - ReferenceError: gy_name is not defined
+    at List.users.users.map.v (D:\able_project\CloudServer\restful\v0\settings.js:9:50)
+    at Array.map (<anonymous>)
+    at Object.List (D:\able_project\CloudServer\restful\v0\settings.js:9:25)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-03-31T09:05:30.212] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T10:34:16.011] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T10:43:07.158] [ERROR] app - 401
+[2020-03-31T10:43:33.452] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T10:44:03.499] [ERROR] app - 401
+[2020-03-31T15:24:09.282] [ERROR] app - 401
+[2020-03-31T16:02:51.585] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T16:14:07.746] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-31T16:17:24.576] [ERROR] app - 401
+[2020-03-31T16:17:24.581] [ERROR] app - 401

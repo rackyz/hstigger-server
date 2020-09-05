@@ -1,0 +1,150 @@
+[2020-04-16T09:15:34.262] [ERROR] app - 401
+[2020-04-16T09:15:38.838] [ERROR] app - 401
+[2020-04-16T09:15:38.848] [ERROR] app - 401
+[2020-04-16T09:15:39.606] [ERROR] app - 401
+[2020-04-16T09:15:39.609] [ERROR] app - 401
+[2020-04-16T09:15:42.604] [ERROR] app - 401
+[2020-04-16T09:15:47.112] [ERROR] app - Request without token
+[2020-04-16T09:15:47.113] [ERROR] app - 没有访问权限
+[2020-04-16T09:15:47.128] [ERROR] app - 401
+[2020-04-16T09:15:47.133] [ERROR] app - 401
+[2020-04-16T09:18:29.932] [ERROR] app - Request without token
+[2020-04-16T09:18:29.933] [ERROR] app - 没有访问权限
+[2020-04-16T09:18:32.641] [ERROR] app - 401
+[2020-04-16T09:18:54.054] [ERROR] app - Request without token
+[2020-04-16T09:18:54.055] [ERROR] app - 没有访问权限
+[2020-04-16T09:19:10.735] [ERROR] app - 401
+[2020-04-16T09:19:11.711] [ERROR] app - 401
+[2020-04-16T09:19:11.713] [ERROR] app - 401
+[2020-04-16T09:24:22.008] [ERROR] app - 401
+[2020-04-16T09:24:31.264] [ERROR] app - 401
+[2020-04-16T09:24:32.247] [ERROR] app - 401
+[2020-04-16T09:24:32.249] [ERROR] app - 401
+[2020-04-16T09:42:59.574] [ERROR] app - Request without token
+[2020-04-16T09:42:59.576] [ERROR] app - 没有访问权限
+[2020-04-16T09:42:59.578] [ERROR] app - Request without token
+[2020-04-16T09:42:59.579] [ERROR] app - 没有访问权限
+[2020-04-16T09:43:55.202] [ERROR] app - 401
+[2020-04-16T09:44:11.031] [ERROR] app - 401
+[2020-04-16T09:46:34.704] [ERROR] app - 401
+[2020-04-16T09:46:38.460] [ERROR] app - 403
+[2020-04-16T09:47:13.747] [ERROR] app - 401
+[2020-04-16T09:47:13.892] [ERROR] app - 401
+[2020-04-16T09:47:46.687] [ERROR] app - 403
+[2020-04-16T09:53:54.633] [ERROR] app - 401
+[2020-04-16T09:54:12.203] [ERROR] app - 401
+[2020-04-16T09:54:51.810] [ERROR] app - 401
+[2020-04-16T09:54:51.928] [ERROR] app - 401
+[2020-04-16T09:55:02.163] [ERROR] app - 401
+[2020-04-16T10:26:53.925] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column '_images' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'_images\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'update `project` set `_images` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `avatar` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `buildtype` = \'住宅\', `code` = \'N200902009\', `constructionSide` = \'宁波市海曙区集士港镇新村建设办公室\', `constructionState` = NULL, `desc` = \'集士港井亭张3号地块一期（A地块）项目位于集士港镇董家桥村，总用地面积为46428㎡，总建筑面积为129828.55㎡，其中地上建筑面积为95912.42㎡，地下建筑面积33916.13㎡，共16幢均为11层的住宅，住宅总户数840户，机动车停车位771个，非机动车库840间。\', `id` = \'project0000000VI\', `images` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `inputTime` = NULL, `inputor` = NULL, `investionSide` = \'宁波高专建设监理有限公司\', `manager` = NULL, `managetype` = \'项目\', `name` = \'集士港井亭张三\', `position` = \'海曙\', `state` = NULL, `supervisorSide` = \'浙江工正建设监理咨询有限公司\' where `id` = \'project0000000VI\'' }
+[2020-04-16T10:27:06.863] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column '_images' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'_images\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'update `project` set `_images` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `avatar` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `buildtype` = \'住宅\', `code` = \'N200902009\', `constructionSide` = \'宁波市海曙区集士港镇新村建设办公室\', `constructionState` = NULL, `desc` = \'集士港井亭张3号地块一期（A地块）项目位于集士港镇董家桥村，总用地面积为46428㎡，总建筑面积为129828.55㎡，其中地上建筑面积为95912.42㎡，地下建筑面积33916.13㎡，共16幢均为11层的住宅，住宅总户数840户，机动车停车位771个，非机动车库840间。\', `id` = \'project0000000VI\', `images` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `inputTime` = NULL, `inputor` = NULL, `investionSide` = \'宁波高专建设监理有限公司\', `manager` = NULL, `managetype` = \'项目\', `name` = \'集士港井亭张三2\', `position` = \'海曙\', `state` = NULL, `supervisorSide` = \'浙江工正建设监理咨询有限公司\' where `id` = \'project0000000VI\'' }
+[2020-04-16T10:27:32.945] [ERROR] app - { Error: ER_BAD_FIELD_ERROR: Unknown column '_images' in 'field list'
+    at Query.Sequence._packetToError (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\CloudServer\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\CloudServer\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\CloudServer\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\CloudServer\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\CloudServer\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\CloudServer\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\CloudServer\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: 'Unknown column \'_images\' in \'field list\'',
+  sqlState: '42S22',
+  index: 0,
+  sql:
+   'update `project` set `_images` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `avatar` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `buildtype` = \'住宅\', `code` = \'N200902009\', `constructionSide` = \'宁波市海曙区集士港镇新村建设办公室\', `constructionState` = NULL, `desc` = \'集士港井亭张3号地块一期（A地块）项目位于集士港镇董家桥村，总用地面积为46428㎡，总建筑面积为129828.55㎡，其中地上建筑面积为95912.42㎡，地下建筑面积33916.13㎡，共16幢均为11层的住宅，住宅总户数840户，机动车停车位771个，非机动车库840间。\', `id` = \'project0000000VI\', `images` = \'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/upload/20200414/20180424_5ade8c7af3684.jpg\', `inputTime` = NULL, `inputor` = NULL, `investionSide` = \'宁波高专建设监理有限公司\', `manager` = NULL, `managetype` = \'项目\', `name` = \'集士港井亭张三2\', `position` = \'海曙\', `state` = NULL, `supervisorSide` = \'浙江工正建设监理咨询有限公司\' where `id` = \'project0000000VI\'' }
+[2020-04-16T15:22:42.099] [ERROR] app - Request without token
+[2020-04-16T15:22:42.101] [ERROR] app - 没有访问权限
+[2020-04-16T16:27:16.212] [ERROR] app - Request without token
+[2020-04-16T16:27:16.213] [ERROR] app - 没有访问权限
+[2020-04-16T16:48:58.744] [ERROR] app - 401
+[2020-04-16T16:48:58.776] [ERROR] app - 401
+[2020-04-16T20:29:13.958] [ERROR] app - 401

@@ -1,0 +1,123 @@
+[2020-03-23T09:33:06.831] [ERROR] app - 403
+[2020-03-23T09:33:06.853] [ERROR] app - 403
+[2020-03-23T09:33:15.869] [ERROR] app - 403
+[2020-03-23T09:42:50.438] [ERROR] app - 403
+[2020-03-23T09:42:50.446] [ERROR] app - 403
+[2020-03-23T09:43:23.125] [ERROR] app - 403
+[2020-03-23T09:44:03.335] [ERROR] app - 403
+[2020-03-23T09:44:28.054] [ERROR] app - 403
+[2020-03-23T09:52:44.960] [ERROR] app - 403
+[2020-03-23T09:52:44.967] [ERROR] app - 403
+[2020-03-23T09:57:45.582] [ERROR] app - 403
+[2020-03-23T09:58:14.895] [ERROR] app - 403
+[2020-03-23T09:58:14.917] [ERROR] app - 403
+[2020-03-23T10:00:31.643] [ERROR] app - 403
+[2020-03-23T10:00:31.666] [ERROR] app - 403
+[2020-03-23T10:18:07.755] [ERROR] app - 403
+[2020-03-23T10:20:25.093] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:21:07.896] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:21:11.193] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:21:24.438] [ERROR] app - 403
+[2020-03-23T10:21:24.447] [ERROR] app - 403
+[2020-03-23T10:21:43.413] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:22:31.974] [ERROR] app - 403
+[2020-03-23T10:22:32.440] [ERROR] app - 403
+[2020-03-23T10:23:00.211] [ERROR] app - 403
+[2020-03-23T10:23:00.769] [ERROR] app - 403
+[2020-03-23T10:23:17.160] [ERROR] app - 403
+[2020-03-23T10:23:17.761] [ERROR] app - 403
+[2020-03-23T10:24:24.017] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:24:30.980] [ERROR] app - TypeError: Cannot read property 'id' of undefined
+    at Object.Get (D:\able_project\CloudServer\restful\v0\sessions.js:38:34)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\CloudServer\routes\restful.js:32:60)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\CloudServer\routes\restful.js:97:19)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\CloudServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\CloudServer\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\CloudServer\middlewares\auth.js:50:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-03-23T10:25:07.494] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:25:14.272] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:25:23.379] [ERROR] app - 403
+[2020-03-23T10:27:02.058] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:27:32.971] [INFO] app - *** SYSTEM STARTUP on PORT (5858) ***
+[2020-03-23T10:28:47.587] [ERROR] app - 401
+[2020-03-23T10:28:47.790] [ERROR] app - 401
+[2020-03-23T10:28:47.794] [ERROR] app - 401
+[2020-03-23T10:29:20.857] [ERROR] app - 401
+[2020-03-23T10:29:41.041] [ERROR] app - 403
+[2020-03-23T10:29:41.049] [ERROR] app - 403
+[2020-03-23T10:29:58.093] [ERROR] app - 401
+[2020-03-23T10:32:25.445] [ERROR] app - 403
+[2020-03-23T10:32:25.464] [ERROR] app - 403
+[2020-03-23T10:33:18.685] [ERROR] app - 401
+[2020-03-23T10:33:18.879] [ERROR] app - 401
+[2020-03-23T10:33:18.882] [ERROR] app - 401
+[2020-03-23T10:34:01.499] [ERROR] app - 403
+[2020-03-23T10:34:01.510] [ERROR] app - 403
+[2020-03-23T10:35:42.602] [ERROR] app - 403
+[2020-03-23T10:35:42.627] [ERROR] app - 403
+[2020-03-23T10:37:14.370] [ERROR] app - 403
+[2020-03-23T10:37:14.406] [ERROR] app - 403
+[2020-03-23T10:37:14.425] [ERROR] app - 401
+[2020-03-23T10:40:31.724] [ERROR] app - 401
+[2020-03-23T10:41:15.910] [ERROR] app - 401
+[2020-03-23T10:44:11.103] [ERROR] app - 401
+[2020-03-23T10:44:11.749] [ERROR] app - 401
+[2020-03-23T10:44:11.768] [ERROR] app - 401
+[2020-03-23T10:44:34.991] [ERROR] app - 403
+[2020-03-23T10:44:35.014] [ERROR] app - 401
+[2020-03-23T10:45:26.805] [ERROR] app - 401
+[2020-03-23T10:45:27.400] [ERROR] app - 401
+[2020-03-23T10:45:27.403] [ERROR] app - 401
+[2020-03-23T10:46:23.450] [ERROR] app - 403
+[2020-03-23T10:46:23.481] [ERROR] app - 403
+[2020-03-23T10:46:39.805] [ERROR] app - 401
+[2020-03-23T10:46:39.810] [ERROR] app - 401
+[2020-03-23T10:47:20.852] [ERROR] app - 401
+[2020-03-23T10:48:34.924] [ERROR] app - 401
+[2020-03-23T10:48:35.280] [ERROR] app - 401
+[2020-03-23T10:48:35.282] [ERROR] app - 401
+[2020-03-23T10:49:07.607] [ERROR] app - 401
+[2020-03-23T10:49:08.232] [ERROR] app - 401
+[2020-03-23T10:49:08.235] [ERROR] app - 401
+[2020-03-23T10:51:13.891] [ERROR] app - 401
+[2020-03-23T10:51:14.214] [ERROR] app - 401
+[2020-03-23T10:51:14.217] [ERROR] app - 401
+[2020-03-23T10:54:47.778] [ERROR] app - 401
+[2020-03-23T10:54:48.350] [ERROR] app - 401
+[2020-03-23T10:54:48.353] [ERROR] app - 401
+[2020-03-23T10:58:17.526] [ERROR] app - 401
+[2020-03-23T10:58:18.143] [ERROR] app - 401
+[2020-03-23T10:58:18.146] [ERROR] app - 401
+[2020-03-23T11:00:24.728] [ERROR] app - 401
+[2020-03-23T11:00:25.241] [ERROR] app - 401
+[2020-03-23T11:00:25.258] [ERROR] app - 401
+[2020-03-23T11:00:30.434] [ERROR] app - 401
+[2020-03-23T11:01:06.099] [ERROR] app - 401
+[2020-03-23T11:01:06.101] [ERROR] app - 401
+[2020-03-23T11:01:10.685] [ERROR] app - 401
+[2020-03-23T11:01:42.943] [ERROR] app - 401
+[2020-03-23T11:01:43.556] [ERROR] app - 401
+[2020-03-23T11:01:43.558] [ERROR] app - 401
+[2020-03-23T11:03:32.948] [ERROR] app - 401
+[2020-03-23T11:07:37.973] [ERROR] app - 401
+[2020-03-23T11:07:47.301] [ERROR] app - 403
+[2020-03-23T11:07:47.303] [ERROR] app - 401
+[2020-03-23T11:08:53.988] [ERROR] app - 401
+[2020-03-23T11:08:54.011] [ERROR] app - 403
+[2020-03-23T12:28:17.264] [ERROR] app - 401
+[2020-03-23T12:35:24.214] [ERROR] app - 401
+[2020-03-23T12:36:05.283] [ERROR] app - 401
+[2020-03-23T16:04:02.264] [ERROR] app - 401
+[2020-03-23T16:20:10.438] [ERROR] app - 401
+[2020-03-23T16:21:46.835] [ERROR] app - 401

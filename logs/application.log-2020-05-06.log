@@ -1,0 +1,160 @@
+[2020-05-06T08:17:01.296] [ERROR] app - 401
+[2020-05-06T08:17:01.303] [ERROR] app - 401
+[2020-05-06T08:17:54.692] [ERROR] app - 401
+[2020-05-06T08:18:49.155] [ERROR] app - 401
+[2020-05-06T08:19:04.600] [ERROR] app - 401
+[2020-05-06T08:19:06.802] [ERROR] app - 401
+[2020-05-06T08:19:06.806] [ERROR] app - 401
+[2020-05-06T08:30:50.295] [ERROR] app - 401
+[2020-05-06T08:31:20.138] [ERROR] app - 401
+[2020-05-06T08:31:22.470] [ERROR] app - 401
+[2020-05-06T08:31:22.477] [ERROR] app - 401
+[2020-05-06T08:31:29.377] [ERROR] app - 401
+[2020-05-06T08:31:31.419] [ERROR] app - 401
+[2020-05-06T08:31:31.421] [ERROR] app - 401
+[2020-05-06T08:36:14.553] [ERROR] app - 401
+[2020-05-06T08:37:00.745] [ERROR] app - 401
+[2020-05-06T08:39:05.785] [ERROR] app - 401
+[2020-05-06T08:39:07.932] [ERROR] app - 401
+[2020-05-06T08:39:07.951] [ERROR] app - 401
+[2020-05-06T08:41:05.439] [ERROR] app - 401
+[2020-05-06T08:41:05.441] [ERROR] app - 401
+[2020-05-06T08:42:37.224] [ERROR] app - 401
+[2020-05-06T08:42:37.232] [ERROR] app - 401
+[2020-05-06T08:42:45.110] [ERROR] app - 401
+[2020-05-06T09:35:07.229] [INFO] app - API_METHOD_UNDEFINED:object=oa,method=List
+[2020-05-06T09:37:57.987] [ERROR] app - 401
+[2020-05-06T09:37:57.991] [ERROR] app - 401
+[2020-05-06T09:42:43.274] [ERROR] app - 401
+[2020-05-06T09:42:43.278] [ERROR] app - 401
+[2020-05-06T09:43:58.615] [ERROR] app - 401
+[2020-05-06T09:43:58.618] [ERROR] app - 401
+[2020-05-06T09:50:30.875] [INFO] app - API_METHOD_UNDEFINED:object=oa,method=List
+[2020-05-06T09:51:53.583] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T09:51:53.604] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T09:51:57.340] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T09:52:02.541] [ERROR] app - 401
+[2020-05-06T09:52:02.544] [ERROR] app - 401
+[2020-05-06T09:52:04.780] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T09:52:09.866] [ERROR] app - 401
+[2020-05-06T09:52:25.447] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T09:52:25.450] [ERROR] app - 401
+[2020-05-06T09:52:55.566] [ERROR] app - 401
+[2020-05-06T09:53:04.445] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T09:53:04.448] [ERROR] app - 401
+[2020-05-06T09:56:27.446] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T09:57:42.363] [ERROR] app - 401
+[2020-05-06T09:59:41.330] [ERROR] app - 401
+[2020-05-06T10:00:16.139] [INFO] app - API_VERSION_UNDEFINED:api-version=v0,exception=[object Object]
+[2020-05-06T10:00:16.162] [ERROR] app - 401
+[2020-05-06T10:02:58.789] [ERROR] app - 401
+[2020-05-06T10:03:11.887] [ERROR] app - 401
+[2020-05-06T10:03:14.557] [ERROR] app - ReferenceError: condition is not defined
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\oa.js:9:3)
+    at RestfulAPIMethods.(anonymous function) (D:\able_project\gzcloud2\Server\routes\restful.js:32:60)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (D:\able_project\gzcloud2\Server\routes\restful.js:97:19)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\able_project\gzcloud2\Server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\able_project\gzcloud2\Server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\able_project\gzcloud2\Server\middlewares\auth.js:59:9)
+[2020-05-06T10:04:20.455] [ERROR] app - { Error: ER_BAD_DB_ERROR: Unknown database 'oa'
+    at Handshake.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Handshake.js:124:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:118:18)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:106:18
+From previous event:
+    at Client_MySQL.acquireRawConnection (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:104:12)
+    at Object.create (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:239:16)
+    at Pool._createResource (D:\able_project\gzcloud2\Server\node_modules\generic-pool\lib\generic-pool.js:354:17)
+    at Pool.dispense [as _dispense] (D:\able_project\gzcloud2\Server\node_modules\generic-pool\lib\generic-pool.js:314:10)
+    at Pool.acquire (D:\able_project\gzcloud2\Server\node_modules\generic-pool\lib\generic-pool.js:436:8)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:289:19
+From previous event:
+    at Client_MySQL.acquireConnection (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:280:12)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:208:30
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:206:35
+From previous event:
+    at Runner.ensureConnection (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:205:34)
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:42)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_BAD_DB_ERROR',
+  errno: 1049,
+  sqlMessage: 'Unknown database \'oa\'',
+  sqlState: '42000',
+  fatal: true }
+[2020-05-06T10:05:13.042] [ERROR] app - { Error: ER_NO_SUCH_TABLE: Table 'gzadmin.contracts' doesn't exist
+    at Query.Sequence._packetToError (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\sequences\Query.js:77:18)
+    at Protocol._parsePacket (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:278:23)
+    at Parser.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Parser.js:76:12)
+    at Protocol.write (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:91:28)
+    at Socket.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:502:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead [as onread] (internal/stream_base_commons.js:94:17)
+    at Protocol._enqueue (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\able_project\gzcloud2\Server\node_modules\mysql\lib\Connection.js:200:25)
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:152:18
+From previous event:
+    at Client_MySQL._query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\dialects\mysql\index.js:146:12)
+    at Client_MySQL.query (D:\able_project\gzcloud2\Server\node_modules\knex\lib\client.js:197:17)
+    at Runner.<anonymous> (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:146:36)
+From previous event:
+    at D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:65:21
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+From previous event:
+    at Runner.run (D:\able_project\gzcloud2\Server\node_modules\knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\able_project\gzcloud2\Server\node_modules\knex\lib\interface.js:35:43)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'gzadmin.contracts\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql:
+   'select * from `contracts` where `splited` <> 1 or `splited` is null or `virtualSplit` = 1' }
+[2020-05-06T10:09:49.400] [ERROR] app - 401
+[2020-05-06T10:09:49.425] [ERROR] app - 401
+[2020-05-06T10:16:41.003] [ERROR] app - 401
+[2020-05-06T10:16:41.006] [ERROR] app - 401
+[2020-05-06T10:19:10.647] [ERROR] app - 401
+[2020-05-06T11:26:26.622] [ERROR] app - 401
+[2020-05-06T11:26:26.624] [ERROR] app - 401
+[2020-05-06T15:30:26.410] [ERROR] app - TypeError: Cannot read property 'nodes' of undefined
+    at List.nodes.forEach.v (D:\able_project\gzcloud2\Server\restful\v0\oa.js:32:35)
+    at Array.forEach (<anonymous>)
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\oa.js:31:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-06T15:32:32.248] [ERROR] app - TypeError: Cannot read property 'nodes' of undefined
+    at List.nodes.forEach.v (D:\able_project\gzcloud2\Server\restful\v0\oa.js:32:35)
+    at Array.forEach (<anonymous>)
+    at Object.List (D:\able_project\gzcloud2\Server\restful\v0\oa.js:31:9)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-05-06T16:01:54.607] [ERROR] app - 401

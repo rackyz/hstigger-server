@@ -1,0 +1,211 @@
+[2020-07-08T08:43:31.397] [ERROR] app - Error: Empty .update() call detected! Update data does not contain any values to update. This will result in a faulty query. Table: user. Columns: .
+    at QueryCompiler_MySQL._prepUpdate (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:820:13)
+    at QueryCompiler_MySQL.update (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\query\compiler.js:24:26)
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:62:29)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:72:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:31:36
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:128:42)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-07-08T08:45:14.824] [ERROR] app - Error: Empty .update() call detected! Update data does not contain any values to update. This will result in a faulty query. Table: user. Columns: .
+    at QueryCompiler_MySQL._prepUpdate (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:820:13)
+    at QueryCompiler_MySQL.update (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\query\compiler.js:24:26)
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:62:29)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:72:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:31:36
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:128:42)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-07-08T08:46:10.415] [ERROR] app - Error: Empty .update() call detected! Update data does not contain any values to update. This will result in a faulty query. Table: user. Columns: .
+    at QueryCompiler_MySQL._prepUpdate (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:820:13)
+    at QueryCompiler_MySQL.update (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\dialects\mysql\query\compiler.js:24:26)
+    at QueryCompiler_MySQL.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\compiler.js:62:29)
+    at Builder.toSQL (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\query\builder.js:72:44)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:31:36
+    at client.acquireConnection.catch.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\runner.js:260:24)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1159:14)
+    at runCallback (timers.js:694:18)
+    at tryOnImmediate (timers.js:665:5)
+    at processImmediate (timers.js:647:5)
+From previous event:
+    at Child.<anonymous> (C:\Users\BIM02\Desktop\ServerKT\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at B.transaction.trx (C:\Users\BIM02\Desktop\ServerKT\restful\v0\users.js:128:42)
+    at init.then.then (C:\Users\BIM02\Desktop\ServerKT\node_modules\knex\lib\transaction.js:184:22)
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+[2020-07-08T08:57:49.340] [ERROR] app - { key: 'phone', error: '电话号码已存在' }
+[2020-07-08T16:28:22.089] [ERROR] app - 401
+[2020-07-08T16:29:42.368] [ERROR] app - 登录已过期
+[2020-07-08T16:48:02.686] [ERROR] app - { Error: EISDIR: illegal operation on a directory, read
+    at Object.readSync (fs.js:491:3)
+    at tryReadSync (fs.js:330:20)
+    at Object.readFileSync (fs.js:367:19)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:9:19)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12 errno: -4068, syscall: 'read', code: 'EISDIR' }
+[2020-07-08T16:48:25.328] [ERROR] app - TypeError: fs.readDirSync is not a function
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:9:19)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+    at module.exports (C:\Users\BIM02\Desktop\ServerKT\middlewares\auth.js:77:9)
+[2020-07-08T16:49:05.280] [ERROR] app - { Error: ENOENT: no such file or directory, scandir '..\..\logs'
+    at Object.readdirSync (fs.js:764:3)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:9:19)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+  errno: -4058,
+  syscall: 'scandir',
+  code: 'ENOENT',
+  path: '..\\..\\logs' }
+[2020-07-08T16:49:11.355] [ERROR] app - { Error: ENOENT: no such file or directory, scandir '..\..\logs\'
+    at Object.readdirSync (fs.js:764:3)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:9:19)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+  errno: -4058,
+  syscall: 'scandir',
+  code: 'ENOENT',
+  path: '..\\..\\logs\\' }
+[2020-07-08T16:49:27.461] [ERROR] app - { Error: ENOENT: no such file or directory, scandir '..\..\logs'
+    at Object.readdirSync (fs.js:764:3)
+    at Object.out.List (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:9:19)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-compose\index.js:42:32)
+  errno: -4058,
+  syscall: 'scandir',
+  code: 'ENOENT',
+  path: '..\\..\\logs' }
+[2020-07-08T16:58:33.879] [ERROR] app - TypeError: Cannot read property 'slice' of undefined
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:24:19)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-08T17:00:53.257] [ERROR] app - SyntaxError: Invalid regular expression: /[(*.)] [(*.)] (*)/: Nothing to repeat
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:22:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
+[2020-07-08T17:01:00.011] [ERROR] app - SyntaxError: Invalid regular expression: /[(*.)] [(*.)] (*)/: Nothing to repeat
+    at data.map.v (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:22:21)
+    at Array.map (<anonymous>)
+    at Object.out.Get (C:\Users\BIM02\Desktop\ServerKT\restful\v0\logs.js:21:15)
+    at RestfulAPIMethods.(anonymous function) (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:32:60)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at route.use (C:\Users\BIM02\Desktop\ServerKT\routes\restful.js:97:19)
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (C:\Users\BIM02\Desktop\ServerKT\node_modules\koa-router\lib\router.js:351:31)
