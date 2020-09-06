@@ -5,7 +5,7 @@ exports.up = function (knex) {
       table.uuid('user_id').notNullable ()
       table.datetime('login_at').notNullable ()
       table.integer('expire_time').notNullable ()
-      table.string('client_device',32).notNullable ()
+      table.string('client_device',128).notNullable ()
       table.string('ip',16).notNullable ()
     }), 
     knex.schema.createTable('user', function (table) {
@@ -15,6 +15,7 @@ exports.up = function (knex) {
       table.string('password',32).notNullable();
       table.string('name',32);
       table.text('avatar');
+      table.datetime('lastlogin_at');
       table.datetime('created_at');
       table.uuid('created_by');
       table.integer('state').defaultTo(0);
@@ -24,8 +25,8 @@ exports.up = function (knex) {
       table.string('key', 16);
       table.integer('parent_id');
       table.string('name',64).notNullable ();
-      table.string('color',16).notNullable ();
-      table.string('data',32).notNullable ();
+      table.string('color',16).defaultTo('#000000');
+      table.string('data',32);
       table.boolean('add');
       table.boolean('edit');
       table.boolean('del');
@@ -35,16 +36,17 @@ exports.up = function (knex) {
       table.increments('id').index();
       table.integer('parent_id')
       table.string('name',64).notNullable ();
-      table.string('color',16).notNullable ();
-      table.string('data',32).notNullable ();
+      table.string('color',16).defaultTo('#000000');
+      table.string('data',32);
     }),
     knex.schema.createTable("role", function (table) {
       table.increments('id').index();
+      table.integer('type_id');
       table.string('name',64).notNullable ();
       table.string('icon',32).notNullable();
       table.string('color',16).notNullable ();
-      table.string('data',32)
-      table.string('desc',64)
+      table.string('data',32);
+      table.string('desc',64);
     }),
     knex.schema.createTable('project', function (table) {
       table.increments('id').index();
@@ -57,7 +59,7 @@ exports.up = function (knex) {
       table.float('building_height');
       table.integer('levels');
       table.float('amount');
-      table.string('data',32).notNullable ();
+      table.string('data',32);
       table.datetime('created_at');
       table.uuid('created_by');
     }),
@@ -117,7 +119,7 @@ exports.up = function (knex) {
 
 
     ...['type','dep','role','project','task','file','archive'].map(v=>
-      knex.schema.raw(`ALTER TABLE ${v} SET AUTO_INCREMENT=1000`))
+      knex.schema.raw(`ALTER TABLE ${v} AUTO_INCREMENT=1000`))
     
   ]);
 }

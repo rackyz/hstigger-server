@@ -33,10 +33,10 @@ const CONF = {
   mysql: {
     client: 'mysql',
     connection: {
-      host: '192.168.14.3',
-      port: 3306,
-      user: 'nbgz',
-      password: 'nbgz123',
+      host: 'cdb-gtz432y7.gz.tencentcdb.com',
+      port: 10133,
+      user: 'tigger',
+      password: 'Hujiahan1234',
       database: 'gzcloud_orm'
     },
     acquireConnectionTimeout: 30000,
