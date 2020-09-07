@@ -5,7 +5,7 @@ exports.up = function (knex) {
       table.uuid('user_id').notNullable ()
       table.datetime('login_at').notNullable ()
       table.integer('expire_time').notNullable ()
-      table.string('client_device',128).notNullable ()
+      table.string('client_device',256).notNullable ()
       table.string('ip',16).notNullable ()
     }), 
     knex.schema.createTable('user', function (table) {

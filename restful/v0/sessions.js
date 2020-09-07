@@ -19,6 +19,10 @@ const { getDateStamp } = require('../../models/util')
 async function CreateSession(ctx,user_id){
      let ip = util.getIP(ctx)
      let client_device = util.getDevice(ctx)
+
+     if(client_device){
+       client_device = client_device.slice(0,64)
+     }
      let login_at = util.getTimeStamp()
      let expire_time = 60 * 24 * 60
 
@@ -93,6 +97,7 @@ async function LoginWithPassword({user,phone,password}){
       if (!model)
         throw E.E_USER_UNREGISTERATED
 
+        console.log(password, crypto.createHash("md5").update(model.get('password')).digest('hex'))
       if (crypto.createHash("md5").update(model.get('password')).digest('hex') !== password)
         throw (E.E_USER_INCCORECT_PASSWORD)
       
