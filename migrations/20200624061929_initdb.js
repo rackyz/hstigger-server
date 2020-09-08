@@ -13,6 +13,7 @@ exports.up = function (knex) {
       table.string('user',16).unique();
       table.string('phone',16).unique();
       table.string('password',32).notNullable();
+      table.string('frame',16);
       table.string('name',32);
       table.text('avatar');
       table.datetime('lastlogin_at');

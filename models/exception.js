@@ -6,7 +6,7 @@ module.exports = {
   E_INVALID_TOKEN: "非法访问",
   E_UNEXPECTED_TOKEN: "非法访问",
   E_OUT_OF_DATE:"登录已过期",
-
+  E_DO_NOT_PERMITTED:"不允许进行这种操作",
   // SESSION
   E_SESSION_LOGIN_LATER: "登录次数过多, 请15分钟后再登录",
 

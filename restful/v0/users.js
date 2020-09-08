@@ -33,7 +33,6 @@ out.Patch = async ctx=>{
   }
 
   return updateInfo
-
 }
 
 
@@ -58,6 +57,10 @@ out.Get = async ctx=>{
 
 out.Delete = async ctx=>{
   let id = ctx.params.id
+
+  if(id && id.includes('sys_'))
+    throw E.E_DO_NOT_PERMITTED
+
   let user = User.forge({
     id
   })
