@@ -1,76 +1,125 @@
-[2020-09-06T20:58:58.141] [ERROR] app - Error: ER_DATA_TOO_LONG: Data too long for column 'client_device' at row 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+[2020-09-11T05:40:43.754] [ERROR] app - 不允许进行这种操作
+[2020-09-11T05:40:49.472] [ERROR] app - ErrorCtor [CustomError]: No Rows Deleted
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:1306:19)
+    at Child.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
 From previous event:
     at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Child.save (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
-    at CreateSession (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:49:8)
-    at processTicksAndRejections (internal/process/task_queues.js:97:5)
-    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:118:15)
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:34)
-    at async C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:13
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:36:7)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
-  code: 'ER_DATA_TOO_LONG',
-  errno: 1406,
-  sqlMessage: "Data too long for column 'client_device' at row 1",
-  sqlState: '22001',
-  index: 0,
-  sql: "insert into `session` (`client_device`, `expire_time`, `id`, `ip`, `login_at`, `user_id`) values ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36', 86400, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InN5c19yb290IiwiaWF0IjoxNTk5Mzk3MTM4LCJleHAiOjE1OTk0ODM1Mzh9.Re42KkcP3oOpYFdcO69mRoBk4puhdc_zUt7Ky8M5CTE', '127.0.0.1', '2020-09-06 20:58:58', 'sys_root')"
+    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
+    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
+    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
+    at Transaction_MySQL.Transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\transaction.js:68:41)
+    at new Transaction_MySQL (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\transaction.js:36:25)
+    at Client_MySQL.transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:88:12)
+    at Function.transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\util\make-knex.js:75:21)
+    at Object.transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\bookshelf.js:390:36)
+    at Object.out.Delete (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\users.js:67:11)
+    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:60)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:10)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:19
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32) {
+  message: 'No Rows Deleted'
 }
-[2020-09-06T21:00:34.874] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'lastlogin_at' in 'field list'
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+[2020-09-11T06:37:56.896] [WARN] app - 数据传输错误,请联系管理员
+[2020-09-11T06:37:56.904] [ERROR] app - 数据传输错误,请联系管理员
+[2020-09-11T06:38:07.057] [WARN] app - 数据传输错误,请联系管理员
+[2020-09-11T06:38:07.069] [ERROR] app - 数据传输错误,请联系管理员
+[2020-09-11T07:06:39.079] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:417:28)
     at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+    at Socket._onTimeout (net.js:478:8)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
     at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
+    at Protocol.handshake (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:116:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:106:18
     at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
     at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+    at new Promise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:103:10)
+    at Client_MySQL.acquireRawConnection (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:104:12)
+    at Object.create (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:239:16)
+    at Pool._createResource (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:354:17)
+    at Pool.dispense [as _dispense] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:314:10)
+    at Pool.acquire (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:436:8)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:289:19
 From previous event:
     at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Child.save (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
-    at CreateSession (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:57:8)
-    at processTicksAndRejections (internal/process/task_queues.js:97:5)
-    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:118:15)
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:34)
-    at async C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:13
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:36:7)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
-  code: 'ER_BAD_FIELD_ERROR',
-  errno: 1054,
-  sqlMessage: "Unknown column 'lastlogin_at' in 'field list'",
-  sqlState: '42S22',
-  index: 0,
-  sql: "update `user` set `lastlogin_at` = '2020-09-06 21:00:34' where `id` = 'sys_root'"
+    at Function.Promise.attempt.Promise.try (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:29:9)
+    at Runner.ensureConnection (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:205:34)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:42)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
+    at Builder.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at doThenable (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\thenables.js:63:38)
+    at tryConvertToPromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\thenables.js:28:20)
+    at Promise._resolveCallback (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:465:24)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21) {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-11T07:06:40.105] [ERROR] app - Error: getaddrinfo ENOTFOUND cdb-gtz432y7.gz.tencentcdb.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:64:26)
+    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:116:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:106:18
+    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
+    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+    at new Promise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:103:10)
+    at Client_MySQL.acquireRawConnection (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:104:12)
+    at Object.create (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:239:16)
+    at Pool._createResource (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:354:17)
+    at Pool.dispense [as _dispense] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:314:10)
+    at Pool.acquire (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:436:8)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:289:19
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Function.Promise.attempt.Promise.try (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:29:9)
+    at Runner.ensureConnection (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:205:34)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:42)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
+    at Builder.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at doThenable (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\thenables.js:63:38)
+    at tryConvertToPromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\thenables.js:28:20)
+    at Promise._resolveCallback (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:465:24)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:559:17)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21) {
+  errno: 'ENOTFOUND',
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'cdb-gtz432y7.gz.tencentcdb.com',
+  fatal: true
 }
