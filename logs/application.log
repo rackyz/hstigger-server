@@ -1,76 +1,425 @@
-[2020-09-06T20:58:58.141] [ERROR] app - Error: ER_DATA_TOO_LONG: Data too long for column 'client_device' at row 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+[2020-09-10T09:17:30.794] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
 From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Child.save (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
-    at CreateSession (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:49:8)
-    at processTicksAndRejections (internal/process/task_queues.js:97:5)
-    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:118:15)
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:34)
-    at async C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:13
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:36:7)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
-  code: 'ER_DATA_TOO_LONG',
-  errno: 1406,
-  sqlMessage: "Data too long for column 'client_device' at row 1",
-  sqlState: '22001',
-  index: 0,
-  sql: "insert into `session` (`client_device`, `expire_time`, `id`, `ip`, `login_at`, `user_id`) values ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36', 86400, 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InN5c19yb290IiwiaWF0IjoxNTk5Mzk3MTM4LCJleHAiOjE1OTk0ODM1Mzh9.Re42KkcP3oOpYFdcO69mRoBk4puhdc_zUt7Ky8M5CTE', '127.0.0.1', '2020-09-06 20:58:58', 'sys_root')"
-}
-[2020-09-06T21:00:34.874] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'lastlogin_at' in 'field list'
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+    at processImmediate (internal/timers.js:458:21)
 From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Child.save (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
-    at CreateSession (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:57:8)
-    at processTicksAndRejections (internal/process/task_queues.js:97:5)
-    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\sessions.js:118:15)
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:34)
-    at async C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:13
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:36:7)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
-  code: 'ER_BAD_FIELD_ERROR',
-  errno: 1054,
-  sqlMessage: "Unknown column 'lastlogin_at' in 'field list'",
-  sqlState: '42S22',
-  index: 0,
-  sql: "update `user` set `lastlogin_at` = '2020-09-06 21:00:34' where `id` = 'sys_root'"
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
 }
+[2020-09-10T09:21:35.578] [ERROR] app - 登录已过期
+[2020-09-10T09:22:28.113] [ERROR] app - 登录已过期
+[2020-09-10T09:22:28.177] [ERROR] app - 登录已过期
+[2020-09-10T09:22:33.352] [ERROR] app - 登录已过期
+[2020-09-10T09:22:33.393] [ERROR] app - 登录已过期
+[2020-09-10T09:22:37.511] [ERROR] app - 密码错误
+[2020-09-10T09:29:46.479] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-10T09:30:40.708] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-10T10:02:32.152] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-10T10:10:01.054] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-10T10:10:02.081] [ERROR] app - Error: getaddrinfo ENOTFOUND cdb-gtz432y7.gz.tencentcdb.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at LoginWithPassword (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:92:10)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:122:21)
+    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:60)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:19
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:351:31)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at LoginWithPassword (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:92:10)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:122:21)
+    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:60)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:19
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:36:13)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14 {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'cdb-gtz432y7.gz.tencentcdb.com',
+  fatal: true
+}
+[2020-09-10T10:13:31.455] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-10T10:13:32.482] [ERROR] app - Error: getaddrinfo ENOTFOUND cdb-gtz432y7.gz.tencentcdb.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at LoginWithPassword (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:92:10)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:122:21)
+    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:60)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:19
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:351:31)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at LoginWithPassword (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:92:10)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:122:21)
+    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:60)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:19
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:36:13)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14 {
+  errno: -3008,
+  code: 'ENOTFOUND',
+  syscall: 'getaddrinfo',
+  hostname: 'cdb-gtz432y7.gz.tencentcdb.com',
+  fatal: true
+}
+[2020-09-10T10:30:36.481] [ERROR] app - 用户未登录
+[2020-09-10T10:30:36.517] [ERROR] app - 用户未登录
+[2020-09-10T10:31:32.855] [ERROR] app - 用户未登录
+[2020-09-10T10:31:32.893] [ERROR] app - 用户未登录
+[2020-09-10T10:37:34.737] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at LoginWithPassword (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:92:10)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:122:21)
+    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:60)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:19
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:351:31)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at LoginWithPassword (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:92:10)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:122:21)
+    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:60)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:19
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at next (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:346:16
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-router\lib\router.js:351:31)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:36:13)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-10T10:38:14.607] [ERROR] app - 用户未登录
+[2020-09-10T10:38:14.651] [ERROR] app - 用户未登录
+[2020-09-10T10:39:33.848] [ERROR] app - 用户未登录
+[2020-09-10T10:39:33.886] [ERROR] app - 用户未登录
+[2020-09-10T10:43:08.413] [ERROR] app - 用户未登录
+[2020-09-10T10:43:08.461] [ERROR] app - 用户未登录
+[2020-09-10T10:43:34.730] [ERROR] app - 用户未登录
+[2020-09-10T10:43:34.789] [ERROR] app - 用户未登录
+[2020-09-10T10:44:42.288] [ERROR] app - 用户未登录
+[2020-09-10T10:44:42.324] [ERROR] app - 用户未登录
+[2020-09-10T10:45:07.891] [ERROR] app - 用户未登录
+[2020-09-10T10:45:07.930] [ERROR] app - 用户未登录
+[2020-09-10T13:54:40.355] [ERROR] app - 用户名不存在
+[2020-09-10T13:54:49.451] [ERROR] app - 用户名不存在
+[2020-09-10T14:17:59.210] [ERROR] app - 用户名不存在
