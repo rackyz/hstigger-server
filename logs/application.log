@@ -123,3 +123,349 @@ From previous event:
   hostname: 'cdb-gtz432y7.gz.tencentcdb.com',
   fatal: true
 }
+[2020-09-11T09:11:08.285] [ERROR] app - Error: connect ETIMEDOUT
+    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
+    at Object.onceWrapper (events.js:420:28)
+    at Socket.emit (events.js:314:20)
+    at Socket._onTimeout (net.js:483:8)
+    at listOnTimeout (internal/timers.js:551:17)
+    at processTimers (internal/timers.js:494:7)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
+    at new Promise (<anonymous>)
+    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
+    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+From previous event:
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
+From previous event:
+    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
+    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
+    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
+  errorno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  syscall: 'connect',
+  fatal: true
+}
+[2020-09-11T09:11:48.418] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
+    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:29:12)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:186:17)
+    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
+    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T09:12:01.526] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
+    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:29:12)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:186:17)
+    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
+    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T09:15:03.951] [ERROR] app - Error: insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:15:03', 'sys_root', 'efb91dd6-22ef-4ef3-bc4c-7b00d310435c', '12314', '123456', '5123') - ER_DUP_ENTRY: Duplicate entry '5123' for key 'user_user_unique'
+    at Query.Sequence._packetToError (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:198:25)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:169:17)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:321:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:316:12)
+    at Runner.query (D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:134:36)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:40:23
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:260:24
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1159:14)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:27
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:184:22
+    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: "Duplicate entry '5123' for key 'user_user_unique'",
+  sqlState: '23000',
+  index: 0,
+  sql: "insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:15:03', 'sys_root', 'efb91dd6-22ef-4ef3-bc4c-7b00d310435c', '12314', '123456', '5123')"
+}
+[2020-09-11T09:33:15.556] [ERROR] app - Error: insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:33:15', 'sys_root', 'f9b88dc8-d06e-40f5-8eab-47790640c38e', '12314', '123456', '5123') - ER_DUP_ENTRY: Duplicate entry '5123' for key 'user_user_unique'
+    at Query.Sequence._packetToError (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:198:25)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:169:17)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:321:24
+    at new Promise (<anonymous>)
+    at Client_MySQL.trxClient.query (D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:316:12)
+    at Runner.query (D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:134:36)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:40:23
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:260:24
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1160:42)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1159:14)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1060:10)
+From previous event:
+    at D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:27
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:184:22
+    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
+  code: 'ER_DUP_ENTRY',
+  errno: 1062,
+  sqlMessage: "Duplicate entry '5123' for key 'user_user_unique'",
+  sqlState: '23000',
+  index: 0,
+  sql: "insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:33:15', 'sys_root', 'f9b88dc8-d06e-40f5-8eab-47790640c38e', '12314', '123456', '5123')"
+}
+[2020-09-11T09:34:04.316] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
+    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:31:14)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:17)
+    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
+    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T09:34:50.646] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
+    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:30:23)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:17)
+    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
+    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T09:35:14.885] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
+[2020-09-11T09:36:33.131] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
+[2020-09-11T09:37:33.873] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
+[2020-09-11T09:40:11.418] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
+[2020-09-11T09:41:02.453] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
+[2020-09-11T10:04:12.622] [ERROR] app - Error: ER_DATA_TOO_LONG: Data too long for column 'to' at row 1
+    at Query.Sequence._packetToError (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    --------------------
+    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:198:25)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:135:18
+    at new Promise (<anonymous>)
+    at Client_MySQL._query (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:129:12)
+    at Client_MySQL.query (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:169:17)
+    at Runner.query (D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:134:36)
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:40:23
+    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:260:24
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.utils.sendMessage (D:\hstigger\hstigger-server\hstigger-server\models\util.js:53:4)
+    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:136:3)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
+    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9) {
+  code: 'ER_DATA_TOO_LONG',
+  errno: 1406,
+  sqlMessage: "Data too long for column 'to' at row 1",
+  sqlState: '22001',
+  index: 0,
+  sql: "insert into `message` (`content`, `created_at`, `from`, `to`) values ('欢迎登录系统', '2020-09-11 10:04:12', 'system', '24231440-cff8-41b4-9116-9422777ee4aa')"
+}
+[2020-09-11T10:11:42.533] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:11:48.514] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:13:22.399] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:14:12.735] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:14:12.814] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:20:14.309] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
+[2020-09-11T10:20:21.130] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
+[2020-09-11T10:20:45.237] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:20:50.153] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:21:09.035] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:21:12.859] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:21:15.891] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:24:26.638] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:24:26.717] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
+    at processImmediate (internal/timers.js:458:21)
+From previous event:
+    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+From previous event:
+    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
+    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
+    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
+[2020-09-11T10:24:29.582] [ERROR] app - 用户名不存在

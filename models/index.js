@@ -24,12 +24,15 @@ models.Session = B.model('Session', {
 
 // **** Model -- USER **** /
 function HandleUserException(e,ctx){
+  Debug(ctx)
    if (e.code == "ER_DUP_ENTRY") {
      if (e.message.includes('user_unique')) {
-       ctx.userlog.warn(ctx.state.name + ' ' + E.E_USER_USER_EXIST.message)
+       if (ctx && ctx.userlog && ctx.applog)
+         ctx.userlog.warn(ctx.state.name + ' ' + E.E_USER_USER_EXIST.error)
        throw E.E_USER_USER_EXIST
      } else {
-       ctx.userlog.warn(ctx.state.name + ' ' + E.E_USER_PHONE_EXIST.message)
+       if (ctx && ctx.userlog && ctx.applog)
+        ctx.userlog.warn(ctx.state.name + ' ' + E.E_USER_PHONE_EXIST.error)
        throw E.E_USER_PHONE_EXIST
      }
    } else {
@@ -208,7 +211,7 @@ models.User = B.model('User', {
           return t.commit(model)
         }
       }).catch(t.rollback)
-    }).catch(HandleUserException)
+    }).catch(e=>HandleUserException(e,ctx))
      
      
     return model.toJSON({visible:['id','created_by','created_at']})

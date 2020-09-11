@@ -2,8 +2,8 @@ exports.up = function (knex) {
   return Promise.all([
     knex.schema.createTable('message', function (table) {
       table.increments('id').index();
-      table.string('to', 32);
-      table.string('from', 32);
+      table.string('to', 64);
+      table.string('from', 64);
       table.text('content');
       table.string('inputor',32)
       table.datetime('created_at')

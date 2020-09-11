@@ -16,10 +16,10 @@ module.exports = {
   E_USER_LOCKED: '该账户已锁定,请联系管理员',
   E_USER_PHONE_EXIST: {
     key: "phone",
-    error: "用户注册失败:电话号码已存在"
+    error: "添加用户失败:电话号码已存在"
   },
   E_USER_USER_EXIST: {
     key: "user",
-    error: "用户注册失败:用户名已存在"
+    error: "添加用户失败:用户名已存在"
   }
 }
