@@ -39,7 +39,7 @@ function HandleUserException(e,ctx){
 }
 
 
-const PATCHABLE_COLUMNS = ['user', 'avatar', 'phone', 'name', 'deps', 'roles', 'password']
+const PATCHABLE_COLUMNS = ['user', 'avatar', 'phone', 'name', 'deps', 'roles', 'password','state']
 models.User = B.model('User', {
   tableName: 'user',
   uuid: true,
@@ -85,6 +85,7 @@ models.User = B.model('User', {
 
       if(v.password == '123456')
         v.passweak = 1
+      delete v.password
     })
     return users
   },
