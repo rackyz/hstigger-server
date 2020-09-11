@@ -1,45 +1,4 @@
-[2020-09-11T05:40:43.754] [ERROR] app - 不允许进行这种操作
-[2020-09-11T05:40:49.472] [ERROR] app - ErrorCtor [CustomError]: No Rows Deleted
-    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:1306:19)
-    at Child.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
-    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
-    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
-    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
-    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
-    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
-    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
-    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Transaction_MySQL.Transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\transaction.js:68:41)
-    at new Transaction_MySQL (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\transaction.js:36:25)
-    at Client_MySQL.transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:88:12)
-    at Function.transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\util\make-knex.js:75:21)
-    at Object.transaction (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\bookshelf.js:390:36)
-    at Object.out.Delete (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\users.js:67:11)
-    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:60)
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:10)
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:19
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32) {
-  message: 'No Rows Deleted'
-}
-[2020-09-11T06:37:56.896] [WARN] app - 数据传输错误,请联系管理员
-[2020-09-11T06:37:56.904] [ERROR] app - 数据传输错误,请联系管理员
-[2020-09-11T06:38:07.057] [WARN] app - 数据传输错误,请联系管理员
-[2020-09-11T06:38:07.069] [ERROR] app - 数据传输错误,请联系管理员
-[2020-09-11T07:06:39.079] [ERROR] app - Error: connect ETIMEDOUT
+[2020-09-12T05:49:48.229] [ERROR] app - Error: connect ETIMEDOUT
     at Connection._handleConnectTimeout (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:409:13)
     at Object.onceWrapper (events.js:417:28)
     at Socket.emit (events.js:311:20)
@@ -83,7 +42,7 @@ From previous event:
   syscall: 'connect',
   fatal: true
 }
-[2020-09-11T07:06:40.105] [ERROR] app - Error: getaddrinfo ENOTFOUND cdb-gtz432y7.gz.tencentcdb.com
+[2020-09-12T05:49:49.253] [ERROR] app - Error: getaddrinfo ENOTFOUND cdb-gtz432y7.gz.tencentcdb.com
     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:64:26)
     at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
     at Protocol.handshake (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:51:23)
@@ -123,349 +82,405 @@ From previous event:
   hostname: 'cdb-gtz432y7.gz.tencentcdb.com',
   fatal: true
 }
-[2020-09-11T09:11:08.285] [ERROR] app - Error: connect ETIMEDOUT
-    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:409:13)
-    at Object.onceWrapper (events.js:420:28)
-    at Socket.emit (events.js:314:20)
-    at Socket._onTimeout (net.js:483:8)
-    at listOnTimeout (internal/timers.js:551:17)
-    at processTimers (internal/timers.js:494:7)
-    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
-    at Protocol.handshake (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:51:23)
-    at Connection.connect (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:116:18)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:69:18
-    at new Promise (<anonymous>)
-    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:64:12)
-    at create (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:291:39)
+[2020-09-12T06:22:54.199] [ERROR] app - TypeError: data.map is not a function
+    at Function.PostAction (C:\Users\racky\Desktop\project\hstigger-server\models\index.js:133:27)
+    at Object.out.PostAction (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\users.js:17:24)
+    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:60)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:19
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@4.2.0@koa-compose\index.js:47:32)
+[2020-09-12T06:23:27.427] [ERROR] app - TypeError: data.map is not a function
+    at Function.PostAction (C:\Users\racky\Desktop\project\hstigger-server\models\index.js:134:27)
+    at Object.out.PostAction (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\users.js:17:24)
+    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:60)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:19
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@4.2.0@koa-compose\index.js:47:32)
+[2020-09-12T06:24:24.742] [ERROR] app - ReferenceError: createUser is not defined
+    at C:\Users\racky\Desktop\project\hstigger-server\models\index.js:134:34
+    at Array.map (<anonymous>)
+    at Function.PostAction (C:\Users\racky\Desktop\project\hstigger-server\models\index.js:134:27)
+    at Object.out.PostAction (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\users.js:17:24)
+    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:60)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:19
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+[2020-09-12T06:24:55.473] [WARN] app - ReferenceError: ctx is not defined
+    at Function.createUser (C:\Users\racky\Desktop\project\hstigger-server\models\index.js:151:23)
+    at C:\Users\racky\Desktop\project\hstigger-server\models\index.js:134:39
+    at Array.map (<anonymous>)
+    at Function.PostAction (C:\Users\racky\Desktop\project\hstigger-server\models\index.js:134:27)
+    at Object.out.PostAction (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\users.js:17:24)
+    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:60)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:19
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+[2020-09-12T06:24:55.484] [ERROR] app - ReferenceError: ctx is not defined
+    at Function.createUser (C:\Users\racky\Desktop\project\hstigger-server\models\index.js:151:23)
+    at C:\Users\racky\Desktop\project\hstigger-server\models\index.js:134:39
+    at Array.map (<anonymous>)
+    at Function.PostAction (C:\Users\racky\Desktop\project\hstigger-server\models\index.js:134:27)
+    at Object.out.PostAction (C:\Users\racky\Desktop\project\hstigger-server\restful\v0\users.js:17:24)
+    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:32:60)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\routes\restful.js:97:19
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+[2020-09-12T06:40:56.538] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:204:8)
-From previous event:
-    at Sync.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\sync.js:66:17)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:713:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:40:51)
-    at dispatch (D:\hstigger\hstigger-server\node_modules\koa-compose\index.js:42:32)
-    at D:\hstigger\hstigger-server\node_modules\koa-bodyparser\index.js:74:14
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7 {
-  errorno: 'ETIMEDOUT',
-  code: 'ETIMEDOUT',
-  syscall: 'connect',
-  fatal: true
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
 }
-[2020-09-11T09:11:48.418] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
-    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:29:12)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:186:17)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
-    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T09:12:01.526] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
-    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:29:12)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:186:17)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
-    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T09:15:03.951] [ERROR] app - Error: insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:15:03', 'sys_root', 'efb91dd6-22ef-4ef3-bc4c-7b00d310435c', '12314', '123456', '5123') - ER_DUP_ENTRY: Duplicate entry '5123' for key 'user_user_unique'
-    at Query.Sequence._packetToError (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:314:20)
-    at addChunk (_stream_readable.js:303:12)
-    at readableAddChunk (_stream_readable.js:279:9)
-    at Socket.Readable.push (_stream_readable.js:218:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
-    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:198:25)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:135:18
-    at new Promise (<anonymous>)
-    at Client_MySQL._query (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:129:12)
-    at Client_MySQL.query (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:169:17)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:321:24
-    at new Promise (<anonymous>)
-    at Client_MySQL.trxClient.query (D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:316:12)
-    at Runner.query (D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:134:36)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:40:23
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:260:24
+[2020-09-12T06:41:20.634] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1160:42)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1159:14)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1060:10)
-From previous event:
-    at D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:27
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:184:22
-    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
-  code: 'ER_DUP_ENTRY',
-  errno: 1062,
-  sqlMessage: "Duplicate entry '5123' for key 'user_user_unique'",
-  sqlState: '23000',
-  index: 0,
-  sql: "insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:15:03', 'sys_root', 'efb91dd6-22ef-4ef3-bc4c-7b00d310435c', '12314', '123456', '5123')"
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
 }
-[2020-09-11T09:33:15.556] [ERROR] app - Error: insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:33:15', 'sys_root', 'f9b88dc8-d06e-40f5-8eab-47790640c38e', '12314', '123456', '5123') - ER_DUP_ENTRY: Duplicate entry '5123' for key 'user_user_unique'
-    at Query.Sequence._packetToError (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:314:20)
-    at addChunk (_stream_readable.js:303:12)
-    at readableAddChunk (_stream_readable.js:279:9)
-    at Socket.Readable.push (_stream_readable.js:218:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
-    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:198:25)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:135:18
-    at new Promise (<anonymous>)
-    at Client_MySQL._query (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:129:12)
-    at Client_MySQL.query (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:169:17)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:321:24
-    at new Promise (<anonymous>)
-    at Client_MySQL.trxClient.query (D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:316:12)
-    at Runner.query (D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:134:36)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:40:23
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:260:24
+[2020-09-12T06:41:26.283] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1160:42)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1159:14)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:1060:10)
-From previous event:
-    at D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:27
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\transaction.js:184:22
-    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
-  code: 'ER_DUP_ENTRY',
-  errno: 1062,
-  sqlMessage: "Duplicate entry '5123' for key 'user_user_unique'",
-  sqlState: '23000',
-  index: 0,
-  sql: "insert into `user` (`created_at`, `created_by`, `id`, `name`, `password`, `user`) values ('2020-09-11 09:33:15', 'sys_root', 'f9b88dc8-d06e-40f5-8eab-47790640c38e', '12314', '123456', '5123')"
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
 }
-[2020-09-11T09:34:04.316] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
-    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:31:14)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:17)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
-    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T09:34:50.646] [ERROR] app - TypeError: Cannot read property 'userlog' of undefined
-    at HandleUserException (D:\hstigger\hstigger-server\hstigger-server\models\index.js:30:23)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-    at async Function.Post (D:\hstigger\hstigger-server\hstigger-server\models\index.js:189:17)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\users.js:22:20)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
-    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T09:35:14.885] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
-[2020-09-11T09:36:33.131] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
-[2020-09-11T09:37:33.873] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
-[2020-09-11T09:40:11.418] [ERROR] app - { key: 'user', error: '用户注册失败:用户名已存在' }
-[2020-09-11T09:41:02.453] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
-[2020-09-11T10:04:12.622] [ERROR] app - Error: ER_DATA_TOO_LONG: Data too long for column 'to' at row 1
-    at Query.Sequence._packetToError (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:314:20)
-    at addChunk (_stream_readable.js:303:12)
-    at readableAddChunk (_stream_readable.js:279:9)
-    at Socket.Readable.push (_stream_readable.js:218:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
-    --------------------
-    at Protocol._enqueue (D:\hstigger\hstigger-server\node_modules\mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (D:\hstigger\hstigger-server\node_modules\mysql\lib\Connection.js:198:25)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:135:18
-    at new Promise (<anonymous>)
-    at Client_MySQL._query (D:\hstigger\hstigger-server\node_modules\knex\lib\dialects\mysql\index.js:129:12)
-    at Client_MySQL.query (D:\hstigger\hstigger-server\node_modules\knex\lib\client.js:169:17)
-    at Runner.query (D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:134:36)
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:40:23
-    at D:\hstigger\hstigger-server\node_modules\knex\lib\runner.js:260:24
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-    at async Object.utils.sendMessage (D:\hstigger\hstigger-server\hstigger-server\models\util.js:53:4)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\restful\v0\sessions.js:136:3)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:32:34)
-    at async D:\hstigger\hstigger-server\hstigger-server\routes\restful.js:97:13
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:84:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9) {
-  code: 'ER_DATA_TOO_LONG',
-  errno: 1406,
-  sqlMessage: "Data too long for column 'to' at row 1",
-  sqlState: '22001',
-  index: 0,
-  sql: "insert into `message` (`content`, `created_at`, `from`, `to`) values ('欢迎登录系统', '2020-09-11 10:04:12', 'system', '24231440-cff8-41b4-9116-9422777ee4aa')"
+[2020-09-12T06:41:30.395] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
 }
-[2020-09-11T10:11:42.533] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
+[2020-09-12T06:42:36.870] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:43:57.018] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:11:48.514] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:43:57.117] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:44:02.048] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:13:22.399] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:44:02.148] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:44:11.166] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:14:12.735] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:44:11.270] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:44:46.197] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:14:12.814] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:44:46.325] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
+    at Child.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:719:21)
+    at PassThroughHandlerContext.finallyHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:57:23)
+    at PassThroughHandlerContext.tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
 From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:20:14.309] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
-[2020-09-11T10:20:21.130] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
-[2020-09-11T10:20:45.237] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:20:50.153] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:21:09.035] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:21:12.859] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:21:15.891] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:24:26.638] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:24:26.717] [ERROR] app - ErrorCtor [CustomError]: EmptyResponse
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:719:21)
-    at processImmediate (internal/timers.js:458:21)
-From previous event:
-    at Child.<anonymous> (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:717:12)
-From previous event:
-    at Child.fetch (D:\hstigger\hstigger-server\node_modules\bookshelf\lib\model.js:702:19)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:66:8)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:12:9)
-    at async cors (D:\hstigger\hstigger-server\node_modules\koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\node_modules\koa-log4\koa-logger.js:86:7
-[2020-09-11T10:24:29.582] [ERROR] app - 用户名不存在
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Child._doFetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:13:13)
+    at Child.fetch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bookshelf@1.2.0@bookshelf\lib\model.js:702:19)
+    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\auth.js:66:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:12:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7 {
+  message: 'EmptyResponse'
+}
+[2020-09-12T06:44:52.251] [ERROR] app - 用户名不存在
+[2020-09-12T06:46:14.326] [ERROR] app - 不允许进行这种操作
+[2020-09-12T06:48:57.679] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
+[2020-09-12T06:51:19.748] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }
+[2020-09-12T06:52:47.561] [ERROR] app - { key: 'user', error: '添加用户失败:用户名已存在' }

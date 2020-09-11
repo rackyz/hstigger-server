@@ -6,6 +6,7 @@ const {
 const Debug = require('debug')('[MODELS]')
 const E = require('./exception')
 const U = require('./util')
+const { createPoolCluster } = require('mysql')
 const models = {}
 
 
@@ -101,10 +102,11 @@ models.User = B.model('User', {
 
   async PostAction(ctx){
     let action = ctx.params.action
-    let data = ctx.request.body
+    let data = ctx.request.body || []
     let res = "ok"
     if (action === 'delete') {
-      let ids = data
+      // 禁止删除系统管理员账号
+      let ids = data.filter(v=>!v.includes('sys'))
       await Q.transaction(t => {
         Q('user').transacting(t).whereIn('id', ids).del().then(() => {
           Q('dep_user').transacting(t).whereIn('user_id', ids).del().then(() => {
@@ -128,10 +130,53 @@ models.User = B.model('User', {
       await Q('user').whereIn('id', data).update({
         password: "123456"
       })
+    } else if(action == 'create-users'){
+      let promises = data.map(v=>this.createUser(v,ctx.state.id))
+      try{
+        res = await Promise.all(promises)
+      }catch(e){
+        HandleUserException(e,ctx)
+      }
     }
     return res
   },
+  async createUser(data,created_by){
+    data = U.filterByProps(data,PATCHABLE_COLUMNS)
+    if(!data.password)
+      data.password = '123456'
+    let deps = U.extractProp(data,'deps')
+    let roles = U.extractProp(data,'roles')
 
+    data.created_at = U.getTimeStamp()
+    data.created_by =created_by
+
+    return B.transaction(t=>{
+      return this.forge().save(data,{transacting:t}).then(model=>{
+        let promises = []
+        if (deps) {
+          let params = deps.map(v => ({
+            user_id: model.id,
+            dep_id: v
+          }))
+          promises.push(Q('dep_user').transacting(t).insert(params))
+        }
+
+        if(roles){
+          let params = roles.map(v => ({
+            user_id: model.id,
+            role_id: v
+          }))
+          promises.push(Q('role_user').transacting(t).insert(params))
+        }
+
+        if(promises.length > 0){
+          return Promise.all(promises).then(()=>t.commit(model))
+        }else{
+          return t.commit(model)
+        }
+      }).catch(t.rollback)
+    })
+  },
   async Patch(ctx){
     let data = ctx.request.body
     let id = ctx.params.id
