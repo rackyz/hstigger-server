@@ -36,7 +36,6 @@ const DEFAULT_TYPES = [{
 },{
   id:40,
   name:"项目类型",
-  
 }
 
 ]
@@ -143,6 +142,17 @@ const DEFAULT_ROLES = [{
      color: "#aaa",
      icon: 'ios-person-outline',
      desc:"仅供外部人员使用"
+},{
+  id:5, //"sys_project_manager",
+  type_id:12,
+  name:"项目经理",
+  icon:"ios-voice",
+  desc:"项目主要负责人"
+},{
+  id:6,
+  name:"关注者",
+  icon:"ios-eye",
+  desc:"关注项目的人"
 }]
 
 exports.seed = function(knex) {

@@ -45,7 +45,7 @@ exports.up = function (knex) {
       table.integer('type_id');
       table.string('name',64).notNullable ();
       table.string('icon',32).notNullable();
-      table.string('color',16).notNullable ();
+      table.string('color',16).defaultTo('#000000');
       table.string('data',32);
       table.string('desc',64);
     }),
@@ -127,6 +127,7 @@ exports.up = function (knex) {
 
 exports.down = function(knex){
   return Promise.all([
+    knex.schema.dropTable('type'),
     knex.schema.dropTable('session'),
     knex.schema.dropTable('user'),
     knex.schema.dropTable('dep'),

@@ -22,7 +22,6 @@ out.Get = async ctx=>{
     if(!matches)
       return
     let [,date, level,type, message] = matches
-    console.log(v,date,level,message)
     if(date)
       date = date.slice(1,date.length-1)
     if(level)
