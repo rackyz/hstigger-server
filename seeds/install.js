@@ -2,43 +2,6 @@
 //  INT < 1000
 //  CHAR contains 'sys'
 
-const DEFAULT_TYPES = [{
-  id: 10, //"sys_role_type",
-  name:"角色类型" ,
-  key:'role_type'
-},{
-  id: 11, //"sys_common_role",
-  parent_id:10,
-  name:"通用角色",
-},{
-  id: 12, //"sys_project_role",
-  parent_id: 10,
-  name:"项目角色",
-}, {
-  id: 20, //"sys_dep_role",
-  parent_id: 10,
-  name: "部门角色" 
-}, {
-  id: 30,//'sys_permission_type',
-  name:"权限类型",
-   key: 'permission_type'
-    
-},{
-  id: 31,//"sys_action_permission",
-  parent_id: 30,
-  name:"操作权限",
-    
-},{
-  id: 32,//"sys_access_permission",
-  parent_id: 30,
-  name:"访问权限",
-    
-},{
-  id:40,
-  name:"项目类型",
-}
-
-]
 
 const DEFAULT_USERS = [
   {
@@ -175,13 +138,9 @@ exports.seed = function(knex) {
       return knex('role').insert(DEFAULT_ROLES)
     })
 
-    let InitType = knex('type').del().then(()=>{
-      return knex('type').insert(DEFAULT_TYPES)
-    })
-
     let InitUserRole = knex('role_user').del().then(()=>{
       return knex('role_user').insert({user_id:'root',role_id:'1'})
     })
 
-    return Promise.all([InitDep, InitRole, InitType, InitUserRole])
+    return Promise.all([InitDep, InitRole, InitUserRole])
 };

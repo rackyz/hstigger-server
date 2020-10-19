@@ -33,18 +33,18 @@ utils.getTimeStamp = ()=>moment().format('YYYY-MM-DD HH:mm:ss')
 utils.getDateStamp = () => moment().format('YYYY-MM-DD')
 utils.dateAddDays = (d,offset)=> moment(d).add('days',offset).format('YYYY-MM-DD')
 utils.updateCacheTime = async (key)=>{
-    await mysql('cache').update({
-        id: key,
-        update: moment().toString()
-    })
+    // await mysql('cache').update({
+    //     id: key,
+    //     update: moment().toString()
+    // })
 }
 utils.checkCached = async (key, updateTime) => {
-    let cacheRecord = await mysql('cache').first('update').where('id', key)
-    if (cacheRecord && cacheRecord.update) {
-        if (moment(updateTime).isAfter(cacheRecord.update) == false) {
-            return true
-        }
-    }
+    // let cacheRecord = await mysql('cache').first('update').where('id', key)
+    // if (cacheRecord && cacheRecord.update) {
+    //     if (moment(updateTime).isAfter(cacheRecord.update) == false) {
+    //         return true
+    //     }
+    // }
 
     return false
 }
@@ -100,9 +100,9 @@ utils.filterByProps = (object,props = [])=>{
  */
 utils.CreateRestfulController = (knex, proxy, config) => {
     const List = async (ctx) => {
-        if (ctx.params.cachedtime && utils.util.checkCached(ctx.params.cacheTime)){
-            return "cached"
-        }
+        // if (ctx.params.cachedtime && utils.checkCached(ctx.params.cacheTime)){
+        //     return "cached"
+        // }
 
         let query = knex(proxy)
         if (config && config.list && config.list.extend) {
@@ -124,11 +124,10 @@ utils.CreateRestfulController = (knex, proxy, config) => {
             dataItem.inputor = ctx.state.id
             dataItem.inputTime = now
         }
-        let idkey = config.idkey || "id"
-        dataItem[idkey] = await utils.util.createId(proxy)
+      
         
         await knex(proxy).insert(dataItem)
-        await utils.util.updateCacheTime(proxy)
+        await utils.updateCacheTime(proxy)
         if (config.autosign){
             return {
                 [idkey]: dataItem[idkey],
@@ -176,7 +175,7 @@ utils.CreateRestfulController = (knex, proxy, config) => {
         await knex(proxy).update(dataItem).where({
             [idkey]: dataId
         })
-        await utils.util.updateCacheTime(proxy)
+        await utils.updateCacheTime(proxy)
 
         return {
             updateTime:now
@@ -192,7 +191,7 @@ utils.CreateRestfulController = (knex, proxy, config) => {
         await knex(proxy).where({
             [idkey]: dataId
         }).del()
-        await utils.util.updateCacheTime(proxy)
+        await utils.updateCacheTime(proxy)
     }
 
     return {

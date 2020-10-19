@@ -23,7 +23,7 @@ exports.up = function (knex) {
     }),
     knex.schema.createTable("type", function (table) {
       table.increments('id').index();
-      table.string('key', 16);
+      table.string('key', 32);
       table.integer('parent_id');
       table.string('name',64).notNullable ();
       table.string('color',16).defaultTo('#000000');
@@ -49,21 +49,7 @@ exports.up = function (knex) {
       table.string('data',32);
       table.string('desc',64);
     }),
-    knex.schema.createTable('project', function (table) {
-      table.increments('id').index();
-      table.string('name',64).notNullable ();
-      table.integer('state').notNullable();
-      table.integer('contract_type').notNullable ();
-      table.integer('building_type').notNullable ();
-      table.float('area');
-      table.float('building_area');
-      table.float('building_height');
-      table.integer('levels');
-      table.float('amount');
-      table.string('data',32);
-      table.datetime('created_at');
-      table.uuid('created_by');
-    }),
+  
 
     knex.schema.createTable('task', function (table) {
       table.increments('id').index();
@@ -119,7 +105,7 @@ exports.up = function (knex) {
     }),
 
 
-    ...['type','dep','role','project','task','file','archive'].map(v=>
+    ...['type','dep','role','task','file','archive'].map(v=>
       knex.schema.raw(`ALTER TABLE ${v} AUTO_INCREMENT=1000`))
     
   ]);
@@ -132,7 +118,6 @@ exports.down = function(knex){
     knex.schema.dropTable('user'),
     knex.schema.dropTable('dep'),
     knex.schema.dropTable('role'),
-    knex.schema.dropTable('project'),
     knex.schema.dropTable('task'),
     knex.schema.dropTable('file'),
     knex.schema.dropTable('archive'),
