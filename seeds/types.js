@@ -38,6 +38,11 @@ const DEFAULT_TYPES = [{
   name:'项目地点',
   key:'project_location',
   values:['鄞州','慈城','厦门']
+},{
+  id:600,
+  name:'流程类型',
+  key:"flow_type",
+  values:['员工通用','行政综合','项目管理']
 }
 
 ]

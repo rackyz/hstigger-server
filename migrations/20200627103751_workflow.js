@@ -6,7 +6,7 @@ exports.up = function(knex) {
     table.string ('name',32);
     table.string ('desc',128);
     table.integer('flow_type');
-    table.datetime('create_at');
+    table.datetime('created_at');
     table.uuid('created_by');
   }),
   knex.schema.createTable('workflow_node', function (table) {
