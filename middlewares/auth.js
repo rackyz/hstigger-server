@@ -69,6 +69,8 @@ module.exports = async function (ctx, next) {
 
     ctx.state.name = user.get('name')
 
+    R.set('ONLINE_USERS',uid, U.getTimeStamp())
+
   }else{
     if(ctx.url.indexOf('/files')==0){
       ctx.header["api-version"] = "v0"

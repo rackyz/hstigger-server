@@ -1,7 +1,8 @@
 const {
   Q,
   E,
-  U
+  U,
+  R
 } = require('../../models')
 
 
@@ -14,6 +15,21 @@ out.Get = async ctx=>{
     return {
       ENABLE_REGISTER:true,
       ENABLE_OAUTH_LOGIN:true
+    }
+  }else if(id == 'env'){
+    let hash = R.hgetall('ONLINE_USERS')
+    
+    let users = []
+    if(Array.isArray(hash)){
+      hash.forEach((v,i,a)=>{
+        if(i % 2 && moment(a[i+1]).add(1,'hour').isAfter(moment())){
+          users.push(v)
+        }
+      })
+    }
+   
+    return {
+      ONLINE_USERS:users
     }
   }
 }

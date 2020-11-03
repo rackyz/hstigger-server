@@ -2,6 +2,7 @@ const {
   Q,
   E,
   U,
+  R,
   User,
   Session
 } = require('../../models')
@@ -61,6 +62,8 @@ async function CreateSession(ctx,user_id){
     }).save({
       lastlogin_at: login_at
     })
+
+    R.set('ONLINE_USERS',use_id, login_at)
 
     return {
       token:'Bearer ' + token,
