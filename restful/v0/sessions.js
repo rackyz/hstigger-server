@@ -97,9 +97,18 @@ async function LoginWithPassword({user,phone,password}){
       if (!model)
         throw E.E_USER_UNREGISTERATED
 
-        console.log(password, crypto.createHash("md5").update(model.get('password')).digest('hex'))
-      if (crypto.createHash("md5").update(model.get('password')).digest('hex') !== password)
-        throw (E.E_USER_INCCORECT_PASSWORD)
+      
+      if (crypto.createHash("md5").update(model.get('password')).digest('hex') !== password){
+        // get R_ERROR_COUNT
+        // set R_ERROR_COUNT++
+        let error_count = 0
+        if(error_count > 3)
+          throw (401)
+        else
+          throw (E.E_USER_INCCORECT_PASSWORD)
+
+      }
+        
       
       if (model.get('state') == 1)
         throw E.E_USER_LOCKED
@@ -121,6 +130,7 @@ out.Post = async ctx => {
   }else{
     user_id = await LoginWithPassword(data)
     session = await CreateSession(ctx,user_id)
+
   }
 
   let user = await GetUserInfo(user_id)

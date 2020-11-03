@@ -29,7 +29,12 @@ const CONF = {
   //   pool: { min: 0, max: 100 },
   //   debug:false,
   // },
+  redis:{
+    host:'127.0.0.1',
+    port:6379,
+    password:"123456"
 
+  },
   mysql: {
     client: 'mysql',
     connection: {

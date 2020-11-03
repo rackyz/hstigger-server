@@ -19,6 +19,11 @@ log4js.configure({
       pattern: '-yyyy-MM-dd.log',
       filename: path.join(__dirname ,'./logs/application.log')
     },
+    redis:{
+      type: 'dateFile',
+      pattern: '-yyyy-MM-dd.log',
+      filename: path.join(__dirname ,'./logs/redis.log')
+    },
     out: {
       type: 'console'
     }
@@ -37,6 +42,10 @@ log4js.configure({
        appenders: ['user'],
        level: 'info'
     },
+    redis:{
+      appenders: ['redis'],
+      level: 'info'
+    },  
     default: {
       appenders: ['application'],
       level: 'info'
@@ -49,3 +58,4 @@ log4js.configure({
 exports.accessLogger = log4js.koaLogger(log4js.getLogger('req'))
 exports.logger = log4js.getLogger('app')
 exports.UserLogger = log4js.getLogger('user')
+exports.RedisLogger = log4js.getLogger('redis')

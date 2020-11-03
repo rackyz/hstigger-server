@@ -32,7 +32,7 @@ module.exports = async function (ctx, next) {
   if (token) {
     token = token.slice(7)
     // Pass Login Request
-    if (token === 'login' && ctx.url.indexOf('/sessions') === 0) {
+    if (token === 'login' && (ctx.url.indexOf('/sessions') === 0 || ctx.url.indexOf('/settings') === 0)) {
       await next()
       return
     }
