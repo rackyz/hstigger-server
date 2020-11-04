@@ -6,6 +6,12 @@ const mysqldump =require('mysqldump')
 let sql = config.mysql
 let debug = require('debug')("[TOOLS]")
 const moment = require('moment')
+const {
+  Q,
+  E,
+  U,
+  R,
+} = require('../../models')
 
 out.Get = async ctx=>{
   let id = ctx.params.id
@@ -30,6 +36,7 @@ out.Get = async ctx=>{
     return `dump${timestamp}.sql`
   }
 }
+
 
 
 module.exports = out

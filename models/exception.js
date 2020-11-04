@@ -21,5 +21,13 @@ module.exports = {
   E_USER_USER_EXIST: {
     key: "user",
     error: "添加用户失败:用户名已存在"
-  }
+  },
+
+
+  E_TEST_INVALID_PHONE_NUMBER:"不合法的电话",
+  E_SMS_OUT_OF_LIMIT:"同一手机号发送短信超过限制,请一小时后再试",
+  E_E_INCORRECT_VCODE:"验证码错误",
+  E_PHONE_EXIST:"手机号已被注册,请尝试找回密码或联系管理员"
+
+
 }

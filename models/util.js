@@ -3,7 +3,10 @@ const mysql = require('knex')(mysql_config)
 const debug = require('debug')('Kernel')
 const moment = require('moment')
 const bookshelf = require('bookshelf')(mysql)
+const sms = require('../tools/qsms')
 const uuid = require('uuid')
+const { random } = require('lodash')
+const crypto = require('crypto')
 bookshelf.plugin(require('bookshelf-uuid'))
 
 const utils = {
@@ -49,6 +52,7 @@ utils.checkCached = async (key, updateTime) => {
     return false
 }
 
+// QSMS
 utils.sendMessage = async (from,to,content)=>{
    await mysql('message').insert({
        from,
@@ -56,6 +60,14 @@ utils.sendMessage = async (from,to,content)=>{
         content,
         created_at:utils.getTimeStamp(),
     })
+}
+
+// Random helpers
+utils.generateVerifyCode = () => {
+    let result = ""
+    for(let i=0;i<6;i++)
+        result += (parseInt(9 * Math.random()) + 1)
+    return result
 }
 
 
@@ -73,6 +85,26 @@ utils.filterByProps = (object,props = [])=>{
     })
     return r
 }
+
+// SMS
+utils.sendSMS = sms.sendSMS
+
+
+// REGEXP TEST utilities
+const PHONE_REGX = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
+utils.test = (type,value)=>{
+    let result = false
+    if(type == 'phone'){
+        result = PHONE_REGX.test(value)
+    }
+
+    return result
+}
+
+utils.MD5 = (text)=>{
+   return crypto.createHash("md5").update(text).digest('hex')
+}
+
 
 /**
  * DESC    : Create a basic common proxy interface with validators

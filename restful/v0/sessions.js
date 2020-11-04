@@ -2,6 +2,7 @@ const {
   Q,
   E,
   U,
+  D,
   R,
   User,
   Session
@@ -43,8 +44,8 @@ async function CreateSession(ctx,user_id){
 
     // 4 - create a new session
 
-    await Session
-      .forge({
+    await new Session
+      ({
         user_id,
         ip,
         client_device,
@@ -63,7 +64,7 @@ async function CreateSession(ctx,user_id){
       lastlogin_at: login_at
     })
 
-    R.set('ONLINE_USERS',use_id, login_at)
+    R.set('ONLINE_USERS',user_id, login_at)
 
     return {
       token:'Bearer ' + token,
@@ -100,8 +101,7 @@ async function LoginWithPassword({user,phone,password}){
       if (!model)
         throw E.E_USER_UNREGISTERATED
 
-      
-      if (crypto.createHash("md5").update(model.get('password')).digest('hex') !== password){
+      if (model.get('password') !== password) {
         // get R_ERROR_COUNT
         // set R_ERROR_COUNT++
         let error_count = 0

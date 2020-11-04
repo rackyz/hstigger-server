@@ -18,6 +18,15 @@ function callback(err, res, resData) {
   }
 }
 
+const SMS_TMPLS = {
+  "VCODE":242160
+}
+
+var sendSMS = function (tmpl_key, phone, params) {
+ ssender.sendWithParam(86, phone, SMS_TMPLS[tmpl_key],
+   params, '', "", "", callback);
+}
+
 var sendVcode = function (phone, vcode) {
   ssender.sendWithParam(86, phone, 242160,
     [vcode], '', "", "", callback);
@@ -40,6 +49,7 @@ var sendWorkflowFinish = function (phone, flowName, flowDesc) {
 }
 
 module.exports = {
+  sendSMS,
   sendVcode,
   sendPassword,
   sendAccount,

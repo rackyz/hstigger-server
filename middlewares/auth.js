@@ -15,7 +15,7 @@
 const debug = require('debug')('[AUTH]')
 const jwt = require('jsonwebtoken')
 const config = require('../config')
-const {Session,User,E} = require('../models')
+const {Session,User,E, R, U} = require('../models')
 
 
 module.exports = async function (ctx, next) {
@@ -69,7 +69,7 @@ module.exports = async function (ctx, next) {
 
     ctx.state.name = user.get('name')
 
-    R.set('ONLINE_USERS',uid, U.getTimeStamp())
+    R.hset('ONLINE_USERS',uid, U.getTimeStamp())
 
   }else{
     if(ctx.url.indexOf('/files')==0){
