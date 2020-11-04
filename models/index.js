@@ -3,10 +3,12 @@ const {
   bookshelf:B
 } = require('./util')
 
+const {RedisLogger} = require('../logger')
+
 const Debug = require('debug')('[MODELS]')
 const E = require('./exception')
 const U = require('./util')
-const { createPoolCluster } = require('mysql')
+const config = require('../config')
 const models = {}
 
 
@@ -14,7 +16,30 @@ models.Q = Q
 models.B = B
 models.U = U
 models.E = E
+models.C = config
 models.D = Debug
+
+const RedisClient = require('redis').createClient(config.redis.port,config.redis.host,{})
+RedisClient.on('ready',function(){
+  RedisLogger.info('Redis初始化完毕')
+})
+
+RedisClient.auth('123456',function(){
+  RedisLogger.info('通过认证')
+})
+RedisClient.on('error',function(err){
+  console.error('[REDIS]:',err)
+ // RedisLogger.error(err)
+})
+
+RedisClient.on('connect',function(){
+  
+  RedisClient.get('a',function(err,data){
+    console.error(err,"REDIS:a=",data)
+  })
+})
+
+models.R = RedisClient
 
 models.Session = B.model('Session', {
   tableName: 'session',
@@ -22,6 +47,7 @@ models.Session = B.model('Session', {
     return belongTo('User', 'id')
   }
 })
+
 
 // **** Model -- USER **** /
 function HandleUserException(e,ctx){

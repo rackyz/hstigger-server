@@ -8,12 +8,13 @@ const cors = require('koa2-cors')
 const {
     logger,
     accessLogger,
-    UserLogger
+    UserLogger,
+    RedisLogger
 } = require('./logger')
 //const redisClient = require('./db').redis
 app.use(accessLogger)
 app.use(cors())
-
+app.context.redislog = RedisLogger
 app.context.applog = logger
 app.context.userlog = UserLogger
 // app.context.$store = redisClient || {}
