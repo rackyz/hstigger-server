@@ -135,7 +135,7 @@ out.PostAction = async ctx => {
       throw E.E_DO_NOT_PERMITTED
     await Q('user').update('password',U.MD5(password)).where('phone',phone)
      return
-  }else if(action==='reg'){
+  }else if(action==='register'){
     let phone = data.phone
     let user = await Q('user').first('id').where('phone',phone)
     if(user)
@@ -144,7 +144,7 @@ out.PostAction = async ctx => {
     // create user
     let password = U.generateVerifyCode()
     let param = {
-      id:U.CreateUUID(),
+      id:U.createUUID(),
       phone,
       user:phone,
       name:phone,
