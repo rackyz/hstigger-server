@@ -19,7 +19,8 @@ function callback(err, res, resData) {
 }
 
 const SMS_TMPLS = {
-  "VCODE":242160
+  "VCODE":242160,
+  "REGISTER": 766535
 }
 
 var sendSMS = function (tmpl_key, phone, params) {

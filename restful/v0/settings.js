@@ -155,7 +155,7 @@ out.PostAction = async ctx => {
     await Q('user').insert(param)
 
     // generate password
-    await U.sendSMS(766535,phone,[U.maskPhone(phone),password])
+    await U.sendSMS("REGISTER", phone, [U.maskPhone(phone), password])
   }else{
     throw (E.E_DO_NOT_PERMITTED)
   }

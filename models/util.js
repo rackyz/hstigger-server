@@ -105,6 +105,7 @@ utils.MD5 = (text)=>{
    return crypto.createHash("md5").update(text).digest('hex')
 }
 
+utils.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0,3) +"****" +phone.slice(-4)) : '电话不合法'
 
 /**
  * DESC    : Create a basic common proxy interface with validators
