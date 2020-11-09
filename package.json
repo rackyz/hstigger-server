@@ -6,7 +6,7 @@
   "scripts": {
     "start": "pm2 start process.prod.json --no-daemon",
     "dev": "nodemon --config nodemon.json app.js",
-    "initdb": "npm install && node tools/initdb.js"
+    "initdb": "knex migrate:latest && knex seed:run"
   },
   "author": "Jason",
   "license": "MIT",

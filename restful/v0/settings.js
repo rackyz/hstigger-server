@@ -133,7 +133,7 @@ out.PostAction = async ctx => {
      let isCanChangePassword = await CheckChangePwdSafety(phone)
      if(!isCanChangePassword)
       throw E.E_DO_NOT_PERMITTED
-    await Q('user').update('password',U.MD5(password)).where('phone',phone)
+    await Q('user').update('password',password).where('phone',phone)
      return
   }else if(action==='register'){
     let phone = data.phone

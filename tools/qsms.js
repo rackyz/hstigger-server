@@ -25,7 +25,7 @@ const SMS_TMPLS = {
 
 var sendSMS = function (tmpl_key, phone, params) {
  ssender.sendWithParam(86, phone, SMS_TMPLS[tmpl_key],
-   params, '', "", "", callback);
+   params, '宁波高专', "", "", callback);
 }
 
 var sendVcode = function (phone, vcode) {
