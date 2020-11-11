@@ -4,7 +4,7 @@
     "cwd": "./",
     "exec_mode": "fork",
     "watch": true,
-    "ignore_watch": ["tmp","logs"],
+    "ignore_watch": ["tmp","logs","backup"],
     "env": {
         "NODE_ENV": "production"
     },

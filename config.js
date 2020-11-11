@@ -1,34 +1,19 @@
 const CONF = {
   // server
   port: '5858',
-
-
   // weapp configuration
-  rootPathname: '',
-  root:'127.0.0.1:5858',
-  qcloudId:'1257839135',
-  qcloudAppId: '1257839135',
+  weapp:{
+    rootPathname: '',
+    root: '127.0.0.1:5858',
+    qcloudId: '1257839135',
+    qcloudAppId: '1257839135',
 
-  appId: 'wx0b17a3ad6a47f9f8',
-  appSecret: 'c1bf104cde1f29d1062e88f2ca5b1d76',
+    appId: 'wx0b17a3ad6a47f9f8',
+    appSecret: 'c1bf104cde1f29d1062e88f2ca5b1d76',
     // 微信登录态有效期
-  wxLoginExpires: 7200,
-  wxMessageToken: 'abcdefgh',
-
-  // datebase
-  // mysql:{
-  //   client: 'mysql',
-  //   connection: {
-  //     host: '127.0.0.1',
-  //     port: 3306,
-  //     user: 'root',
-  //       password: '',
-  //       database: 'web'
-  //   }, 
-  //   acquireConnectionTimeout:30000,
-  //   pool: { min: 0, max: 100 },
-  //   debug:false,
-  // },
+    wxLoginExpires: 7200,
+    wxMessageToken: 'abcdefgh',
+  },
   redis:{
     host:'127.0.0.1',
     port:6379,
