@@ -21,7 +21,6 @@ for (let i = 0; i < Methods.length; i++) {
     if (!apiObject) {
       ctx.error(E.API_LOAD_FAILED)
       debug('API_LOAD_FAILED:apiObject = null')
-      //          logger.info('API_LOAD_FAILED:apiObject = null')
       return
     }
     let object = ctx.params.object
@@ -32,7 +31,6 @@ for (let i = 0; i < Methods.length; i++) {
         return
       } else {
         debug(`API_METHOD_UNDEFINED:object=${object},method=${v}`)
-        //    logger.info(`API_METHOD_UNDEFINED:object=${object},method=${v}`)
         ctx.error(E.API_METHOD_UNDEFINED)
         return
       }
@@ -74,21 +72,18 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
   if (i == DefinedRouterDepth - 1) {
     // 嵌套路由中间件
     route.use(async (ctx, next) => {
-      // 根据版本号选择库
       let apiVersion = ctx.headers['api-version']
       debug('API VERSION:', apiVersion)
       if (!apiVersion) {
-        //  logger.info(`API_VERSION_MISSED`)
         debug(E.API_VERSION_MISSED)
         return
       }
       let APIRoot = null
       try {
-        APIRoot = require(`../restful/${apiVersion}`)
+        APIRoot = require(`../controllers`)
       } catch (e) {
         ctx.error(E.API_VERSION_UNDEFINED)
         debug('API加载错误:' + typeof e == 'object' ? JSON.stringify(e) : e)
-        //  logger.info(`API_VERSION_UNDEFINED:api-version=${apiVersion},exception=${e}`)
         return
       }
 
@@ -97,9 +92,6 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
     })
   }
   route
-    .options('/sessions', ctx => {
-      ctx.state.data = "worked"
-    })
     .get('/', ctx => {
       ctx.error('路径匹配失败')
     })

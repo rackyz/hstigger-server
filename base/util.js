@@ -1,24 +1,11 @@
-const {
-  mysql: mysql_config
-} = require('../config')
-const mysql = require('knex')(mysql_config)
-const debug = require('debug')('Kernel')
-const moment = require('moment')
-const bookshelf = require('bookshelf')(mysql)
-const sms = require('../libs/qsms')
-const uuid = require('uuid')
-const {
-  random
-} = require('lodash')
-const crypto = require('crypto')
-bookshelf.plugin(require('bookshelf-uuid'))
+const utils = {}
 
-const utils = {
-  bookshelf,
-  mysql
-}
+// Module:ContextParser
+// Description:
+//  parsing request context
+let ContextParser = {}
 
-utils.getIP = function (ctx) {
+ContextParser.getIP = function (ctx) {
   let req = ctx.req
   let ip = req.headers['x-forwarded-for'] ||
     req.connection.remoteAddress ||
@@ -29,16 +16,68 @@ utils.getIP = function (ctx) {
   return ip
 }
 
-utils.getDevice = function (ctx) {
+ContextParser.getDevice = function (ctx) {
   return ctx.request.header['user-agent']
 }
-utils.createUUID = () => {
+
+ContextParser.extractProp = (object, prop) => {
+  let p = object[prop]
+  delete object[prop]
+  return p
+}
+
+ContextParser.filterByProps = (object, props = []) => {
+  let r = {}
+  props.forEach(v => {
+    if (object[v] != undefined)
+      r[v] = object[v]
+  })
+  return r
+}
+
+utils.ContextParser = ContextParser
+
+
+// Module:Generator
+// Description:
+//  generate specific or random value for given type
+let Generator = {}
+Generator.createUUID = () => {
   return uuid.v1()
 }
 
-utils.getTimeStamp = () => moment().format('YYYY-MM-DD HH:mm:ss')
-utils.getDateStamp = () => moment().format('YYYY-MM-DD')
-utils.dateAddDays = (d, offset) => moment(d).add('days', offset).format('YYYY-MM-DD')
+Generator.getTimeStamp = () => moment().format('YYYY-MM-DD HH:mm:ss')
+Generator.getDateStamp = () => moment().format('YYYY-MM-DD')
+Generator.dateAddDays = (d, offset) => moment(d).add('days', offset).format('YYYY-MM-DD')
+
+
+
+Generator.generateVerifyCode = () => {
+  let result = ""
+  for (let i = 0; i < 6; i++)
+    result += (parseInt(9 * Math.random()) + 1)
+  return result
+}
+
+const PHONE_REGX = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
+Generator.test = (type, value) => {
+  let result = false
+  if (type == 'phone') {
+    result = PHONE_REGX.test(value)
+  }
+
+  return result
+}
+
+Generator.MD5 = (text) => {
+  return crypto.createHash("md5").update(text).digest('hex')
+}
+
+Generator.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0, 3) + "****" + phone.slice(-4)) : '电话不合法'
+utils.Generator = Generator
+
+
+
 utils.updateCacheTime = async (key) => {
   // await mysql('cache').update({
   //     id: key,
@@ -56,60 +95,9 @@ utils.checkCached = async (key, updateTime) => {
   return false
 }
 
-// QSMS
-utils.sendMessage = async (from, to, content) => {
-  await mysql('message').insert({
-    from,
-    to,
-    content,
-    created_at: utils.getTimeStamp(),
-  })
-}
-
-// Random helpers
-utils.generateVerifyCode = () => {
-  let result = ""
-  for (let i = 0; i < 6; i++)
-    result += (parseInt(9 * Math.random()) + 1)
-  return result
-}
 
 
-utils.extractProp = (object, prop) => {
-  let p = object[prop]
-  delete object[prop]
-  return p
-}
 
-utils.filterByProps = (object, props = []) => {
-  let r = {}
-  props.forEach(v => {
-    if (object[v] != undefined)
-      r[v] = object[v]
-  })
-  return r
-}
-
-// SMS
-utils.sendSMS = sms.sendSMS
-
-
-// REGEXP TEST utilities
-const PHONE_REGX = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
-utils.test = (type, value) => {
-  let result = false
-  if (type == 'phone') {
-    result = PHONE_REGX.test(value)
-  }
-
-  return result
-}
-
-utils.MD5 = (text) => {
-  return crypto.createHash("md5").update(text).digest('hex')
-}
-
-utils.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0, 3) + "****" + phone.slice(-4)) : '电话不合法'
 
 /**
  * DESC    : Create a basic common proxy interface with validators
@@ -162,9 +150,8 @@ utils.CreateRestfulController = (knex, proxy, config) => {
       dataItem.inputTime = now
     }
 
-
     await knex(proxy).insert(dataItem)
-    await utils.updateCacheTime(proxy)
+    //await utils.updateCacheTime(proxy)
     if (config.autosign) {
       return {
         [idkey]: dataItem[idkey],
@@ -212,7 +199,7 @@ utils.CreateRestfulController = (knex, proxy, config) => {
     await knex(proxy).update(dataItem).where({
       [idkey]: dataId
     })
-    await utils.updateCacheTime(proxy)
+    //await utils.updateCacheTime(proxy)
 
     return {
       updateTime: now
@@ -228,7 +215,7 @@ utils.CreateRestfulController = (knex, proxy, config) => {
     await knex(proxy).where({
       [idkey]: dataId
     }).del()
-    await utils.updateCacheTime(proxy)
+    //await utils.updateCacheTime(proxy)
   }
 
   return {

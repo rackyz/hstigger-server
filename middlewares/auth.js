@@ -10,22 +10,12 @@
 // Instead.                                                                     //
 //////////////////////////////////////////////////////////////////////////////////
 "use strict";
-
-//const {logger} = require('../logger')
-const debug = require('debug')('[AUTH]')
 const jwt = require('jsonwebtoken')
-const config = require('../config')
-const {Session,User,E, R, U} = require('../models')
-
+const config = require('../base/config')
+const {Session,User} = require('../models')
+const {E, R, U, D} = require('../base')
 
 module.exports = async function (ctx, next) {
-  // AUTHING Privilege
-  if(ctx.request.method == 'OPTIONS'){
-    await next()
-    return
-  }
-
-
   var token = ctx.headers.authorization
   
   // token验证方式 用于web页面

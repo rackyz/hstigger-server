@@ -1,7 +1,7 @@
 const {
   E,
   Session
-} = require('../../models')
+} = require('../core')
 
 let out = {}
 

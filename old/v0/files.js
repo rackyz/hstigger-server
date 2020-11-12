@@ -2,7 +2,7 @@ const {
   Q,
   D,
   U
-} = require('../../models/index')
+} = require('../../base/index')
 const CreateRestfulController = U.CreateRestfulController
 const config = {
   prefix: 'pos',
