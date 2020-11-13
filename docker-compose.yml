@@ -3,27 +3,25 @@ version: '3.4'
 services:
   hstiggerserver:
     image: hstiggerserver
+    restart: always
     build:
       context: .
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
+      WEBPROXY_REDIS_HOST: redis:6379
     links:
-      redis: redis
+      - redis
     ports:
-      - 6001: 6001
-
+      - 6001:6001
+    depends_on:
+      - redis
   redis:
       image: redis
+      restart: always
       container_name: redis
       ports:
-        - 6380: 6379
+        - 6380:6379
       volumes:
         - /root/hstigger/hstigger-server/redis.conf:/etc/redis/redis.conf
       command: redis-server /etc/redis/redis.conf
-
-networks:
-  extnetwork:
-    config:
-      - subnet: 127.0.0.0/16
-        gateway: 127.0.0.1

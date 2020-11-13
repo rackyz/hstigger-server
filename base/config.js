@@ -15,7 +15,7 @@ const CONF = {
     wxMessageToken: 'abcdefgh',
   },
   redis:{
-    host:'127.0.0.1',
+    host:'redis',
     port:6380
 
   },
