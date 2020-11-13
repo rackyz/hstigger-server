@@ -23,4 +23,4 @@ services:
         && echo never > /sys/kernel/mm/transparent_hugepage/enabled
         && redis-server /usr/local/etc/redis/redis.conf"
       ports:
-        - 6380:6379
+        - 6380:6380
