@@ -4,7 +4,7 @@
   "description": "ORM-oriented Server",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start process.prod.json --no-daemon",
+    "start": "node app.js",
     "dev": "nodemon --config nodemon.json app.js",
     "initdb": "knex migrate:latest && knex seed:run"
   },

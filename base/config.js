@@ -1,10 +1,10 @@
 const CONF = {
   // server
-  port: '5858',
+  port: '6001',
   // weapp configuration
   weapp:{
     rootPathname: '',
-    root: '127.0.0.1:5858',
+    root: '127.0.0.1:6001',
     qcloudId: '1257839135',
     qcloudAppId: '1257839135',
 
@@ -16,7 +16,7 @@ const CONF = {
   },
   redis:{
     host:'127.0.0.1',
-    port:6379
+    port:6380
 
   },
   mysql: {
