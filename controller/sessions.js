@@ -1,8 +1,5 @@
-const {
-  E,
-  Session
-} = require('../core')
-
+const {E} = require('../base')
+const {Session} = require('../models')
 let out = {}
 
 

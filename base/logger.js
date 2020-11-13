@@ -7,22 +7,22 @@ log4js.configure({
     req: {
       type: 'dateFile',
       pattern: '-yyyy-MM-dd.log',
-      filename: path.join(__dirname, './logs/req.log')
+      filename: path.join(__dirname, '../logs/req.log')
     },
     user:{
       type:'dateFile',
       pattern: '-yyyy-MM-dd.log',
-      filename: path.join(__dirname, './logs/user.log')
+      filename: path.join(__dirname, '../logs/user.log')
     },
     application: {
       type: 'dateFile',
       pattern: '-yyyy-MM-dd.log',
-      filename: path.join(__dirname ,'./logs/application.log')
+      filename: path.join(__dirname ,'../logs/application.log')
     },
     redis:{
       type: 'dateFile',
       pattern: '-yyyy-MM-dd.log',
-      filename: path.join(__dirname ,'./logs/redis.log')
+      filename: path.join(__dirname ,'../logs/redis.log')
     },
     out: {
       type: 'console'
