@@ -7,13 +7,10 @@ RedisClient.on('ready', function () {
   RedisLogger.info('Redis初始化完毕')
 })
 
-RedisClient.auth('',function(err){
-  console.log("[REDIS]Authed")
-})
 
 RedisClient.on('error', function (err) {
   console.error('[REDIS]:', err)
-  // RedisLogger.error(err)
+  RedisLogger.error(err)
 })
 
 RedisClient.on('connect', function () {

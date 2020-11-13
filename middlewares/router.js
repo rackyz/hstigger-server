@@ -1,4 +1,4 @@
-const debug = require('debug')('[RESTFUL ROUTER]')
+
 const routerAuthencation = require('./authRouter')
 let RestfulAPIMethods = {}
 let Methods = ['List', 'Get', 'Post', 'PostAction', 'Replace', 'Patch', 'Delete', 'GetRelated', 'Option',
@@ -20,7 +20,6 @@ for (let i = 0; i < Methods.length; i++) {
     let apiObject = ctx.apiObject || ctx.apiRoot
     if (!apiObject) {
       ctx.error(E.API_LOAD_FAILED)
-      debug('API_LOAD_FAILED:apiObject = null')
       return
     }
     let object = ctx.params.object
@@ -30,7 +29,6 @@ for (let i = 0; i < Methods.length; i++) {
         ctx.state.data = await apiObject[object][v](ctx)
         return
       } else {
-        debug(`API_METHOD_UNDEFINED:object=${object},method=${v}`)
         ctx.error(E.API_METHOD_UNDEFINED)
         return
       }
@@ -45,8 +43,6 @@ const Nest = async (ctx, next) => {
   let object = ctx.params.object
   let apiObject = ctx.apiObject || ctx.apiRoot
   if (!apiObject) {
-    debug('API_LOAD_FAILED:apiObject = null')
-    //     logger.info('API_LOAD_FAILED:apiObject = null')
     ctx.error(E.API_LOAD_FAILED)
     return
   }
@@ -54,8 +50,6 @@ const Nest = async (ctx, next) => {
   if (apiObject[object]) {
     ctx.apiObject = apiObject[object]
   } else {
-    //   logger.info(`API_OBJECT_UNDEFINED:object=${object}`)
-    debug(`API_OBJECT_UNDEFINED:object=${object}`)
     ctx.error(E.API_OBJECT_UNDEFINED)
     return
   }
@@ -73,9 +67,8 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
     // 嵌套路由中间件
     route.use(async (ctx, next) => {
       let apiVersion = ctx.headers['api-version']
-      debug('API VERSION:', apiVersion)
       if (!apiVersion) {
-        debug(E.API_VERSION_MISSED)
+        throw(E.API_VERSION_MISSED)
         return
       }
       let APIRoot = null
@@ -83,7 +76,6 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
         APIRoot = require(`../controllers`)
       } catch (e) {
         ctx.error(E.API_VERSION_UNDEFINED)
-        debug('API加载错误:' + typeof e == 'object' ? JSON.stringify(e) : e)
         return
       }
 

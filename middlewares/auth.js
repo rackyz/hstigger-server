@@ -5,15 +5,19 @@
 //     2 - module level access controll                                         //
 // auth: rackyz                                                                 //
 // date: 2018/11/19                                                             //
-// update: 2020/1/13                                                                     //
-// dependency:config,mysql                                                      //
+// update: 2020/1/13                                                            //
+// models: Session, User                                                        //
 // Instead.                                                                     //
 //////////////////////////////////////////////////////////////////////////////////
 "use strict";
 const jwt = require('jsonwebtoken')
-const config = require('../base/config')
-const {Session,User} = require('../models')
-const {E, R, U, D} = require('../base')
+const Config = require('../base/Config')
+const EXCEPTION = require('../base/exception')
+const UTIL = require('../base/util')
+const {
+  Session,
+  User
+} = require('../models')
 
 module.exports = async function (ctx, next) {
   var token = ctx.headers.authorization
@@ -29,11 +33,11 @@ module.exports = async function (ctx, next) {
 
     let session = await Session.forge({id:token}).fetch({require:false})
     if(!session)
-      throw (E.E_USER_UNLOGIN)
+      throw (EXCEPTION.E_USER_UNLOGIN)
       
     // Decoding
     let uid = await new Promise((resolve, reject) => {
-      jwt.verify(token, config.appSecret, async (err, decoded) => {
+      jwt.verify(token, Config.appSecret, async (err, decoded) => {
         if (err) {
           resolve(false)
         } else {
@@ -43,7 +47,7 @@ module.exports = async function (ctx, next) {
     })
 
     if(!uid){
-      throw (E.E_OUT_OF_DATE)
+      throw (EXCEPTION.E_OUT_OF_DATE)
     }
     
     ctx.state.id = uid
@@ -59,7 +63,7 @@ module.exports = async function (ctx, next) {
 
     ctx.state.name = user.get('name')
 
-    R.hset('ONLINE_USERS',uid, U.getTimeStamp())
+    R.hset('ONLINE_USERS', uid, UTIL.getTimeStamp())
 
   }else{
     if(ctx.url.indexOf('/files')==0){

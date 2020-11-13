@@ -1,6 +1,5 @@
 const path = require('path');
 const log4js = require('koa-log4');
-const debug = require('debug')('LOGGER')
 
 log4js.configure({
   appenders: {

@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon --config nodemon.json app.js",
-    "initdb": "knex migrate:latest && knex seed:run"
+    "dev": "cross-env  NODE_ENV=development nodemon --config nodemon.json app.js",
+    "deploy": "ssh root@193.112.158.154 -i ~/.ssh/hstigger.pem \"cd ~/hstigger/hstigger-server && sh install.sh\""
   },
   "author": "Rackyz",
   "license": "MIT",

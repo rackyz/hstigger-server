@@ -15,7 +15,7 @@ const CONF = {
     wxMessageToken: 'abcdefgh',
   },
   redis:{
-    host:'redis',
+    host:process.env.NODE_ENV=='development'?'localhost':'redis',
     port:6380
 
   },

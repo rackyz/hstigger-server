@@ -1,4 +1,4 @@
-const {L,D} = require('../base')
+const LOG = require('../base/logger')
 /**
  * Response Formating and Exception handling
  */
@@ -14,13 +14,13 @@ module.exports = async function (ctx, next) {
             message:ctx.state.message || 'success'
         }
     } catch (e) {
-        L.logger.error(e)
+        LOG.logger.error(e)
 
-        D('异常: %o',e)
+        console.error('异常: %o', e)
         // object Exception treated as Application Level Error
         if(typeof e == 'object' ){
             if (ctx.status == 200){
-                D('未处理异常: %o', e)
+                console.error('未处理异常: %o', e)
                  ctx.body = ctx.body ? ctx.body : {
                      code: ctx.state.code !== undefined && ctx.state.code !== 3 ? ctx.state.code : -1,
                      data: e,
@@ -28,7 +28,7 @@ module.exports = async function (ctx, next) {
                  }
                 return
             }else{
-                D('用户请求错误: %o', e)
+                 console.error('用户请求错误: %o', e)
                 ctx.status = e.status?e.status:200
                 ctx.body = ctx.body ?ctx.body :{
                     code: ctx.state.code !== undefined && ctx.state.code !== 3 ? ctx.state.code : -1,
@@ -43,7 +43,7 @@ module.exports = async function (ctx, next) {
         }
         // String Exception treated as User-Level Error
         else if(e){
-           D('用户提示: %o', e)
+           console.error('用户提示: %o', e)
            ctx.status = e.status || 200
            ctx.body = ctx.body ? ctx.body : {
                code: ctx.state.code !== undefined && ctx.state.code !== 3 ? ctx.state.code : -1,

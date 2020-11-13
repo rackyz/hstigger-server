@@ -37,4 +37,6 @@ const mapDir = d => {
 }
 
 // 默认导出当前文件夹下的映射
-module.exports = mapDir(path.join(__dirname))
+let models = mapDir(path.join(__dirname))
+delete models.index
+module.exports = models
