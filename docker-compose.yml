@@ -8,14 +8,22 @@ services:
       dockerfile: ./Dockerfile
     environment:
       NODE_ENV: production
+    links:
+      redis: redis
     ports:
-      - 6001:6001
+      - 6001: 6001
 
   redis:
       image: redis
       container_name: redis
       ports:
-        - 6380:6379
+        - 6380: 6379
       volumes:
         - /root/hstigger/hstigger-server/redis.conf:/etc/redis/redis.conf
       command: redis-server /etc/redis/redis.conf
+
+networks:
+  extnetwork:
+    config:
+      - subnet: 127.0.0.0/16
+        gateway: 127.0.0.1
