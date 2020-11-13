@@ -1,5 +1,7 @@
 const utils = {}
-
+const uuid = require('uuid')
+const crypto = require('crypto')
+const moment = require('moment')
 // Module:ContextParser
 // Description:
 //  parsing request context
@@ -42,17 +44,17 @@ utils.ContextParser = ContextParser
 // Description:
 //  generate specific or random value for given type
 let Generator = {}
-Generator.createUUID = () => {
+utils.createUUID = () => {
   return uuid.v1()
 }
 
-Generator.getTimeStamp = () => moment().format('YYYY-MM-DD HH:mm:ss')
-Generator.getDateStamp = () => moment().format('YYYY-MM-DD')
-Generator.dateAddDays = (d, offset) => moment(d).add('days', offset).format('YYYY-MM-DD')
+utils.getTimeStamp = () => moment().format('YYYY-MM-DD HH:mm:ss')
+utils.getDateStamp = () => moment().format('YYYY-MM-DD')
+utils.dateAddDays = (d, offset) => moment(d).add('days', offset).format('YYYY-MM-DD')
 
 
 
-Generator.generateVerifyCode = () => {
+utils.generateVerifyCode = () => {
   let result = ""
   for (let i = 0; i < 6; i++)
     result += (parseInt(9 * Math.random()) + 1)
@@ -60,7 +62,7 @@ Generator.generateVerifyCode = () => {
 }
 
 const PHONE_REGX = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
-Generator.test = (type, value) => {
+utils.test = (type, value) => {
   let result = false
   if (type == 'phone') {
     result = PHONE_REGX.test(value)
@@ -69,12 +71,12 @@ Generator.test = (type, value) => {
   return result
 }
 
-Generator.MD5 = (text) => {
+utils.MD5 = (text) => {
   return crypto.createHash("md5").update(text).digest('hex')
 }
 
-Generator.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0, 3) + "****" + phone.slice(-4)) : '电话不合法'
-utils.Generator = Generator
+utils.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0, 3) + "****" + phone.slice(-4)) : '电话不合法'
+
 
 
 
