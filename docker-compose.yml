@@ -16,3 +16,6 @@ services:
       container_name: redis
       ports:
         - 6380:6379
+      volumes:
+        - /root/hstigger/hstigger-server/redis.conf:/etc/redis/redis.conf
+      command: redis-server /etc/redis/redis.conf
