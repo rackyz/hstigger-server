@@ -1,4 +1,3 @@
-
 const routerAuthencation = require('./authRouter')
 let RestfulAPIMethods = {}
 let Methods = ['List', 'Get', 'Post', 'PostAction', 'Replace', 'Patch', 'Delete', 'GetRelated', 'Option',
@@ -37,8 +36,6 @@ for (let i = 0; i < Methods.length; i++) {
   }
 }
 
-
-
 const Nest = async (ctx, next) => {
   let object = ctx.params.object
   let apiObject = ctx.apiObject || ctx.apiRoot
@@ -53,7 +50,6 @@ const Nest = async (ctx, next) => {
     ctx.error(E.API_OBJECT_UNDEFINED)
     return
   }
-
 
   await next()
 }

@@ -53,7 +53,9 @@ o.login = async (account,password)=>{
   if(user.locked)
     throw EXCEPTION.E_USER_LOCKED
 
-  return user.id
+  let userinfo = await o.getUserInfo()
+
+  return userinfo
 }
 
 

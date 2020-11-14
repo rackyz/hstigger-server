@@ -2,6 +2,8 @@ const utils = {}
 const uuid = require('uuid')
 const crypto = require('crypto')
 const moment = require('moment')
+const jwt = require('jsonwebtoken')
+const config = require('./config')
 // Module:ContextParser
 // Description:
 //  parsing request context
@@ -43,7 +45,6 @@ utils.ContextParser = ContextParser
 // Module:Generator
 // Description:
 //  generate specific or random value for given type
-let Generator = {}
 utils.createUUID = () => {
   return uuid.v1()
 }
@@ -71,11 +72,31 @@ utils.test = (type, value) => {
   return result
 }
 
-utils.MD5 = (text) => {
+utils.encodeMD5 = (text) => {
   return crypto.createHash("md5").update(text).digest('hex')
 }
 
 utils.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0, 3) + "****" + phone.slice(-4)) : '电话不合法'
+
+utils.encodeJWT = data =>{
+  return jwt.sign({
+    id: user_id
+  }, config.appSecret, {
+    expiresIn: expire_time
+  })
+}
+
+utils.decodeJWT = token=>{
+  return await new Promise((resolve, reject) => {
+    jwt.verify(token, config.appSecret, async (err, decoded) => {
+      if (err) {
+        resolve(false)
+      } else {
+        resolve(decoded.id)
+      }
+    })
+  })
+}
 
 
 
