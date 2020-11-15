@@ -1,4 +1,4 @@
-const utils = {}
+const util = {}
 const uuid = require('uuid')
 const crypto = require('crypto')
 const moment = require('moment')
@@ -39,23 +39,23 @@ ContextParser.filterByProps = (object, props = []) => {
   return r
 }
 
-utils.ContextParser = ContextParser
+util.ContextParser = ContextParser
 
 
 // Module:Generator
 // Description:
 //  generate specific or random value for given type
-utils.createUUID = () => {
+util.createUUID = () => {
   return uuid.v1()
 }
 
-utils.getTimeStamp = () => moment().format('YYYY-MM-DD HH:mm:ss')
-utils.getDateStamp = () => moment().format('YYYY-MM-DD')
-utils.dateAddDays = (d, offset) => moment(d).add('days', offset).format('YYYY-MM-DD')
+util.getTimeStamp = () => moment().format('YYYY-MM-DD HH:mm:ss')
+util.getDateStamp = () => moment().format('YYYY-MM-DD')
+util.dateAddDays = (d, offset) => moment(d).add('days', offset).format('YYYY-MM-DD')
 
 
 
-utils.generateVerifyCode = () => {
+util.generateVerifyCode = () => {
   let result = ""
   for (let i = 0; i < 6; i++)
     result += (parseInt(9 * Math.random()) + 1)
@@ -63,7 +63,7 @@ utils.generateVerifyCode = () => {
 }
 
 const PHONE_REGX = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
-utils.test = (type, value) => {
+util.test = (type, value) => {
   let result = false
   if (type == 'phone') {
     result = PHONE_REGX.test(value)
@@ -72,42 +72,47 @@ utils.test = (type, value) => {
   return result
 }
 
-utils.encodeMD5 = (text) => {
+util.encodeMD5 = (text) => {
   return crypto.createHash("md5").update(text).digest('hex')
 }
 
-utils.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0, 3) + "****" + phone.slice(-4)) : '电话不合法'
+util.maskPhone = phone => phone && phone.length == 11 ? (phone.slice(0, 3) + "****" + phone.slice(-4)) : '电话不合法'
 
-utils.encodeJWT = data =>{
-  return jwt.sign({
-    id: user_id
-  }, config.appSecret, {
+util.encodeJWT = (data,expire_time=3600*24) =>{
+  return jwt.sign(data, config.appSecret, {
     expiresIn: expire_time
   })
 }
 
-utils.decodeJWT = token=>{
-  return await new Promise((resolve, reject) => {
+util.decodeJWT = async token=>{
+  return new Promise((resolve) => {
     jwt.verify(token, config.appSecret, async (err, decoded) => {
       if (err) {
+        console.error('decodeJWT:',err)
         resolve(false)
       } else {
-        resolve(decoded.id)
+        resolve(decoded)
       }
     })
   })
 }
 
 
+util.ArrayToObject = (arr,key,_cb)=>{
+  let o = {}
+  arr.forEach(v=>{
+    o[v[key]] = _cb(v)
+  })
+  return o
+}
 
-
-utils.updateCacheTime = async (key) => {
+util.updateCacheTime = async (key) => {
   // await mysql('cache').update({
   //     id: key,
   //     update: moment().toString()
   // })
 }
-utils.checkCached = async (key, updateTime) => {
+util.checkCached = async (key, updateTime) => {
   // let cacheRecord = await mysql('cache').first('update').where('id', key)
   // if (cacheRecord && cacheRecord.update) {
   //     if (moment(updateTime).isAfter(cacheRecord.update) == false) {
@@ -146,9 +151,9 @@ utils.checkCached = async (key, updateTime) => {
  *      validator(dataItem) => dataItemValidated throw (Invalid Data)
  *   }
  */
-utils.CreateRestfulController = (knex, proxy, config) => {
+util.CreateRestfulController = (knex, proxy, config) => {
   const List = async (ctx) => {
-    // if (ctx.params.cachedtime && utils.checkCached(ctx.params.cacheTime)){
+    // if (ctx.params.cachedtime && util.checkCached(ctx.params.cacheTime)){
     //     return "cached"
     // }
 
@@ -174,7 +179,7 @@ utils.CreateRestfulController = (knex, proxy, config) => {
     }
 
     await knex(proxy).insert(dataItem)
-    //await utils.updateCacheTime(proxy)
+    //await util.updateCacheTime(proxy)
     if (config.autosign) {
       return {
         [idkey]: dataItem[idkey],
@@ -222,7 +227,7 @@ utils.CreateRestfulController = (knex, proxy, config) => {
     await knex(proxy).update(dataItem).where({
       [idkey]: dataId
     })
-    //await utils.updateCacheTime(proxy)
+    //await util.updateCacheTime(proxy)
 
     return {
       updateTime: now
@@ -238,7 +243,7 @@ utils.CreateRestfulController = (knex, proxy, config) => {
     await knex(proxy).where({
       [idkey]: dataId
     }).del()
-    //await utils.updateCacheTime(proxy)
+    //await util.updateCacheTime(proxy)
   }
 
   return {
@@ -254,4 +259,4 @@ utils.CreateRestfulController = (knex, proxy, config) => {
   }
 }
 
-module.exports = utils
+module.exports = util

@@ -18,8 +18,7 @@ for (let i = 0; i < Methods.length; i++) {
 
     let apiObject = ctx.apiObject || ctx.apiRoot
     if (!apiObject) {
-      ctx.error(E.API_LOAD_FAILED)
-      return
+      throw E.API_LOAD_FAILED
     }
     let object = ctx.params.object
     if (apiObject[object] && apiObject[object].isCollection) {
@@ -28,8 +27,7 @@ for (let i = 0; i < Methods.length; i++) {
         ctx.state.data = await apiObject[object][v](ctx)
         return
       } else {
-        ctx.error(E.API_METHOD_UNDEFINED)
-        return
+        throw E.API_METHOD_UNDEFINED
       }
     }
     await next()
@@ -47,8 +45,7 @@ const Nest = async (ctx, next) => {
   if (apiObject[object]) {
     ctx.apiObject = apiObject[object]
   } else {
-    ctx.error(E.API_OBJECT_UNDEFINED)
-    return
+    throw (E.API_OBJECT_UNDEFINED)
   }
 
   await next()
@@ -64,15 +61,13 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
     route.use(async (ctx, next) => {
       let apiVersion = ctx.headers['api-version']
       if (!apiVersion) {
-        throw(E.API_VERSION_MISSED)
-        return
+        throw (E.API_VERSION_MISSED)
       }
       let APIRoot = null
       try {
         APIRoot = require(`../controllers`)
       } catch (e) {
-        ctx.error(E.API_VERSION_UNDEFINED)
-        return
+        throw (E.API_VERSION_UNDEFINED)
       }
 
       ctx.apiRoot = APIRoot

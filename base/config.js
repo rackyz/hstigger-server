@@ -1,6 +1,7 @@
 const CONF = {
   // server
   port: '6001',
+  appSecret: 'c1bf104cde1f29d1062e88f2ca5b1d76',
   // weapp configuration
   weapp:{
     rootPathname: '',

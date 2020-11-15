@@ -15,8 +15,6 @@ module.exports = async function (ctx, next) {
         }
     } catch (e) {
         LOG.logger.error(e)
-
-        console.error('异常: %o', e)
         // object Exception treated as Application Level Error
         if(typeof e == 'object' ){
             if (ctx.status == 200){
