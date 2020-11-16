@@ -4,8 +4,8 @@ const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
 const Message = require('./Message')
 const Enterprise = require('./Enterprise')
+const Module = require('./Module')
 const Setting = require('./Setting')
-const { addSettings } = require('./Setting')
 const o = {
   required:['Type','Enterprise','Message']
 }
@@ -20,7 +20,7 @@ const TABLE_USER_ACTION_MENU = 'user_action_menu'
 const ACCOUNT_TYPES = ['GUEST','MEMBER','ENTERPRISE','ADMIN']
 
 o.initdb = async (forced) => {
-  let AccountType = Type._AddType('AccountType',ACCOUNT_TYPES)
+  let AccountType = await Type.AddType('AccountType',ACCOUNT_TYPES)
 
   await MYSQL.initdb(TABLE_ACCOUNT, t => {
     t.string('id',64).index()
@@ -102,7 +102,14 @@ o.initdb = async (forced) => {
   },{
     user_id:NBGZ.id,
     enterprise_id:Enterprise.initdata.NBGZ.id
-  }]
+  },
+{
+  user_id: ROOT.id,
+  enterprise_id: Enterprise.initdata.JBKT.id
+}, {
+  user_id: ROOT.id,
+  enterprise_id: Enterprise.initdata.NBGZ.id
+}]
 
   if(forced){
     await MYSQL(TABLE_ACCOUNT).where(true).del()
@@ -141,17 +148,28 @@ o.getUserList = async ()=>{
   return users
 }
 
+o.getUserEnterprises = async (user_id)=>{
+
+
+  let items = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).where({
+    user_id
+  })
+  return items.map(v=>v.enterprise_id)
+}
+
 o.getUserInfo = async (user_id)=>{
   let user = await MYSQL(TABLE_ACCOUNT).first('id','user','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
   
-  user.my_enterprises = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).where({user_id})
+  user.my_enterprises = await o.getUserEnterprises(user_id)
   user.unread_msg_count = await Message.getUnreadMessageCount(user_id)
   user.task_count = 3
   user.user_settings = await o.getUserSettings(user_id)
   user.user_menus = await o.getMenus(user_id)
   user.user_actions = await o.getActionMenus(user_id)
+  user.modules = await Module.GetUserModules(user_id)
+
   return user
 }
 
@@ -161,7 +179,6 @@ o.getPhoneFromAccount = async (account)=>{
     throw EXCEPTION.E_USER_UNREGISTERATED
   return user.phone
 }
-
 
 o.changePwd = async (account,password)=>{
   let user = await MYSQL(TABLE_ACCOUNT).first('id').where('user',account).orWhere('phone',account)

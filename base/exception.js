@@ -29,6 +29,7 @@ module.exports = {
   E_SMS_OUT_OF_LIMIT: "同一手机号发送短信超过限制,请一小时后再试",
   E_INCORRECT_VCODE: "验证码错误",
   E_PHONE_EXIST: "手机号已被注册,请尝试找回密码或联系管理员"
-
+  ,
+  E_UNAUTHED_ENTERPRISE_ID:"您无权访问该企业"
 
 }

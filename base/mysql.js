@@ -15,4 +15,11 @@ MYSQL.initdb = async (table_name, initializer, forced) => {
   // console.log(` [model-db] -- created table (${table_name}))`)
 }
 
+MYSQL.seeds = async (table_name,items,forced)=>{
+  if(forced){
+    await MYSQL(table_name).del()
+    await MYSQL(table_name).insert(items)
+  }
+}
+
 module.exports = MYSQL

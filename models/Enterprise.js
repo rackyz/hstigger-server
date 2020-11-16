@@ -7,7 +7,6 @@ const o = {
 }
 
 const T_ENTERPRISE = "enterprise"
-
 const NBGZ = {
   id:UTIL.createUUID(),
   name:"宁波高专建设监理有限公司",
@@ -24,6 +23,7 @@ const JBKT = {
   desc:"..."
 }
 
+o.initdata = {NBGZ,JBKT}
 o.initdb = async (forced) => {
 
   await MYSQL.initdb(T_ENTERPRISE,t=>{
@@ -32,19 +32,31 @@ o.initdb = async (forced) => {
     t.string('shortname',16);
     t.string('avatar',128);
     t.string('desc',1024);
+
   },forced)
 
-  if(forced){
-    await MYSQL(T_ENTERPRISE).del()
-    await MYSQL(T_ENTERPRISE).insert([NBGZ,JBKT])
-  }
+  await MYSQL.seeds(T_ENTERPRISE,[NBGZ,JBKT],forced)
+  await o.createScheme(NBGZ.id)
 }
 
-o.initdata = {NBGZ,JBKT}
 
 o.getEnterpriseList = async ()=>{
   let items = await MYSQL(T_ENTERPRISE).select('id','name','shortname','avatar')
   return items
+}
+
+o.getEnterpriseSchemeName = ent_id=>{
+  return 'ENT_' + ent_id.replace(/(\-)/g, '_')
+}
+
+o.createScheme = async (ent_id) => {
+  let ent_db_name = o.getEnterpriseSchemeName (ent_id)
+  console.log(ent_db_name)
+  let res = await MYSQL.raw(`SELECT * FROM information_schema.SCHEMATA where SCHEMA_NAME='${ent_db_name}'`)
+  if(Array.isArray(res) && res[0]){
+    await MYSQL.raw(`DROP DATABASE IF EXISTS ${ent_db_name}`)
+  }
+  await MYSQL.raw(`CREATE DATABASE ${ent_db_name}`)
 }
 
 module.exports = o

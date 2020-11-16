@@ -33,4 +33,4 @@ const install = async (forced) => {
 
 
 
-module.exports = install
+module.exports = {install}

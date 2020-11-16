@@ -12,7 +12,7 @@ const TABLE_SETTING = 'setting'
 /** Initialize Datebase */
 o.initdb = async (forced)=>{
 
-  const SettingType = await Type._AddType("SettingType",["Local","Server","User","Enterprise"])
+  const SettingType = await Type.AddType("SettingType",["Local","Server","User","Enterprise"])
   
   await MYSQL.initdb(TABLE_SETTING,t=>{
     t.string("key",32).index()
@@ -26,24 +26,21 @@ o.initdb = async (forced)=>{
 
   
 
-  if(forced){
-    await MYSQL(TABLE_SETTING).del()
-  }
-  await MYSQL(TABLE_SETTING).insert({
-    key:"ENABLE_REGISTER",
-    group:"LOGIN",
-    name:"启用新用户注册",
-    desc:"在登录页面启用新用户注册功能",
-    value:"false",
-    setting_type:SettingType.Local
-  },{
-    key:"ENABLE_AUTH_LOGIN",
-    group:"LOGIN",
-    name:"启用第三方登录",
-    desc:"在登录页面启用第三方验证登录功能",
-    value:"false",
-    setting_type:SettingType.Local
-  })
+  await MYSQL.seeds(TABLE_SETTING, {
+    key: "ENABLE_REGISTER",
+    group: "LOGIN",
+    name: "启用新用户注册",
+    desc: "在登录页面启用新用户注册功能",
+    value: "false",
+    setting_type: SettingType.Local
+  }, {
+    key: "ENABLE_AUTH_LOGIN",
+    group: "LOGIN",
+    name: "启用第三方登录",
+    desc: "在登录页面启用第三方验证登录功能",
+    value: "false",
+    setting_type: SettingType.Local
+  },forced)
 
 }
 

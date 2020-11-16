@@ -12,8 +12,8 @@
 "use strict";
 const EXCEPTION = require('../base/exception')
 const {
-  Session
-} = require('../models')
+  Session,Account
+} = require('../models');
 
 module.exports = async function (ctx, next) {
   var token = ctx.headers.authorization
@@ -21,7 +21,14 @@ module.exports = async function (ctx, next) {
   if (token) {
     token = token.slice(7)
     let sessionState = await Session.getSessionState(token)
+    
     ctx.state = sessionState
+    let enterpriseId = ctx.headers.enterprise
+   
+    let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
+    if (enterpriseId && !myEnterprises.includes(enterpriseId))
+      throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
+    ctx.state.enterprise_id = enterpriseId
   }else{
     let METHOD = ctx.method
     let URL = ctx.url

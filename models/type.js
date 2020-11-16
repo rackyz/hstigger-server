@@ -11,11 +11,11 @@ const init_types = [{
 o.initdb = async (forced) => {
   MYSQL.initdb(TABLE_TYPE, t => {
     t.increments("id").index()
-    t.string("key",16).notNull()
+    t.string("key",16)
     t.integer("value")
     t.string("name", 16).notNull()
     t.string("icon", 16).defaultTo("star")
-    t.string("color", 16).defaultTo("#333333")
+    t.string("color", 32).defaultTo("#333333")
     t.integer("parent_id").defaultTo(0)
   },forced)
 
@@ -50,17 +50,26 @@ o.updateType = async (type)=>{
 }
 
 
-o._AddType = async (key,values)=>{
+o.AddType = async (key,values)=>{
   let id = await o.addType({
     key,
     name:key
   })
-  let types = values.map((v,i)=>({
-    key:v,
-    name:v,
-    value:i,
-    parent_id:id
-  }))
+  let types = values
+  if(values.length > 0 && typeof values[0] === "string"){
+    types = values.map((v, i) => ({
+      key: v,
+      name: v,
+      value: i,
+      parent_id: id
+    }))
+  }else{
+    types.forEach(v=>{
+      v.parent_id = id
+
+    })
+  }
+  
   await MYSQL(TABLE_TYPE).insert(types)
 
   return UTIL.ArrayToObject(types,"key",t=>t.value)
