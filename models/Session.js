@@ -158,7 +158,7 @@ o.getSessionState = async token=>{
   let session_id = token
   let sessionInfo = await REDIS.ASC_GET(RKEY_SESSION+session_id)
   if(!sessionInfo)
-    throw EXCEPTION.E_SESSION_LOGIN_LATER
+    throw EXCEPTION.E_OUT_OF_DATE
   
   REDIS.EXPIRE(RKEY_SESSION + session_id,3600)
   

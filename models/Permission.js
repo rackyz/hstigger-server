@@ -80,7 +80,12 @@ o.initdb = async (forced)=>{
 
 
 o.getPermissions = async (access_ids,res_type)=>{
-  let permissions = await MYSQL(T_PERMISSION).whereIn('access_id',access_ids).where({res_type})
+  let Query = MYSQL(T_PERMISSION).whereIn('access_id', access_ids)
+  if(res_type)
+    Query = Query.where({
+      res_type
+    })
+  let permissions = await Query
   return permissions.map(v=>({key:v.res_id,value:v.permit}))
 }
 

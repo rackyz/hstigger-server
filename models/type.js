@@ -66,13 +66,12 @@ o.AddType = async (key,values)=>{
   }else{
     types.forEach(v=>{
       v.parent_id = id
-
     })
   }
-  
-  await MYSQL(TABLE_TYPE).insert(types)
 
-  return UTIL.ArrayToObject(types,"key",t=>t.value)
+  o[key] = UTIL.ArrayToObject(types, "key", t => t.value)
+  await MYSQL(TABLE_TYPE).insert(types)
+  return o[key]
 }
 
 

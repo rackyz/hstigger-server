@@ -82,10 +82,6 @@ o.getModules = async ()=>{
   return res
 }
 
-o.getUserModules = async (user_id)=>{
-  let permissions = await Permission.getPermissions(user_id, Permistion.RESOURCE_TYPE.MODULE)
-  await MYSQL(T_MODULE).select('id')
 
-}
 
 module.exports = o

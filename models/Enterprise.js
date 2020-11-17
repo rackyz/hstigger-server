@@ -12,7 +12,8 @@ const NBGZ = {
   name:"宁波高专建设监理有限公司",
   shortname:"宁波高专",
   avatar:"https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png",
-  desc:"..."
+  desc: "...",
+  created_at: UTIL.getTimeStamp()
 }
 
 const JBKT = {
@@ -20,7 +21,8 @@ const JBKT = {
   name:"江北慈城开发投资有限公司",
   shortname:"江北开投",
   avatar:"https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png",
-  desc:"..."
+  desc:"...",
+  created_at:UTIL.getTimeStamp()
 }
 
 o.initdata = {NBGZ,JBKT}
@@ -31,12 +33,19 @@ o.initdb = async (forced) => {
     t.string('name',64);
     t.string('shortname',16);
     t.string('avatar',128);
-    t.string('desc',1024);
+    t.string('owner_id',64);
+    t.datetime('created_at');
+    t.text('desc');
 
   },forced)
 
   await MYSQL.seeds(T_ENTERPRISE,[NBGZ,JBKT],forced)
   await o.createScheme(NBGZ.id)
+}
+
+o.getEnterpriseListFull = async ()=>{
+   let items = await MYSQL(T_ENTERPRISE).select('id', 'name', 'shortname', 'avatar','owner_id','created_at')
+   return items
 }
 
 

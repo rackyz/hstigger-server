@@ -12,6 +12,7 @@ let E = {
   API_VERSION_UNDEFINED: "API版本号错误"
 }
 
+
 for (let i = 0; i < Methods.length; i++) {
   let v = Methods[i]
   RestfulAPIMethods[v] = async function (ctx, next) {
@@ -22,6 +23,9 @@ for (let i = 0; i < Methods.length; i++) {
     }
     let object = ctx.params.object
     if (apiObject[object] && apiObject[object].isCollection) {
+      if (typeof apiObject[object].Auth == 'function') {
+        await apiObject[object].Auth(v,{user_id:ctx.state.id,ent_id:ctx.state.enterprise_id})
+      }
 
       if (typeof apiObject[object][v] == 'function') {
         ctx.state.data = await apiObject[object][v](ctx)
@@ -33,6 +37,7 @@ for (let i = 0; i < Methods.length; i++) {
     await next()
   }
 }
+
 
 const Nest = async (ctx, next) => {
   let object = ctx.params.object
@@ -89,7 +94,6 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
     .get('/:object/:id/:related/:relatedId', routerAuthencation, RestfulAPIMethods.GetRelated)
     .post('/:object/:id/:related', routerAuthencation, RestfulAPIMethods.AddRelated)
     .delete('/:object/:id/:related/:relatedId', routerAuthencation, RestfulAPIMethods.DelRelated)
-    .options('/:object', RestfulAPIMethods.Option)
   if (i != 0)
     route.all('*', async (ctx, next) => {
       await next()
