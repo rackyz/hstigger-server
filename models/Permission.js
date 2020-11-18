@@ -20,45 +20,60 @@ const RESOURCE_TYPE = {
 o.RESOURCE_TYPE = RESOURCE_TYPE
 
 o.initdb = async (forced)=>{
-   await Type.AddType('RESOURCE_TYPE', [{
+   await Type.AddType('ResourceType', [{
+     key:"MOD",
      name: "模块菜单",
      value: RESOURCE_TYPE.MODULE,
      color: "rgb(51, 153, 255)",
    }, {
      name: "流程",
+     key:"FLOW",
      value: RESOURCE_TYPE.FLOW,
      color: "rgb(51, 153, 255)"
    }, {
      name: "订阅",
+     key:"RSS",
      value: RESOURCE_TYPE.SUBSCRIPTION,
      color: "yellowgreen"
    },{
      name: "项目模块",
+     key:"PMOD",
      value: RESOURCE_TYPE.PROJECT_MODULE,
      color: "yellowgreen"
    },{
+     key:"API",
      name: "访问请求",
      value: RESOURCE_TYPE.API,
      color:"blue"
    }])
 
-   await Type.AddType('ACCESS_TYPE', [{
+   await Type.AddType('AccessType', [{
+     key:"USER",
      name: "用户",
      value: 1,
      color: "rgb(51, 153, 255)",
    }, {
+     key:"ROLE",
      name: "角色",
      value: 2,
      color: "rgb(51, 153, 255)"
    }, {
+     key:"DEP",
      name: "部门",
      value: 3,
      color: "yellowgreen"
    }, {
+     key:"ENTERPRISE",
      name: "企业",
      value: 4,
      color: "yellowgreen"
    }, {
+     key:"PROJECT",
+     name: "项目组",
+     value: 5,
+     color: "yellowgreen"
+   }, {
+     key: "GROUP",
      name: "组",
      value: 5,
      color: "yellowgreen"

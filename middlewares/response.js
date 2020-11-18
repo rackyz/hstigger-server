@@ -37,6 +37,7 @@ module.exports = async function (ctx, next) {
             }
         // Numeric Exception treated as Server Response Code
         }else if(typeof e == 'number'){
+            console.error('EXCEPTION:',e)
             ctx.status = e
         }
         // String Exception treated as User-Level Error

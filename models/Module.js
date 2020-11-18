@@ -18,39 +18,45 @@ const MODULE_TYPE = {
 }
 
 const initData = [{
+  key:"TASK",
   name:'任务',
   url:"/core/task",
   type: MODULE_TYPE.COMMON,
 },
 {
+  key: "OPERATION",
   name:"经营管理",
   url:"/core/bi",
   type: MODULE_TYPE.OPERATION,
   private:true
 },
 {
+  key:"EADMIN",
   name: "企业后台管理",
   url:"/core/eadmin/",
   type: MODULE_TYPE.SYSTEM,
 },{
+  key: "ADMIN",
   name:"平台后台管理",
   url:"/core/admin",
   type: MODULE_TYPE.SYSTEM,
 }]
 
 o.initdb = async (forced) => {
-  await Type.AddType('MODULE_TYPE', [{
-    
+  await Type.AddType('ModuleType', [{
+    key:"COMMON",
     name: "通用模块",
     value: MODULE_TYPE.COMMON,
     icon: "supervisor",
     color: "rgb(51, 153, 255)",
   }, {
-    name: "经营模块",
+    key:"BUSINESS",
+    name: "业务模块",
     value: MODULE_TYPE.OPERATION,
     icon: "pm2",
     color: "rgb(51, 153, 255)"
   }, {
+    key:"SYSTEM",
     name: "系统模块",
     value: MODULE_TYPE.SYSTEM,
     icon: "application",

@@ -1,6 +1,7 @@
 const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
+const REDIS = require('../base/redis')
 
 const TABLE_TYPE = 'type'
 let o = {}
@@ -56,23 +57,29 @@ o.AddType = async (key,values)=>{
     name:key
   })
   let types = values
-  if(values.length > 0 && typeof values[0] === "string"){
-    types = values.map((v, i) => ({
-      key: v,
-      name: v,
-      value: i,
-      parent_id: id
-    }))
-  }else{
-    types.forEach(v=>{
-      v.parent_id = id
-    })
+  if(Array.isArray(values) && values.length > 0){
+    if(typeof values[0] === "string"){
+      types = values.map((v, i) => ({
+        key: v,
+        name: v,
+        value: i,
+        parent_id: id
+      }))
+    }else{
+      types.forEach((v,i)=>{
+        v.parent_id = id
+        if(v.value == undefined)
+          v.value = i
+      })
+    }
   }
 
   o[key] = UTIL.ArrayToObject(types, "key", t => t.value)
+  console.log("[TYPE]",key,o[key])
   await MYSQL(TABLE_TYPE).insert(types)
   return o[key]
 }
+
 
 
 module.exports = o

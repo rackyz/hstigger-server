@@ -18,7 +18,24 @@ const TABLE_USER_SETTING = 'user_setting'
 const TABLE_USER_MENU = 'user_menu'
 const TABLE_USER_ACTION_MENU = 'user_action_menu'
 
-const ACCOUNT_TYPES = ['GUEST','MEMBER','ENTERPRISE','ADMIN']
+const ACCOUNT_TYPES = [{
+  key: 'GUEST',
+  name: "体验账号",
+  color:"#aaa"
+}, {
+  key: 'MEMBER',
+  name: "普通账号",
+  color:"orange"
+}, {
+  key: 'GUEST',
+  name: "企业账号",
+  color:"#3af"
+}
+,{
+  key:'ADMIN',
+  name:"管理账号",
+  color:"red"
+}]
 
 o.initdb = async (forced) => {
   let AccountType = await Type.AddType('AccountType',ACCOUNT_TYPES)
@@ -26,9 +43,9 @@ o.initdb = async (forced) => {
 //   await MYSQL.initdb(TABLE_ACCOUNT, t => {
 //     t.string('id',64).index()
 //     t.string('user', 16).notNull()
-//     t.string('phone', 16).notNull()
+//     t.string('phone', 16)
 //     t.string('password',64).notNull()
-//     t.string('avatar',128)
+//     t.string('avatar',256)
 //     t.string('frame',16).defaultTo("1")
 //     t.integer('type').defaultTo(0)
 //     t.boolean('locked').defaultTo(0)
@@ -68,7 +85,7 @@ o.initdb = async (forced) => {
 //     id:UTIL.createUUID(),
 //     user:'root',
 //     phone:'19888821112',
-//     avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png',
+//     avatar:'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/avatars/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20191105133509.jpg',
 //     frame:'7',
 //     type:AccountType.ADMIN,
 //     password:UTIL.encodeMD5('root'),
@@ -152,7 +169,7 @@ o.getAuthInfo = async (id)=>{
 }
 
 o.getList = async ()=>{
-  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user', 'phone', 'frame','created_at','lastlogin_at')
+  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at')
   return users
 }
 
@@ -201,6 +218,47 @@ o.changePwd = async (account,password)=>{
   await MYSQL(TABLE_ACCOUNT).update({password,changed:true}).where({id:user.id})
 }
 
+o.create = async(data)=>{
+  if(!data) 
+    throw EXCEPTION.E_INVALID_DATA
+  let updateInfo = {
+    id:UTIL.createUUID(),
+    created_at:UTIL.getTimeStamp()
+  }
+  Object.assign(data,updateInfo)
+  data.password = UTIL.encodeMD5("123456")
+  await MYSQL(TABLE_ACCOUNT).insert(data)
+  return updateInfo
+}
+
+o.createAccounts = async (data)=>{
+  if (!data || !Array.isArray(data) || data.length == 0)
+    throw EXCEPTION.E_INVALID_DATA
+  
+  let updateInfoArray = []
+  let updateData = []
+  let items = data.map(v=>{
+    let updateInfo = {
+      id: UTIL.createUUID(),
+      created_at: UTIL.getTimeStamp()
+    }
+    let o = Object.assign(v,updateInfo)
+    o.password = UTIL.encodeMD5("123456")
+
+    updateInfoArray.push(updateInfo)
+    updateData.push(o)
+  })
+
+  await MYSQL(TABLE_ACCOUNT).insert(updateData)
+  return updateInfoArray
+}
+
+o.update = async (id,data)=>{
+  if(!id || !data)
+    throw EXCEPTION.E_INVALID_DATA
+  await MYSQL(TABLE_ACCOUNT).update(data).where(id)
+}
+
 o.register = async (phone)=>{
   let user = await MYSQL(TABLE_ACCOUNT).first('id').where('phone',phone)
   if(user){
@@ -221,23 +279,6 @@ o.register = async (phone)=>{
   Message.sendSMS('REGISTER',phone,[UTIL.maskPhone(phone),temp_password])
 }
 
-o.createAccounts = async (data)=>{
-  if(!Array.isArray(data))
-    throw EXCEPTION.E_INVALID_DATA
-  
-  let items = data.map(v=>({
-    id:UTIL.createUUID(),
-    user:v.user,
-    type:v.type || AccountType.GUEST,
-    phone:v.phone,
-    password:UTIL.encodeMD5('123456'),
-    created_at:UTIL.getTimeStamp()
-  }))
-
-  await MYSQL(TABLE_ACCOUNT).insert(items)
-
-  return items.map(v=>({id:v.id,created_at:v.created_at}))
-}
 
 
 o.getUserSettings = async (user_id)=>{
@@ -293,5 +334,7 @@ o.getActionMenus = async (user_id)=>{
   return items.map(v=>v.key)
 }
 
-
+o.remove = async (user_id_array)=>{
+  await MYSQL(TABLE_ACCOUNT).whereIn('id',user_id_array).del()
+}
 module.exports = o

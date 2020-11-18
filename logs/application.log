@@ -1,506 +1,226 @@
-[2020-11-17T08:28:07.437] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T08:28:23.339] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T08:28:23.341] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T08:28:26.549] [ERROR] app - TypeError: Module.GetUserModules is not a function
-    at Object.o.getUserInfo (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:171:31)
-    at async Object.o.login (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:141:18)
-    at async Object.o.createSessionByLogin (D:\hstigger\hstigger-server\hstigger-server\models\Session.js:60:18)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\sessions.js:13:19)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:26)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:37:7)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T08:28:56.913] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T08:28:56.916] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T08:33:52.270] [ERROR] app - TypeError: Module.getPermissions is not a function
-    at Object.o.getUserInfo (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:172:35)
-    at async Object.o.login (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:141:18)
-    at async Object.o.createSessionByLogin (D:\hstigger\hstigger-server\hstigger-server\models\Session.js:60:18)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\sessions.js:13:19)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:26)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:37:7)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T08:34:04.894] [ERROR] app - 用户名不存在
-[2020-11-17T08:34:14.386] [ERROR] app - ReferenceError: Permission is not defined
-    at Object.o.getUserInfo (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:172:28)
-    at async Object.o.login (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:141:18)
-    at async Object.o.createSessionByLogin (D:\hstigger\hstigger-server\hstigger-server\models\Session.js:60:18)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\sessions.js:13:19)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:26)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:37:7)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T08:34:29.373] [ERROR] app - 用户名不存在
-[2020-11-17T08:35:19.312] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:14:36.939] [ERROR] app - 用户名不存在
-[2020-11-17T09:14:37.005] [ERROR] app - 用户名不存在
-[2020-11-17T09:15:54.249] [ERROR] app - 用户名不存在
-[2020-11-17T09:15:54.313] [ERROR] app - 用户名不存在
-[2020-11-17T09:15:58.324] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:16:01.503] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:20:05.498] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:22:14.194] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:22:33.567] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:22:42.188] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:22:56.282] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:25:20.732] [ERROR] app - API接口不存在
-[2020-11-17T09:25:20.762] [ERROR] app - API接口不存在
-[2020-11-17T09:25:20.793] [ERROR] app - API接口不存在
-[2020-11-17T09:25:20.828] [ERROR] app - API接口不存在
-[2020-11-17T09:25:33.214] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T09:27:14.745] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:31:02.294] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:32:27.842] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:32:43.409] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:35:25.326] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:35:49.995] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:36:18.268] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:36:35.589] [ERROR] app - API接口不存在
-[2020-11-17T09:36:40.531] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:36:54.542] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:38:24.245] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:38:34.757] [ERROR] app - TypeError: Account.get is not a function
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:12:28)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:33)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T09:39:17.406] [ERROR] app - 您无权访问该企业
-[2020-11-17T09:43:14.666] [ERROR] app - 您无权访问该企业
-[2020-11-17T09:43:55.964] [ERROR] app - 您无权访问该企业
-[2020-11-17T09:45:18.805] [ERROR] app - 用户名不存在
-[2020-11-17T09:45:18.872] [ERROR] app - 用户名不存在
-[2020-11-17T09:45:24.634] [ERROR] app - TypeError: The operator "undefined" is not permitted
-    at Formatter.operator (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\formatter.js:138:13)
-    at QueryCompiler_MySQL.whereBasic (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:525:100)
-    at QueryCompiler_MySQL.where (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:314:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:147:30
-    at Array.map (<anonymous>)
-    at QueryCompiler_MySQL.select (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:146:33)
-    at QueryCompiler_MySQL.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:108:27)
-    at Builder.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\builder.js:115:44)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:56:32
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:185:26
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at Promise._settlePromiseFromHandler (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
-    at Promise._settlePromise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
-    at Promise._settlePromise0 (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
-    at Promise._settlePromises (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
-    at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:169:14)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5)
-[2020-11-17T09:46:12.804] [ERROR] app - TypeError: The operator "undefined" is not permitted
-    at Formatter.operator (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\formatter.js:138:13)
-    at QueryCompiler_MySQL.whereBasic (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:525:100)
-    at QueryCompiler_MySQL.where (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:314:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:147:30
-    at Array.map (<anonymous>)
-    at QueryCompiler_MySQL.select (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:146:33)
-    at QueryCompiler_MySQL.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:108:27)
-    at Builder.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\builder.js:115:44)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:56:32
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:185:26
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at Promise._settlePromiseFromHandler (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
-    at Promise._settlePromise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
-    at Promise._settlePromise0 (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
-    at Promise._settlePromises (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
-    at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:169:14)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-[2020-11-17T09:47:34.657] [ERROR] app - TypeError: The operator "undefined" is not permitted
-    at Formatter.operator (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\formatter.js:138:13)
-    at QueryCompiler_MySQL.whereBasic (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:525:100)
-    at QueryCompiler_MySQL.where (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:314:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:147:30
-    at Array.map (<anonymous>)
-    at QueryCompiler_MySQL.select (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:146:33)
-    at QueryCompiler_MySQL.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:108:27)
-    at Builder.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\builder.js:115:44)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:56:32
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:185:26
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at Promise._settlePromiseFromHandler (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
-    at Promise._settlePromise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
-    at Promise._settlePromise0 (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
-    at Promise._settlePromises (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
-    at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:169:14)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-[2020-11-17T09:47:41.537] [ERROR] app - TypeError: The operator "undefined" is not permitted
-    at Formatter.operator (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\formatter.js:138:13)
-    at QueryCompiler_MySQL.whereBasic (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:525:100)
-    at QueryCompiler_MySQL.where (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:314:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:147:30
-    at Array.map (<anonymous>)
-    at QueryCompiler_MySQL.select (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:146:33)
-    at QueryCompiler_MySQL.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:108:27)
-    at Builder.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\builder.js:115:44)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:56:32
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:185:26
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at Promise._settlePromiseFromHandler (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
-    at Promise._settlePromise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
-    at Promise._settlePromise0 (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
-    at Promise._settlePromises (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
-    at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:169:14)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-[2020-11-17T09:48:05.718] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:36)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:44:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T09:48:45.521] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:14:36)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:44:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T10:08:48.027] [ERROR] app - 不允许进行这种操作
-[2020-11-17T10:09:20.526] [ERROR] app - 不允许进行这种操作
-[2020-11-17T10:10:00.298] [ERROR] app - 不允许进行这种操作
-[2020-11-17T10:10:21.957] [ERROR] app - 不允许进行这种操作
-[2020-11-17T10:10:32.505] [ERROR] app - 不允许进行这种操作
-[2020-11-17T10:11:14.030] [ERROR] app - TypeError: Permission.require is not a function
-    at Object.out.List (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:20:14)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:44:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T10:11:25.130] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
+[2020-11-18T08:31:42.216] [ERROR] app - 登录已过期
+[2020-11-18T08:33:58.705] [ERROR] app - 登录已过期
+[2020-11-18T08:33:58.708] [ERROR] app - 登录已过期
+[2020-11-18T08:34:00.943] [ERROR] app - 登录已过期
+[2020-11-18T08:34:00.946] [ERROR] app - 登录已过期
+[2020-11-18T08:35:17.037] [ERROR] app - 登录已过期
+[2020-11-18T08:35:17.039] [ERROR] app - 登录已过期
+[2020-11-18T08:38:10.302] [ERROR] app - 登录已过期
+[2020-11-18T08:38:10.304] [ERROR] app - 登录已过期
+[2020-11-18T09:26:50.163] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
     at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
     at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
     at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:44:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
     at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
     at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
     at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T10:11:32.185] [ERROR] app - TypeError: Account.getList is not a function
-    at Object.out.List (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:19:32)
+[2020-11-18T09:27:03.429] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
+    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
+    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-11-18T09:27:26.735] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
+    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
+    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-11-18T09:27:29.735] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
+    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
+    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-11-18T10:39:07.804] [ERROR] app - 403
+[2020-11-18T10:39:12.119] [ERROR] app - 403
+[2020-11-18T10:40:38.148] [ERROR] app - 403
+[2020-11-18T10:40:44.593] [ERROR] app - 403
+[2020-11-18T10:40:47.068] [ERROR] app - 403
+[2020-11-18T10:42:35.577] [ERROR] app - 403
+[2020-11-18T10:42:39.047] [ERROR] app - 403
+[2020-11-18T10:43:00.266] [ERROR] app - API接口不存在
+[2020-11-18T10:43:00.268] [ERROR] app - API接口不存在
+[2020-11-18T10:43:00.269] [ERROR] app - API接口不存在
+[2020-11-18T10:43:00.308] [ERROR] app - API接口不存在
+[2020-11-18T10:43:02.775] [ERROR] app - 403
+[2020-11-18T11:00:58.333] [ERROR] app - 403
+[2020-11-18T11:03:29.386] [ERROR] app - 403
+[2020-11-18T11:04:21.821] [ERROR] app - 403
+[2020-11-18T11:04:46.076] [ERROR] app - 403
+[2020-11-18T12:12:50.270] [ERROR] app - 登录已过期
+[2020-11-18T12:12:50.272] [ERROR] app - 登录已过期
+[2020-11-18T12:12:55.230] [ERROR] app - 403
+[2020-11-18T12:14:05.998] [ERROR] app - 403
+[2020-11-18T12:14:14.277] [ERROR] app - 403
+[2020-11-18T12:14:22.031] [ERROR] app - 403
+[2020-11-18T12:14:35.312] [ERROR] app - 403
+[2020-11-18T12:14:56.065] [ERROR] app - 403
+[2020-11-18T12:15:08.321] [ERROR] app - 403
+[2020-11-18T12:27:55.277] [ERROR] app - 403
+[2020-11-18T12:28:32.461] [ERROR] app - 403
+[2020-11-18T12:28:48.033] [ERROR] app - 403
+[2020-11-18T12:28:59.512] [ERROR] app - 403
+[2020-11-18T12:29:21.261] [ERROR] app - 403
+[2020-11-18T12:30:02.699] [ERROR] app - 403
+[2020-11-18T12:30:16.487] [ERROR] app - 403
+[2020-11-18T12:30:49.865] [ERROR] app - 403
+[2020-11-18T14:03:30.710] [ERROR] app - 访问对象不存在该操作
+[2020-11-18T15:36:25.011] [ERROR] app - 访问对象不存在该操作
+[2020-11-18T15:41:06.129] [ERROR] app - 访问对象不存在该操作
+[2020-11-18T15:41:50.354] [ERROR] app - 访问对象不存在该操作
+[2020-11-18T15:50:12.486] [ERROR] app - 访问对象不存在该操作
+[2020-11-18T15:50:21.776] [ERROR] app - 访问对象不存在该操作
+[2020-11-18T16:01:53.033] [ERROR] app - TypeError: The operator "undefined" is not permitted
+    at Formatter.operator (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\formatter.js:138:13)
+    at QueryCompiler_MySQL.whereBasic (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:525:100)
+    at QueryCompiler_MySQL.where (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:314:32)
+    at QueryCompiler_MySQL.update (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\query\compiler.js:34:22)
+    at QueryCompiler_MySQL.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:108:27)
+    at Builder.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\builder.js:115:44)
+    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:56:32
+    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:185:26
+    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:673:18)
+    at PromiseArray._resolve (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise_array.js:127:19)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
+    at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:169:14)
+    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
+[2020-11-18T16:04:34.141] [ERROR] app - ReferenceError: AccountType is not defined
+    at D:\hstigger\hstigger-server\hstigger-server\models\Account.js:289:20
+    at Array.map (<anonymous>)
+    at Object.o.createAccounts (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:286:20)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:35:25)
     at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
     at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:44:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
     at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
     at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
     at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-17T10:56:10.252] [ERROR] app - API接口不存在
-[2020-11-17T10:56:10.298] [ERROR] app - API接口不存在
-[2020-11-17T10:56:10.308] [ERROR] app - API接口不存在
-[2020-11-17T10:56:10.369] [ERROR] app - API接口不存在
-[2020-11-17T10:56:15.995] [ERROR] app - 不允许进行这种操作
-[2020-11-17T10:56:24.183] [ERROR] app - API接口不存在
-[2020-11-17T10:56:24.188] [ERROR] app - API接口不存在
-[2020-11-17T10:56:24.191] [ERROR] app - API接口不存在
-[2020-11-17T10:56:24.225] [ERROR] app - API接口不存在
-[2020-11-17T12:48:34.241] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T12:48:54.713] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T12:49:08.904] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T12:49:40.027] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T12:49:40.029] [ERROR] app - 登录次数过多, 请15分钟后再登录
-[2020-11-17T12:54:07.581] [ERROR] app - API接口不存在
-[2020-11-17T12:54:07.586] [ERROR] app - API接口不存在
-[2020-11-17T12:54:07.592] [ERROR] app - API接口不存在
-[2020-11-17T12:54:07.622] [ERROR] app - API接口不存在
-[2020-11-17T14:33:16.581] [ERROR] app - API接口不存在
-[2020-11-17T14:33:16.608] [ERROR] app - API接口不存在
-[2020-11-17T14:33:16.634] [ERROR] app - API接口不存在
-[2020-11-17T14:33:16.663] [ERROR] app - API接口不存在
-[2020-11-17T14:33:21.192] [ERROR] app - API接口不存在
-[2020-11-17T14:33:21.193] [ERROR] app - API接口不存在
-[2020-11-17T14:33:21.197] [ERROR] app - API接口不存在
-[2020-11-17T14:33:21.221] [ERROR] app - API接口不存在
-[2020-11-17T14:50:04.628] [ERROR] app - API接口不存在
-[2020-11-17T14:50:04.651] [ERROR] app - API接口不存在
-[2020-11-17T14:50:04.653] [ERROR] app - API接口不存在
-[2020-11-17T14:50:04.687] [ERROR] app - API接口不存在
-[2020-11-17T14:54:01.448] [ERROR] app - API接口不存在
-[2020-11-17T14:54:01.449] [ERROR] app - API接口不存在
-[2020-11-17T14:54:01.456] [ERROR] app - API接口不存在
-[2020-11-17T14:54:01.489] [ERROR] app - API接口不存在
-[2020-11-17T15:38:13.948] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T15:38:22.251] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T15:44:09.079] [ERROR] app - 访问对象不存在该操作
-[2020-11-17T16:12:15.137] [ERROR] app - TypeError: Enterprise.getEnterprises is not a function
-    at Object.out.List (D:\hstigger\hstigger-server\hstigger-server\controllers\enterprises.js:7:21)
+[2020-11-18T16:06:08.631] [ERROR] app - ReferenceError: AccountType is not defined
+    at D:\hstigger\hstigger-server\hstigger-server\models\Account.js:289:20
+    at Array.map (<anonymous>)
+    at Object.o.createAccounts (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:286:20)
+    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:35:25)
     at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T16:12:26.551] [ERROR] app - TypeError: Enterprise.getEnterprises is not a function
-    at Object.out.List (D:\hstigger\hstigger-server\hstigger-server\controllers\enterprises.js:7:21)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T16:31:52.082] [ERROR] app - 密码错误
-[2020-11-17T16:31:59.234] [ERROR] app - API接口不存在
-[2020-11-17T16:31:59.266] [ERROR] app - API接口不存在
-[2020-11-17T16:31:59.297] [ERROR] app - API接口不存在
-[2020-11-17T16:31:59.330] [ERROR] app - API接口不存在
-[2020-11-17T16:33:29.871] [ERROR] app - API接口不存在
-[2020-11-17T16:33:29.902] [ERROR] app - API接口不存在
-[2020-11-17T16:33:29.933] [ERROR] app - API接口不存在
-[2020-11-17T16:33:29.964] [ERROR] app - API接口不存在
-[2020-11-17T16:40:35.964] [ERROR] app - TypeError: Enterprise.getEnterprises is not a function
-    at Object.out.List (D:\hstigger\hstigger-server\hstigger-server\controllers\enterprises.js:7:21)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
-[2020-11-17T16:40:38.454] [ERROR] app - TypeError: Enterprise.getEnterprises is not a function
-    at Object.out.List (D:\hstigger\hstigger-server\hstigger-server\controllers\enterprises.js:7:21)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:13
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
-    at dispatch (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
-    at module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
+    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-11-18T16:07:06.917] [ERROR] app - Error: ER_NO_DEFAULT_FOR_FIELD: Field 'phone' doesn't have a default value
+    at Query.Sequence._packetToError (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:314:20)
+    at addChunk (_stream_readable.js:303:12)
+    at readableAddChunk (_stream_readable.js:279:9)
+    at Socket.Readable.push (_stream_readable.js:218:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+    at Protocol._enqueue (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
+    at Promise._execute (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
+    at Promise._resolveFromExecutor (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise._passThrough (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
+    at Promise.lastly.Promise.finally (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
+    at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
+    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
+  code: 'ER_NO_DEFAULT_FOR_FIELD',
+  errno: 1364,
+  sqlMessage: "Field 'phone' doesn't have a default value",
+  sqlState: 'HY000',
+  index: 0,
+  sql: "insert into `account` (`created_at`, `id`, `password`, `type`, `user`) values ('2020-11-18 16:07:06', '0cdf8620-2975-11eb-8563-7de71d575886', 'e10adc3949ba59abbe56e057f20f883e', 0, '3124')"
+}
+[2020-11-18T16:19:49.167] [ERROR] app - API接口不存在
+[2020-11-18T16:19:49.170] [ERROR] app - API接口不存在
+[2020-11-18T16:19:49.173] [ERROR] app - API接口不存在
+[2020-11-18T16:19:49.209] [ERROR] app - API接口不存在
+[2020-11-18T16:44:41.276] [ERROR] app - API接口不存在
+[2020-11-18T16:44:41.288] [ERROR] app - API接口不存在
+[2020-11-18T16:44:41.306] [ERROR] app - API接口不存在
+[2020-11-18T16:44:41.340] [ERROR] app - API接口不存在
+[2020-11-18T16:44:52.268] [ERROR] app - 403
+[2020-11-18T16:44:54.986] [ERROR] app - 403
+[2020-11-18T16:44:57.872] [ERROR] app - API接口不存在
+[2020-11-18T16:44:57.873] [ERROR] app - API接口不存在
+[2020-11-18T16:44:57.876] [ERROR] app - API接口不存在
+[2020-11-18T16:44:57.907] [ERROR] app - API接口不存在
+[2020-11-18T16:45:15.837] [ERROR] app - API接口不存在
+[2020-11-18T16:45:15.843] [ERROR] app - API接口不存在
+[2020-11-18T16:45:15.847] [ERROR] app - API接口不存在
+[2020-11-18T16:45:15.880] [ERROR] app - API接口不存在
+[2020-11-18T16:47:50.590] [ERROR] app - API接口不存在
+[2020-11-18T16:47:50.619] [ERROR] app - API接口不存在
+[2020-11-18T16:47:50.649] [ERROR] app - API接口不存在
+[2020-11-18T16:47:50.681] [ERROR] app - API接口不存在
+[2020-11-18T16:50:23.016] [ERROR] app - API接口不存在
+[2020-11-18T16:50:23.051] [ERROR] app - API接口不存在
+[2020-11-18T16:50:23.064] [ERROR] app - API接口不存在
+[2020-11-18T16:50:23.100] [ERROR] app - API接口不存在
+[2020-11-18T16:50:43.680] [ERROR] app - API接口不存在
+[2020-11-18T16:50:43.683] [ERROR] app - API接口不存在
+[2020-11-18T16:50:43.683] [ERROR] app - API接口不存在
+[2020-11-18T16:50:43.723] [ERROR] app - API接口不存在
+[2020-11-18T16:53:23.857] [ERROR] app - API接口不存在
+[2020-11-18T16:53:23.917] [ERROR] app - API接口不存在
+[2020-11-18T16:53:23.954] [ERROR] app - API接口不存在
+[2020-11-18T16:53:23.998] [ERROR] app - API接口不存在
+[2020-11-18T16:53:49.755] [ERROR] app - API接口不存在
+[2020-11-18T16:53:49.766] [ERROR] app - API接口不存在
+[2020-11-18T16:53:49.769] [ERROR] app - API接口不存在
+[2020-11-18T16:53:49.805] [ERROR] app - API接口不存在
+[2020-11-18T16:54:12.036] [ERROR] app - API接口不存在
+[2020-11-18T16:54:12.041] [ERROR] app - API接口不存在
+[2020-11-18T16:54:12.043] [ERROR] app - API接口不存在
+[2020-11-18T16:54:12.076] [ERROR] app - API接口不存在
+[2020-11-18T16:56:17.352] [ERROR] app - API接口不存在
+[2020-11-18T16:56:17.381] [ERROR] app - API接口不存在
+[2020-11-18T16:56:17.411] [ERROR] app - API接口不存在
+[2020-11-18T16:56:17.446] [ERROR] app - API接口不存在
+[2020-11-18T16:56:52.395] [ERROR] app - API接口不存在
+[2020-11-18T16:56:52.424] [ERROR] app - API接口不存在
+[2020-11-18T16:56:52.453] [ERROR] app - API接口不存在
+[2020-11-18T16:56:52.484] [ERROR] app - API接口不存在
+[2020-11-18T16:57:06.668] [ERROR] app - API接口不存在
+[2020-11-18T16:57:06.669] [ERROR] app - API接口不存在
+[2020-11-18T16:57:06.670] [ERROR] app - API接口不存在
+[2020-11-18T16:57:06.701] [ERROR] app - API接口不存在
+[2020-11-18T16:57:39.132] [ERROR] app - API接口不存在
+[2020-11-18T16:57:39.166] [ERROR] app - API接口不存在
+[2020-11-18T16:57:39.201] [ERROR] app - API接口不存在
+[2020-11-18T16:57:39.231] [ERROR] app - API接口不存在
+[2020-11-18T16:57:43.805] [ERROR] app - API接口不存在
+[2020-11-18T16:57:43.806] [ERROR] app - API接口不存在
+[2020-11-18T16:57:43.810] [ERROR] app - API接口不存在
+[2020-11-18T16:57:43.837] [ERROR] app - API接口不存在
+[2020-11-18T17:05:26.814] [ERROR] app - API接口不存在
+[2020-11-18T17:05:26.847] [ERROR] app - API接口不存在
+[2020-11-18T17:05:26.858] [ERROR] app - API接口不存在
+[2020-11-18T17:05:26.890] [ERROR] app - API接口不存在

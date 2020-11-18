@@ -1,5 +1,6 @@
 /** Account */
 const { E_DO_NOT_PERMITTED } = require('../base/exception')
+const MYSQL = require('../base/mysql')
 const {
   Account,
   Permission,
@@ -20,6 +21,14 @@ out.List = async ctx=>{
   return accounts
 }
 
+
+out.Patch =async ctx=>{
+  let id = ctx.params.id
+  let data = ctx.request.body
+  await Account.update(id,data)
+  return
+}
+
 out.Post = async ctx=>{
   let data = ctx.request.body
   let res = []
@@ -29,6 +38,19 @@ out.Post = async ctx=>{
     res = await Account.createAccounts([data])
   }
   return res
+}
+
+out.Delete = async ctx=>{
+  let id = ctx.params.id
+  await Account.remove([id])
+
+}
+
+out.PostAction = async ctx=>{
+  let data = ctx.request.body
+  if(Array.isArray(data)){
+    await Account.remove(data)
+  }
 }
 
 

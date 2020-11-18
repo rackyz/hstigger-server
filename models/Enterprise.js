@@ -28,19 +28,22 @@ const JBKT = {
 o.initdata = {NBGZ,JBKT}
 o.initdb = async (forced) => {
 
-  await MYSQL.initdb(T_ENTERPRISE,t=>{
-    t.string('id',64).index();
-    t.string('name',64);
-    t.string('shortname',16);
-    t.string('avatar',128);
-    t.string('owner_id',64);
-    t.datetime('created_at');
-    t.text('desc');
+  // await MYSQL.initdb(T_ENTERPRISE,t=>{
+  //   t.string('id',64).index();
+  //   t.string('name',64);
+  //   t.string('shortname',16);
+  //   t.string('avatar',128);
+  //   t.string('owner_id',64);
+  //   t.datetime('created_at');
+  //   t.text('desc');
 
-  },forced)
+  // },forced)
 
-  await MYSQL.seeds(T_ENTERPRISE,[NBGZ,JBKT],forced)
-  await o.createScheme(NBGZ.id)
+  // await MYSQL.seeds(T_ENTERPRISE,[NBGZ,JBKT],forced)
+  
+  // if(forced)
+  //   o.__removeEnterpriseDB()
+  //await o.createScheme(NBGZ.id)
 }
 
 o.getEnterpriseListFull = async ()=>{
@@ -60,12 +63,27 @@ o.getEnterpriseSchemeName = ent_id=>{
 
 o.createScheme = async (ent_id) => {
   let ent_db_name = o.getEnterpriseSchemeName (ent_id)
-  console.log(ent_db_name)
   let res = await MYSQL.raw(`SELECT * FROM information_schema.SCHEMATA where SCHEMA_NAME='${ent_db_name}'`)
   if(Array.isArray(res) && res[0]){
     await MYSQL.raw(`DROP DATABASE IF EXISTS ${ent_db_name}`)
   }
   await MYSQL.raw(`CREATE DATABASE ${ent_db_name}`)
+}
+
+/** DANGER */
+o.__removeEnterpriseDB = async (ent)=>{
+ let res = await MYSQL.raw(`SELECT * FROM information_schema.SCHEMATA where SCHEMA_NAME like 'ENT_%';`)
+ if(Array.isArray(res)){
+  for(let i=0;i<res[0].length;i++){
+   
+    let SCHEMA_NAME = res[0][i].SCHEMA_NAME
+    console.log("DROP DB:", SCHEMA_NAME)
+    if(SCHEMA_NAME.indexOf('ENT_') === 0)
+     { await MYSQL.raw(`DROP DATABASE IF EXISTS ${SCHEMA_NAME}`)
+      
+    }
+  }
+}
 }
 
 module.exports = o
