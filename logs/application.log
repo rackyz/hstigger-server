@@ -1,130 +1,122 @@
-[2020-11-18T08:31:42.216] [ERROR] app - 登录已过期
-[2020-11-18T08:33:58.705] [ERROR] app - 登录已过期
-[2020-11-18T08:33:58.708] [ERROR] app - 登录已过期
-[2020-11-18T08:34:00.943] [ERROR] app - 登录已过期
-[2020-11-18T08:34:00.946] [ERROR] app - 登录已过期
-[2020-11-18T08:35:17.037] [ERROR] app - 登录已过期
-[2020-11-18T08:35:17.039] [ERROR] app - 登录已过期
-[2020-11-18T08:38:10.302] [ERROR] app - 登录已过期
-[2020-11-18T08:38:10.304] [ERROR] app - 登录已过期
-[2020-11-18T09:26:50.163] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-18T09:27:03.429] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-18T09:27:26.735] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-18T09:27:29.735] [ERROR] app - TypeError: Cannot read property 'ADMIN' of undefined
-    at Object.out.Auth (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:13:37)
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:27:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-18T10:39:07.804] [ERROR] app - 403
-[2020-11-18T10:39:12.119] [ERROR] app - 403
-[2020-11-18T10:40:38.148] [ERROR] app - 403
-[2020-11-18T10:40:44.593] [ERROR] app - 403
-[2020-11-18T10:40:47.068] [ERROR] app - 403
-[2020-11-18T10:42:35.577] [ERROR] app - 403
-[2020-11-18T10:42:39.047] [ERROR] app - 403
-[2020-11-18T10:43:00.266] [ERROR] app - API接口不存在
-[2020-11-18T10:43:00.268] [ERROR] app - API接口不存在
-[2020-11-18T10:43:00.269] [ERROR] app - API接口不存在
-[2020-11-18T10:43:00.308] [ERROR] app - API接口不存在
-[2020-11-18T10:43:02.775] [ERROR] app - 403
-[2020-11-18T11:00:58.333] [ERROR] app - 403
-[2020-11-18T11:03:29.386] [ERROR] app - 403
-[2020-11-18T11:04:21.821] [ERROR] app - 403
-[2020-11-18T11:04:46.076] [ERROR] app - 403
-[2020-11-18T12:12:50.270] [ERROR] app - 登录已过期
-[2020-11-18T12:12:50.272] [ERROR] app - 登录已过期
-[2020-11-18T12:12:55.230] [ERROR] app - 403
-[2020-11-18T12:14:05.998] [ERROR] app - 403
-[2020-11-18T12:14:14.277] [ERROR] app - 403
-[2020-11-18T12:14:22.031] [ERROR] app - 403
-[2020-11-18T12:14:35.312] [ERROR] app - 403
-[2020-11-18T12:14:56.065] [ERROR] app - 403
-[2020-11-18T12:15:08.321] [ERROR] app - 403
-[2020-11-18T12:27:55.277] [ERROR] app - 403
-[2020-11-18T12:28:32.461] [ERROR] app - 403
-[2020-11-18T12:28:48.033] [ERROR] app - 403
-[2020-11-18T12:28:59.512] [ERROR] app - 403
-[2020-11-18T12:29:21.261] [ERROR] app - 403
-[2020-11-18T12:30:02.699] [ERROR] app - 403
-[2020-11-18T12:30:16.487] [ERROR] app - 403
-[2020-11-18T12:30:49.865] [ERROR] app - 403
-[2020-11-18T14:03:30.710] [ERROR] app - 访问对象不存在该操作
-[2020-11-18T15:36:25.011] [ERROR] app - 访问对象不存在该操作
-[2020-11-18T15:41:06.129] [ERROR] app - 访问对象不存在该操作
-[2020-11-18T15:41:50.354] [ERROR] app - 访问对象不存在该操作
-[2020-11-18T15:50:12.486] [ERROR] app - 访问对象不存在该操作
-[2020-11-18T15:50:21.776] [ERROR] app - 访问对象不存在该操作
-[2020-11-18T16:01:53.033] [ERROR] app - TypeError: The operator "undefined" is not permitted
-    at Formatter.operator (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\formatter.js:138:13)
-    at QueryCompiler_MySQL.whereBasic (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:525:100)
-    at QueryCompiler_MySQL.where (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:314:32)
-    at QueryCompiler_MySQL.update (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\query\compiler.js:34:22)
-    at QueryCompiler_MySQL.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:108:27)
-    at Builder.toSQL (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\builder.js:115:44)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:56:32
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:185:26
-    at tryCatcher (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
-    at Promise._settlePromiseFromHandler (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
-    at Promise._settlePromise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
-    at Promise._settlePromise0 (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
-    at Promise._settlePromises (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
-    at Promise._fulfill (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:673:18)
-    at PromiseArray._resolve (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise_array.js:127:19)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
-    at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:169:14)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-[2020-11-18T16:04:34.141] [ERROR] app - ReferenceError: AccountType is not defined
-    at D:\hstigger\hstigger-server\hstigger-server\models\Account.js:289:20
-    at Array.map (<anonymous>)
-    at Object.o.createAccounts (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:286:20)
-    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:35:25)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-18T16:06:08.631] [ERROR] app - ReferenceError: AccountType is not defined
-    at D:\hstigger\hstigger-server\hstigger-server\models\Account.js:289:20
-    at Array.map (<anonymous>)
-    at Object.o.createAccounts (D:\hstigger\hstigger-server\hstigger-server\models\Account.js:286:20)
-    at Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\accounts.js:35:25)
-    at RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:31:52)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:79:7
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\auth.js:43:3)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:8:9)
-    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2020-11-18T16:07:06.917] [ERROR] app - Error: ER_NO_DEFAULT_FOR_FIELD: Field 'phone' doesn't have a default value
+[2020-11-19T08:25:37.120] [ERROR] app - 登录已过期
+[2020-11-19T08:25:37.123] [ERROR] app - 登录已过期
+[2020-11-19T08:58:44.429] [ERROR] app - API接口不存在
+[2020-11-19T08:58:44.430] [ERROR] app - API接口不存在
+[2020-11-19T08:58:44.431] [ERROR] app - API接口不存在
+[2020-11-19T08:58:44.466] [ERROR] app - API接口不存在
+[2020-11-19T10:27:57.010] [ERROR] app - API接口不存在
+[2020-11-19T10:27:58.273] [ERROR] app - API接口不存在
+[2020-11-19T10:27:59.779] [ERROR] app - API接口不存在
+[2020-11-19T10:31:06.180] [ERROR] app - 您无权访问该企业
+[2020-11-19T10:31:07.653] [ERROR] app - 您无权访问该企业
+[2020-11-19T10:31:08.989] [ERROR] app - 您无权访问该企业
+[2020-11-19T10:31:09.022] [ERROR] app - 您无权访问该企业
+[2020-11-19T10:31:09.055] [ERROR] app - 您无权访问该企业
+[2020-11-19T10:31:17.315] [ERROR] app - 您无权访问该企业
+[2020-11-19T10:45:33.446] [ERROR] app - API接口不存在
+[2020-11-19T10:45:33.453] [ERROR] app - API接口不存在
+[2020-11-19T10:45:33.454] [ERROR] app - API接口不存在
+[2020-11-19T10:45:33.486] [ERROR] app - API接口不存在
+[2020-11-19T10:47:02.753] [ERROR] app - API接口不存在
+[2020-11-19T10:47:02.771] [ERROR] app - API接口不存在
+[2020-11-19T10:47:02.776] [ERROR] app - API接口不存在
+[2020-11-19T10:47:02.807] [ERROR] app - API接口不存在
+[2020-11-19T10:48:14.541] [ERROR] app - API接口不存在
+[2020-11-19T10:48:14.576] [ERROR] app - API接口不存在
+[2020-11-19T10:48:14.604] [ERROR] app - API接口不存在
+[2020-11-19T10:48:14.641] [ERROR] app - API接口不存在
+[2020-11-19T10:49:05.706] [ERROR] app - API接口不存在
+[2020-11-19T10:49:05.775] [ERROR] app - API接口不存在
+[2020-11-19T10:49:05.780] [ERROR] app - API接口不存在
+[2020-11-19T10:49:05.815] [ERROR] app - API接口不存在
+[2020-11-19T10:51:37.882] [ERROR] app - API接口不存在
+[2020-11-19T10:51:37.917] [ERROR] app - API接口不存在
+[2020-11-19T10:51:37.945] [ERROR] app - API接口不存在
+[2020-11-19T10:51:37.977] [ERROR] app - API接口不存在
+[2020-11-19T10:56:35.810] [ERROR] app - API接口不存在
+[2020-11-19T10:56:35.842] [ERROR] app - API接口不存在
+[2020-11-19T10:56:35.875] [ERROR] app - API接口不存在
+[2020-11-19T10:56:35.909] [ERROR] app - API接口不存在
+[2020-11-19T10:57:48.107] [ERROR] app - API接口不存在
+[2020-11-19T10:57:48.165] [ERROR] app - API接口不存在
+[2020-11-19T10:57:48.187] [ERROR] app - API接口不存在
+[2020-11-19T10:57:48.218] [ERROR] app - API接口不存在
+[2020-11-19T13:43:03.870] [ERROR] app - 登录已过期
+[2020-11-19T13:43:03.872] [ERROR] app - 登录已过期
+[2020-11-19T13:43:10.343] [ERROR] app - API接口不存在
+[2020-11-19T13:43:10.374] [ERROR] app - API接口不存在
+[2020-11-19T13:43:10.405] [ERROR] app - API接口不存在
+[2020-11-19T13:43:10.440] [ERROR] app - API接口不存在
+[2020-11-19T13:43:37.859] [ERROR] app - API接口不存在
+[2020-11-19T13:43:37.872] [ERROR] app - API接口不存在
+[2020-11-19T13:43:37.873] [ERROR] app - API接口不存在
+[2020-11-19T13:43:37.908] [ERROR] app - API接口不存在
+[2020-11-19T13:43:50.986] [ERROR] app - API接口不存在
+[2020-11-19T13:43:50.989] [ERROR] app - API接口不存在
+[2020-11-19T13:43:51.027] [ERROR] app - API接口不存在
+[2020-11-19T13:43:51.232] [ERROR] app - API接口不存在
+[2020-11-19T13:44:45.526] [ERROR] app - API接口不存在
+[2020-11-19T13:44:45.554] [ERROR] app - API接口不存在
+[2020-11-19T13:44:45.582] [ERROR] app - API接口不存在
+[2020-11-19T13:44:45.616] [ERROR] app - API接口不存在
+[2020-11-19T13:58:48.984] [ERROR] app - API接口不存在
+[2020-11-19T13:58:48.985] [ERROR] app - API接口不存在
+[2020-11-19T13:58:48.986] [ERROR] app - API接口不存在
+[2020-11-19T13:58:49.022] [ERROR] app - API接口不存在
+[2020-11-19T13:59:24.543] [ERROR] app - 用户名不存在
+[2020-11-19T13:59:31.930] [ERROR] app - 您无权访问该企业
+[2020-11-19T13:59:31.976] [ERROR] app - 您无权访问该企业
+[2020-11-19T13:59:48.193] [ERROR] app - 您无权访问该企业
+[2020-11-19T13:59:48.205] [ERROR] app - 您无权访问该企业
+[2020-11-19T13:59:48.223] [ERROR] app - 您无权访问该企业
+[2020-11-19T13:59:48.256] [ERROR] app - 您无权访问该企业
+[2020-11-19T13:59:55.941] [ERROR] app - 您无权访问该企业
+[2020-11-19T14:00:03.627] [ERROR] app - 您无权访问该企业
+[2020-11-19T14:00:08.464] [ERROR] app - 您无权访问该企业
+[2020-11-19T14:00:20.193] [ERROR] app - API接口不存在
+[2020-11-19T14:00:20.200] [ERROR] app - API接口不存在
+[2020-11-19T14:00:20.205] [ERROR] app - API接口不存在
+[2020-11-19T14:00:20.237] [ERROR] app - API接口不存在
+[2020-11-19T14:01:26.830] [ERROR] app - API接口不存在
+[2020-11-19T14:01:26.832] [ERROR] app - API接口不存在
+[2020-11-19T14:01:26.849] [ERROR] app - API接口不存在
+[2020-11-19T14:01:26.884] [ERROR] app - API接口不存在
+[2020-11-19T14:07:56.300] [ERROR] app - API接口不存在
+[2020-11-19T14:07:56.308] [ERROR] app - API接口不存在
+[2020-11-19T14:07:56.315] [ERROR] app - API接口不存在
+[2020-11-19T14:07:56.352] [ERROR] app - API接口不存在
+[2020-11-19T14:24:06.218] [ERROR] app - API接口不存在
+[2020-11-19T14:24:06.230] [ERROR] app - API接口不存在
+[2020-11-19T14:24:06.232] [ERROR] app - API接口不存在
+[2020-11-19T14:24:06.266] [ERROR] app - API接口不存在
+[2020-11-19T15:34:09.233] [ERROR] app - 登录已过期
+[2020-11-19T15:35:22.283] [ERROR] app - 登录已过期
+[2020-11-19T15:35:22.286] [ERROR] app - 登录已过期
+[2020-11-19T15:47:27.010] [ERROR] app - API接口不存在
+[2020-11-19T15:47:27.023] [ERROR] app - API接口不存在
+[2020-11-19T15:47:27.035] [ERROR] app - API接口不存在
+[2020-11-19T15:47:27.066] [ERROR] app - API接口不存在
+[2020-11-19T15:47:30.407] [ERROR] app - API接口不存在
+[2020-11-19T15:47:30.410] [ERROR] app - API接口不存在
+[2020-11-19T15:47:30.413] [ERROR] app - API接口不存在
+[2020-11-19T15:47:30.438] [ERROR] app - API接口不存在
+[2020-11-19T15:47:33.439] [ERROR] app - API接口不存在
+[2020-11-19T15:47:33.442] [ERROR] app - API接口不存在
+[2020-11-19T15:47:33.445] [ERROR] app - API接口不存在
+[2020-11-19T15:47:33.470] [ERROR] app - API接口不存在
+[2020-11-19T15:55:34.978] [ERROR] app - API接口不存在
+[2020-11-19T15:55:34.986] [ERROR] app - API接口不存在
+[2020-11-19T15:55:35.008] [ERROR] app - API接口不存在
+[2020-11-19T15:55:35.041] [ERROR] app - API接口不存在
+[2020-11-19T15:57:31.814] [ERROR] app - API接口不存在
+[2020-11-19T15:57:31.845] [ERROR] app - API接口不存在
+[2020-11-19T15:57:31.850] [ERROR] app - API接口不存在
+[2020-11-19T15:57:31.881] [ERROR] app - API接口不存在
+[2020-11-19T16:07:17.656] [ERROR] app - API接口不存在
+[2020-11-19T16:07:17.659] [ERROR] app - API接口不存在
+[2020-11-19T16:07:17.670] [ERROR] app - API接口不存在
+[2020-11-19T16:07:17.702] [ERROR] app - API接口不存在
+[2020-11-19T16:46:52.494] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'email' in 'field list'
     at Query.Sequence._packetToError (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
     at Query.ErrorPacket (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
     at Protocol._parsePacket (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
@@ -151,76 +143,10 @@ From previous event:
     at Function.Promise.using (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
     at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
     at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_NO_DEFAULT_FOR_FIELD',
-  errno: 1364,
-  sqlMessage: "Field 'phone' doesn't have a default value",
-  sqlState: 'HY000',
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'email' in 'field list'",
+  sqlState: '42S22',
   index: 0,
-  sql: "insert into `account` (`created_at`, `id`, `password`, `type`, `user`) values ('2020-11-18 16:07:06', '0cdf8620-2975-11eb-8563-7de71d575886', 'e10adc3949ba59abbe56e057f20f883e', 0, '3124')"
+  sql: "insert into `account` (`created_at`, `email`, `id`, `password`, `phone`, `type`, `user`) values ('2020-11-19 16:46:52', 'rackyz@qq.com', 'c532fa80-2a43-11eb-a034-31b1f0f7a64d', 'e10adc3949ba59abbe56e057f20f883e', '15991913205', 0, '41234')"
 }
-[2020-11-18T16:19:49.167] [ERROR] app - API接口不存在
-[2020-11-18T16:19:49.170] [ERROR] app - API接口不存在
-[2020-11-18T16:19:49.173] [ERROR] app - API接口不存在
-[2020-11-18T16:19:49.209] [ERROR] app - API接口不存在
-[2020-11-18T16:44:41.276] [ERROR] app - API接口不存在
-[2020-11-18T16:44:41.288] [ERROR] app - API接口不存在
-[2020-11-18T16:44:41.306] [ERROR] app - API接口不存在
-[2020-11-18T16:44:41.340] [ERROR] app - API接口不存在
-[2020-11-18T16:44:52.268] [ERROR] app - 403
-[2020-11-18T16:44:54.986] [ERROR] app - 403
-[2020-11-18T16:44:57.872] [ERROR] app - API接口不存在
-[2020-11-18T16:44:57.873] [ERROR] app - API接口不存在
-[2020-11-18T16:44:57.876] [ERROR] app - API接口不存在
-[2020-11-18T16:44:57.907] [ERROR] app - API接口不存在
-[2020-11-18T16:45:15.837] [ERROR] app - API接口不存在
-[2020-11-18T16:45:15.843] [ERROR] app - API接口不存在
-[2020-11-18T16:45:15.847] [ERROR] app - API接口不存在
-[2020-11-18T16:45:15.880] [ERROR] app - API接口不存在
-[2020-11-18T16:47:50.590] [ERROR] app - API接口不存在
-[2020-11-18T16:47:50.619] [ERROR] app - API接口不存在
-[2020-11-18T16:47:50.649] [ERROR] app - API接口不存在
-[2020-11-18T16:47:50.681] [ERROR] app - API接口不存在
-[2020-11-18T16:50:23.016] [ERROR] app - API接口不存在
-[2020-11-18T16:50:23.051] [ERROR] app - API接口不存在
-[2020-11-18T16:50:23.064] [ERROR] app - API接口不存在
-[2020-11-18T16:50:23.100] [ERROR] app - API接口不存在
-[2020-11-18T16:50:43.680] [ERROR] app - API接口不存在
-[2020-11-18T16:50:43.683] [ERROR] app - API接口不存在
-[2020-11-18T16:50:43.683] [ERROR] app - API接口不存在
-[2020-11-18T16:50:43.723] [ERROR] app - API接口不存在
-[2020-11-18T16:53:23.857] [ERROR] app - API接口不存在
-[2020-11-18T16:53:23.917] [ERROR] app - API接口不存在
-[2020-11-18T16:53:23.954] [ERROR] app - API接口不存在
-[2020-11-18T16:53:23.998] [ERROR] app - API接口不存在
-[2020-11-18T16:53:49.755] [ERROR] app - API接口不存在
-[2020-11-18T16:53:49.766] [ERROR] app - API接口不存在
-[2020-11-18T16:53:49.769] [ERROR] app - API接口不存在
-[2020-11-18T16:53:49.805] [ERROR] app - API接口不存在
-[2020-11-18T16:54:12.036] [ERROR] app - API接口不存在
-[2020-11-18T16:54:12.041] [ERROR] app - API接口不存在
-[2020-11-18T16:54:12.043] [ERROR] app - API接口不存在
-[2020-11-18T16:54:12.076] [ERROR] app - API接口不存在
-[2020-11-18T16:56:17.352] [ERROR] app - API接口不存在
-[2020-11-18T16:56:17.381] [ERROR] app - API接口不存在
-[2020-11-18T16:56:17.411] [ERROR] app - API接口不存在
-[2020-11-18T16:56:17.446] [ERROR] app - API接口不存在
-[2020-11-18T16:56:52.395] [ERROR] app - API接口不存在
-[2020-11-18T16:56:52.424] [ERROR] app - API接口不存在
-[2020-11-18T16:56:52.453] [ERROR] app - API接口不存在
-[2020-11-18T16:56:52.484] [ERROR] app - API接口不存在
-[2020-11-18T16:57:06.668] [ERROR] app - API接口不存在
-[2020-11-18T16:57:06.669] [ERROR] app - API接口不存在
-[2020-11-18T16:57:06.670] [ERROR] app - API接口不存在
-[2020-11-18T16:57:06.701] [ERROR] app - API接口不存在
-[2020-11-18T16:57:39.132] [ERROR] app - API接口不存在
-[2020-11-18T16:57:39.166] [ERROR] app - API接口不存在
-[2020-11-18T16:57:39.201] [ERROR] app - API接口不存在
-[2020-11-18T16:57:39.231] [ERROR] app - API接口不存在
-[2020-11-18T16:57:43.805] [ERROR] app - API接口不存在
-[2020-11-18T16:57:43.806] [ERROR] app - API接口不存在
-[2020-11-18T16:57:43.810] [ERROR] app - API接口不存在
-[2020-11-18T16:57:43.837] [ERROR] app - API接口不存在
-[2020-11-18T17:05:26.814] [ERROR] app - API接口不存在
-[2020-11-18T17:05:26.847] [ERROR] app - API接口不存在
-[2020-11-18T17:05:26.858] [ERROR] app - API接口不存在
-[2020-11-18T17:05:26.890] [ERROR] app - API接口不存在

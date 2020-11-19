@@ -40,105 +40,106 @@ const ACCOUNT_TYPES = [{
 o.initdb = async (forced) => {
   let AccountType = await Type.AddType('AccountType',ACCOUNT_TYPES)
 
-//   await MYSQL.initdb(TABLE_ACCOUNT, t => {
-//     t.string('id',64).index()
-//     t.string('user', 16).notNull()
-//     t.string('phone', 16)
-//     t.string('password',64).notNull()
-//     t.string('avatar',256)
-//     t.string('frame',16).defaultTo("1")
-//     t.integer('type').defaultTo(0)
-//     t.boolean('locked').defaultTo(0)
-//     t.boolean('changed').defaultTo(false)
-//     t.datetime('lastlogin_at')
-//     t.datetime('created_at')
-//   }, forced)
+  await MYSQL.initdb(TABLE_ACCOUNT, t => {
+    t.string('id',64).index()
+    t.string('user', 16).notNull()
+    t.string('phone', 16)
+    t.string('password',64).notNull()
+    t.string('avatar',256)
+    t.string('frame',16).defaultTo("1")
+    t.integer('type').defaultTo(0)
+    t.boolean('locked').defaultTo(0)
+    t.boolean('changed').defaultTo(false)
+    t.datetime('lastlogin_at')
+    t.datetime('created_at')
+    t.string('email')
+  }, forced)
 
-//   await MYSQL.initdb(TABLE_ACCOUNT_ENTERPRISE,t=>{
-//     t.increments('id').index()
-//     t.string('user_id',64)
-//     t.string('enterprise_id',64)
-//   },forced)
+  await MYSQL.initdb(TABLE_ACCOUNT_ENTERPRISE,t=>{
+    t.increments('id').index()
+    t.string('user_id',64)
+    t.string('enterprise_id',64)
+  },forced)
 
-//   await MYSQL.initdb(TABLE_USER_SETTING,t=>{
-//     t.increments("id").index()
-//     t.string("user_id",64).notNull()
-//     t.string("key",32)
-//     t.string("value",128)
-//   },forced)
+  await MYSQL.initdb(TABLE_USER_SETTING,t=>{
+    t.increments("id").index()
+    t.string("user_id",64).notNull()
+    t.string("key",32)
+    t.string("value",128)
+  },forced)
 
-//   await MYSQL.initdb(TABLE_USER_MENU,t=>{
-//     t.increments("id").index()
-//     t.string("user_id",64).notNull()
-//     t.string("key",32).notNull()
-//   },forced)
+  await MYSQL.initdb(TABLE_USER_MENU,t=>{
+    t.increments("id").index()
+    t.string("user_id",64).notNull()
+    t.string("key",32).notNull()
+  },forced)
 
-//   await MYSQL.initdb(TABLE_USER_ACTION_MENU,t=>{
-//     t.increments("id").index()
-//     t.string("user_id",64).notNull()
-//     t.string("key",32).notNull()
-//   },forced)
+  await MYSQL.initdb(TABLE_USER_ACTION_MENU,t=>{
+    t.increments("id").index()
+    t.string("user_id",64).notNull()
+    t.string("key",32).notNull()
+  },forced)
 
-//   await MYSQL.schema.raw(`ALTER TABLE ${TABLE_ACCOUNT} AUTO_INCREMENT=1000`)
+  await MYSQL.schema.raw(`ALTER TABLE ${TABLE_ACCOUNT} AUTO_INCREMENT=1000`)
 
-//   let ROOT = {
-//     id:UTIL.createUUID(),
-//     user:'root',
-//     phone:'19888821112',
-//     avatar:'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/avatars/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20191105133509.jpg',
-//     frame:'7',
-//     type:AccountType.ADMIN,
-//     password:UTIL.encodeMD5('root'),
-//     created_at:UTIL.getTimeStamp()
-//   }
+  let ROOT = {
+    id:UTIL.createUUID(),
+    user:'root',
+    phone:'19888821112',
+    avatar:'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/avatars/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20191105133509.jpg',
+    frame:'7',
+    type:AccountType.ADMIN,
+    password:UTIL.encodeMD5('root'),
+    created_at:UTIL.getTimeStamp()
+  }
 
-//   let JBKT = {
-//     id: UTIL.createUUID(),
-//     user:'jbkt',
-//     phone:'1000',
-//     avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png',
-//     frame:'6',
-//     type:AccountType.Enterprise,
-//     password:UTIL.encodeMD5('123456'),
-//     created_at:UTIL.getTimeStamp()
-//   }
+  let JBKT = {
+    id: UTIL.createUUID(),
+    user:'jbkt',
+    phone:'1000',
+    avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png',
+    frame:'6',
+    type:AccountType.Enterprise,
+    password:UTIL.encodeMD5('123456'),
+    created_at:UTIL.getTimeStamp()
+  }
 
-//   let NBGZ = {
-//     id: UTIL.createUUID(),
-//     user:'nbgz',
-//     phone:'1001',
-//     avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png',
-//     frame:'6',
-//     type:AccountType.Enterprise,
-//     password:UTIL.encodeMD5('123456'),
-//     created_at:UTIL.getTimeStamp()
-//   }
+  let NBGZ = {
+    id: UTIL.createUUID(),
+    user:'nbgz',
+    phone:'1001',
+    avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png',
+    frame:'6',
+    type:AccountType.Enterprise,
+    password:UTIL.encodeMD5('123456'),
+    created_at:UTIL.getTimeStamp()
+  }
 
-//   let Relations = [{
-//     user_id:JBKT.id,
-//     enterprise_id:Enterprise.initdata.JBKT.id
-//   },{
-//     user_id:NBGZ.id,
-//     enterprise_id:Enterprise.initdata.NBGZ.id
-//   },
-// {
-//   user_id: ROOT.id,
-//   enterprise_id: Enterprise.initdata.JBKT.id
-// }, {
-//   user_id: ROOT.id,
-//   enterprise_id: Enterprise.initdata.NBGZ.id
-// }]
+  let Relations = [{
+    user_id:JBKT.id,
+    enterprise_id:Enterprise.initdata.JBKT.id
+    },{
+      user_id:NBGZ.id,
+      enterprise_id:Enterprise.initdata.NBGZ.id
+    },
+  {
+    user_id: ROOT.id,
+    enterprise_id: Enterprise.initdata.JBKT.id
+  }, {
+    user_id: ROOT.id,
+    enterprise_id: Enterprise.initdata.NBGZ.id
+  }]
 
-//   if(forced){
-//     await MYSQL(TABLE_ACCOUNT).where(true).del()
-//     await MYSQL(TABLE_ACCOUNT).insert([ROOT,JBKT,NBGZ])
-//     await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert(Relations)
-//     await MYSQL(TABLE_USER_MENU).del()
-//     await MYSQL(TABLE_USER_ACTION_MENU).del()
+  if(forced){
+    await MYSQL(TABLE_ACCOUNT).where(true).del()
+    await MYSQL(TABLE_ACCOUNT).insert([ROOT,JBKT,NBGZ])
+    await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert(Relations)
+    await MYSQL(TABLE_USER_MENU).del()
+    await MYSQL(TABLE_USER_ACTION_MENU).del()
 
-//     await Message.Create(ROOT.id,JBKT.id,"企业账号注册成功,欢迎使用")
-//     await Message.Create(ROOT.id,NBGZ.id,"企业账号注册成功,欢迎使用")
-//   }
+    await Message.Create(ROOT.id,JBKT.id,"企业账号注册成功,欢迎使用")
+    await Message.Create(ROOT.id,NBGZ.id,"企业账号注册成功,欢迎使用")
+  }
 }
 
 

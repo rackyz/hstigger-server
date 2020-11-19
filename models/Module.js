@@ -14,7 +14,8 @@ const T_MODULE = 'module'
 const MODULE_TYPE = {
   COMMON:1,
   OPERATION:2,
-  SYSTEM:3
+  SYSTEM:3,
+  FINANCE:4
 }
 
 const initData = [{
@@ -25,19 +26,19 @@ const initData = [{
 },
 {
   key: "OPERATION",
-  name:"经营管理",
-  url:"/core/bi",
+  name:"经营状况",
+  url:"/core/bi/panel",
   type: MODULE_TYPE.OPERATION,
   private:true
 },
 {
   key:"EADMIN",
-  name: "企业后台管理",
+  name: "企业后台",
   url:"/core/eadmin/",
   type: MODULE_TYPE.SYSTEM,
 },{
   key: "ADMIN",
-  name:"平台后台管理",
+  name:"NEIP管理",
   url:"/core/admin",
   type: MODULE_TYPE.SYSTEM,
 }]
@@ -50,16 +51,22 @@ o.initdb = async (forced) => {
     icon: "supervisor",
     color: "rgb(51, 153, 255)",
   }, {
-    key:"BUSINESS",
-    name: "业务模块",
+    key:"OEPRATION",
+    name: "企业经营",
     value: MODULE_TYPE.OPERATION,
+    icon: "pm2",
+    color: "rgb(51, 153, 255)"
+  }, {
+    key: "FINANCE",
+    name: "企业财务",
+    value: MODULE_TYPE.FINANCE,
     icon: "pm2",
     color: "rgb(51, 153, 255)"
   }, {
     key:"SYSTEM",
     name: "系统模块",
     value: MODULE_TYPE.SYSTEM,
-    icon: "application",
+    icon: "parameter",
     color: "yellowgreen"
   }])
 
@@ -84,7 +91,7 @@ o.register = async ()=>{
 }
 
 o.getModules = async ()=>{
-  let res = await MYSQL(T_MODULE).where('parent_id',0)
+  let res = await MYSQL(T_MODULE).where('parent_id',null)
   return res
 }
 
