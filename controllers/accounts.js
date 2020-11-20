@@ -1,6 +1,7 @@
 /** Account */
-const { E_DO_NOT_PERMITTED } = require('../base/exception')
-const MYSQL = require('../base/mysql')
+const {
+  UserLogger
+} = require('../base/logger')
 const {
   Account,
   Permission,
@@ -25,7 +26,9 @@ out.List = async ctx=>{
 out.Patch =async ctx=>{
   let id = ctx.params.id
   let data = ctx.request.body
+  
   await Account.update(id,data)
+ // UserLogger.info(`${ctx.state.user} 修改了用户信息 ${id}`)
   return
 }
 
@@ -37,19 +40,26 @@ out.Post = async ctx=>{
   }else{
     res = await Account.createAccounts([data])
   }
+
+  UserLogger.info(`${ctx.state.user} 创建了用户 ${data.map(v=>v.user).join(',')}`)
   return res
 }
 
 out.Delete = async ctx=>{
   let id = ctx.params.id
   await Account.remove([id])
+  UserLogger.info(`${ctx.state.user} 删除了用户 ${id}`)
 
 }
 
 out.PostAction = async ctx=>{
   let data = ctx.request.body
-  if(Array.isArray(data)){
-    await Account.remove(data)
+  let action = ctx.params.action
+  if(action == 'delete'){
+    if(Array.isArray(data)){
+      await Account.remove(data)
+      UserLogger.info(`${ctx.state.user} 删除了用户 ${data.join(',')}`)
+    }
   }
 }
 

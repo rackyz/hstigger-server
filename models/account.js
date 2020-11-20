@@ -42,7 +42,7 @@ o.initdb = async (forced) => {
 
   await MYSQL.initdb(TABLE_ACCOUNT, t => {
     t.string('id',64).index()
-    t.string('user', 16).notNull()
+    t.string('user', 16).unique()
     t.string('phone', 16)
     t.string('password',64).notNull()
     t.string('avatar',256)
@@ -170,7 +170,7 @@ o.getAuthInfo = async (id)=>{
 }
 
 o.getList = async ()=>{
-  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at')
+  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at','email').orderBy('type','desc').orderBy('created_at','asc')
   return users
 }
 
@@ -254,10 +254,34 @@ o.createAccounts = async (data)=>{
   return updateInfoArray
 }
 
-o.update = async (id,data)=>{
-  if(!id || !data)
+o.update = async (id,{user,avatar,frame,email,phone,type})=>{
+  if(!id)
     throw EXCEPTION.E_INVALID_DATA
-  await MYSQL(TABLE_ACCOUNT).update(data).where(id)
+
+  if(user){
+    let u = await MYSQL(TABLE_ACCOUNT).first('id').where({user})
+    if(u)
+      throw EXCEPTION.E_USER_USER_EXIST
+  }
+
+  if(phone){
+    let u = await MYSQL(TABLE_ACCOUNT).first('id').where({
+      phone
+    })
+    if(u)
+      throw EXCEPTION.E_USER_PHONE_EXIST
+  }
+
+  await MYSQL(TABLE_ACCOUNT).update({
+    user,
+    avatar,
+    frame,
+    email,
+    phone,
+    type
+  }).where({
+    id
+  })
 }
 
 o.register = async (phone)=>{
