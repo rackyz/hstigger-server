@@ -17,7 +17,7 @@ const CONF = {
   },
   redis:{
     host:process.env.NODE_ENV=='development'?'localhost':'redis',
-    port: process.env.NODE_ENV == 'development' ? 6389 : 6379,
+    port: process.env.NODE_ENV == 'development' ? 6380 : 6379,
 
   },
   mysql: {

@@ -1,10 +1,6 @@
 /** Account */
 const {
-  UserLogger
-} = require('../base/logger')
-const {
   Account,
-  Permission,
   Type
 } = require('../models')
 
@@ -36,9 +32,9 @@ out.Post = async ctx=>{
   let data = ctx.request.body
   let res = []
   if(Array.isArray(data)){
-    res = await Account.createAccounts(data)
+    res = await Account.createAccounts(data, ctx.state.user)
   }else{
-    res = await Account.createAccounts([data])
+    res = await Account.createAccounts([data], ctx.state.user)
   }
 
   UserLogger.info(`${ctx.state.user} 创建了用户 ${data.map(v=>v.user).join(',')}`)
@@ -47,7 +43,7 @@ out.Post = async ctx=>{
 
 out.Delete = async ctx=>{
   let id = ctx.params.id
-  await Account.remove([id])
+  await Account.remove([id], ctx.state.user)
   UserLogger.info(`${ctx.state.user} 删除了用户 ${id}`)
 
 }
@@ -55,11 +51,21 @@ out.Delete = async ctx=>{
 out.PostAction = async ctx=>{
   let data = ctx.request.body
   let action = ctx.params.action
+  let op = ctx.state.user
   if(action == 'delete'){
-    if(Array.isArray(data)){
-      await Account.remove(data)
-      UserLogger.info(`${ctx.state.user} 删除了用户 ${data.join(',')}`)
-    }
+    await Account.remove(data, op)
+  }else if(action == 'change-pwd'){
+    let {
+      account,
+      password
+    } = data
+    await Account.changePwd(account, password, op)
+  }else if(action == 'reset-pwd'){
+    await Account.reset_password(data, op)
+  }else if(action == 'lock'){
+    await Account.lock(data, op)
+  }else if(action == 'unlock'){
+    await Account.unlock(data, op)
   }
 }
 

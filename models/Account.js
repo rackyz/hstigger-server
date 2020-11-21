@@ -7,6 +7,8 @@ const Enterprise = require('./Enterprise')
 const Module = require('./Module')
 const Permission = require('./Permission')
 const Setting = require('./Setting')
+const { E_INVALID_DATA } = require('../base/exception')
+const { UserLogger } = require('../base/logger')
 const o = {
   required:['Type','Enterprise','Message']
 }
@@ -143,6 +145,7 @@ o.initdb = async (forced) => {
 }
 
 
+// Inner Method
 o.login = async (account,password)=>{
   if(!account || !password)
     throw EXCEPTION.E_INVALID_DATA
@@ -180,8 +183,6 @@ o.getUserList = async ()=>{
 }
 
 o.getUserEnterprises = async (user_id)=>{
-
-
   let items = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).where({
     user_id
   })
@@ -189,6 +190,8 @@ o.getUserEnterprises = async (user_id)=>{
 }
 
 o.getUserInfo = async (user_id)=>{
+  if(!user_id)
+    return EXCEPTION.E_INVALID_DATA
   let user = await MYSQL(TABLE_ACCOUNT).first('id','user','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
@@ -206,6 +209,8 @@ o.getUserInfo = async (user_id)=>{
 }
 
 o.getPhoneFromAccount = async (account)=>{
+  if(!account)
+    throw EXCEPTION.E_INVALID_DATA
   let user = await MYSQL(TABLE_ACCOUNT).first('phone').where('user',account).orWhere('phone',account)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
@@ -213,12 +218,16 @@ o.getPhoneFromAccount = async (account)=>{
 }
 
 o.changePwd = async (account,password)=>{
+  if(!account || !password)
+    throw(EXCEPTION.E_INVALID_DATA)
   let user = await MYSQL(TABLE_ACCOUNT).first('id').where('user',account).orWhere('phone',account)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
   await MYSQL(TABLE_ACCOUNT).update({password,changed:true}).where({id:user.id})
+  UserLogger.info(`${op} 更新了用户${id}的信息}`)
 }
 
+// out methods
 o.create = async(data)=>{
   if(!data) 
     throw EXCEPTION.E_INVALID_DATA
@@ -251,10 +260,11 @@ o.createAccounts = async (data)=>{
   })
 
   await MYSQL(TABLE_ACCOUNT).insert(updateData)
+
   return updateInfoArray
 }
 
-o.update = async (id,{user,avatar,frame,email,phone,type})=>{
+o.update = async (id,{user,avatar,frame,email,phone,type},op)=>{
   if(!id)
     throw EXCEPTION.E_INVALID_DATA
 
@@ -271,7 +281,6 @@ o.update = async (id,{user,avatar,frame,email,phone,type})=>{
     if(u)
       throw EXCEPTION.E_USER_PHONE_EXIST
   }
-
   await MYSQL(TABLE_ACCOUNT).update({
     user,
     avatar,
@@ -282,6 +291,8 @@ o.update = async (id,{user,avatar,frame,email,phone,type})=>{
   }).where({
     id
   })
+
+  UserLogger.info(`${op} 更新了用户${id}的信息}`)
 }
 
 o.register = async (phone)=>{
@@ -355,11 +366,54 @@ o.setActionMenus = async (user_id,menus)=>{
 }
 
 o.getActionMenus = async (user_id)=>{
+  if(!user_id)
+    throw EXCEPTION.E_INVALID_DATA
   let items = await MYSQL(TABLE_USER_ACTION_MENU).select('key').where({user_id})
   return items.map(v=>v.key)
 }
 
-o.remove = async (user_id_array)=>{
-  await MYSQL(TABLE_ACCOUNT).whereIn('id',user_id_array).del()
+o.remove = async (user_id_list) => {
+  if(!Array.isArray(user_id_list))
+    throw EXCEPTION.E_INVALID_DATA
+  await MYSQL(TABLE_ACCOUNT).whereIn('id', user_id_list).del()
+}
+
+o.reset_password = async (id,op)=>{
+  if(!id)
+    throw EXCEPTION.E_INVALID_DATA
+  await MYSQL(TABLE_ACCOUNT).update('password',UTIL.encodeMD5('123456')).where({id})
+  UserLogger.info(`${op} 重置了用户 ${id} 的密码`)
+}
+
+o.change_password = async (account,password,op)=>{
+  if(!account || !password)
+    throw EXCEPTION.E_INVALID_DATA
+  if(!op)
+    throw EXCEPTION.E_DO_NOT_PERMITTED
+  
+  await MYSQL(TABLE_ACCOUNT).update({
+    password:UTIL.encodeMD5('123456')
+  }).where({
+    user:account
+  })
+  UserLogger.info(`${op} 修改了用户 ${id}的密码`)
+}
+
+o.lock = async (id_list,op)=>{
+  if(!Array.isArray(id_list))
+    throw EXCEPTION.E_INVALID_DATA
+  
+  await MYSQL(TABLE_ACCOUNT).update({state:1}).whereIn(id,id_list)
+  UserLogger.info(`${op} 锁定了用户${id_list.join(',')}`)
+}
+
+o.unlock = async (id_list,op)=>{
+   if (!Array.isArray(id_list))
+     throw EXCEPTION.E_INVALID_DATA
+
+   await MYSQL(TABLE_ACCOUNT).update({
+     state: 0
+   }).whereIn(id, id_list)
+   UserLogger.info(`${op} 解除了用户${id_list.join(',')}的锁定`)
 }
 module.exports = o
