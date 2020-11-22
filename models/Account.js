@@ -378,11 +378,15 @@ o.remove = async (user_id_list) => {
   await MYSQL(TABLE_ACCOUNT).whereIn('id', user_id_list).del()
 }
 
-o.reset_password = async (id,op)=>{
-  if(!id)
+o.reset_password = async (id_list,op)=>{
+  console.log(id_list,Array.isArray(id_list))
+  if(!Array.isArray(id_list))
     throw EXCEPTION.E_INVALID_DATA
-  await MYSQL(TABLE_ACCOUNT).update('password',UTIL.encodeMD5('123456')).where({id})
-  UserLogger.info(`${op} 重置了用户 ${id} 的密码`)
+  await MYSQL(TABLE_ACCOUNT).update({
+    password:UTIL.encodeMD5('123456'),
+    changed:0}
+  ).whereIn('id',id_list)
+  UserLogger.info(`${op} 重置了用户 ${id_list.join(',')} 的密码`)
 }
 
 o.change_password = async (account,password,op)=>{
@@ -392,7 +396,8 @@ o.change_password = async (account,password,op)=>{
     throw EXCEPTION.E_DO_NOT_PERMITTED
   
   await MYSQL(TABLE_ACCOUNT).update({
-    password:UTIL.encodeMD5('123456')
+    password:UTIL.encodeMD5('123456'),
+    changed:1
   }).where({
     user:account
   })
