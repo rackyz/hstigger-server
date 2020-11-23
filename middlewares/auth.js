@@ -21,7 +21,6 @@ module.exports = async function (ctx, next) {
   if (token) {
     token = token.slice(7)
     let sessionState = await Session.getSessionState(token)
-    
     ctx.state = sessionState
     let enterpriseId = ctx.headers.enterprise
    

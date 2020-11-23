@@ -56,10 +56,11 @@ out.PostAction = async ctx=>{
     await Account.remove(data, op)
   }else if(action == 'change-pwd'){
     let {
-      account,
+      id,
       password
     } = data
-    await Account.changePwd(account, password, op)
+    console.log(ctx.state)
+    await Account.change_password_by_id(id, password, op)
   }else if(action == 'reset-pwd'){
     await Account.reset_password(data, op)
   }else if(action == 'lock'){

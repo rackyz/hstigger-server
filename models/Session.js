@@ -95,7 +95,7 @@ o.createSessionById = async (user_id,device,ip)=>{
   await CreateSessionInRedis(session)
   await CreateUserInfoInRedis(user_id)
 
-  let userInfo = ACCOUNT.getUser(user_id)
+  let userInfo = ACCOUNT.getUserAuthInfo(user_id)
   let systemInfo = await GetSystemInfo()
   session.token = "Bearer " + session.id
   return {
@@ -156,10 +156,9 @@ o.getSessionState = async token=>{
   if(!user_id)
     throw EXCEPTION.E_UNEXPECTED_TOKEN
   let session_id = token
-  let sessionInfo = await REDIS.ASC_GET(RKEY_SESSION+session_id)
+  let sessionInfo = await REDIS.ASC_GET_JSON(RKEY_SESSION+session_id)
   if(!sessionInfo)
     throw EXCEPTION.E_OUT_OF_DATE
-  
   REDIS.EXPIRE(RKEY_SESSION + session_id,3600)
   
   return {

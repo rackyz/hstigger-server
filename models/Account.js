@@ -173,7 +173,7 @@ o.getAuthInfo = async (id)=>{
 }
 
 o.getList = async ()=>{
-  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at','email').orderBy('type','desc').orderBy('created_at','asc')
+  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','locked','type','phone', 'frame','created_at','lastlogin_at','changed','email').orderBy('type','desc').orderBy('created_at','asc')
   return users
 }
 
@@ -189,9 +189,16 @@ o.getUserEnterprises = async (user_id)=>{
   return items.map(v=>v.enterprise_id)
 }
 
+o.getUserAuthInfo = async (user_od)=>{
+  if(!user_id)
+    throw EXCEPTION.E_INVALID_DATA
+  let user = await MYSQL(TABLE_ACCOUNT).first('id','user','type')
+  return user
+}
+
 o.getUserInfo = async (user_id)=>{
   if(!user_id)
-    return EXCEPTION.E_INVALID_DATA
+    throw EXCEPTION.E_INVALID_DATA
   let user = await MYSQL(TABLE_ACCOUNT).first('id','user','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
@@ -270,7 +277,7 @@ o.update = async (id,{user,avatar,frame,email,phone,type},op)=>{
 
   if(user){
     let u = await MYSQL(TABLE_ACCOUNT).first('id').where({user})
-    if(u)
+    if(u.id != id)
       throw EXCEPTION.E_USER_USER_EXIST
   }
 
@@ -278,7 +285,7 @@ o.update = async (id,{user,avatar,frame,email,phone,type},op)=>{
     let u = await MYSQL(TABLE_ACCOUNT).first('id').where({
       phone
     })
-    if(u)
+    if(u.id != id)
       throw EXCEPTION.E_USER_PHONE_EXIST
   }
   await MYSQL(TABLE_ACCOUNT).update({
@@ -378,23 +385,27 @@ o.remove = async (user_id_list) => {
   await MYSQL(TABLE_ACCOUNT).whereIn('id', user_id_list).del()
 }
 
-o.reset_password = async (id,op)=>{
-  if(!id)
+o.reset_password = async (id_list,op)=>{
+  if (!Array.isArray(id_list))
     throw EXCEPTION.E_INVALID_DATA
-  await MYSQL(TABLE_ACCOUNT).update('password',UTIL.encodeMD5('123456')).where({id})
-  UserLogger.info(`${op} 重置了用户 ${id} 的密码`)
+  await MYSQL(TABLE_ACCOUNT).update({
+    password:UTIL.encodeMD5('123456'),
+    changed: 0
+    }).whereIn('id', id_list)
+  UserLogger.info(`${op} 重置了用户 ${id_list.join(',')} 的密码`)
 }
 
-o.change_password = async (account,password,op)=>{
-  if(!account || !password)
+o.change_password_by_id = async (id,password,op)=>{
+  if(!id || !password)
     throw EXCEPTION.E_INVALID_DATA
   if(!op)
     throw EXCEPTION.E_DO_NOT_PERMITTED
   
   await MYSQL(TABLE_ACCOUNT).update({
-    password:UTIL.encodeMD5('123456')
+    password: UTIL.encodeMD5(password),
+    changed:1
   }).where({
-    user:account
+    id
   })
   UserLogger.info(`${op} 修改了用户 ${id}的密码`)
 }
@@ -403,7 +414,9 @@ o.lock = async (id_list,op)=>{
   if(!Array.isArray(id_list))
     throw EXCEPTION.E_INVALID_DATA
   
-  await MYSQL(TABLE_ACCOUNT).update({state:1}).whereIn(id,id_list)
+  await MYSQL(TABLE_ACCOUNT).update({
+    locked: 1
+  }).whereIn('id', id_list)
   UserLogger.info(`${op} 锁定了用户${id_list.join(',')}`)
 }
 
@@ -412,8 +425,8 @@ o.unlock = async (id_list,op)=>{
      throw EXCEPTION.E_INVALID_DATA
 
    await MYSQL(TABLE_ACCOUNT).update({
-     state: 0
-   }).whereIn(id, id_list)
+     locked: 0
+   }).whereIn('id', id_list)
    UserLogger.info(`${op} 解除了用户${id_list.join(',')}的锁定`)
 }
 module.exports = o
