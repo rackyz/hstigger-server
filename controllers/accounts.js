@@ -23,8 +23,8 @@ out.Patch =async ctx=>{
   let id = ctx.params.id
   let data = ctx.request.body
   
-  await Account.update(id,data)
- // UserLogger.info(`${ctx.state.user} 修改了用户信息 ${id}`)
+  await Account.update(id,data,ctx.state.user)
+ // 
   return
 }
 
@@ -37,14 +37,13 @@ out.Post = async ctx=>{
     res = await Account.createAccounts([data], ctx.state.user)
   }
 
-  UserLogger.info(`${ctx.state.user} 创建了用户 ${data.map(v=>v.user).join(',')}`)
+ 
   return res
 }
 
 out.Delete = async ctx=>{
   let id = ctx.params.id
   await Account.remove([id], ctx.state.user)
-  UserLogger.info(`${ctx.state.user} 删除了用户 ${id}`)
 
 }
 

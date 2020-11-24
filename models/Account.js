@@ -6,8 +6,6 @@ const Message = require('./Message')
 const Enterprise = require('./Enterprise')
 const Module = require('./Module')
 const Permission = require('./Permission')
-const Setting = require('./Setting')
-const { E_INVALID_DATA } = require('../base/exception')
 const { UserLogger } = require('../base/logger')
 const o = {
   required:['Type','Enterprise','Message']
@@ -241,13 +239,13 @@ o.create = async(data)=>{
   return updateInfo
 }
 
-o.createAccounts = async (data)=>{
+o.createAccounts = async (data,op)=>{
   if (!data || !Array.isArray(data) || data.length == 0)
     throw EXCEPTION.E_INVALID_DATA
   
   let updateInfoArray = []
   let updateData = []
-  let items = data.map(v=>{
+  data.forEach(v=>{
     let updateInfo = {
       id: UTIL.createUUID(),
       created_at: UTIL.getTimeStamp()
@@ -260,7 +258,7 @@ o.createAccounts = async (data)=>{
   })
 
   await MYSQL(TABLE_ACCOUNT).insert(updateData)
-
+   UserLogger.info(`${op} 创建了用户 ${updateData.map(v=>v.user).join(',')}`)
   return updateInfoArray
 }
 
@@ -280,6 +278,7 @@ o.update = async (id,{user,avatar,frame,email,phone,type},op)=>{
     })
     if(u)
       throw EXCEPTION.E_USER_PHONE_EXIST
+      
   }
   await MYSQL(TABLE_ACCOUNT).update({
     user,
@@ -372,10 +371,11 @@ o.getActionMenus = async (user_id)=>{
   return items.map(v=>v.key)
 }
 
-o.remove = async (user_id_list) => {
+o.remove = async (user_id_list,op) => {
   if(!Array.isArray(user_id_list))
     throw EXCEPTION.E_INVALID_DATA
   await MYSQL(TABLE_ACCOUNT).whereIn('id', user_id_list).del()
+  UserLogger.info(`${op} 删除了用户 ${user_id_list.join(',')}`)
 }
 
 o.reset_password = async (id,op)=>{
