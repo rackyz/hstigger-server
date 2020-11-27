@@ -171,7 +171,7 @@ o.getAuthInfo = async (id)=>{
 }
 
 o.getList = async ()=>{
-  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at','changed','email').orderBy('type','desc').orderBy('created_at','asc')
+  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at','email').orderBy('type','desc').orderBy('created_at','asc')
   return users
 }
 
@@ -385,17 +385,16 @@ o.reset_password = async (id,op)=>{
   UserLogger.info(`${op} 重置了用户 ${id} 的密码`)
 }
 
-o.change_password = async (id,password,op)=>{
-  if(!id || !password)
+o.change_password = async (account,password,op)=>{
+  if(!account || !password)
     throw EXCEPTION.E_INVALID_DATA
   if(!op)
     throw EXCEPTION.E_DO_NOT_PERMITTED
   
   await MYSQL(TABLE_ACCOUNT).update({
-    password:UTIL.encodeMD5('123456'),
-    changed:1
+    password:UTIL.encodeMD5('123456')
   }).where({
-    id
+    user:account
   })
   UserLogger.info(`${op} 修改了用户 ${id}的密码`)
 }
