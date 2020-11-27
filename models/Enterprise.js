@@ -2,6 +2,7 @@ const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
+const { getPhoneFromAccount } = require('./Account')
 const o = {
   required:['Type']
 }

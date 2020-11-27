@@ -59,7 +59,7 @@ out.PostAction = async ctx=>{
       password
     } = data
     console.log(ctx.state)
-    await Account.change_password_by_id(id, password, op)
+    await Account.change_password(id, password, op)
   }else if(action == 'reset-pwd'){
     await Account.reset_password(data, op)
   }else if(action == 'lock'){
