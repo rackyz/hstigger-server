@@ -34,4 +34,11 @@ out.PostAction = async (ctx)=>{
 
 }
 
+out.Patch = async (ctx)=>{
+  let data = ctx.request.body
+  let op = ctx.state.id
+  let id = ctx.param.id
+  return await Enterprise.patchEnterPrise(id,data,op)
+}
+
 module.exports = out

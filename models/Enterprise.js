@@ -3,6 +3,7 @@ const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
 const { UserLogger } = require('../base/logger')
+const { update } = require('./account')
 const o = {
   required:['Type','Message']
 }
@@ -67,6 +68,20 @@ o.initdb = async (forced) => {
   // if(forced)
   //   o.__removeEnterpriseDB()
   //await o.createScheme(NBGZ.id)
+}
+
+o.patchEnterPrise = async (id,data,op)=>{
+  let {name,shortname,avatar,owner_id} = data
+  let updateParam = {}
+  if(name)
+    updateParam.name = name
+  if(shortname)
+    updateParam.shortname = shortname
+  if(avatar)
+    updateParam.avatar = avatar
+  if(owner_id)
+    updateParam.owner_id = owner_id
+  await MYSQL(T_ENTERPRISE).update(updateParam).where({id})
 }
 
 o.getEnterpriseListFull = async ()=>{
