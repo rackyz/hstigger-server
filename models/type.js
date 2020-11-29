@@ -22,7 +22,7 @@ o.initdb = async (forced) => {
 
   if(forced){
     MYSQL(TABLE_TYPE).del()
-    MYSQL(TABLE_TYPE).insert(init_types)
+   // MYSQL(TABLE_TYPE).insert(init_types)
 
   }
 }

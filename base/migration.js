@@ -16,9 +16,11 @@ const InstallModel = async (MODELS,m,forced)=>{
       await InstallModel(MODELS,model.required[i],forced)
   }
 
-  await model.initdb(forced)
-  model.inited = true
-  console.log(` - [model] ${m} inited.`)
+  if(!model.inited){
+    await model.initdb(forced)
+    model.inited = true
+    console.log(` - [model] ${m} inited.`)
+  }
 }
 
 

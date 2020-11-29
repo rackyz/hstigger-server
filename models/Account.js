@@ -17,6 +17,7 @@ const TABLE_ACCOUNT_ENTERPRISE = 'account_enterprise'
 const TABLE_USER_SETTING = 'user_setting'
 const TABLE_USER_MENU = 'user_menu'
 const TABLE_USER_ACTION_MENU = 'user_action_menu'
+const TABLE_ENTERPRISE = "enterprise"
 
 const ACCOUNT_TYPES = [{
   key: 'GUEST',
@@ -80,6 +81,8 @@ o.initdb = async (forced) => {
     t.string("key",32).notNull()
   },forced)
 
+
+
   await MYSQL.schema.raw(`ALTER TABLE ${TABLE_ACCOUNT} AUTO_INCREMENT=1000`)
 
   let ROOT = {
@@ -130,12 +133,22 @@ o.initdb = async (forced) => {
     enterprise_id: Enterprise.initdata.NBGZ.id
   }]
 
+  const DEFAULT_MENUS = [{
+    user_id:ROOT.id,
+    key:"ADMIN"
+  },{
+    user_id:ROOT.id,
+    key:"EADMIN"
+  }]
+
   if(forced){
     await MYSQL(TABLE_ACCOUNT).where(true).del()
     await MYSQL(TABLE_ACCOUNT).insert([ROOT,JBKT,NBGZ])
     await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert(Relations)
     await MYSQL(TABLE_USER_MENU).del()
     await MYSQL(TABLE_USER_ACTION_MENU).del()
+    await MYSQL(TABLE_USER_MENU).insert(DEFAULT_MENUS)
+    await MYSQL(TABLE_ENTERPRISE).update('owner_id',ROOT.id).whereIn("id",[Enterprise.initdata.NBGZ.id,Enterprise.initdata.JBKT.id])
 
     await Message.Create(ROOT.id,JBKT.id,"企业账号注册成功,欢迎使用")
     await Message.Create(ROOT.id,NBGZ.id,"企业账号注册成功,欢迎使用")
