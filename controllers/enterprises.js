@@ -4,7 +4,7 @@ let out = {}
 
 out.Auth = async (method,{user_id,ent_id})=>{
   let user = await Account.getAuthInfo(user_id)
-  if(user.type !== Type.AccountType.ADMIN)
+  if(!user || user.type !== Type.AccountType.ADMIN)
     throw(403)
 }
 
@@ -19,13 +19,13 @@ out.Post = async (ctx)=>{
 }
 
 out.PostAction = async (ctx)=>{
-  let action = ctx.param.action
+  let action = ctx.params.action
   let data = ctx.request.body
 
   let op = ctx.state.id
 
   if(action == 'delete'){
-    return await Enterprise.createEnterprise(data,op)
+    return await Enterprise.deleteEnterprises(data, op)
   }else if(action == 'lock'){
     return await Enterprise.lock(data,op)
   }else if(action == 'unlock'){
@@ -37,7 +37,7 @@ out.PostAction = async (ctx)=>{
 out.Patch = async (ctx)=>{
   let data = ctx.request.body
   let op = ctx.state.id
-  let id = ctx.param.id
+  let id = ctx.params.id
   return await Enterprise.patchEnterPrise(id,data,op)
 }
 

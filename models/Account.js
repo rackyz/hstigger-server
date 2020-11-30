@@ -200,7 +200,7 @@ o.getUserEnterprises = async (user_id)=>{
   return items.map(v=>v.enterprise_id)
 }
 
-o.getUserInfo = async (user_id)=>{
+o.getUserInfo = async (user_id,ent_id)=>{
   if(!user_id)
     return EXCEPTION.E_INVALID_DATA
   let user = await MYSQL(TABLE_ACCOUNT).first('id','user','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
@@ -213,7 +213,7 @@ o.getUserInfo = async (user_id)=>{
   user.user_settings = await o.getUserSettings(user_id)
   user.user_menus = await o.getMenus(user_id)
   user.user_actions = await o.getActionMenus(user_id)
-  user.modules = await Module.getModules()
+  user.modules = await Module.getAuthedModules(user_id,ent_id)
   user.permissions = await Permission.getPermissions(user.type)
 
   return user
@@ -279,13 +279,14 @@ o.update = async (id,{user,avatar,frame,email,phone,type},op)=>{
   if(!id)
     throw EXCEPTION.E_INVALID_DATA
 
-  if(user){
+  let account = await MYSQL(TABLE_ACCOUNT).first('user','phone').where({id})
+  if (user && account.user != user) {
     let u = await MYSQL(TABLE_ACCOUNT).first('id').where({user})
     if(u)
       throw EXCEPTION.E_USER_USER_EXIST
   }
 
-  if(phone){
+  if (phone && account.phone != phone) {
     let u = await MYSQL(TABLE_ACCOUNT).first('id').where({
       phone
     })
@@ -327,7 +328,11 @@ o.register = async (phone)=>{
   Message.sendSMS('REGISTER',phone,[UTIL.maskPhone(phone),temp_password])
 }
 
-
+Enterprise.addEnterprise = async (user_id,enterprise_id)=>{
+  if(!user_id || !enterprise_id)
+    throw EXCEPTION.E_INVALID_DATA
+  await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert({user_id,enterprise_id})
+}
 
 o.getUserSettings = async (user_id)=>{
   if(!user_id)

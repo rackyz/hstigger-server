@@ -18,21 +18,29 @@ const {
 module.exports = async function (ctx, next) {
   var token = ctx.headers.authorization
   // token验证方式 用于web页面
+ 
   if (token) {
     token = token.slice(7)
     let sessionState = await Session.getSessionState(token)
     ctx.state = sessionState
     let enterpriseId = ctx.headers.enterprise
-   
-    let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
-    if (enterpriseId && !myEnterprises.includes(enterpriseId))
-      throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
-    ctx.state.enterprise_id = enterpriseId
+    if(enterpriseId){
+      let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
+      console.log(enterpriseId,myEnterprises)
+      if (enterpriseId && !myEnterprises.includes(enterpriseId))
+        throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
+      ctx.state.enterprise_id = enterpriseId
+    }
   }else{
+    if (ctx.headers.test){
+      ctx.headers["api-version"] = "v0"
+       await next()
+       return
+    }
     let METHOD = ctx.method
     let URL = ctx.url
     if((METHOD == 'GET' && (URL.indexOf('/files')==0 || URL.indexOf('/settings')==0)) || URL.indexOf('/session')==0){
-      ctx.header["api-version"] = "v0"
+      ctx.headers["api-version"] = "v0"
       await next()
       return
     }

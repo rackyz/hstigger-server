@@ -8,7 +8,7 @@ let out = {}
 
 out.Auth = async (method,{user_id,ent_id})=>{
   let user = await Account.getAuthInfo(user_id)
-  if(user.type !== Type.AccountType.ADMIN)
+  if(!user || user.type !== Type.AccountType.ADMIN)
     throw(403)
 }
 

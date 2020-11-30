@@ -23,6 +23,10 @@ module.exports = {
     key: "user",
     error: "用户名已存在"
   },
+  E_ENTNAME_EXIST: {
+    key: "name",
+    error: "企业名已存在"
+  },
 
 
   E_TEST_INVALID_PHONE_NUMBER: "电话号码无效，请联系管理员15991913205",

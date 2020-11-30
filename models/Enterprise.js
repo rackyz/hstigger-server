@@ -3,9 +3,9 @@ const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
 const { UserLogger } = require('../base/logger')
-const { update } = require('./account')
+const Module = require('./Module')
 const o = {
-  required:['Type','Message']
+  required: ['Type', 'Message', 'Module']
 }
 
 const ENTERPRISE_STATES = [{
@@ -22,7 +22,7 @@ const ENTERPRISE_STATES = [{
   color:"darkred"
 }
 ]
-
+const T_ACOUNT = "account"
 const T_ENTERPRISE = "enterprise"
 
 
@@ -68,9 +68,16 @@ o.initdb = async (forced) => {
   // if(forced)
   //   o.__removeEnterpriseDB()
   //await o.createScheme(NBGZ.id)
+
+  if(forced){
+    await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id)
+    await Module.addEnterpriseByKey("OPERATION",NBGZ.id)
+  }
 }
 
 o.patchEnterPrise = async (id,data,op)=>{
+  if(!id)
+    throw EXCEPTION.E_INVALID_DATA
   let {name,shortname,avatar,owner_id} = data
   let updateParam = {}
   if(name)
@@ -106,15 +113,23 @@ o.getEnterpriseSchemeName = ent_id=>{
   return 'ENT_' + ent_id.replace(/(\-)/g, '_')
 }
 
+o.getEnterpriseByName = async ent_name=>{
+  return await MYSQL(T_ENTERPRISE).first().where('name',ent_name)
+}
+
 o.createEnterprise = async (data,op)=>{
   let {name,avatar,shortname} = data
 
   if(name == undefined || name == "")
     throw EXCEPTION.E_INVALID_DATA
 
+  let isExist = await o.getEnterpriseByName(name)
+  if(isExist)
+    throw EXCEPTION.E_ENTNAME_EXIST
   let createInfo = {
     id:UTIL.createUUID(),
     created_at:UTIL.getTimeStamp(),
+    state:0,
     owner_id:op
   }
   let item = {
@@ -125,14 +140,29 @@ o.createEnterprise = async (data,op)=>{
   }
 
   await MYSQL(T_ENTERPRISE).insert(item)
+  await o.addEnterprise(op, createInfo.id)
   UserLogger.info(`${op}创建了企业${name}`)
   return createInfo
 }
 
 o.deleteEnterprises = async (id_list,op)=>{
-  
+  if(!Array.isArray(id_list) || id_list.length == 0)
+    throw EXCEPTION.E_INVALID_DATA
   await MYSQL(T_ENTERPRISE).whereIn("id",id_list).delete()
   UserLogger.info(`${op}删除了企业${id_list.join(',')}`)
+}
+o.lock = async (id_list,op)=>{
+  if (!Array.isArray(id_list) || id_list.length == 0)
+    throw EXCEPTION.E_INVALID_DATA
+    await MYSQL(T_ENTERPRISE).update('state',2).whereIn("id", id_list)
+    UserLogger.info(`${op}锁定了企业${id_list.join(',')}`)
+}
+
+o.unlock = async (id_list, op) => {
+  if (!Array.isArray(id_list) || id_list.length == 0)
+    throw EXCEPTION.E_INVALID_DATA
+  await MYSQL(T_ENTERPRISE).update('state', 1).whereIn("id", id_list)
+  UserLogger.info(`${op}解锁了企业${id_list.join(',')}`)
 }
 
 o.createScheme = async (ent_id) => {

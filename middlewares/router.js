@@ -64,15 +64,16 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
   if (i == DefinedRouterDepth - 1) {
     // 嵌套路由中间件
     route.use(async (ctx, next) => {
-      let apiVersion = ctx.headers['api-version']
-      if (!apiVersion) {
-        throw (E.API_VERSION_MISSED)
-      }
+      // let apiVersion = ctx.headers['api-version']
+      // if (!apiVersion) {
+      //   throw (E.API_VERSION_MISSED)
+      // }
       let APIRoot = null
       try {
         APIRoot = require(`../controllers`)
       } catch (e) {
-        throw (E.API_VERSION_UNDEFINED)
+        console.error(e)
+        throw (E.API_LOAD_FAILED)
       }
 
       ctx.apiRoot = APIRoot
