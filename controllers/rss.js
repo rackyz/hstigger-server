@@ -3,7 +3,7 @@ const superagent = require('superagent')
 require('superagent-proxy')(superagent)
 require('superagent-charset')(superagent)
 const cheerio = require('cheerio')
-
+const {Rss} = require('../models')
 const GetHTML = async url=>{
   return new Promise((resolve,reject)=>{
      var header = {
@@ -49,6 +49,32 @@ out.Get = async ctx=>{
     return $(v).text()
   })
 
+}
+
+
+out.List = async ctx=>{
+  return await Rss.list()
+}
+
+out.Post = async ctx=>{
+  let data = ctx.request.body
+  let op = ctx.state.id
+  return await Rss.create(data,op)
+}
+
+out.Patch = async ctx=>{
+  let id = ctx.params.id
+  let data = ctx.request.body
+  let op = ctx.state.id
+
+  return await Rss.patch(id,item.op)
+}
+
+out.PostAction = async ctx=>{
+  let action = ctx.params.action
+  let id_list = ctx.request.body
+  let op = ctx.state.id
+  Rss.deleteObjects(id_list,op)
 }
 
 module.exports = out

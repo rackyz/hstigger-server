@@ -228,14 +228,14 @@ o.getPhoneFromAccount = async (account)=>{
   return user.phone
 }
 
-o.changePwd = async (account,password)=>{
+o.changePwd = async (account,password,op)=>{
   if(!account || !password)
     throw(EXCEPTION.E_INVALID_DATA)
   let user = await MYSQL(TABLE_ACCOUNT).first('id').where('user',account).orWhere('phone',account)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
   await MYSQL(TABLE_ACCOUNT).update({password,changed:true}).where({id:user.id})
-  UserLogger.info(`${op} 更新了用户${id}的信息}`)
+  UserLogger.info(`${op} 修改了用户${id}的密码}`)
 }
 
 // out methods
@@ -292,8 +292,8 @@ o.update = async (id,{user,avatar,frame,email,phone,type},op)=>{
     })
     if(u)
       throw EXCEPTION.E_USER_PHONE_EXIST
-      
   }
+  
   await MYSQL(TABLE_ACCOUNT).update({
     user,
     avatar,

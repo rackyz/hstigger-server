@@ -22,7 +22,6 @@ const ENTERPRISE_STATES = [{
   color:"darkred"
 }
 ]
-const T_ACOUNT = "account"
 const T_ENTERPRISE = "enterprise"
 
 
@@ -70,8 +69,8 @@ o.initdb = async (forced) => {
   //await o.createScheme(NBGZ.id)
 
   if(forced){
-    await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id)
-    await Module.addEnterpriseByKey("OPERATION",NBGZ.id)
+    await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id,'init')
+    await Module.addEnterpriseByKey("OPERATION",NBGZ.id,'init')
   }
 }
 

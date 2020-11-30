@@ -4,6 +4,7 @@ const EXCEPTION = require('../base/exception')
 const Enterprise = require('./Enterprise')
 const Type = require("./Type")
 const Permission = require('./Permission')
+const { UserLogger } = require('../base/logger')
 let o = {
   required: ["Type"]
 }
@@ -141,6 +142,7 @@ o.initdb = async (forced) => {
     t.boolean('private').defaultTo(false)
     t.string('url',128)
     t.datetime('created_at')
+    t.uuid('created_by')
 
   }, forced)
 
@@ -184,7 +186,7 @@ o.getAuthedModules = async (user_id,ent_id)=>{
 
 }
 
-o.addEnterpriseByKey = async (module_key,ent_id)=>{
+o.addEnterpriseByKey = async (module_key,ent_id,op)=>{
   if(!module_key || !ent_id)
     throw EXCEPTION.E_INVALID_DATA
 
@@ -193,9 +195,48 @@ o.addEnterpriseByKey = async (module_key,ent_id)=>{
     throw EXCEPTION.E_INVALID_DATA
   
   await MYSQL(T_ENTERPRISE_MODULE).insert({ent_id,mod_id:mod.id})
+
+  UserLogger.info(`${op}为企业${ent_id}授权了应用${module_key}`)
 }
 
+o.create = async (item,op)=>{
+  if(!item || !op)
+    throw EXCEPTION.E_INVALID_DATA
 
+  delete item.id
+  item.created_at = UTIL.getTimeStamp()
+  item.created_by = op
+
+  
+  let id = await MYSQL(T_MODULE).insert(item).returning('id')
+  let createInfo = {
+    id,
+    created_at : item.created_at,
+    created_by :op
+  }
+  UserLogger.info(`${op}创建了系统应用${item.name}`)
+  return createInfo
+}
+
+o.update = async (id,item,op)=>{
+  if(!id || !item || !op)
+    throw EXCEPTION.E_INVALID_DATA
+
+  delete item.id
+  MYSQL(T_MODULE).update(item).where({id})
+
+  UserLogger.info(`${op}创建了修改了应用${item.name}的信息`)
+
+}
+
+o.deleteObjects = async (id_list,op)=>{
+  if(!Array.isArray(id_list) || !op)
+    throw EXCEPTION.E_INVALID_DATA
+
+  await MYSQL(T_MODULE).whereIn("id",id_list).del()
+
+  UserLogger.info(`${op}删除了应用${id_list.join(',')}`)
+}
 
 
 
