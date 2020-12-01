@@ -50,6 +50,7 @@ o.initdb = async (forced) => {
   //await o.createScheme(NBGZ.id)
 
   if(forced){
+<<<<<<< HEAD
    
      let EnterpriseStateType = await Type.AddType('EntStateType', ENTERPRISE_STATES)
      const NBGZ = {
@@ -77,6 +78,8 @@ o.initdb = async (forced) => {
      }
      await MYSQL.seeds(T_ENTERPRISE, [NBGZ, JBKT], forced)
    
+=======
+>>>>>>> e700285739b1809fee14e9bf9fa875cbea09a525
     await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id,'init')
     await Module.addEnterpriseByKey("OPERATION",NBGZ.id,'init')
   }
