@@ -20,6 +20,7 @@ const RESOURCE_TYPE = {
 o.RESOURCE_TYPE = RESOURCE_TYPE
 
 o.initdb = async (forced)=>{
+  if(forced){
    await Type.AddType('ResourceType', [{
      key:"MOD",
      name: "模块菜单",
@@ -78,7 +79,7 @@ o.initdb = async (forced)=>{
      value: 5,
      color: "yellowgreen"
    }])
-
+  }
   await MYSQL.initdb(T_PERMISSION,t=>{
     t.increments('id').index()
     t.string('access_id',64).notNull()

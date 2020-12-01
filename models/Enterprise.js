@@ -22,34 +22,15 @@ const ENTERPRISE_STATES = [{
   color:"darkred"
 }
 ]
-const T_ACOUNT = "account"
 const T_ENTERPRISE = "enterprise"
 
 
 o.initdb = async (forced) => {
-  let EnterpriseStateType = await Type.AddType('EntStateType',ENTERPRISE_STATES)
+
  
-  const NBGZ = {
-    id:UTIL.createUUID(),
-    name:"宁波高专建设监理有限公司",
-    shortname:"宁波高专",
-    avatar:"https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png",
-    desc: "...",
-    state:EnterpriseStateType.ENT_ACTIVE,
-    created_at: UTIL.getTimeStamp() 
-  }
   
-  const JBKT = {
-    id:UTIL.createUUID(),
-    name:"江北慈城开发投资有限公司",
-    shortname:"江北开投",
-    avatar:"https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png",
-    desc:"...",
-    state:EnterpriseStateType.ENT_ACTIVE,
-    created_at:UTIL.getTimeStamp()
-  }
   
-  o.initdata = {NBGZ,JBKT}
+  
 
   await MYSQL.initdb(T_ENTERPRISE,t=>{
     t.string('id',64).index();
@@ -63,15 +44,41 @@ o.initdb = async (forced) => {
 
   },forced)
 
-  await MYSQL.seeds(T_ENTERPRISE,[NBGZ,JBKT],forced)
   
   // if(forced)
   //   o.__removeEnterpriseDB()
   //await o.createScheme(NBGZ.id)
 
   if(forced){
-    await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id)
-    await Module.addEnterpriseByKey("OPERATION",NBGZ.id)
+   
+     let EnterpriseStateType = await Type.AddType('EntStateType', ENTERPRISE_STATES)
+     const NBGZ = {
+       id: UTIL.createUUID(),
+       name: "宁波高专建设监理有限公司",
+       shortname: "宁波高专",
+       avatar: "https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png",
+       desc: "...",
+       state: EnterpriseStateType.ENT_ACTIVE,
+       created_at: UTIL.getTimeStamp()
+     }
+
+     const JBKT = {
+       id: UTIL.createUUID(),
+       name: "江北慈城开发投资有限公司",
+       shortname: "江北开投",
+       avatar: "https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png",
+       desc: "...",
+       state: EnterpriseStateType.ENT_ACTIVE,
+       created_at: UTIL.getTimeStamp()
+     }
+     o.initdata = {
+       NBGZ,
+       JBKT
+     }
+     await MYSQL.seeds(T_ENTERPRISE, [NBGZ, JBKT], forced)
+   
+    await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id,'init')
+    await Module.addEnterpriseByKey("OPERATION",NBGZ.id,'init')
   }
 }
 

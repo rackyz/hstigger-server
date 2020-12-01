@@ -29,6 +29,17 @@ REDIS.ASC_GET = async (key) => {
   })
 }
 
+REDIS.ASC_SET = async (key,data)=>{
+  return new Promise((resovle,reject)=>{
+    RedisClient.set(key,data,(err)=>{
+      if(err)
+        reject(err)
+      else
+        resolve()
+    })
+  })
+}
+
 REDIS.ASC_SMEMBERS = async (key) =>{
   return new Promise((resolve,reject)=>{
     RedisClient.get(key,(err,value)=>{
@@ -43,6 +54,17 @@ REDIS.ASC_SMEMBERS = async (key) =>{
 
 REDIS.SET_JSON = async (key,value)=>{
   RedisClient.set(key,JSON.stringify(value))
+}
+
+REDIS.ASC_SET_JSON = async (key, data) => {
+  return new Promise((resolve, reject) => {
+    RedisClient.set(key, JSON.stringify(data), (err) => {
+      if (err)
+        reject(err)
+      else
+        resolve()
+    })
+  })
 }
 
 REDIS.ASC_GET_JSON = async (key)=>{

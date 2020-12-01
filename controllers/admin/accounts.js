@@ -2,14 +2,11 @@
 const {
   Account,
   Type
-} = require('../models')
+} = require('../../models')
 
 let out = {}
 
 out.Auth = async (method,{user_id,ent_id})=>{
-  let user = await Account.getAuthInfo(user_id)
-  if(!user || user.type !== Type.AccountType.ADMIN)
-    throw(403)
 }
 
 out.List = async ctx=>{

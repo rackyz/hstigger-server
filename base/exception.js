@@ -36,4 +36,6 @@ module.exports = {
   ,
   E_UNAUTHED_ENTERPRISE_ID:"您无权访问该企业"
 
+  ,
+  E_INVALID_RSS_KEY:"RSS源未注册"
 }

@@ -9,6 +9,7 @@ const TYPE = require('./Type')
 const MESSAGE = require('./Message')
 const ENTERPRISE = require('./Enterprise')
 const MYSQL = require('../base/mysql')
+const RSS = require('./Rss')
 const o = {
   required:['Type']
 }
@@ -45,12 +46,14 @@ const GetSystemInfo = async ()=>{
   let types = await TYPE.getTypes()
   let users = await ACCOUNT.getUserList()
   let enterprises = await ENTERPRISE.getEnterpriseList()
+  let rss = await RSS.list()
   //let deps = await
   return {
     settings,
     enterprises,
     types,
-    users
+    users,
+    rss
   } 
 }
 
@@ -63,6 +66,7 @@ o.createSessionByLogin = async (account,password,device,ip)=>{
   let session = {
     id:session_id,
     user_id,
+    account_type:userInfo.type,
     user:userInfo.user,
     device,
     ip,
@@ -164,7 +168,9 @@ o.getSessionState = async token=>{
   return {
     session_id,
     id:user_id,
-    user:sessionInfo.user
+    user:sessionInfo.user,
+    account_type: sessionInfo.account_type,
+    admin: sessionInfo.account_type == 3
   }
 }
 

@@ -6,6 +6,7 @@ const Message = require('./Message')
 const Enterprise = require('./Enterprise')
 const Module = require('./Module')
 const Permission = require('./Permission')
+const Flow = require('./Flow')
 const { UserLogger } = require('../base/logger')
 const o = {
   required:['Type','Enterprise','Message']
@@ -18,7 +19,8 @@ const TABLE_USER_SETTING = 'user_setting'
 const TABLE_USER_MENU = 'user_menu'
 const TABLE_USER_ACTION_MENU = 'user_action_menu'
 const TABLE_ENTERPRISE = "enterprise"
-
+const TABLE_USER_RSS = "user_rss"
+const TABLE_USER_FLOW = "user_flow"
 const ACCOUNT_TYPES = [{
   key: 'GUEST',
   name: "体验账号",
@@ -39,7 +41,7 @@ const ACCOUNT_TYPES = [{
 }]
 
 o.initdb = async (forced) => {
-  let AccountType = await Type.AddType('AccountType',ACCOUNT_TYPES)
+ 
 
   await MYSQL.initdb(TABLE_ACCOUNT, t => {
     t.string('id',64).index()
@@ -81,67 +83,80 @@ o.initdb = async (forced) => {
     t.string("key",32).notNull()
   },forced)
 
+  await MYSQL.initdb(TABLE_USER_RSS, t => {
+    t.increments("id").index()
+    t.string("user_id", 64).notNull()
+    t.string("rss_id", 32).notNull()
+  }, forced)
+
+   await MYSQL.initdb(TABLE_USER_FLOW, t => {
+     t.increments("id").index()
+     t.string("user_id", 64).notNull()
+     t.string("flow_id", 32).notNull()
+   }, forced)
+
 
 
   await MYSQL.schema.raw(`ALTER TABLE ${TABLE_ACCOUNT} AUTO_INCREMENT=1000`)
 
-  let ROOT = {
-    id:UTIL.createUUID(),
-    user:'root',
-    phone:'19888821112',
-    avatar:'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/avatars/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20191105133509.jpg',
-    frame:'7',
-    type:AccountType.ADMIN,
-    password:UTIL.encodeMD5('root'),
-    created_at:UTIL.getTimeStamp()
-  }
-
-  let JBKT = {
-    id: UTIL.createUUID(),
-    user:'jbkt',
-    phone:'1000',
-    avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png',
-    frame:'6',
-    type:AccountType.Enterprise,
-    password:UTIL.encodeMD5('123456'),
-    created_at:UTIL.getTimeStamp()
-  }
-
-  let NBGZ = {
-    id: UTIL.createUUID(),
-    user:'nbgz',
-    phone:'1001',
-    avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png',
-    frame:'6',
-    type:AccountType.Enterprise,
-    password:UTIL.encodeMD5('123456'),
-    created_at:UTIL.getTimeStamp()
-  }
-
-  let Relations = [{
-    user_id:JBKT.id,
-    enterprise_id:Enterprise.initdata.JBKT.id
-    },{
-      user_id:NBGZ.id,
-      enterprise_id:Enterprise.initdata.NBGZ.id
-    },
-  {
-    user_id: ROOT.id,
-    enterprise_id: Enterprise.initdata.JBKT.id
-  }, {
-    user_id: ROOT.id,
-    enterprise_id: Enterprise.initdata.NBGZ.id
-  }]
-
-  const DEFAULT_MENUS = [{
-    user_id:ROOT.id,
-    key:"ADMIN"
-  },{
-    user_id:ROOT.id,
-    key:"EADMIN"
-  }]
-
   if(forced){
+   let AccountType = await Type.AddType('AccountType', ACCOUNT_TYPES)
+    let ROOT = {
+      id:UTIL.createUUID(),
+      user:'root',
+      phone:'19888821112',
+      avatar:'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/avatars/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20191105133509.jpg',
+      frame:'7',
+      type:AccountType.ADMIN,
+      password:UTIL.encodeMD5('root'),
+      created_at:UTIL.getTimeStamp()
+    }
+
+    let JBKT = {
+      id: UTIL.createUUID(),
+      user:'jbkt',
+      phone:'1000',
+      avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png',
+      frame:'6',
+      type:AccountType.Enterprise,
+      password:UTIL.encodeMD5('123456'),
+      created_at:UTIL.getTimeStamp()
+    }
+
+    let NBGZ = {
+      id: UTIL.createUUID(),
+      user:'nbgz',
+      phone:'1001',
+      avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png',
+      frame:'6',
+      type:AccountType.Enterprise,
+      password:UTIL.encodeMD5('123456'),
+      created_at:UTIL.getTimeStamp()
+    }
+
+    let Relations = [{
+      user_id:JBKT.id,
+      enterprise_id:Enterprise.initdata.JBKT.id
+      },{
+        user_id:NBGZ.id,
+        enterprise_id:Enterprise.initdata.NBGZ.id
+      },
+    {
+      user_id: ROOT.id,
+      enterprise_id: Enterprise.initdata.JBKT.id
+    }, {
+      user_id: ROOT.id,
+      enterprise_id: Enterprise.initdata.NBGZ.id
+    }]
+
+    const DEFAULT_MENUS = [{
+      user_id:ROOT.id,
+      key:"ADMIN"
+    },{
+      user_id:ROOT.id,
+      key:"EADMIN"
+    }]
+
     await MYSQL(TABLE_ACCOUNT).where(true).del()
     await MYSQL(TABLE_ACCOUNT).insert([ROOT,JBKT,NBGZ])
     await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert(Relations)
@@ -149,6 +164,7 @@ o.initdb = async (forced) => {
     await MYSQL(TABLE_USER_ACTION_MENU).del()
     await MYSQL(TABLE_USER_MENU).insert(DEFAULT_MENUS)
     await MYSQL(TABLE_ENTERPRISE).update('owner_id',ROOT.id).whereIn("id",[Enterprise.initdata.NBGZ.id,Enterprise.initdata.JBKT.id])
+
 
     await Message.Create(ROOT.id,JBKT.id,"企业账号注册成功,欢迎使用")
     await Message.Create(ROOT.id,NBGZ.id,"企业账号注册成功,欢迎使用")
@@ -180,6 +196,8 @@ o.getAuthInfo = async (id)=>{
   let user = await MYSQL(TABLE_ACCOUNT).first('id', 'phone', 'type').where({
     id
   })
+  if(user.type == 3)
+    user.admin = true
   return user
 }
 
@@ -215,8 +233,42 @@ o.getUserInfo = async (user_id,ent_id)=>{
   user.user_actions = await o.getActionMenus(user_id)
   user.modules = await Module.getAuthedModules(user_id,ent_id)
   user.permissions = await Permission.getPermissions(user.type)
+  user.flows = await Flow.GetUserFlows(user_id)
+  user.user_flows = await o.getFlows(user_id)
+  user.user_rss = await o.getRss(user_id)
+  
 
   return user
+}
+
+o.getFlows = async (user_id)=>{
+  if(!user_id)
+    return EXCEPTION.E_INVALID_DATA
+  let res = await MYSQL(TABLE_USER_FLOW).select('id').where({
+    user_id
+  })
+  return res.map(v => v.id)
+}
+
+o.getRss = async (user_id)=>{
+   if (!user_id)
+     return EXCEPTION.E_INVALID_DATA
+  let res = await MYSQL(TABLE_USER_RSS).select('id').where({
+    user_id
+  })
+  return res.map(v=>v.id)
+}
+
+o.setRss = async (user_id, rss_list)=>{
+  if(!user_id || !Array.isArray(rss_list) || rss_list.length == 0)
+    return EXCEPTION.E_INVALID_DATA
+  await MYSQL(TABLE_USER_RSS).where({
+    user_id
+  }).del()
+  await MYSQL(TABLE_USER_RSS).insert(rss_list.map(v => ({
+    user_id,
+    rss_id: v
+  })))
 }
 
 o.getPhoneFromAccount = async (account)=>{
@@ -228,14 +280,14 @@ o.getPhoneFromAccount = async (account)=>{
   return user.phone
 }
 
-o.changePwd = async (account,password)=>{
+o.changePwd = async (account,password,op)=>{
   if(!account || !password)
     throw(EXCEPTION.E_INVALID_DATA)
   let user = await MYSQL(TABLE_ACCOUNT).first('id').where('user',account).orWhere('phone',account)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
   await MYSQL(TABLE_ACCOUNT).update({password,changed:true}).where({id:user.id})
-  UserLogger.info(`${op} 更新了用户${id}的信息}`)
+  UserLogger.info(`${op} 修改了用户${id}的密码}`)
 }
 
 // out methods
@@ -292,8 +344,8 @@ o.update = async (id,{user,avatar,frame,email,phone,type},op)=>{
     })
     if(u)
       throw EXCEPTION.E_USER_PHONE_EXIST
-      
   }
+  
   await MYSQL(TABLE_ACCOUNT).update({
     user,
     avatar,

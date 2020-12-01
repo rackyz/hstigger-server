@@ -11,6 +11,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 "use strict";
 const EXCEPTION = require('../base/exception')
+const authAccountType = require('./authAccountType')
 const {
   Session,Account
 } = require('../models');
@@ -26,11 +27,13 @@ module.exports = async function (ctx, next) {
     let enterpriseId = ctx.headers.enterprise
     if(enterpriseId){
       let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
-      console.log(enterpriseId,myEnterprises)
       if (enterpriseId && !myEnterprises.includes(enterpriseId))
         throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
       ctx.state.enterprise_id = enterpriseId
     }
+    
+    return authAccountType(ctx,next)
+
   }else{
     if (ctx.headers.test){
       ctx.headers["api-version"] = "v0"
@@ -46,6 +49,4 @@ module.exports = async function (ctx, next) {
     }
     throw EXCEPTION.E_DO_NOT_PERMITTED
   }
-
-  await next();
 }

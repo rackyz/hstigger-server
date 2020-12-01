@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const dir = path.join(__dirname + '/../logs')
+const dir = path.join(__dirname + '/../../logs')
 let out = {}
 out.List = async ctx => {
   let logs = fs.readdirSync(dir)

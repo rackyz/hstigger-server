@@ -11,6 +11,8 @@ out.AddRelated = async (ctx)=>{
 
   if(related == 'menus'){
     await Account.setMenus(id,data.value)
+  }else if(related == 'rss'){
+    await Account.setRss(id,data.value)
   }
 }
 
