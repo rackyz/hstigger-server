@@ -1,9 +1,4 @@
 let out = {}
-<<<<<<< HEAD
-const {
-  Rss
-} = require('../models')
-=======
 const superagent = require('superagent')
 require('superagent-proxy')(superagent)
 require('superagent-charset')(superagent)
@@ -38,7 +33,6 @@ const GetHTML = async url=>{
      }
   })
 }
->>>>>>> e700285739b1809fee14e9bf9fa875cbea09a525
 
 
 out.Auth = (user_id,ent_id)=>{
@@ -53,8 +47,6 @@ out.Get = async ctx => {
 }
 
 
-<<<<<<< HEAD
-=======
 out.List = async ctx=>{
   return await Rss.list()
 }
@@ -79,6 +71,5 @@ out.PostAction = async ctx=>{
   let op = ctx.state.id
   Rss.deleteObjects(id_list,op)
 }
->>>>>>> e700285739b1809fee14e9bf9fa875cbea09a525
 
 module.exports = out
