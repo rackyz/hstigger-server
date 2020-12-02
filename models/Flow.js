@@ -37,7 +37,7 @@ o.initdb = async (forced) => {
 
   const initData = [{
     id:UTIL.createUUID(),
-    name: '宁波高专/年终考核填报(个人)',
+    name: '年终考核(个人)',
     desc:"宁波高专建设监理有限公司，2020年度年终考核流程，请填写相关内容并上传文件完成本次年终考核",
     flow_type:1,
     icon: 'gongzuobaogao',

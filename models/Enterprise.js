@@ -50,7 +50,7 @@ o.initdb = async (forced) => {
   //await o.createScheme(NBGZ.id)
 
   if(forced){
-   
+     forced = false
      let EnterpriseStateType = await Type.AddType('EntStateType', ENTERPRISE_STATES)
      const NBGZ = {
        id: UTIL.createUUID(),

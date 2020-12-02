@@ -97,9 +97,9 @@ o.createSessionById = async (user_id,device,ip)=>{
   }
 
   await CreateSessionInRedis(session)
-  await CreateUserInfoInRedis(user_id)
+  await CreateUserInRedis(user_id)
 
-  let userInfo = ACCOUNT.getUserAuthInfo(user_id)
+  let userInfo = ACCOUNT.getUserInfo(user_id)
   let systemInfo = await GetSystemInfo()
   session.token = "Bearer " + session.id
   return {

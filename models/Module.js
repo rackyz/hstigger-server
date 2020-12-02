@@ -21,8 +21,11 @@ const MODULE_TYPE = {
   SYSTEM:4,
   FINANCE:5
 }
+
+const MODULE_LEVEL = ['体验级','用户级','平台运维级','企业级']
 const TIMESTAMP = UTIL.getTimeStamp()
 const initData = [{
+   id: UTIL.createUUID(),
   key:"TASK",
   name:'计划任务',
   url:"/core/task",
@@ -31,6 +34,7 @@ const initData = [{
   created_at: TIMESTAMP
 },
 {
+   id: UTIL.createUUID(),
   key: "APPRIAISAL",
   name: "年终考核",
   state:1,
@@ -38,21 +42,23 @@ const initData = [{
   url: "/core/appraisal",
   type: MODULE_TYPE.ADMIN,
   private: true,
-  level: 2,
+  level: 4,
   created_at: TIMESTAMP
 },
 {
+   id: UTIL.createUUID(),
   key: "OPERATION",
   name:"经营状况",
   desc: "企业合约管理，产值、成本统计分析",
   url:"/core/bi/panel",
   type: MODULE_TYPE.OPERATION,
   
-      private:true,
- level: 2,
+ private:true,
+ level: 4,
  created_at: TIMESTAMP
 },
 {
+   id: UTIL.createUUID(),
   key:"EADMIN",
   desc:"企业的管理后台",
   name: "企业后台",
@@ -61,17 +67,20 @@ const initData = [{
    level: 2,
    created_at: TIMESTAMP
 },{
+  id:UTIL.createUUID(),
   key: "ADMIN",
   name:"NEIP管理",
    desc: "NEIP平台的管理后台",
   url:"/core/admin",
   type: MODULE_TYPE.SYSTEM,
-   level: 3,
+   level: 2,
    created_at: TIMESTAMP
 }]
 
 o.initdb = async (forced) => {
+ 
   if(forced){
+    await Type.AddType('AccessLevel', MODULE_LEVEL)
     await Type.AddType('ModuleType', [{
       key: "COMMON",
       name: "通用模块",
@@ -129,7 +138,7 @@ o.initdb = async (forced) => {
   
 
   await MYSQL.initdb(T_MODULE, t => {
-    t.increments('id').index()
+    t.uuid('id').index()
     t.string("key",32).index().unique()
     t.integer('parent_id')
     t.string('name', 64).notNull()
@@ -149,7 +158,7 @@ o.initdb = async (forced) => {
   await MYSQL.initdb(T_ENTERPRISE_MODULE,t=>{
     t.increments('id').index().primary()
     t.uuid("ent_id").notNull()
-    t.string("mod_id",32).notNull()
+    t.uuid("mod_id",32).notNull()
   })
 
   await MYSQL.seeds(T_MODULE, initData, forced)
@@ -158,14 +167,20 @@ o.initdb = async (forced) => {
 
 // Admin-LEVEL
 
-o.register = async ()=>{
-
-}
 
 o.getModules = async ()=>{
   let res = await MYSQL(T_MODULE).where('parent_id',null)
   return res
 }
+
+// EADMIN LEVEL
+o.getEntModules = async ()=>{
+  let res = await MYSQL(T_MODULE).where('level',4)
+  // private 
+  return res
+}
+
+
 
 // User-LEVEL
 o.getAuthedModules = async (user_id,ent_id)=>{

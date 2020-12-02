@@ -12,6 +12,7 @@ const TABLE_MESSAGE = 'message'
 const TABLE_MESSAGE_READED = 'message_user_read'
 
 Message.initdb = async (forced)=>{
+ 
   await MYSQL.initdb(TABLE_MESSAGE,t=>{
       t.increments('id').index()
       t.string('from', 64).notNull()

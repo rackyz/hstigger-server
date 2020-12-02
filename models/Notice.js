@@ -20,6 +20,7 @@ const RSS_KEY = 'notice'
 const NOTICE_TYPES = ['紧急通知','系统公告','营销活动']
 const CONTENT_TYPES = ['TXT','HTML','MD']
 o.initdb = async (forced) => {
+    
       if (forced) {
         await Type.AddType('NOTICE_TYPE', NOTICE_TYPES)
         await Type.AddType('CONTENT_TYPE', CONTENT_TYPES)

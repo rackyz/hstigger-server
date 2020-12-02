@@ -27,12 +27,8 @@ const ACCOUNT_TYPES = [{
   color:"#aaa"
 }, {
   key: 'MEMBER',
-  name: "普通账号",
+  name: "正式用户",
   color:"orange"
-}, {
-  key: 'GUEST',
-  name: "企业账号",
-  color:"#3af"
 }
 ,{
   key:'ADMIN',
@@ -41,6 +37,7 @@ const ACCOUNT_TYPES = [{
 }]
 
 o.initdb = async (forced) => {
+  
  
 
   await MYSQL.initdb(TABLE_ACCOUNT, t => {
@@ -101,6 +98,7 @@ o.initdb = async (forced) => {
 
   if(forced){
    let AccountType = await Type.AddType('AccountType', ACCOUNT_TYPES)
+   console.log('accounttype:',AccountType)
     let ROOT = {
       id:UTIL.createUUID(),
       user:'root',
@@ -118,7 +116,7 @@ o.initdb = async (forced) => {
       phone:'1000',
       avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png',
       frame:'6',
-      type:AccountType.Enterprise,
+      type: AccountType.MEMBER,
       password:UTIL.encodeMD5('123456'),
       created_at:UTIL.getTimeStamp()
     }
@@ -129,10 +127,21 @@ o.initdb = async (forced) => {
       phone:'1001',
       avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png',
       frame:'6',
-      type:AccountType.Enterprise,
+      type: AccountType.MEMBER,
       password:UTIL.encodeMD5('123456'),
       created_at:UTIL.getTimeStamp()
     }
+
+     let TEST = {
+       id: UTIL.createUUID(),
+       user: 'test',
+       phone: '1324',
+       avatar: 'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/system/hr.png',
+       frame: '3',
+       type: AccountType.GUEST,
+       password: UTIL.encodeMD5('test'),
+       created_at: UTIL.getTimeStamp()
+     }
 
     let Relations = [{
       user_id:JBKT.id,
@@ -158,7 +167,7 @@ o.initdb = async (forced) => {
     }]
 
     await MYSQL(TABLE_ACCOUNT).where(true).del()
-    await MYSQL(TABLE_ACCOUNT).insert([ROOT,JBKT,NBGZ])
+    await MYSQL(TABLE_ACCOUNT).insert([ROOT, JBKT, NBGZ, TEST])
     await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert(Relations)
     await MYSQL(TABLE_USER_MENU).del()
     await MYSQL(TABLE_USER_ACTION_MENU).del()

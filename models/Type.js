@@ -10,6 +10,7 @@ const init_types = [{
 }]
 
 o.initdb = async (forced) => {
+ 
   MYSQL.initdb(TABLE_TYPE, t => {
     t.increments("id").index()
     t.string("key",16)

@@ -16,6 +16,7 @@ const RSS_SUBJECT_TYPES = ['建筑','造价','前端开发','后端开发']
 const RSS_MEDIA_TYPES = ['news','picnews','articles','projects']
 
 o.initdb = async (forced)=>{
+ 
   if(forced){
     await TYPE.AddType('RSS_SOURCE_TYPE',RSS_SOURCE_TYPES)
     await TYPE.AddType('RSS_SUBJECT_TYPE',RSS_SUBJECT_TYPES)
@@ -27,6 +28,7 @@ o.initdb = async (forced)=>{
     t.string('id',64).index();
     t.string('name',64);
     t.integer('source_type').defaultTo(0);
+    t.string('link',128)
     t.integer('subject_type').defaultTo(0);
     t.integer('media_type').defaultTo(0);
     t.integer('state').defaultTo(0)

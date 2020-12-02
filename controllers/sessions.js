@@ -17,7 +17,7 @@ out.Post = async ctx=>{
 out.Get = async ctx=>{
   let id = ctx.params.id
   if(id == "current"){
-    let info = Session.getSessionInfo(ctx.state.session_id,ctx.state.enterprise_id)
+    let info = await Session.getSessionInfo(ctx.state.session_id,ctx.state.enterprise_id)
     return info
   }
   
@@ -45,6 +45,11 @@ out.PostAction = async ctx=>{
   }else if(action == 'register'){
     let {phone} = data
     await Session.register(phone)   
+  }else if(action =='debug'){
+    let uid = data.id
+     let loginInfo = await Session.createSessionById(uid)
+     let info = await Session.getSessionInfo(loginInfo.id)
+     return info
   }else{
     throw E.E_UNEXPECTED_ACTION
   }
