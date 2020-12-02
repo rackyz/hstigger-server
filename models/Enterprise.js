@@ -44,13 +44,8 @@ o.initdb = async (forced) => {
 
   },forced)
 
-  
-  // if(forced)
-  //   o.__removeEnterpriseDB()
-  //await o.createScheme(NBGZ.id)
 
   if(forced){
-     forced = false
      let EnterpriseStateType = await Type.AddType('EntStateType', ENTERPRISE_STATES)
      const NBGZ = {
        id: UTIL.createUUID(),
@@ -59,7 +54,8 @@ o.initdb = async (forced) => {
        avatar: "https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png",
        desc: "...",
        state: EnterpriseStateType.ENT_ACTIVE,
-       created_at: UTIL.getTimeStamp()
+       created_at: UTIL.getTimeStamp(),
+       owner_id: "NBGZ"
      }
 
      const JBKT = {
@@ -69,7 +65,8 @@ o.initdb = async (forced) => {
        avatar: "https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png",
        desc: "...",
        state: EnterpriseStateType.ENT_ACTIVE,
-       created_at: UTIL.getTimeStamp()
+       created_at: UTIL.getTimeStamp(),
+       owner_id: "JBKT"
      }
      o.initdata = {
        NBGZ,
@@ -79,6 +76,10 @@ o.initdb = async (forced) => {
    
     await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id,'init')
     await Module.addEnterpriseByKey("OPERATION",NBGZ.id,'init')
+
+     o.__removeEnterpriseDB()
+     await o.createScheme(NBGZ.id)
+     await o.createScheme(JBKT.id)
   }
 }
 
@@ -110,6 +111,11 @@ o.getEnterpriseListFull = async ()=>{
    return items
 }
 
+o.isOwner = async(user_id,ent_id)=>{
+  let exist = await MYSQL(T_ENTERPRISE).first('id').where({id:ent_id,owner_id:user_id})
+  if (exist)
+    return true
+}
 
 o.getEnterpriseList = async ()=>{
   let items = await MYSQL(T_ENTERPRISE).select('id','name','shortname','avatar')

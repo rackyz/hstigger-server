@@ -25,18 +25,6 @@ module.exports = async function (ctx, next) {
     let sessionState = await Session.getSessionState(token)
     ctx.state = sessionState
     
-    let enterpriseId = ctx.headers.enterprise
-    console.log(ctx.url)
-    if(enterpriseId){
-      console.log('企业访问')
-      let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
-      
-      if (!myEnterprises.includes(enterpriseId))
-        throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
-      ctx.state.enterprise_id = enterpriseId
-    }else{
-      console.log("个人访问")
-    }
     
     return authAccountType(ctx,next)
 

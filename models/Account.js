@@ -7,6 +7,7 @@ const Enterprise = require('./Enterprise')
 const Module = require('./Module')
 const Permission = require('./Permission')
 const Flow = require('./Flow')
+const File = require('./File')
 const { UserLogger } = require('../base/logger')
 const o = {
   required:['Type','Enterprise','Message']
@@ -100,7 +101,7 @@ o.initdb = async (forced) => {
    let AccountType = await Type.AddType('AccountType', ACCOUNT_TYPES)
    console.log('accounttype:',AccountType)
     let ROOT = {
-      id:UTIL.createUUID(),
+      id:"ROOT",
       user:'root',
       phone:'19888821112',
       avatar:'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/avatars/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20191105133509.jpg',
@@ -111,7 +112,7 @@ o.initdb = async (forced) => {
     }
 
     let JBKT = {
-      id: UTIL.createUUID(),
+      id: "JBKT",
       user:'jbkt',
       phone:'1000',
       avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/jbkt.png',
@@ -122,7 +123,7 @@ o.initdb = async (forced) => {
     }
 
     let NBGZ = {
-      id: UTIL.createUUID(),
+      id: "NBGZ",
       user:'nbgz',
       phone:'1001',
       avatar:'https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png',
@@ -133,7 +134,7 @@ o.initdb = async (forced) => {
     }
 
      let TEST = {
-       id: UTIL.createUUID(),
+       id:"TEST",
        user: 'test',
        phone: '1324',
        avatar: 'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/system/hr.png',
@@ -172,7 +173,7 @@ o.initdb = async (forced) => {
     await MYSQL(TABLE_USER_MENU).del()
     await MYSQL(TABLE_USER_ACTION_MENU).del()
     await MYSQL(TABLE_USER_MENU).insert(DEFAULT_MENUS)
-    await MYSQL(TABLE_ENTERPRISE).update('owner_id',ROOT.id).whereIn("id",[Enterprise.initdata.NBGZ.id,Enterprise.initdata.JBKT.id])
+   
 
 
     await Message.Create(ROOT.id,JBKT.id,"企业账号注册成功,欢迎使用")
@@ -245,7 +246,7 @@ o.getUserInfo = async (user_id,ent_id)=>{
   user.flows = await Flow.GetUserFlows(user_id)
   user.user_flows = await o.getFlows(user_id)
   user.user_rss = await o.getRss(user_id)
-  
+  user.coskey = File.AuthCOS()
 
   return user
 }

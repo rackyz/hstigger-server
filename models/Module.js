@@ -22,7 +22,7 @@ const MODULE_TYPE = {
   FINANCE:5
 }
 
-const MODULE_LEVEL = ['体验级','用户级','平台运维级','企业级']
+const MODULE_LEVEL = ['体验级', '用户级', '企业级','企业管理','平台管理']
 const TIMESTAMP = UTIL.getTimeStamp()
 const initData = [{
    id: UTIL.createUUID(),
@@ -42,7 +42,7 @@ const initData = [{
   url: "/core/appraisal",
   type: MODULE_TYPE.ADMIN,
   private: true,
-  level: 4,
+  level: 2,
   created_at: TIMESTAMP
 },
 {
@@ -54,7 +54,7 @@ const initData = [{
   type: MODULE_TYPE.OPERATION,
   
  private:true,
- level: 4,
+ level: 2,
  created_at: TIMESTAMP
 },
 {
@@ -64,7 +64,7 @@ const initData = [{
   name: "企业后台",
   url:"/core/eadmin/",
   type: MODULE_TYPE.SYSTEM,
-   level: 2,
+   level: 3,
    created_at: TIMESTAMP
 },{
   id:UTIL.createUUID(),
@@ -73,7 +73,7 @@ const initData = [{
    desc: "NEIP平台的管理后台",
   url:"/core/admin",
   type: MODULE_TYPE.SYSTEM,
-   level: 2,
+   level: 4,
    created_at: TIMESTAMP
 }]
 
@@ -156,10 +156,10 @@ o.initdb = async (forced) => {
   }, forced)
 
   await MYSQL.initdb(T_ENTERPRISE_MODULE,t=>{
-    t.increments('id').index().primary()
+    t.increments('id').index()
     t.uuid("ent_id").notNull()
-    t.uuid("mod_id",32).notNull()
-  })
+    t.uuid("mod_id").notNull()
+  },forced)
 
   await MYSQL.seeds(T_MODULE, initData, forced)
 
@@ -183,15 +183,25 @@ o.getEntModules = async ()=>{
 
 
 // User-LEVEL
-o.getAuthedModules = async (user_id,ent_id)=>{
+o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   if(!user_id)
     throw EXCEPTION.E_INVALID_DATA
-  let account = await MYSQL(T_ACCOUNT).first('type').where({id:user_id})
-  let modules = await MYSQL(T_MODULE).where('level','<=',account.type)
+  let modules = await MYSQL(T_MODULE)
   if(ent_id)
   {
     let mod_idlist = await MYSQL(T_ENTERPRISE_MODULE).where({ent_id})
-    modules = modules.filter(v=>mod_idlist.find(m=>m.mod_id != v.id))
+    modules = modules.filter(v => {
+      if(v.private){
+        return mod_idlist.find(m => m.mod_id != v.id)
+      }else{
+        if(v.level == 4){
+          return isAdmin
+        }else if(v.level == 3)
+          return isEntAdmin
+      }
+    })
+  }else{
+    modules = modules.filter(v=>v.level < 2)
   }
 
   return modules

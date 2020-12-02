@@ -170,7 +170,7 @@ o.getSessionState = async token=>{
     id:user_id,
     user:sessionInfo.user,
     account_type: sessionInfo.account_type,
-    admin: sessionInfo.account_type == 3
+    admin: sessionInfo.account_type == 2
   }
 }
 

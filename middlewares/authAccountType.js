@@ -1,10 +1,35 @@
 const EXCEPTION = require('../base/exception')
+const {Account,Enterprise} = require('../models')
 module.exports = async (ctx, next) => {
+  let enterpriseId = ctx.headers.enterprise
+  console.log(ctx.url)
+  if (enterpriseId) {
+    console.log('Enterprise')
+    let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
+    console.log(myEnterprises,enterpriseId)
+    if (!myEnterprises.includes(enterpriseId))
+      throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
+    
+    ctx.state.enterprise_id = enterpriseId
+    ctx.state.isEntAdmin = await Enterprise.isOwner(ctx.state.id,enterpriseId)
+    if(ctx.state.isEntAdmin)
+      console.log("isEntAdmin")
+  } else {
+    console.log("Personal")
+  }
+
   if(ctx.url.indexOf('/enterprise') == 0){
+    // Enterprise User Interface
     if(!ctx.state.enterprise_id){
       throw(403)
     }
+  }else if(ctx.url.indexOf('/entadmin') == 0){
+    // Enterprise Admin Interface
+    if (!ctx.state.enterprise_id || !ctx.state.isEntAdmin) {
+      throw (403)
+    }
   }else if (ctx.url.indexOf('/admin') == 0) {
+    // Admin Interface
     if(!ctx.state.admin)
       throw(403)
   }
