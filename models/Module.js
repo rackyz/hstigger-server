@@ -36,7 +36,7 @@ const initData = [{
 {
    id: UTIL.createUUID(),
   key: "APPRIAISAL",
-  name: "年终考核",
+  name: "年终考核(汇总)",
   state:1,
   desc: "企业员工年终总结及考核评分",
   url: "/core/appraisal",
