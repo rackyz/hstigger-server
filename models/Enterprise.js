@@ -26,12 +26,6 @@ const T_ENTERPRISE = "enterprise"
 
 
 o.initdb = async (forced) => {
-
- 
-  
-  
-  
-
   await MYSQL.initdb(T_ENTERPRISE,t=>{
     t.string('id',64).index();
     t.string('name',64);
@@ -41,9 +35,7 @@ o.initdb = async (forced) => {
     t.integer('state').defaultTo(0)
     t.datetime('created_at');
     t.text('desc');
-
   },forced)
-
 
   if(forced){
      let EnterpriseStateType = await Type.AddType('EntStateType', ENTERPRISE_STATES)

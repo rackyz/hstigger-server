@@ -10,6 +10,8 @@ const config = require('../base/config')
 const {
   UserLogger
 } = require('../base/logger')
+const REDIS = require('../base/redis')
+const { ContextParser } = require('../base/util')
 
 let o = {
   required: ['Type']
@@ -38,17 +40,43 @@ o.list = async ()=>{
   await MYSQL(T)
 }
 
+o.listFromUser = async (id)=>{
+  let items = await MYSQL(T).where({"created_by":id})
+  return items
+}
+
 o.GetFileUrl = async (id)=>{
-  let file = await MYSQL(T).first(url).where({id})
+   if (!id)
+     throw EXCEPTION.E_INVALID_DATA
+  let baseURL = config.cos.url
+  let file = await MYSQL(T).first("url").where({id})
   if(file)
-    return file.url
+    return baseURL + '/files/' + file.url
   else
     throw EXCEPTION.E_INVALID_DATA //not exist
+}
+
+o.GetTempFileUrl = async (id)=>{
+  if(!id)
+    throw EXCEPTION.E_INVALID_DATA
+  let url = await o.GetFileUrl(id)
+  console.log('GetTempFileUrl:', url)
+  REDIS.ASC_SET('file-'+id,url)
+  REDIS.EXPIRE('file-' + id, 3600)
+  return '/public/files/'+id
+}
+
+o.GetURL = async (id)=>{
+  if (!id)
+     throw EXCEPTION.E_INVALID_DATA
+  let url = await REDIS.ASC_GET('file-' + id)
+  return url
 }
 
 o.post = async (files,op)=>{
   let createInfos = []
   files.forEach(v=>{
+    v.id = UTIL.createUUID()
     let createInfo = {}
     createInfo.created_by = op
     createInfo.created_at = UTIL.getTimeStamp()

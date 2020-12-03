@@ -118,7 +118,7 @@ o.deleteSession = async (session_id)=>{
 o.getSessionInfo = async (session_id, ent_id) => {
   let session = await REDIS.ASC_GET_JSON(RKEY_SESSION+session_id)
   if(!session)
-    throw(EXCEPTION.E_OUT_OF_DATE)
+    throw 401 //( EXCEPTION.E_OUT_OF_DATE)
   let userInfo = await ACCOUNT.getUserInfo(session.user_id,ent_id)
   
   let systemInfo = await GetSystemInfo()
@@ -162,7 +162,7 @@ o.getSessionState = async token=>{
   let session_id = token
   let sessionInfo = await REDIS.ASC_GET_JSON(RKEY_SESSION+session_id)
   if(!sessionInfo)
-    throw EXCEPTION.E_OUT_OF_DATE
+    throw 401 //EXCEPTION.E_OUT_OF_DATE
   REDIS.EXPIRE(RKEY_SESSION + session_id,3600)
   
   return {

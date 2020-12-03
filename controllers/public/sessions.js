@@ -1,7 +1,7 @@
 
-const {Session} = require('../models')
-const {ContextParser} = require('../base/util')
-const E = require('../base/exception')
+const {Session} = require('../../models')
+const {ContextParser} = require('../../base/util')
+const E = require('../../base/exception')
 let out = {}
 
 

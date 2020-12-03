@@ -9,7 +9,7 @@ const Logger = require('./base/logger')
 const Config = require('./base/config')
 const Migration = require('./base/migration')
 
-Migration.install(true)
+Migration.install(false)
 app.use(Logger.accessLogger)
 app.use(cors())
 app.use(response)

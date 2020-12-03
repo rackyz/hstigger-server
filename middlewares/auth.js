@@ -13,7 +13,7 @@
 const EXCEPTION = require('../base/exception')
 const authAccountType = require('./authAccountType')
 const {
-  Session,Account
+  Session,
 } = require('../models');
 
 module.exports = async function (ctx, next) {
@@ -34,9 +34,8 @@ module.exports = async function (ctx, next) {
        await next()
        return
     }
-    let METHOD = ctx.method
     let URL = ctx.url
-    if((METHOD == 'GET' && (URL.indexOf('/files')==0 || URL.indexOf('/settings')==0)) || URL.indexOf('/session')==0){
+    if(URL.indexOf('/public')==0){
       ctx.headers["api-version"] = "v0"
       await next()
       return

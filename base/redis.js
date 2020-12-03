@@ -30,7 +30,7 @@ REDIS.ASC_GET = async (key) => {
 }
 
 REDIS.ASC_SET = async (key,data)=>{
-  return new Promise((resovle,reject)=>{
+  return new Promise((resolve, reject) => {
     RedisClient.set(key,data,(err)=>{
       if(err)
         reject(err)
@@ -50,7 +50,6 @@ REDIS.ASC_SMEMBERS = async (key) =>{
     })
   })
 }
-
 
 REDIS.SET_JSON = async (key,value)=>{
   RedisClient.set(key,JSON.stringify(value))

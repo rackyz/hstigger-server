@@ -39,6 +39,7 @@ const CONF = {
        * 地区简称
        * @查看 https://cloud.tencent.com/document/product/436/6224
        */
+      url: 'https://nbgzfiles-1257839135.cos.ap-shanghai.myqcloud.com',
       region: 'ap-shanghai',
       SecretId: 'AKID673paDhy3FlL4nGhrt3Xt7EAxZLxnvAD',
       SecretKey: '2ta8XqzwoY1MWVgkeMyQhmrqfkfPyMya',

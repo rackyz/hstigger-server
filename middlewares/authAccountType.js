@@ -4,14 +4,13 @@ module.exports = async (ctx, next) => {
   let enterpriseId = ctx.headers.enterprise
   console.log(ctx.url)
   if (enterpriseId) {
-    console.log('Enterprise')
     let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
-    console.log(myEnterprises,enterpriseId)
     if (!myEnterprises.includes(enterpriseId))
       throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
     
     ctx.state.enterprise_id = enterpriseId
     ctx.state.isEntAdmin = await Enterprise.isOwner(ctx.state.id,enterpriseId)
+    
     if(ctx.state.isEntAdmin)
       console.log("isEntAdmin")
   } else {

@@ -5,7 +5,9 @@ const E = require('../base/exception')
 let out = {}
 
 out.List = async ctx=>{
-  return await File.list()
+  let user_id = ctx.state.id
+  
+  return await File.listFromUser(user_id)
 }
 
 out.Post = async ctx=>{
@@ -17,10 +19,10 @@ out.Post = async ctx=>{
 
 
 out.Get = async ctx=>{
-    let id = ctx.params.id
-   let url = await File.GetFileUrl(id)
-   if (url)
-     ctx.redirect("https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/files/" + url)
+   let id = ctx.params.id
+   let url = await File.GetTempFileUrl(id)
+   console.log("TEMP:",url)
+   return url
 }
 
 
