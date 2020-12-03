@@ -44,7 +44,7 @@ const CONF = {
       SecretId: 'AKID673paDhy3FlL4nGhrt3Xt7EAxZLxnvAD',
       SecretKey: '2ta8XqzwoY1MWVgkeMyQhmrqfkfPyMya',
       // Bucket 名称
-      fileBucket: 'nbgz-pmis',
+      fileBucket: 'nbgzfiles-1257839135',
       // 文件夹
       uploadFolder: 'upload'
   }

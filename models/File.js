@@ -5,8 +5,10 @@ const Enterprise = require('./Enterprise')
 const Type = require("./Type")
 const Permission = require('./Permission')
 const moment = require('moment')
-const COS = require('cos-nodejs-sdk-v5')
+
 const config = require('../base/config')
+const COS = require('cos-nodejs-sdk-v5')
+const cOSClient = new COS(config.cos)
 const {
   UserLogger
 } = require('../base/logger')
@@ -41,7 +43,7 @@ o.list = async ()=>{
 }
 
 o.listFromUser = async (id)=>{
-  let items = await MYSQL(T).where({"created_by":id})
+  let items = await MYSQL(T).where({"created_by":id}).orderBy('created_at','desc').limit(5)
   return items
 }
 
@@ -92,8 +94,37 @@ o.post = async (files,op)=>{
   return createInfos
 }
 
+const AsyncCOSDeleteObject = async (option)=>{
+  return new Promise((resolve,reject)=>{
+    cOSClient.deleteObject(option,(err)=>{
+      console.log("ERR:",option)
+      if(err)
+        resolve(err)
+      else
+        resolve()
+    })
+  })
+}
+
 o.deleteObjects = async (id_list, op) => {
-  await MYSQL(T).whereIn('id',id_list).delete()
+  const result = id_list.map(v=>false)
+  for(let i=0;i<id_list.length;i++)
+  {
+    let id = id_list[i]
+    let file = await MYSQL(T).first("url").where('id',id)
+    if(!file){
+      result[i] = "FILE_NOT_FOUND"
+      continue
+    }
+    let err = await AsyncCOSDeleteObject({Bucket:config.cos.fileBucket,Region:config.cos.region,
+Key:"files/"+file.url})
+console.log("DELETE:",err)
+    if(err)
+      result[i] = err
+  }
+  
+  await MYSQL(T).whereIn('id',id_list.filter((v,i)=>result[i])).delete()
+  return result
 }
 
 
