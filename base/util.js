@@ -259,4 +259,30 @@ util.CreateRestfulController = (knex, proxy, config) => {
   }
 }
 
+
+util.initdb = async (MYSQL, table_name, initializer, forced, ent_schema) => {
+ 
+  let Schema = ent_schema ? MYSQL.schema.withSchema(ent_schema) : MYSQL.schema
+  console.log(Schema)
+  let isExist = await Schema.hasTable(table_name)
+  // console.log(table_name,isExist)
+  if (isExist) {
+    if (!forced)
+      return
+    await Schema.dropTableIfExists(table_name)
+    // console.log("drop",table_name)
+  }
+
+  await Schema.createTable(table_name, initializer)
+  // console.log(` [model-db] -- created table (${table_name}))`)
+}
+
+util.seeds = async (MYSQL, table_name, items, forced, ent_schema) => {
+  let Schema = ent_schema ? MYSQL.withSchema(ent_schema) : MYSQL
+  if (forced) {
+    await Schema(table_name).del()
+    await Schema(table_name).insert(items)
+  }
+}
+
 module.exports = util

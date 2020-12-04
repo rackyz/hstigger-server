@@ -5,8 +5,9 @@ const Type = require('./Type')
 const { UserLogger } = require('../base/logger')
 const Module = require('./Module')
 const o = {
-  required: ['Type', 'Message', 'Module']
+  required: ['Type', 'Message', 'Module','Dep','Profile','Role']
 }
+const Dep = require('./Dep')
 
 const ENTERPRISE_STATES = [{
   key: 'ENT_INACTIVE',
@@ -64,14 +65,16 @@ o.initdb = async (forced) => {
        NBGZ,
        JBKT
      }
-     await MYSQL.seeds(T_ENTERPRISE, [NBGZ, JBKT], forced)
-   
-    await Module.addEnterpriseByKey("APPRIAISAL", NBGZ.id,'init')
-    await Module.addEnterpriseByKey("OPERATION",NBGZ.id,'init')
+     
+       o.__removeEnterpriseDB()
+    await MYSQL.seeds(T_ENTERPRISE, [JBKT], forced)
+    let createInfo = await o.createEnterprise(NBGZ,"NBGZ")
+    o.initdata.id = createInfo.id
+    await Module.addEnterpriseByKey("APPRIAISAL", createInfo.id, 'init')
+    await Module.addEnterpriseByKey("OPERATION", createInfo.id, 'init')
 
-     o.__removeEnterpriseDB()
-     await o.createScheme(NBGZ.id)
-     await o.createScheme(JBKT.id)
+   
+    // await o.createScheme(JBKT.id)
   }
 }
 
@@ -147,6 +150,14 @@ o.createEnterprise = async (data,op)=>{
   await MYSQL(T_ENTERPRISE).insert(item)
   await o.addEnterprise(op, createInfo.id)
   UserLogger.info(`${op}创建了企业${name}`)
+
+  // initDB
+  await o.createScheme(data.id)
+  let schema_id = 'ENT_' + createInfo.id
+  await Dep.initdb(schema_id, true)
+  console.log(`[${schema_id}]Dep inited.`)
+  
+  
   return createInfo
 }
 

@@ -1,27 +1,14 @@
 const {
   mysql: mysqlConfig
 } = require('./config')
+const UTIL = require('./util')
 const MYSQL = require('knex')(mysqlConfig)
-MYSQL.initdb = async (table_name, initializer, forced) => {
-  let Scheme = MYSQL.schema
-  let isExist = await Scheme.hasTable(table_name)
-  // console.log(table_name,isExist)
-  if(isExist){
-    if(!forced)
-      return
-    await Scheme.dropTableIfExists(table_name)
-    // console.log("drop",table_name)
-  }
-
-  await Scheme.createTable(table_name,initializer)
-  // console.log(` [model-db] -- created table (${table_name}))`)
+MYSQL.initdb = async (table_name, initializer, forced,schema) => {
+  return UTIL.initdb(MYSQL,table_name,initializer,forced,schema)
 }
 
-MYSQL.seeds = async (table_name,items,forced)=>{
-  if(forced){
-    await MYSQL(table_name).del()
-    await MYSQL(table_name).insert(items)
-  }
+MYSQL.seeds = async (table_name,items,forced,schema)=>{
+  return UTIL.seeds(MYSQL, table_name, items, forced, schema)
 }
 
 module.exports = MYSQL

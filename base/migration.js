@@ -8,7 +8,7 @@ const InstallModel = async (MODELS,m,forced)=>{
     return
   }
   
-  if(!model.initdb || model.inited)
+  if(!model.initdb || model.inited || model.enterprise)
     return
 
   if(Array.isArray(model.required)){
