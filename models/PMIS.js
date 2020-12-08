@@ -10,9 +10,7 @@ const TABLE_ACCOUNT_DATASOURCE = 'account_datasource'
 out.require = ['Account']
 
 out.initdb = async (forced)=>{
-  forced = true
   
-
   await MYSQL.initdb(TABLE_DATASOURCE,t=>{
     t.string('id',32).index()
     t.string('name',64)
