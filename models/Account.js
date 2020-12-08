@@ -43,8 +43,9 @@ o.initdb = async (forced) => {
 
   await MYSQL.initdb(TABLE_ACCOUNT, t => {
     t.string('id',64).index()
-    t.string('user', 16).unique()
+    t.string('user', 32).unique()
     t.string('phone', 16)
+    t.string('name',16)
     t.string('password',64).notNull()
     t.string('avatar',256)
     t.string('frame',16).defaultTo("1")
@@ -326,7 +327,8 @@ o.createAccounts = async (data,op)=>{
       created_at: UTIL.getTimeStamp()
     }
     let o = Object.assign(v,updateInfo)
-    o.password = UTIL.encodeMD5("123456")
+    if(!o.password)
+      o.password = UTIL.encodeMD5("123456")
 
     updateInfoArray.push(updateInfo)
     updateData.push(o)
@@ -495,5 +497,9 @@ o.unlock = async (id_list,op)=>{
      state: 0
    }).whereIn(id, id_list)
    UserLogger.info(`${op} 解除了用户${id_list.join(',')}的锁定`)
+}
+
+o.removeAll = async (option)=>{
+  await MYSQL(TABLE_ACCOUNT).where(option).del()
 }
 module.exports = o

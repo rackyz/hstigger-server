@@ -308,3 +308,19 @@ From previous event:
 }
 [2020-12-02T16:09:25.466] [ERROR] app - 您无权访问该企业
 [2020-12-02T16:09:25.503] [ERROR] app - 您无权访问该企业
+[2020-12-09T04:35:25.543] [ERROR] app - 密码错误
+[2020-12-09T04:51:17.070] [ERROR] app - 密码错误
+[2020-12-09T04:51:29.009] [ERROR] app - Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27) {
+  errno: 'ECONNRESET',
+  code: 'ECONNRESET',
+  syscall: 'read',
+  response: undefined
+}
+[2020-12-09T04:54:29.059] [ERROR] app - Error: read ECONNRESET
+    at TCP.onStreamRead (internal/stream_base_commons.js:205:27) {
+  errno: 'ECONNRESET',
+  code: 'ECONNRESET',
+  syscall: 'read',
+  response: undefined
+}
