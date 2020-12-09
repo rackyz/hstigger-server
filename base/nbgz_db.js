@@ -1,8 +1,8 @@
 const Config = {
     client: 'mysql',
     connection: {
-      host: '192.168.14.3',
-      port: 3306,
+      host: 'zzlatm.gicp.net',
+      port: 33060,
       user: 'nbgz',
       password: 'nbgz123',
       database: 'gzcloud_orm'
@@ -13,4 +13,4 @@ const Config = {
 }
 const MYSQL = require('knex')(Config)
 
-module.export = MYSQL
+module.exports = MYSQL
