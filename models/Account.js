@@ -54,6 +54,9 @@ o.initdb = async (forced) => {
     t.boolean('changed').defaultTo(false)
     t.datetime('lastlogin_at')
     t.datetime('created_at')
+    t.bigInteger('ding_id')
+    t.string('zzl_id',32)
+    t.string('wechat_id',64)
     t.string('email')
   }, forced)
 
@@ -170,6 +173,7 @@ o.initdb = async (forced) => {
 
     await MYSQL(TABLE_ACCOUNT).where(true).del()
     await MYSQL(TABLE_ACCOUNT).insert([ROOT, JBKT, NBGZ, TEST])
+    await MYSQL(TABLE_ACCOUNT_ENTERPRISE).del()
     await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert(Relations)
     await MYSQL(TABLE_USER_MENU).del()
     await MYSQL(TABLE_USER_ACTION_MENU).del()
@@ -218,7 +222,7 @@ o.getList = async ()=>{
 }
 
 o.getUserList = async ()=>{
-  let users = await MYSQL(TABLE_ACCOUNT).select('id','avatar','user','phone','frame')
+  let users = await MYSQL(TABLE_ACCOUNT).select('id','avatar','user','phone','frame','name')
   return users
 }
 
@@ -302,7 +306,7 @@ o.changePwd = async (account,password,op)=>{
 }
 
 // out methods
-o.create = async(data)=>{
+o.create = async (data)=>{
   if(!data) 
     throw EXCEPTION.E_INVALID_DATA
   let updateInfo = {

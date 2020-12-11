@@ -11,9 +11,15 @@ const InstallModel = async (MODELS,m,forced)=>{
   if(!model.initdb || model.inited || model.enterprise)
     return
 
+  
+
   if(Array.isArray(model.required)){
     for(let i=0;i<model.required.length;i++)
       await InstallModel(MODELS,model.required[i],forced)
+  }
+
+  if (model.init) {
+    await model.init()
   }
 
   if(!model.inited){

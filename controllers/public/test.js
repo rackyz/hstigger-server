@@ -9,3 +9,19 @@
 // }
 
 // module.exports = out
+
+
+const Ding  = require('../../models/Ding')
+const out = {}
+const REDIS = require("../../base/redis")
+out.List = async ()=>{
+  let groups = await Ding.getGroups()
+  let users = []
+  for(let i=0;i<groups.length;i++)
+    users.push(await Ding.getEmployeeInfoList(groups[i].id))
+  REDIS.SET('cached_users',JSON.stringify(users))
+  return users
+}
+
+
+module.exports = out

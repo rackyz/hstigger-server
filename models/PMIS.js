@@ -7,7 +7,7 @@ const Account = require('./Account')
 let out = {}
 const TABLE_DATASOURCE = 'datasource'
 const TABLE_ACCOUNT_DATASOURCE = 'account_datasource'
-out.require = ['Account']
+out.require = ['Account','Enterprise']
 
 out.initdb = async (forced)=>{
   
@@ -29,13 +29,20 @@ out.initdb = async (forced)=>{
   // 
   if(forced){
     let res = await out.GetAccounts()
+    let res2 = await out.GetWeappAvatar()
+    res.forEach(v=>{
+      let r = res2.find(s=>s.tel == v.phone)
+      if(r)
+        v.avatar = r.avatar
+    })
     await Account.removeAll({frame:1})
-    let createInfo = await Account.createAccounts(res.map(v=>({user:v.user,
-    password:util.encodeMD5(v.password),phone:v.phone})),'ROOT')
+    let createInfo = await Account.createAccounts(res.map(v=>({user:v.user,zzl_id:v.user,
+    password:util.encodeMD5(v.password),phone:v.phone,name:v.name,avatar:v.avatar})),'ROOT')
     let enterprise_relations = createInfo.map(v=>({
       user_id:v.id,
-      enterprise_id:'7415ec90-3838-11eb-ad7b-a928b6bb0d6a'
+      enterprise_id: 'NBGZ'
     }))
+    await MYSQL('account_enterprise').insert(enterprise_relations)
 
   }
   
@@ -43,7 +50,12 @@ out.initdb = async (forced)=>{
 
 out.GetAccounts = async ()=>{
   
-  let res = await GZSQL.withSchema('zzlatm').select('user','password','phone','uid').from('aclusr').where('allowed','yes')
+  let res = await GZSQL.withSchema('zzlatm').select('user','password','phone','uid','name').from('aclusr').where('allowed','yes')
+  return res
+}
+
+out.GetWeappAvatar = async ()=>{
+  let res = await GZSQL.withSchema('zzlatm').select('avatar','tel').from('weapp_user').whereNotNull('tel')
   return res
 }
 

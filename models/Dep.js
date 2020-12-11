@@ -26,19 +26,22 @@ o.enterprise = true
 o.initdb = async (ent_schema,forced)=>{
 
   await MYSQL.initdb(T, t => {
-    t.uuid('id').index()
+    t.integer('id').index()
     t.string('name', 255).notNull()
-    t.uuid('parent_id')
+    t.integer('parent_id')
     t.string('color',16).defaultTo('#333')
     t.string('extra',32)
     t.string('extra2',32)
   }, forced, ent_schema)
+
   if(forced){
-    if (ent_schema == "ENT_27d8c0f0-3504-11eb-a58f-19892a782200") {
+    if (ent_schema == "ENT_NBGZ") {
       let groups = await Ding.getGroups()
-      console.log(groups)
+      await MYSQL(T).withSchema(ent_schema).insert(groups.map(v=>({id:v.id,parent_id:v.parentid,name:v.name})))
     }
   }
+
+
 
  
 

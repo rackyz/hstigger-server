@@ -8,6 +8,7 @@ const o = {
   required: ['Type', 'Message', 'Module','Dep','Profile','Role']
 }
 const Dep = require('./Dep')
+const Employee = require('./Employee')
 
 const ENTERPRISE_STATES = [{
   key: 'ENT_INACTIVE',
@@ -41,7 +42,7 @@ o.initdb = async (forced) => {
   if(forced){
      let EnterpriseStateType = await Type.AddType('EntStateType', ENTERPRISE_STATES)
      const NBGZ = {
-       id: UTIL.createUUID(),
+       id: "NBGZ",
        name: "宁波高专建设监理有限公司",
        shortname: "宁波高专",
        avatar: "https://file-1301671707.cos.ap-chengdu.myqcloud.com/nbgz.png",
@@ -66,12 +67,14 @@ o.initdb = async (forced) => {
        JBKT
      }
      
-       o.__removeEnterpriseDB()
-    await MYSQL.seeds(T_ENTERPRISE, [JBKT], forced)
-    let createInfo = await o.createEnterprise(NBGZ,"NBGZ")
-    o.initdata.id = createInfo.id
-    await Module.addEnterpriseByKey("APPRIAISAL", createInfo.id, 'init')
-    await Module.addEnterpriseByKey("OPERATION", createInfo.id, 'init')
+    if(forced){
+      o.__removeEnterpriseDB()
+      await MYSQL.seeds(T_ENTERPRISE, [JBKT], forced)
+      let createInfo = await o.createEnterprise(NBGZ,"NBGZ")
+      o.initdata.id = createInfo.id
+      await Module.addEnterpriseByKey("APPRIAISAL", createInfo.id, 'init')
+      await Module.addEnterpriseByKey("OPERATION", createInfo.id, 'init')
+    }
 
    
     // await o.createScheme(JBKT.id)
@@ -135,7 +138,7 @@ o.createEnterprise = async (data,op)=>{
   if(isExist)
     throw EXCEPTION.E_ENTNAME_EXIST
   let createInfo = {
-    id:UTIL.createUUID(),
+    id:data.id ?data.id:UTIL.createUUID(),
     created_at:UTIL.getTimeStamp(),
     state:0,
     owner_id:op
@@ -155,8 +158,9 @@ o.createEnterprise = async (data,op)=>{
   await o.createScheme(data.id)
   let schema_id = 'ENT_' + createInfo.id
   await Dep.initdb(schema_id, true)
+  await Employee.initdb(schema_id, true)
   console.log(`[${schema_id}]Dep inited.`)
-  
+  console.log(`[${schema_id}]Employee inited.`)
   
   return createInfo
 }
