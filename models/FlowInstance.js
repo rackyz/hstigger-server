@@ -20,6 +20,7 @@ const T_USER_NODE = 'user_flow_history_node'
 o.enterprise = true
 
 o.initdb = async (ent_schema, forced) => {
+  forced = true
   await MYSQL.initdb(T_INST, t => {
     t.uuid('id').index().primary()  // uuid
     t.uuid('flow_id')               // flow-define
@@ -59,21 +60,39 @@ o.initdb = async (ent_schema, forced) => {
   },forced,ent_schema)
 }
 
+o.init = async ()=>{
+  o.initdb('ENT_NBGZ',true)
+  o.inited = true
+}
+
 const MYSQLE = (ent_id,t)=>MYSQL(t).withSchema('ENT_'+ent_id)
 
 //STATE 0-active 1-submit 2-reject 3-retry
 // create the instance
-o.Create = async (ent_id,data,op)=>{
+o.Create = async (ent_id,flow,op)=>{
   let param = {
-    state:'submit',
-    id:data.id || UTIL.createUUID(),
+    state:1,
+    id:flow.id || UTIL.createUUID(),
     created_by:op,
-    flow_id:data.flow_id,
-    desc:data.desc,
+    flow_id:flow.flow_id,
+    desc:flow.desc,
     created_at:UTIL.getTimeStamp()
   }
   await MYSQLE(ent_id,T_INST).insert(param)
 
+  // add first node
+  let node = {
+    flow_id:param.id,
+    // -> prototype node
+    state:0,
+    key:flow.action.from,
+    created_by:op,
+    created_at:UTIL.getTimeStamp()
+  }
+  let node_id = await MYSQL(ent_id,T_NODE).insert(node).returning('id')
+  param.history_id = node_id
+  await MYSQL(ent_id,T_USER_NODE).insert({user_id:op,history_node_id:node_id})
+  UserLogger.info(`${op}创建了流程实例${flow.desc}`)
   return param
 }
 
@@ -88,23 +107,41 @@ o.GetInstExecutors = async (ent_id,inst_id)=>{
   return res
 }
 
-o.GetThreadList = async (ent_id,user_id)=>{
+o.GetUserThread = async (ent_id,user_id)=>{
   let res = await MYSQLE(ent_id,T_NODE).where({user_id}).leftJoin(T_USER_NODE,`history_node_id`,`${T_NODE}.id`)
   return res
 }
 
-o.Patch = async (ent_id,flow_id,action,data,op)=>{
+o.Patch = async (ent_id,flow_id,history_node_id,action,data,op)=>{
   // modify last history node
-  await MYSQLE(ent_id,T_NODE).update({state:action.state}).where(id,action.from)
+  await MYSQLE(ent_id,T_NODE).update({state:action.state}).where({id:history_id})
+  // save data
   if(typeof data == 'object'){
-    let data_params = Object.keys(data).map(key=>({key,flow_id,value:data[key]}))
+    let data_params = Object.keys(data).map(key=>(
+      {history_node_id,def_key:key,flow_id,value:JSON.stringfy(data[key])}
+    ))
     await MYSQLE(ent_id,T_DATA).insert(data_params)
   }
   if(!Array.isArray(action.to)){
     action.to = [action.to]
   }
-  let node_params = action.to.map(v=>({}))
-  await MYSQLE(ent_id,T_NODE).insert(nodeParam)
+
+  // get executors
+  let {value:executors} = await MYSQLE(ent_id,T_DATA).first('value').where({flow_id,def_key:'executors'})
+
+  let node_params = action.to.map(v=>({
+    flow_id,
+    key:action.to,
+    state:0,
+    from:action.from,
+    to:v,
+    created_by:op,
+    created_at:UTIL.getTimeStamp()
+  }))
+
+  
+  //let node_raltions = 
+  //await MYSQLE(ent_id,T_NODE).insert(nodeParam)
 }
 
 o.Recall = async (action_key)=>{

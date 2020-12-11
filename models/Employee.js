@@ -13,7 +13,7 @@ const {
 } = require('../base/util')
 
 let o = {
-  required: ['Type']
+  required: ['Type','Enterprise']
 }
 
 
@@ -37,7 +37,6 @@ o.initdb = async (ent_schema, forced) => {
     t.integer('dep_id')
   }, forced, ent_schema)
 
-  forced = true
   if (forced) {
     if (ent_schema == "ENT_NBGZ") {
       await MYSQL(T).withSchema(ent_schema).del()
@@ -51,7 +50,6 @@ o.initdb = async (ent_schema, forced) => {
           avatar:v.avatar,
           ding_id:v.userid
         }))
-        console.log('accounts:',accounts.length)
 
         let department_relations = users.map(v => Array.isArray(v.department)?v.department.map(d => ({
           user_id: v.userid,
@@ -107,9 +105,9 @@ o.initdb = async (ent_schema, forced) => {
 
 }
 
-o.init = async ()=>{
+o.init = async (forced)=>{
   console.log("EMPLOYEE INIT FUNCTION...")
-  await o.initdb('ENT_NBGZ')
+  await o.initdb('ENT_NBGZ',forced)
 }
 
 module.exports = o

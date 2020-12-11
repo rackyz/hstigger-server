@@ -8,7 +8,7 @@ const InstallModel = async (MODELS,m,forced)=>{
     return
   }
   
-  if(!model.initdb || model.inited || model.enterprise)
+  if(!model.initdb || model.inited)
     return
 
   
@@ -18,15 +18,19 @@ const InstallModel = async (MODELS,m,forced)=>{
       await InstallModel(MODELS,model.required[i],forced)
   }
 
-  if (model.init) {
-    await model.init()
-  }
-
   if(!model.inited){
-    await model.initdb(forced)
-    model.inited = true
-    console.log(` - [model] ${m} inited.`)
-  }
+    if(!model.enterprise){
+      await model.initdb(forced)
+      model.inited = true
+      console.log(` - [model] ${m} inited.`)
+    }
+
+    if (model.init) {
+      await model.init(forced)
+    }
+  } 
+
+  
 }
 
 

@@ -4,6 +4,8 @@ const crypto = require('crypto')
 const moment = require('moment')
 const jwt = require('jsonwebtoken')
 const config = require('./config')
+const MYSQL = require('./mysql')
+const { table } = require('console')
 // Module:ContextParser
 // Description:
 //  parsing request context
@@ -259,13 +261,28 @@ util.CreateRestfulController = (knex, proxy, config) => {
   }
 }
 
+util.hasTable = async (MYSQL,table_name,ent_schema)=>{
+  let res = null
+  if(ent_schema){
+    res = await MYSQL.raw(`select TABLE_NAME from information_schema.TABLES where TABLE_NAME = '${table_name}' and TABLE_SCHEMA = '${ent_schema}'`)
+    if(Array.isArray(res) && Array.isArray(res[0]))
+      res = res[0][0]
+    else
+      res = false
+  }
+  else
+    res = await MYSQL.schema.hasTable(table_name)
+  console.log(ent_schema?ent_schema+'.'+table_name:table_name,res?true:false)
+  if(res)
+    return true
+  else
+    return false
+}
 
 util.initdb = async (MYSQL, table_name, initializer, forced, ent_schema) => {
- 
   let Schema = ent_schema ? MYSQL.schema.withSchema(ent_schema) : MYSQL.schema
-  console.log(Schema)
-  let isExist = await Schema.hasTable(table_name)
-  // console.log(table_name,isExist)
+  let isExist = await util.hasTable(MYSQL,table_name,ent_schema)
+  
   if (isExist) {
     if (!forced)
       return
