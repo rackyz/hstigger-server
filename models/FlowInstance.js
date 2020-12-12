@@ -69,7 +69,7 @@ const MYSQLE = (ent_id,t)=>MYSQL(t).withSchema('ENT_'+ent_id)
 
 //STATE 0-active 1-submit 2-reject 3-retry
 // create the instance
-o.Create = async (ent_id,flow,op)=>{
+o.Create = async (ent_id,flow,action,data,op)=>{
   let param = {
     state:1,
     id:flow.id || UTIL.createUUID(),
@@ -84,11 +84,17 @@ o.Create = async (ent_id,flow,op)=>{
   let node = {
     flow_id:param.id,
     // -> prototype node
-    state:0,
+    action:action,
     key:flow.action.from,
     created_by:op,
     created_at:UTIL.getTimeStamp()
   }
+
+  Object,keys(data).map(key=>{
+    return {
+
+    }
+  })
   let node_id = await MYSQL(ent_id,T_NODE).insert(node).returning('id')
   param.history_id = node_id
   await MYSQL(ent_id,T_USER_NODE).insert({user_id:op,history_node_id:node_id})
@@ -112,32 +118,81 @@ o.GetUserThread = async (ent_id,user_id)=>{
   return res
 }
 
-o.Patch = async (ent_id,flow_id,history_node_id,action,data,op)=>{
+o.Patch = async (ent_id,flow_id,history_id,actions,data,op)=>{
+  if(!actions || actions.length == 0)
+    throw "ACTION UNEXPECTED"
+
+  if(history_id == undefined)
+    throw "UNEXPECTED HISTORY"
   // modify last history node
-  await MYSQLE(ent_id,T_NODE).update({state:action.state}).where({id:history_id})
+  let lastnode = await MYSQLE(ent_id,T_NODE).first('state','key').where({id:history_id,flow_id})
+
+  let mainAction = actions[0]
+  
   // save data
   if(typeof data == 'object'){
     let data_params = Object.keys(data).map(key=>(
-      {history_node_id,def_key:key,flow_id,value:JSON.stringfy(data[key])}
+      {history_id,def_key:key,flow_id,value:JSON.stringfy(data[key])}
     ))
     await MYSQLE(ent_id,T_DATA).insert(data_params)
   }
-  if(!Array.isArray(action.to)){
-    action.to = [action.to]
-  }
 
   // get executors
-  let {value:executors} = await MYSQLE(ent_id,T_DATA).first('value').where({flow_id,def_key:'executors'})
+  let data_exe = await MYSQLE(ent_id,T_DATA).first('value').where({flow_id,def_key:'executors'})
+  let executors = JSON.parse(data_exe.value)
+  if(!executors)
+    throw "UNEXPECTED EXECUTORS"
+  
+  // get node optional and change state
+  let nodeOptions = await MYSQL('flow_option').select('value','key').where({flow_id,type:1,item_key:lastnode.key}).whereIn(key,['optional','in_type'])
+  nodeOptions.forEach(v=>{
+    lastnode[v.key] = JSON.parse(v.value)
+  })
 
-  let node_params = action.to.map(v=>({
-    flow_id,
-    key:action.to,
-    state:0,
-    from:action.from,
-    to:v,
-    created_by:op,
-    created_at:UTIL.getTimeStamp()
-  }))
+  let state = makeAction(lastnode.state,mainAction)
+  if(state == 10)
+      throw "NODE STATE UNEXPECTED"
+  let history_node = {state,end_at:UTIL.getTimeStamp(),op}
+  await MYSQLE(ent_id,T_NODE).update(history_node).where({id:history_id,flow_id})
+
+  // retrying
+  if(lastnode.state == 5)
+    actions = [mainAction]
+
+  if(lastnode.optional)
+    return [history_node]
+  let actionObjects = await MYSQL('flow_action').select('key','to','from','type').where({flow_id}).whereIn('key',actions)
+
+  let nodes_param = []
+  actionObjects.forEach(a=>{
+    let executor = executors[a.to]
+    if(!Array.isArray(executor))
+      executor = [executor]
+    if(node.in_type == 1){
+        let nodes = executor.map(e=>{
+          return {
+            key:lastnode.key,
+            from:history_id,
+            to:a.to,
+            action:a.key,
+            state:a.type == 2?5:1,
+            executors:JSON.stringify([v])
+          }
+        })
+        nodes_param = nodes_param.concat(nodes)
+    }else{
+        nodes_param.push({
+          key:lastnode.key,
+          from:history_id,
+          to:a.to,
+          action:a.key,
+          state:a.type == 2?5:1,
+          executors:JSON.stringify([v])
+        })
+    }
+  })
+
+  await MYSQLE(ent_id,T_NODE).insert(nodes_param)
 
   
   //let node_raltions = 
