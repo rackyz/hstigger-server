@@ -236,7 +236,7 @@ o.getUserEnterprises = async (user_id)=>{
 o.getUserInfo = async (user_id,ent_id)=>{
   if(!user_id)
     return EXCEPTION.E_INVALID_DATA
-  let user = await MYSQL(TABLE_ACCOUNT).first('id','user','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
+  let user = await MYSQL(TABLE_ACCOUNT).first('id','user','name','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
   

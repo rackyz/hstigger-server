@@ -21,12 +21,15 @@ const T_FIELD = 'flow_field'
 const T_OPTION = 'flow_option'
 const FLOW_TYPES = ['平台运维','行政综合', '财务审批', '人事审批', '项目管理']
 const FLOW_STATES = ['设计中','待测试','已启用','已禁用']
+const ACTION_TYPES = ['待处理','已发送','已退回','已接受','处理中','处理成功','处理失败','等待中']
+const FLOW_OBJ_TYPES = ['流程','节点','操作','字段','表单','实例']
 o.initdb = async (forced) => {
   if (forced) {
     await Type.AddType('FLOW_TYPE', FLOW_TYPES)
     await Type.AddType('FLOW_STATE', FLOW_STATES)
+    await Type.AddType('ACTION_TYPE',ACTION_TYPES)
+    await Type.AddType('FLOW_OBJ_TYPE', FLOW_OBJ_TYPES)
   }
-
   await MYSQL.initdb(T_FLOW, t => {
     t.uuid('id').index()
     t.string('name', 64).notNull()
@@ -43,7 +46,7 @@ o.initdb = async (forced) => {
   await MYSQL.initdb(T_NODE,t=>{
     t.increments('id').index().primary()
     t.uuid('flow_id')
-    t.string('key',16)
+    t.string('key',32)
     t.string('name',32)
     t.string('desc',256)
     t.text('layout')
@@ -54,7 +57,7 @@ o.initdb = async (forced) => {
   await MYSQL.initdb(T_ACTION,t=>{
     t.increments('id').index().primary()
     t.uuid('flow_id')
-    t.string('key',16)
+    t.string('key',32)
     t.string('name',32)
     t.string('from',32),
     t.string('to',32)
@@ -64,8 +67,8 @@ o.initdb = async (forced) => {
   await MYSQL.initdb(T_FIELD,t=>{
     t.increments('id').index().primary()
     t.uuid('flow_id')
-    t.string('key',16)
-    t.string('title',32)
+    t.string('key',32)
+    t.string('label',32)
     t.string('control',32)
     t.text('option')
   },forced)
@@ -73,8 +76,9 @@ o.initdb = async (forced) => {
   await MYSQL.initdb(T_OPTION,t=>{
     t.increments('id').index().primary()
     t.uuid('flow_id')
+    t.key('item_key')
     t.integer('type')  // 0 - flow 1 - node 2 - action 3 - field
-    t.string('key',16)
+    t.string('key',32)
     t.text('value')
   })
 
@@ -93,11 +97,106 @@ o.initdb = async (forced) => {
 
 }
 
-const ParseDefine = async (id,def)=>{
+
+
+const ParseDefine = async (flow_id,def)=>{
   // nodes
   //
-  console.log(def)
-  let nodes = def.nodes.forEach
+  let options = []
+  const predefined_options = ['executor_getters', 'executor_multiple',
+    'executor_max', 'executor_default', 'optional', 'executor_default_getter', 'executor_modifiable', 'executor_default_getter_key'
+  ]
+  let nodes = def.nodes.map(node=>{
+    predefined_options.forEach(op_key=>{
+      let op_val = node[op_key]
+      if(op_val != undefined){
+        console.log(op_key,op_val)
+        options.push({
+          flow_id,
+          item_key:node.key,
+          type:1,
+          key:op_key,
+          value: JSON.stringify(op_val)
+        })
+      }
+    })
+    return {
+      flow_id,
+      name:node.name,
+      key:node.key,
+      desc:node.desc,
+      layout:node.layout,
+      in_type:node.in_type,
+      out_type:node.out_type
+    }
+  })
+
+  //with TEXT 是否作为从属发送（所属操作后，同时进行此操作）
+  const action_options = ['with']
+  let actions = def.actions.map(action=>{
+    action_options.forEach(op_key=>{
+       let op_val = action[op_key]
+       if (op_val != undefined) {
+         console.log(op_key, op_val)
+         options.push({
+           flow_id,
+           item_key: action.key,
+           
+           type: 2,
+           key: op_key,
+           value: JSON.stringify(op_val)
+         })
+       }
+    })
+    return {
+      flow_id,
+      name: action.name,
+      key:action.key,
+      type: action.type,
+      from: action.from,
+      to: action.to
+    }
+  })
+  let fields = Object.keys(def.def).map(fkey=>{
+    let f = def.def[fkey]
+    return {
+      flow_id,
+      key:fkey,
+      label:f.label,
+      control:f.control,
+      option:JSON.stringify(f.option)
+    }
+  })
+  await MYSQL(T_NODE).where({flow_id}).delete()
+  await MYSQL(T_ACTION).where({
+    flow_id
+  }).delete()
+  await MYSQL(T_FIELD).where({
+    flow_id
+  }).delete()
+  await MYSQL(T_OPTION).where({
+    flow_id
+  }).delete()
+
+  if(nodes && nodes.length > 0)
+    await MYSQL(T_NODE).insert(nodes)
+  else
+    throw '未定义{nodes}'
+  
+  if(actions && actions.length > 0)
+    await MYSQL(T_ACTION).insert(actions)
+  else
+    throw '未定义{actions}'
+    
+  if (fields && fields.length > 0)
+    await MYSQL(T_FIELD).insert(fields)
+  else
+    throw '未定义{fields}'
+
+  if(options && options.length > 0)
+    await MYSQL(T_OPTION).insert(options)
+  
+  console.log(`FLOW_INSTALLED:nodes=${nodes.length},actions=${actions.length},fields=${fields.length},options=${options.length}`)
 }
 
 o.list = async () => {
@@ -132,9 +231,34 @@ o.deleteObjects = async (id_list, op) => {
   await MYSQL(T_FLOW).whereIn("id", id_list).del()
 }
 
-o.get = async id => {
-  let item = await MYSQL(T_NOTICE).first().where({
-    id
+o.get = async flow_id => {
+  console.log('get:',flow_id)
+  let item = await MYSQL(T_FLOW).first().where({
+    id: flow_id
+  })
+  
+  item.nodes = await MYSQL(T_NODE).where({flow_id})
+  item.actions = await MYSQL(T_ACTION).where({flow_id})
+  item.fields = await MYSQL(T_FIELD).where({flow_id})
+  item.fields.forEach(v=>{
+    if(v.option)
+      v.option = JSON.parse(v.option)
+  })
+  item.def = {}
+  item.fields.forEach(f=>{
+    item.def[f.key] = f
+  })
+  item.options = await MYSQL(T_OPTION).where({flow_id})
+  item.options.forEach(v=>{
+    if(v.type == 1){
+      let node = item.nodes.find(n=>n.key == v.item_key)
+      if(node)
+        node[v.key] = JSON.parse(v.value)
+    }else if(v.type == 2){
+      let action = item.actions.find(a=>a.key == v.item_key)
+      if(action)
+        action[v.key] = JSON.parse(v.value)
+    }
   })
   return item
 }
