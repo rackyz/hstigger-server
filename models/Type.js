@@ -53,6 +53,7 @@ o.updateType = async (type)=>{
 
 
 o.AddType = async (key,values)=>{
+  await o.removeType(key)
   let id = await o.addType({
     key,
     name:key

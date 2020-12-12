@@ -22,6 +22,7 @@ const T_OPTION = 'flow_option'
 const FLOW_TYPES = ['平台运维','行政综合', '财务审批', '人事审批', '项目管理']
 const FLOW_STATES = ['设计中','待测试','已启用','已禁用']
 const ACTION_TYPES = ['待处理','已发送','已退回','已接受','处理中','处理成功','处理失败','等待中']
+const NODE_STATES = ['']
 const FLOW_OBJ_TYPES = ['流程','节点','操作','字段','表单','实例']
 o.initdb = async (forced) => {
   if (forced) {
