@@ -1,12 +1,24 @@
 const {Flow,FlowInstance} = require('../../models')
+const o = require('../../models/Type')
 
 let out = {}
 
 out.List = async ctx=>{
   let user_id = ctx.state.id
   let ent_id = ctx.state.enterprise_id
-  let res = await FlowInstance.GetUserThread(ent_id,user_id)
+  let q = ctx.query.q
+  try{
+  let nodes = await FlowInstance.GetUserNodes(ent_id,user_id)
+  if(q == 'in')
+  {
+    let res = await FlowInstance.GetPassedThreads(ent_id,nodes)
+    return res
+  }
+  let res = await FlowInstance.GetActiveThreads(ent_id,nodes)
   return res
+}catch(e){
+  return []
+}
 }
 
 out.Post = async ctx=>{
@@ -16,7 +28,7 @@ out.Post = async ctx=>{
   let createInfo = await FlowInstance.Create(ent_id,data,op)
   if(!createInfo)
     throw "CREATE_FAILED"
-  data.history_id = createInfo.history_id
+  data.node = createInfo.history_id
   let patchInfo = await FlowInstance.Patch(ent_id,createInfo.id,data,op)
   console.log(patchInfo)
   return {

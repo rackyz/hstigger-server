@@ -264,9 +264,9 @@ o.get = async (flow_id,op) => {
   })
 
   //if(item.singlection)
-  let instance = await MYSQL.E('NBGZ','flow_instance').first('id').where({created_by:op})
-  if(instance)
-    item.inst_id = instance.id
+  // let instance = await MYSQL.E('NBGZ','flow_instance').first('id').where({created_by:op})
+  // if(instance)
+  //   item.inst_id = instance.id
 
   return item
 }

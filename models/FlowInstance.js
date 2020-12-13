@@ -233,7 +233,7 @@ o.Create = async (ent_id,{flow},op)=>{
     id:inst_id,
     created_by:op,
     flow_id:flow.flow_id,
-    desc:flow.desc,
+    desc:flow.desc + '-' +moment().format('YYYYMMDD'),
     created_at:UTIL.getTimeStamp(),
     thread:1
   }
@@ -260,7 +260,7 @@ o.Create = async (ent_id,{flow},op)=>{
 }
 
 o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
-  
+  console.log('patch:',node,actions)
   if(!actions || actions.length == 0)
     throw "ACTION UNEXPECTED"
   let history_id = node
@@ -294,8 +294,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
     lastnode[v.key] = JSON.parse(v.value)
   })
 
-  if(lastnode.optional)
-    return 
+  
   let actionObjects = await MYSQL('flow_action').select('key','to','from','type').where({flow_id:proto_id}).whereIn('key',actions)
   
   // retrying
@@ -309,7 +308,8 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
       throw "NODE STATE UNEXPECTED"
   let history_node = {state,end_at:UTIL.getTimeStamp(),op}
   await MYSQLE(ent_id,T_NODE).update(history_node).where({id:history_id,flow_id})
-
+  if(lastnode.optional)
+    return 
 
   let nextNodes = await MYSQL('flow_node').select('key','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
   if(nextNodes.length != actionObjects.length)
@@ -368,9 +368,59 @@ o.GetInstExecutors = async (ent_id,inst_id)=>{
   return res
 }
 
-o.GetUserThread = async (ent_id,user_id)=>{
-  let res = await MYSQLE(ent_id,T_NODE).where({user_id}).leftJoin(T_USER_NODE,`history_node_id`,`${T_NODE}.id`)
+o.GetUserNodes = async (ent_id,user_id)=>{
+  // let res = await MYSQLE(ent_id,T_NODE).where({user_id}).leftJoin(T_USER_NODE,`history_node_id`,`${T_NODE}.id`)
+  let res = await MYSQLE(ent_id,T_NODE).select('state','flow_id','key','executors').where('executors','like','%'+user_id+'%').orderBy('id','desc').limit(50)
   return res
+}
+const activeStates = [NODE_STATES.initing,NODE_STATES.active,NODE_STATES.retrying]
+o.GetActiveThreads = async (ent_id,nodes)=>{
+  if(!nodes || nodes.length == 0)
+    return []
+  let ns = nodes.filter(v=>activeStates.includes(v.state))
+  let threads = []
+  for(let i=0;i<ns.length;i++){
+    let proto = await MYSQLE(ent_id,T_INST).first('flow_id','desc').where({id:ns[i].flow_id})
+    if(!proto)
+      continue
+    let flow = await MYSQL('flow').first('name','icon').where({id:proto.flow_id})
+    if(!flow)
+      continue
+    let node = await MYSQL('flow_node').first('name').where({key:ns[i].key,flow_id:proto.flow_id})
+    if(!node)
+      continue
+    threads.push({id:ns[i].flow_id,flow_id:proto.flow_id,flow_name:flow.name,node_name:node.name,executors:ns[i].executors,desc:proto.desc,name:flow.name,icon:flow.icon})
+  }
+  return threads
+}
+
+o.GetPassedThreads = async (ent_id,nodes)=>{
+  if(!nodes || nodes.length == 0)
+    return []
+  let ns = nodes.filter(v=>!activeStates.includes(v.state))
+  let t = {}
+  ns.forEach(v=>{
+      t[v.flow_id] = true
+  })
+  let threads_ids = Object.keys(t)
+  let threads = []
+  for(let i=0;i<threads_ids.length;i++){
+    let proto = await MYSQLE(ent_id,T_INST).first('flow_id','desc','state').where({id:threads_ids[i]})
+    if(!proto)
+      continue
+    let flow = await MYSQL('flow').first('name','icon').where({id:proto.flow_id})
+    if(!flow)
+      continue
+    threads.push({
+      id:threads_ids[i],
+      flow_id:proto.flow_id,
+      name:flow.name,
+      desc:proto.desc,
+      icon:flow.icon,
+      state:proto.state
+    })
+  }
+  return threads
 }
 
 
@@ -385,7 +435,7 @@ o.Recall = async (ent_id,flow_id,history_id,user_id)=>{
   if(!prev_node)
     throw "can not recall"
   // modify prev_node
-  if(current_node.state == NODE_STATES.accepted)
+  if(current_node.state == NODE_STATES.accepted || current_node.state == NODE_STATES.submitted)
   {
     await MYSQL.E(ent_id,T_NODE).update({state:1}).where({id:history_id})
   }else if(current_node.state == NODE_STATES.rejected){
