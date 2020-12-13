@@ -51,6 +51,7 @@ o.initdb = async (forced) => {
     t.string('name',32)
     t.string('desc',256)
     t.text('layout')
+    t.text('view')
     t.integer('in_type').defaultTo(0)
     t.integer('out_type').defaultTo(0) //type == 1 copysend
   },forced)
@@ -127,6 +128,7 @@ const ParseDefine = async (flow_id,def)=>{
       key:node.key,
       desc:node.desc,
       layout:node.layout,
+      view:node.view,
       in_type:node.in_type,
       out_type:node.out_type
     }

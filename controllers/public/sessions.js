@@ -18,7 +18,7 @@ out.Post = async ctx=>{
 out.Get = async ctx=>{
   let id = ctx.params.id
   if(id == "current"){
-    let info = await Session.getSessionInfo(ctx.state.session_id,ctx.state.enterprise_id)
+    let info = await Session.getSessionInfo(ctx.state.session_id,ctx.state.enterprise_id,ctx.state.isEntAdmin,ctx.state.isAdmin)
     return info
   }
   

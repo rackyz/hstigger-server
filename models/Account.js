@@ -8,6 +8,7 @@ const Module = require('./Module')
 const Permission = require('./Permission')
 const Flow = require('./Flow')
 const File = require('./File')
+const FlowInstance = require('./FlowInstance')
 const { UserLogger } = require('../base/logger')
 const o = {
   required:['Type','Enterprise','Message']
@@ -233,7 +234,7 @@ o.getUserEnterprises = async (user_id)=>{
   return items.map(v=>v.enterprise_id)
 }
 
-o.getUserInfo = async (user_id,ent_id)=>{
+o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   if(!user_id)
     return EXCEPTION.E_INVALID_DATA
   let user = await MYSQL(TABLE_ACCOUNT).first('id','user','name','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
@@ -246,23 +247,23 @@ o.getUserInfo = async (user_id,ent_id)=>{
   user.user_settings = await o.getUserSettings(user_id)
   user.user_menus = await o.getMenus(user_id)
   user.user_actions = await o.getActionMenus(user_id)
-  user.modules = await Module.getAuthedModules(user_id,ent_id)
+  user.modules = await Module.getAuthedModules(user_id,ent_id,isEntAdmin,isAdmin)
   user.permissions = await Permission.getPermissions(user.type)
   user.flows = await Flow.GetUserFlows(user_id)
-  user.user_flows = await o.getFlows(user_id)
+  user.user_flows = await o.getFlows(user_id,ent_id)
   user.user_rss = await o.getRss(user_id)
   user.coskey = File.AuthCOS()
-
+  console.log(user.user_flows)
   return user
 }
 
-o.getFlows = async (user_id)=>{
-  if(!user_id)
-    return EXCEPTION.E_INVALID_DATA
-  let res = await MYSQL(TABLE_USER_FLOW).select('id').where({
-    user_id
+o.getFlows = async (user_id,ent_id)=>{
+  if(!ent_id)
+    return []
+  let res = await MYSQL("enterprise_flow").select('flow_id').where({
+    ent_id
   })
-  return res.map(v => v.id)
+  return res.map(v => v.flow_id)
 }
 
 o.getRss = async (user_id)=>{
@@ -302,7 +303,7 @@ o.changePwd = async (account,password,op)=>{
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
   await MYSQL(TABLE_ACCOUNT).update({password,changed:true}).where({id:user.id})
-  UserLogger.info(`${op} 修改了用户${id}的密码}`)
+  UserLogger.info(`${op} 修改了用户${user.id}的密码}`)
 }
 
 // out methods
@@ -387,12 +388,13 @@ o.register = async (phone)=>{
     id:UTIL.createUUID(),
     user:phone,
     phone,
-    type:0,
+    type:2,
     password:UTIL.encodeMD5(temp_password),
     created_at:UTIL.getTimeStamp()
   }
 
   await MYSQL(TABLE_ACCOUNT).insert(account)
+  await Enterprise.addEnterprise(account.id,"NBGZ")
   Message.sendSMS('REGISTER',phone,[UTIL.maskPhone(phone),temp_password])
 }
 
@@ -506,4 +508,14 @@ o.unlock = async (id_list,op)=>{
 o.removeAll = async (option)=>{
   await MYSQL(TABLE_ACCOUNT).where(option).del()
 }
+
+// GET USER ACTIVE FLOWS
+o.getAllFlows = async (op)=>{
+  let ent_list = await o.getUserEnterprises()
+  for(let i=0;i<ent_list.length;i++)
+    await FlowInstance.GetUserThread()
+}
+
+// GET USER INVOKED FLOWS
+
 module.exports = o

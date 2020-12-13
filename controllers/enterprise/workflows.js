@@ -14,7 +14,8 @@ out.Post = async ctx=>{
   let ent_id = ctx.state.enterprise_id
   let data = ctx.request.body
   let createInfo = await FlowInstance.Create(ent_id,data,op)
-  console.log(createInfo)
+  if(!createInfo)
+    throw "CREATE_FAILED"
   data.history_id = createInfo.history_id
   let patchInfo = await FlowInstance.Patch(ent_id,createInfo.id,data,op)
   console.log(patchInfo)
@@ -41,8 +42,14 @@ out.Patch = async ctx=>{
   let user_id = ctx.state.id
   let ent_id = ctx.state.enterprise_id
   let flow_id = ctx.params.id
-  let {action,data} = ctx.request.body
-  let patchInfo = await FlowInstance.Patch(ent_id,flow_id,action,data,user_id)
+  let q = ctx.query.q
+  let data = ctx.request.body
+
+  if(q == 'recall'){
+    await FlowInstance.Recall(ent_id,flow_id,data.node,user_id)
+    return
+  }
+  let patchInfo = await FlowInstance.Patch(ent_id,flow_id,data,user_id)
   return patchInfo
 }
 

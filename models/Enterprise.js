@@ -25,7 +25,7 @@ const ENTERPRISE_STATES = [{
 }
 ]
 const T_ENTERPRISE = "enterprise"
-
+const T_ENTERPRISE_FLOW = "enterprise_flow"
 
 o.initdb = async (forced) => {
   await MYSQL.initdb(T_ENTERPRISE,t=>{
@@ -37,6 +37,12 @@ o.initdb = async (forced) => {
     t.integer('state').defaultTo(0)
     t.datetime('created_at');
     t.text('desc');
+  },forced)
+
+  await MYSQL.initdb(T_ENTERPRISE_FLOW,t=>{
+    t.increments('id').index().primary();
+    t.string('ent_id',64);
+    t.string('flow_id',64);
   },forced)
 
   if(forced){

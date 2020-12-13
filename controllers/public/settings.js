@@ -6,10 +6,8 @@ let out = {}
 out.Get = async ctx =>{
   let id = ctx.params.id
   if(id == 'login'){
-    return {
-      ENABLE_REGISTER:true,
-      ENABLE_OAUTH_LOGIN:true
-    }
+    let setting = await Setting.getSettings('LOGIN')
+    return setting
   }else{
     let user_id = ctx.state.id
     let value = await Setting.get(user_id,key)

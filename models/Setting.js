@@ -52,7 +52,7 @@ o.getSettings = async (group,type)=>{
   if(type)
     condition.type = type
   let settings = await MYSQL(TABLE_SETTING).where(condition)
-  return UTIL.ArrayToObject(settings,'key',t=>t.value)
+  return UTIL.ArrayToObject(settings,'key',t=>JSON.parse(t.value))
 }
 
 
