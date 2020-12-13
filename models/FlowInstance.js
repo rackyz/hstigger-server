@@ -312,17 +312,19 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
     return 
 
   let nextNodes = await MYSQL('flow_node').select('key','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
-  if(nextNodes.length != actionObjects.length)
-    throw "WORKFLOW SETTING ERROR"
 
-  console.log('next:',nextNodes)
+
   let now = UTIL.getTimeStamp()
   let nodes_param = []
   actionObjects.forEach((a,i)=>{
     let executor = executors[a.to]
     if(!Array.isArray(executor))
       executor = [executor]
-    if(nextNodes[i].in_type == 1){
+    let nextnode = nextNodes.find(v=>v.key == a.to)
+    if(!nextnode)
+      return
+
+    if(nextnode.in_type == 1){
         let nodes = executor.map(e=>{
           return {
             key:a.to,
