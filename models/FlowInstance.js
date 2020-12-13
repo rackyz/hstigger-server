@@ -6,6 +6,7 @@ const Ding = require('./Ding')
 const {
   UserLogger
 } = require('../base/logger')
+const { last } = require('lodash')
 
 
 let o = {
@@ -270,7 +271,8 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   let proto_id = proto.flow_id
   // modify last history node
   let lastnode = await MYSQLE(ent_id,T_NODE).first('state','key').where({id:history_id,flow_id})
-  
+  if(!lastnode)
+      throw "HISTORY_NOE_IS_NOT_EXIST"
   let mainAction = actions[0]
   // save data
   if(typeof data == 'object'){
