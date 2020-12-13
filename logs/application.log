@@ -229,3 +229,454 @@ From previous event:
   index: 0,
   sql: "update `flow` set `define` = `info` = '[object Object]', `nodes` = '[object Object]', '[object Object]', '[object Object]', '[object Object]', '[object Object]', `def` = '[object Object]', `actions` = '[object Object]', '[object Object]', '[object Object]', '[object Object]', '[object Object]', '[object Object]', '[object Object]', '[object Object]', '[object Object]' where `id` = 'e9236e60-3b83-11eb-8e1e-c15d5c7db744'"
 }
+[2020-12-13T08:15:22.435] [ERROR] app - 403
+[2020-12-13T08:15:46.843] [ERROR] app - TypeError: Cannot read property 'from' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:88:21)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T08:17:56.017] [ERROR] app - TypeError: Cannot read property 'from' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:88:21)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T08:19:23.081] [ERROR] app - TypeError: Cannot read property 'id' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:75:13)
+    at Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:39)
+    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:52)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:9)
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:13
+    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+[2020-12-13T08:22:11.911] [ERROR] app - TypeError: Cannot read property 'from' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:88:21)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T08:45:21.252] [ERROR] app - ReferenceError: flow_id is not defined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:82:68)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T08:47:56.109] [ERROR] app - Error: Undefined binding(s) detected when compiling FIRST query: select `from` from `flow_action` where `flow_id` = ? and `key` = ? limit ?
+    at QueryCompiler_MySQL.toSQL (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\compiler.js:131:13)
+    at Builder.toSQL (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\query\builder.js:115:44)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:56:32
+    at tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:185:26
+    at tryCatcher (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at Promise._fulfill (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:673:18)
+    at PromiseArray._resolve (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise_array.js:127:19)
+    at PromiseArray._promiseFulfilled (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise_array.js:145:14)
+    at Promise._settlePromise (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:609:26)
+    at Promise._settlePromise0 (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
+    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:169:14)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
+[2020-12-13T09:19:32.265] [ERROR] app - ReferenceError: inst is not defined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:89:13)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T09:20:18.672] [ERROR] app - Error: ER_NO_SUCH_TABLE: Table 'gzcloud_orm.NBGZ' doesn't exist
+    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
+    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
+    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
+    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
+    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: "Table 'gzcloud_orm.NBGZ' doesn't exist",
+  sqlState: '42S02',
+  index: 0,
+  sql: "insert into `NBGZ` (`action`, `executor`, `flow_id`, `key`, `op`, `start_at`, `state`) values (0, 'ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744', '5cb64790-3ce1-11eb-9b68-7baa6ff674f5', 'n1', 'ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744', '2020-12-13 09:20:18', 0)"
+}
+[2020-12-13T09:24:30.825] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'action' in 'field list'
+    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
+    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
+    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
+    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
+    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'action' in 'field list'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "insert into `ENT_NBGZ`.`flow_history_node` (`action`, `executor`, `flow_id`, `key`, `op`, `start_at`, `state`) values (0, 'ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744', 'f2fda770-3ce1-11eb-8f87-3b3ca0ae0e96', 'n1', 'ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744', '2020-12-13 09:24:30', 0)"
+}
+[2020-12-13T09:31:25.180] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'action' in 'field list'
+    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
+    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
+    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
+    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
+    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'action' in 'field list'",
+  sqlState: '42S22',
+  index: 0,
+  sql: "insert into `ENT_NBGZ`.`flow_history_node` (`action`, `executor`, `flow_id`, `key`, `op`, `start_at`, `state`) values (0, 'ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744', 'e9f7f8f0-3ce2-11eb-a6b5-0383b0b3b7c8', 'n1', 'ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744', '2020-12-13 09:31:25', 0)"
+}
+[2020-12-13T09:33:46.335] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'action' in 'field list'
+    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
+    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
+    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
+    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
+    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'action' in 'field list'",
+  sqlState: '42S22',
+  index: 0,
+  sql: 'insert into `ENT_NBGZ`.`flow_history_node` (`action`, `executors`, `flow_id`, `key`, `op`, `start_at`, `state`) values (0, \'[\\"ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744\\"]\', \'3e0fd5c0-3ce3-11eb-b02b-83d9ba56d693\', \'n1\', \'ed4a5bc6-3b83-11eb-8e1e-c15d5c7db744\', \'2020-12-13 09:33:46\', 0)'
+}
+[2020-12-13T09:35:27.317] [ERROR] app - UNEXPECTED HISTORY
+[2020-12-13T09:49:06.431] [ERROR] app - UNEXPECTED HISTORY
+[2020-12-13T09:50:55.864] [ERROR] app - TypeError: JSON.stringfy is not a function
+    at C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:122:50
+    at Array.map (<anonymous>)
+    at Object.o.Patch (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:121:41)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:19:19)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T09:53:44.408] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'history_id' in 'field list'
+    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:311:20)
+    at addChunk (_stream_readable.js:294:12)
+    at readableAddChunk (_stream_readable.js:275:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
+    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
+    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
+    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
+    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
+    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
+    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
+    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
+    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
+  code: 'ER_BAD_FIELD_ERROR',
+  errno: 1054,
+  sqlMessage: "Unknown column 'history_id' in 'field list'",
+  sqlState: '42S22',
+  index: 0,
+  sql: 'insert into `ENT_NBGZ`.`flow_data` (`def_key`, `flow_id`, `history_id`, `value`) values (\'executors\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'[]\'), (\'name\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'\\"马骍\\"\'), (\'position\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'2\'), (\'rank\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'\\"无\\"\'), (\'education\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'\\"本科(全日制)\\"\'), (\'cerificate\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'\\"其他\\"\'), (\'dep\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'0\'), (\'hire_date\', \'082b4450-3ce6-11eb-8b20-5b1b0b08dc96\', 1, \'\\"Wed Dec 09 2020 08:00:00 GMT+0800\\"\')'
+}
+[2020-12-13T09:55:49.882] [ERROR] app - TypeError: Cannot read property 'value' of undefined
+    at Object.o.Patch (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:274:39)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:19:19)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T09:57:49.129] [ERROR] app - ReferenceError: key is not defined
+    at Object.o.Patch (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:279:124)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:19:19)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T11:56:31.417] [ERROR] app - 401
+[2020-12-13T11:56:31.434] [ERROR] app - 401
+[2020-12-13T11:56:32.773] [ERROR] app - 非法访问
+[2020-12-13T11:56:32.805] [ERROR] app - 非法访问
+[2020-12-13T12:13:40.967] [ERROR] app - ReferenceError: MYSQLE is not defined
+    at Object.o.get (C:\Users\racky\Desktop\project\hstigger-server\models\Flow.js:265:18)
+    at async Object.out.Get (C:\Users\racky\Desktop\project\hstigger-server\controllers\flows.js:10:10)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:4)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T12:15:11.351] [ERROR] app - TypeError: MYSQL.E(...).fisrt is not a function
+    at Object.o.get (C:\Users\racky\Desktop\project\hstigger-server\models\Flow.js:265:56)
+    at async Object.out.Get (C:\Users\racky\Desktop\project\hstigger-server\controllers\flows.js:10:10)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:4)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T12:15:40.084] [ERROR] app - TypeError: MYSQL.E(...).fisrt is not a function
+    at Object.o.get (C:\Users\racky\Desktop\project\hstigger-server\models\Flow.js:265:56)
+    at async Object.out.Get (C:\Users\racky\Desktop\project\hstigger-server\controllers\flows.js:10:10)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:4)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T12:16:04.089] [ERROR] app - TypeError: MYSQL.E(...).fisrt is not a function
+    at Object.o.get (C:\Users\racky\Desktop\project\hstigger-server\models\Flow.js:265:56)
+    at async Object.out.Get (C:\Users\racky\Desktop\project\hstigger-server\controllers\flows.js:10:10)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:4)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T12:16:38.295] [ERROR] app - TypeError: MYSQL.E(...).fisrt is not a function
+    at Object.o.get (C:\Users\racky\Desktop\project\hstigger-server\models\Flow.js:265:56)
+    at async Object.out.Get (C:\Users\racky\Desktop\project\hstigger-server\controllers\flows.js:10:10)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:4)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T12:16:55.123] [ERROR] app - TypeError: MYSQL.E(...).first is not a function
+    at Object.o.get (C:\Users\racky\Desktop\project\hstigger-server\models\Flow.js:265:56)
+    at async Object.out.Get (C:\Users\racky\Desktop\project\hstigger-server\controllers\flows.js:10:10)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authRouter.js:13:4)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T12:17:50.012] [ERROR] app - 403
+[2020-12-13T14:17:45.070] [ERROR] app - TypeError: Cannot read property 'key' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:241:19)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T14:25:21.438] [ERROR] app - TypeError: Cannot read property 'key' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:241:19)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T14:56:29.831] [ERROR] app - TypeError: Cannot read property 'key' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:241:19)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T14:56:36.427] [ERROR] app - TypeError: Cannot read property 'key' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:241:19)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T15:31:02.001] [ERROR] app - TypeError: Cannot read property 'key' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:241:19)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T15:46:01.561] [ERROR] app - TypeError: Cannot read property 'key' of undefined
+    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\FlowInstance.js:241:19)
+    at async Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\enterprise\workflows.js:16:20)
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:31:26)
+    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:56:3)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:100:7
+    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:37:5)
+    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:80:7
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:39:3)
+    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:8:9)
+    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2020-12-13T15:48:54.732] [ERROR] app - FLOW undefined.26c71180-3d15-11eb-9f7d-517ce131147b
+[2020-12-13T15:49:03.884] [ERROR] app - FLOW undefined.26c71180-3d15-11eb-9f7d-517ce131147b

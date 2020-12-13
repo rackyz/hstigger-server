@@ -6,7 +6,8 @@ let out = {}
 
 out.Get = async (ctx)=>{
   let id = ctx.params.id
-  return await Flow.get(id)
+  let uid = ctx.state.id
+  return await Flow.get(id,uid)
 }
 
 

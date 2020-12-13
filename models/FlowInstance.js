@@ -17,10 +17,155 @@ const T_NODE = 'flow_history_node'
 const T_DATA = 'flow_data'
 const T_USER_NODE = 'user_flow_history_node'
 
+const NodeStateTypes = [{
+  id: 0,
+  key: "initing",
+  name: "初始化",
+  color: "skyblue"
+}, {
+  id: 1,
+  key: "active",
+  name: "等待处理",
+  color: "#aaa"
+}, {
+  id: 2,
+  key: "submitted",
+  name: "已提交",
+  color: "orange"
+}, {
+  id: 3,
+  key: "rejected",
+  name: "已拒绝",
+  color: "darkred"
+}, {
+  id: 4,
+  key: "accepted",
+  name: "已接受",
+  color: "yellowgreen"
+}, {
+  id: 5,
+  key: "retrying",
+  name: "修改中",
+  color: "oranged"
+}, {
+  id: 6,
+  key: "processing",
+  name: "处理中",
+  color: "yellow"
+}, {
+  id: 7,
+  key: "process_ok",
+  name: "处理完毕",
+  color: 'yellowgreen'
+}, {
+  id: 8,
+  key: "process_failed",
+  name: "处理失败",
+  color: "red"
+}, {
+  id: 9,
+  key: "freezed",
+  name: "已冻结",
+  color: "skyblue"
+}, {
+  id: 10,
+  key: "closed",
+  name: "已关闭",
+  color: "skyblue"
+}]
+
+const ActionTypes = [{
+  id: 0,
+  key: "init",
+  name: "初始化",
+  color: 'red'
+}, {
+  id: 1,
+  key: "submit",
+  name: "提交",
+  color: "yellowgreen"
+}, {
+  id: 2,
+  key: "reject",
+  name: "拒绝",
+  color: "darkred"
+}, {
+  id: 3,
+  key: "accept",
+  name: "接收",
+  color: "yellowgreen"
+}, {
+  id: 4,
+  key: "process",
+  name: "处理",
+  color: "orange"
+}, {
+  id: 5,
+  key: "retry",
+  name: "重试",
+  color: "orange"
+
+}, {
+  id: 6,
+  key: "close",
+  name: "关闭(支线)"
+}, {
+  id: 7,
+  key: "pass",
+  name: "跳过"
+}]
+
+
+const MapKey = (types) => {
+  let o = {}
+  types.forEach(v => {
+    o[v.key] = v.id
+  })
+  return o
+}
+
+const GetType = (types, id) => {
+  return types.find(v => v.id == id)
+}
+
+const NODE_STATES = MapKey(NodeStateTypes)
+const ACTION_TYPES = MapKey(ActionTypes)
+
+
+const makeAction = function(state, action) {
+ if(state == NODE_STATES.initing || state == NODE_STATES.active || state == NODE_STATES.retrying || state == NODE_STATES.rejected){
+   if(action == ACTION_TYPES.submit){
+     return NODE_STATES.submitted
+   }else if(action == ACTION_TYPES.accept){
+     return NODE_STATES.accepted
+   }else if(action == ACTION_TYPES.process){
+     return NODE_STATES.processing
+   }else if(action == ACTION_TYPES.reject){
+     return NODE_STATES.rejected
+   }else{
+     return NODE_STATES.error
+   }
+ }else if(state == NODE_STATES.submitted){
+   if(action == ACTION_TYPES.reject){
+     return NODE_STATES.rejected
+   }
+ }
+ 
+ if(action == ACTION_TYPES.close){
+   return NODE_STATES.closed
+ }else if(action == ACTION_TYPES.freeze){
+   return NODE_STATES.freezed
+ }
+
+ return NODE_STATES.error
+}
+
+
+
 o.enterprise = true
 
 o.initdb = async (ent_schema, forced) => {
-  forced = true
+  //forced = true
   await MYSQL.initdb(T_INST, t => {
     t.uuid('id').index().primary()  // uuid
     t.uuid('flow_id')               // flow-define
@@ -37,10 +182,13 @@ o.initdb = async (ent_schema, forced) => {
     t.uuid('flow_id')
     t.string('key',32)
     t.integer('state')
+    t.string('action',32)
     t.string('from')
     t.string('to')
-    t.uuid('created_by')
-    t.datetime('created_at')
+    t.uuid('op')
+    t.text('executors')
+    t.datetime('start_at')
+    t.datetime('end_at')
   }, forced, ent_schema)
 
   await MYSQL.initdb(T_DATA, t => {
@@ -69,56 +217,42 @@ const MYSQLE = (ent_id,t)=>MYSQL(t).withSchema('ENT_'+ent_id)
 
 //STATE 0-active 1-submit 2-reject 3-retry
 // create the instance
-o.Create = async (ent_id,flow,action,data,op)=>{
+o.Create = async (ent_id,{flow},op)=>{
+  let flow_id = flow.flow_id
+  let inst_id = flow.id || UTIL.createUUID()
   let param = {
-    state:1,
-    id:flow.id || UTIL.createUUID(),
+    state:0,
+    id:inst_id,
     created_by:op,
     flow_id:flow.flow_id,
     desc:flow.desc,
-    created_at:UTIL.getTimeStamp()
+    created_at:UTIL.getTimeStamp(),
+    thread:1
   }
+  
   await MYSQLE(ent_id,T_INST).insert(param)
-
+  let StartNode = await MYSQL('flow_node').first('key').where({flow_id})
+  if(!StartNode)
+    throw 'FLOW undefined.'+flow_id
   // add first node
   let node = {
-    flow_id:param.id,
+    flow_id:inst_id,
     // -> prototype node
-    action:action,
-    key:flow.action.from,
-    created_by:op,
-    created_at:UTIL.getTimeStamp()
+    action:0,
+    state:0,
+    key:StartNode.key,
+    op,
+    start_at:UTIL.getTimeStamp(),
+    executors:JSON.stringify([op])
   }
 
-  Object,keys(data).map(key=>{
-    return {
-
-    }
-  })
-  let node_id = await MYSQL(ent_id,T_NODE).insert(node).returning('id')
-  param.history_id = node_id
-  await MYSQL(ent_id,T_USER_NODE).insert({user_id:op,history_node_id:node_id})
+  let history_id = await MYSQLE(ent_id,T_NODE).returning('id').insert(node)
+  param.history_id = history_id
   UserLogger.info(`${op}创建了流程实例${flow.desc}`)
   return param
 }
 
-o.GetFlowInstance = async (ent_id,instId)=>{
-  let flowInstance = await MYSQLE(ent_id,T_INST).where({id:instId})
-  flowInstance.history = await MYSQLE(ent_id,T_NODE).where({})
-}
-
-// get all executors
-o.GetInstExecutors = async (ent_id,inst_id)=>{
-  let res = await MYSQLE(ent_id,T_USER_NODE).select('user_id').where({inst_id}).leftJoin(T_NODE,`${T_NODE}.id`,'history_node_id')
-  return res
-}
-
-o.GetUserThread = async (ent_id,user_id)=>{
-  let res = await MYSQLE(ent_id,T_NODE).where({user_id}).leftJoin(T_USER_NODE,`history_node_id`,`${T_NODE}.id`)
-  return res
-}
-
-o.Patch = async (ent_id,flow_id,history_id,actions,data,op)=>{
+o.Patch = async (ent_id,flow_id,{history_id,actions,data},op)=>{
   if(!actions || actions.length == 0)
     throw "ACTION UNEXPECTED"
 
@@ -132,7 +266,7 @@ o.Patch = async (ent_id,flow_id,history_id,actions,data,op)=>{
   // save data
   if(typeof data == 'object'){
     let data_params = Object.keys(data).map(key=>(
-      {history_id,def_key:key,flow_id,value:JSON.stringfy(data[key])}
+      {def_key:key,flow_id,history_node_id:history_id,value:JSON.stringify(data[key])}
     ))
     await MYSQLE(ent_id,T_DATA).insert(data_params)
   }
@@ -144,7 +278,7 @@ o.Patch = async (ent_id,flow_id,history_id,actions,data,op)=>{
     throw "UNEXPECTED EXECUTORS"
   
   // get node optional and change state
-  let nodeOptions = await MYSQL('flow_option').select('value','key').where({flow_id,type:1,item_key:lastnode.key}).whereIn(key,['optional','in_type'])
+  let nodeOptions = await MYSQL('flow_option').select('value','key').where({flow_id,type:1,item_key:lastnode.key}).whereIn('key',['optional','in_type'])
   nodeOptions.forEach(v=>{
     lastnode[v.key] = JSON.parse(v.value)
   })
@@ -199,12 +333,36 @@ o.Patch = async (ent_id,flow_id,history_id,actions,data,op)=>{
   //await MYSQLE(ent_id,T_NODE).insert(nodeParam)
 }
 
+o.GetFlowInstance = async (ent_id,instId)=>{
+  let flowInstance = await MYSQLE(ent_id,T_INST).where({id:instId})
+  flowInstance.history = await MYSQLE(ent_id,T_NODE).where({})
+}
+
+// get all executors
+o.GetInstExecutors = async (ent_id,inst_id)=>{
+  let res = await MYSQLE(ent_id,T_USER_NODE).select('user_id').where({inst_id}).leftJoin(T_NODE,`${T_NODE}.id`,'history_node_id')
+  return res
+}
+
+o.GetUserThread = async (ent_id,user_id)=>{
+  let res = await MYSQLE(ent_id,T_NODE).where({user_id}).leftJoin(T_USER_NODE,`history_node_id`,`${T_NODE}.id`)
+  return res
+}
+
+
+
 o.Recall = async (action_key)=>{
 
 }
 
 o.Delete = async (instId)=>{
   
+}
+o.History = async (ent_id,inst_id,op)=>{
+  let instance = await MYSQLE(ent_id,T_FLOW).first().where({id:inst_id})
+  let history = await MYSQLE(ent_id,T_NODE).where({flow_id:inst_id})
+  let data = await MYSQLE(ent_id,T_DATA).where({flow_id:inst_id})
+  return {instance,history,data}
 }
 
 module.exports = o

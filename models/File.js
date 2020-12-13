@@ -123,7 +123,7 @@ console.log("DELETE:",err)
       result[i] = err
   }
   
-  await MYSQL(T).whereIn('id',id_list.filter((v,i)=>result[i])).delete()
+  await MYSQL(T).whereIn('id',id_list).delete()
   return result
 }
 

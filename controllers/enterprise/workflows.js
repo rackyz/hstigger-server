@@ -10,15 +10,31 @@ out.List = async ctx=>{
 }
 
 out.Post = async ctx=>{
-  let user_id = ctx.state.id
+  let op = ctx.state.id
   let ent_id = ctx.state.enterprise_id
   let data = ctx.request.body
-  let createInfo = await FlowInstance.Create(ent_id,data,user_id)
-  let patchInfo = await FlowInstance.Patch(ent_id,createInfo.id,data.action,data.data)
+  let createInfo = await FlowInstance.Create(ent_id,data,op)
+  console.log(createInfo)
+  data.history_id = createInfo.history_id
+  let patchInfo = await FlowInstance.Patch(ent_id,createInfo.id,data,op)
+  console.log(patchInfo)
   return {
-    createInfo,
-    patchInfo
+    instance:createInfo,
+    history:patchInfo
   }
+}
+
+// --> History
+out.Get = async ctx=>{
+  let op = ctx.state.id
+  let ent_id = ctx.state.enterprise_id
+  let inst_id =ctx.params.id
+
+  // instance
+  // history
+  // ddata
+  let data = await FlowInstance.History(ent_id,inst_id)
+  return data
 }
 
 out.Patch = async ctx=>{

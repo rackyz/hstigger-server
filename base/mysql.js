@@ -11,4 +11,6 @@ MYSQL.seeds = async (table_name,items,forced,schema)=>{
   return UTIL.seeds(MYSQL, table_name, items, forced, schema)
 }
 
+MYSQL.E = (ent_id,t)=>MYSQL(t).withSchema('ENT_'+ent_id)
+
 module.exports = MYSQL

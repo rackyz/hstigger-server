@@ -228,12 +228,11 @@ o.patch = async (id, item, op) => {
   // })
 }
 
-o.deleteObjects = async (id_list, op) => {
+o.deleteObjects = async (id_list) => {
   await MYSQL(T_FLOW).whereIn("id", id_list).del()
 }
 
-o.get = async flow_id => {
-  console.log('get:',flow_id)
+o.get = async (flow_id,op) => {
   let item = await MYSQL(T_FLOW).first().where({
     id: flow_id
   })
@@ -261,6 +260,12 @@ o.get = async flow_id => {
         action[v.key] = JSON.parse(v.value)
     }
   })
+
+  //if(item.singlection)
+  let instance = await MYSQL.E('NBGZ','flow_instance').first('id').where({created_by:op})
+  if(instance)
+    item.inst_id = instance.id
+
   return item
 }
 
