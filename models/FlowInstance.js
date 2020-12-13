@@ -201,6 +201,11 @@ o.initdb = async (ent_schema, forced) => {
     t.text('value')
   }, forced, ent_schema)
 
+  // await MYSQL.initdb(T_THREAD,t=>{
+  //   t.increments('id').index().primary()
+  //   t.
+  // })
+
   await MYSQL.initdb(T_USER_NODE,t=>{
     t.increments('id').index().primary()
     t.uuid('user_id')
@@ -217,8 +222,10 @@ const MYSQLE = (ent_id,t)=>MYSQL(t).withSchema('ENT_'+ent_id)
 
 //STATE 0-active 1-submit 2-reject 3-retry
 // create the instance
-o.Create = async (ent_id,{flow},op)=>{
+o.Create = async (ent_id,flow,op)=>{
   let flow_id = flow.flow_id
+  if(!flow_id)
+    return 
   let inst_id = flow.id || UTIL.createUUID()
   let param = {
     state:0,
