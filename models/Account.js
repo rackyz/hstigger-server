@@ -10,6 +10,7 @@ const Flow = require('./Flow')
 const File = require('./File')
 const FlowInstance = require('./FlowInstance')
 const { UserLogger } = require('../base/logger')
+const PMIS = require('./PMIS')
 const o = {
   required:['Type','Enterprise','Message']
 }
@@ -234,6 +235,8 @@ o.getUserEnterprises = async (user_id)=>{
   return items.map(v=>v.enterprise_id)
 }
 
+
+
 o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   if(!user_id)
     return EXCEPTION.E_INVALID_DATA
@@ -253,7 +256,7 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.user_flows = await o.getFlows(user_id,ent_id)
   user.user_rss = await o.getRss(user_id)
   user.coskey = File.AuthCOS()
-  console.log(user.user_flows)
+//  user.my_projects = await PMIS.GetUserProject(user.name)
   return user
 }
 
@@ -517,5 +520,13 @@ o.getAllFlows = async (op)=>{
 }
 
 // GET USER INVOKED FLOWS
+
+o.getUserPhone = async (user_id) => {
+  let user = await MYSQL(TABLE_ACCOUNT).first('phone').where({
+    id: user_id
+  })
+  if (user)
+    return user.phone
+}
 
 module.exports = o

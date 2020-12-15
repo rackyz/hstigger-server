@@ -1,12 +1,13 @@
 const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
-const Account = require('./Account')
+
 const Ding = require('./Ding')
+const moment = require('moment')
+const Message = require('./Message')
 const {
   UserLogger
 } = require('../base/logger')
-const { last } = require('lodash')
 
 
 let o = {
@@ -223,7 +224,7 @@ const MYSQLE = (ent_id,t)=>MYSQL(t).withSchema('ENT_'+ent_id)
 
 //STATE 0-active 1-submit 2-reject 3-retry
 // create the instance
-o.Create = async (ent_id,{flow},op)=>{
+o.Create = async (ent_id,{flow,data},op)=>{
   let flow_id = flow.flow_id
   if(!flow_id)
     return 
@@ -255,19 +256,43 @@ o.Create = async (ent_id,{flow},op)=>{
 
   let history_id = await MYSQLE(ent_id,T_NODE).returning('id').insert(node)
   param.history_id = history_id
+
+   if (typeof data == 'object') {
+     let data_params = Object.keys(data).map(key => ({
+       def_key: key,
+       flow_id:inst_id,
+       history_node_id: history_id,
+       value: JSON.stringify(data[key])
+     }))
+     await MYSQLE(ent_id, T_DATA).insert(data_params)
+   }
+
   UserLogger.info(`${op}创建了流程实例${flow.desc}`)
   return param
 }
 
+let getUserPhone = async (user_id) => {
+  if(!user_id)
+    return
+  let user = await MYSQL("account").first('phone').where({
+    id: user_id
+  })
+  if (user){
+    console.log("SEND:", user.phone)
+    return user.phone
+  }
+}
+
+
 o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
-  console.log('patch:',node,actions)
+  console.log('patch',node,actions)
   if(!actions || actions.length == 0)
     throw "ACTION UNEXPECTED"
   let history_id = node
   if(history_id == undefined)
     throw "UNEXPECTED HISTORY"
 
-  let proto = await MYSQL.E(ent_id,T_INST).first('flow_id').where({id:flow_id})
+  let proto = await MYSQL.E(ent_id,T_INST).first('flow_id','desc').where({id:flow_id})
   let proto_id = proto.flow_id
   // modify last history node
   let lastnode = await MYSQLE(ent_id,T_NODE).first('state','key').where({id:history_id,flow_id})
@@ -283,10 +308,20 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   }
 
   // get executors
-  let data_exe = await MYSQLE(ent_id,T_DATA).first('value').where({flow_id,def_key:'executors'})
-  let executors = JSON.parse(data_exe.value)
-  if(!executors)
-    throw "UNEXPECTED EXECUTORS"
+  
+  let executors = data.executors
+  if(!executors){
+     let data_exe = await MYSQLE(ent_id, T_DATA).first('value').where({
+       flow_id,
+       def_key: 'executors'
+     })
+     if (!data_exe)
+       throw "UNEXPECTED EXECUTORS"
+     let executors = JSON.parse(data_exe.value)
+     if (!executors)
+       throw "UNEXPECTED EXECUTORS"
+  }
+ 
   
   // get node optional and change state
   let nodeOptions = await MYSQL('flow_option').select('value','key').where({flow_id:proto_id,type:1,item_key:lastnode.key}).whereIn('key',['optional'])
@@ -311,11 +346,12 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   if(lastnode.optional)
     return 
 
-  let nextNodes = await MYSQL('flow_node').select('key','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
+  let nextNodes = await MYSQL('flow_node').select('key','name','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
 
 
   let now = UTIL.getTimeStamp()
   let nodes_param = []
+  let msg_senders = []
   actionObjects.forEach((a,i)=>{
     let executor = executors[a.to]
     if(!Array.isArray(executor))
@@ -323,9 +359,14 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
     let nextnode = nextNodes.find(v=>v.key == a.to)
     if(!nextnode)
       return
+    msg_senders.push({
+      user: executor,
+      params: ['', proto.desc, nextnode.key, nextnode.name]
+    })
 
     if(nextnode.in_type == 1){
         let nodes = executor.map(e=>{
+          
           return {
             key:a.to,
             from:history_id,
@@ -337,6 +378,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
             executors:JSON.stringify([e])
           }
         })
+        
         nodes_param = nodes_param.concat(nodes)
     }else{
         nodes_param.push({
@@ -351,8 +393,30 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
         })
     }
   })
- console.log(nodes_param)
+  console.log(msg_senders)
+  for(let i=0;i<msg_senders.length;i++){
+    
+    let v = msg_senders[i]
+ 
+    if (Array.isArray(v.user)) {
+       
+      for (let j = 0; j < v.user.length; j++)
+      { 
+        let phone = await getUserPhone(v.user[j])
+ 
+        if(phone)
+          await Message.sendSMS('FLOW', phone, v.params)
+      }
+    }else{
+      let phone = await getUserPhone(v.user)
+      if(phone)
+        await Message.sendSMS('FLOW', phone, v.params)
+    }
+  }
+  throw "OK2"
+
   await MYSQLE(ent_id,T_NODE).insert(nodes_param)
+
 
   
   //let node_raltions = 
@@ -426,7 +490,6 @@ o.GetPassedThreads = async (ent_id,nodes)=>{
 }
 
 
-
 o.Recall = async (ent_id,flow_id,history_id,user_id)=>{
   console.log(history_id)
   // auth
@@ -463,6 +526,30 @@ o.History = async (ent_id,inst_id,op)=>{
   let history = await MYSQLE(ent_id,T_NODE).where({flow_id:inst_id})
   let data = await MYSQLE(ent_id,T_DATA).where({flow_id:inst_id})
   return {instance,history,data}
+}
+
+
+// ------------------------------
+o.GetInstanceData = async (ent_id,flow_id,op)=>{
+  if(!flow_id)
+    return  []
+  console.log('getInstance:',ent_id,flow_id)
+  let instances = await MYSQLE(ent_id,T_INST).select()
+  for(let i=0;i<instances.length;i++)
+  {
+    let inst_id = instances[i].id
+    let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select(`${T_DATA}.def_key as fkey`,'value').where(`${T_DATA}.flow_id`,inst_id)
+  
+    data.forEach(v=>{
+      console.log(v.fkey)
+       instances[i][v.fkey] = JSON.parse(v.value)
+    })
+
+
+
+  }
+
+  return instances
 }
 
 module.exports = o

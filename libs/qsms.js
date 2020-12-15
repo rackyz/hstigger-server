@@ -19,11 +19,16 @@ function callback(err, res, resData) {
 
 const SMS_TEMPLATES = {
   VCODE:242160,
-  REGISTER: 766535
+  REGISTER: 766535,
+  FLOW: 311688
 }
 
 var sendSMS = function (tmpl_key, phone, params) {
- ssender.sendWithParam(86, phone, SMS_TEMPLATES[tmpl_key],
+  let tmpl = SMS_TEMPLATES[tmpl_key]
+  if(!tmpl)
+    throw "TMPL not exist"
+
+ ssender.sendWithParam(86, phone, tmpl,
    params, '宁波高专', "", "", callback);
 }
 

@@ -60,6 +60,13 @@ out.GetWeappAvatar = async ()=>{
 }
 
 
+out.GetUserProject = async (username)=>{
+  if(!username)
+      return []
+  let res =await GZSQL.withSchema('gzadmin').select().from('contract').where('charger','like',`%${username}%`).where('state','<=',2).limit(5)
+  return res
+}
+
 
 
 
