@@ -326,7 +326,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
  
   
   // get node optional and change state
-  let nodeOptions = await MYSQL('flow_option').select('value','key').where({flow_id:proto_id,type:1,item_key:lastnode.key}).whereIn('key',['optional'])
+  let nodeOptions = await MYSQL('flow_option').select('value','key').where({flow_id:proto_id,type:1,item_key:lastnode.key}).whereIn('key',['optional','sms'])
   nodeOptions.forEach(v=>{
     lastnode[v.key] = JSON.parse(v.value)
   })
@@ -347,9 +347,10 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   await MYSQLE(ent_id,T_NODE).update(history_node).where({id:history_id,flow_id})
   if(lastnode.optional)
     return 
+  //close other node
 
-  let nextNodes = await MYSQL('flow_node').select('key','name','in_type','out_type','sms').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
-
+  let nextNodes = await MYSQL('flow_node').select('key','name','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
+  console.log('nextNodes:',nextNodes)
 
   let now = UTIL.getTimeStamp()
   let nodes_param = []
@@ -557,7 +558,7 @@ o.GetInstanceData = async (ent_id,flow_id,cached = true)=>{
   if (cached) {
     
     let data = await REDIS.ASC_GET_JSON('checkreport')
-    console.log('cached:')
+   
     if(data)
       return data
   }

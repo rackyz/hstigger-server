@@ -281,7 +281,7 @@ o.get = async flow_id => {
   })
 
   REDIS.ASC_SET_JSON('flow_'+flow_id,item)
-  REDIS.EXPIRE('flow_' + flow_id, item,24*3600)
+  REDIS.EXPIRE('flow_' + flow_id,24*3600)
 
   return item
 }
