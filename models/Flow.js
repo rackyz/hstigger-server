@@ -8,6 +8,7 @@ const moment = require('moment')
 const {
   UserLogger
 } = require('../base/logger')
+const REDIS = require('../base/redis')
 
 let o = {
   required: ['Type']
@@ -21,8 +22,19 @@ const T_FIELD = 'flow_field'
 const T_OPTION = 'flow_option'
 const FLOW_TYPES = ['平台运维','行政综合', '财务审批', '人事审批', '项目管理']
 const FLOW_STATES = ['设计中','待测试','已启用','已禁用']
-const ACTION_TYPES = ['待处理','已发送','已退回','已接受','处理中','处理成功','处理失败','等待中']
-const NODE_STATES = ['']
+const NODE_TYPES = ['待处理','已发送','已退回','已接受','处理中','处理成功','处理失败','等待中','已跳过']
+const ACTION_TYPES = ['等待','发送','退回','接收','处理','关闭','跳过']
+const ActionType = {
+  ACTIVE:0,
+  SUBMIT:1,
+  REJECT:2,
+  RETRY:3,
+  ACCEPT:4,
+  PROCESS:5,
+  PROCESSED:6,
+  PROCESS_FAIL:7,
+  WAIT:8
+}
 const FLOW_OBJ_TYPES = ['流程','节点','操作','字段','表单','实例']
 o.initdb = async (forced) => {
   if (forced) {
@@ -228,13 +240,18 @@ o.patch = async (id, item, op) => {
   // await MYSQL(T_FLOW).update(item).where({
   //   id
   // })
+  REDIS.DEL('flow_' + flow_id)
 }
 
-o.deleteObjects = async (id_list) => {
+o.deleteObjects = async (id_list, op) => {
   await MYSQL(T_FLOW).whereIn("id", id_list).del()
 }
 
-o.get = async (flow_id,op) => {
+o.get = async flow_id => {
+  let cached = await REDIS.ASC_GET_JSON('flow_' + flow_id)
+  if(cached)
+    return cached
+    
   let item = await MYSQL(T_FLOW).first().where({
     id: flow_id
   })
@@ -263,18 +280,25 @@ o.get = async (flow_id,op) => {
     }
   })
 
-  //if(item.singlection)
-  // let instance = await MYSQL.E('NBGZ','flow_instance').first('id').where({created_by:op})
-  // if(instance)
-  //   item.inst_id = instance.id
+  REDIS.ASC_SET_JSON('flow_'+flow_id,item)
+  REDIS.EXPIRE('flow_' + flow_id, item,24*3600)
 
   return item
+}
+
+o.getNodes = async (flow_id) => {
+  console.log('flow_id:',flow_id)
+   let nodes = await MYSQL(T_NODE).select('name','key').where({
+     flow_id
+   })
+   return nodes
 }
 
 
 o.GetUserFlows = async (id) => {
   return await o.list()
 }
+
 
 
 

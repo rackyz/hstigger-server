@@ -11,10 +11,6 @@ module.exports = async (ctx, next) => {
     ctx.state.enterprise_id = enterpriseId
     ctx.state.isEntAdmin = await Enterprise.isOwner(ctx.state.id,enterpriseId)
     ctx.state.isEntAdmin = ctx.state.account_type == 3
-    if(ctx.state.isEntAdmin)
-      console.log("isEntAdmin")
-  } else {
-    console.log("Personal")
   }
 
   if(ctx.url.indexOf('/enterprise') == 0){

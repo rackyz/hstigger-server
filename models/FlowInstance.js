@@ -8,6 +8,7 @@ const Message = require('./Message')
 const {
   UserLogger
 } = require('../base/logger')
+const REDIS = require('../base/redis')
 
 
 let o = {
@@ -268,6 +269,7 @@ o.Create = async (ent_id,{flow,data},op)=>{
    }
 
   UserLogger.info(`${op}创建了流程实例${flow.desc}`)
+   REDIS.DEL('checkreport')
   return param
 }
 
@@ -285,7 +287,7 @@ let getUserPhone = async (user_id) => {
 
 
 o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
-  console.log('patch',node,actions)
+ 
   if(!actions || actions.length == 0)
     throw "ACTION UNEXPECTED"
   let history_id = node
@@ -308,7 +310,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   }
 
   // get executors
-  
+   REDIS.DEL('checkreport')
   let executors = data.executors
   if(!executors){
      let data_exe = await MYSQLE(ent_id, T_DATA).first('value').where({
@@ -346,7 +348,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   if(lastnode.optional)
     return 
 
-  let nextNodes = await MYSQL('flow_node').select('key','name','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
+  let nextNodes = await MYSQL('flow_node').select('key','name','in_type','out_type','sms').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
 
 
   let now = UTIL.getTimeStamp()
@@ -359,10 +361,12 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
     let nextnode = nextNodes.find(v=>v.key == a.to)
     if(!nextnode)
       return
-    msg_senders.push({
-      user: executor,
-      params: ['', proto.desc, nextnode.key, nextnode.name]
-    })
+    if(nextnode.sms){
+      msg_senders.push({
+        user: executor,
+        params: ['', proto.desc, nextnode.key, nextnode.name]
+      })
+    }
 
     if(nextnode.in_type == 1){
         let nodes = executor.map(e=>{
@@ -393,7 +397,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
         })
     }
   })
-  console.log(msg_senders)
+
   for(let i=0;i<msg_senders.length;i++){
     
     let v = msg_senders[i]
@@ -413,10 +417,9 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
         await Message.sendSMS('FLOW', phone, v.params)
     }
   }
-  throw "OK2"
 
   await MYSQLE(ent_id,T_NODE).insert(nodes_param)
-
+ 
 
   
   //let node_raltions = 
@@ -441,23 +444,36 @@ o.GetUserNodes = async (ent_id,user_id)=>{
 }
 const activeStates = [NODE_STATES.initing,NODE_STATES.active,NODE_STATES.retrying]
 o.GetActiveThreads = async (ent_id,nodes)=>{
-  if(!nodes || nodes.length == 0)
-    return []
-  let ns = nodes.filter(v=>activeStates.includes(v.state))
-  let threads = []
-  for(let i=0;i<ns.length;i++){
-    let proto = await MYSQLE(ent_id,T_INST).first('flow_id','desc').where({id:ns[i].flow_id})
-    if(!proto)
-      continue
-    let flow = await MYSQL('flow').first('name','icon').where({id:proto.flow_id})
-    if(!flow)
-      continue
-    let node = await MYSQL('flow_node').first('name').where({key:ns[i].key,flow_id:proto.flow_id})
-    if(!node)
-      continue
-    threads.push({id:ns[i].flow_id,flow_id:proto.flow_id,flow_name:flow.name,node_name:node.name,executors:ns[i].executors,desc:proto.desc,name:flow.name,icon:flow.icon})
-  }
-  return threads
+ if (!nodes || nodes.length == 0)
+   return []
+ let ns = nodes.filter(v => activeStates.includes(v.state))
+ let t = {}
+ ns.forEach(v => {
+   t[v.flow_id] = true
+ })
+ let threads_ids = Object.keys(t)
+ let threads = []
+ for (let i = 0; i < threads_ids.length; i++) {
+   let proto = await MYSQLE(ent_id, T_INST).first('flow_id', 'desc', 'state').where({
+     id: threads_ids[i]
+   })
+   if (!proto)
+     continue
+   let flow = await MYSQL('flow').first('name', 'icon').where({
+     id: proto.flow_id
+   })
+   if (!flow)
+     continue
+   threads.push({
+     id: threads_ids[i],
+     flow_id: proto.flow_id,
+     name: flow.name,
+     desc: proto.desc,
+     icon: flow.icon,
+     state: proto.state
+   })
+ }
+ return threads
 }
 
 o.GetPassedThreads = async (ent_id,nodes)=>{
@@ -514,12 +530,16 @@ o.Recall = async (ent_id,flow_id,history_id,user_id)=>{
     await MYSQL.E(ent_id,T_NODE).whereIn('id',nodesToDelete.map(v=>v.id)).del()
     return
   }
-
+  REDIS.DEL('checkreport')
  
 }
 
-o.Delete = async (instId)=>{
-  
+o.Delete = async (ent_id, flow_id, op) => {
+  await MYSQL.E(ent_id,T_INST).where({id:flow_id}).del()
+  await MYSQL.E(ent_id,T_NODE).where({flow_id}).del()
+  await MYSQL.E(ent_id,T_DATA).where({flow_id}).del()
+  UserLogger.info(`${op}删除了流程${flow_id}的全部数据`)
+  REDIS.DEL('checkreport')
 }
 o.History = async (ent_id,inst_id,op)=>{
   let instance = await MYSQLE(ent_id,T_INST).first().where({id:inst_id})
@@ -530,26 +550,49 @@ o.History = async (ent_id,inst_id,op)=>{
 
 
 // ------------------------------
-o.GetInstanceData = async (ent_id,flow_id,op)=>{
+o.GetInstanceData = async (ent_id,flow_id,cached = true)=>{
   if(!flow_id)
     return  []
-  console.log('getInstance:',ent_id,flow_id)
+
+  if (cached) {
+    
+    let data = await REDIS.ASC_GET_JSON('checkreport')
+    console.log('cached:')
+    if(data)
+      return data
+  }
+
   let instances = await MYSQLE(ent_id,T_INST).select()
   for(let i=0;i<instances.length;i++)
   {
     let inst_id = instances[i].id
-    let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select(`${T_DATA}.def_key as fkey`,'value').where(`${T_DATA}.flow_id`,inst_id)
+    let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select(`${T_DATA}.def_key as fkey`, 'value').where(`${T_DATA}.flow_id`, inst_id).whereNot(`${T_DATA}.def_key`,'report')
   
     data.forEach(v=>{
-      console.log(v.fkey)
        instances[i][v.fkey] = JSON.parse(v.value)
     })
 
-
-
+    let historyNodes = await MYSQLE(ent_id,T_NODE).select('key','executors','op').where('flow_id',inst_id)
+    let activeNodes = historyNodes.filter(v=>v.state==1)
+    if(activeNodes && activeNodes.length > 0)
+      activeNodes.forEach(v=>v.executors = JSON.parse(v.executors))
+    instances[i].activeNodes = activeNodes
+     instances[i].historyNodes = historyNodes
   }
 
+  REDIS.SET_JSON('checkreport',instances)
+  REDIS.EXPIRE('checkreport',3600*2)
+
   return instances
+}
+
+o.GetData = async (ent_id,inst_id,key,op)=>{
+    if (!ent_id || !inst_id)
+       return null
+    let res = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).first('value').where(`${T_DATA}.flow_id`, inst_id).where(`${T_DATA}.def_key`, key)
+    
+    if(res && res.value)
+      return JSON.parse(res.value)
 }
 
 module.exports = o

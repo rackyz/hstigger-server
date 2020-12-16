@@ -50,6 +50,7 @@ out.Get = async ctx=>{
   return data
 }
 
+
 out.Patch = async ctx=>{
   let user_id = ctx.state.id
   let ent_id = ctx.state.enterprise_id
@@ -69,6 +70,7 @@ out.Delete = async ctx=>{
   let user_id = ctx.state.id
   let ent_id = ctx.state.enterprise_id
   let flow_id = ctx.params.id
+
   await FlowInstance.Delete(ent_id,flow_id,user_id)
 }
 
