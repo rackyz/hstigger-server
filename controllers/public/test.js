@@ -15,11 +15,20 @@ const Ding  = require('../../models/Ding')
 const out = {}
 const REDIS = require("../../base/redis")
 out.List = async ()=>{
-  let groups = await Ding.getGroups()
+
+  
+  // let u = await REDIS.ASC_GET_JSON('cached_users')
+  // console.log(u.length)
+  // if(u &&Array.isArray(u))
+  //   return u
+
   let users = []
+  let groups = await Ding.getGroups()
+ console.log(groups)
   for(let i=0;i<groups.length;i++)
-    users.push(await Ding.getEmployeeInfoList(groups[i].id))
+    users = users.concat(await Ding.getEmployeeInfoList(groups[i].id))
   REDIS.SET('cached_users',JSON.stringify(users))
+  console.log(users.length)
   return users
 }
 
