@@ -218,8 +218,9 @@ o.getAuthInfo = async (id)=>{
   return user
 }
 
+// PLATFORM ADMIN API - ADMINISTRACT
 o.getList = async ()=>{
-  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at','email').orderBy('type','desc').orderBy('created_at','asc')
+  let users = await MYSQL(TABLE_ACCOUNT).select('id', 'avatar', 'user','type','phone', 'frame','created_at','lastlogin_at','email','zzl_id','ding_id','wechat_id','name').orderBy('type','desc').orderBy('created_at','asc')
   return users
 }
 
@@ -527,6 +528,50 @@ o.getUserPhone = async (user_id) => {
   })
   if (user)
     return user.phone
+}
+
+////////////////////////////
+//DD
+//userid -> ding_id
+//openId -> dingOpenId
+//mobile -> phone
+//name -> name
+//departments
+
+
+///////////////////////
+o.UpdateFromDing = async (data,deps,zzls)=>{
+  console.log("update:",data.id,data.ding_id,data.name)
+  // update or create
+  let isExist = await MYSQL(TABLE_ACCOUNT).first('id','ding_id').where('id',data.id).orWhere('ding_id',data.ding_id)
+  if(isExist)
+  {
+    if (isExist.ding_id){
+      console.log('updated')
+      return -1
+    }
+    await MYSQL(TABLE_ACCOUNT).update(data).where({id:data.id})
+    console.log('updated info')
+  }
+  else{
+    data.type = 1
+    data.created_at = UTIL.getTimeStamp()
+    data.password = UTIL.encodeMD5('123456')
+    await MYSQL(TABLE_ACCOUNT).insert(data)
+    console.log('created')
+  }
+
+  isExist = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).first('id').where({user_id:data.id,enterprise_id:"NBGZ"})
+  if(isExist)
+    await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert({user_id:data.id,enterprise_id:"NBGZ"})
+  console.log('add enterprise')
+  if(Array.isArray(deps) && deps.length){
+    await MYSQL.E('NBGZ','dep_employee').where({user_id:data.id}).del()
+    await MYSQL.E('NBGZ','dep_employee').insert(deps.map(v=>({dep_id:v,user_id:data.id})))
+    console.log('add deps')
+  }
+  
+  //
 }
 
 module.exports = o

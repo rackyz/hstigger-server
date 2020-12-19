@@ -555,13 +555,13 @@ o.GetInstanceData = async (ent_id,flow_id,cached = true)=>{
   if(!flow_id)
     return  []
 
-  if (cached) {
+  // if (cached) {
     
-    let data = await REDIS.ASC_GET_JSON('checkreport')
+  //   let data = await REDIS.ASC_GET_JSON('checkreport')
    
-    if(data)
-      return data
-  }
+  //   if(data)
+  //     return data
+  // }
 
   let instances = await MYSQLE(ent_id,T_INST).select()
   for(let i=0;i<instances.length;i++)
@@ -573,7 +573,7 @@ o.GetInstanceData = async (ent_id,flow_id,cached = true)=>{
        instances[i][v.fkey] = JSON.parse(v.value)
     })
 
-    let historyNodes = await MYSQLE(ent_id,T_NODE).select('key','executors','op').where('flow_id',inst_id)
+    let historyNodes = await MYSQLE(ent_id,T_NODE).select('key','executors','op','state').where('flow_id',inst_id)
     let activeNodes = historyNodes.filter(v=>v.state==1)
     if(activeNodes && activeNodes.length > 0)
       activeNodes.forEach(v=>v.executors = JSON.parse(v.executors))

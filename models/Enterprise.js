@@ -9,6 +9,7 @@ const o = {
 }
 const Dep = require('./Dep')
 const Employee = require('./Employee')
+const FlowInstance= require('./FlowInstance')
 
 const ENTERPRISE_STATES = [{
   key: 'ENT_INACTIVE',
@@ -73,14 +74,14 @@ o.initdb = async (forced) => {
        JBKT
      }
      
-    if(forced){
-      o.__removeEnterpriseDB()
-      await MYSQL.seeds(T_ENTERPRISE, [JBKT], forced)
-      let createInfo = await o.createEnterprise(NBGZ,"NBGZ")
-      o.initdata.id = createInfo.id
-      await Module.addEnterpriseByKey("APPRIAISAL", createInfo.id, 'init')
-      await Module.addEnterpriseByKey("OPERATION", createInfo.id, 'init')
-    }
+    // if(forced){
+    //   o.__removeEnterpriseDB()
+    //   await MYSQL.seeds(T_ENTERPRISE, [JBKT], forced)
+    //   let createInfo = await o.createEnterprise(NBGZ,"NBGZ")
+    //   o.initdata.id = createInfo.id
+    //   await Module.addEnterpriseByKey("APPRIAISAL", createInfo.id, 'init')
+    //   await Module.addEnterpriseByKey("OPERATION", createInfo.id, 'init')
+    // }
 
    
     // await o.createScheme(JBKT.id)
@@ -161,14 +162,20 @@ o.createEnterprise = async (data,op)=>{
   UserLogger.info(`${op}创建了企业${name}`)
 
   // initDB
-  await o.createScheme(data.id)
-  let schema_id = 'ENT_' + createInfo.id
-  await Dep.initdb(schema_id, true)
-  await Employee.initdb(schema_id, true)
-  console.log(`[${schema_id}]Dep inited.`)
-  console.log(`[${schema_id}]Employee inited.`)
+  await o.initEntDb(createInfo.id)
   
   return createInfo
+}
+
+o.initEntDb = async (id)=>{
+  //  await o.createScheme(id)
+   let schema_id = ('ENT_' + id).replace(/-/g,'_')
+   await Dep.initdb(schema_id, true)
+   await Employee.initdb(schema_id, true)
+   await FlowInstance.initdb(schema_id, true)
+   console.log(`[${schema_id}]Dep inited.`)
+   console.log(`[${schema_id}]Employee inited.`)
+    console.log(`[${schema_id}]FlowInstance inited.`)
 }
 
 o.deleteEnterprises = async (id_list,op)=>{
