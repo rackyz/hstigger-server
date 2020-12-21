@@ -10,6 +10,7 @@ const MESSAGE = require('./Message')
 const ENTERPRISE = require('./Enterprise')
 const MYSQL = require('../base/mysql')
 const RSS = require('./Rss')
+const { E_INVALID_DATA } = require('../base/exception')
 const o = {
   required:['Type']
 }
@@ -181,6 +182,15 @@ o.sendForgetVcode = async account=>{
   REDIS.SET(RKEY_FVCODE+phone,vcode)
   REDIS.EXPIRE(RKEY_FVCODE+phone,1200)
   await MESSAGE.sendSMS("VCODE",phone,[vcode])
+}
+
+o.SimpleForget = async phone=>{
+  if(!phone)
+    throw E_INVALID_DATA
+  let new_password = UTIL.encodeMD5(UTIL.generateVerifyCode())
+  await MYSQL('account').update({password:new_password}).where({phone})
+
+  await Message.sendSMS('REGISTER', phone, [UTIL.maskPhone(phone), new_password])
 }
 
 o.verifyForgetVcode = async (account,vcode)=>{

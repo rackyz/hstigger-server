@@ -40,6 +40,9 @@ out.PostAction = async ctx=>{
   }else if(action == 'forget'){
     let {account,vcode} = data
     await Session.verifyForgetVcode(account,vcode)
+  }else if(action == 'foregt2'){
+    let {phone} = data
+    await Session.SimpleForget(phone)
   }else if(action == 'changepwd'){
     let {account,password} = data
     await Session.changeForgetPwd(account,password)

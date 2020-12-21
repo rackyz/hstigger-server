@@ -1,7 +1,9 @@
 const Spider = require('../base/spider')
 const cheerio = require('cheerio')
 const UTIL = require('../base/util')
-
+const request = require('request')
+const fs = require('fs')
+const path = require('path')
 const PIC_NEWS = "PIC_NEWS"
 const TEXT_NEWS = "TEXT_NEWS"
  const baseURL = "http://zjw.ningbo.gov.cn"
@@ -40,9 +42,19 @@ module.exports = {
        return {
          title: $(el).text(),
          link: baseURL+$(el).find('a').first().attr('href'),
-         image: baseURL + $(el).find('img').first().attr('src')
+         image:  $(el).find('img').first().attr('src')
        }
      }).get()
+
+     let images = data[PIC_NEWS].map(v=>v.image)
+     for (let i = 0; i < images.length; i++) {
+      let imgUrl = baseURL + images[i] 
+      let filename = images[i].slice(images[i].lastIndexOf('/')+1)
+      data[PIC_NEWS][i].image = 'http://192.168.14.40:6001/public/images/' + filename
+      await request(imgUrl).pipe(fs.createWriteStream("./tmp/" + filename));
+      
+     }
+     console.log(data[PIC_NEWS].map(v => v.image))
 
      await Spider.save('NBFJJ_' + PIC_NEWS, data[PIC_NEWS])
 
