@@ -13,7 +13,7 @@ out.List = async ctx => {
   if(ctx.state.type <= 2)
     throw "您无权访问该模块"
 
-  let items = await FlowInstance.GetInstanceData(ent_id,q,user_id)
+  let items = await FlowInstance.GetInstanceData(ent_id,q,user_id,ctx.state.isEntAdmin)
   return items
 }
 

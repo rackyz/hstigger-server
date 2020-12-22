@@ -183,6 +183,27 @@ o.getEntModules = async ()=>{
 
 
 // User-LEVEL
+const pred_ids = [
+  //房建：章建良 李增义 汤海平
+  'ed4a8300-3b83-11eb-8e1e-c15d5c7db744',
+  'ed4a34b4-3b83-11eb-8e1e-c15d5c7db744',
+  'b8cabcb0-4014-11eb-813c-c1c9b9ee54e7',
+  //市政： 王勤轰 玄先涛 庄辉
+  'ed4a5be7-3b83-11eb-8e1e-c15d5c7db744',
+  'ed4a5c0b-3b83-11eb-8e1e-c15d5c7db744',
+   'ed4a82f9-3b83-11eb-8e1e-c15d5c7db744',
+   //管理： 顾震 刘勇 吴献国
+   'ed49e6d0-3b83-11eb-8e1e-c15d5c7db744', 
+   'ed4a34be-3b83-11eb-8e1e-c15d5c7db744', 
+   'ed4a5bf7-3b83-11eb-8e1e-c15d5c7db744',
+   // 装修
+   'ed4a82fb-3b83-11eb-8e1e-c15d5c7db744',
+   // 造价 钱敏
+   'ed4a8301-3b83-11eb-8e1e-c15d5c7db744',
+   // 詹
+   'ed49e690-3b83-11eb-8e1e-c15d5c7db744'
+
+]
 o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   if(!user_id)
     throw EXCEPTION.E_INVALID_DATA
@@ -192,7 +213,10 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
     let mod_idlist = await MYSQL(T_ENTERPRISE_MODULE).where({ent_id})
     modules = modules.filter(v => {
       if(v.private){
-        return mod_idlist.find(m => m.mod_id != v.id)
+        if((pred_ids.includes(user_id) || isEntAdmin || isAdmin) && mod_idlist.find(m => m.mod_id != v.id))
+          return true
+        else
+          return false
       }else{
         if(v.level == 4){
           return isAdmin
@@ -203,6 +227,8 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   }else{
     modules = modules.filter(v=>v.level < 2)
   }
+
+
 
   return modules
   // id=>account_type=>active_module_list

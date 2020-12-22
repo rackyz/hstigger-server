@@ -46,14 +46,18 @@ module.exports = {
        }
      }).get()
 
-     let images = data[PIC_NEWS].map(v=>v.image)
-     for (let i = 0; i < images.length; i++) {
-      let imgUrl = baseURL + images[i] 
-      let filename = images[i].slice(images[i].lastIndexOf('/')+1)
-      data[PIC_NEWS][i].image = 'https://www.nbgzpmis.xyz/public/images/' + filename
-      await request(imgUrl).pipe(fs.createWriteStream("./tmp/" + filename));
-      
-     }
+      try{
+      let images = data[PIC_NEWS].map(v=>v.image)
+      for (let i = 0; i < images.length; i++) {
+        let imgUrl = baseURL + images[i] 
+        let filename = images[i].slice(images[i].lastIndexOf('/')+1)
+        data[PIC_NEWS][i].image = 'https://www.nbgzpmis.xyz/public/images/' + filename
+        await request(imgUrl).pipe(fs.createWriteStream("./tmp/" + filename));
+        
+      }
+      }catch(e){
+        
+      }
      console.log(data[PIC_NEWS].map(v => v.image))
 
      await Spider.save('NBFJJ_' + PIC_NEWS, data[PIC_NEWS])

@@ -551,15 +551,53 @@ o.History = async (ent_id,inst_id,op)=>{
 
 
 // ------------------------------
-o.GetInstanceData = async (ent_id,flow_id,cached = true)=>{
+const pred_ids = [
+  'ed49e690-3b83-11eb-8e1e-c15d5c7db744',
+  //房建：章建良 李增义 汤海平
+  'ed4a8300-3b83-11eb-8e1e-c15d5c7db744',
+  'ed4a34b4-3b83-11eb-8e1e-c15d5c7db744',
+  'b8cabcb0-4014-11eb-813c-c1c9b9ee54e7',
+  //市政： 王勤轰 玄先涛 庄辉
+  'ed4a5be7-3b83-11eb-8e1e-c15d5c7db744',
+  'ed4a5c0b-3b83-11eb-8e1e-c15d5c7db744',
+   'ed4a82f9-3b83-11eb-8e1e-c15d5c7db744',
+   //管理： 顾震 刘勇 吴献国
+   'ed49e6d0-3b83-11eb-8e1e-c15d5c7db744', 
+   'ed4a34be-3b83-11eb-8e1e-c15d5c7db744', 
+   'ed4a5bf7-3b83-11eb-8e1e-c15d5c7db744',
+   // 装修
+   'ed4a82fb-3b83-11eb-8e1e-c15d5c7db744',
+   // 造价 钱敏
+   'ed4a8301-3b83-11eb-8e1e-c15d5c7db744',
+   // 詹
+   
+
+]
+o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin,cached = true)=>{
   if(!flow_id)
     return  []
   
+  let index = pred_ids.findIndex(v=>v == op)
+  
+  let dep = 0
+  if(!isEntAdmin){
+    if(index > 0 &&　index < 4){
+      dep = 1
+    }else if(index < 7){
+      dep = 2
+    }else if(index < 10){
+      dep = 3
+    }else if(index < 11){
+      dep = 4
+    }else if(index < 12){
+      dep = 5
+    }else{
+      throw "您没有权限访问"
+    }
+  }
 
   if (cached) {
-    
-    let data = await REDIS.ASC_GET_JSON('checkreport')
-   
+    let data = await REDIS.ASC_GET_JSON('checkreport'+dep)
     if(data)
       return data
   }
@@ -571,8 +609,15 @@ o.GetInstanceData = async (ent_id,flow_id,cached = true)=>{
     let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select(`${T_DATA}.def_key as fkey`, 'value').where(`${T_DATA}.flow_id`, inst_id).whereNot(`${T_DATA}.def_key`,'report')
   
     data.forEach(v=>{
-       instances[i][v.fkey] = JSON.parse(v.value)
+       
+      instances[i][v.fkey] = JSON.parse(v.value)
+      
     })
+
+    if(dep && instances[i].dep != dep){
+      instances[i] = null
+      continue
+    }
 
     let historyNodes = await MYSQLE(ent_id,T_NODE).select('key','executors','op','state').where('flow_id',inst_id)
     let activeNodes = historyNodes.filter(v=>v.state==1)
@@ -581,9 +626,10 @@ o.GetInstanceData = async (ent_id,flow_id,cached = true)=>{
     instances[i].activeNodes = activeNodes
      instances[i].historyNodes = historyNodes
   }
+  instances = instances.filter(v=>v)
 
-  REDIS.SET_JSON('checkreport',instances)
-  REDIS.EXPIRE('checkreport',3600*2)
+  REDIS.SET_JSON('checkreport'+dep,instances)
+  REDIS.EXPIRE('checkreport'+dep,3600*2)
 
   return instances
 }
