@@ -10,6 +10,9 @@ out.List = async ctx => {
   let user_id = ctx.state.id
   let ent_id = ctx.state.enterprise_id
   let q = ctx.query.q
+  if(ctx.state.type <= 2)
+    throw "您无权访问该模块"
+
   let items = await FlowInstance.GetInstanceData(ent_id,q,user_id)
   return items
 }

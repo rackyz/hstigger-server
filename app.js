@@ -8,7 +8,7 @@ const cors = require('koa2-cors')
 const Logger = require('./base/logger')
 const Config = require('./base/config')
 const Migration = require('./base/migration')
-
+console.log('[HSTIGGER-Server] version='+Config.version)
 Migration.install(false)
 app.use(Logger.accessLogger)
 app.use(cors())

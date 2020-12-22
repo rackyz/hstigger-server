@@ -22,193 +22,15 @@ out.List = async ()=>{
   let users = await MYSQL('account')
   await DeleteAccountEnterpriseExist(users)
 
-  // let users = []
-  // let updated = []
-  // let existPhone = []
-  // let existName = []
-  // let notExist = []
-  // let zzl = []
-  // let u = await REDIS.ASC_GET_JSON('cached_users')
-  // console.log(u.length)
-  // if(u &&Array.isArray(u))
-  //   users = u
-  // else{
-  //    let groups = await Ding.getGroups()
+}
 
- 
-
-  //    for (let i = 0; i < groups.length; i++) {
-  //      let group_users = await Ding.getEmployeeInfoList(groups[i].id)
-  //      group_users.forEach(v => {
-  //        v.group_id = groups[i].id
-  //      })
-  //      users = users.concat(group_users)
-
-  //    }
-  //      REDIS.SET('cached_users', JSON.stringify(users))
-  // }
- 
-  // await MYSQL('account').update({
-  //   zzl_id:"",
-  //   ding_id:""
-  // })
-  
-
-  // let old_users = await MYSQL('account')
-  // console.log('OLD:',old_users.length)
-  // let existed = {}
-  // let pmis_users = await GZSQL('zzlatm.aclusr').select('uid','user', 'name','phone').where('allowed', 'yes')
-  // let count =0
-  // for(let i=0;i<old_users.length;i++){
-  //   let u = old_users[i]
-    
-  //   let pmu = pmis_users.find(v=>v.user == u.user)
-  //   if(!pmu){
-  //     console.log(u.name,u.user,u.user,'not in pm')
-  //     continue
-  //   }
-  //   let object = 
-  //   {
-  //     zzl_id:pmu.uid,
-  //      name: pmu.name,
-  //      phone:pmu.phone
-  //   }
-
-  //   if(!u.zzl_id || u.name != pmu.name || u.phone != pmu.phone){
-  //     await MYSQL('account').update(object).where({id:u.id})
-  //     console.log(`${u.name}=>${pmu.name}`,object.zzl_id)
-  //     count++
-  //   }
-  // }
-  // console.log('updated:',count)
-
-  //DINGDINg 去重
- 
-
-
-  // for(let i=0;i<old_users.length;i++){
-  //   let u = old_users[i]
-  //   let pmu = pmis_users.find(v=>v.user == u.user)
-  //   if(!pmu){
-  //     console.log(u.name,'not in pm')
-  //     continue
-  //   }
-  //   let object = 
-  //   {
-  //     zzl_id:pmu.uid,
-  //     name:pmu.name,
-  //     phone:pmu.phone
-  //   }
-
-  //   if(u.name != pmu.name || u.phone != pmu.phone){
-  //     await MYSQL('account').update(object).where({id:u.id})
-  //     console.log(`${u.name}=>${pmu.name}`)
-  //   }
-  // }
-
-  // // let pmis_users = await GZSQL('zzlatm.aclusr').select('user','name').where('allowed','yes')
-  // 
-
-  // let fixed = 0
-  // for(let i=0;i<users.length;i++){
-  //   let obj = {}
-    
-  //   let index = old_users.findIndex(v => v.phone && v.phone == users[i].mobile)
-  //   if(index != -1){
-  //     obj.id = old_users[index].id
-  //     existPhone.push(users[i].name)
-  //     obj.ding_id = users[i].userid
-  //     obj.ding_open_id = users[i].openId
-  //     obj.name = users[i].name
-  //     let res = await Account.UpdateFromDing(obj, users[i].department)
-  //     if(res != -1)
-  //       fixed++
-  //     continue
-  //   }
-
-  //   index = old_users.findIndex(v =>v.name && v.name == users[i].name)
-  //   if (index != -1) {
-  //     obj.id = old_users[index].id
-  //     existName.push(users[i].name)
-  //     obj.phone = users[i].mobile
-  //     obj.ding_id = users[i].userid
-  //     obj.ding_open_id = users[i].openId
-  //     obj.name = users[i].name
-  //      let res = await Account.UpdateFromDing(obj, users[i].department)
-  //      if (res != -1)
-  //        fixed++
-  //     continue
-  //   }
-
-  //   obj.id = UTIL.createUUID()
-  //   obj.name = users[i].name
-  //   obj.phone = users[i].mobile
-  //   obj.ding_id = users[i].userid
-  //   obj.ding_open_id = users[i].openId
-  //    notExist.push(users[i].name)
-  //    let res = await Account.UpdateFromDing(obj, users[i].department)
-  //    if (res != -1)
-  //      fixed++
-  // } 
-
-  // 给已有的zzl_id添加digding
-
-
-
-  // // 查重
-  // old_users.forEach(v=>{
-  //   if (existed[v.phone])
-  //     existed[v.phone].push(v.name)
-  //   else
-  //     existed[v.phone] = [v.name]
-  // })
-  // console.log('电话重复:', Object.values(existed).filter(v => v.length > 1))
-  // Object.keys(existed).filter(v => existed[v].length > 1).forEach(v => {
-  //    let us = users.find(u => u.mobile == v)
-  //   if (us)
-  //     console.log(v, us.name)
-  //   else
-  //     console.log(v, "not DIngDINg")
-  // })
-
-  //  old_users.forEach(v => {
-  //    if (existed[v.name])
-  //      existed[v.name].push(v.id)
-  //    else
-  //      existed[v.name] = [v.id]
-  //  })
-  //  console.log('姓名重复:', Object.values(existed).filter(v => v.length > 1))
-  
-  // existed = {}
-  // old_users.forEach(v => {
-  //   if (existed[v.name])
-  //     existed[v.name].push(v)
-  //   else
-  //     existed[v.name] = [v]
-  // })
-
-  // let toDel = []
-  // Object.values(existed).filter(v => v.length > 1).forEach(u => {
-  //   if(!Array.isArray(u))
-  //     return
-  //   let isPM = false
-  //   let isDing = false
-  //   for(let i=0;i<u.length;i++){
-  //     let user = u[i]
-  //      console.log(i, user.name)
-  //     if(isPM)
-  //     {
-  //       toDel.push(user.id)
-  //       console.log(user.id,user.lastlogin_at)
-  //       continue
-  //     }
-  //     if(u[i].zzl_id)
-  //       isPM = true
-  //   }
-  // })
-
-  // console.log(toDel)
-  
+const AddDingAccountEnterprise = async ()=>{
+  let users = await MYSQL('account').select('id').where('zzl_id',"").orWhereNull('zzl_id')
+  for(let i=0;i<users.length;i++){
+    let exist = await MYSQL('account_enterprise').first('id').where('user_id',users[i].id) 
+    if(!exist)
+      await MYSQL('account_enterprise').insert({user_id:users[i].id,enterprise_id:'NBGZ'})
+  }
 }
 
 const DeleteAccountEnterpriseExist = async (users)=>{
@@ -228,6 +50,7 @@ const DeleteAccountEnterpriseExist = async (users)=>{
     }
   })
   console.log(removed)
+  // await MYSQL('account_enterprise').whereIn('id',removed).del()
 }
 
 
@@ -268,3 +91,191 @@ const CompareAccount = async (dd_users, old_users, pmis_users) => {
 }
 
 module.exports = out
+
+
+// let users = []
+// let updated = []
+// let existPhone = []
+// let existName = []
+// let notExist = []
+// let zzl = []
+// let u = await REDIS.ASC_GET_JSON('cached_users')
+// console.log(u.length)
+// if(u &&Array.isArray(u))
+//   users = u
+// else{
+//    let groups = await Ding.getGroups()
+
+
+
+//    for (let i = 0; i < groups.length; i++) {
+//      let group_users = await Ding.getEmployeeInfoList(groups[i].id)
+//      group_users.forEach(v => {
+//        v.group_id = groups[i].id
+//      })
+//      users = users.concat(group_users)
+
+//    }
+//      REDIS.SET('cached_users', JSON.stringify(users))
+// }
+
+// await MYSQL('account').update({
+//   zzl_id:"",
+//   ding_id:""
+// })
+
+
+// let old_users = await MYSQL('account')
+// console.log('OLD:',old_users.length)
+// let existed = {}
+// let pmis_users = await GZSQL('zzlatm.aclusr').select('uid','user', 'name','phone').where('allowed', 'yes')
+// let count =0
+// for(let i=0;i<old_users.length;i++){
+//   let u = old_users[i]
+
+//   let pmu = pmis_users.find(v=>v.user == u.user)
+//   if(!pmu){
+//     console.log(u.name,u.user,u.user,'not in pm')
+//     continue
+//   }
+//   let object = 
+//   {
+//     zzl_id:pmu.uid,
+//      name: pmu.name,
+//      phone:pmu.phone
+//   }
+
+//   if(!u.zzl_id || u.name != pmu.name || u.phone != pmu.phone){
+//     await MYSQL('account').update(object).where({id:u.id})
+//     console.log(`${u.name}=>${pmu.name}`,object.zzl_id)
+//     count++
+//   }
+// }
+// console.log('updated:',count)
+
+//DINGDINg 去重
+
+
+
+// for(let i=0;i<old_users.length;i++){
+//   let u = old_users[i]
+//   let pmu = pmis_users.find(v=>v.user == u.user)
+//   if(!pmu){
+//     console.log(u.name,'not in pm')
+//     continue
+//   }
+//   let object = 
+//   {
+//     zzl_id:pmu.uid,
+//     name:pmu.name,
+//     phone:pmu.phone
+//   }
+
+//   if(u.name != pmu.name || u.phone != pmu.phone){
+//     await MYSQL('account').update(object).where({id:u.id})
+//     console.log(`${u.name}=>${pmu.name}`)
+//   }
+// }
+
+// // let pmis_users = await GZSQL('zzlatm.aclusr').select('user','name').where('allowed','yes')
+// 
+
+// let fixed = 0
+// for(let i=0;i<users.length;i++){
+//   let obj = {}
+
+//   let index = old_users.findIndex(v => v.phone && v.phone == users[i].mobile)
+//   if(index != -1){
+//     obj.id = old_users[index].id
+//     existPhone.push(users[i].name)
+//     obj.ding_id = users[i].userid
+//     obj.ding_open_id = users[i].openId
+//     obj.name = users[i].name
+//     let res = await Account.UpdateFromDing(obj, users[i].department)
+//     if(res != -1)
+//       fixed++
+//     continue
+//   }
+
+//   index = old_users.findIndex(v =>v.name && v.name == users[i].name)
+//   if (index != -1) {
+//     obj.id = old_users[index].id
+//     existName.push(users[i].name)
+//     obj.phone = users[i].mobile
+//     obj.ding_id = users[i].userid
+//     obj.ding_open_id = users[i].openId
+//     obj.name = users[i].name
+//      let res = await Account.UpdateFromDing(obj, users[i].department)
+//      if (res != -1)
+//        fixed++
+//     continue
+//   }
+
+//   obj.id = UTIL.createUUID()
+//   obj.name = users[i].name
+//   obj.phone = users[i].mobile
+//   obj.ding_id = users[i].userid
+//   obj.ding_open_id = users[i].openId
+//    notExist.push(users[i].name)
+//    let res = await Account.UpdateFromDing(obj, users[i].department)
+//    if (res != -1)
+//      fixed++
+// } 
+
+// 给已有的zzl_id添加digding
+
+
+
+// // 查重
+// old_users.forEach(v=>{
+//   if (existed[v.phone])
+//     existed[v.phone].push(v.name)
+//   else
+//     existed[v.phone] = [v.name]
+// })
+// console.log('电话重复:', Object.values(existed).filter(v => v.length > 1))
+// Object.keys(existed).filter(v => existed[v].length > 1).forEach(v => {
+//    let us = users.find(u => u.mobile == v)
+//   if (us)
+//     console.log(v, us.name)
+//   else
+//     console.log(v, "not DIngDINg")
+// })
+
+//  old_users.forEach(v => {
+//    if (existed[v.name])
+//      existed[v.name].push(v.id)
+//    else
+//      existed[v.name] = [v.id]
+//  })
+//  console.log('姓名重复:', Object.values(existed).filter(v => v.length > 1))
+
+// existed = {}
+// old_users.forEach(v => {
+//   if (existed[v.name])
+//     existed[v.name].push(v)
+//   else
+//     existed[v.name] = [v]
+// })
+
+// let toDel = []
+// Object.values(existed).filter(v => v.length > 1).forEach(u => {
+//   if(!Array.isArray(u))
+//     return
+//   let isPM = false
+//   let isDing = false
+//   for(let i=0;i<u.length;i++){
+//     let user = u[i]
+//      console.log(i, user.name)
+//     if(isPM)
+//     {
+//       toDel.push(user.id)
+//       console.log(user.id,user.lastlogin_at)
+//       continue
+//     }
+//     if(u[i].zzl_id)
+//       isPM = true
+//   }
+// })
+
+// console.log(toDel)

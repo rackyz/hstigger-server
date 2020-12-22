@@ -237,10 +237,12 @@ o.patch = async (id, item, op) => {
   console.log(id)
   if(item.define)
     await ParseDefine(id,item.define)
-  // await MYSQL(T_FLOW).update(item).where({
-  //   id
-  // })
-  REDIS.DEL('flow_' + flow_id)
+  delete item.define
+  if(Object.keys(item).length > 0)
+    await MYSQL(T_FLOW).update(item).where({
+      id
+    })
+  REDIS.DEL('flow_' + id)
 }
 
 o.deleteObjects = async (id_list, op) => {
@@ -287,7 +289,6 @@ o.get = async flow_id => {
 }
 
 o.getNodes = async (flow_id) => {
-  console.log('flow_id:',flow_id)
    let nodes = await MYSQL(T_NODE).select('name','key').where({
      flow_id
    })
