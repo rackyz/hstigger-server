@@ -118,7 +118,7 @@ const ParseDefine = async (flow_id,def)=>{
   //
   let options = []
   const predefined_options = ['executor_getters', 'executor_multiple',
-    'executor_max', 'executor_default', 'optional', 'executor_default_getter', 'executor_modifiable', 'executor_default_getter_key'
+    'executor_max', 'executor_default', 'optional', 'executor_default_getter', 'executor_modifiable', 'executor_default_getter_key','sms'
   ]
   let nodes = def.nodes.map(node=>{
     predefined_options.forEach(op_key=>{

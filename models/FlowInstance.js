@@ -327,6 +327,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   
   // get node optional and change state
   let nodeOptions = await MYSQL('flow_option').select('value','key').where({flow_id:proto_id,type:1,item_key:lastnode.key}).whereIn('key',['optional','sms'])
+  console.log("NODE:",nodeOptions)
   nodeOptions.forEach(v=>{
     lastnode[v.key] = JSON.parse(v.value)
   })
@@ -370,6 +371,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
     if(!nextnode)
       return
     if(nextnode.sms){
+      console.log('has SMS')
       msg_senders.push({
         user: executor,
         params: ['', proto.desc, nextnode.key, nextnode.name]
