@@ -269,7 +269,7 @@ o.Create = async (ent_id,{flow,data},op)=>{
    }
 
   UserLogger.info(`${op}创建了流程实例${flow.desc}`)
-   REDIS.DEL('checkreport')
+   
   return param
 }
 
@@ -355,6 +355,13 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   let now = UTIL.getTimeStamp()
   let nodes_param = []
   let msg_senders = []
+   REDIS.DEL('checkreport')
+
+   REDIS.DEL('checkreport1')
+   REDIS.DEL('checkreport2')
+   REDIS.DEL('checkreport3')
+   REDIS.DEL('checkreport4')
+   REDIS.DEL('checkreport5')
   actionObjects.forEach((a,i)=>{
     let executor = executors[a.to]
     if(!Array.isArray(executor))
@@ -370,6 +377,8 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
     }
 
     if(nextnode.in_type == 1){
+      if(!Array.isArray(executor))
+        return
         let nodes = executor.map(e=>{
           
           return {
@@ -386,6 +395,8 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
         
         nodes_param = nodes_param.concat(nodes)
     }else{
+      if(!executor)
+        return
         nodes_param.push({
           key:a.to,
           from:history_id,
@@ -419,10 +430,9 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
     }
   }
 
-  await MYSQLE(ent_id,T_NODE).insert(nodes_param)
+  if (nodes_param && nodes_param.length > 0)
+    await MYSQLE(ent_id,T_NODE).insert(nodes_param)
  
-
-  
   //let node_raltions = 
   //await MYSQLE(ent_id,T_NODE).insert(nodeParam)
 }
@@ -516,6 +526,14 @@ o.Recall = async (ent_id,flow_id,history_id,user_id)=>{
   let prev_node = await MYSQL.E(ent_id,T_NODE).first().where('id',current_node.from)
   if(!prev_node)
     throw "can not recall"
+  
+   REDIS.DEL('checkreport')
+
+   REDIS.DEL('checkreport1')
+   REDIS.DEL('checkreport2')
+   REDIS.DEL('checkreport3')
+   REDIS.DEL('checkreport4')
+   REDIS.DEL('checkreport5')
   // modify prev_node
   if(current_node.state == NODE_STATES.accepted || current_node.state == NODE_STATES.submitted)
   {
@@ -531,7 +549,6 @@ o.Recall = async (ent_id,flow_id,history_id,user_id)=>{
     await MYSQL.E(ent_id,T_NODE).whereIn('id',nodesToDelete.map(v=>v.id)).del()
     return
   }
-  REDIS.DEL('checkreport')
  
 }
 
@@ -541,6 +558,11 @@ o.Delete = async (ent_id, flow_id, op) => {
   await MYSQL.E(ent_id,T_DATA).where({flow_id}).del()
   UserLogger.info(`${op}删除了流程${flow_id}的全部数据`)
   REDIS.DEL('checkreport')
+  REDIS.DEL('checkreport1')
+  REDIS.DEL('checkreport2')
+  REDIS.DEL('checkreport3')
+  REDIS.DEL('checkreport4')
+  REDIS.DEL('checkreport5')
 }
 o.History = async (ent_id,inst_id,op)=>{
   let instance = await MYSQLE(ent_id,T_INST).first().where({id:inst_id})
