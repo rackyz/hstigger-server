@@ -626,6 +626,7 @@ o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin,cached = true)=>{
       return data
   }
 
+  console.log("START LOADING FLOW INSTANCE...")
   let instances = await MYSQLE(ent_id,T_INST).select()
   for(let i=0;i<instances.length;i++)
   {
@@ -653,8 +654,8 @@ o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin,cached = true)=>{
   instances = instances.filter(v=>v)
 
   REDIS.SET_JSON('checkreport'+dep,instances)
-  REDIS.EXPIRE('checkreport'+dep,3600*2)
-
+  REDIS.EXPIRE('checkreport'+dep,3600)
+  console.log("SUCCEED LOADING FLOW INSTANCE...")
   return instances
 }
 
