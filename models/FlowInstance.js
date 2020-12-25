@@ -222,7 +222,7 @@ o.initdb = async (ent_schema, forced) => {
 // }
 
 const MYSQLE = (ent_id,t)=>MYSQL(t).withSchema('ENT_'+ent_id)
-
+const RK_REPORT = 'checkreport'
 //STATE 0-active 1-submit 2-reject 3-retry
 // create the instance
 o.Create = async (ent_id,{flow,data},op)=>{
@@ -310,7 +310,8 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   }
 
   // get executors
-   REDIS.DEL('checkreport')
+     CacheInstanceData(ent_id, true)
+  
   let executors = data.executors
   if(!executors){
      let data_exe = await MYSQLE(ent_id, T_DATA).first('value').where({
@@ -356,13 +357,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   let now = UTIL.getTimeStamp()
   let nodes_param = []
   let msg_senders = []
-   REDIS.DEL('checkreport')
-
-   REDIS.DEL('checkreport1')
-   REDIS.DEL('checkreport2')
-   REDIS.DEL('checkreport3')
-   REDIS.DEL('checkreport4')
-   REDIS.DEL('checkreport5')
+     CacheInstanceData(ent_id, true)
   actionObjects.forEach((a,i)=>{
     let executor = executors[a.to]
     if(!Array.isArray(executor))
@@ -529,13 +524,7 @@ o.Recall = async (ent_id,flow_id,history_id,user_id)=>{
   if(!prev_node)
     throw "can not recall"
   
-   REDIS.DEL('checkreport')
-
-   REDIS.DEL('checkreport1')
-   REDIS.DEL('checkreport2')
-   REDIS.DEL('checkreport3')
-   REDIS.DEL('checkreport4')
-   REDIS.DEL('checkreport5')
+    CacheInstanceData(ent_id, true)
   // modify prev_node
   if(current_node.state == NODE_STATES.accepted || current_node.state == NODE_STATES.submitted)
   {
@@ -559,12 +548,7 @@ o.Delete = async (ent_id, flow_id, op) => {
   await MYSQL.E(ent_id,T_NODE).where({flow_id}).del()
   await MYSQL.E(ent_id,T_DATA).where({flow_id}).del()
   UserLogger.info(`${op}删除了流程${flow_id}的全部数据`)
-  REDIS.DEL('checkreport')
-  REDIS.DEL('checkreport1')
-  REDIS.DEL('checkreport2')
-  REDIS.DEL('checkreport3')
-  REDIS.DEL('checkreport4')
-  REDIS.DEL('checkreport5')
+  CacheInstanceData(ent_id, true)
 }
 o.History = async (ent_id,inst_id,op)=>{
   let instance = await MYSQLE(ent_id,T_INST).first().where({id:inst_id})
@@ -597,65 +581,75 @@ const pred_ids = [
    
 
 ]
-o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin,cached = true)=>{
+const CacheInstanceData = async (ent_id,forced = false)=>{
+  if (!forced){
+    let data = await REDIS.ASC_GET_JSON(RK_REPORT)
+    if (data == 'loading')
+      throw '后台查询中,请稍后'
+    if (data)
+      return data
+  }
+
+   REDIS.SET_JSON(RK_REPORT, 'loading')
+   console.log("START LOADING FLOW INSTANCE...")
+   let instances = await MYSQLE(ent_id, T_INST).select()
+   for (let i = 0; i < instances.length; i++) {
+     let inst_id = instances[i].id
+     let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select(`${T_DATA}.def_key as fkey`, 'value').where(`${T_DATA}.flow_id`, inst_id).whereNot(`${T_DATA}.def_key`, 'report')
+
+     data.forEach(v => {
+
+       instances[i][v.fkey] = JSON.parse(v.value)
+
+     })
+
+   
+
+     let historyNodes = await MYSQLE(ent_id, T_NODE).select('key', 'executors', 'op', 'state').where('flow_id', inst_id)
+     let activeNodes = historyNodes.filter(v => v.state == 1)
+     if (activeNodes && activeNodes.length > 0)
+       activeNodes.forEach(v => v.executors = JSON.parse(v.executors))
+     instances[i].activeNodes = activeNodes
+     instances[i].historyNodes = historyNodes
+   }
+ 
+
+   REDIS.SET_JSON(RK_REPORT, instances)
+   REDIS.EXPIRE(RK_REPORT, 3600)
+   console.log("SUCCEED LOADING FLOW INSTANCE...")
+
+   return instances
+}
+
+o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin)=>{
   if(!flow_id)
     return  []
   
   let index = pred_ids.findIndex(v=>v == op)
   
-  let dep = 0
+  let dep = null
   if(!isEntAdmin){
-    if(index > 0 &&　index < 4){
-      dep = 1
+    if(index == 0){
+      dep = null
+    }else if(index > 0 &&　index < 4){
+      dep = [1]
     }else if(index < 7){
-      dep = 2
+      dep = [2]
     }else if(index < 10){
-      dep = 3
+      dep = [3]
     }else if(index < 11){
-      dep = 4
+      dep = [4]
     }else if(index < 12){
-      dep = 5
+      dep = [5]
     }else{
       throw "您没有权限访问"
     }
   }
 
-  if (cached) {
-    let data = await REDIS.ASC_GET_JSON('checkreport'+dep)
-    if(data)
-      return data
-  }
-
-  console.log("START LOADING FLOW INSTANCE...")
-  let instances = await MYSQLE(ent_id,T_INST).select()
-  for(let i=0;i<instances.length;i++)
-  {
-    let inst_id = instances[i].id
-    let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select(`${T_DATA}.def_key as fkey`, 'value').where(`${T_DATA}.flow_id`, inst_id).whereNot(`${T_DATA}.def_key`,'report')
+  let instances = await CacheInstanceData(ent_id)
+  if (dep)
+    instances = instances.filter(v => dep.includes(v.dep))
   
-    data.forEach(v=>{
-       
-      instances[i][v.fkey] = JSON.parse(v.value)
-      
-    })
-
-    if(dep && instances[i].dep != dep){
-      instances[i] = null
-      continue
-    }
-
-    let historyNodes = await MYSQLE(ent_id,T_NODE).select('key','executors','op','state').where('flow_id',inst_id)
-    let activeNodes = historyNodes.filter(v=>v.state==1)
-    if(activeNodes && activeNodes.length > 0)
-      activeNodes.forEach(v=>v.executors = JSON.parse(v.executors))
-    instances[i].activeNodes = activeNodes
-     instances[i].historyNodes = historyNodes
-  }
-  instances = instances.filter(v=>v)
-
-  REDIS.SET_JSON('checkreport'+dep,instances)
-  REDIS.EXPIRE('checkreport'+dep,3600)
-  console.log("SUCCEED LOADING FLOW INSTANCE...")
   return instances
 }
 
