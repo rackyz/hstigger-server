@@ -461,8 +461,10 @@ o.GetActiveThreads = async (ent_id,nodes)=>{
    if(!t[v.flow_id])
       t[v.flow_id] = v.key
  })
+ 
  let threads_ids = Object.keys(t)
  let threads = []
+ let flows = {}
  for (let i = 0; i < threads_ids.length; i++) {
    let proto = await MYSQLE(ent_id, T_INST).first('flow_id', 'desc', 'state').where({
      id: threads_ids[i]
@@ -472,14 +474,15 @@ o.GetActiveThreads = async (ent_id,nodes)=>{
    let flow = await MYSQL('flow').first('name', 'icon').where({
      id: proto.flow_id
    })
-    let nodes = flows[proto.flow_id]
-    if (!nodes)
-      flows[proto.flow_id]  = nodes = await MYSQL('flow_node').select('name').where({
+   
+    let snodes = flows[proto.flow_id]
+    if (!snodes)
+      flows[proto.flow_id]  = snodes = await MYSQL('flow_node').select('name','key').where({
         flow_id: proto.flow_id
       })
-      
-    let node = nodes.find(v => v.key == t[threads_ids[i]])
-    console.log('node:',node)
+   
+    let node = snodes.find(v => v.key == t[threads_ids[i]])
+   
     if (!flow || !node)
       continue
     threads.push({
@@ -503,30 +506,22 @@ o.GetPassedThreads = async (ent_id,nodes)=>{
   let ns = nodes.filter(v=>!activeStates.includes(v.state))
   let t = {}
   ns.forEach(v=>{
-      t[v.flow_id] = v.key
+      t[v.flow_id] = true
   })
   let threads_ids = Object.keys(t)
   let threads = []
-  let flows = {}
   for(let i=0;i<threads_ids.length;i++){
     let proto = await MYSQLE(ent_id,T_INST).first('flow_id','desc','state').where({id:threads_ids[i]})
     if(!proto)
       continue
     let flow = await MYSQL('flow').first('name','icon').where({id:proto.flow_id})
-    let nodes = flows[proto.flow_id] 
-    if(!nodes)
-      nodes = await MYSQL('flow_node').select('name').where({
-      flow_id: proto.flow_id
-    })
-
-    let node = nodes.find(v => v.key == t[threads_ids[i]])
+    
     if(!flow || !node)
       continue
     threads.push({
       id:threads_ids[i],
       flow_id:proto.flow_id,
       name:flow.name,
-       node_name: node.name,
       desc:proto.desc,
       icon:flow.icon,
       state:proto.state
@@ -537,7 +532,6 @@ o.GetPassedThreads = async (ent_id,nodes)=>{
 
 
 o.Recall = async (ent_id,flow_id,history_id,user_id)=>{
-  console.log(history_id)
   // auth
   let current_node = await MYSQL.E(ent_id,T_NODE).first().where('id',history_id)
   if(!current_node || !current_node.from)
