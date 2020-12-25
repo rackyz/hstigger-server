@@ -452,12 +452,14 @@ o.GetUserNodes = async (ent_id,user_id)=>{
 }
 const activeStates = [NODE_STATES.initing,NODE_STATES.active,NODE_STATES.retrying]
 o.GetActiveThreads = async (ent_id,nodes)=>{
+  console.log('getActive')
  if (!nodes || nodes.length == 0)
    return []
  let ns = nodes.filter(v => activeStates.includes(v.state))
  let t = {}
  ns.forEach(v => {
-   t[v.flow_id] = true
+   if(!t[v.flow_id])
+      t[v.flow_id] = v.key
  })
  let threads_ids = Object.keys(t)
  let threads = []
@@ -470,16 +472,25 @@ o.GetActiveThreads = async (ent_id,nodes)=>{
    let flow = await MYSQL('flow').first('name', 'icon').where({
      id: proto.flow_id
    })
-   if (!flow)
-     continue
-   threads.push({
-     id: threads_ids[i],
-     flow_id: proto.flow_id,
-     name: flow.name,
-     desc: proto.desc,
-     icon: flow.icon,
-     state: proto.state
-   })
+    let nodes = flows[proto.flow_id]
+    if (!nodes)
+      flows[proto.flow_id]  = nodes = await MYSQL('flow_node').select('name').where({
+        flow_id: proto.flow_id
+      })
+      
+    let node = nodes.find(v => v.key == t[threads_ids[i]])
+    console.log('node:',node)
+    if (!flow || !node)
+      continue
+    threads.push({
+      id: threads_ids[i],
+      flow_id: proto.flow_id,
+      name: flow.name,
+      node_name: node.name,
+      desc: proto.desc,
+      icon: flow.icon,
+      state: proto.state
+    })
  }
  return threads
 }
@@ -487,24 +498,35 @@ o.GetActiveThreads = async (ent_id,nodes)=>{
 o.GetPassedThreads = async (ent_id,nodes)=>{
   if(!nodes || nodes.length == 0)
     return []
+
+  
   let ns = nodes.filter(v=>!activeStates.includes(v.state))
   let t = {}
   ns.forEach(v=>{
-      t[v.flow_id] = true
+      t[v.flow_id] = v.key
   })
   let threads_ids = Object.keys(t)
   let threads = []
+  let flows = {}
   for(let i=0;i<threads_ids.length;i++){
     let proto = await MYSQLE(ent_id,T_INST).first('flow_id','desc','state').where({id:threads_ids[i]})
     if(!proto)
       continue
     let flow = await MYSQL('flow').first('name','icon').where({id:proto.flow_id})
-    if(!flow)
+    let nodes = flows[proto.flow_id] 
+    if(!nodes)
+      nodes = await MYSQL('flow_node').select('name').where({
+      flow_id: proto.flow_id
+    })
+
+    let node = nodes.find(v => v.key == t[threads_ids[i]])
+    if(!flow || !node)
       continue
     threads.push({
       id:threads_ids[i],
       flow_id:proto.flow_id,
       name:flow.name,
+       node_name: node.name,
       desc:proto.desc,
       icon:flow.icon,
       state:proto.state
