@@ -61,6 +61,9 @@ out.Patch = async ctx=>{
   if(q == 'recall'){
     await FlowInstance.Recall(ent_id,flow_id,data.node,user_id)
     return
+  }else if(q=='savescore'){
+    await FlowInstance.saveScore(ent_id,flow_id,data,user_id)
+    return
   }
   let patchInfo = await FlowInstance.Patch(ent_id,flow_id,data,user_id)
   return patchInfo
