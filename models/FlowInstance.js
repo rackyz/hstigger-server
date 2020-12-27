@@ -353,7 +353,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   //close other node
 
   let nextNodes = await MYSQL('flow_node').select('key','name','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
-  console.log('nextNodes:',nextNodes)
+  
 
   let now = UTIL.getTimeStamp()
   let nodes_param = []
@@ -595,13 +595,18 @@ const pred_ids = [
    'ed4a82fb-3b83-11eb-8e1e-c15d5c7db744',
    // 造价 钱敏
    'ed4a8301-3b83-11eb-8e1e-c15d5c7db744',
-   // 詹
-   
+   // 傅，甘，陈
+   'ed49e6c5-3b83-11eb-8e1e-c15d5c7db744',
+   'ed49e6c7-3b83-11eb-8e1e-c15d5c7db744',
+   'ed49e6a3-3b83-11eb-8e1e-c15d5c7db744',
+
+
 
 ]
 
 const _cacheInstanceData = async (ent_id)=>{
-   await REDIS.ASC_SET_JSON(RK_REPORT_LOADING, "loading")
+   REDIS.ASC_SET_JSON(RK_REPORT_LOADING, "loading")
+   REDIS.EXPIRE(RK_REPORT_LOADING,60)
    console.log("START LOADING FLOW INSTANCE...")
    let instances = await MYSQLE(ent_id, T_INST).select()
    for (let i = 0; i < instances.length; i++) {
@@ -665,6 +670,8 @@ o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin)=>{
       dep = [4]
     }else if(index < 12){
       dep = [5]
+    }else if(index != -1){
+      dep = null
     }else{
       throw "您没有权限访问"
     }

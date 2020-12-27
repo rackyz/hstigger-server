@@ -201,7 +201,10 @@ const pred_ids = [
    // 造价 钱敏
    'ed4a8301-3b83-11eb-8e1e-c15d5c7db744',
    // 詹
-   'ed49e690-3b83-11eb-8e1e-c15d5c7db744'
+   'ed49e690-3b83-11eb-8e1e-c15d5c7db744',
+   'ed49e6c5-3b83-11eb-8e1e-c15d5c7db744',
+   'ed49e6c7-3b83-11eb-8e1e-c15d5c7db744',
+   'ed49e6a3-3b83-11eb-8e1e-c15d5c7db744',
 
 ]
 o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
