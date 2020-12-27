@@ -20,7 +20,8 @@ module.exports = async (ctx, next) => {
     }
   }else if(ctx.url.indexOf('/entadmin') == 0){
     // Enterprise Admin Interface
-    if (!ctx.state.enterprise_id || !ctx.state.isEntAdmin) {
+    console.log("ok")
+    if (!ctx.state.enterprise_id || (!ctx.state.isEntAdmin && !ctx.state.isAdmin)) {
       throw (403)
     }
   }else if (ctx.url.indexOf('/admin') == 0) {

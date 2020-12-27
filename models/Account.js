@@ -229,6 +229,14 @@ o.getUserList = async ()=>{
   return users
 }
 
+o.ListUsersByEnterprise = async (ent_id)=>{
+  let items = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).select('user_id').where({
+    enterprise_id:ent_id
+  })
+  let users = await MYSQL(TABLE_ACCOUNT).whereIn('id',items.map(v=>v.user_id))
+  return users
+}
+
 o.getUserEnterprises = async (user_id)=>{
   let items = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).where({
     user_id
@@ -241,7 +249,7 @@ o.getUserEnterprises = async (user_id)=>{
 o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   if(!user_id)
     return EXCEPTION.E_INVALID_DATA
-  let user = await MYSQL(TABLE_ACCOUNT).first('id','user','name','phone','avatar','frame','type','lastlogin_at','created_at').where('id',user_id)
+  let user = await MYSQL(TABLE_ACCOUNT).first('id','user','name','phone','avatar','frame','email','type','lastlogin_at','created_at').where('id',user_id)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
   
@@ -571,7 +579,38 @@ o.UpdateFromDing = async (data,deps,zzls)=>{
     console.log('add deps')
   }
   
-  //
+  
 }
+
+// CORE API
+  // USER Change Self password
+  o.Self_Change_Password = async (ctx,old,pass)=>{
+    let op = ctx.op
+    let validateOldPassword = await MYSQL(TABLE_ACCOUNT).first('id').where({id:op,password:old})
+    if(!validateOldPassword)
+      throw EXCEPTION.E_USER_INCCORECT_PASSWORD
+    await MYSQL(TABLE_ACCOUNT).update('password',pass).where({id:op})
+  }
+
+  o.Self_Change_Info = async(ctx,data)=>{
+    let {user,phone,email,avatar,frame} = data
+    let op = ctx.op
+    if(!op || Object.keys(data).length == 0)
+      throw EXCEPTION.E_INVALID_DATA
+    
+    if(user){
+      let existUser = await MYSQL(TABLE_ACCOUNT).first('id').where({user}).whereNot({id:op})
+      if(existUser)
+        throw EXCEPTION.E_USER_USER_EXIST
+    }
+
+    if(phone){
+      let existPhone = await MYSQL(TABLE_ACCOUNT).first('id').where({phone}).whereNot({id:op})
+      if(existPhone)
+        throw EXCEPTION.E_PHONE_EXIST
+    }
+
+    await MYSQL(TABLE_ACCOUNT).update({user,phone,email,avatar,frame}).where({id:op})
+  }
 
 module.exports = o
