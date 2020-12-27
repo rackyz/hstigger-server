@@ -51,7 +51,7 @@ module.exports = {
       for (let i = 0; i < images.length; i++) {
         let imgUrl = baseURL + images[i] 
         let filename = images[i].slice(images[i].lastIndexOf('/')+1)
-        data[PIC_NEWS][i].image = 'https://www.nbgzpmis.xyz/public/images/' + filename
+        data[PIC_NEWS][i].image = 'https://www.nbgzpmis.xyz:6001/public/images/' + filename
         await request(imgUrl).pipe(fs.createWriteStream("./tmp/" + filename));
         
       }
