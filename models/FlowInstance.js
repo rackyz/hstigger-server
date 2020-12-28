@@ -304,7 +304,7 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
   let mainAction = actions[0]
   // save data
   if(typeof data == 'object'){
-    let data_params = Object.keys(data).map(key=>(
+    let data_params = Object.keys(data).filter(v=>v!="executors").map(key=>(
       {def_key:key,flow_id,history_node_id:history_id,value:JSON.stringify(data[key])}
     ))
     await MYSQLE(ent_id,T_DATA).insert(data_params)
@@ -454,7 +454,6 @@ o.GetUserNodes = async (ent_id,user_id)=>{
 }
 const activeStates = [NODE_STATES.initing,NODE_STATES.active,NODE_STATES.retrying]
 o.GetActiveThreads = async (ent_id,nodes)=>{
-  console.log('getActive')
  if (!nodes || nodes.length == 0)
    return []
  let ns = nodes.filter(v => activeStates.includes(v.state))
@@ -501,24 +500,27 @@ o.GetActiveThreads = async (ent_id,nodes)=>{
 }
 
 o.GetPassedThreads = async (ent_id,nodes)=>{
+  console.log('getPassed:')
   if(!nodes || nodes.length == 0)
     return []
 
   
   let ns = nodes.filter(v=>!activeStates.includes(v.state))
+  
   let t = {}
   ns.forEach(v=>{
       t[v.flow_id] = true
   })
   let threads_ids = Object.keys(t)
   let threads = []
+  console.log(t)
   for(let i=0;i<threads_ids.length;i++){
     let proto = await MYSQLE(ent_id,T_INST).first('flow_id','desc','state').where({id:threads_ids[i]})
     if(!proto)
       continue
     let flow = await MYSQL('flow').first('name','icon').where({id:proto.flow_id})
     
-    if(!flow || !node)
+    if(!flow)
       continue
     threads.push({
       id:threads_ids[i],
@@ -529,6 +531,8 @@ o.GetPassedThreads = async (ent_id,nodes)=>{
       state:proto.state
     })
   }
+
+ 
   return threads
 }
 
@@ -712,7 +716,7 @@ o.saveScore = async (ent_id,inst_id,data,op)=>{
       state:2,
       start_at:UTIL.getTimeStamp(),
       end_at:UTIL.getTimeStamp(),
-      executors:[op],
+      executors: JSON.stringify([op]),
       op,
       action:"a4"
     }).returning('id')
