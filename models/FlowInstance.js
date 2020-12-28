@@ -288,7 +288,8 @@ let getUserPhone = async (user_id) => {
 
 
 o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
- 
+  console.log('node:',node)
+  console.log('actions:',actions)
   if(!actions || actions.length == 0)
     throw "ACTION UNEXPECTED"
   let history_id = node
@@ -354,17 +355,14 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
 
   let nextNodes = await MYSQL('flow_node').select('key','name','in_type','out_type').where({flow_id:proto_id}).whereIn('key',actionObjects.map(v=>v.to))
   
-
   let now = UTIL.getTimeStamp()
   let nodes_param = []
   let msg_senders = []
      REDIS.DEL(RK_REPORT)
   actionObjects.forEach((a,i)=>{
     let executor = executors[a.to]
-    if(!Array.isArray(executor) && executor)
+    if(!Array.isArray(executor))
       executor = [executor]
-    else
-      return
     let nextnode = nextNodes.find(v=>v.key == a.to)
     if(!nextnode)
       return
@@ -408,7 +406,6 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
       })
     }
   })
-
   for(let i=0;i<msg_senders.length;i++){
     
     let v = msg_senders[i]
@@ -428,7 +425,6 @@ o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
         await Message.sendSMS('FLOW', phone, v.params)
     }
   }
-
   if (nodes_param && nodes_param.length > 0)
     await MYSQLE(ent_id,T_NODE).insert(nodes_param)
  
