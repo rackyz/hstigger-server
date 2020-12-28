@@ -445,7 +445,7 @@ o.GetInstExecutors = async (ent_id,inst_id)=>{
 
 o.GetUserNodes = async (ent_id,user_id)=>{
   // let res = await MYSQLE(ent_id,T_NODE).where({user_id}).leftJoin(T_USER_NODE,`history_node_id`,`${T_NODE}.id`)
-  let res = await MYSQLE(ent_id,T_NODE).select('state','flow_id','key','executors').where('executors','like','%'+user_id+'%').orderBy('id','desc').limit(50)
+  let res = await MYSQLE(ent_id,T_NODE).select('state','flow_id','key','executors').where('executors','like','%'+user_id+'%').orderBy('id','desc').limit(100)
   return res
 }
 const activeStates = [NODE_STATES.initing,NODE_STATES.active,NODE_STATES.retrying]
