@@ -611,13 +611,64 @@ const _cacheInstanceData = async (ent_id)=>{
    let instances = await MYSQLE(ent_id, T_INST).select()
    for (let i = 0; i < instances.length; i++) {
      let inst_id = instances[i].id
-     let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select(`${T_DATA}.def_key as fkey`, 'value').where(`${T_DATA}.flow_id`, inst_id).whereNot(`${T_DATA}.def_key`, 'report')
+     let historyNodes = await MYSQLE(ent_id, T_NODE).select('id','key', 'executors', 'op', 'state').where('flow_id', inst_id)
+     let data = await MYSQLE(ent_id, T_DATA).distinct(`${T_DATA}.def_key`).select('id','history_node_id',`${T_DATA}.def_key as fkey`, 'value').where(`${T_DATA}.flow_id`, inst_id).whereNot(`${T_DATA}.def_key`, 'report')
 
      data.forEach(v => {
-       instances[i][v.fkey] = JSON.parse(v.value)
+       try{
+         if (v.fkey.includes('n3') || v.fkey.includes('mgr2mem1'))
+        instances[i][v.fkey] = JSON.parse(v.value)
+       }catch(e){
+         console.error(v.id)
+       }
      })
 
-     let historyNodes = await MYSQLE(ent_id, T_NODE).select('key', 'executors', 'op', 'state').where('flow_id', inst_id)
+     data.filter(v=>v.fkey).forEach(v=>{
+       try{
+         if (v.fkey.includes('n31')){
+          if (v.history_node_id) {
+            let history_node = historyNodes.find(n => n.id == v.history_node_id)
+            if (history_node && history_node.executors) {
+              let nodeExecutors = JSON.parse(history_node.executors)
+              let e = nodeExecutors[0]
+              if (!instances[i].executors || !Array.isArray(instances[i].executors.n3))
+                return
+              let index = instances[i].executors.n3.findIndex(v=>e == v)
+              if(index == -1 || index == 0)
+                return
+
+              let nkey = v.fkey.replace('n31', 'n3' + (index + 1))
+              console.log(v.fkey, "=>", nkey)
+              instances[i][nkey] = JSON.parse(v.value)
+            }
+          }
+        }
+        else if(v.fkey.includes('mem2self1')){
+           if (v.history_node_id) {
+             let history_node = historyNodes.find(n => n.id == v.history_node_id)
+             if (history_node && history_node.executors) {
+               let nodeExecutors = JSON.parse(history_node.executors)
+               let e = nodeExecutors[0]
+               if (!instances[i].executors || !Array.isArray(instances[i].executors.n3))
+                 return
+               let index = instances[i].executors.n3.findIndex(v => e == v)
+               if (index == -1 || index == 0)
+                 return
+
+               let nkey = v.fkey.replace('mem2self1', 'mem2self' + (index + 1))
+               console.log(v.fkey, "=>", nkey)
+               instances[i][nkey] = JSON.parse(v.value)
+             }
+           }
+        }
+
+      }catch(e){
+        console.error(v,e)
+      }
+     })
+     
+
+    
      let activeNodes = historyNodes.filter(v => v.state == 1)
      if (activeNodes && activeNodes.length > 0)
        activeNodes.forEach(v => v.executors = JSON.parse(v.executors))
@@ -677,7 +728,7 @@ o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin)=>{
     }
   }
 
-  let instances = await CacheInstanceData(ent_id)
+  let instances = await CacheInstanceData(ent_id,true)
   if (dep)
     instances = instances.filter(v => dep.includes(v.dep))
   

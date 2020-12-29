@@ -19,9 +19,49 @@ const GZSQL = require('../../base/nbgz_db')
 const UTIL = require('../../base/util')
 const {Account,Enterprise} = require('../../models')
 out.List = async ()=>{
-  let users = await MYSQL('account')
-  await DeleteAccountEnterpriseExist(users)
+  // let dd_users = await GetDDUsers()
+  // let old_users = await MYSQL('account')
+  // let pmis_users = await GZSQL('zzlatm.aclusr').select('uid', 'user', 'name', 'phone').where('allowed', 'yes')
+  // //await CompareAccount(dd_users, old_users, pmis_users)
+  // await CheckDuplicated(old_users)
 
+  await CompareNameWithAppraise()
+}
+
+const CompareNameWithAppraise = async ()=>{
+  let users = await MYSQL('account').select('id','name','phone')
+  let instances = await MYSQL.E("NBGZ", "flow_instance").select('desc', 'created_by')
+  users.forEach(u=>{
+    let instance = instances.find(v=>v.created_by == u.id)
+   
+    if(!instance)
+      console.log(u.name,"NOT CREATE")
+    else{
+      
+      if(instance.desc && instance.desc.includes(u.name)){
+        
+      }else{
+         console.log(u.name,instance.desc)
+      }
+    }
+   
+  })
+}
+
+// 绑定dingid账号
+const FixEmptyDingId = async()=>{
+  let users = await MYSQL('account').select('id','name','phone').whereNull('ding_id')
+  let insertData = []
+  for(let i=0;i<users.length;i++){
+    let user = users[i]
+    console.log(user.name,user.phone)
+    let ding_id = await Ding.getUserIdFromPhone(user.phone)
+    console.log(ding_id)
+    if(ding_id){
+      await MYSQL('account').update({ding_id}).where({id:user.id})
+    }
+  }
+ 
 }
 
 const AddDingAccountEnterprise = async ()=>{
@@ -77,17 +117,90 @@ const CompareAccount = async (dd_users, old_users, pmis_users) => {
       if (du.mobile != ou.phone)
         isPhone = true
     }
-    let pu = pmis_users.find(v => v.name == du.name || v.phone == du.mobile)
-    if (pu) {
-      if (du.name != pu.name)
-        isName = true
-      if (du.mobile != pu.phone)
-        isPhone = true
-    }
+    
     if (isPhone || isName) {
-      console.log("企业-PM-DD:", ou ? ou.name : '', ou ? ou.phone : '', '->', pu ? pu.name : '', pu ? pu.phone : '', '->', du.name, du.mobile)
+      console.log("企业-DD:", ou ? ou.name : '', ou ? ou.phone : '',  '->', du.name, du.mobile)
     }
   }
+}
+
+const CheckDuplicated = async (old_users)=>{
+  // 查重
+  let existed = {}
+  old_users.forEach(v=>{
+    if (existed[v.phone])
+      existed[v.phone].push(v.name)
+    else
+      existed[v.phone] = [v.name]
+  })
+  console.log('电话重复:', Object.values(existed).filter(v => v.length > 1))
+  Object.keys(existed).filter(v => existed[v].length > 1).forEach(v => {
+     let us = users.find(u => u.mobile == v)
+    if (us)
+      console.log(v, us.name)
+    else
+      console.log(v, "not DIngDINg")
+  })
+
+   old_users.forEach(v => {
+     if (existed[v.name])
+       existed[v.name].push(v.id)
+     else
+       existed[v.name] = [v.id]
+   })
+   console.log('姓名重复:', Object.values(existed).filter(v => v.length > 1))
+
+  existed = {}
+  old_users.forEach(v => {
+    if (existed[v.name])
+      existed[v.name].push(v)
+    else
+      existed[v.name] = [v]
+  })
+
+  // let toDel = []
+  // Object.values(existed).filter(v => v.length > 1).forEach(u => {
+  //   if(!Array.isArray(u))
+  //     return
+  //   let isPM = false
+  //   let isDing = false
+  //   for(let i=0;i<u.length;i++){
+  //     let user = u[i]
+  //      console.log(i, user.name)
+  //     if(isPM)
+  //     {
+  //       toDel.push(user.id)
+  //       console.log(user.id,user.lastlogin_at)
+  //       continue
+  //     }
+  //     if(u[i].zzl_id)
+  //       isPM = true
+  //   }
+  // })
+}
+
+
+const GetDDUsers = async (forced)=>{
+  let users = []
+  let u = await REDIS.ASC_GET_JSON('cached_users')
+  console.log(u.length)
+  if(u &&Array.isArray(u) && !forced)
+    users = u
+  else{
+     let groups = await Ding.getGroups()
+     for (let i = 0; i < groups.length; i++) {
+       let group_users = await Ding.getEmployeeInfoList(groups[i].id)
+       group_users.forEach(v => {
+         v.group_id = groups[i].id
+       })
+       users = users.concat(group_users)
+
+     }
+       REDIS.SET('cached_users', JSON.stringify(users))
+       REDIS.EXPIRE('cached_users',3600)
+  }
+
+  return users
 }
 
 module.exports = out
@@ -226,56 +339,6 @@ module.exports = out
 
 
 
-// // 查重
-// old_users.forEach(v=>{
-//   if (existed[v.phone])
-//     existed[v.phone].push(v.name)
-//   else
-//     existed[v.phone] = [v.name]
-// })
-// console.log('电话重复:', Object.values(existed).filter(v => v.length > 1))
-// Object.keys(existed).filter(v => existed[v].length > 1).forEach(v => {
-//    let us = users.find(u => u.mobile == v)
-//   if (us)
-//     console.log(v, us.name)
-//   else
-//     console.log(v, "not DIngDINg")
-// })
 
-//  old_users.forEach(v => {
-//    if (existed[v.name])
-//      existed[v.name].push(v.id)
-//    else
-//      existed[v.name] = [v.id]
-//  })
-//  console.log('姓名重复:', Object.values(existed).filter(v => v.length > 1))
-
-// existed = {}
-// old_users.forEach(v => {
-//   if (existed[v.name])
-//     existed[v.name].push(v)
-//   else
-//     existed[v.name] = [v]
-// })
-
-// let toDel = []
-// Object.values(existed).filter(v => v.length > 1).forEach(u => {
-//   if(!Array.isArray(u))
-//     return
-//   let isPM = false
-//   let isDing = false
-//   for(let i=0;i<u.length;i++){
-//     let user = u[i]
-//      console.log(i, user.name)
-//     if(isPM)
-//     {
-//       toDel.push(user.id)
-//       console.log(user.id,user.lastlogin_at)
-//       continue
-//     }
-//     if(u[i].zzl_id)
-//       isPM = true
-//   }
-// })
 
 // console.log(toDel)
