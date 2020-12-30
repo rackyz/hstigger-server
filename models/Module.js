@@ -225,6 +225,8 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
           return isAdmin
         }else if(v.level == 3)
           return isEntAdmin
+        else
+          return true
       }
     })
   }else{
