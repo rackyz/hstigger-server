@@ -5,6 +5,8 @@ console.log(`[redis] REDIS Connected to ${config.redis.host}:${config.redis.port
 const RedisClient = require('redis').createClient(config.redis.port, config.redis.host, {})
 RedisClient.on('ready', function () {
   RedisLogger.info('Redis初始化完毕')
+  // DEV MODE
+  RedisClient.flushdb()
 })
 
 

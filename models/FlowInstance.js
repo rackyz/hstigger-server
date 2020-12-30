@@ -608,7 +608,9 @@ const _cacheInstanceData = async (ent_id)=>{
    REDIS.ASC_SET_JSON(RK_REPORT_LOADING, "loading")
    REDIS.EXPIRE(RK_REPORT_LOADING,60)
    console.log("START LOADING FLOW INSTANCE...")
-   let instances = await MYSQLE(ent_id, T_INST).select()
+    let instances =[]
+   try{
+   instances = await MYSQLE(ent_id, T_INST).select()
    for (let i = 0; i < instances.length; i++) {
      let inst_id = instances[i].id
      let historyNodes = await MYSQLE(ent_id, T_NODE).select('id','key', 'executors', 'op', 'state').where('flow_id', inst_id)
@@ -616,8 +618,8 @@ const _cacheInstanceData = async (ent_id)=>{
 
      data.forEach(v => {
        try{
-         if (v.fkey.includes('n3') || v.fkey.includes('mgr2mem1'))
-        instances[i][v.fkey] = JSON.parse(v.value)
+         if (!v.fkey.includes('n3') || !v.fkey.includes('mgr2mem1'))
+          instances[i][v.fkey] = JSON.parse(v.value)
        }catch(e){
          console.error(v.id)
        }
@@ -628,7 +630,7 @@ const _cacheInstanceData = async (ent_id)=>{
          if (v.fkey.includes('n31')){
           if (v.history_node_id) {
             let history_node = historyNodes.find(n => n.id == v.history_node_id)
-            if (history_node && history_node.executors) {
+            if (history_node && history_node.executors && history_node.key == 'n3') {
               let nodeExecutors = JSON.parse(history_node.executors)
               let e = nodeExecutors[0]
               if (!instances[i].executors || !Array.isArray(instances[i].executors.n3))
@@ -643,10 +645,10 @@ const _cacheInstanceData = async (ent_id)=>{
             }
           }
         }
-        else if(v.fkey.includes('mem2self1')){
+        else if(v.fkey.includes('mgr2mem1')){
            if (v.history_node_id) {
              let history_node = historyNodes.find(n => n.id == v.history_node_id)
-             if (history_node && history_node.executors) {
+             if (history_node && history_node.executors && history_node.key == 'n3') {
                let nodeExecutors = JSON.parse(history_node.executors)
                let e = nodeExecutors[0]
                if (!instances[i].executors || !Array.isArray(instances[i].executors.n3))
@@ -655,7 +657,7 @@ const _cacheInstanceData = async (ent_id)=>{
                if (index == -1 || index == 0)
                  return
 
-               let nkey = v.fkey.replace('mem2self1', 'mem2self' + (index + 1))
+               let nkey = v.fkey.replace('mgr2mem1', 'mgr2mem' + (index + 1))
                console.log(v.fkey, "=>", nkey)
                instances[i][nkey] = JSON.parse(v.value)
              }
@@ -675,6 +677,10 @@ const _cacheInstanceData = async (ent_id)=>{
      instances[i].activeNodes = activeNodes
      instances[i].historyNodes = historyNodes
    }
+  }catch(e){
+    REDIS.DEL(RK_REPORT_LOADING)
+    throw '数据拉取错误,请联系管理员'
+  }
 
    REDIS.DEL(RK_REPORT_LOADING)
    REDIS.SET_JSON(RK_REPORT, instances)
@@ -728,7 +734,7 @@ o.GetInstanceData = async (ent_id,flow_id,op,isEntAdmin)=>{
     }
   }
 
-  let instances = await CacheInstanceData(ent_id,true)
+  let instances = await CacheInstanceData(ent_id)
   if (dep)
     instances = instances.filter(v => dep.includes(v.dep))
   
