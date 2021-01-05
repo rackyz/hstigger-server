@@ -18,14 +18,52 @@ const MYSQL = require('../../base/mysql')
 const GZSQL = require('../../base/nbgz_db')
 const UTIL = require('../../base/util')
 const {Account,Enterprise} = require('../../models')
-out.List = async ()=>{
+out.List = async (ctx)=>{
+  let q = ctx.query['q']
   // let dd_users = await GetDDUsers()
   // let old_users = await MYSQL('account')
   // let pmis_users = await GZSQL('zzlatm.aclusr').select('uid', 'user', 'name', 'phone').where('allowed', 'yes')
   // //await CompareAccount(dd_users, old_users, pmis_users)
   // await CheckDuplicated(old_users)
+  if(q == 'project'){
 
-  await CompareNameWithAppraise()
+    await CopyProjectFromOA()
+  }else{
+    await CompareNameWithAppraise()
+  }
+  
+}
+
+// 总师IOS修正不合格项依据
+const FixFlow = async (key,replaced)=>{
+  let flows = await GZSQL('zzlatm.weapp_workflow_instance').select('id','desc').where('desc','like',`%${key}不合%`)
+  for(let i=0;i<flows.length;i++){
+   
+    await GZSQL('zzlatm.weapp_workflow_data').update({
+      value: replaced
+    }).where({flowID:flows[i].id,label:'basis'})
+     console.log(i + 1, ':', flows[i].desc,'已修改')
+  }
+}
+
+const CopyProjectFromOA = async ()=>{
+  let contracts = await GZSQL('gzadmin.contract').select('contract_id','name','code','images','inputTime')
+  let relations = []
+
+  let projects = contracts.map(v=>({
+    id:UTIL.createUUID(),
+    name:v.name,
+    avatar:v.images?JSON.parse(v.images)[0]:'',
+    created_at:v.inputTime,
+    created_by:"ROOT"
+  }))
+
+  for(let i=0;i<projects.length;i++){
+    let employees = await GZSQL('gzadmin.contract_employee').select('name','positionIndex','factor','inDate','outDate').where('contract_id',contracts[i])
+    
+  }
+  //MYSQL.E("NBGZ","project").insert(projects)
+
 }
 
 const CompareNameWithAppraise = async ()=>{

@@ -25,7 +25,7 @@ module.exports = async function (ctx, next) {
     let sessionState = await Session.getSessionState(token)
     ctx.state = sessionState
     ctx.state.isAdmin = sessionState.account_type == 3
-    
+    console.log('访问:',ctx.state.user,ctx.state.name)
     return authAccountType(ctx,next)
 
   }else{

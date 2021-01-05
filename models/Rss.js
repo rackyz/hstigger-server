@@ -32,7 +32,7 @@ o.initdb = async (forced)=>{
     t.integer('subject_type').defaultTo(0);
     t.integer('media_type').defaultTo(0);
     t.integer('state').defaultTo(0)
-
+    t.string('more',128)
     t.string('created_by',64);
    
     t.datetime('created_at');
