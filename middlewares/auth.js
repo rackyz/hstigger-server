@@ -40,6 +40,22 @@ module.exports = async function (ctx, next) {
       await next()
       return
     }
-    throw EXCEPTION.E_DO_NOT_PERMITTED
+    ctx.body = `
+    <div>
+      <h1>iNBGZ EIP API</h1>
+      ${RenderAPI(ctx.apiRoot)}
+    </div>
+    <style>
+    body{
+      background:#eef;
+    }
+    </style>`
   }
+}
+
+const RenderAPI =  (root)=>{
+  let keys = Object.keys(root)
+  return keys.map(v=>`<li>${v}</li>`)
+
+
 }

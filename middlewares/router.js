@@ -1,3 +1,4 @@
+const auth = require('./auth')
 const routerAuthencation = require('./authRouter')
 let RestfulAPIMethods = {}
 let Methods = ['List', 'Get', 'Post', 'PostAction', 'Replace', 'Patch', 'Delete', 'GetRelated', 'Option',
@@ -80,6 +81,7 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
       await next()
     })
   }
+  route.use(auth)
   route
     .get('/', ctx => {
       ctx.error('路径匹配失败')
@@ -111,7 +113,6 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
   routers.push(route)
 }
 let router = routers[routers.length - 1]
-
 
 
 
