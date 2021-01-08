@@ -2,6 +2,9 @@ const {Enterprise,Account,Type} = require('../../models')
 
 let out = {}
 
+out.Name = "企业"
+out.Desc = "平台后台管理所支持的企业信息操作"
+
 out.Auth = async (method,{user_id,ent_id})=>{
 }
 

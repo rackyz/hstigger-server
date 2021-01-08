@@ -9,11 +9,17 @@ let out = {}
 out.Auth = async (method,{user_id,ent_id})=>{
 }
 
+out.Name = "账户"
+out.Desc = "平台后台管理所支持的用户账户操作"
+
+out.ListDesc="列出所有平台账户列表"
 out.List = async ctx=>{
   let query = ctx.query
   let accounts = await Account.getList()
   return accounts
 }
+
+
 
 
 out.Patch =async ctx=>{

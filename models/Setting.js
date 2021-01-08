@@ -2,6 +2,7 @@ const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
+const api = require('../base/api')
 const o = {
   required:['Type']
 }
@@ -43,6 +44,9 @@ o.initdb = async (forced)=>{
   }
 }
 
+o.getAPISettings = async (api_root)=>{
+  return api.getAPIObject(api_root)
+}
 
 /** Methods */
 o.getSettings = async (group,type)=>{

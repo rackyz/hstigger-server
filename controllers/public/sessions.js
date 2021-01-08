@@ -4,6 +4,8 @@ const {ContextParser} = require('../../base/util')
 const E = require('../../base/exception')
 let out = {}
 
+out.Name = "会话/用户登录"
+out.Desc = "高专企业信息平台是基于<b>jwt-token</b>令牌验证的用户登录机制,首次调用<b>POST /sessions</b>由进行登录后,通过<b>Bearea token</b>作为<b>headers.Authorization</b>字段直接获取登录状态及Session信息"
 
 out.Post = async ctx=>{
   let data = ctx.request.body

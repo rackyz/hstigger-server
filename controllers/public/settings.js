@@ -8,6 +8,9 @@ out.Get = async ctx =>{
   if(id == 'login'){
     let setting = await Setting.getSettings('LOGIN')
     return setting
+  }else if(id=='api'){
+    let api_object = await Setting.getAPIObject(ctx.apiObject)
+    return api_object
   }else{
     let user_id = ctx.state.id
     let value = await Setting.get(user_id,key)

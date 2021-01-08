@@ -15,6 +15,8 @@ const authAccountType = require('./authAccountType')
 const {
   Session,
 } = require('../models');
+const o = require('../base/spider');
+const api = require('../base/api')
 
 module.exports = async function (ctx, next) {
   var token = ctx.headers.authorization
@@ -40,22 +42,10 @@ module.exports = async function (ctx, next) {
       await next()
       return
     }
-    ctx.body = `
-    <div>
-      <h1>iNBGZ EIP API</h1>
-      ${RenderAPI(ctx.apiRoot)}
-    </div>
-    <style>
-    body{
-      background:#eef;
-    }
-    </style>`
+    
+    if(ctx.method == 'GET')
+      api.SendAPIDoc(ctx)
+    else
+      throw 404
   }
-}
-
-const RenderAPI =  (root)=>{
-  let keys = Object.keys(root)
-  return keys.map(v=>`<li>${v}</li>`)
-
-
 }
