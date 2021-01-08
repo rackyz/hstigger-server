@@ -1,4 +1,4 @@
-let o = {}
+let out = {}
 const APIMap = {
 
   List: "GET {path}",
@@ -13,49 +13,44 @@ const APIMap = {
 }
 
 
-o.APIPage = null
-o.APIObject = null
+out.APIPage = ""
+out.APIObject = {}
 
 const APIFrame ={
       public: {
         Name: "通用接口",
         Desc: "无需登录可直接访问的接口",
-        list: {}
       },
       core: {
         Name: "登录用户接口",
         Desc: "普通登录用户对应的接口",
-        list: {}
       },
       enterprise: {
         Name: "企业级用户接口",
         Desc: "企业级用户相关接口",
-        list: {}
       },
       entadmin: {
         Name: "企业管理接口",
         Desc: "企业管理后台接口",
-        list: {}
       },
       admin: {
         Name: "平台管理接口",
         Desc: "平台管理后台接口",
-        list: {}
       }
     }
 
-o.GetAPIObject = (root)=>{
-  if(o.APIObject)
-    return o.APIObject
+out.GetAPIObject = (root)=>{
+  if (out.APIObject)
+    return out.APIObject
   else{
     GetAPIPage(root)
-    return o.APIObject
+    return out.APIObject
   }
 }
 
 GetAPIPage = (root) => {
-  if(o.APIPage)
-    return o.APIPage
+  if (out.APIPage)
+    return out.APIPage
   if (!root)
     return
   let frame = {...APIFrame}
@@ -64,10 +59,13 @@ GetAPIPage = (root) => {
       frame.core[x] = root[x]
     } else if (frame[x] && root[x]) {
       Object.assign(frame[x], root[x])
+      out.APIObject[x] = {}
     }
   }
 
-  return RenderAPI(r)
+  let html = RenderAPI(frame)
+  console.log(o.APIObject)
+  return html
 }
 
 const RenderAPI = (root) => {
@@ -82,18 +80,23 @@ const RenderAPI = (root) => {
       } else {
         return `<li class="attr"><span class='attr-mark'>${v}</span> ${root.AuthDesc || ''}</li>`
       }
-
+      console.log(`root:[${root.root}]`, out.APIObject[root.root])
+      out.APIObject[root.root][v] = {
+        path:api,
+        option:root[v+'Option']
+      }
       return `<li class='api'><span class='api-mark'>${v}</span> ${api} ${root[v+'Desc']?"<br /><div class='desc'>"+root[v+'Desc']+"</div>":""}</li>`
     } else if (typeof o == 'object') {
       if (v != 'core')
         o.path = path = path + '/' + v
+      o.root = root.root || v
       return `<li class="${!o.isCollection?'dir':'ctl'}">${v} ${o.Name || ''} ${o.Desc?'<br /><div class="desc">'+o.Desc+'</div>':''} </li><ul>${RenderAPI(o)}</ul>`
     } else
       return ""
   }).join('')
 }
 
-o.SendAPIDoc = ctx => {
+out.SendAPIDoc = ctx => {
   ctx.body = `
     <div>
       <h1>高专企业信息平台接口文档  <span class='api-mark'>1.0.0</span><br /> <div style='font-weight:normal;font-size:20px;line-height:20px;color:#aaa;'>iNBGZ Enterprise Information Platform API</div> </h1>
@@ -133,7 +136,7 @@ o.SendAPIDoc = ctx => {
     .ctl{
       border-radius:5px;
       padding:2px 8px;
-     
+      color:red;
     
     }
     .api{
@@ -168,4 +171,5 @@ o.SendAPIDoc = ctx => {
     </style>`
 }
 
-module.exports = o
+
+module.exports = out
