@@ -109,12 +109,14 @@ out.SendAPIDoc = ctx => {
     <div>
       <h1>高专企业信息平台接口文档  <span class='api-mark'>1.0.0</span><br /> <div style='font-weight:normal;font-size:20px;line-height:20px;color:#aaa;'>iNBGZ Enterprise Information Platform API</div> </h1>
       <div class="desc" style='margin-bottom:30px;'>高专企业云接口采用RESTFUL风格<div class="flex" style='margin-top:5px'>接口类型：<div class="api-mark">原生接口</div> <div class="api-mark" style='margin-left:10px;background:orange;'>速记接口</div></div>
+      <div style='line-height:17px'>
       接口使用说明:<br />
-      1 - 权限验证 Header.Authorization : Bearea Token <br />
-      2 - 路径参数 params :id/:object/:related <br />
-      3 - 查询参数 对应参数 query <br />
-      4 - 返回值 <br />
-
+      &nbsp;&nbsp;1 - <b>权限验证 用户token</b> headers.Authorization = Bearea Token <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 <b>企业id</b> headers.enterprise_id=ent_id <br />
+      &nbsp;&nbsp;2 - <b>路径参数 params</b>  :id / :object / :related <br />
+      &nbsp;&nbsp;3 - <b>查询参数 query</b> q=?&type=? <br />
+      &nbsp;&nbsp;4 - <b>错误反馈 throw</b> 状态码403,404 / 文本错误信息 <br />
+      </div>
       </div>
       
       ${GetAPIPage(ctx.apiRoot)}
