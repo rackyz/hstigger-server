@@ -14,7 +14,9 @@ const APIMap = {
 
 
 out.APIPage = ""
-out.APIObject = {}
+out.APIObject = {
+  core:{}
+}
 
 const APIFrame ={
       public: {
@@ -64,7 +66,7 @@ GetAPIPage = (root) => {
   }
 
   let html = RenderAPI(frame)
-  console.log(o.APIObject)
+  console.log(out.APIObject)
   return html
 }
 
@@ -80,7 +82,6 @@ const RenderAPI = (root) => {
       } else {
         return `<li class="attr"><span class='attr-mark'>${v}</span> ${root.AuthDesc || ''}</li>`
       }
-      console.log(`root:[${root.root}]`, out.APIObject[root.root])
       out.APIObject[root.root][v] = {
         path:api,
         option:root[v+'Option']
