@@ -82,15 +82,22 @@ const RenderAPI = (root) => {
       } else {
         return `<li class="attr"><span class='attr-mark'>${v}</span> ${root.AuthDesc || ''}</li>`
       }
-      out.APIObject[root.root][v] = {
-        path:api,
+      let key = (v + '_' + root.key).toUpperCase()
+      out.APIObject[root.root][key] = {
+        url: api,
         option:root[v+'Option']
       }
-      return `<li class='api'><span class='api-mark'>${v}</span> ${api} ${root[v+'Desc']?"<br /><div class='desc'>"+root[v+'Desc']+"</div>":""}</li>`
+      return `<li class='api'><span class='api-mark'>${key}</span> ${api} ${root[v+'Desc']?"<br /><div class='desc'>"+root[v+'Desc']+"</div>":""}</li>`
     } else if (typeof o == 'object') {
+      if(o.url){
+        out.APIObject[root.root][v.toUpperCase()] = o
+         return `<li class='api'><span class='api-mark' style='background:orange'>${v}</span> ${o.url} ${o.desc?"<br /><div class='desc'>"+o.desc+"</div>":""}</li>`
+      }
+
       if (v != 'core')
         o.path = path = path + '/' + v
       o.root = root.root || v
+      o.key = v
       return `<li class="${!o.isCollection?'dir':'ctl'}">${v} ${o.Name || ''} ${o.Desc?'<br /><div class="desc">'+o.Desc+'</div>':''} </li><ul>${RenderAPI(o)}</ul>`
     } else
       return ""
@@ -101,7 +108,15 @@ out.SendAPIDoc = ctx => {
   ctx.body = `
     <div>
       <h1>高专企业信息平台接口文档  <span class='api-mark'>1.0.0</span><br /> <div style='font-weight:normal;font-size:20px;line-height:20px;color:#aaa;'>iNBGZ Enterprise Information Platform API</div> </h1>
-      <div class="desc" style='margin-bottom:30px;'>高专企业云接口采用RESTFUL风格</div>
+      <div class="desc" style='margin-bottom:30px;'>高专企业云接口采用RESTFUL风格<div class="flex" style='margin-top:5px'>接口类型：<div class="api-mark">原生接口</div> <div class="api-mark" style='margin-left:10px;background:orange;'>速记接口</div></div>
+      接口使用说明:<br />
+      1 - 权限验证 Header.Authorization : Bearea Token <br />
+      2 - 路径参数 params :id/:object/:related <br />
+      3 - 查询参数 对应参数 query <br />
+      4 - 返回值 <br />
+
+      </div>
+      
       ${GetAPIPage(ctx.apiRoot)}
     </div>
     <style>
@@ -114,6 +129,10 @@ out.SendAPIDoc = ctx => {
       width:960px;
       margin:0 auto;
       padding:20px 60px;
+    }
+    .flex{
+      display:flex;
+      align-items:center;
     }
     h1{padding:10px 0;padding-bottom:0;margin-bottom:0;}
     ul{

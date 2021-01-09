@@ -33,6 +33,11 @@ out.Delete = async ctx=>{
 }
 
 
+out.SEND_FORGET_VERIFY = {
+  url:"POST /files/forget-vcode",
+  desc:"<b>忘记密码</b>时，向用户发送手机验证码用于验证身份"
+}
+
 out.PostAction = async ctx=>{
   let action = ctx.params.action
   let data = ctx.request.body
