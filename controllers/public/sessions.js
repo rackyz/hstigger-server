@@ -16,7 +16,16 @@ out.Post = async ctx=>{
   let loginInfo = await Session.createSessionByLogin(account,password,device,ip)
   return loginInfo
 }
+out.PostDesc = "用户登录"
+out.LOGIN = {
+  url:"POST /sessions",
+  desc:"用户登录的别名,返回当前会话信息"
+}
 
+out.WHOAMI = {
+  url:"GET /session",
+  desc:"由token获取当前用户会话信息"
+}
 out.Get = async ctx=>{
   let id = ctx.params.id
   if(id == "current"){
