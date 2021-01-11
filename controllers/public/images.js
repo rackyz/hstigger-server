@@ -3,6 +3,9 @@ const path = require('path')
 const request = require('request')
 let out = {}
 
+out.Name = "图片"
+out.Desc = "通过平台统一ID访问图片的接口"
+
 out.Get = async ctx => {
   let file = ctx.params.id
   const pathUrl = path.join(__dirname, '../../tmp/'+file);

@@ -34,6 +34,8 @@ out.List = async (ctx)=>{
   
 }
 
+out.Name = "测试接口"
+out.Desc ="测试专用接口"
 // 总师IOS修正不合格项依据
 const FixFlow = async (key,replaced)=>{
   let flows = await GZSQL('zzlatm.weapp_workflow_instance').select('id','desc').where('desc','like',`%${key}不合%`)

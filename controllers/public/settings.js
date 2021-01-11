@@ -1,7 +1,8 @@
 const {Setting} = require("../../models")
 
 let out = {}
-
+out.Name = '配置项'
+out.Desc = '获取平台基础的配置信息'
 
 out.Get = async ctx =>{
   let id = ctx.params.id
@@ -9,7 +10,7 @@ out.Get = async ctx =>{
     let setting = await Setting.getSettings('LOGIN')
     return setting
   }else if(id=='api'){
-    let api_object = await Setting.getAPIObject(ctx.apiObject)
+    let api_object = await Setting.getAPISettings(ctx.apiObject)
     return api_object
   }else{
     let user_id = ctx.state.id

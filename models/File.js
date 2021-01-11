@@ -42,8 +42,11 @@ o.list = async ()=>{
   await MYSQL(T)
 }
 
-o.listFromUser = async (id)=>{
-  let items = await MYSQL(T).where({"created_by":id}).orderBy('created_at','desc').limit(5)
+o.listFromUser = async (id,vdisk=undefined)=>{
+  let items = await MYSQL(T).where({
+    "created_by": id,
+    vdisk
+  }).orderBy('created_at', 'desc').limit(5)
   return items
 }
 

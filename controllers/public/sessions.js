@@ -18,14 +18,11 @@ out.Post = async ctx=>{
 }
 out.PostDesc = "用户登录"
 out.LOGIN = {
-  url:"POST /sessions",
+  url:"POST /public/sessions",
   desc:"用户登录的别名,返回当前会话信息"
 }
 
-out.WHOAMI = {
-  url:"GET /session",
-  desc:"由token获取当前用户会话信息"
-}
+
 out.Get = async ctx=>{
   let id = ctx.params.id
   if(id == "current"){
@@ -33,6 +30,15 @@ out.Get = async ctx=>{
     return info
   }
   
+}
+out.WHOAMI = {
+  url: "GET /public/sessions/current",
+  desc: "由token获取当前用户会话信息"
+}
+
+out.GetDesc = "获取当前的"
+out.GetThrowOption = {
+  'MSG':'登录状态token已过期'
 }
 
 out.Delete = async ctx=>{
@@ -42,10 +48,7 @@ out.Delete = async ctx=>{
 }
 
 
-out.SEND_FORGET_VERIFY = {
-  url:"POST /files/forget-vcode",
-  desc:"<b>忘记密码</b>时，向用户发送手机验证码用于验证身份"
-}
+
 
 out.PostAction = async ctx=>{
   let action = ctx.params.action
@@ -73,6 +76,11 @@ out.PostAction = async ctx=>{
   }else{
     throw E.E_UNEXPECTED_ACTION
   }
+}
+
+out.SEND_FORGET_VERIFY = {
+  url: "POST /files/forget-vcode",
+  desc: "<b>忘记密码</b>时，向用户发送手机验证码用于验证身份"
 }
 
 

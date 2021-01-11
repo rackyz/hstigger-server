@@ -1,5 +1,6 @@
 const auth = require('./auth')
 const routerAuthencation = require('./authRouter')
+const api = require('../base/api')
 let RestfulAPIMethods = {}
 let Methods = ['List', 'Get', 'Post', 'PostAction', 'Replace', 'Patch', 'Delete', 'GetRelated', 'Option',
   'Related', 'AddRelated', 'DelRelated'
@@ -13,6 +14,8 @@ let E = {
   API_VERSION_UNDEFINED: "API版本号错误"
 }
 
+const API_ROOT = require(`../controllers`)
+GetAPIPage(API_ROOT)
 
 for (let i = 0; i < Methods.length; i++) {
   let v = Methods[i]
@@ -71,7 +74,7 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
       // }
       let APIRoot = null
       try {
-        APIRoot = require(`../controllers`)
+        APIRoot = API_ROOT
       } catch (e) {
         console.error(e)
         throw (E.API_LOAD_FAILED)

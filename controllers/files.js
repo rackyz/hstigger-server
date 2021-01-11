@@ -8,8 +8,8 @@ out.Name = "文件"
 out.Desc = "提供基于腾讯COS的个人文件的查询和处理API"
 out.List = async ctx=>{
   let user_id = ctx.state.id
-  
-  return await File.listFromUser(user_id)
+  let vdisk = ctx.query.vdisk
+  return await File.listFromUser(user_id, vdisk)
 }
 
 out.Post = async ctx=>{

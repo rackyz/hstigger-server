@@ -45,7 +45,7 @@ o.initdb = async (forced)=>{
 }
 
 o.getAPISettings = async (api_root)=>{
-  return api.getAPIObject(api_root)
+  return api.GetAPIObject(api_root)
 }
 
 /** Methods */
