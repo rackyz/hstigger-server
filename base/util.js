@@ -272,7 +272,6 @@ util.hasTable = async (MYSQL,table_name,ent_schema)=>{
   }
   else
     res = await MYSQL.schema.hasTable(table_name)
-  console.log(ent_schema?ent_schema+'.'+table_name:table_name,res?true:false)
   if(res)
     return true
   else

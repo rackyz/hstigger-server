@@ -53,6 +53,7 @@ out.GetAPIObject = (root)=>{
   else{
     out.APIObject.inited = false
     GetAPIPage(root)
+    out.APIObject = 
     out.APIObject.inited = true
     return out.APIObject
   }

@@ -1,6 +1,6 @@
 const Models = require('../models')
 
-
+const ent_ids = []
 const InstallModel = async (MODELS,m,forced)=>{
   let model = MODELS[m]
   if(!model){
@@ -8,10 +8,8 @@ const InstallModel = async (MODELS,m,forced)=>{
     return
   }
   
-  if(!model.initdb || model.inited)
-    return
-
-  
+  if (!model.init && !model.initdb)
+    return model
 
   if(Array.isArray(model.required)){
     for(let i=0;i<model.required.length;i++)
@@ -19,18 +17,29 @@ const InstallModel = async (MODELS,m,forced)=>{
   }
 
   if(!model.inited){
-    if(!model.enterprise){
+    if (model.initdb) {
       await model.initdb(forced)
-      model.inited = true
-      console.log(` - [model] ${m} inited.`)
+      
+      // console.log(` - [model] ${m} inited.`)
+    }
+
+    if(model.initdb_e) {
+      let Enterprise = await InstallModel(MODELS,'Enterprise',forced)
+      if (Enterprise) {
+        let ent_ids = await Enterprise.getEnterpriseList()
+        for(let i=0;i<ent_ids.length;i++)
+          await model.initdb_e('ENT_'+ent_ids[i].id,forced)
+      }
     }
 
     if (model.init) {
       await model.init(forced)
     }
+
+    model.inited = true
   } 
 
-  
+  return model
 }
 
 

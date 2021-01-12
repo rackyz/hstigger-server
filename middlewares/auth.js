@@ -27,15 +27,8 @@ module.exports = async function (ctx, next) {
     let sessionState = await Session.getSessionState(token)
     ctx.state = sessionState
     ctx.state.isAdmin = sessionState.account_type == 3
-    console.log('访问:',ctx.state.user,ctx.state.name)
     return authAccountType(ctx,next)
-
   }else{
-    if (ctx.headers.test){
-      ctx.headers["api-version"] = "v0"
-       await next()
-       return
-    }
     let URL = ctx.url
     if(URL.indexOf('/public')==0){
       ctx.headers["api-version"] = "v0"
@@ -43,9 +36,19 @@ module.exports = async function (ctx, next) {
       return
     }
     
-    if(ctx.method == 'GET')
-      api.SendAPIDoc(ctx)
-    else
-      throw 404
+    // return api document & json list
+    let version = ctx.headers["api-version"]
+    if (ctx.method == 'GET'){
+      if(!version){
+        api.SendAPIDoc(ctx)
+        return 
+      }else{
+        let apiJSON = api.GetAPIObject(ctx.apiObject)
+        ctx.state = {data:apiJSON}
+        return 
+      }
+    }
+    
+    throw 404
   }
 }

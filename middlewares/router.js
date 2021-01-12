@@ -86,9 +86,6 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
   }
   route.use(auth)
   route
-    .get('/', ctx => {
-      ctx.error('路径匹配失败')
-    })
     .get('/:object', RestfulAPIMethods.List)
     .get('/:object/:id', routerAuthencation, RestfulAPIMethods.Get)
     .post('/:object', RestfulAPIMethods.Post)
