@@ -1,8 +1,7 @@
-const { query } = require("../models/Article")
+const { GetThrowOption } = require("../controllers/public/sessions")
 
 let out = {}
 const APIMap = {
-
   List: "GET {path}",
   Patch: "PATCH {path}/:id",
   Get: "GET {path}/:id",
@@ -15,14 +14,6 @@ const APIMap = {
 }
 
 
-out.APIPage = ""
-out.APIObject = {
-  core:{},
-  public:{},
-  enterprise:{},
-  entadmin:{},
-  admin:{}
-}
 
 const APIFrame ={
       public: {
@@ -48,22 +39,39 @@ const APIFrame ={
     }
 
 out.GetAPIObject = (root)=>{
-  if (out.APIObject && out.APIObject.inited)
+  if (out.APIObject && out.inited)
     return out.APIObject
   else{
-    out.APIObject.inited = false
+    out.inited = false
     GetAPIPage(root)
-    out.APIObject = 
-    out.APIObject.inited = true
+    out.inited = true
     return out.APIObject
   }
 }
 
-GetAPIPage = (root) => {
-  if (out.APIPage)
+out.install = forced=>{
+  if(forced){
+    out.inited = false
+    out.APIPage = null
+    out.APIObject = {
+      core: {},
+      public: {},
+      enterprise: {},
+      entadmin: {},
+      admin: {}
+    }
+    out.root = require(`../controllers`)
+    GetAPIPage(out.root, true)
+    console.log("API installed.")
+  }
+}
+
+GetAPIPage = (root,forced) => {
+  if (out.APIPage && !forced)
     return out.APIPage
   if (!root)
     return
+ 
   let frame = {...APIFrame}
   for (let x in root) {
     if (root[x]  && root[x].isCollection) {
@@ -75,8 +83,12 @@ GetAPIPage = (root) => {
   }
 
   let html = RenderAPI(frame)
-  console.log(out.APIObject)
+  out.APIPage = html
   return html
+}
+
+out.GetRoot = ()=>{
+  return out.root
 }
 
 const RenderAPI = (root) => {
@@ -92,12 +104,12 @@ const RenderAPI = (root) => {
       } else {
         return `<li class="attr"><span class='attr-mark'>AUTH</span> ${root.AuthDesc || ''}</li>`
       }
+
       let key = (v + '_' + root.key).toUpperCase()
-      console.log("root:",root.root)
       out.APIObject[root.root][key] = {
-        url: api,
-        
+        url: api
       }
+
       let option = root[v + 'Option'] 
       if (option){
         out.APIObject[root.root][key].option = option
@@ -130,6 +142,7 @@ const RenderAPI = (root) => {
       o.Name = o.Name || null
       o.Desc = o.Desc || null
       // Accelerate Named API
+  
       if(o.url){
         out.APIObject[root.root][v.toUpperCase()] = {url:o.url}
         if(o.option){
@@ -140,7 +153,6 @@ const RenderAPI = (root) => {
 
       if (v != 'core')
         o.path = path = path + '/' + v
-      console.log(root.root,v)
       o.root = root.root || v
       o.key = v
       return `<li class="${!o.isCollection?'dir':'ctl'}">${v} ${o.Name || ''} ${o.Desc?'<br /><div class="desc">'+o.Desc+'</div>':''} </li><ul>${RenderAPI(o)}</ul>`

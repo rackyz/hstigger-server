@@ -290,7 +290,7 @@ util.initdb = async (MYSQL, table_name, initializer, forced, ent_schema) => {
   }
 
   await Schema.createTable(table_name, initializer)
-  // console.log(` [model-db] -- created table (${table_name}))`)
+  console.log(` [model-db] -- created table (${table_name}))`)
 }
 
 util.seeds = async (MYSQL, table_name, items, forced, ent_schema) => {
@@ -298,6 +298,7 @@ util.seeds = async (MYSQL, table_name, items, forced, ent_schema) => {
   if (forced) {
     await Schema(table_name).del()
     await Schema(table_name).insert(items)
+    console.log("[model-db] -- seeds:",table_name,items.length)
   }
 }
 

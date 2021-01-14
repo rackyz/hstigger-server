@@ -14,8 +14,7 @@ let E = {
   API_VERSION_UNDEFINED: "API版本号错误"
 }
 
-const API_ROOT = require(`../controllers`)
-GetAPIPage(API_ROOT)
+const APIRoot = api.GetRoot()
 
 for (let i = 0; i < Methods.length; i++) {
   let v = Methods[i]
@@ -72,15 +71,8 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
       // if (!apiVersion) {
       //   throw (E.API_VERSION_MISSED)
       // }
-      let APIRoot = null
-      try {
-        APIRoot = API_ROOT
-      } catch (e) {
-        console.error(e)
-        throw (E.API_LOAD_FAILED)
-      }
-
-      ctx.apiRoot = APIRoot
+    
+      ctx.apiRoot = api.GetRoot()
       await next()
     })
   }

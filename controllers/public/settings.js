@@ -19,6 +19,10 @@ out.Get = async ctx =>{
   }
 }
 
+out.GET_LOGIN_SETTING = {
+  url:"GET /public/settings/login"
+}
+
 out.Patch = async ctx=>{
   let key = ctx.params.id
   let {value,user_id} = ctx.request.body

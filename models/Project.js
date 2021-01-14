@@ -19,9 +19,8 @@ let o = {
 const _T = 'project'
 const _TR = 'project_employee'
 const _TC = 'project_category'
-o.enterprise = true
 
-o.initdb = async (ent_schema, forced) => {
+o.initdb = async (forced) => {
   //forced = true
   await MYSQL.initdb(_T, t => {
     t.uuid('id').index().primary() // uuid
@@ -29,6 +28,42 @@ o.initdb = async (ent_schema, forced) => {
     t.string('name', 64)
     t.string('shortname',16)
     t.string('avatar',256)
+    t.integer('state').defaultTo(0)
+    t.uuid('created_by')
+    t.datetime('created_at')
+  }, forced)
+
+  // 用工记录
+  await MYSQL.initdb(_TR, t => {
+    t.increments('id').index().primary() // uuid
+    t.bigInteger('employee_id').notNull()
+    t.uuid('project_id').notNull()
+    t.bigInteger('position_id').notNull()
+    t.double('factor')
+    t.datetime('inDate')
+    t.datetime('outDate')
+    t.datetime('created_at')
+    t.uuid('created_by')
+  }, forced)
+
+  // 项目分类
+  await MYSQL.initdb(_TC, t => {
+    t.increments('id').index().primary()
+    t.uuid('project_id')
+    t.integer('project_cat_id')
+    t.string('project_cat_key')
+  }, forced)
+
+}
+
+o.initdb_e = async (ent_schema, forced) => {
+  //forced = true
+  await MYSQL.initdb(_T, t => {
+    t.uuid('id').index().primary() // uuid
+    t.string('code', 16)
+    t.string('name', 64)
+    t.string('shortname', 16)
+    t.string('avatar', 256)
     t.integer('state').defaultTo(0)
     t.uuid('created_by')
     t.datetime('created_at')
@@ -53,7 +88,7 @@ o.initdb = async (ent_schema, forced) => {
     t.uuid('project_id')
     t.integer('project_cat_id')
     t.string('project_cat_key')
-  })
+  },forced,ent_schema)
 
 }
 
@@ -106,7 +141,3 @@ module.exports = o
 
 
 
-
-
-
-module.exports = o

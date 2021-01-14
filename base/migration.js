@@ -1,5 +1,5 @@
 const Models = require('../models')
-
+const U = require('./util')
 const ent_ids = []
 const InstallModel = async (MODELS,m,forced)=>{
   let model = MODELS[m]
@@ -19,8 +19,6 @@ const InstallModel = async (MODELS,m,forced)=>{
   if(!model.inited){
     if (model.initdb) {
       await model.initdb(forced)
-      
-      // console.log(` - [model] ${m} inited.`)
     }
 
     if(model.initdb_e) {
@@ -28,7 +26,7 @@ const InstallModel = async (MODELS,m,forced)=>{
       if (Enterprise) {
         let ent_ids = await Enterprise.getEnterpriseList()
         for(let i=0;i<ent_ids.length;i++)
-          await model.initdb_e('ENT_'+ent_ids[i].id,forced)
+          await model.initdb_e(Enterprise.getEnterpriseSchemeName(ent_ids[i].id), forced)
       }
     }
 
