@@ -58,6 +58,11 @@ const GetSystemInfo = async ()=>{
   } 
 }
 
+// const GetEnterpriseInfo = async ()=>{
+
+// }
+
+
 
 // Create Session By Logining with account,password
 o.createSessionByLogin = async (account,password,device,ip)=>{
@@ -121,7 +126,6 @@ o.getSessionInfo = async (session_id, ent_id,isEntAdmin,isAdmin) => {
   if(!session)
     throw 401 //( EXCEPTION.E_OUT_OF_DATE)
   let userInfo = await ACCOUNT.getUserInfo(session.user_id,ent_id,isEntAdmin,isAdmin)
-  
   let systemInfo = await GetSystemInfo()
   session.token = "Bearer " + session.id
   return {

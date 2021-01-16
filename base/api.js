@@ -1,5 +1,4 @@
-const { GetThrowOption } = require("../controllers/public/sessions")
-
+const models =  require('../../models')
 let out = {}
 const APIMap = {
   List: "GET {path}",
@@ -88,7 +87,7 @@ GetAPIPage = (root,forced) => {
 }
 
 out.GetRoot = ()=>{
-  return out.root
+  return out.root || require(`../controllers`)
 }
 
 const RenderAPI = (root) => {

@@ -2,7 +2,7 @@ const EXCEPTION = require('../base/exception')
 const {Account,Enterprise} = require('../models')
 module.exports = async (ctx, next) => {
   let enterpriseId = ctx.headers.enterprise
-  
+  ctx.state.isAdmin = sessionState.account_type == 3
   if (enterpriseId) {
     let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
     if (!myEnterprises.includes(enterpriseId))
@@ -20,7 +20,6 @@ module.exports = async (ctx, next) => {
     }
   }else if(ctx.url.indexOf('/entadmin') == 0){
     // Enterprise Admin Interface
-    console.log("ok")
     if (!ctx.state.enterprise_id || (!ctx.state.isEntAdmin && !ctx.state.isAdmin)) {
       throw (403)
     }

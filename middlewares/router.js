@@ -1,6 +1,5 @@
 const auth = require('./auth')
 const routerAuthencation = require('./authRouter')
-const api = require('../base/api')
 let RestfulAPIMethods = {}
 let Methods = ['List', 'Get', 'Post', 'PostAction', 'Replace', 'Patch', 'Delete', 'GetRelated', 'Option',
   'Related', 'AddRelated', 'DelRelated'
@@ -14,7 +13,6 @@ let E = {
   API_VERSION_UNDEFINED: "API版本号错误"
 }
 
-const APIRoot = api.GetRoot()
 
 for (let i = 0; i < Methods.length; i++) {
   let v = Methods[i]
@@ -72,7 +70,7 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
       //   throw (E.API_VERSION_MISSED)
       // }
     
-      ctx.apiRoot = api.GetRoot()
+      ctx.apiRoot = require(`../controllers`)
       await next()
     })
   }

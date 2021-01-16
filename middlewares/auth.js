@@ -10,7 +10,6 @@
 // Instead.                                                                     //
 //////////////////////////////////////////////////////////////////////////////////
 "use strict";
-const EXCEPTION = require('../base/exception')
 const authAccountType = require('./authAccountType')
 const {
   Session,
@@ -20,15 +19,6 @@ const api = require('../base/api')
 module.exports = async function (ctx, next) {
   var token = ctx.headers.authorization
   // token验证方式 用于web页面
- 
-  let URL = ctx.url
-  if (URL.indexOf('/public') == 0) {
-    ctx.headers["api-version"] = "v0"
-    await next()
-    return
-  }
-
-
   if (token) {
     token = token.slice(7)
     let sessionState = await Session.getSessionState(token)
@@ -36,6 +26,14 @@ module.exports = async function (ctx, next) {
     ctx.state.isAdmin = sessionState.account_type == 3
     return authAccountType(ctx,next)
   }else{
+
+    let URL = ctx.url
+    if (URL.indexOf('/public') == 0) {
+      ctx.headers["api-version"] = "v0"
+      await next()
+      return
+    }
+
     // return api document & json list
     let version = ctx.headers["api-version"]
     if (ctx.method == 'GET'){

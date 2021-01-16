@@ -1,5 +1,6 @@
 
 const {Session} = require('../../models')
+
 const {ContextParser} = require('../../base/util')
 const E = require('../../base/exception')
 let out = {}
@@ -13,6 +14,7 @@ out.Post = async ctx=>{
   
   let device  = ContextParser.getDevice(ctx)
   let ip = ContextParser.getIP(ctx)
+ 
   let loginInfo = await Session.createSessionByLogin(account,password,device,ip)
   return loginInfo
 }
