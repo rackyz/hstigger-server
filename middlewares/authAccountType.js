@@ -2,7 +2,7 @@ const EXCEPTION = require('../base/exception')
 const {Account,Enterprise} = require('../models')
 module.exports = async (ctx, next) => {
   let enterpriseId = ctx.headers.enterprise
-  ctx.state.isAdmin = sessionState.account_type == 3
+  
   if (enterpriseId) {
     let myEnterprises = await Account.getUserEnterprises(ctx.state.id)
     if (!myEnterprises.includes(enterpriseId))
