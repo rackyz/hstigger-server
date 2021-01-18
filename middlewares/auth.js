@@ -23,7 +23,7 @@ module.exports = async function (ctx, next) {
     token = token.slice(7)
     let sessionState = await Session.getSessionState(token)
     ctx.state = sessionState
-    ctx.state.isAdmin = sessionState.account_type == 3
+    
     return authAccountType(ctx,next)
   }else{
 
