@@ -1,4 +1,4 @@
-const models =  require('../../models')
+
 let out = {}
 const APIMap = {
   List: "GET {path}",

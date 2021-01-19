@@ -207,10 +207,24 @@ const pred_ids = [
    'ed49e6a3-3b83-11eb-8e1e-c15d5c7db744',
 
 ]
+// @DESC: Get Authed Modules from User/Enterprise Privillege
+//        1 - Get All public modules
+//        2 - filter by levels(USER level <= MoD_level)
+//        3 - ent_mode:
+//            public modules filter by level
+//            private modules filter by enterprise_previllege && uservilledge
 o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   if(!user_id)
     throw EXCEPTION.E_INVALID_DATA
-  let modules = await MYSQL(T_MODULE)
+  
+  let queryModules = MYSQL(T_MODULE)
+  if(isAdmin)
+    queryModules = queryModules.where('level',4)
+  else if(isEntAdmin)
+    queryModules = queryModules.where('level',3)
+  
+  let modules = await queryModules
+
   if(ent_id)
   {
     let mod_idlist = await MYSQL(T_ENTERPRISE_MODULE).where({ent_id})
@@ -233,7 +247,7 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
     modules = modules.filter(v=>v.level < 2)
   }
 
-
+  console.log('modules:',modules.length)
 
   return modules
   // id=>account_type=>active_module_list

@@ -496,7 +496,6 @@ o.GetActiveThreads = async (ent_id,nodes)=>{
 }
 
 o.GetPassedThreads = async (ent_id,nodes)=>{
-  console.log('getPassed:')
   if(!nodes || nodes.length == 0)
     return []
 
@@ -509,7 +508,6 @@ o.GetPassedThreads = async (ent_id,nodes)=>{
   })
   let threads_ids = Object.keys(t)
   let threads = []
-  console.log(t)
   for(let i=0;i<threads_ids.length;i++){
     let proto = await MYSQLE(ent_id,T_INST).first('flow_id','desc','state').where({id:threads_ids[i]})
     if(!proto)
@@ -621,7 +619,7 @@ const _cacheInstanceData = async (ent_id)=>{
          if (!v.fkey.includes('n3') || !v.fkey.includes('mgr2mem1'))
           instances[i][v.fkey] = JSON.parse(v.value)
        }catch(e){
-         console.error(v.id)
+         console.error('flow_error:',v.id)
        }
      })
 

@@ -23,7 +23,6 @@ out.Post = async ctx=>{
 out.Get = async ctx=>{
    let id = ctx.params.id
    let url = await File.GetTempFileUrl(id)
-   console.log("TEMP:",url)
    return url
 }
 

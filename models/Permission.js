@@ -89,9 +89,6 @@ o.initdb = async (forced)=>{
     t.boolean('permit').default(true)
   },forced)
 
-
-
-  
 }
 
 

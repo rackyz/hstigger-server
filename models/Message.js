@@ -35,8 +35,6 @@ Message.initdb = async (forced)=>{
 }
 
 
-
-
 // Methods
 Message.Create = async (from, to, content) => {
   await MYSQL(TABLE_MESSAGE).insert({

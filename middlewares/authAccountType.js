@@ -9,8 +9,7 @@ module.exports = async (ctx, next) => {
       throw EXCEPTION.E_UNAUTHED_ENTERPRISE_ID
     
     ctx.state.enterprise_id = enterpriseId
-    ctx.state.isEntAdmin = await Enterprise.isOwner(ctx.state.id,enterpriseId)
-    ctx.state.isEntAdmin = ctx.state.account_type == 3
+    ctx.state.isEntAdmin = await Enterprise.isOwner(ctx.state.id, enterpriseId) && ctx.state.account_type >= 2 // and other has Enterprise manage privillige accounts
   }
 
   if(ctx.url.indexOf('/enterprise') == 0){

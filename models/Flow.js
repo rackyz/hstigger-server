@@ -234,7 +234,6 @@ o.post = async (item, op) => {
 }
 
 o.patch = async (id, item, op) => {
-  console.log(id)
   if(item.define)
     await ParseDefine(id,item.define)
   delete item.define

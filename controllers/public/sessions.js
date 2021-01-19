@@ -44,9 +44,15 @@ out.GetThrowOption = {
 }
 
 out.Delete = async ctx=>{
-  let id = ctx.param.id
-  let session = Session.Delete(id)
+  console.log("DELETE",ctx.params)
+  let id = ctx.params.id
+  let session = Session.deleteSession(id)
+  console.log("Delete Session")
   return session
+}
+out.LOGOUT = {
+  url: "DELETE /public/sessions/self",
+  desc: "登出用户，清除状态缓存"
 }
 
 

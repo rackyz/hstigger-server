@@ -105,7 +105,6 @@ o.initdb = async (forced) => {
 
   if(forced){
    let AccountType = await Type.AddType('AccountType', ACCOUNT_TYPES)
-   console.log('accounttype:',AccountType)
     let ROOT = {
       id:"ROOT",
       user:'root',
@@ -265,6 +264,9 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.user_flows = await o.getFlows(user_id,ent_id)
   user.user_rss = await o.getRss(user_id)
   user.coskey = File.AuthCOS()
+  user.test = "ok"
+  user.isEntAdmin = isEntAdmin
+  user.isAdmin = isAdmin
 //  user.my_projects = await PMIS.GetUserProject(user.name)
   return user
 }
@@ -549,7 +551,6 @@ o.getUserPhone = async (user_id) => {
 
 ///////////////////////
 o.UpdateFromDing = async (data,deps,zzls)=>{
-  console.log("update:",data.id,data.ding_id,data.name)
   // update or create
   let isExist = await MYSQL(TABLE_ACCOUNT).first('id','ding_id').where('id',data.id).orWhere('ding_id',data.ding_id)
   if(isExist)
@@ -572,7 +573,6 @@ o.UpdateFromDing = async (data,deps,zzls)=>{
   isExist = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).first('id').where({user_id:data.id,enterprise_id:"NBGZ"})
   if(isExist)
     await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert({user_id:data.id,enterprise_id:"NBGZ"})
-  console.log('add enterprise')
   if(Array.isArray(deps) && deps.length){
     await MYSQL.E('NBGZ','dep_employee').where({user_id:data.id}).del()
     await MYSQL.E('NBGZ','dep_employee').insert(deps.map(v=>({dep_id:v,user_id:data.id})))

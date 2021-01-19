@@ -3,6 +3,7 @@ const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Account = require('./Account')
 const Dep = require('./Dep')
+const Enterprise = require('./Enterprise')
 const Ding = require('./Ding')
 const {
   UserLogger
@@ -108,6 +109,18 @@ o.initdb = async (ent_schema, forced) => {
 o.init = async (forced)=>{
   console.log("EMPLOYEE INIT FUNCTION...")
   await o.initdb('ENT_NBGZ',forced)
+}
+
+
+o.List = async (state, queryCondition)=>{
+  let ent_id = state.enterprise_id
+  if(!ent_id)
+    throw "非企业用户无权限访问此接口"
+  let user_ids = await MYSQL('account_enterprise').select('user_id').where({enterprise_id:ent_id})
+  let ENT_DB = Enterprise.getEnterpriseSchemeName(ent_id)
+  let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
+  return users
+
 }
 
 module.exports = o
