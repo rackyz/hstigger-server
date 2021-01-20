@@ -1,8 +1,8 @@
 const mysql_cloud = require('knex')({
     client: 'mysql',
     connection: {
-      host: '192.168.14.3',
-      port: 3306,
+      host: 'zzlatm.gicp.net',
+      port: 33060,
       user: 'nbgz',
       password: 'nbgz123',
       // password:"5622070x",
@@ -19,8 +19,8 @@ const mysql_cloud = require('knex')({
 const mysql_oa = require('knex')({
   client: 'mysql',
   connection: {
-    host: '192.168.14.3',
-    port: 3306,
+    host: 'zzlatm.gicp.net',
+    port: 33060,
     user: 'nbgz',
     password: 'nbgz123',
     database: 'gzadmin'
@@ -50,7 +50,7 @@ const List = async ctx => {
   let queryTemplates = mysql_oa('user_template').where('user_id', ctx.state.id)
 
 
-  let contracts = await mysql_oa('contract').where('splited', '<>', 1).orWhereNull('splited').orWhere('virtualSplit', 1)
+  let contracts = await mysql_oa('contract').where('splited', '<>', 1).orWhereNull('splited').orWhere('virtualSplit', 1).limit(50)
   let bills = await queryBills
   let trans = await queryTrans
   let nodes = await queryNodes
