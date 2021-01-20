@@ -8,6 +8,7 @@ const Module = require('./Module')
 const Permission = require('./Permission')
 const Flow = require('./Flow')
 const File = require('./File')
+const Dep = require('./Dep')
 const FlowInstance = require('./FlowInstance')
 const { UserLogger } = require('../base/logger')
 const PMIS = require('./PMIS')
@@ -267,6 +268,8 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.test = "ok"
   user.isEntAdmin = isEntAdmin
   user.isAdmin = isAdmin
+  if(ent_id)
+    user.my_deps = await Dep.getUserDeps(user_id,ent_id) 
 //  user.my_projects = await PMIS.GetUserProject(user.name)
   return user
 }
@@ -416,6 +419,15 @@ Enterprise.addEnterprise = async (user_id,enterprise_id)=>{
   if(!user_id || !enterprise_id)
     throw EXCEPTION.E_INVALID_DATA
   await MYSQL(TABLE_ACCOUNT_ENTERPRISE).insert({user_id,enterprise_id})
+}
+
+Enterprise.removeEnterprise = async (user_id,enterprise_id)=>{
+  if (!user_id || !enterprise_id)
+    throw EXCEPTION.E_INVALID_DATA
+  await MYSQL(TABLE_ACCOUNT_ENTERPRISE).where({
+    user_id,
+    enterprise_id
+  }).del()
 }
 
 o.getUserSettings = async (user_id)=>{

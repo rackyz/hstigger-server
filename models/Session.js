@@ -10,7 +10,10 @@ const MESSAGE = require('./Message')
 const ENTERPRISE = require('./Enterprise')
 const MYSQL = require('../base/mysql')
 const RSS = require('./Rss')
+const Dep = require('./Dep')
+const Role = require('./Role')
 const { E_INVALID_DATA } = require('../base/exception')
+const { role } = require('../base/redis')
 const o = {
   required:['Type']
 }
@@ -42,19 +45,23 @@ const CreateUserInRedis = async (user_id)=>{
     REDIS.SET_JSON(RKEY_USER + user_id, [user_id])
 }
 
-const GetSystemInfo = async ()=>{
+const GetSystemInfo = async (ent_id)=>{
   let settings = await SETTING.getSettings('NEIP')
   let types = await TYPE.getTypes()
   let users = await ACCOUNT.getUserList()
   let enterprises = await ENTERPRISE.getEnterpriseList()
   let rss = await RSS.list()
+  let deps = ent_id ? await Dep.list(ent_id) : []
+  let roles = ent_id ? await Role.list(ent_id) : []
   //let deps = await
   return {
     settings,
     enterprises,
     types,
     users,
-    rss
+    rss,
+    deps,
+    roles
   } 
 }
 
@@ -126,7 +133,7 @@ o.getSessionInfo = async (session_id, ent_id,isEntAdmin,isAdmin) => {
   if(!session)
     throw 401 //( EXCEPTION.E_OUT_OF_DATE)
   let userInfo = await ACCOUNT.getUserInfo(session.user_id,ent_id,isEntAdmin,isAdmin)
-  let systemInfo = await GetSystemInfo()
+  let systemInfo = await GetSystemInfo(ent_id)
   session.token = "Bearer " + session.id
   return {
     ...session,

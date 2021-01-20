@@ -276,9 +276,9 @@ o.create = async (item,op)=>{
   delete item.id
   item.created_at = UTIL.getTimeStamp()
   item.created_by = op
-
+  let id = UTIL.createUUID()
   
-  let id = await MYSQL(T_MODULE).insert(item).returning('id')
+  await MYSQL(T_MODULE).insert(item)
   let createInfo = {
     id,
     created_at : item.created_at,

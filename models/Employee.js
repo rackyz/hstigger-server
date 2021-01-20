@@ -119,8 +119,41 @@ o.List = async (state, queryCondition)=>{
   let user_ids = await MYSQL('account_enterprise').select('user_id').where({enterprise_id:ent_id})
   let ENT_DB = Enterprise.getEnterpriseSchemeName(ent_id)
   let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
+  let depRelations = await Dep.listRelations(ent_id)
+  users.forEach(u=>{
+    u.deps = depRelations.filter(v=>v.user_id == u.id).map(v=>v.dep_id)
+  })
+
   return users
 
+}
+
+
+o.Create = async (state,data)=>{
+  let {user,name,phone,email} = data
+  let timeStamp = UTIL.getTimeStamp()
+  let op = state.id
+  let account = {user,name,phone,email,password:UTIL.encodeMD5("123456"),id:UTIL.createUUID(),created_at:timeStamp,created_by:op}
+  await Account.Create(account)
+  await Enterprise.addEnterprise(account.id,state.enterprise_id)
+  return {
+    id:account.id,
+    created_at:account.created_at,
+    created_by:account.created_by
+  }
+}
+
+o.Update = async (state,id,data)=>{
+  if(!id)
+    throw EXCEPTION.E_INVALID_DATA
+  delete data.id
+  
+  await MYSQL.E(state.enterprise_id,"employee").update(data).where({id})
+}
+
+o.Delete = async (state,id)=>{
+  await Enterprise.removeEnterprise(id,state.enterprise_id)
+  await MYSQL.E(state.enterprise_id,"employee").where({id}).del()
 }
 
 module.exports = o

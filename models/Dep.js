@@ -21,6 +21,7 @@ let o = {
 
 
 const T = 'dep'
+const T_USER = 'dep_employee'
 
 // o.initdb = async (ent_schema,forced)=>{
 
@@ -42,7 +43,6 @@ const T = 'dep'
 // }
 
 o.initdb_e = async (ent_schema, forced) => {
-
   await MYSQL.initdb(T, t => {
     t.integer('id').index()
     t.string('name', 255).notNull()
@@ -52,9 +52,16 @@ o.initdb_e = async (ent_schema, forced) => {
     t.string('extra2', 32)
   }, forced, ent_schema)
 
+  await MYSQL.initdb(T_USER, t => {
+    t.integer('id').index()
+    t.string('user_id', 43).notNull()
+    t.integer('dep_id')
+  }, forced, ent_schema)
+
   if (forced) {
     if (ent_schema == "ENT_NBGZ") {
       let groups = await Ding.getGroups()
+      await MYSQL(T).withSchema(ent_schema).del()
       await MYSQL(T).withSchema(ent_schema).insert(groups.map(v => ({
         id: v.id,
         parent_id: v.parentid,
@@ -62,6 +69,20 @@ o.initdb_e = async (ent_schema, forced) => {
       })))
     }
   }
+}
+
+o.listRelations = async(ent_id)=>{
+  return await MYSQL.E(ent_id, "dep_employee")
+}
+
+o.getUserDeps = async (user_id,ent_id)=>{
+  let res = await MYSQL.E(ent_id,"dep_employee").select('dep_id').where({user_id})
+  return res.map(v=>v.dep_id)
+}
+
+o.list = async (ent_id)=>{
+  let items = await MYSQL.E(ent_id,"dep")
+  return items
 }
 
 module.exports = o
