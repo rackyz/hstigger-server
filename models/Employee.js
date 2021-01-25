@@ -20,7 +20,6 @@ let o = {
 
 const T = 'employee'
 const T_DEP = 'dep_employee'
-o.enterprise = true
 
 o.initdb = async (ent_schema, forced) => {
   await MYSQL.initdb(T, t => {
@@ -107,8 +106,7 @@ o.initdb = async (ent_schema, forced) => {
 }
 
 o.init = async (forced)=>{
-  console.log("EMPLOYEE INIT FUNCTION...")
-  await o.initdb('ENT_NBGZ',forced)
+  
 }
 
 

@@ -7,6 +7,10 @@ MYSQL.initdb = async (table_name, initializer, forced,schema) => {
   return UTIL.initdb(MYSQL,table_name,initializer,forced,schema)
 }
 
+MYSQL.initdb_e = async (table_name, initializer, forced, schema) => {
+  return UTIL.initdb(MYSQL, table_name, initializer, forced, schema)
+}
+
 MYSQL.seeds = async (table_name,items,forced,schema)=>{
   return UTIL.seeds(MYSQL, table_name, items, forced, schema)
 }
@@ -16,5 +20,4 @@ MYSQL.getEnterpriseScheme = ent_id => {
 }
 
 MYSQL.E = (ent_id, t) => MYSQL(t).withSchema(MYSQL.getEnterpriseScheme(ent_id))
-
 module.exports = MYSQL

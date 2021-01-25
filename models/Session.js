@@ -48,6 +48,7 @@ const CreateUserInRedis = async (user_id)=>{
 const GetSystemInfo = async (ent_id)=>{
   let settings = await SETTING.getSettings('NEIP')
   let types = await TYPE.getTypes()
+  let ent_types = ent_id ? await TYPE.getTypes(ent_id) :[]
   let users = await ACCOUNT.getUserList()
   let enterprises = await ENTERPRISE.getEnterpriseList()
   let rss = await RSS.list()
@@ -61,6 +62,7 @@ const GetSystemInfo = async (ent_id)=>{
     users,
     rss,
     deps,
+    ent_types,
     roles
   } 
 }

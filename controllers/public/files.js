@@ -14,7 +14,7 @@ out.GetParamsOption = {'id':'平台文件ID'}
 out.GetThrowOption = {403:'权限不足'}
 out.Get = async ctx => {
   let id = ctx.params.id
-  let url = await File.GetURL(id)
+  let url = await File.GetFileUrl(id)
   console.log("redirect:",url)
   if (url)
     ctx.redirect(url)

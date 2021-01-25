@@ -278,10 +278,31 @@ util.hasTable = async (MYSQL,table_name,ent_schema)=>{
     return false
 }
 
-util.initdb = async (MYSQL, table_name, initializer, forced, ent_schema) => {
+util.getEnterpriseSchemeName = ent_id => {
+  return 'ENT_' + ent_id.replace(/(\-)/g, '_')
+}
+
+util.initdb = async (MYSQL, table_name, initializer, forced, ent_id) => {
+  let ent_schema = ent_id?util.getEnterpriseSchemeName(ent_id):null
   let Schema = ent_schema ? MYSQL.schema.withSchema(ent_schema) : MYSQL.schema
   let isExist = await util.hasTable(MYSQL,table_name,ent_schema)
   
+  if (isExist) {
+    if (!forced)
+      return
+    await Schema.dropTableIfExists(table_name)
+    // console.log("drop",table_name)
+  }
+
+  await Schema.createTable(table_name, initializer)
+  console.log(` [model-db] -- created table (${table_name}))`)
+}
+
+util.initdb_e = async (MYSQL, table_name, initializer, forced, ent_id) => {
+  let ent_schema = getEnterpriseSchemeName(ent_id)
+  let Schema = ent_schema ? MYSQL.schema.withSchema(ent_schema) : MYSQL.schema
+  let isExist = await util.hasTable(MYSQL, table_name, ent_schema)
+
   if (isExist) {
     if (!forced)
       return

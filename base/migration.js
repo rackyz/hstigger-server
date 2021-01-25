@@ -17,8 +17,11 @@ const InstallModel = async (MODELS,m,forced)=>{
   }
 
   if(!model.inited){
+    model.inited = true
     if (model.initdb) {
       await model.initdb(forced)
+      if(forced)
+        console.log(m,"- Base Installed")
     }
 
     if(model.initdb_e) {
@@ -26,15 +29,17 @@ const InstallModel = async (MODELS,m,forced)=>{
       if (Enterprise) {
         let ent_ids = await Enterprise.getEnterpriseList()
         for(let i=0;i<ent_ids.length;i++)
-          await model.initdb_e(Enterprise.getEnterpriseSchemeName(ent_ids[i].id), forced)
+          await model.initdb_e(ent_ids[i].id, forced)
       }
+      if (forced)
+        console.log(m,"- Enterprise Installed")
     }
 
     if (model.init) {
       await model.init(forced)
     }
 
-    model.inited = true
+   
   } 
 
   return model
