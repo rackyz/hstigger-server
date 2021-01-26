@@ -11,6 +11,7 @@ const ENTERPRISE = require('./Enterprise')
 const MYSQL = require('../base/mysql')
 const RSS = require('./Rss')
 const Dep = require('./Dep')
+const Project = require('./Project')
 const Role = require('./Role')
 const { E_INVALID_DATA } = require('../base/exception')
 const { role } = require('../base/redis')
@@ -54,6 +55,7 @@ const GetSystemInfo = async (ent_id)=>{
   let rss = await RSS.list()
   let deps = ent_id ? await Dep.list(ent_id) : []
   let roles = ent_id ? await Role.list(ent_id) : []
+  let projects = ent_id ? await Project.GetList(ent_id) : Project.GetList()
   //let deps = await
   return {
     settings,
@@ -63,7 +65,8 @@ const GetSystemInfo = async (ent_id)=>{
     rss,
     deps,
     ent_types,
-    roles
+    roles,
+    projects
   } 
 }
 

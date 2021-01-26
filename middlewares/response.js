@@ -4,15 +4,26 @@ const LOG = require('../base/logger')
  */
 module.exports = async function (ctx, next) {
     try {
-        // invoked next middleware
-        await next()
 
-        // 
-        ctx.body = ctx.body ? ctx.body : {
-            code: ctx.state.code || 0,
-            data: ctx.state.data || {},
-            message:ctx.state.message || 'success'
+      
+
+        /* 解决OPTIONS请求 */
+        if (ctx.method == 'OPTIONS') {
+            ctx.body = '';
+            ctx.status = 204;
+        } else {
+             // invoked next middleware
+             await next()
+
+             // 
+             ctx.body = ctx.body ? ctx.body : {
+                 code: ctx.state.code || 0,
+                 data: ctx.state.data || {},
+                 message: ctx.state.message || 'success'
+             }
         }
+
+      
     } catch (e) {
         LOG.logger.error(e)
         // object Exception treated as Application Level Error

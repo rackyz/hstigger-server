@@ -2,8 +2,7 @@ const MYSQL = require('../base/mysql')
 const Type =  require('./Type')
 const UTIL = require('../base/util')
 const Exception = require('../base/exception')
-const { cond } = require('lodash')
-
+const File = require('./File')
 
 let o = {}
 
@@ -98,11 +97,16 @@ o.query = async (ctx,queryCondition={},ent_id)=>{
 }
 
 o.get = async (ctx,id,ent_id)=>{
+  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  const QF = ent_id ? MYSQL.E(ent_id, _T_File) : MYSQL(_T_File)
+
   let item = await Q.first().where({id})
   if(!item)
     throw Exception.E_INVALID_DATA
-  let files = await QF.select('file_id', 'archive_id', 'name').where('archive_id', id)
-  item.files = StringifyFilesString(files.filter(f => f.archive_id == f.id))
+  let files = await QF.select('file_id', 'archive_id', 'name','ext').where('archive_id', id)
+  console.log(id,files)
+  item.files = await StringifyFilesString(files)
+  
   return item
 }
 
@@ -140,7 +144,8 @@ const ParseFilesString = (file_str,archive_id)=>{
     filelist = files.map(f => ({
       archive_id,
       name: f[0],
-      file_id: f[1] ? f[1].slice(f[1].lastIndexOf('/')+1) : ""
+      file_id: f[1] ? f[1].slice(f[1].lastIndexOf('/')+1) : "",
+      ext:f[2]
     }))
   } else {
     throw '附件不合法:' + JSON.stringify(file_str)
@@ -149,8 +154,13 @@ const ParseFilesString = (file_str,archive_id)=>{
   return filelist
 }
 
-const StringifyFilesString = files=>{
-  return files.map(v=>v.name+','+v.url+','+v.ext).join(';')
+const StringifyFilesString = async files=>{
+  for(let i=0;i<files.length;i++)
+  {
+    let url = await File.GetFileUrl(files[i].file_id)
+    files[i].str = files[i].name + ',' + url + ',' + files[i].ext
+  }
+  return files.map(v => v.str).join(';')
 }
 
 o.patch = async (ctx,id,data,ent_id)=>{
@@ -178,7 +188,7 @@ o.del = async (ctx,id_list,ent_id)=>{
   const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
   const QF = ent_id ? MYSQL.E(ent_id, _T_File) : MYSQL(_T_File)
   await Q.whereIn('id',id_list).del()
-  await QF.whereIn('archive_id',id_list)
+  await QF.whereIn('archive_id',id_list).del()
   // 移除文件的关联
 }
 

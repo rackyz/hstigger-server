@@ -96,35 +96,43 @@ o.initdb_e = async (ent_schema, forced) => {
 //   o.initdb('ENT_NBGZ',true)
 // }
 
+o.GetList = async ent_id=>{
+  return await o.query(null,null,ent_id)
+}
 
-
-o.list = async () => {
-  let items = await MYSQL(_T).select('id', 'title', 'created_by', 'created_at')
+o.query = async (ctx,condition,ent_id) => {
+   const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  let items = await Q.select('id', 'code','name', 'state','avatar','created_by', 'created_at')
   return items
 }
 
-o.post = async (item, op) => {
+o.add = async (ctx,item, ent_id) => {
+  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
   let createInfo = {
+    id:UTIL.createUUID(),
     created_at: UTIL.getTimeStamp(),
-    created_by: op
+    created_by:ctx.id
   }
-  let id = await MYSQL(_T).insert(item).returning('id')
-  createInfo.id = id
+  Object.assign(item,createInfo)
+  await Q.insert(item)
   return createInfo
 }
 
-o.patch = async (id, item, op) => {
-  await MYSQL(_T).update(item).where({
+o.patch = async (ctx,id, item, ent_id) => {
+  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  await Q.update(item).where({
     id
   })
 }
 
-o.deleteObjects = async (id_list, op) => {
-  await MYSQL(_T).whereIn("id", id_list).del()
+o.del = async (ctx,id_list,ent_id) => {
+   const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  await Q.whereIn("id", id_list).del()
 }
 
-o.get = async id => {
-  let item = await MYSQL(_T).first().where({
+o.get = async (ctx,id,ent_id) => {
+   const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  let item = Q.first().where({
     id
   })
   return item
