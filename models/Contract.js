@@ -5,81 +5,125 @@ const Exception = require('../base/exception')
 let o = {}
 
 o.required = ['Type']
-const _T = "contract"
+
+const migration = {
+  
+}
+const T_CONTRACT = MYSQL.Create(
+  "contract",
+   t => {
+     // ID
+     t.uuid('id').index().primary() // uuid
+     // 编号
+     t.string('code', 16)
+     // 名称
+     t.string('name', 64)
+     // 类别
+     t.integer('type1').defaultTo(0)
+     t.integer('type2').defaultTo(0)
+     // 关联项目
+     t.uuid('project_id')
+     // 签订日期
+     t.datetime('register_date')
+     // 履约状态
+     t.integer('state')
+     // 付款条件
+     t.text('pay_condition_raw')
+     // 甲方
+     t.uuid('partA')
+     // 乙方
+     t.uuid('partB')
+     // 金额
+     t.double('amount')
+     // 概算金额
+     t.double('plan_amount')
+     // 修改次数,版本
+     t.integer('version')
+     // 创建信息
+     t.uuid('created_by')
+     t.datetime('created_at')
+   }
+)
+
+const T_CONDITION = MYSQL.Create(
+  "contract_payconditions",
+  t=>{
+    t.increments().primary()
+    t.uuid('contract_id')
+    t.string('content',64)
+    t.double('amount')
+    t.double('percent')
+  }
+)
+
+const T_EVENT = MYSQL.Create(
+  "contract_event",
+  t=>{
+    t.increments().primary()
+    t.uuid('contract_id')
+    t.string('content',256)
+    t.datetime('time')
+    t.datetime('created_at')
+    t.uuid('created_by')
+  }
+)
+
+const T_PAYRECORD = MYSQL.Create(
+  "contract_payrecord",
+  t=>{
+    t.increments().primary()
+    t.uuid('contract_id')
+    t.integer('condition_id')
+    t.string('comment',256)
+    t.double('amount')
+    t.datetime('paytime')
+  }
+)
+
+const T_FINERECORD = MYSQL.Create(
+  "contract_finerecord",
+  t => {
+    t.increments().primary()
+    t.uuid('contract_id')
+    t.integer('condition_id')
+    t.string('comment', 256)
+    t.double('amount')
+    t.datetime('paytime')
+  }
+)
+
+const T_CHANGERECORD = MYSQL.Create(
+  "contract_changerecord",
+  t => {
+    t.increments().primary()
+    t.uuid('contract_id')
+    t.string('comment', 256)
+    t.double('amount')
+    t.datetime('paytime')
+  }
+)
+
+const Tables = [T_CONTRACT,T_EVENT,T_FINERECORD,T_PAYRECORD,T_CONDITION,T_CHANGERECORD]
 
 o.initdb = async (forced) => {
   //forced = true
-  await MYSQL.initdb(_T, t => {
-    // ID
-    t.uuid('id').index().primary() // uuid
-    // 编号
-    t.string('code', 16)
-    // 名称
-    t.string('name', 64)
-    // 类别
-    t.integer('type1').defaultTo(0)
-    t.integer('type2').defaultTo(0)
-    // 关联项目
-    t.uuid('project_id')
-    // 关联部门
-    t.integer('dep_id')
-    // 履约状态
-    t.integer('state')
-    // 付款条件
-    t.text('pay_condition', 128)
-    // 甲方
-    t.uuid('partA')
-    // 乙方
-    t.uuid('partB')
-    // 金额
-    t.double('amount')
-    // 修改次数,版本
-    t.integer('version')
-    // 创建信息
-    t.uuid('created_by')
-    t.datetime('created_at')
-  }, forced)
-
+  Tables.forEach(async t=>{
+    await t.Init(forced)
+  })
 }
 
+
 o.initdb_e = async (ent_id, forced) => {
- await MYSQL.initdb(_T, t => {
-   // ID
-   t.uuid('id').index().primary() // uuid
-   // 编号
-   t.string('code', 16)
-   // 名称
-   t.string('name', 64)
-   // 类别
-   t.integer('type1').defaultTo(0)
-   t.integer('type2').defaultTo(0)
-   // 关联项目
-   t.uuid('project_id')
-   // 关联部门
-   t.integer('dep_id')
-   // 履约状态
-   t.integer('state')
-   // 付款条件
-   t.text('pay_condition', 128)
-   // 甲方
-   t.uuid('partA')
-   // 乙方
-   t.uuid('partB')
-   // 金额
-   t.double('amount')
-   // 修改次数,版本
-   t.integer('version')
-   // 创建信息
-   t.uuid('created_by')
-   t.datetime('created_at')
- }, forced,ent_id)
+  Tables.forEach(async t => {
+    await t.Init(ent_id,forced)
+  })
 }
 
 
 
 // 
 o.count = async (ctx, queryCondition = {}, ent_id) => {
-  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  const Q = T_CONTRACT.Query(ent_id)
   const condition = {}
   let res = await Q.count('count').where(condition)
   return res.count
@@ -89,7 +133,7 @@ o.query = async (ctx, queryCondition = {}, ent_id) => {
   let pageSize = queryCondition.pageSize || 100
   let page = queryCondition.page || 1
   const condition = null
-  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  const Q = T_CONTRACT.Query(ent_id)
   if (condition) {
     Q = Q.where(condition)
   }
@@ -99,7 +143,7 @@ o.query = async (ctx, queryCondition = {}, ent_id) => {
 }
 
 o.get = async (ctx, id, ent_id) => {
-  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  const Q = T_CONTRACT.Query(ent_id)
 
   let item = await Q.first().where({
     id
@@ -110,16 +154,16 @@ o.get = async (ctx, id, ent_id) => {
 }
 
 o.add = async (ctx, data, ent_id) => {
-  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  const Q = T_CONTRACT.Query(ent_id)
 
   let created_at = UTIL.getTimeStamp()
   let created_by = ctx.id
-  let filelist = []
 
   let updateInfo = {
     id: UTIL.createUUID(),
     created_at,
-    created_by
+    created_by,
+    state:0
   }
 
   Object.assign(data, updateInfo)
@@ -128,14 +172,14 @@ o.add = async (ctx, data, ent_id) => {
 }
 
 o.patch = async (ctx, id, data, ent_id) => {
-  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  const Q = T_CONTRACT.Query(ent_id)
   await Q.update(data).where({
     id
   })
 }
 
 o.del = async (ctx, id_list, ent_id) => {
-  const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  const Q = T_CONTRACT.Query(ent_id)
   await Q.whereIn('id', id_list).del()
   // 移除文件的关联
 }

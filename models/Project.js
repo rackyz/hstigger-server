@@ -21,7 +21,6 @@ const _TR = 'project_employee'
 const _TC = 'project_category'
 
 o.initdb = async (forced) => {
-  //forced = true
   await MYSQL.initdb(_T, t => {
     t.uuid('id').index().primary() // uuid
     t.string('code',16)
@@ -40,6 +39,7 @@ o.initdb = async (forced) => {
     t.uuid('project_id').notNull()
     t.bigInteger('position_id').notNull()
     t.double('factor')
+      t.uuid('charger')
     t.datetime('inDate')
     t.datetime('outDate')
     t.datetime('created_at')
@@ -57,12 +57,12 @@ o.initdb = async (forced) => {
 }
 
 o.initdb_e = async (ent_schema, forced) => {
-  //forced = true
   await MYSQL.initdb(_T, t => {
     t.uuid('id').index().primary() // uuid
     t.string('code', 16)
     t.string('name', 64)
     t.string('shortname', 16)
+    t.uuid('charger')
     t.string('avatar', 256)
     t.integer('state').defaultTo(0)
     t.uuid('created_by')
@@ -92,6 +92,10 @@ o.initdb_e = async (ent_schema, forced) => {
 
 }
 
+o.init = (ent_id,forced)=>{
+
+}
+
 // o.init = async ()=>{
 //   o.initdb('ENT_NBGZ',true)
 // }
@@ -102,7 +106,7 @@ o.GetList = async ent_id=>{
 
 o.query = async (ctx,condition,ent_id) => {
    const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
-  let items = await Q.select('id', 'code','name', 'state','avatar','created_by', 'created_at')
+  let items = await Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at')
   return items
 }
 
@@ -111,7 +115,8 @@ o.add = async (ctx,item, ent_id) => {
   let createInfo = {
     id:UTIL.createUUID(),
     created_at: UTIL.getTimeStamp(),
-    created_by:ctx.id
+    created_by:ctx.id,
+    state:0
   }
   Object.assign(item,createInfo)
   await Q.insert(item)

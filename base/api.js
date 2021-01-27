@@ -134,14 +134,12 @@ const RenderAPI = (root) => {
           domThrow = "- <span class='opt-mark'>THROW</span>" + renderHelper(throwOption) + "<br />"
 
       return `<li class='api'><span class='api-mark'>${key}</span> ${api} ${root[v+'Desc']?"<br /><div class='desc'>"+root[v+'Desc']+"</div>":""} <div style='color:#aaa'>${domParams} ${domQuery} ${domOption} ${domThrow}</div></li>`
-    } else if (typeof o == 'object' && o) {
+    } else if (typeof o === 'object' && o) {
       if(v.includes('Option'))
         return ""
-      o.url = o.url || null
-      o.Name = o.Name || null
-      o.Desc = o.Desc || null
+     
       // Accelerate Named API
-  
+      
       if(o.url){
         out.APIObject[root.root][v.toUpperCase()] = {url:o.url}
         if(o.option){

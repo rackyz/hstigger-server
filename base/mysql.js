@@ -21,3 +21,24 @@ MYSQL.getEnterpriseScheme = ent_id => {
 
 MYSQL.E = (ent_id, t) => MYSQL(t).withSchema(MYSQL.getEnterpriseScheme(ent_id))
 module.exports = MYSQL
+
+
+MYSQL.Create = (table_name, initializer) => {
+  return {
+    TableName:table_name,
+    Query:(ent_id)=>{
+      if(!ent_id){
+        return MYSQL(table_name)
+      }else{
+        return MYSQL.E(ent_id,table_name)
+      }
+    },
+    Init: (ent_id, forced, special_initializer) => {
+      if(ent_id)
+        MYSQL.initdb_e(table_name, special_initializer ? special_initializer : initializer, forced, ent_id)
+      else
+        MYSQL.initdb(table_name, special_initializer ? special_initializer : initializer, forced)
+    }
+
+  }
+}

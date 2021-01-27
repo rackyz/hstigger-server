@@ -30,6 +30,9 @@ const InstallModel = async (MODELS,m,forced)=>{
         let ent_ids = await Enterprise.getEnterpriseList()
         for(let i=0;i<ent_ids.length;i++)
           await model.initdb_e(ent_ids[i].id, forced)
+        if(model.init_e){
+          await model.init_e(ent_ids[i].id,forced)
+        }
       }
       if (forced)
         console.log(m,"- Enterprise Installed")
