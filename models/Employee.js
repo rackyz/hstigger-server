@@ -55,6 +55,7 @@ o.initdb = async (ent_schema, forced) => {
           user_id: v.userid,
           dep_id: d
         })):[])
+
         let profiles = users.map(v=>({
           hiredDate:new Date(v.hiredDate),
           workPlace:v.workPlace,
@@ -62,6 +63,7 @@ o.initdb = async (ent_schema, forced) => {
           birth: v.extattr ? v.extattr["生日"]:null,
           position:v.position
         }))
+
         for(let i=0;i<users.length;i++){
           let account = accounts[i]
           let isExist =false
@@ -131,13 +133,14 @@ o.Create = async (state,data)=>{
   let {user,name,phone,email} = data
   let timeStamp = UTIL.getTimeStamp()
   let op = state.id
-  let account = {user,name,phone,email,password:UTIL.encodeMD5("123456"),id:UTIL.createUUID(),created_at:timeStamp,created_by:op}
+  let account = {user,name,phone,email,password:UTIL.encodeMD5("123456"),id:UTIL.createUUID(),created_at:timeStamp,created_by:op,type:1}
   await Account.Create(account)
   await Enterprise.addEnterprise(account.id,state.enterprise_id)
   return {
     id:account.id,
     created_at:account.created_at,
-    created_by:account.created_by
+    created_by:account.created_by,
+    type: 1
   }
 }
 
@@ -145,7 +148,6 @@ o.Update = async (state,id,data)=>{
   if(!id)
     throw EXCEPTION.E_INVALID_DATA
   delete data.id
-  
   await MYSQL.E(state.enterprise_id,"employee").update(data).where({id})
 }
 

@@ -66,9 +66,9 @@ o.initdb_e = async (ent_id,forced) => {
 
      await MYSQL.initdb_e(_T_File, t => {
        t.increments('id').index().primary() // uuid
-       t.uuid('file_id')
+       t.string('file_id',44)
        t.string('name')
-       t.uuid('archive_id')
+       t.string('archive_id',44)
        t.string('ext',16)
      }, forced, ent_id)
 }

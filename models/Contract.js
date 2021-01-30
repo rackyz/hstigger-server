@@ -6,9 +6,6 @@ let o = {}
 
 o.required = ['Type']
 
-const migration = {
-  
-}
 const T_CONTRACT = MYSQL.Create(
   "contract",
    t => {
@@ -25,20 +22,20 @@ const T_CONTRACT = MYSQL.Create(
      t.uuid('project_id')
      // 签订日期
      t.datetime('register_date')
-     // 履约状态
-     t.integer('state')
      // 付款条件
      t.text('pay_condition_raw')
+     t.string('file',256),
+     t.string('file_assurance',256)
      // 甲方
      t.uuid('partA')
      // 乙方
      t.uuid('partB')
      // 金额
-     t.double('amount')
+     t.double('amount').defaultTo(0)
      // 概算金额
-     t.double('plan_amount')
+     t.double('plan_amount').defaultTo(0)
      // 修改次数,版本
-     t.integer('version')
+     t.integer('version').defaultTo(0)
      // 创建信息
      t.uuid('created_by')
      t.datetime('created_at')
@@ -114,6 +111,7 @@ o.initdb = async (forced) => {
 
 
 o.initdb_e = async (ent_id, forced) => {
+
   Tables.forEach(async t => {
     await t.Init(ent_id,forced)
   })

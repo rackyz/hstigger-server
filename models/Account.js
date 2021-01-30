@@ -233,7 +233,7 @@ o.ListUsersByEnterprise = async (ent_id)=>{
   let items = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).select('user_id').where({
     enterprise_id:ent_id
   })
-  let users = await MYSQL(TABLE_ACCOUNT).whereIn('id',items.map(v=>v.user_id))
+  let users = await MYSQL(TABLE_ACCOUNT).whereIn('id',items.map(v=>v.user_id)).where("type",1)
   return users
 }
 

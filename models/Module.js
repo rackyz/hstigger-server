@@ -247,7 +247,6 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
     modules = modules.filter(v=>v.level < 2)
   }
 
-  console.log('modules:',modules.length)
 
   return modules
   // id=>account_type=>active_module_list

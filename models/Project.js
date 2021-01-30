@@ -29,6 +29,7 @@ o.initdb = async (forced) => {
     t.string('avatar',256)
     t.integer('state').defaultTo(0)
     t.uuid('created_by')
+      t.uuid('charger')
     t.datetime('created_at')
   }, forced)
 
@@ -39,7 +40,7 @@ o.initdb = async (forced) => {
     t.uuid('project_id').notNull()
     t.bigInteger('position_id').notNull()
     t.double('factor')
-      t.uuid('charger')
+    
     t.datetime('inDate')
     t.datetime('outDate')
     t.datetime('created_at')
