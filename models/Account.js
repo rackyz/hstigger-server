@@ -405,13 +405,12 @@ o.register = async (phone)=>{
     id:UTIL.createUUID(),
     user:phone,
     phone,
-    type:2,
+    type:1,
     password:UTIL.encodeMD5(temp_password),
     created_at:UTIL.getTimeStamp()
   }
 
   await MYSQL(TABLE_ACCOUNT).insert(account)
-  await Enterprise.addEnterprise(account.id,"NBGZ")
   Message.sendSMS('REGISTER',phone,[UTIL.maskPhone(phone),temp_password])
 }
 
@@ -497,6 +496,7 @@ o.reset_password = async (id,op)=>{
     throw EXCEPTION.E_INVALID_DATA
   await MYSQL(TABLE_ACCOUNT).update('password',UTIL.encodeMD5('123456')).where({id})
   UserLogger.info(`${op} 重置了用户 ${id} 的密码`)
+  
 }
 
 o.change_password = async (account,password,op)=>{
@@ -517,7 +517,7 @@ o.lock = async (id_list,op)=>{
   if(!Array.isArray(id_list))
     throw EXCEPTION.E_INVALID_DATA
   
-  await MYSQL(TABLE_ACCOUNT).update({state:1}).whereIn(id,id_list)
+  await MYSQL(TABLE_ACCOUNT).update({locked:1}).whereIn('id',id_list)
   UserLogger.info(`${op} 锁定了用户${id_list.join(',')}`)
 }
 
@@ -526,8 +526,8 @@ o.unlock = async (id_list,op)=>{
      throw EXCEPTION.E_INVALID_DATA
 
    await MYSQL(TABLE_ACCOUNT).update({
-     state: 0
-   }).whereIn(id, id_list)
+     locked: 0
+   }).whereIn('id', id_list)
    UserLogger.info(`${op} 解除了用户${id_list.join(',')}的锁定`)
 }
 

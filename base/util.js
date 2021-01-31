@@ -90,7 +90,6 @@ util.decodeJWT = async token=>{
   return new Promise((resolve) => {
     jwt.verify(token, config.appSecret, async (err, decoded) => {
       if (err) {
-        console.error('decodeJWT:',err)
         resolve(false)
       } else {
         resolve(decoded)

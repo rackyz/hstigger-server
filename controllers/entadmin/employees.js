@@ -39,6 +39,33 @@ out.PostAction = async ctx=>{
     await Enterprise.removeEnterprises(data,ent_id)
   }else if(action == 'post'){
     await Account.createAccounts(data,ctx.state.id)
+  }else if(action == 'reset-pwd'){
+    await Account.reset_password(data, ctx.state.id)
+  }else if(action == 'lock'){
+    await Account.lock(data, ctx.state.id)
+  }else if(action == 'unlock'){
+    await Account.unlock(data, ctx.state.id)
   }
 }
+
+out.RESET_PASSWORD = {
+  url:"POST /entadmin/employees/reset-pwd",
+  desc:"重置密码为123456"
+}
+
+out.LOCK_ACCOUNTS = {
+  url:"POST /entadmin/employees/lock",
+  desc:"锁定账户"
+}
+
+out.UNLOCK_ACCOUNTS = {
+  url:"POST /entadmin/employees/unlock",
+  desc:"解锁账户"
+}
+
+out.DELETE_ACCOUNTS_ARRAY = {
+  url: "POST /entadmin/employees/delete",
+  desc:"批量删除"
+}
+
 module.exports = out

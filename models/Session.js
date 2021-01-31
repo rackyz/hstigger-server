@@ -173,22 +173,23 @@ o.getOnlineUserCount = async ()=>{
 
 
 o.getSessionState = async token=>{
-  let {id:user_id} = await UTIL.decodeJWT(token)
-  if(!user_id)
-    throw EXCEPTION.E_UNEXPECTED_TOKEN
-  let session_id = token
-  let sessionInfo = await REDIS.ASC_GET_JSON(RKEY_SESSION+session_id)
-  if(!sessionInfo)
-    throw 401 //EXCEPTION.E_OUT_OF_DATE
-  REDIS.EXPIRE(RKEY_SESSION + session_id,3600)
+    let {id:user_id} = await UTIL.decodeJWT(token)
+    if(!user_id)
+      throw EXCEPTION.E_OUT_OF_DATE
+    let session_id = token
+    let sessionInfo = await REDIS.ASC_GET_JSON(RKEY_SESSION+session_id)
+    if(!sessionInfo)
+      throw 401 //EXCEPTION.E_OUT_OF_DATE
+    REDIS.EXPIRE(RKEY_SESSION + session_id,3600)
+    
+    return {
+      session_id,
+      id:user_id,
+      user:sessionInfo.user,
+      account_type: sessionInfo.account_type,
+      admin: sessionInfo.account_type == 2
+    }
   
-  return {
-    session_id,
-    id:user_id,
-    user:sessionInfo.user,
-    account_type: sessionInfo.account_type,
-    admin: sessionInfo.account_type == 2
-  }
 }
 
 
