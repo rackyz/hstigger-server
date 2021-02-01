@@ -329,7 +329,11 @@ o.create = async (data)=>{
     throw EXCEPTION.E_INVALID_DATA
   let updateInfo = {
     id:UTIL.createUUID(),
-    created_at:UTIL.getTimeStamp()
+    created_at:UTIL.getTimeStamp(),
+    type:1,
+    locked:false,
+    changed:false,
+    frame:1,
   }
   Object.assign(data,updateInfo)
   data.password = UTIL.encodeMD5("123456")

@@ -33,7 +33,7 @@ MYSQL.Create = (table_name, initializer) => {
         return MYSQL.E(ent_id,table_name)
       }
     },
-    Init: (ent_id, forced, special_initializer) => {
+    Init: (forced, ent_id, special_initializer) => {
       if(ent_id)
         MYSQL.initdb_e(table_name, special_initializer ? special_initializer : initializer, forced, ent_id)
       else

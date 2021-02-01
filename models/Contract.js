@@ -111,9 +111,8 @@ o.initdb = async (forced) => {
 
 
 o.initdb_e = async (ent_id, forced) => {
-
   Tables.forEach(async t => {
-    await t.Init(ent_id,forced)
+    await t.Init(forced, ent_id)
   })
 }
 

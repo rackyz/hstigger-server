@@ -115,10 +115,10 @@ o.init = async (forced)=>{
 o.List = async (state, queryCondition)=>{
   let ent_id = state.enterprise_id
   if(!ent_id)
-    throw "非企业用户无权限访问此接口"
+    return []
   let user_ids = await MYSQL('account_enterprise').select('user_id').where({enterprise_id:ent_id})
-  let ENT_DB = Enterprise.getEnterpriseSchemeName(ent_id)
-  let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
+  let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
+  let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id','user','avatar','name','frame','type','changed','lastlogin_at','created_at','phone','birth').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
   let depRelations = await Dep.listRelations(ent_id)
   users.forEach(u=>{
     u.deps = depRelations.filter(v=>v.user_id == u.id).map(v=>v.dep_id)
