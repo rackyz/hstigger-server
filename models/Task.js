@@ -13,44 +13,57 @@ DB.task = MYSQL.Create('task',t=>{
   // 名称
   t.string('name', 64)
   // 任务类型: 跟踪任务,流程任务,
-  t.integer('type1').defaultTo(0)
-  t.integer('type2').defaultTo(0)
+  t.integer('base_type').defaultTo(0)
+  // 业务类型: -->自动关联部门
+  t.integer('bussiness_type').defaultTo(0)
   // 关联项目
   t.uuid('project_id')
   // 关联部门
   t.integer('dep_id')
   // 任务状态：未初始化，进行中，已完成，已关闭，已结束
   t.integer('state')
-  // 任务期限：plan_duration
-  t.text('pay_condition', 128)
+  // 任务期限：plan_duration(ms)
+  t.integer('plan_duration')
   // 负责人：charger
-  t.uuid('partA')
+  t.uuid('charger')
   // 任务成果：file/files/dataObject
-  t.uuid('partB')
+  t.text('result')
   // 工作量占比
   t.double('percent')
   // 父任务
   t.uuid('parent_id')
-  // 
-  t.integer('version')
   // 创建信息
+  t.uuid('created_by')
+  t.datetime('created_at')
+})
+
+DB.task_templates = MYSQL.Create('task_templates',t=>{
+   // 名称
+   t.string('name', 64)
+   // 任务类型: 跟踪任务,流程任务,
+   t.integer('base_type').defaultTo(0)
+   // 业务类型: -->自动关联部门
+   t.integer('bussiness_type').defaultTo(0)
+   // 任务期限：plan_duration(ms)
+  t.integer('plan_duration')
+   // 工作量占比
+   t.double('percent')
+   // 父任务
+  t.uuid('parent_id')
+  t.integer('sub_task_count')
+   // 创建信息
   t.uuid('created_by')
   t.datetime('created_at')
 })
 
 o.initdb = async (forced) => {
   //forced = true
-  for(let t in DB){
-    await DB[t].Init(forced)
-  }
-
+  await MYSQL.Migrate(DB,forced)
 }
 
 o.initdb_e = async (ent_id, forced) => {
   forced = true
-  for(let t in DB){
-    await DB[t].Init(forced,ent_id)
-  }
+  await MYSQL.Migrate(DB,forced,ent_id)
 }
 
 

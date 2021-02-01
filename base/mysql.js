@@ -22,6 +22,11 @@ MYSQL.getEnterpriseScheme = ent_id => {
 MYSQL.E = (ent_id, t) => MYSQL(t).withSchema(MYSQL.getEnterpriseScheme(ent_id))
 module.exports = MYSQL
 
+MYSQL.Migrate = async (DB, forced,ent_id)=>{
+  for(let t in DB){
+    await DB[t].Init(forced,ent_id)
+  }
+}
 
 MYSQL.Create = (table_name, initializer) => {
   return {
