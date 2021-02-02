@@ -73,6 +73,7 @@ const T_PAYRECORD = MYSQL.Create(
     t.integer('condition_id')
     t.string('comment',256)
     t.double('amount')
+    t.text('files') //付款凭证
     t.datetime('paytime')
   }
 )

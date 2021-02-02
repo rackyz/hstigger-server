@@ -32,7 +32,8 @@ DB.task = MYSQL.Create('task',t=>{
   t.double('percent')
   // 父任务
   t.uuid('parent_id')
-
+  // for dep or project unique task template
+  t.uuid('unique_tmpl_key')
   t.text('desc')
   t.text('files')
   t.datetime('start_at')
@@ -54,6 +55,8 @@ DB.task_templates = MYSQL.Create('task_templates',t=>{
    t.integer('plan_duration')
   t.text('desc')
   t.text('files')
+  // 是否启用
+  t.boolean('actived')
    // 工作量占比
    t.double('percent')
    // 父任务
