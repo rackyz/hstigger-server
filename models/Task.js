@@ -15,13 +15,13 @@ DB.task = MYSQL.Create('task',t=>{
   // 任务类型: 跟踪任务,流程任务,
   t.integer('base_type').defaultTo(0)
   // 业务类型: -->自动关联部门
-  t.integer('bussiness_type').defaultTo(0)
+  t.integer('business_type').defaultTo(0)
   // 关联项目
   t.uuid('project_id')
   // 关联部门
   t.integer('dep_id')
   // 任务状态：未初始化，进行中，已完成，已关闭，已结束
-  t.integer('state')
+  t.integer('state').defaultTo(0)
   // 任务期限：plan_duration(ms)
   t.integer('plan_duration')
   // 负责人：charger
@@ -32,6 +32,12 @@ DB.task = MYSQL.Create('task',t=>{
   t.double('percent')
   // 父任务
   t.uuid('parent_id')
+
+  t.text('desc')
+  t.text('files')
+  t.datetime('start_at')
+  t.datetime('finished_at')
+
   // 创建信息
   t.uuid('created_by')
   t.datetime('created_at')
@@ -45,7 +51,9 @@ DB.task_templates = MYSQL.Create('task_templates',t=>{
    // 业务类型: -->自动关联部门
    t.integer('bussiness_type').defaultTo(0)
    // 任务期限：plan_duration(ms)
-  t.integer('plan_duration')
+   t.integer('plan_duration')
+  t.text('desc')
+  t.text('files')
    // 工作量占比
    t.double('percent')
    // 父任务
@@ -57,18 +65,21 @@ DB.task_templates = MYSQL.Create('task_templates',t=>{
 })
 
 o.initdb = async (forced) => {
-  //forced = true
+  
   await MYSQL.Migrate(DB,forced)
+
+  if(forced){
+    Type.AddType('TASK_TYPE',['任务','跟踪','工单','流程','数据','计划','审批'])
+    Type.AddType("TASK_STATE",['准备中','进行中','已完成','已失败','已关闭'])
+  }
 }
 
 o.initdb_e = async (ent_id, forced) => {
-  forced = true
   await MYSQL.Migrate(DB,forced,ent_id)
 }
 
 
-
-// 
+// 获取任务数目
 o.count = async (state, queryCondition = {}, ent_id) => {
   const Q = DB.task.Query(ent_id)
   const condition = {}
@@ -76,7 +87,8 @@ o.count = async (state, queryCondition = {}, ent_id) => {
   return res.count
 }
 
-o.query = async (ctx, queryCondition = {}, ent_id) => {
+// 查询
+o.query = async (state, queryCondition = {}, ent_id) => {
   let pageSize = queryCondition.pageSize || 100
   let page = queryCondition.page || 1
   const condition = null
@@ -89,6 +101,13 @@ o.query = async (ctx, queryCondition = {}, ent_id) => {
   return items
 }
 
+
+o.listMine = async (state,ent_id)=>{
+  let tasks = await o.query(state,{charger:state.id},ent_id)
+  return tasks
+}
+
+// 获取任务内容
 o.get = async (ctx, id, ent_id) => {
   const Q = DB.task.Query(ent_id)
 
@@ -100,6 +119,7 @@ o.get = async (ctx, id, ent_id) => {
   return item
 }
 
+// 创建任务
 o.create = async (ctx, data, ent_id) => {
   const Q = DB.task.Query(ent_id)
 
@@ -109,6 +129,8 @@ o.create = async (ctx, data, ent_id) => {
 
   let updateInfo = {
     id: UTIL.createUUID(),
+    state:0,
+
     created_at,
     created_by
   }
@@ -118,6 +140,82 @@ o.create = async (ctx, data, ent_id) => {
   return updateInfo
 }
 
+o.listTree = async (state, id, ent_id, table_name ,with_id_replaced) => {
+   let Query = MYSQL[table_name].Query(ent_id)
+   let item = await Query.where({id})
+   if (with_id_replaced){
+    delete item.parent_id
+    item.id = UTIL.createUUID()
+   }
+   
+   let subs = await o.cascadedListSubs(state, id, ent_id, "task_templates", with_id_replaced ? item.id : null)
+   return [item, ...subs]
+}
+
+o.cascadedChildren = async (state, id, ent_id, table_name, replaced_id) => {
+  let QuerySubs = MYSQL[table_name].Query(ent_id)
+  let subs = await QuerySubs.where('parent_id', id)
+  let list = subs
+  for(let i=0;i<subs.length;i++){
+    let sub_id = subs[i].id
+    if (replaced_id){
+      subs[i].id = UTIL.createUUID()
+      subs[i].parent_id = replaced_id
+    }
+    if(sub_id != id){
+      let items = await o.cascadedList(state, sub_id, ent_id, table_name, subs[i].id)
+      list = list.concat(items)
+    }
+  }
+  return list
+}
+
+o.createFromTemplate =  async (state,tmpl_id,data,ent_id)=>{
+  // list all tasks
+  let templates = await o.listTree(state,tmpl_id,ent_id,true)
+  let timeStamp = UTIL.getTimeStamp()
+  // merge with param data
+  let tasks = templates.map(v => {
+    return {
+      base_type:v.base_type,
+      name:v.name,
+      business_type:v.business_type,
+      plan_duration:v.plan_duration,
+      percent:v.percent,
+      parent_id:v.parent_id,
+      desc:v.desc,
+      files:v.files,
+      ...data,
+      created_at: timeStamp,
+      created_by:state.id
+    }
+  })
+  // insert
+  let InsertQuery = DB.task.Query('ent_id')
+  await InsertQuery.insert(tasks)
+}
+
+o.saveTemplate = async (state,task_id,data,ent_id)=>{
+    let tasks = await o.listTree(state,task_id,ent_id,"task",true)
+    let timeStamp = UTIL.getTimeStamp()
+    let templates = tasks.map(v=>({
+        id:v.id,
+        base_type: v.base_type,
+        name: v.name,
+        business_type: v.business_type,
+        plan_duration: v.plan_duration,
+        percent: v.percent,
+         desc: v.desc,
+           files: v.files,
+        parent_id: v.parent_id,
+        created_by:state.id,
+        created_at:timeStamp
+    }))
+
+}
+
+
+// 修改任务参数
 o.patch = async (ctx, id, data, ent_id) => {
   const Q = DB.task.Query(ent_id)
   await Q.update(data).where({
@@ -125,6 +223,7 @@ o.patch = async (ctx, id, data, ent_id) => {
   })
 }
 
+// 删除任务
 o.del = async (ctx, id_list, ent_id) => {
   const Q = DB.task.Query(ent_id)
   await Q.whereIn('id', id_list).del()

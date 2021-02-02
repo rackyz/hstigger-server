@@ -8,10 +8,7 @@ let out = {}
 
 out.List = async ctx => {
   let ent_id = ctx.state.enterprise_id
-   let state = ctx.state
-  let items = await Task.query(state, {
-    parent_id: null
-  }, ent_id)
+  let items = await Task.query(state,{parent_id:null},ent_id)
   return items
 }
 
