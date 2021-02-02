@@ -226,6 +226,19 @@ o.patch = async (ctx, id, data, ent_id) => {
   })
 }
 
+o.process = async (state,id,data,ent_id)=>{
+  //GET TYPE
+  const Q = DB.task.Query(ent_id)
+  let updateInfo = {
+    result:data.files,
+    finished_at:data.finished_at,
+  //  result_desc:data.desc,
+    state:2
+  }
+  await Q.update(updateInfo).where({id})
+  return updateInfo
+}
+
 // 删除任务
 o.del = async (ctx, id_list, ent_id) => {
   const Q = DB.task.Query(ent_id)
