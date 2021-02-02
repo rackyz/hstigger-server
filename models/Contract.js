@@ -127,6 +127,10 @@ o.count = async (ctx, queryCondition = {}, ent_id) => {
   return res.count
 }
 
+o.list = async (ent_id)=>{
+  return await o.query({},{},ent_id)
+}
+
 o.query = async (ctx, queryCondition = {}, ent_id) => {
   let pageSize = queryCondition.pageSize || 100
   let page = queryCondition.page || 1

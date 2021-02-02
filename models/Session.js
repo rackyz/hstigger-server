@@ -13,6 +13,7 @@ const RSS = require('./Rss')
 const Dep = require('./Dep')
 const Project = require('./Project')
 const Employee = require('./Employee')
+const Contract = require('./Contract')
 const Role = require('./Role')
 const { E_INVALID_DATA } = require('../base/exception')
 const o = {
@@ -59,6 +60,7 @@ const GetSystemInfo = async (ent_id)=>{
   let employees = await Employee.List({
     enterprise_id:ent_id
   })
+  let contracts = ent_id?await Contract.list(ent_id) :[]
   //let deps = await
   return {
     settings,
@@ -70,6 +72,7 @@ const GetSystemInfo = async (ent_id)=>{
     ent_types,
     roles,
     projects,
+    contracts,
     employees
   } 
 }
