@@ -144,7 +144,7 @@ const ParseFilesString = (file_str,archive_id)=>{
     filelist = files.map(f => ({
       archive_id,
       name: f[0],
-      file_id: f[1] ? f[1].slice(f[1].lastIndexOf('/')+1) : "",
+      file_id: f[1] ? f[1].slice(f[1].lastIndexOf('/')+1,f[1].lastIndexOf('.')) : "",
       ext:f[2]
     }))
   } else {

@@ -52,7 +52,7 @@ DB.task_template = MYSQL.Create('task_template',t=>{
    // 任务类型: 跟踪任务,流程任务,
    t.integer('base_type').defaultTo(0)
    // 业务类型: -->自动关联部门
-   t.integer('bussiness_type').defaultTo(0)
+   t.integer('business_type').defaultTo(0)
    // 任务期限：plan_duration(ms)
    t.integer('plan_duration')
   t.text('desc')
@@ -81,8 +81,10 @@ o.initdb = async (forced) => {
 }
 
 o.initdb_e = async (ent_id, forced) => {
+ 
   await MYSQL.Migrate(DB,forced,ent_id)
 
+  if(forced){
   let items = await GZSQL('gzcloud.task_template').select('id','title','type_id','sequence')
   let types = {
     'type000000003001':'前期管理',
@@ -127,7 +129,8 @@ o.initdb_e = async (ent_id, forced) => {
     }
   }))
 
-  DB.task_template.Query(ent_id).insert(tasks)
+  await DB.task_template.Query(ent_id).insert(tasks)
+}
 }
 
 
@@ -220,6 +223,12 @@ o.cascadedChildren = async (state, id, ent_id, table_name, replaced_id) => {
     }
   }
   return list
+}
+
+o.listTemplates = async (state,condition = {},ent_id)=>{
+  let Q = DB.task_template.Query(ent_id)
+  let items = await Q.whereNull('parent_id').where('actived',1)
+  return items
 }
 
 o.createFromTemplate =  async (state,tmpl_id,data,ent_id)=>{

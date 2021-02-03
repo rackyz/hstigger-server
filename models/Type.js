@@ -39,6 +39,8 @@ o.initdb_e = async (ent_id,forced)=>{
       t.string("icon", 16).defaultTo("star")
       t.string("color", 32).defaultTo("#333333")
       t.integer("parent_id").defaultTo(0)
+      t.string('extra',64)
+      
     }, forced, ent_id)
 }
 
