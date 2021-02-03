@@ -1,4 +1,5 @@
 const MYSQL = require('../base/mysql')
+const GZSQL = require('../base/nbgz_db')
 const Type = require('./Type')
 const UTIL = require('../base/util')
 const Exception = require('../base/exception')
@@ -44,8 +45,9 @@ DB.task = MYSQL.Create('task',t=>{
   t.datetime('created_at')
 })
 
-DB.task_templates = MYSQL.Create('task_templates',t=>{
+DB.task_template = MYSQL.Create('task_template',t=>{
    // 名称
+   t.uuid('id').primary()
    t.string('name', 64)
    // 任务类型: 跟踪任务,流程任务,
    t.integer('base_type').defaultTo(0)
@@ -59,9 +61,10 @@ DB.task_templates = MYSQL.Create('task_templates',t=>{
   t.boolean('actived')
    // 工作量占比
    t.double('percent')
+   t.integer('sequence').defaultTo(0)
    // 父任务
   t.uuid('parent_id')
-  t.integer('sub_task_count')
+  t.integer('sub_task_count').defaultTo(0)
    // 创建信息
   t.uuid('created_by')
   t.datetime('created_at')
@@ -79,6 +82,52 @@ o.initdb = async (forced) => {
 
 o.initdb_e = async (ent_id, forced) => {
   await MYSQL.Migrate(DB,forced,ent_id)
+
+  let items = await GZSQL('gzcloud.task_template').select('id','title','type_id','sequence')
+  let types = {
+    'type000000003001':'前期管理',
+    'type000000003002':'设计管理',
+    'type000000003003': '合约管理',
+    'type000000003004': '招投标管理',
+    'type000000003005': '现场管理'
+  }
+   let types_map = {
+     'type000000003001': 95,
+     'type000000003002': 98,
+     'type000000003003': 97,
+     'type000000003004': 101,
+     'type000000003005': 100
+   }
+   let type_ids = {}
+   let timeStamp = UTIL.getTimeStamp()
+  let tasks = Object.keys(types).map((v,i)=>{
+    let id = UTIL.createUUID()
+    type_ids[v] = id
+    return {
+      id,
+      business_type:types_map[v],
+      base_type:156,
+      name:types[v],
+      created_by:"ROOT",
+      sequence:i,
+      created_at: timeStamp
+    }
+  })
+
+  tasks =  tasks.concat(items.map(v=>{
+    return {
+      id:UTIL.createUUID(),
+      business_type:types_map[v.type_id],
+      base_type:156,
+      parent_id:type_ids[v.type_id],
+      name:v.title,
+      sequence:v.sequence,
+      created_by: "ROOT",
+      created_at: timeStamp
+    }
+  }))
+
+  DB.task_template.Query(ent_id).insert(tasks)
 }
 
 
@@ -151,7 +200,7 @@ o.listTree = async (state, id, ent_id, table_name ,with_id_replaced) => {
     item.id = UTIL.createUUID()
    }
    
-   let subs = await o.cascadedListSubs(state, id, ent_id, "task_templates", with_id_replaced ? item.id : null)
+   let subs = await o.cascadedListSubs(state, id, ent_id, "task_template", with_id_replaced ? item.id : null)
    return [item, ...subs]
 }
 
