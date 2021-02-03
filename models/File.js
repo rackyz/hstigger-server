@@ -55,6 +55,7 @@ o.GetFileUrl = async (id)=>{
      throw EXCEPTION.E_INVALID_DATA
   let baseURL = config.cos.url
   let file = await MYSQL(T).first("url").where({id})
+  console.log(id,file)
   if(file)
     return baseURL + '/files/' + file.url
   else
@@ -81,16 +82,16 @@ o.GetURL = async (id)=>{
 o.post = async (files,op)=>{
   let createInfos = []
   files.forEach(v=>{
-    v.id = UTIL.createUUID()
     let createInfo = {}
     createInfo.created_by = op
     createInfo.created_at = UTIL.getTimeStamp()
     createInfo.id = UTIL.createUUID()
-    createInfo.url = v.vdisk + '/' + UTIL.getDateStamp() + '/' + v.id + '.' + v.ext
+    createInfo.url = v.vdisk + '/' + UTIL.getDateStamp() + '/' + createInfo.id + '.' + v.ext
     Object.assign(v,createInfo)
     createInfos.push(createInfo)
   })
 
+  console.log('FILES:',files)
   
   await MYSQL(T).insert(files).returning('id')
  

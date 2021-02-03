@@ -6,7 +6,8 @@ const {
 let o = {}
 
 o.List = async ctx => {
-  let queryParams = ctx.query
+  let queryParams = {contract_id:ctx.query.contract_id}
+  
   let state = ctx.state
   let res = await Payment.query(state, queryParams, state.enterprise_id)
   return res
@@ -37,7 +38,7 @@ o.Patch = async ctx => {
 o.Delete = async ctx => {
   let id = ctx.params.id
   let state = ctx.state
-  await Payment.del(state, [id], state.enterprise_id)
+  await Payment.remove(state, [id], state.enterprise_id)
 }
 
 

@@ -2,6 +2,7 @@ const MYSQL = require('../base/mysql')
 const Type = require('./Type')
 const UTIL = require('../base/util')
 const Exception = require('../base/exception')
+const Payment = require('./Payment')
 let o = {}
 
 o.required = ['Type']
@@ -34,8 +35,10 @@ const T_CONTRACT = MYSQL.Create(
      t.double('amount').defaultTo(0)
      // 概算金额
      t.double('plan_amount').defaultTo(0)
+     t.double('payed_amount').defaultTo(0)
      // 修改次数,版本
      t.integer('version').defaultTo(0)
+     t.text('important_raw')
      // 创建信息
      t.uuid('created_by')
      t.datetime('created_at')
@@ -117,6 +120,10 @@ o.initdb_e = async (ent_id, forced) => {
   })
 }
 
+o.updatePayment = async (state,id,amount,ent_id)=>{
+  if(amount != undefined)
+   await o.patch(state,id,{payed_amount:amount},ent_id)
+}
 
 
 // 
@@ -184,7 +191,9 @@ o.del = async (ctx, id_list, ent_id) => {
   const Q = T_CONTRACT.Query(ent_id)
   await Q.whereIn('id', id_list).del()
   // 移除文件的关联
+  await Payment.removeFromContracts(ctx,id_list,ent_id)
 }
+
 
 
 

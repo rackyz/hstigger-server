@@ -31,6 +31,7 @@ o.initdb = async (forced) => {
     t.uuid('created_by')
       t.uuid('charger')
     t.datetime('created_at')
+    t.string('desc',256)
   }, forced)
 
   // 用工记录
@@ -67,6 +68,7 @@ o.initdb_e = async (ent_schema, forced) => {
     t.string('avatar', 256)
     t.integer('state').defaultTo(0)
     t.uuid('created_by')
+    t.string('desc',256)
     t.datetime('created_at')
   }, forced, ent_schema)
 
