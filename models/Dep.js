@@ -60,8 +60,18 @@ o.initdb_e = async (ent_id, forced) => {
   }
 }
 
-o.listRelations = async(ent_id)=>{
-  return await MYSQL.E(ent_id, "dep_employee")
+o.listRelations = async(ent_id, queryCondition = {})=>{
+  let Query = MYSQL.E(ent_id, "dep_employee")
+  if(queryCondition.in){
+    for(let x in queryCondition.in){
+      Query = Query.whereIn(x,queryCondition.in[x])
+    }
+  }else if(queryCondition.where){
+    for (let x in queryCondition.in) {
+      Query = Query.where(x, queryCondition.where[x])
+    }
+  }
+  return await Query
 }
 
 o.getUserDeps = async (user_id,ent_id)=>{

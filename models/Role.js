@@ -53,6 +53,20 @@ o.patch = async (state,id,role,ent_id)=>{
  return {}
 }
 
+o.listRelations = async (ent_id, queryCondition = {}) => {
+   let Query = DB.role_user.Query(ent_id)
+   if (queryCondition.in) {
+     for (let x in queryCondition.in) {
+       Query = Query.whereIn(x, queryCondition.in[x])
+     }
+   } else if (queryCondition.where) {
+     for (let x in queryCondition.in) {
+       Query = Query.where(x, queryCondition.where[x])
+     }
+   }
+   return await Query
+}
+
 o.addUser = async (state,user_id,role_id)=>{
   let DeleteExist = DB.role_user.Query(state.enterprise_id)
   let Insert = DB.role_user.Query(state.enterprise_id)

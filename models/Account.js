@@ -9,6 +9,7 @@ const Permission = require('./Permission')
 const Flow = require('./Flow')
 const File = require('./File')
 const Dep = require('./Dep')
+const Role = require('./Role')
 const Task = require('./Task')
 const FlowInstance = require('./FlowInstance')
 const { UserLogger } = require('../base/logger')
@@ -235,6 +236,18 @@ o.ListUsersByEnterprise = async (ent_id)=>{
     enterprise_id:ent_id
   })
   let users = await MYSQL(TABLE_ACCOUNT).whereIn('id',items.map(v=>v.user_id)).where("type",1)
+  let user_id_list = users.map(v=>v.id)
+  if(user_id_list.length > 0){
+    let depRelations = await Dep.listRelations(ent_id,{in:{user_id:user_id_list}})
+    let roleRelatios = await Role.listRelations(ent_id,{in:{user_id:user_id_list}})
+      users.forEach(v => {
+        v.deps = depRelations.filter(r => r.user_id == v.id).map(r => r.dep_id)
+        v.roles = roleRelatios.filter(r => r.user_id == v.id).map(r => r.role_id)
+      })
+  }
+
+ 
+
   return users
 }
 
