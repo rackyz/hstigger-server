@@ -1,23 +1,26 @@
 const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
-const Account = require('./Account')
+const Account = require('./Account.js')
 const Dep = require('./Dep')
 const Enterprise = require('./Enterprise')
 const Role = require('./Role')
+
+
 const Type = require('./Type')
 const Ding = require('./Ding')
-const {
-  UserLogger
-} = require('../base/logger')
-const REDIS = require('../base/redis')
-const {
-  ContextParser
-} = require('../base/util')
+const Module = require('./Module')
+const Permission = require('./Permission')
+const Flow = require('./Flow')
+const File = require('./File')
+const Task = require('./Task')
+const FlowInstance = require('./FlowInstance')
+
 
 let o = {
-  required: ['Type','Enterprise']
+  required: ['Type','Enterprise','Account']
 }
+
 
 
 const DB = {}
@@ -84,7 +87,7 @@ DB.employee_family_contact = MYSQL.Create('employee_family_contact',t=>{
 
 
 o.initdb_e = async (ent_id, forced) => {
-  
+  console.log("initDB:empoyee") 
   await MYSQL.Migrate(DB,forced,ent_id)
   if(forced){
     Type.AddType('Gender',['男','女'])
@@ -105,12 +108,12 @@ o.List = async (state, queryCondition)=>{
     return []
   let user_ids = await MYSQL('account_enterprise').select('user_id').where({enterprise_id:ent_id})
   let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
-  let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id','user','avatar','name','frame','type','changed','lastlogin_at','created_at','phone','birth').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
+  let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id','user','avatar','gender','name','frame','type','changed','lastlogin_at','created_at','phone','birthday').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
   let depRelations = await Dep.listRelations(ent_id)
   let roleRelations = await Role.listRelations(ent_id)
   users.forEach(u=>{
-    u.deps = depRelations.filter(v=>v.user_id == u.id).map(v=>v.dep_id)
-    u.roles = roleRelations.filter(v=>v.user_id == u.id).map(v=>v.role_id)
+    u.deps = depRelations.filter(v=>v.user_id == u.id).map(v=>v.dep_id) || []
+    u.roles = roleRelations.filter(v=>v.user_id == u.id).map(v=>v.role_id) || []
   })
 
   return users
@@ -122,7 +125,7 @@ o.Create = async (state,data,ent_id)=>{
   let {
     user,name,phone,email,
     deps,roles,
-    gender,birthday,native_place,photo,political_status,address,marital_status,emergency_photo,emergency_contact,employee_date,employee_state,
+    gender,birthday,native_place,photo,political_status,address,marital_status,emergency_phone,emergency_contact,employee_date,employee_state,
     personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time,
     education_history,
     work_history,
@@ -130,11 +133,12 @@ o.Create = async (state,data,ent_id)=>{
   } = data
   let timeStamp = UTIL.getTimeStamp()
   let op = state.id
-  let account = {user,name,phone,email,password:UTIL.encodeMD5("123456"),id:UTIL.createUUID(),created_at:timeStamp,created_by:op,type:1}
-  let employee = {id:account.id,gender,birthday,native_place,photo,political_status,address,marital_status,emergency_photo,emergency_contact,employee_date,employee_state,
+  let account = {user,name,phone,email}
+  console.log("ACCOUNT:",Account)
+  account = await Account.create(account)
+  let employee = {id:account.id,gender,birthday,native_place,photo,political_status,address,marital_status,emergency_phone,emergency_contact,employee_date,employee_state,
     personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time}
 
-  await Account.Create(account)
   await Enterprise.addEnterprise(account.id,state.enterprise_id)
   let Query = DB.employee.Query(state.enterprise_id)
   await Query.insert(employee)
@@ -153,8 +157,34 @@ o.Create = async (state,data,ent_id)=>{
 o.Update = async (state,id,data)=>{
   if(!id)
     throw EXCEPTION.E_INVALID_DATA
-  delete data.id
-  await MYSQL.E(state.enterprise_id,"employee").update(data).where({id})
+  let {
+    user,name,phone,email,
+    deps,roles,
+    gender,birthday,native_place,photo,political_status,address,marital_status,emergency_phone,emergency_contact,employee_date,employee_state,
+    personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time,
+    education_history,
+    work_history,
+    family_contact
+  } = data
+  let account = {user,name,phone,email}
+  let employee = {id:account.id,gender,birthday,native_place,photo,political_status,address,marital_status,emergency_phone,emergency_contact,employee_date,employee_state,
+    personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time}
+  console.log(account)
+  if(Object.values(account).filter(v=>v!==undefined).length > 0)
+    await MYSQL("account").update(account).where({id})
+  if(Array.isArray(roles))
+    await o.ChangeRoles(state,id,roles)
+  if(Array.isArray(deps))
+    await o.ChangeDeps(state,id,deps)
+  let isExistEmployee = await MYSQL('employee').first("id").where({id})
+  if(isExistEmployee){
+    await MYSQL.E(state.enterprise_id,"employee").update(employee).where({id})
+  }else{
+    employee.id = id
+    await MYSQL.E(state.enterprise_id,"employee").insert(employee)
+  }
+
+  
 }
 
 o.ChangeDeps = async (state,id,data)=>{

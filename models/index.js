@@ -1,7 +1,6 @@
 const _ = require('lodash')
 const fs = require('fs')
 const path = require('path')
-
 /**
  * 映射 d 文件夹下的文件为模块
  */

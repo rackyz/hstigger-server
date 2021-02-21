@@ -4,14 +4,14 @@ let out = {}
 
 out.List = async ctx=>{
   let ent_id = ctx.state.enterprise_id
-  return await Account.ListUsersByEnterprise(ent_id)
+  return await Employee.List(ctx.state)
 }
 
 
 out.Post = async ctx=>{
   let ent_id =  ctx.state.enterprise_id
   let data = ctx.request.body
-  let updateInfo = await Account.create(data)
+  let updateInfo = await Employee.Create(ctx.state,data,ent_id)
   await Enterprise.addEnterprise(updateInfo.id,ent_id)
   return updateInfo
 }
@@ -30,7 +30,7 @@ out.Patch = async ctx=>{
     return
   }
 
-  let updateInfo = await Account.update(id,data,ctx.state.id)
+  let updateInfo = await Employee.Update(state,id,data,ent_id)
   return updateInfo
 }
 
@@ -46,7 +46,9 @@ out.PATCH_USER_ROLES = {
 out.Delete = async ctx=>{
   let id = ctx.params.id
   let ent_id =  ctx.state.enterprise_id
+  let state = ctx.state
   await Enterprise.removeEnterprise(id,ent_id)
+  await Employee.Delete(state,id)
 }
 
 

@@ -8,7 +8,7 @@ const InstallModel = async (MODELS,m,forced)=>{
     return
   }
   
-  if (!model.init && !model.initdb)
+  if (!model.init && !model.initdb && !model.initdb_e && !model.init_e)
     return model
 
   if(Array.isArray(model.required)){
@@ -28,10 +28,11 @@ const InstallModel = async (MODELS,m,forced)=>{
       let Enterprise = await InstallModel(MODELS,'Enterprise',forced)
       if (Enterprise) {
         let ent_ids = await Enterprise.getEnterpriseList()
-        for(let i=0;i<ent_ids.length;i++)
+        for(let i=0;i<ent_ids.length;i++){
           await model.initdb_e(ent_ids[i].id, forced)
-        if(model.init_e){
-          await model.init_e(ent_ids[i].id,forced)
+          if(model.init_e){
+            await model.init_e(ent_ids[i].id,forced)
+          }
         }
       }
       if (forced)

@@ -18,6 +18,7 @@ const o = {
   required:['Type','Enterprise','Message']
 }
 
+
 // Database Initalization
 const TABLE_ACCOUNT = 'account'
 const TABLE_ACCOUNT_ENTERPRISE = 'account_enterprise'

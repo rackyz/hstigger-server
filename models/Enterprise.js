@@ -7,9 +7,6 @@ const Module = require('./Module')
 const o = {
   required: ['Type', 'Message', 'Module','Dep','Profile','Role']
 }
-const Dep = require('./Dep')
-const Employee = require('./Employee')
-const FlowInstance= require('./FlowInstance')
 
 const ENTERPRISE_STATES = [{
   key: 'ENT_INACTIVE',
@@ -170,12 +167,7 @@ o.createEnterprise = async (data,op)=>{
 o.initEntDb = async (id)=>{
   //  await o.createScheme(id)
    let schema_id = ('ENT_' + id).replace(/-/g,'_')
-   await Dep.initdb(schema_id, true)
-   await Employee.initdb(schema_id, true)
-   await FlowInstance.initdb(schema_id, true)
-   console.log(`[${schema_id}]Dep inited.`)
-   console.log(`[${schema_id}]Employee inited.`)
-    console.log(`[${schema_id}]FlowInstance inited.`)
+  
 }
 
 o.deleteEnterprises = async (id_list,op)=>{
