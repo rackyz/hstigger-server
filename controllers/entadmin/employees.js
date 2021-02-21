@@ -1,4 +1,4 @@
-let {Account,Enterprise} = require('../../models')
+let {Account,Enterprise,Employee} = require('../../models')
 let out = {}
 
 
@@ -20,8 +20,27 @@ out.Patch = async ctx=>{
   let id = ctx.params.id
   let ent_id =  ctx.state.enterprise_id
   let data = ctx.request.body
+  let state = ctx.state
+  let q = ctx.query.q
+  if(q=='dep'){
+    await Employee.ChangeDeps(state,id,data)
+    return
+  }else if(q=='role'){
+    await Employee.ChangeRoles(state,id,data)
+    return
+  }
+
   let updateInfo = await Account.update(id,data,ctx.state.id)
   return updateInfo
+}
+
+out.PATCH_USER_DEPS = {
+  url:"PATCH /entadmin/employees/:id?q=dep",
+  desc:"修改用户的部门信息"
+}
+out.PATCH_USER_ROLES = {
+  url:"PATCH /entadmin/employees/:id?q=role",
+  desc:"修改用户的职务信息"
 }
 
 out.Delete = async ctx=>{

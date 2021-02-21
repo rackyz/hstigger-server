@@ -4,6 +4,8 @@ const EXCEPTION = require('../base/exception')
 const Account = require('./Account')
 const Dep = require('./Dep')
 const Enterprise = require('./Enterprise')
+const Role = require('./Role')
+const Type = require('./Type')
 const Ding = require('./Ding')
 const {
   UserLogger
@@ -18,97 +20,82 @@ let o = {
 }
 
 
-const T = 'employee'
-const T_DEP = 'dep_employee'
+const DB = {}
+DB.employee = MYSQL.Create('employee',t=>{
+  t.uuid('id').index()
+  // -- basic --
+  t.integer('gender').defaultTo(0)
+  t.datetime('birthday')
+  t.string('native_place',128)
+  t.string('photo',256)
+  t.integer('political_status').defaultTo(1)
+  t.string('address',128)
+  t.integer('marital_status').defaultTo(0)
+  // -- family
+  t.string('emergency_phone',16)
+  t.string('emergency_contact',16)
+  // -- work
+  t.datetime('employee_date')
+  t.integer('employee_state')
+  t.integer('personal_state')
+  t.string('personal_focus',256)
+  t.integer('professor_rank').defaultTo(0)
+  // -- education
+  t.integer('education')
+  t.integer('degree')
+  t.string('graduate_institution',32)
+  t.string('major',32)
+  t.datetime('graduate_time')
+})
 
-o.initdb = async (ent_schema, forced) => {
-  await MYSQL.initdb(T, t => {
-    t.uuid('id').index()
-    t.datetime('hiredDate')
-    t.string('workPlace',128)
-    t.string('email',64)
-    t.datetime('birth')
-    t.string('position',64)
-  }, forced, ent_schema)
+DB.employee_education_history = MYSQL.Create('employee_education_history',t=>{
+  t.increments('id').primary()
+  t.uuid('user_id')
+  t.datetime('from')
+  t.datetime('to')
+  t.string('education_level',16)
+  t.string('school_name',128)
+})
 
-  await MYSQL.initdb(T_DEP,t=>{
-    t.increments('id').index()
-    t.uuid('user_id')
-    t.integer('dep_id')
-  }, forced, ent_schema)
+DB.employee_work_history = MYSQL.Create('employee_work_history',t=>{
+  t.increments('id').primary()
+  t.uuid('user_id')
+  t.datetime('from')
+  t.datetime('to')
+  t.string('position',16)
+  t.string('workplace',128)
+})
 
-  if (forced) {
-    if (ent_schema == "ENT_NBGZ") {
-      await MYSQL(T).withSchema(ent_schema).del()
-      await MYSQL(T_DEP).withSchema(ent_schema).del()
-      let groups = await Ding.getGroups()
-      for (let i = 0; i < groups.length; i++){
-          let users = await Ding.getEmployeeInfoList(groups[i].id)
-        let accounts = users.map(v=>({
-          name:v.name,
-          phone:v.tel,
-          avatar:v.avatar,
-          ding_id:v.userid
-        }))
+DB.employee_certification = MYSQL.Create('employee_certification',t=>{
+  t.increments('id').primary()
+  t.uuid('user_id')
+  t.integer('cert_type').defaultTo(0)
+  t.boolean('locked').defaultTo(false)
+})
 
-        let department_relations = users.map(v => Array.isArray(v.department)?v.department.map(d => ({
-          user_id: v.userid,
-          dep_id: d
-        })):[])
+DB.employee_family_contact = MYSQL.Create('employee_family_contact',t=>{
+  t.increments('id').primary()
+  t.uuid('user_id')
+  t.string('name',16)
+  t.string('relation',16)
+  t.string('phone',16)
+  t.string('workplace',128)
+})
 
-        let profiles = users.map(v=>({
-          hiredDate:new Date(v.hiredDate),
-          workPlace:v.workPlace,
-          email:v.email,
-          birth: v.extattr ? v.extattr["生日"]:null,
-          position:v.position
-        }))
 
-        for(let i=0;i<users.length;i++){
-          let account = accounts[i]
-          let isExist =false
-          let isExistName = false
-          if (account.phone)
-            isExist = await MYSQL('account').first('id').where('phone', account.phone)
-          if(account.name)
-            isExistName = await MYSQL('account').first('id').where('name', account.name)
-          let id = null
-          if(isExist){
-            await MYSQL('account').update(account).where('phone',account.phone)
-            id = isExist.id
-          }
-          else if (isExistName){
-            await MYSQL('account').update(account).where('phone', account.name)
-            id = isExistName.id
-          }
-          else{
-            let updateInfo = {
-              id: UTIL.createUUID(),
-              created_at: UTIL.getTimeStamp(),
-              password:UTIL.encodeMD5('123456')
-            } 
-            await MYSQL('account').insert(Object.assign(account, updateInfo))
-            id = updateInfo.id
-          }
-
-          let profile = profiles[i]
-          profile.id = id
-          await MYSQL(T).withSchema(ent_schema).insert(profile)
-          if(department_relations[i] && department_relations[i].length > 0)
-            await MYSQL(T_DEP).withSchema(ent_schema).insert(department_relations[i])
-        }
-
-        UserLogger.info(`通过dingding导入了${users.length}个账号`)
-      }
-    }
+o.initdb_e = async (ent_id, forced) => {
+  
+  await MYSQL.Migrate(DB,forced,ent_id)
+  if(forced){
+    Type.AddType('Gender',['男','女'])
+    Type.AddType('PoliticalStatus',['党员','群众'])
+    Type.AddType('MaritalStatus',['未婚','已婚'])
+    Type.AddType('ProfessorRank',['无','初级职称','中级职称','高级职称'])
+    Type.AddType('EmploeeState',['实习期','正式员工','离职','退休'])
+    Type.AddType('Education',['研究生','本科全日制','本科非全日制','专科','高中及以下'])
+    Type.AddType('Degree',['硕士','学士','无'])
+    Type.AddType('PersonalState',['空闲','较忙','很忙','忙到勿扰','请假中','出差中'])
   }
-
-  
-
-}
-
-o.init = async (forced)=>{
-  
 }
 
 
@@ -120,8 +107,10 @@ o.List = async (state, queryCondition)=>{
   let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
   let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id','user','avatar','name','frame','type','changed','lastlogin_at','created_at','phone','birth').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
   let depRelations = await Dep.listRelations(ent_id)
+  let roleRelations = await Role.listRelations(ent_id)
   users.forEach(u=>{
     u.deps = depRelations.filter(v=>v.user_id == u.id).map(v=>v.dep_id)
+    u.roles = roleRelations.filter(v=>v.user_id == u.id).map(v=>v.role_id)
   })
 
   return users
@@ -129,13 +118,30 @@ o.List = async (state, queryCondition)=>{
 }
 
 
-o.Create = async (state,data)=>{
-  let {user,name,phone,email} = data
+o.Create = async (state,data,ent_id)=>{
+  let {
+    user,name,phone,email,
+    deps,roles,
+    gender,birthday,native_place,photo,political_status,address,marital_status,emergency_photo,emergency_contact,employee_date,employee_state,
+    personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time,
+    education_history,
+    work_history,
+    family_contact
+  } = data
   let timeStamp = UTIL.getTimeStamp()
   let op = state.id
   let account = {user,name,phone,email,password:UTIL.encodeMD5("123456"),id:UTIL.createUUID(),created_at:timeStamp,created_by:op,type:1}
+  let employee = {id:account.id,gender,birthday,native_place,photo,political_status,address,marital_status,emergency_photo,emergency_contact,employee_date,employee_state,
+    personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time}
+
   await Account.Create(account)
   await Enterprise.addEnterprise(account.id,state.enterprise_id)
+  let Query = DB.employee.Query(state.enterprise_id)
+  await Query.insert(employee)
+  if(Array.isArray(roles))
+    await o.ChangeRoles(state,account.id,roles)
+  if(Array.isArray(deps))
+    await o.ChangeDeps(state,accont.id,deps)
   return {
     id:account.id,
     created_at:account.created_at,
@@ -149,6 +155,32 @@ o.Update = async (state,id,data)=>{
     throw EXCEPTION.E_INVALID_DATA
   delete data.id
   await MYSQL.E(state.enterprise_id,"employee").update(data).where({id})
+}
+
+o.ChangeDeps = async (state,id,data)=>{
+  if(!id || !Array.isArray(data))
+    throw EXCEPTION.E_INVALID_DATA
+  delete data.id
+  let params = data.map(dep=>({
+    user_id:id,
+    dep_id:dep
+  }))
+  await MYSQL.E(state.enterprise_id,"dep_employee").where({user_id:id}).del()
+  if(params.length != 0)
+    await MYSQL.E(state.enterprise_id,"dep_employee").insert(params)
+}
+
+o.ChangeRoles = async (state,id,data)=>{
+  if(!id || !Array.isArray(data))
+    throw EXCEPTION.E_INVALID_DATA
+  delete data.id
+  let params = data.map(v=>({
+    user_id:id,
+    role_id:v
+   }))
+  await MYSQL.E(state.enterprise_id,"role_user").where({user_id:id}).del()
+  if(params.length != 0)
+    await MYSQL.E(state.enterprise_id,"role_user").insert(params)
 }
 
 o.Delete = async (state,id)=>{
