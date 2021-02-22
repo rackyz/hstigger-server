@@ -45,9 +45,7 @@ out.PATCH_USER_ROLES = {
 
 out.Delete = async ctx=>{
   let id = ctx.params.id
-  let ent_id =  ctx.state.enterprise_id
   let state = ctx.state
-  await Enterprise.removeEnterprise(id,ent_id)
   await Employee.Delete(state,id)
 }
 

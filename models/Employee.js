@@ -108,16 +108,38 @@ o.List = async (state, queryCondition)=>{
     return []
   let user_ids = await MYSQL('account_enterprise').select('user_id').where({enterprise_id:ent_id})
   let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
-  let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id','user','avatar','gender','name','frame','type','changed','lastlogin_at','created_at','phone','birthday').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
+  let users = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id','user','avatar','gender','name','frame','type','changed','lastlogin_at','created_at','phone','birthday','employee_date','changed','ding_id','zzl_id','wechat_id','ding_open_id','email').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
   let depRelations = await Dep.listRelations(ent_id)
   let roleRelations = await Role.listRelations(ent_id)
+  let educationHistory = await DB.employee_education_history.Query(ent_id)
   users.forEach(u=>{
     u.deps = depRelations.filter(v=>v.user_id == u.id).map(v=>v.dep_id) || []
     u.roles = roleRelations.filter(v=>v.user_id == u.id).map(v=>v.role_id) || []
+    u.education_history = educationHistory.filter(v => v.user_id == u.id)
   })
 
   return users
 
+}
+
+o.Get = async (state,id)=>{
+   let ent_id = state.enterprise_id
+   if (!ent_id)
+     return []
+   let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
+   let u = await MYSQL('account').leftJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').first('account.id as id', 'user', 'avatar', 'gender', 'name', 'frame', 'type', 'changed', 'lastlogin_at', 'created_at', 'phone', 'birthday', 'employee_date', 'changed', 'ding_id', 'zzl_id', 'wechat_id', 'ding_open_id', 'email','personal_state','personal_focus').where({
+    id
+   })
+   let depRelations = await Dep.listRelations(ent_id,{user_id:id})
+   let roleRelations = await Role.listRelations(ent_id,{user_id:id})
+   let educationHistory = await DB.employee_education_history.Query(ent_id).where({user_id:id})
+   
+    u.deps = depRelations.filter(v => v.user_id == u.id).map(v => v.dep_id) || []
+    u.roles = roleRelations.filter(v => v.user_id == u.id).map(v => v.role_id) || []
+    u.education_history = educationHistory.filter(v => v.user_id == u.id)
+   
+
+   return u
 }
 
 
@@ -145,7 +167,10 @@ o.Create = async (state,data,ent_id)=>{
   if(Array.isArray(roles))
     await o.ChangeRoles(state,account.id,roles)
   if(Array.isArray(deps))
-    await o.ChangeDeps(state,accont.id,deps)
+    await o.ChangeDeps(state, account.id, deps)
+ 
+  if (Array.isArray(education_history))
+    await o.ChangeEducationHistory(state,account.id,education_history)
   return {
     id:account.id,
     created_at:account.created_at,
@@ -176,6 +201,9 @@ o.Update = async (state,id,data)=>{
     await o.ChangeRoles(state,id,roles)
   if(Array.isArray(deps))
     await o.ChangeDeps(state,id,deps)
+   console.log(education_history)
+  if (Array.isArray(education_history))
+    await o.ChangeEducationHistory(state, id, education_history)
   let isExistEmployee = await MYSQL('employee').first("id").where({id})
   if(isExistEmployee){
     await MYSQL.E(state.enterprise_id,"employee").update(employee).where({id})
@@ -187,10 +215,16 @@ o.Update = async (state,id,data)=>{
   
 }
 
+o.ChangePersonalState = async (state,id,data,ent_id)=>{
+  let {personal_state,personal_focus} = data
+  let employee = {personal_state,personal_focus}
+  let UpdateQuery = DB.employee.Query(ent_id)
+  await UpdateQuery.update(employee).where({id})
+}
+
 o.ChangeDeps = async (state,id,data)=>{
   if(!id || !Array.isArray(data))
     throw EXCEPTION.E_INVALID_DATA
-  delete data.id
   let params = data.map(dep=>({
     user_id:id,
     dep_id:dep
@@ -203,7 +237,6 @@ o.ChangeDeps = async (state,id,data)=>{
 o.ChangeRoles = async (state,id,data)=>{
   if(!id || !Array.isArray(data))
     throw EXCEPTION.E_INVALID_DATA
-  delete data.id
   let params = data.map(v=>({
     user_id:id,
     role_id:v
@@ -211,6 +244,26 @@ o.ChangeRoles = async (state,id,data)=>{
   await MYSQL.E(state.enterprise_id,"role_user").where({user_id:id}).del()
   if(params.length != 0)
     await MYSQL.E(state.enterprise_id,"role_user").insert(params)
+}
+
+o.ChangeEducationHistory = async (state,id,data)=>{
+   if (!id || !Array.isArray(data))
+     throw EXCEPTION.E_INVALID_DATA
+
+   let params = data.map(v=>({
+     user_id:id,
+     education_level:v.education_level,
+     school_name:v.school_name,
+     from:v.from,
+     to:v.to
+    
+   }))
+   let ent_id = state.enterprise_id
+   let DeleteQuery = DB.employee_education_history.Query(ent_id)
+   let InsertQuery = DB.employee_education_history.Query(ent_id)
+   await DeleteQuery.where({user_id: id}).del()
+   if (params.length != 0)
+     await InsertQuery.insert(params)
 }
 
 o.Delete = async (state,id)=>{
