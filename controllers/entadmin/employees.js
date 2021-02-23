@@ -49,6 +49,12 @@ out.Delete = async ctx=>{
   await Employee.Delete(state,id)
 }
 
+out.Get = async ctx=>{
+  let id = ctx.params.id
+  let ent_id = ctx.state.enterprise_id
+  let employee = await Employee.Get(ctx.state,id)
+  return employee
+}
 
 out.PostAction = async ctx=>{
   let action = ctx.params.action
