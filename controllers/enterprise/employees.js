@@ -16,4 +16,11 @@ out.Patch = async ctx=>{
   await Employee.ChangePersonalState(state,id,data)
 }
 
+out.Get = async ctx=>{
+  let id = ctx.params.id
+  let ent_id = ctx.state.enterprise_id
+  let employee = await Employee.Get(ctx.state,id)
+  return employee
+}
+
 module.exports = out
