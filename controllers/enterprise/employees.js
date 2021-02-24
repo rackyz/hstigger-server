@@ -4,6 +4,11 @@ const {
 let out = {}
 
 
+out.List = async ctx=>{
+  let items = await Employee.List(ctx.state)
+  return items
+}
+
 out.Patch = async ctx=>{
   let state = ctx.state
   let id = ctx.params.id
