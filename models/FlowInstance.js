@@ -603,13 +603,25 @@ const pred_ids = [
 
 ]
 
-const _cacheInstanceData = async (ent_id)=>{
+o.GetUserInstanceList = async (ent_id,user_id)=>{
+  return await _cacheInstanceData(ent_id,{created_by:user_id})
+}
+
+const _cacheInstanceData = async (ent_id,queryCondition)=>{
    REDIS.ASC_SET_JSON(RK_REPORT_LOADING, "loading")
    REDIS.EXPIRE(RK_REPORT_LOADING,60)
    console.log("START LOADING FLOW INSTANCE...")
+   let cachable = true
     let instances =[]
    try{
-   instances = await MYSQLE(ent_id, T_INST).select()
+   let query = MYSQLE(ent_id, T_INST).select()
+   if(queryCondition){
+    query = query.where(queryCondition) 
+    cachable = false
+  }
+  
+   instances = await query
+  
    for (let i = 0; i < instances.length; i++) {
      let inst_id = instances[i].id
      let historyNodes = await MYSQLE(ent_id, T_NODE).select('id','key', 'executors', 'op', 'state').where('flow_id', inst_id)
@@ -678,13 +690,18 @@ const _cacheInstanceData = async (ent_id)=>{
    }
   }catch(e){
     REDIS.DEL(RK_REPORT_LOADING)
+    console.error(e)
     throw '数据拉取错误,请联系管理员'
   }
 
    REDIS.DEL(RK_REPORT_LOADING)
-   REDIS.SET_JSON(RK_REPORT, instances)
-   REDIS.EXPIRE(RK_REPORT, 3600)
-   console.log("SUCCEED LOADING FLOW INSTANCE...")
+   if (cachable) {
+    REDIS.SET_JSON(RK_REPORT, instances)
+    REDIS.EXPIRE(RK_REPORT, 3600)
+    console.log("SUCCEED LOADING FLOW INSTANCE...")
+   }
+
+   return instances
 }
 
 const CacheInstanceData = async (ent_id,forced = false)=>{

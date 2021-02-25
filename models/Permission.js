@@ -19,6 +19,29 @@ const RESOURCE_TYPE = {
 
 o.RESOURCE_TYPE = RESOURCE_TYPE
 
+const DB = {}
+
+DB.permission = MYSQL.Create('permission',t=>{
+  t.increments().primary()
+  t.stirng('name',32)
+  t.string('desc',256)
+  t.string('key',32)
+  t.integer('client_type')
+  t.integer('server_type')
+  t.integer('parent_id')
+  t.integer('permission_type')
+  t.integer('extra_data')
+  t.integer('created_at')
+})
+
+DB.authed_permission = MYSQL.Create('authed_permission',t=>{
+   t.increments().primary()
+   t.uuid('client_id')
+   t.integer('permission_id')
+   t.string('value',32)
+   t.datetime('updated_at')
+})
+
 o.initdb = async (forced)=>{
   if(forced){
    await Type.AddType('ResourceType', [{
