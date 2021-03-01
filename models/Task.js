@@ -287,18 +287,32 @@ o.patch = async (ctx, id, data, ent_id) => {
 o.process = async (state,id,data,ent_id)=>{
   //GET TYPE
   const Q = DB.task.Query(ent_id)
-  let updateInfo = {
-    result:data.files,
-    finished_at:data.finished_at,
-  //  result_desc:data.desc,
-    state:2
+  let task = await Q.first('base_type').where({id})
+  if(!task){
+    throw "任务ID不存在:"+id
   }
-  await Q.update(updateInfo).where({id})
-  return updateInfo
+
+  if(task.base_type == 0){
+    const Update = DB.task.Query(ent_id)
+    let updateInfo = {
+      result: data.files,
+      finished_at: data.finished_at,
+      result_desc: data.desc,
+      state: data.state != undefined ? data.state : 2
+    }
+    await Update.update(updateInfo).where({
+      id
+    })
+    return updateInfo
+  }else{
+    // 任务跟踪
+    throw "暂不支持该类型任务处理"
+  }
+  
 }
 
 // 删除任务
-o.del = async (ctx, id_list, ent_id) => {
+o.remove = async (ctx, id_list, ent_id) => {
   const Q = DB.task.Query(ent_id)
   await Q.whereIn('id', id_list).del()
   // 移除文件的关联
