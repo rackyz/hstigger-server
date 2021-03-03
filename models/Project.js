@@ -32,6 +32,10 @@ o.initdb = async (forced) => {
       t.uuid('charger')
     t.datetime('created_at')
     t.string('desc',256)
+    t.integer('business_type')
+    t.integer('building_type')
+    t.string('address',128)
+    t.text('images')
   }, forced)
 
   // 用工记录
@@ -92,6 +96,12 @@ o.initdb_e = async (ent_schema, forced) => {
     t.integer('project_cat_id')
     t.string('project_cat_key')
   },forced,ent_schema)
+
+  if(forced){
+     Type.AddType("P_ARCH_TYPE", ['全过程咨询', '市政监理', '项目管理', '房建监理', 'BIM咨询', '造价咨询', '招标代理', ],ent_id)
+     Type.AddType("P_BUILDING_TYPE", ['住宅', '学校', 'CBD', '桥梁', '厂房', '公园', '小区', '旧房改造', '数据中心'], ent_id)
+
+  }
 
 }
 
