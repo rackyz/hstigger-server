@@ -274,6 +274,7 @@ o.createFromTemplate =  async (state,tmpl_id,data,ent_id)=>{
   // insert
   let InsertQuery = DB.task.Query(ent_id)
   await InsertQuery.insert(tasks)
+  return
 }
 
 o.saveTemplate = async (state,task_id,data,ent_id)=>{
@@ -293,6 +294,9 @@ o.saveTemplate = async (state,task_id,data,ent_id)=>{
         created_at:timeStamp
     }))
 
+    let InsertQuery = DB.task_template.Query(ent_id)
+    await InsertQuery.insert(templates)
+    return
 }
 
 
