@@ -195,30 +195,35 @@ o.create = async (ctx, data, ent_id) => {
   return updateInfo
 }
 
-o.listTree = async (state, id, ent_id, table_name ,with_id_replaced) => {
-   let Query = MYSQL[table_name].Query(ent_id)
+o.listTree = async (state, id, ent_id, table_name ,with_id_replaced,array_list) => {
+   let Query = DB[table_name].Query(ent_id)
    let item = await Query.where({id})
    if (with_id_replaced){
     delete item.parent_id
     item.id = UTIL.createUUID()
    }
    
-   let subs = await o.cascadedListSubs(state, id, ent_id, "task_template", with_id_replaced ? item.id : null)
+   let subs = await o.cascadedChildren(state, id, ent_id, "task_template", with_id_replaced ? item.id : null,array_list)
    return [item, ...subs]
 }
 
-o.cascadedChildren = async (state, id, ent_id, table_name, replaced_id) => {
-  let QuerySubs = MYSQL[table_name].Query(ent_id)
+o.cascadedChildren = async (state, id, ent_id, table_name, replaced_id,array_list) => {
+  let QuerySubs = DB[table_name].Query(ent_id)
   let subs = await QuerySubs.where('parent_id', id)
   let list = subs
+  if(replaced_id && Array.isArray(array_list)){
+    list = subs.filter(v=>array_list.includes(v.id))
+  }
   for(let i=0;i<subs.length;i++){
     let sub_id = subs[i].id
+    
     if (replaced_id){
       subs[i].id = UTIL.createUUID()
       subs[i].parent_id = replaced_id
+      subs[i].unique_tmpl_key = sub_id
     }
     if(sub_id != id){
-      let items = await o.cascadedList(state, sub_id, ent_id, table_name, subs[i].id)
+      let items = await o.cascadedChildren(state, sub_id, ent_id, table_name, subs[i].id)
       list = list.concat(items)
     }
   }
@@ -227,17 +232,31 @@ o.cascadedChildren = async (state, id, ent_id, table_name, replaced_id) => {
 
 o.listTemplates = async (state,condition = {},ent_id)=>{
   let Q = DB.task_template.Query(ent_id)
-  let items = await Q.whereNull('parent_id').where('actived',1)
+  if(condition.parent_id)
+    Q = Q.where({parent_id:condition.parent_id,actived:1})
+  else
+    Q = Q.whereNull('parent_id').where('actived',1)
+  let items = await Q
   return items
 }
 
+
 o.createFromTemplate =  async (state,tmpl_id,data,ent_id)=>{
   // list all tasks
-  let templates = await o.listTree(state,tmpl_id,ent_id,true)
+  
   let timeStamp = UTIL.getTimeStamp()
+  let list = data.list || []
+  delete data.list
+  let init_data = {}
+  if(data.project_id)
+    init_data.project_id = data.project_id
+  if(list.length == 0)
+    throw "未选择任务" 
+  let templates = await o.listTree(state,tmpl_id,ent_id,'task_template',true,list)
   // merge with param data
   let tasks = templates.map(v => {
     return {
+      id:v.id,
       base_type:v.base_type,
       name:v.name,
       business_type:v.business_type,
@@ -246,13 +265,14 @@ o.createFromTemplate =  async (state,tmpl_id,data,ent_id)=>{
       parent_id:v.parent_id,
       desc:v.desc,
       files:v.files,
-      ...data,
+      ...init_data,
+      unique_tmpl_key:v.id,
       created_at: timeStamp,
       created_by:state.id
     }
   })
   // insert
-  let InsertQuery = DB.task.Query('ent_id')
+  let InsertQuery = DB.task.Query(ent_id)
   await InsertQuery.insert(tasks)
 }
 

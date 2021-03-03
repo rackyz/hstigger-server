@@ -19,8 +19,12 @@ out.List = async ctx => {
 out.Post = async ctx => {
   let state = ctx.state
   let ent_id = state.enterprise_id
-
+  let tmpl_id = ctx.query.tmpl
   let data = ctx.request.body
+  if(tmpl_id){
+    let updateInfo = await Task.createFromTemplate(state,tmpl_id,data,ent_id)
+    return updateInfo
+  }
   let updateInfo = await Task.create(state, data, ent_id)
   return updateInfo
 }
@@ -28,6 +32,7 @@ out.PROCESS_TASK = {
   url:"PATCH /enterprise/tasks/:id?q=process",
   desc:"处理消息，提交数据"
 }
+
 
 
 out.Patch = async ctx => {
