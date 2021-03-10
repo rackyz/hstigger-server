@@ -39,7 +39,7 @@ DB.task = MYSQL.Create('task',t=>{
   t.text('files')
   t.datetime('start_at')
   t.datetime('finished_at')
-
+  t.integer('sub_task_count').defaultTo(0)
   // 创建信息
   t.uuid('created_by')
   t.datetime('created_at')
@@ -55,6 +55,7 @@ DB.task_template = MYSQL.Create('task_template',t=>{
    t.integer('business_type').defaultTo(0)
    // 任务期限：plan_duration(ms)
    t.integer('plan_duration')
+   
   t.text('desc')
   t.text('files')
   // 是否启用
@@ -83,7 +84,6 @@ o.initdb = async (forced) => {
 o.initdb_e = async (ent_id, forced) => {
  
   await MYSQL.Migrate(DB,forced,ent_id)
-
   if(forced){
   let items = await GZSQL('gzcloud.task_template').select('id','title','type_id','sequence')
   let types = {
@@ -91,14 +91,16 @@ o.initdb_e = async (ent_id, forced) => {
     'type000000003002':'设计管理',
     'type000000003003': '合约管理',
     'type000000003004': '招投标管理',
-    'type000000003005': '现场管理'
+    'type000000003005': '现场管理',
+    'type000000003006': '施工管理'
   }
    let types_map = {
-     'type000000003001': 95,
-     'type000000003002': 98,
-     'type000000003003': 97,
-     'type000000003004': 101,
-     'type000000003005': 100
+     'type000000003001': 0,
+     'type000000003002': 3,
+     'type000000003003': 2,
+     'type000000003004': 6,
+     'type000000003005': 5,
+     'type000000003006': 5
    }
    let type_ids = {}
    let timeStamp = UTIL.getTimeStamp()
@@ -108,27 +110,35 @@ o.initdb_e = async (ent_id, forced) => {
     return {
       id,
       business_type:types_map[v],
-      base_type:156,
+      base_type:0,
       name:types[v],
       created_by:"ROOT",
       sequence:i,
+      sub_task_count:0,
+      actived: 1,
       created_at: timeStamp
     }
   })
 
   tasks =  tasks.concat(items.map(v=>{
+    let parentId = tasks.findIndex(p=>p.id == type_ids[v.type_id])
+    if (parentId != -1)
+      tasks[parentId].sub_task_count++
     return {
       id:UTIL.createUUID(),
       business_type:types_map[v.type_id],
-      base_type:156,
+      base_type:0,
       parent_id:type_ids[v.type_id],
       name:v.title,
+      actived:1,
       sequence:v.sequence,
       created_by: "ROOT",
       created_at: timeStamp
     }
   }))
 
+  await DB.task_template.Query(ent_id).del()
+  await DB.task.Query(ent_id).del()
   await DB.task_template.Query(ent_id).insert(tasks)
 }
 }
@@ -144,7 +154,7 @@ o.count = async (state, queryCondition = {}, ent_id) => {
 
 // 查询
 o.query = async (state, queryCondition = {}, ent_id) => {
-  let pageSize = queryCondition.pageSize || 100
+  let pageSize = queryCondition.pageSize || 500
   let page = queryCondition.page || 1
   const condition = null
   const Q = DB.task.Query(ent_id)
@@ -197,9 +207,11 @@ o.create = async (ctx, data, ent_id) => {
 
 o.listTree = async (state, id, ent_id, table_name ,with_id_replaced,array_list) => {
    let Query = DB[table_name].Query(ent_id)
-   let item = await Query.where({id})
+   let item = await Query.first().where({id})
+   console.log('item:',item)
    if (with_id_replaced){
     delete item.parent_id
+    item.unique_tmpl_key = item.id
     item.id = UTIL.createUUID()
    }
    
@@ -253,24 +265,28 @@ o.createFromTemplate =  async (state,tmpl_id,data,ent_id)=>{
   if(list.length == 0)
     throw "未选择任务" 
   let templates = await o.listTree(state,tmpl_id,ent_id,'task_template',true,list)
+  
+
   // merge with param data
   let tasks = templates.map(v => {
     return {
       id:v.id,
       base_type:v.base_type,
-      name:v.name,
+      name:v.sequence?(v.sequence+'-'+v.name):v.name,
       business_type:v.business_type,
       plan_duration:v.plan_duration,
       percent:v.percent,
       parent_id:v.parent_id,
+      sub_task_count:v.sub_task_count,
       desc:v.desc,
       files:v.files,
-      ...init_data,
-      unique_tmpl_key:v.id,
+      unique_tmpl_key: v.unique_tmpl_key,
       created_at: timeStamp,
-      created_by:state.id
+      created_by:state.id,
+      ...init_data
     }
   })
+
   // insert
   let InsertQuery = DB.task.Query(ent_id)
   await InsertQuery.insert(tasks)
@@ -336,10 +352,21 @@ o.process = async (state,id,data,ent_id)=>{
 }
 
 // 删除任务
-o.remove = async (ctx, id_list, ent_id) => {
+o.remove = async (ctx, id_list = [], ent_id) => {
+  const D = DB.task.Query(ent_id)
   const Q = DB.task.Query(ent_id)
-  await Q.whereIn('id', id_list).del()
+  
+  let children_id_list = await Q.whereIn('parent_id', id_list).select('id').map(v=>v.id)
+  let list = [...id_list,...children_id_list]
+  await D.whereIn('id', id_list).del()
+  while (children_id_list.length != 0) {
+    await DB.task.Query(ent_id).whereIn('id', children_id_list).del()
+    children_id_list = await DB.task.Query(ent_id).whereIn('parent_id', children_id_list).select('id').map(v=>v.id)
+    list = list.concat(children_id_list)
+  }
+  
   // 移除文件的关联
+  return list
 }
 
 

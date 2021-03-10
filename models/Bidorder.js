@@ -32,16 +32,9 @@ DB.bidorder = MYSQL.Create('bidorder',t=>{
   t.datetime('created_at')
 })
 
-
-
 o.initdb_e = async (ent_id, forced) => {
   await MYSQL.Migrate(DB,forced, ent_id)
-  
- 
-
 }
-
-
 
 o.query = async (state, condition, ent_id) => {
   const Q = DB.bidorder.Query(ent_id)
