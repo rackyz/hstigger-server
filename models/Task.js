@@ -29,6 +29,7 @@ DB.task = MYSQL.Create('task',t=>{
   t.uuid('charger')
   // 任务成果：file/files/dataObject
   t.text('result')
+  t.text('comment')
   // 工作量占比
   t.double('percent')
   // 父任务
@@ -82,65 +83,65 @@ o.initdb = async (forced) => {
 }
 
 o.initdb_e = async (ent_id, forced) => {
- 
+  
   await MYSQL.Migrate(DB,forced,ent_id)
   if(forced){
-  let items = await GZSQL('gzcloud.task_template').select('id','title','type_id','sequence')
-  let types = {
-    'type000000003001':'前期管理',
-    'type000000003002':'设计管理',
-    'type000000003003': '合约管理',
-    'type000000003004': '招投标管理',
-    'type000000003005': '现场管理',
-    'type000000003006': '施工管理'
+    let items = await GZSQL('gzcloud.task_template').select('id','title','type_id','sequence')
+    let types = {
+      'type000000003001':'前期管理',
+      'type000000003002':'设计管理',
+      'type000000003003': '合约管理',
+      'type000000003004': '招投标管理',
+      'type000000003005': '现场管理',
+      'type000000003006': '施工管理'
+    }
+    let types_map = {
+      'type000000003001': 0,
+      'type000000003002': 3,
+      'type000000003003': 2,
+      'type000000003004': 6,
+      'type000000003005': 5,
+      'type000000003006': 5
+    }
+    let type_ids = {}
+    let timeStamp = UTIL.getTimeStamp()
+    let tasks = Object.keys(types).map((v,i)=>{
+      let id = UTIL.createUUID()
+      type_ids[v] = id
+      return {
+        id,
+        business_type:types_map[v],
+        base_type:0,
+        name:types[v],
+        created_by:"ROOT",
+        sequence:i,
+        sub_task_count:0,
+        actived: 1,
+        created_at: timeStamp
+      }
+    })
+
+    tasks = tasks.concat(items.map(v=>{
+      let parentId = tasks.findIndex(p=>p.id == type_ids[v.type_id])
+      if (parentId != -1)
+        tasks[parentId].sub_task_count++
+      return {
+        id:UTIL.createUUID(),
+        business_type:types_map[v.type_id],
+        base_type:0,
+        parent_id:type_ids[v.type_id],
+        name:v.title,
+        actived:1,
+        sequence:v.sequence,
+        created_by: "ROOT",
+        created_at: timeStamp
+      }
+    }))
+
+    await DB.task_template.Query(ent_id).del()
+    await DB.task.Query(ent_id).del()
+    await DB.task_template.Query(ent_id).insert(tasks)
   }
-   let types_map = {
-     'type000000003001': 0,
-     'type000000003002': 3,
-     'type000000003003': 2,
-     'type000000003004': 6,
-     'type000000003005': 5,
-     'type000000003006': 5
-   }
-   let type_ids = {}
-   let timeStamp = UTIL.getTimeStamp()
-  let tasks = Object.keys(types).map((v,i)=>{
-    let id = UTIL.createUUID()
-    type_ids[v] = id
-    return {
-      id,
-      business_type:types_map[v],
-      base_type:0,
-      name:types[v],
-      created_by:"ROOT",
-      sequence:i,
-      sub_task_count:0,
-      actived: 1,
-      created_at: timeStamp
-    }
-  })
-
-  tasks =  tasks.concat(items.map(v=>{
-    let parentId = tasks.findIndex(p=>p.id == type_ids[v.type_id])
-    if (parentId != -1)
-      tasks[parentId].sub_task_count++
-    return {
-      id:UTIL.createUUID(),
-      business_type:types_map[v.type_id],
-      base_type:0,
-      parent_id:type_ids[v.type_id],
-      name:v.title,
-      actived:1,
-      sequence:v.sequence,
-      created_by: "ROOT",
-      created_at: timeStamp
-    }
-  }))
-
-  await DB.task_template.Query(ent_id).del()
-  await DB.task.Query(ent_id).del()
-  await DB.task_template.Query(ent_id).insert(tasks)
-}
 }
 
 
@@ -349,6 +350,21 @@ o.process = async (state,id,data,ent_id)=>{
     throw "暂不支持该类型任务处理"
   }
   
+}
+
+o.arrange = async (state,id,data,ent_id)=>{
+  let {charger,start_at,plan_duration, comment} = data
+  const Q = DB.task.Query(ent_id)
+  let task = await Q.first('base_type').where({id})
+  // 1 - check user prvillege
+  // let user_id = state.id
+
+  // 2 - check task state && type
+  // Only normal(type=0) and uninited(state=0) task can be arranged
+  // 
+  let U = DB.task.Query(en_id)
+  await U.update({charger,start_at,plan_duration,comment}).where({id})
+  return {charger,start_at,plan_duration,comment,state:1}
 }
 
 // 删除任务

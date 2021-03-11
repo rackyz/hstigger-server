@@ -33,6 +33,10 @@ out.PROCESS_TASK = {
   desc:"处理消息，提交数据"
 }
 
+out.ARRANGE_TASK = {
+  url:"PATCH /enterprise/tasks/:id?q=arrange",
+  desc:"分配任务,初始化"
+}
 
 
 out.Patch = async ctx => {
@@ -43,6 +47,11 @@ out.Patch = async ctx => {
   let q = ctx.query.q
   if(q == 'process'){
     let updateInfo = await Task.process(state, id, data, ent_id)
+    return updateInfo
+  }
+
+  if(q == 'arrange'){
+    let updateInfo = await Task.arrange(state,id,data,ent_id)
     return updateInfo
   }
 
