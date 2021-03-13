@@ -162,7 +162,7 @@ o.query = async (state, queryCondition = {}, ent_id) => {
   if (condition) {
     Q = Q.where(condition)
   }
-  let items = await Q.offset((page - 1) * pageSize).limit(pageSize)
+  let items = await Q.offset((page - 1) * pageSize).limit(pageSize).orderBy('created_at','desc')
 
   return items
 }
@@ -174,7 +174,7 @@ o.listMine = async (state,ent_id)=>{
 }
 
 // 获取任务内容
-o.get = async (ctx, id, ent_id) => {
+o.get = async (state, id, ent_id) => {
   const Q = DB.task.Query(ent_id)
 
   let item = await Q.first().where({
@@ -196,7 +196,7 @@ o.create = async (ctx, data, ent_id) => {
   let updateInfo = {
     id: UTIL.createUUID(),
     state:0,
-
+    base_type:data.base_type || 0,
     created_at,
     created_by
   }

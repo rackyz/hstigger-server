@@ -66,6 +66,13 @@ out.Delete = async ctx => {
   await Task.remove(state, id, ent_id)
 }
 
+out.Get = async ctx=>{
+   let id = ctx.params.id
+   let state = ctx.state
+   let ent_id = state.enterprise_id
+   let task = await Task.get(state, id, ent_id)
+   return task
+}
 
 // out.PostAction = async ctx=>{
 //   let action = ctx.params.action
