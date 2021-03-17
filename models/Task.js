@@ -181,6 +181,8 @@ o.get = async (state, id, ent_id) => {
     id
   })
   
+  const QC = DB.task.Query(ent_id)
+  item.children = await QC.where({parent_id:id})
 
   return item
 }
