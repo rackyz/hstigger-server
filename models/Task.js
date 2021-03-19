@@ -85,6 +85,7 @@ o.initdb = async (forced) => {
 o.initdb_e = async (ent_id, forced) => {
   
   await MYSQL.Migrate(DB,forced,ent_id)
+  forced = true
   if(forced){
     let items = await GZSQL('gzcloud.task_template').select('id','title','type_id','sequence')
     let types = {
@@ -250,8 +251,10 @@ o.listTemplates = async (state,condition = {},ent_id)=>{
   if(condition.parent_id)
     Q = Q.where({parent_id:condition.parent_id,actived:1})
   else
-    Q = Q.whereNull('parent_id').where('actived',1)
+    Q = Q.whereNull('parent_id')
+    
   let items = await Q
+  console.log(condition)
   return items
 }
 
@@ -340,7 +343,7 @@ o.process = async (state,id,data,ent_id)=>{
     let updateInfo = {
       result: data.files,
       finished_at: data.finished_at,
-      result_desc: data.desc,
+      comment: data.comment,
       state: data.state != undefined ? data.state : 2
     }
     await Update.update(updateInfo).where({
