@@ -85,7 +85,7 @@ o.initdb = async (forced) => {
 o.initdb_e = async (ent_id, forced) => {
   
   await MYSQL.Migrate(DB,forced,ent_id)
-  forced = true
+  
   if(forced){
     let items = await GZSQL('gzcloud.task_template').select('id','title','type_id','sequence')
     let types = {
