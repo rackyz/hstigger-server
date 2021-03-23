@@ -119,7 +119,7 @@ o.initdb = async (forced) => {
  const GZContractTypes = ['项目管理', '造价咨询', 'BIM咨询', '装修工程', '市政监理', '房建监理', '对外合作', '其他']
 
 o.initdb_e = async (ent_id, forced) => {
-  forced = true
+  
   Tables.forEach(async t => {
     await t.Init(forced, ent_id)
   })

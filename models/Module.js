@@ -4,9 +4,10 @@ const EXCEPTION = require('../base/exception')
 const Enterprise = require('./Enterprise')
 const Type = require("./Type")
 const Permission = require('./Permission')
+const Setting = require('./Setting')
 const { UserLogger } = require('../base/logger')
 let o = {
-  required: ["Type"]
+  required: ["Type","Setting"]
 }
 
 // Database Initalization
@@ -76,6 +77,7 @@ const initData = [{
    level: 4,
    created_at: TIMESTAMP
 }]
+
 
 o.initdb = async (forced) => {
  
@@ -281,6 +283,7 @@ o.create = async (item,op)=>{
   await MYSQL(T_MODULE).insert(item)
   let createInfo = {
     id:item.id,
+    key:item.name,
     created_at : item.created_at,
     created_by :op
   }
@@ -308,6 +311,10 @@ o.deleteObjects = async (id_list,op)=>{
   UserLogger.info(`${op}删除了应用${id_list.join(',')}`)
 }
 
+
+o.EnableModule = async (state, id, disbaled_list = [], ent_id) => {
+  await Setting.setValue(state,'MODULE_ENABLED',disbaled_list.join(','),ent_id)
+}
 
 
 module.exports = o

@@ -6,7 +6,7 @@ const RedisClient = require('redis').createClient(config.redis.port, config.redi
 RedisClient.on('ready', function () {
   RedisLogger.info('Redis初始化完毕')
   // DEV MODE
-  RedisClient.flushdb()
+  // RedisClient.flushdb()
 })
 
 

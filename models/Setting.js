@@ -10,6 +10,20 @@ const o = {
 const TABLE_SETTING = 'setting'
 
 
+let DB = {}
+
+DB.Setting = MYSQL.Create('setting', t => {
+  t.increments('id').primary()
+  t.string('key',256)
+  t.text('value')
+
+})
+
+o.initdb_e = async(ent_id,forced)=>{
+   await MYSQL.Migrate(DB, forced, ent_id)
+}
+
+
 /** Initialize Datebase */
 o.initdb = async (forced)=>{
  
@@ -44,6 +58,8 @@ o.initdb = async (forced)=>{
   }
 }
 
+
+
 o.getAPISettings = async (api_root)=>{
   return api.GetAPIObject(api_root)
 }
@@ -59,5 +75,46 @@ o.getSettings = async (group,type)=>{
   return UTIL.ArrayToObject(settings,'key',t=>JSON.parse(t.value))
 }
 
+
+o.getEnterpriseSettings = async (state,key_list = [],ent_id)=>{
+  let Query = DB.Setting.Query(ent_id).select('key', 'value')
+  if(key_list.length > 0)
+    Query = Query.whereIn('id',key_list)
+  
+  let settings = await Query
+  return settings
+
+}
+
+o.postSettings = async (state,data,ent_id)=>{
+    // 权限鉴定
+
+    let key_list = data.map(v => v.key)
+    let DelQuery = DB.Setting.Query(ent_id)
+    let Query = DB.Setting.Query(ent_id)
+    await DelQuery.whereIn('id', key_list).del()
+    await Query.insert(data)
+}
+
+o.getValue = async (state,key,ent_id)=>{
+   let Query = DB.Setting.Query(ent_id)
+
+   let setting = await Query.first('value').where({
+     id: key
+   })
+   if(setting){
+     return setting.value
+   }
+
+}
+
+
+o.setValue = async (state,key,value,ent_id)=>{
+  // 权限鉴定
+
+  let Query = DB.Setting.Query(ent_id)
+
+  await Query.update('value',value).where({id:key})
+}
 
 module.exports = o
