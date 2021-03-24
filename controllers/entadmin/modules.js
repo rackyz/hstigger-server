@@ -16,26 +16,24 @@ out.Auth = async (method, {
 out.List = async (ctx) => {
   let state = ctx.state
   let ent_id = state.enterprise_id
-  let modules = await Module.getAuthedModules(state.id,state.enterprise_id,false,false)
-  let disbaled_list = await Setting.getValue(state, 'MODULE_ENABLED', ent_id)
+  let modules = await Module.getAuthedModules(state.id, ent_id, false, false, true)
+  let disbaled_list = await Setting.getValue(state, 'MODULE_DISABLED', ent_id)
   if (disbaled_list && typeof disbaled_list == 'string')
   { 
     disbaled_list = disbaled_list.split(',')
     modules.forEach(v=>{
-      if(enabled_list.includes(v.key))
+      if (disbaled_list.includes(v.id))
         v.disabled = true
     })
   }
-  console.log('modules:',modules.length)
   return modules
 }
 
 out.Patch = async (ctx) => {
-  let disbaled_list = ctx.request.body
   let state = ctx.state
   let ent_id = state.enterprise_id
   let id = ctx.params.id
-  return await Module.EnableModule(state, id, disbaled_list, ent_id)
+  return await Module.ToggleModuleEnabled(state, id, ent_id)
 }
 
 module.exports = out

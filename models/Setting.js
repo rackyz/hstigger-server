@@ -100,7 +100,7 @@ o.getValue = async (state,key,ent_id)=>{
    let Query = DB.Setting.Query(ent_id)
 
    let setting = await Query.first('value').where({
-     id: key
+     key
    })
    if(setting){
      return setting.value
@@ -113,8 +113,8 @@ o.setValue = async (state,key,value,ent_id)=>{
   // 权限鉴定
 
   let Query = DB.Setting.Query(ent_id)
-
-  await Query.update('value',value).where({id:key})
+  await Query.where({key}).del()
+  await Query.insert({key,value})
 }
 
 module.exports = o

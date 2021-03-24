@@ -216,7 +216,7 @@ const pred_ids = [
 //        3 - ent_mode:
 //            public modules filter by level
 //            private modules filter by enterprise_previllege && uservilledge
-o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
+o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin, ignore_identify = false)=>{
   if(!user_id)
     throw EXCEPTION.E_INVALID_DATA
   
@@ -227,13 +227,23 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
     queryModules = queryModules.where('level',3)
   
   let modules = await queryModules
-
+  
   if(ent_id)
   {
     let mod_idlist = await MYSQL(T_ENTERPRISE_MODULE).where({ent_id})
+    console.log(mod_idlist)
+    let disbaled_list = await Setting.getValue({id:user_id}, 'MODULE_DISABLED', ent_id)
+    if (disbaled_list && typeof disbaled_list == 'string') {
+      disbaled_list = disbaled_list.split(',')
+    }else{
+      disbaled_list = []
+    }
     modules = modules.filter(v => {
+      if (disbaled_list.includes(v.id))
+        v.disabled = true
+
       if(v.private){
-        if((pred_ids.includes(user_id) || isEntAdmin || isAdmin) && mod_idlist.find(m => m.mod_id != v.id))
+        if ((ignore_identify || pred_ids.includes(user_id) || isEntAdmin || isAdmin) && mod_idlist.find(m => m.mod_id == v.id))
           return true
         else
           return false
@@ -245,10 +255,17 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
         else
           return true
       }
+
+     
     })
+
+
+
   }else{
     modules = modules.filter(v=>v.level < 2)
   }
+
+  
 
 
   return modules
@@ -294,9 +311,9 @@ o.create = async (item,op)=>{
 o.update = async (id,item,op)=>{
   if(!id || !item || !op)
     throw EXCEPTION.E_INVALID_DATA
-
+  
   delete item.id
-  MYSQL(T_MODULE).update(item).where({id})
+  await MYSQL(T_MODULE).update(item).where({id})
 
   UserLogger.info(`${op}创建了修改了应用${item.name}的信息`)
 
@@ -312,8 +329,25 @@ o.deleteObjects = async (id_list,op)=>{
 }
 
 
-o.EnableModule = async (state, id, disbaled_list = [], ent_id) => {
-  await Setting.setValue(state,'MODULE_ENABLED',disbaled_list.join(','),ent_id)
+o.ToggleModuleEnabled = async (state, id, ent_id) => {
+  let disabled_list = await Setting.getValue(state,'MODULE_DISABLED',ent_id)
+ 
+  let disabled = true
+  if(!disabled_list || typeof disabled_list != 'string')
+    disabled_list = []
+  else
+    disabled_list = disabled_list.split(',')
+  let index = disabled_list.findIndex(v=>v==id)
+  if(index != -1){
+    disabled_list.splice(index,1)
+    
+    disabled = false
+  }else{
+    disabled_list.push(id)
+    disabled = true
+  }
+  await Setting.setValue(state, 'MODULE_DISABLED', disabled_list.join(','), ent_id)
+  return disabled
 }
 
 
