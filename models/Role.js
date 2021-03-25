@@ -3,6 +3,7 @@ const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require("./Type")
+const Permission = require('./Permission')
 let o = {}
 
 let DB = {}
@@ -90,6 +91,15 @@ o.remove = async (state,id,role)=>{
 o.removeList =  async (state,id_list)=>{
    let Q = DB.role.Query(state.enterprise_id)
    await Q.whereIn("id",id_list).del()
+}
+
+o.getACL = async (state,id,ent_id)=>{
+  return await Permission.getACL(id,ent_id)
+
+}
+
+o.patchACL = async (state,id,data,ent_id)=>{
+  return await Permission.patchACL(id,data,ent_id)
 }
 
 module.exports = o

@@ -1,6 +1,5 @@
 let {
-  Account,
-  Enterprise,
+  UTIL,
   Role
 } = require('../../models')
 let out = {}
@@ -24,11 +23,25 @@ out.Post = async ctx => {
   }
 }
 
+out.Get = async ctx=>{
+  let state = ctx.state
+  let ent_id = state.enterprise_id
+  let id = ctx.params.id
+  let acl = await Role.getACL(state,id,ent_id)
+  return acl
+}
+
 out.Patch = async ctx => {
   let id = ctx.params.id
   let state = ctx.state
   let ent_id = state.enterprise_id
+  let query = ctx.query.q
   let data = ctx.request.body
+  if(query == 'acl'){
+    await Role.patchACL(state,id,data,ent_id)
+    return
+  }
+
   let updateInfo = await Role.patch(state, id, data, ent_id)
   return updateInfo
 }

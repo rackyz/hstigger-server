@@ -114,6 +114,10 @@ o.initdb = async (forced)=>{
 
 }
 
+o.initdb_e = async (ent_id,forced)=>{
+  await MYSQL.migrate(DB,ent_id)
+}
+
 
 o.getPermissions = async (access_ids,res_type)=>{
   let Query = MYSQL(T_PERMISSION).whereIn('access_id', access_ids)
@@ -123,6 +127,24 @@ o.getPermissions = async (access_ids,res_type)=>{
     })
   let permissions = await Query
   return permissions.map(v=>({key:v.res_id,value:v.permit}))
+}
+
+
+o.getACL = async (client_id,ent_id)=>{
+  let query = DB.authed_permission.Query(ent_id)
+  let items = await query.where({client_id})
+  return items
+}
+
+
+o.patchACL = async (client_id,data = [],ent_id)=>{
+  let query = DB.authed_permission.Query(ent_id)
+  let remove = DB.authed_permission.Query(ent_id)
+  data.forEach(v=>{
+    v.client_id = client_id
+  })
+  await remove.where({client_id}).del()
+  await query.insert(data)
 }
 
 module.exports = o
