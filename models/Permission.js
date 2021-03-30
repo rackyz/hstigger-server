@@ -23,7 +23,7 @@ const DB = {}
 
 DB.permission = MYSQL.Create('permission',t=>{
   t.increments().primary()
-  t.stirng('name',32)
+  t.string('name',32)
   t.string('desc',256)
   t.string('key',32)
   t.integer('client_type')
@@ -107,7 +107,7 @@ o.initdb = async (forced)=>{
     t.increments('id').index()
     t.string('access_id',64).notNull()
     t.integer('access_type')
-    t.integer('res_type', 64).notNull()
+    t.integer('res_type').notNull()
     t.string('res_id', 64).notNull()
     t.boolean('permit').default(true)
   },forced)
@@ -115,7 +115,7 @@ o.initdb = async (forced)=>{
 }
 
 o.initdb_e = async (ent_id,forced)=>{
-  await MYSQL.migrate(DB,ent_id)
+  await MYSQL.Migrate(DB,ent_id)
 }
 
 

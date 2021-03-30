@@ -137,7 +137,7 @@ o.AuthCOS = ()=>{
       SecretId: config.cos.SecretId,
       SecretKey: config.cos.SecretKey,
       Method: 'post',
-      Expires: 60 * 24,
+      Expires: 60 * 24 *60,
       Query: {},
       Headers: {}
     })
