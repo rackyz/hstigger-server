@@ -2,6 +2,7 @@ const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require("./Type")
+const { getTimeStamp } = require('../base/util')
 let o = {
   required:["Type"]
 }
@@ -37,7 +38,7 @@ DB.permission = MYSQL.Create('permission',t=>{
 DB.authed_permission = MYSQL.Create('authed_permission',t=>{
    t.increments().primary()
    t.uuid('client_id')
-   t.integer('permission_id')
+   t.uuid('permission_id')
    t.string('value',32)
    t.datetime('updated_at')
 })
@@ -103,6 +104,7 @@ o.initdb = async (forced)=>{
      color: "yellowgreen"
    }])
   }
+
   await MYSQL.initdb(T_PERMISSION,t=>{
     t.increments('id').index()
     t.string('access_id',64).notNull()
@@ -115,12 +117,12 @@ o.initdb = async (forced)=>{
 }
 
 o.initdb_e = async (ent_id,forced)=>{
-  await MYSQL.Migrate(DB,ent_id)
+  forced = true
+  await MYSQL.Migrate(DB, forced,ent_id)
 }
 
-
 o.getPermissions = async (access_ids,res_type)=>{
-  let Query = MYSQL(T_PERMISSION).whereIn('access_id', access_ids)
+  let Query = MYSQL(T_PERMISSION).whereIn('key', access_ids)
   if(res_type)
     Query = Query.where({
       res_type
@@ -133,6 +135,9 @@ o.getPermissions = async (access_ids,res_type)=>{
 o.getACL = async (client_id,ent_id)=>{
   let query = DB.authed_permission.Query(ent_id)
   let items = await query.where({client_id})
+  items.forEach(v=>{
+    v.key = v.permission_id
+  })
   return items
 }
 
@@ -140,8 +145,12 @@ o.getACL = async (client_id,ent_id)=>{
 o.patchACL = async (client_id,data = [],ent_id)=>{
   let query = DB.authed_permission.Query(ent_id)
   let remove = DB.authed_permission.Query(ent_id)
+  let timeStamp = getTimeStamp()
   data.forEach(v=>{
+    v.permission_id = v.key
+    delete v.key
     v.client_id = client_id
+    v.updated_at = timeStamp
   })
   await remove.where({client_id}).del()
   await query.insert(data)
