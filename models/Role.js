@@ -18,6 +18,7 @@ DB.role = MYSQL.Create("role",t=>{
 
 DB.role_user = MYSQL.Create("role_user",t=>{
   t.increments().primary()
+  t.uuid('client_id')
   t.integer('role_id')
   t.uuid('user_id')
 })
@@ -61,7 +62,7 @@ o.listRelations = async (ent_id, queryCondition = {}) => {
        Query = Query.whereIn(x, queryCondition.in[x])
      }
    } else if (queryCondition.where) {
-     for (let x in queryCondition.in) {
+     for (let x in queryCondition.where) {
        Query = Query.where(x, queryCondition.where[x])
      }
    }
@@ -100,6 +101,40 @@ o.getACL = async (state,id,ent_id)=>{
 
 o.patchACL = async (state,id,data,ent_id)=>{
   return await Permission.patchACL(id,data,ent_id)
+}
+
+o.getUserACL = async (state,user_id,ent_id)=>{
+  // 1 - get all roles/deps
+  // 2 - get all permissions In deps
+  // 3 - override permissions in different region
+  // 4 - return final ACL table
+  console.log('getuseracl',user_id,ent_id)
+  let roles = await o.listRelations(ent_id,{where:{user_id}})
+  let deps = await MYSQL.E(ent_id ,'dep_employee').select('dep_id').where({
+    user_id
+  })
+  let id_list = []
+  roles.forEach(v=>{
+    id_list.push(v.role_id)
+  })
+  deps.forEach(v=>{
+    id_list.push(v.dep_id)
+  })
+
+  let permissions = await MYSQL.E(ent_id,'authed_permission').select('permission_id','value').whereIn('client_id',id_list)
+
+
+  let acl = {}
+  permissions.forEach(v => {
+    if(v.value == false){
+      acl[v.permission_id] = false
+    }else if(v.value && acl[v.permission_id] != undefined){
+      acl[v.permission_id] = true
+    }
+  })
+
+  console.log("ACL:",acl)
+  return acl
 }
 
 module.exports = o

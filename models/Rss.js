@@ -81,10 +81,15 @@ o.get = async (key,extra)=>{
 
 
 
-o.list = async ()=>{
-  let items = await MYSQL(T_RSS)
+o.list = async (queryParam = {})=>{
+  let Query = MYSQL(T_RSS)
+  if(queryParam.whereIn){
+    Query = Query.whereIn('id',queryParam.whereIn)
+  }
+  let items = await Query
   return items
 }
+
 
 o.create = async (item,op)=>{
   // validate

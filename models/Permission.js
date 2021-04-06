@@ -117,7 +117,7 @@ o.initdb = async (forced)=>{
 }
 
 o.initdb_e = async (ent_id,forced)=>{
-  forced = true
+
   await MYSQL.Migrate(DB, forced,ent_id)
 }
 

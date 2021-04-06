@@ -8,6 +8,7 @@ const SETTING = require('./Setting')
 const TYPE = require('./Type')
 const MESSAGE = require('./Message')
 const ENTERPRISE = require('./Enterprise')
+const Permission = require('./Permission')
 const MYSQL = require('../base/mysql')
 const RSS = require('./Rss')
 const Dep = require('./Dep')
@@ -48,11 +49,13 @@ const CreateUserInRedis = async (user_id)=>{
 }
 
 const GetSystemInfo = async (ent_id)=>{
+  // common list
   let settings = await SETTING.getSettings('NEIP')
   let types = await TYPE.getTypes()
   let ent_types = ent_id ? await TYPE.getTypes(ent_id) :[]
   let users = await ACCOUNT.getUserList()
   let enterprises = await ENTERPRISE.getEnterpriseList()
+
   let rss = await RSS.list()
   let deps = ent_id ? await Dep.list(ent_id) : []
   let roles = ent_id ? await Role.list(ent_id) : []

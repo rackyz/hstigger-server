@@ -267,8 +267,10 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   let user = await MYSQL(TABLE_ACCOUNT).first('id','user','name','phone','avatar','frame','email','type','lastlogin_at','created_at').where('id',user_id)
   if(!user)
     throw EXCEPTION.E_USER_UNREGISTERATED
-  
+ 
   user.my_enterprises = await o.getUserEnterprises(user_id)
+  if(!ent_id && user.my_enterprises.length > 0)
+    ent_id = user.my_enterprises[0]
   user.unread_msg_count = await Message.getUnreadMessageCount(user_id)
   user.task_count = 3
   user.my_tasks = await Task.listMine({id:user_id,ent_id},ent_id)
@@ -276,7 +278,7 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.user_menus = await o.getMenus(user_id)
   user.user_actions = await o.getActionMenus(user_id)
   user.modules = await Module.getAuthedModules(user_id,ent_id,isEntAdmin,isAdmin)
-  user.permissions = await Permission.getPermissions(user.type)
+  user.permissions = await Role.getUserACL({},user_id,ent_id)
   user.flows = await Flow.GetUserFlows(user_id)
   user.user_flows = await o.getFlows(user_id,ent_id)
   user.user_rss = await o.getRss(user_id)
