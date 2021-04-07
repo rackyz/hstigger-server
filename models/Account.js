@@ -283,11 +283,12 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.user_flows = await o.getFlows(user_id,ent_id)
   user.user_rss = await o.getRss(user_id)
   user.coskey = File.AuthCOS()
-  user.test = "ok"
   user.isEntAdmin = isEntAdmin
   user.isAdmin = isAdmin
-  if(ent_id)
-    user.my_deps = await Dep.getUserDeps(user_id,ent_id) 
+  user.my_deps = await Dep.getUserDeps(user_id,ent_id) 
+  user.my_roles = await Role.getUserRoles({},user_id, ent_id)
+  
+  console.log('roles',user.my_roles)
 //  user.my_projects = await PMIS.GetUserProject(user.name)
   return user
 }

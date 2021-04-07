@@ -4,9 +4,9 @@ let out = {}
 
 out.List = async ctx=>{
   let ent_id = ctx.state.enterprise_id
-  return await Employee.List(ctx.state)
+  let queryCondition = ctx.query
+  return await Employee.List(ctx.state,queryCondition)
 }
-
 
 out.Post = async ctx=>{
   let ent_id =  ctx.state.enterprise_id

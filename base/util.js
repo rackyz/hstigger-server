@@ -56,6 +56,10 @@ util.getDateStamp = () => moment().format('YYYY-MM-DD')
 util.dateAddDays = (d, offset) => moment(d).add('days', offset).format('YYYY-MM-DD')
 
 
+// util.Page
+util.DEFAULT_PAGE_SIZE = 100
+
+
 
 util.generateVerifyCode = () => {
   let result = ""

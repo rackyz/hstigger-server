@@ -128,6 +128,7 @@ o.createSessionById = async (user_id,device,ip)=>{
   await CreateUserInRedis(user_id)
 
   let userInfo = ACCOUNT.getUserInfo(user_id)
+  console.log('userInfo:',userInfo)
   let systemInfo = await GetSystemInfo()
   session.token = "Bearer " + session.id
   return {

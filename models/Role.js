@@ -49,7 +49,6 @@ o.create = async (state,role)=>{
 }
 
 o.patch = async (state,id,role,ent_id)=>{
-  console.log("PATCH:",id,role)
  let Q = DB.role.Query(ent_id)
  await Q.update(role).where({id})
  return {}
@@ -103,16 +102,32 @@ o.patchACL = async (state,id,data,ent_id)=>{
   return await Permission.patchACL(id,data,ent_id)
 }
 
+o.getUserRoles = async (state,user_id,ent_id,client_id)=>{
+  let SystemRoleQuery = DB.role_user.Query()
+  SystemRoleQuery = SystemRoleQuery.select('role_id').where({
+     user_id
+   })
+  let Query = DB.role_user.Query(ent_id)
+  Query = Query.select('role_id').where({user_id})
+  if(client_id)
+    Query = Query.where({client_id})
+  else
+    Query = Query.whereNull('client_id')
+  let sys_roles = await SystemRoleQuery
+  let roles = await Query
+  return (sys_roles.concat(roles)).map(v => v.role_id)
+}
+
 o.getUserACL = async (state,user_id,ent_id)=>{
   // 1 - get all roles/deps
   // 2 - get all permissions In deps
   // 3 - override permissions in different region
   // 4 - return final ACL table
-  console.log('getuseracl',user_id,ent_id)
   let roles = await o.listRelations(ent_id,{where:{user_id}})
   let deps = await MYSQL.E(ent_id ,'dep_employee').select('dep_id').where({
     user_id
   })
+  console.log('deps:',deps)
   let id_list = []
   roles.forEach(v=>{
     id_list.push(v.role_id)

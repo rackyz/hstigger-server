@@ -109,21 +109,44 @@ o.List = async (state, queryCondition)=>{
     return []
   let user_ids = await MYSQL('account_enterprise').select('user_id').where({enterprise_id:ent_id})
   let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
-  let users = await MYSQL('account').leftOuterJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id','user','avatar','gender','name','frame','type','changed','lastlogin_at','created_at','phone','birthday','photo','employee_date','changed','ding_id','zzl_id','wechat_id','ding_open_id','email','employee_date').whereIn('account.id', user_ids.map(v => v.user_id)).where({['account.type']: 1})
+  let Query = MYSQL('account').leftOuterJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id', 'user', 'avatar', 'gender', 'name', 'frame', 'type', 'changed', 'lastlogin_at', 'created_at', 'phone', 'birthday', 'photo', 'employee_date', 'changed', 'ding_id', 'zzl_id', 'wechat_id', 'ding_open_id', 'email', 'employee_date').whereIn('account.id', user_ids.map(v => v.user_id)).where({
+    ['account.type']: 1
+  })
+
+  // condition filter & paged
+  if(queryCondition){
+    for(let x in queryCondition){
+      if(queryCondition[x]){
+        if(x == 'in'){
+          for(let param in queryCondition[x]){
+            Query = Query.whereIn(param,queryCondition[x])
+          }
+        }else if(x == 'filter'){
+          Query = Query.where(queryCondition[x])
+        }else if(x == 'page'){
+          let page = queryCondition.page || 0
+          let pageSize = queryCondition.pageSize || UTIL.DEFAULT_PAGE_SIZE
+          Query = Query.offset(page*pageSize).limit(page)
+        }
+      }
+    }
+  }
+
+  let users = await Query
   let depRelations = await Dep.listRelations(ent_id)
   let roleRelations = await Role.listRelations(ent_id)
-  let educationHistory = await DB.employee_education_history.Query(ent_id)
-  let workHistory = await DB.employee_work_history.Query(ent_id)
-  let certifications = await DB.employee_certification.Query(ent_id)
-  let family_contact = await DB.employee_family_contact.Query(ent_id)
+  // let educationHistory = await DB.employee_education_history.Query(ent_id)
+  // let workHistory = await DB.employee_work_history.Query(ent_id)
+  // let certifications = await DB.employee_certification.Query(ent_id)
+  // let family_contact = await DB.employee_family_contact.Query(ent_id)
   
   users.forEach(u=>{
     u.deps = depRelations.filter(v=>v.user_id == u.id).map(v=>v.dep_id) || []
     u.roles = roleRelations.filter(v=>v.user_id == u.id).map(v=>v.role_id) || []
-    u.education_history = educationHistory.filter(v => v.user_id == u.id) || []
-    u.work_history = workHistory.filter(v=>v.user_id == u.id) || []
-    u.certifications = certifications.filter(v => v.user_id == u.id) || []
-    u.family_contact = family_contact.filter(v => v.user_id == u.id) || []
+    // u.education_history = educationHistory.filter(v => v.user_id == u.id) || []
+    // u.work_history = workHistory.filter(v=>v.user_id == u.id) || []
+    // u.certifications = certifications.filter(v => v.user_id == u.id) || []
+    // u.family_contact = family_contact.filter(v => v.user_id == u.id) || []
   })
 
   return users
