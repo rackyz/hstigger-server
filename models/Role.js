@@ -68,6 +68,12 @@ o.listRelations = async (ent_id, queryCondition = {}) => {
    return await Query
 }
 
+o.getUsers = async (state,role_id,ent_id)=>{
+   let Query = DB.role_user.Query(state.enterprise_id)
+   let users = await Query.select('user_id').where({role_id})
+   return users.map(v=>v.user_id)
+}
+
 o.addUser = async (state,user_id,role_id)=>{
   let DeleteExist = DB.role_user.Query(state.enterprise_id)
   let Insert = DB.role_user.Query(state.enterprise_id)
@@ -78,6 +84,16 @@ o.addUser = async (state,user_id,role_id)=>{
 o.removeUser = async (state,user_id,role_id)=>{
   let Remove = DB.role_user.Query(state.enterprise_id)
   await Remove.where({user_id,role_id}).del()
+}
+
+o.resetUsers = async (state,user_id_list,role_id)=>{
+   let DeleteExist = DB.role_user.Query(state.enterprise_id)
+   let Insert = DB.role_user.Query(state.enterprise_id)
+   let users = user_id_list.map(v=>({user_id:v,role_id}))
+   await DeleteExist.where({
+     role_id
+   }).del()
+   await Insert.insert(users)
 }
 
 
@@ -127,7 +143,6 @@ o.getUserACL = async (state,user_id,ent_id)=>{
   let deps = await MYSQL.E(ent_id ,'dep_employee').select('dep_id').where({
     user_id
   })
-  console.log('deps:',deps)
   let id_list = []
   roles.forEach(v=>{
     id_list.push(v.role_id)

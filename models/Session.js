@@ -56,7 +56,8 @@ const GetSystemInfo = async (ent_id)=>{
   let users = await ACCOUNT.getUserList()
   let enterprises = await ENTERPRISE.getEnterpriseList()
 
-  let rss = await RSS.list()
+  let rss = await RSS.list({},ent_id,true)
+  console.log("RSS:",rss)
   let deps = ent_id ? await Dep.list(ent_id) : []
   let roles = ent_id ? await Role.list(ent_id) : []
   let projects = ent_id ? await Project.GetList(ent_id) : Project.GetList()
@@ -128,7 +129,6 @@ o.createSessionById = async (user_id,device,ip)=>{
   await CreateUserInRedis(user_id)
 
   let userInfo = ACCOUNT.getUserInfo(user_id)
-  console.log('userInfo:',userInfo)
   let systemInfo = await GetSystemInfo()
   session.token = "Bearer " + session.id
   return {

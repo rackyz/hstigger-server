@@ -27,6 +27,11 @@ out.Get = async ctx=>{
   let state = ctx.state
   let ent_id = state.enterprise_id
   let id = ctx.params.id
+  let query = ctx.query.q
+  if(query == 'users'){
+
+    return await Role.getUsers(state,id,ent_id)
+  }
   let acl = await Role.getACL(state,id,ent_id)
   return acl
 }
@@ -39,6 +44,9 @@ out.Patch = async ctx => {
   let data = ctx.request.body
   if(query == 'acl'){
     await Role.patchACL(state,id,data,ent_id)
+    return
+  }else if(query == 'users'){
+    await Role.resetUsers(state,data,id)
     return
   }
 

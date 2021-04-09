@@ -232,7 +232,7 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin, ignore_identify =
   {
     let mod_idlist = await MYSQL(T_ENTERPRISE_MODULE).where({ent_id})
     console.log(mod_idlist)
-    let disbaled_list = await Setting.getValue({id:user_id}, 'MODULE_DISABLED', ent_id)
+    let disbaled_list = await Setting.getValue({id:ent_id}, 'MODULE_DISABLED', ent_id)
     if (disbaled_list && typeof disbaled_list == 'string') {
       disbaled_list = disbaled_list.split(',')
     }else{

@@ -386,6 +386,7 @@ o.ChangeCertification = async (state,id,data)=>{
 }
 
 o.Delete = async (state,id)=>{
+  let ent_id = state.enterprise_id
   await Enterprise.removeEnterprise(id,state.enterprise_id)
   await MYSQL.E(state.enterprise_id,"employee").where({id}).del()
 

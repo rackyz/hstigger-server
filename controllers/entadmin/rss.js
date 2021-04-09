@@ -9,7 +9,16 @@ out.Auth = async (method, {
 }) => {}
 
 out.List = async ctx => {
-  return await Rss.list()
+  let ent_id = ctx.state.ent_id
+  
+  return await Rss.list({},ent_id)
+}
+
+out.Patch = async ctx=>{
+   let state = ctx.state
+   let ent_id = state.enterprise_id
+   let id = ctx.params.id
+   return await Rss.ToggleEnabled(state, id, ent_id)
 }
 
 

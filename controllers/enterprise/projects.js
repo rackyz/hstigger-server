@@ -15,6 +15,11 @@ o.List = async ctx => {
 o.Get = async ctx => {
   let id = ctx.params.id
   let state = ctx.state
+  let q = ctx.query.q
+  if(q == 'employee'){
+    let res = await Project.getEmployees(state,id,state.enterprise_id)
+    return res
+  }
   let res = await Project.get(state, id, state.enterprise_id)
   return res
 }
@@ -30,6 +35,12 @@ o.Patch = async ctx => {
   let data = ctx.request.body
   let state = ctx.state
   let id = ctx.params.id
+  let q = ctx.query.q
+  if(q == 'employee'){
+    let res = await Project.patchEmployee(state,id,data,state.enterprise_id)
+    return res
+  }
+
   let res = await Project.patch(state, id, data, state.enterprise_id)
   return res
 }

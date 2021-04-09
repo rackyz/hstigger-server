@@ -8,7 +8,7 @@ const { UserLogger } = require('../base/logger')
 const o = {
   required: ['Type']
 }
-
+const Setting = require('./Setting')
 const Spiders = require('../spiders')
 const T_RSS = "rss"
 const RSS_SOURCE_TYPES = ['爬虫','平台接口','企业接口','部门接口','RSS源']
@@ -39,6 +39,7 @@ o.initdb = async (forced)=>{
   },forced)
   await MYSQL.seeds(T_RSS, Spiders.initData, forced)
 }
+
 let PlatformRSS = {}
 o.register = (key,cb)=>{
   PlatformRSS[key] = cb
@@ -81,12 +82,32 @@ o.get = async (key,extra)=>{
 
 
 
-o.list = async (queryParam = {})=>{
+o.list = async (queryParam = {},ent_id,filtered)=>{
   let Query = MYSQL(T_RSS)
   if(queryParam.whereIn){
     Query = Query.whereIn('id',queryParam.whereIn)
   }
   let items = await Query
+
+
+  if(ent_id){
+     let disbaled_list = await Setting.getValue({
+     }, 'RSS_DISABLED', ent_id)
+     if (disbaled_list && typeof disbaled_list == 'string') {
+       disbaled_list = disbaled_list.split(',')
+     } else {
+       disbaled_list = []
+     }
+     console.log('disabled:',disbaled_list)
+     items = items.filter(v => {
+        if (disbaled_list.includes(v.id)){
+             v.disabled = true
+            if (filtered)
+              return false
+        }
+        return true
+     })
+  }
   return items
 }
 
@@ -122,7 +143,26 @@ o.deleteObjects = async (id_list,op)=>{
   await MYSQL(T_RSS).whereIn('id',id_list).del()
 }
 
+o.ToggleEnabled = async (state, id, ent_id) => {
+  let disabled_list = await Setting.getValue(state, 'RSS_DISABLED', ent_id)
 
+  let disabled = true
+  if (!disabled_list || typeof disabled_list != 'string')
+    disabled_list = []
+  else
+    disabled_list = disabled_list.split(',')
+  let index = disabled_list.findIndex(v => v == id)
+  if (index != -1) {
+    disabled_list.splice(index, 1)
+
+    disabled = false
+  } else {
+    disabled_list.push(id)
+    disabled = true
+  }
+  await Setting.setValue(state, 'RSS_DISABLED', disabled_list.join(','), ent_id)
+  return disabled
+}
 /// USER LEVEL
 
 

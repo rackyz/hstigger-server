@@ -79,14 +79,16 @@ o.initdb_e = async (ent_schema, forced) => {
   // 用工记录
   await MYSQL.initdb(_TR, t => {
     t.increments('id').index().primary() // uuid
-    t.bigInteger('employee_id').notNull()
+    t.uuid('employee_id').notNull()
     t.uuid('project_id').notNull()
     t.bigInteger('position_id').notNull()
     t.double('factor')
     t.datetime('inDate')
     t.datetime('outDate')
+    t.boolean('trainee')
     t.datetime('created_at')
     t.uuid('created_by')
+    t.string('comment',128)
   }, forced, ent_schema)
 
   // 项目分类
@@ -143,17 +145,59 @@ o.patch = async (ctx,id, item, ent_id) => {
   })
 }
 
-o.del = async (ctx,id_list,ent_id) => {
+o.del = async (state,id_list,ent_id) => {
    const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
   await Q.whereIn("id", id_list).del()
 }
 
-o.get = async (ctx,id,ent_id) => {
+o.get = async (state,id,ent_id) => {
    const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
-  let item = Q.first().where({
+  
+  let item = await Q.first().where({
     id
   })
+
+  item.records = await o.getEmployees(state,id,ent_id)
+  console.log('records:',item.records)
   return item
+}
+
+o.getEmployees = async (state,id,ent_id)=>{
+  const Q_RECORDS = ent_id ? MYSQL.E(ent_id, _TR) : MYSQL(_TR)
+  let records = await Q_RECORDS.where({
+    project_id: id
+  })
+  return records
+}
+
+o.patchEmployee = async (state,id,data,ent_id)=>{
+  console.log('data:',data,id)
+  let Q = ent_id ? MYSQL.E(ent_id, _TR) : MYSQL(_TR)
+  if(data.id){
+    let record_id =  data.id
+    delete data.id
+    data.project_id = id
+   
+    await Q.update(data).where({
+      id: record_id
+    })
+  }else{
+    data.project_id = id
+    if(!data.inDate)
+      data.inDate = UTIL.getTimeStamp()
+    if (!data.factor)
+      data.factor = 1
+    data.created_at = UTIL.getTimeStamp()
+    data.created_by = state.id
+    
+    let record_id = await Q.insert(data).returning('id')
+    let updateInfo = {
+      created_by: data.created_by,
+      project_id: data.project_id,
+      id:record_id
+    }
+    return updateInfo
+  }
 }
 
 
