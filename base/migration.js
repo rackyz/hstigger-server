@@ -46,14 +46,26 @@ const InstallModel = async (MODELS,m,forced)=>{
    
   } 
 
+
+
   return model
 }
 
 
 const install = async (forced) => {
   try{
-    for (m in Models) 
+    let tmds = []
+    for (m in Models){
       await InstallModel(Models,m,forced)
+      let tdms = []
+      if (m.TDM) {
+        tdms.push(m.TDM)
+      }
+    }
+    tdms.forEach(v=>{
+      v.system = true
+    })
+    Models.model.tdms = tdms
   }catch(e){
     console.error(`[model] (${m}) failed.: ${e}`)
   }
