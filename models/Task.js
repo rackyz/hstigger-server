@@ -41,6 +41,7 @@ DB.task = MYSQL.Create('task',t=>{
   t.datetime('start_at')
   t.datetime('finished_at')
   t.integer('sub_task_count').defaultTo(0)
+  
   // 创建信息
   t.uuid('created_by')
   t.datetime('created_at')
