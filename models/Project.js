@@ -1,4 +1,5 @@
 const MYSQL = require('../base/mysql')
+const GZSQL = require('../base/nbgz_db')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Enterprise = require('./Enterprise')
@@ -19,6 +20,79 @@ let o = {
 const _T = 'project'
 const _TR = 'project_employee'
 const _TC = 'project_category'
+
+let DB = {}
+
+DB.project = MYSQL.Create('project',t=>{
+   t.uuid('id').index().primary() // uuid
+   t.string('code', 16)
+   t.string('name', 64)
+   t.string('shortname', 16)
+   t.string('avatar', 256)
+   t.integer('state').defaultTo(0)
+   t.uuid('created_by')
+   t.uuid('charger')
+   t.datetime('created_at')
+   t.string('desc', 256)
+   t.integer('project_type')
+
+})
+
+// Building Info
+DB.project_building = MYSQL.Create('project_building',t=>{
+  t.uuid('id').primary()
+  t.integer('level_count').defaultTo(0)
+  t.integer('basement_level_count').defaultTo(0)
+  t.double('field_area').defaultTo(0)
+  t.double('building_area').defaultTo(0)
+  t.double('gps_location_x')
+  t.double('gps_location_y')
+  t.string('address',256)
+  t.integer('building_type')
+  
+})
+
+
+// Gz_Audit Info
+DB.project_gz_audit = MYSQL.Create('project_gz_audit',t=>{
+  t.uuid('id').primary()
+  t.datetime('service_started_at')
+  t.datetime('service_finished_at')
+  t.datetime('main_contractor_started_at')
+  t.datetime('main_contractor_finished_at')
+  t.string('main_contract_attached',128)
+  // Array t.split_contract_durations
+  //    - string64/name
+  //    - string64/unit
+  //    - datetime/from
+  //    - datetime/to
+  t.double('create_full_investment_salary')
+  t.double('about_full_investment_salary')
+  t.double('settlement_audit_salary')
+  t.string('settlement_audit_summary_attached',128)
+  t.double('settlement_audit_full_investment_salary')
+  t.string('settlement_audit_full_investment_attached',128)
+  t.double('contruction_project_cost_audit')
+  t.string('settlement_project_cost_audit_attached',128)
+  t.datetime('audit_send_time')
+  t.string('audit_send_time_attached',128)
+  t.datetime('first_audit_started_at')
+  t.datetime('first_audit_finished_at')
+  t.string('constrcution_project_cost_audit_attached',128)
+  t.datetime('second_audit_started_at')
+  t.datetime('second_autid_finished_at')
+  // Array t.help_audit_units
+  //  - string64/name
+  //  - string16/charger
+  //  - string16/phone
+
+  // Array t.audit_units
+  //  - string64/name
+  //  - string16/charger
+  //  - string16/phone
+  
+})
+
 
 o.initdb = async (forced) => {
   await MYSQL.initdb(_T, t => {
@@ -52,7 +126,7 @@ o.initdb = async (forced) => {
     t.uuid('created_by')
   }, forced)
 
-  // 项目分类
+  // 项目标签
   await MYSQL.initdb(_TC, t => {
     t.increments('id').index().primary()
     t.uuid('project_id')
@@ -99,11 +173,11 @@ o.initdb_e = async (ent_schema, forced) => {
     t.string('project_cat_key')
   },forced,ent_schema)
 
-  if(forced){
-     Type.AddType("P_ARCH_TYPE", ['全过程咨询', '市政监理', '项目管理', '房建监理', 'BIM咨询', '造价咨询', '招标代理', ],ent_id)
-     Type.AddType("P_BUILDING_TYPE", ['住宅', '学校', 'CBD', '桥梁', '厂房', '公园', '小区', '旧房改造', '数据中心'], ent_id)
+  // if(forced){
+  //    Type.AddType("P_ARCH_TYPE", ['全过程咨询', '市政监理', '项目管理', '房建监理', 'BIM咨询', '造价咨询', '招标代理', ],ent_id)
+  //    Type.AddType("P_BUILDING_TYPE", ['住宅', '学校', 'CBD', '桥梁', '厂房', '公园', '小区', '旧房改造', '数据中心'], ent_id)
 
-  }
+  // }
 
 }
 
@@ -115,13 +189,38 @@ o.init = (ent_id,forced)=>{
 //   o.initdb('ENT_NBGZ',true)
 // }
 
+o.sync = async ent_id=>{
+  console.log(ent_id)
+  if(ent_id == "NBGZ")
+  {
+    let projects = await GZSQL('gzadmin.contract')
+
+    return await sychronize_oa_project(projects)
+  }
+
+  return []
+  
+}
+
+const sychronize_oa_project = async (raw_projects)=>{
+  let projects = raw_projects.map(p=>{
+
+    return p
+  })
+  // dep=>dep_belong
+  // type_id => business_type
+  // employees
+  // 
+  return projects
+}
+
 o.GetList = async ent_id=>{
   return await o.query(null,null,ent_id)
 }
 
 o.query = async (ctx,condition,ent_id) => {
    const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
-  let items = await Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at')
+  let items = await Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at','business_type')
   return items
 }
 

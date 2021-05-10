@@ -27,7 +27,7 @@ DB.model_field = MYSQL.Create('model_field',t=>{
   t.string('comment',128)
   t.integer('type')
   t.boolean('required')
-  t.stirng('option',512)
+  t.string('option',512)
   t.uuid('model_id')
 })
 
