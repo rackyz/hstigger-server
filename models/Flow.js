@@ -124,7 +124,6 @@ const ParseDefine = async (flow_id,def)=>{
     predefined_options.forEach(op_key=>{
       let op_val = node[op_key]
       if(op_val != undefined){
-        console.log(op_key,op_val)
         options.push({
           flow_id,
           item_key:node.key,
@@ -152,7 +151,6 @@ const ParseDefine = async (flow_id,def)=>{
     action_options.forEach(op_key=>{
        let op_val = action[op_key]
        if (op_val != undefined) {
-         console.log(op_key, op_val)
          options.push({
            flow_id,
            item_key: action.key,
@@ -211,7 +209,6 @@ const ParseDefine = async (flow_id,def)=>{
   if(options && options.length > 0)
     await MYSQL(T_OPTION).insert(options)
   
-  console.log(`FLOW_INSTALLED:nodes=${nodes.length},actions=${actions.length},fields=${fields.length},options=${options.length}`)
 }
 
 o.list = async () => {

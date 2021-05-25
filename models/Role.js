@@ -163,7 +163,6 @@ o.getUserACL = async (state,user_id,ent_id)=>{
     }
   })
 
-  console.log("ACL:",acl)
   return acl
 }
 

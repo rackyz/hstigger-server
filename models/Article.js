@@ -14,44 +14,96 @@ const _TC = 'comment'
 const _TAGOOD = 'article_awesome'
 const RSS_KEY = 'recommendation'
 
-o.initdb = async (forced) => {
+const DB = {}
+DB.article = MYSQL.Create('article',t=>{
+   t.uuid('id').primary()
+   t.integer('article_type').defaultTo(0)
+   t.string('title', 64).notNull()
+   t.string('author', 16)
+   t.text('content')
+   t.datetime('created_at')
+   t.uuid('created_by')
+   t.text('files')
+   t.integer('state').defaultTo(0)
+})
 
-  await MYSQL.initdb(_TA, t => {
-    t.uuid('id').index()
-    t.string('title', 64).notNull()
-    t.string('author', 16).notNull()
-    t.text('content')
-    t.datetime('created_at')
-    t.uuid('created_by')
-  }, forced)
+DB.article_tag = MYSQL.Create('article_tag',t=>{
+  t.increments('id').primary()
+  t.uuid('article_id')
+  t.string('tag',16)
+})
 
-  await MYSQL.initdb(_TAC, t => {
-    t.integer('id').index()
-    t.uuid('article_id').notNull()
-    t.integer('cat_id').notNull()
-  }, forced)
+DB.article_reply = MYSQL.Create('article_reply',t=>{
+  t.uuid('id').primary()
+  t.uuid('article_id')
+  t.uuid('parent_id')
+  t.uuid('created_by')
+  t.datetime('created_at')
+  t.text('content')
+})
 
-  await MYSQL.initdb(_TC,t=>{
-    t.increments('id').index().primary()
-    t.integer('parent_id')
-    t.text('content')
-    t.uuid('created_by')
-    t.datetime('created_at')
-  })
+DB.article_readed = MYSQL.Create('article_readed',t=>{
+   t.increments('id').primary()
+  t.uuid('article_id')
+  t.uuid('user_id')
+})
+let DB_platform = {}
+DB_platform.article = DB.article
 
-  await MYSQL.initdb(_TAGOOD,t=>{
-    t.increments('id').index().primary()
-    t.uuid('user_id')
-    t.uuid('article_id')
-  })
-
+o.initdb = async (forced)=>{
+ 
+  await MYSQL.Migrate(DB_platform, forced)
 
 }
 
-o.query = async (option,ctx = {})=>{
-  let SQL = ctx.ent_id?MYSQL.E(ctx.ent_id,_TA):MYSQL(_TA)
-  let items = await SQL.select('article.id', 'title', 'created_at').where('cat_id', 56).leftJoin(_TAC,'article_id','article.id')
-  return [{id:1,title:'测试文章'}]
+o.initdb_e = async (ent_id,forced)=>{
+ 
+  await MYSQL.Migrate(DB, forced, ent_id)
+}
+
+o.query = async (state,queryCondition = {},ent_id)=>{
+  let Q = DB.article.Query(ent_id).select('article.id', 'title', 'files','created_at','author','created_by','state')
+  if(queryCondition.where){
+    Q = Q.where(queryCondition.where)
+  }
+  let items = await Q
+  return items
+}
+
+o.create = async (state,item,ent_id)=>{
+   let Q = DB.article.Query(ent_id)
+   let updateInfo = {
+     id: UTIL.createUUID(),
+     state:item.state || 0,
+     created_by:state.id,
+     created_at: UTIL.getTimeStamp()
+   }
+   Object.assign(item, updateInfo)
+   await Q.insert(item)
+   return updateInfo
+}
+
+o.get = async (state,id,ent_id)=>{
+  let Q = DB.article.Query(ent_id)
+  let item = await Q.first().where({id})
+  return item 
+}
+
+o.patch = async (state,id,item,ent_id)=>{
+   let Q = DB.article.Query(ent_id)
+   let updateInfo = {
+     updated_by: state.id,
+     updated_at: U.getTimeStamp()
+   }
+   delete item.id
+   Object.assign(item, updateInfo)
+   await Q.update(item).where({id})
+   return updateInfo
+}
+
+o.remove = async (state,id,ent_id)=>{
+  let Q = DB.article.Query(ent_id)
+  await Q.where({id}).delete()
 }
 
 o.rss = async (ctx = {}) => {

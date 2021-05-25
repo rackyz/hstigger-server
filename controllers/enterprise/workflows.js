@@ -30,7 +30,7 @@ out.Post = async ctx=>{
     throw "CREATE_FAILED"
   data.node = createInfo.history_id
   let patchInfo = await FlowInstance.Patch(ent_id,createInfo.id,data,op)
-  console.log(patchInfo)
+ 
   return {
     instance:createInfo,
     history:patchInfo

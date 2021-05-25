@@ -15,7 +15,6 @@ out.GetThrowOption = {403:'权限不足'}
 out.Get = async ctx => {
   let id = ctx.params.id
   let url = await File.GetFileUrl(id)
-  console.log("redirect:",url)
   if (url)
     ctx.redirect(url)
   else

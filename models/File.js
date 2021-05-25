@@ -55,7 +55,6 @@ o.GetFileUrl = async (id)=>{
      throw EXCEPTION.E_INVALID_DATA
   let baseURL = config.cos.url
   let file = await MYSQL(T).first("url").where({id})
-  console.log(id,file)
   if(file)
     return baseURL + '/files/' + file.url
   else
@@ -66,7 +65,6 @@ o.GetTempFileUrl = async (id)=>{
   if(!id)
     throw EXCEPTION.E_INVALID_DATA
   let url = await o.GetFileUrl(id)
-  console.log('GetTempFileUrl:', url)
   REDIS.ASC_SET('file-'+id,url)
   REDIS.EXPIRE('file-' + id, 3600)
   return '/public/files/'+id
@@ -91,7 +89,6 @@ o.post = async (files,op)=>{
     createInfos.push(createInfo)
   })
 
-  console.log('FILES:',files)
   
   await MYSQL(T).insert(files).returning('id')
  
@@ -101,7 +98,6 @@ o.post = async (files,op)=>{
 const AsyncCOSDeleteObject = async (option)=>{
   return new Promise((resolve,reject)=>{
     cOSClient.deleteObject(option,(err)=>{
-      console.log("ERR:",option)
       if(err)
         resolve(err)
       else
@@ -122,7 +118,6 @@ o.deleteObjects = async (id_list, op) => {
     }
     let err = await AsyncCOSDeleteObject({Bucket:config.cos.fileBucket,Region:config.cos.region,
 Key:"files/"+file.url})
-console.log("DELETE:",err)
     if(err)
       result[i] = err
   }

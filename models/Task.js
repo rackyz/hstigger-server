@@ -213,7 +213,6 @@ o.create = async (ctx, data, ent_id) => {
 o.listTree = async (state, id, ent_id, table_name ,with_id_replaced,array_list) => {
    let Query = DB[table_name].Query(ent_id)
    let item = await Query.first().where({id})
-   console.log('item:',item)
    if (with_id_replaced){
     delete item.parent_id
     item.unique_tmpl_key = item.id
@@ -255,7 +254,6 @@ o.listTemplates = async (state,condition = {},ent_id)=>{
     Q = Q.whereNull('parent_id')
     
   let items = await Q
-  console.log(condition)
   return items
 }
 

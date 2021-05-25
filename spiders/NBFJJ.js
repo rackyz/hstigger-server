@@ -58,7 +58,6 @@ module.exports = {
       }catch(e){
         
       }
-     console.log(data[PIC_NEWS].map(v => v.image))
 
      await Spider.save('NBFJJ_' + PIC_NEWS, data[PIC_NEWS])
 

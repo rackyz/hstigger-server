@@ -98,7 +98,6 @@ o.list = async (queryParam = {},ent_id,filtered)=>{
      } else {
        disbaled_list = []
      }
-     console.log('disabled:',disbaled_list)
      items = items.filter(v => {
         if (disbaled_list.includes(v.id)){
              v.disabled = true

@@ -196,7 +196,6 @@ o.Create = async (state,data,ent_id)=>{
   let timeStamp = UTIL.getTimeStamp()
   let op = state.id
   let account = {user,name,phone,email}
-  console.log("ACCOUNT:",Account)
   account = await Account.create(account)
   let employee = {id:account.id,gender,birthday,native_place,photo,political_status,address,marital_status,emergency_phone,emergency_contact,employee_date,employee_state,
     personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time}
@@ -242,7 +241,6 @@ o.Update = async (state,id,data)=>{
   let account = {user,name,phone,email}
   let employee = {id:account.id,gender,birthday,native_place,photo,political_status,address,marital_status,emergency_phone,emergency_contact,employee_date,employee_state,
     personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time}
-  console.log(account)
   if(Object.values(account).filter(v=>v!==undefined).length > 0)
     await MYSQL("account").update(account).where({id})
   if(Array.isArray(roles))

@@ -57,7 +57,6 @@ const GetSystemInfo = async (ent_id)=>{
   let enterprises = await ENTERPRISE.getEnterpriseList()
 
   let rss = await RSS.list({},ent_id,true)
-  console.log("RSS:",rss)
   let deps = ent_id ? await Dep.list(ent_id) : []
   let roles = ent_id ? await Role.list(ent_id) : []
   let projects = ent_id ? await Project.GetList(ent_id) : Project.GetList()

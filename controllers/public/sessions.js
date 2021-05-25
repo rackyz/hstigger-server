@@ -44,10 +44,8 @@ out.GetThrowOption = {
 }
 
 out.Delete = async ctx=>{
-  console.log("DELETE",ctx.params)
   let id = ctx.params.id
   let session = Session.deleteSession(id)
-  console.log("Delete Session")
   return session
 }
 out.LOGOUT = {

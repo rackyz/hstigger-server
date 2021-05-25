@@ -16,7 +16,12 @@ MYSQL.seeds = async (table_name,items,forced,schema)=>{
 }
 
 MYSQL.getEnterpriseScheme = ent_id => {
-  return 'ENT_' + ent_id.replace(/(\-)/g, '_')
+  try{
+  let ent_schema_name = 'ENT_' + ent_id.replace(/(\-)/g, '_')
+  return ent_schema_name
+  }catch(e){
+    console.log(e,ent_id)
+  }
 }
 
 MYSQL.E = (ent_id, t) => MYSQL(t).withSchema(MYSQL.getEnterpriseScheme(ent_id))
@@ -47,3 +52,44 @@ MYSQL.Create = (table_name, initializer) => {
 
   }
 }
+
+MYSQL.ParseCondition = (query,condition)=>{
+  if(condition.where){
+    query = query.where(condition.where)
+  }
+
+  if(condition.whereIn){
+    for(let x in condition.whereIn)
+      query = query.whereIn(x,condition.whereIn[x])
+  }
+
+  if(condition.or){
+     if (condition.or.where) {
+      for (let x in condition.or.where)
+        query = query.orWhere(x,condition.or.where[x])
+     }
+
+     if (condition.or.whereIn) {
+       for (let x in condition.or.whereIn)
+         query = query.orWhereIn(x, condition.or.whereIn[x])
+     }
+  }
+
+  if(condition.page && condition.page_size){
+    let page = parseInt(condition.page) || 0
+    let size = parseInt(condition.page_size) || 20
+    if(page)
+      query = query.offset(page * size)
+    query = query.limit(size)
+  }
+
+  if(condition.orders){
+    condition.orders.forEach(v=>{
+      query = query.orderBy(v.key,v.order)
+    })
+  }
+
+  return query
+}
+
+module.exports = MYSQL

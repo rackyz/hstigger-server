@@ -14,7 +14,7 @@ let o = {}
 let DB = {}
 
 DB.model = MYSQL.Create('model',t=>{
-  t.uuid().primary()
+  t.uuid('id').primary()
   t.string('name',32)
   t.string('desc',256)
   t.uuid('created_by')
@@ -22,7 +22,7 @@ DB.model = MYSQL.Create('model',t=>{
 })
 
 DB.model_field = MYSQL.Create('model_field',t=>{
-  t.increments().primary()
+  t.increments('id').primary()
   t.string('name',32)
   t.string('comment',128)
   t.integer('type')
@@ -33,7 +33,7 @@ DB.model_field = MYSQL.Create('model_field',t=>{
 
 
 o.initdb_e = async (ent_id,forced)=>{
-  MYSQL.Migrate(DB,ent_id,forced)
+  MYSQL.Migrate(DB, forced, ent_id)
 }
 
 o.query = async (state,condition,ent_id)=>{

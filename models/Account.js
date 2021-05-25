@@ -185,9 +185,6 @@ o.initdb = async (forced) => {
     await MYSQL(TABLE_USER_MENU).insert(DEFAULT_MENUS)
    
 
-
-    await Message.Create(ROOT.id,JBKT.id,"企业账号注册成功,欢迎使用")
-    await Message.Create(ROOT.id,NBGZ.id,"企业账号注册成功,欢迎使用")
   }
 }
 
@@ -271,7 +268,17 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.my_enterprises = await o.getUserEnterprises(user_id)
   if(!ent_id && user.my_enterprises.length > 0)
     ent_id = user.my_enterprises[0]
-  user.unread_msg_count = await Message.getUnreadMessageCount(user_id)
+  user.unread_msg_count = await Message.listMineUnreadCount({
+    id:user_id,
+    enterprise_id: ent_id
+  })
+  user.messages = await Message.listMine({
+    id: user_id,
+    enterprise_id: ent_id
+  }, {
+    q: "mine"
+  })
+  
   user.task_count = 3
   user.my_tasks = await Task.listMine({id:user_id,ent_id},ent_id)
   user.user_settings = await o.getUserSettings(user_id)
@@ -288,7 +295,6 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.my_deps = await Dep.getUserDeps(user_id,ent_id) 
   user.my_roles = await Role.getUserRoles({},user_id, ent_id)
   
-  console.log('roles',user.my_roles)
 //  user.my_projects = await PMIS.GetUserProject(user.name)
   return user
 }
@@ -591,18 +597,15 @@ o.UpdateFromDing = async (data,deps,zzls)=>{
   if(isExist)
   {
     if (isExist.ding_id){
-      console.log('updated')
       return -1
     }
     await MYSQL(TABLE_ACCOUNT).update(data).where({id:data.id})
-    console.log('updated info')
   }
   else{
     data.type = 1
     data.created_at = UTIL.getTimeStamp()
     data.password = UTIL.encodeMD5('123456')
     await MYSQL(TABLE_ACCOUNT).insert(data)
-    console.log('created')
   }
 
   isExist = await MYSQL(TABLE_ACCOUNT_ENTERPRISE).first('id').where({user_id:data.id,enterprise_id:"NBGZ"})
@@ -611,7 +614,6 @@ o.UpdateFromDing = async (data,deps,zzls)=>{
   if(Array.isArray(deps) && deps.length){
     await MYSQL.E('NBGZ','dep_employee').where({user_id:data.id}).del()
     await MYSQL.E('NBGZ','dep_employee').insert(deps.map(v=>({dep_id:v,user_id:data.id})))
-    console.log('add deps')
   }
   
   

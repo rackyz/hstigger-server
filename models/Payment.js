@@ -64,12 +64,9 @@ o.create = async (state,data,ent_id)=>{
 o.UpdateContract = async (state,contract_id,ent_id)=>{
   let items = await o.query(state,{contract_id},ent_id)
   let amount = 0
-  console.log(contract_id,items)
   items.forEach(v=>{
     amount += v.amount || 0
   })
-  console.log('amount:',amount)
- // await Contract.updatePayment(state,contract_id,amount,ent_id)
  if(amount != undefined)
   await MYSQL.E(ent_id,'contract').update({payed_amount:amount}).where({id:contract_id})
 }

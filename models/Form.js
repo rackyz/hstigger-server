@@ -14,7 +14,7 @@ let o = {}
 let DB = {}
 
 DB.form = MYSQL.Create('form', t => {
-  t.uuid().primary()
+  t.uuid('id').primary()
   t.string('name', 32)
   t.string('desc', 256)
   t.text('layout')
@@ -27,7 +27,7 @@ DB.form = MYSQL.Create('form', t => {
 
 
 o.initdb_e = async (ent_id, forced) => {
-  MYSQL.Migrate(DB, ent_id, forced)
+  MYSQL.Migrate(DB, forced, ent_id)
 }
 
 o.query = async (state, condition, ent_id) => {

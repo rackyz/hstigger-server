@@ -236,7 +236,6 @@ const Patch = async ctx => {
           }
         })
 
-        console.log(d, dc)
 
         if (v.proStartDate) {
           if (!v.proFinishedDate) {
@@ -267,7 +266,6 @@ const Patch = async ctx => {
         }
       }
 
-      console.log(v.state)
 
 
     })
@@ -294,7 +292,6 @@ const Patch = async ctx => {
       if (contracts[i].registerDate)
         data.registerDate = contracts[i].registerDate
       if (Object.keys(data).length > 0 && id) {
-        console.log(data.state)
         await mysql_oa('contract').update(data).where({
           id
         })
@@ -417,7 +414,6 @@ const Patch = async ctx => {
     let data = ctx.request.body
     delete data.id
 
-    console.log("DATA:", data)
     await mysql_oa('contract').update(data).where({
       id
     })

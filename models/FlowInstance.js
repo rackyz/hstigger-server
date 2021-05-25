@@ -281,15 +281,13 @@ let getUserPhone = async (user_id) => {
     id: user_id
   })
   if (user){
-    console.log("SEND:", user.phone)
     return user.phone
   }
 }
 
 
 o.Patch = async (ent_id,flow_id,{node,actions,data},op)=>{
-  console.log('node:',node)
-  console.log('actions:',actions)
+
   if(!actions || actions.length == 0)
     throw "ACTION UNEXPECTED"
   let history_id = node

@@ -61,7 +61,6 @@ out.install = forced=>{
     }
     out.root = require(`../controllers`)
     GetAPIPage(out.root, true)
-    console.log("API installed.")
   }
 }
 

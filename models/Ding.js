@@ -143,7 +143,6 @@ api.sendNotice = async ({
   msg
 }) => {
   let ACCESS_TOKEN = await api.getAccessToken()
-  console.log('DING-msg:',ding_id,msg)
   return axios.post(`https://oapi.dingtalk.com/topapi/message/corpconversation/asyncsend_v2?access_token=${ACCESS_TOKEN}`, {
     agent_id: agentId,
     userid_list: ding_id,

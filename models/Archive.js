@@ -140,7 +140,6 @@ const ParseFilesString = (file_str,archive_id)=>{
   if (typeof file_str === 'string' && file_str.includes(',')) {
     
     let files = file_str.split(';').map(f => f.split(','))
-    console.log('files:',files)
     filelist = files.map(f => ({
       archive_id,
       name: f[0],
@@ -158,7 +157,6 @@ const StringifyFilesString = async files=>{
   for(let i=0;i<files.length;i++)
   {
     let url = await File.GetFileUrl(files[i].file_id)
-    console.log(url)
     files[i].str = files[i].name + ',' + url + ',' + files[i].ext
   }
   return files.map(v => v.str).join(';')

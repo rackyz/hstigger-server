@@ -43,7 +43,6 @@ utils.createNbgzQr = async function(text,size=400){
     let filepath = await utils.createQr(text,size).catch(e=>{
         throw(e)
     })
-    console.log('FILE:',filepath)
     utils.addWater(filepath, waterImg, filepath)
     return filepath.replace(/^.*static/, 'https://www.nbgzpmis.xyz')
 }

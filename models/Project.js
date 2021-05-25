@@ -190,7 +190,6 @@ o.init = (ent_id,forced)=>{
 // }
 
 o.sync = async ent_id=>{
-  console.log(ent_id)
   if(ent_id == "NBGZ")
   {
     let projects = await GZSQL('gzadmin.contract')
@@ -257,7 +256,6 @@ o.get = async (state,id,ent_id) => {
   })
 
   item.records = await o.getEmployees(state,id,ent_id)
-  console.log('records:',item.records)
   return item
 }
 
@@ -270,7 +268,7 @@ o.getEmployees = async (state,id,ent_id)=>{
 }
 
 o.patchEmployee = async (state,id,data,ent_id)=>{
-  console.log('data:',data,id)
+ 
   let Q = ent_id ? MYSQL.E(ent_id, _TR) : MYSQL(_TR)
   if(data.id){
     let record_id =  data.id
