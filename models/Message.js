@@ -2,10 +2,12 @@
 const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const Type = require('./Type')
+const Rss = require('./Rss')
 const _ = require('lodash')
+const moment = require('moment')
 const {sendSMS} = require('../libs/qsms')
 const Message = {
-  required:['Type']
+  required:['Type','Rss']
 }
 
 
@@ -43,11 +45,21 @@ DB.message_user_readed = MYSQL.Create('message_user_readed',t=>{
 // Database Initalization
 const TABLE_MESSAGE = 'message'
 const TABLE_MESSAGE_READED = 'message_user_readed'
-
+const RSS_KEY = "ent_notices"
 Message.initdb = async (forced)=>{
   
   await MYSQL.Migrate(DB,forced)
   MESSAGE_TYPE = await Type.AddType('MESSAGE_TYPE',['系统消息','企业通知','部门消息','项目部通知','站内信'])
+
+  await Rss.create({
+    id: RSS_KEY,
+    name: "企业通知",
+    source_type: 2,
+    link: '/core/exnotices',
+    subject_type: 2,
+    media_type: 2
+  })
+   
 }
 
 Message.initdb_e = async (ent_id, forced) => {
@@ -145,50 +157,66 @@ Message.create = async (state,data,ent_id)=>{
   
   Query = Query.insert(Object.assign(data,updateInfo)).returning('id')
   let message_id = await Query
-  if(!to)
-    throw 'UNEXPECTED MESSAGE SENDER - 不合法的接收者'
-  else if(!Array.isArray(to))
-    to = [to]
+  if(to){
+    if(!Array.isArray(to))
+      to = [to]
 
 
-    let QueryCreateMessageRecevier = DB.message_user_readed.Query(ent_id)
-    let user_list = []
-    for(let i=0;i<to.length;i++){
-      let v = to[i]
-      // find from user
-      let exist = await MYSQL('account_enterprise').first('id').where({
-        user_id: v,
-        enterprise_id: ent_id
-      })
-      if (!exist) {
-        let groupUsers = await MYSQL.E(ent_id, 'dep_employee').select('id').where({
-          dep_id: v
+      let QueryCreateMessageRecevier = DB.message_user_readed.Query(ent_id)
+      let user_list = []
+      for(let i=0;i<to.length;i++){
+        let v = to[i]
+        // find from user
+        let exist = await MYSQL('account_enterprise').first('id').where({
+          user_id: v,
+          enterprise_id: ent_id
         })
+        if (!exist) {
+          let groupUsers = await MYSQL.E(ent_id, 'dep_employee').select('id').where({
+            dep_id: v
+          })
 
-        // if (groupUsers.length == 0) {
-        //   groupUsers = await MYSQL.E(ent_id, 'employee_project').select('id').where({
-        //     dep_id: v
-        //   })
-        // }
+          // if (groupUsers.length == 0) {
+          //   groupUsers = await MYSQL.E(ent_id, 'employee_project').select('id').where({
+          //     dep_id: v
+          //   })
+          // }
 
-        if (groupUsers.length > 0)
-          user_list = user.list.concat(groupUsers.map(v => v.id))
+          if (groupUsers.length > 0)
+            user_list = user.list.concat(groupUsers.map(v => v.id))
 
-      } else {
-        user_list.push(v)
-      }
+        } else {
+          user_list.push(v)
+        }
+      
+      _.uniqBy(user_list, e => e)
     
-    _.uniqBy(user_list, e => e)
-   
-    await QueryCreateMessageRecevier.insert(user_list.map(v=>{
-      return {
-        user_id:v,
-        message_id
-      }
-    }))
+      await QueryCreateMessageRecevier.insert(user_list.map(v=>{
+        return {
+          user_id:v,
+          message_id
+        }
+      }))
+    }
+    updateInfo.id = message_id
+    return updateInfo
   }
-  updateInfo.id = message_id
-  return updateInfo
+}
+
+Message.listNotices = async (state,condition = {})=>{
+  let ent_id = state.enterprise_id
+  let page = condition.page?parseInt(condition.page):1
+  let Query = DB.message.Query(ent_id)
+  let items = await Query.where({msg_type:1}).orderBy('created_at','desc').offset((page-1)*12).limit(12)
+  
+  return items
+}
+
+Message.listNoticesCount = async (state)=>{
+  let ent_id = state.enterprise_id
+  let Query = DB.message.Query(ent_id)
+  let res = await Query.count('id as c').where({msg_type:1})
+  return res[0].c
 }
 
 Message.removeList = async (state,id_list=[],ent_id)=>{
@@ -233,4 +261,15 @@ Message.FixData = async (state)=>{
 }
 
 Message.sendSMS = sendSMS
+
+Message.rss = async (ent_id) => {
+  let items = await Message.listNotices({enterprise_id:ent_id})
+  return items.map(v => ({
+    id: v.id,
+    title: v.title,
+    date: moment(v.created_at).format('YYYY-MM-DD'),
+    link: "/core/notices/" + v.id
+  }))
+}
+Rss.register(RSS_KEY, Message.rss)
 module.exports = Message

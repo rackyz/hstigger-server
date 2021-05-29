@@ -60,6 +60,7 @@ o.get = async (key,extra)=>{
   }
   else if(rss.source_type == 2){
     let ent_id = extra
+    console.log(ent_id)
     if(!ent_id)
       throw EXCEPTION.E_INVALID_DATA
     
@@ -111,13 +112,14 @@ o.list = async (queryParam = {},ent_id,filtered)=>{
 }
 
 
-o.create = async (item,op)=>{
+o.create = async (item={},op)=>{
   // validate
   let createInfo = {
     created_at:UTIL.getTimeStamp(),
     created_by:op
   }
   Object.assign(item,createInfo)
+  await MYSQL(T_RSS).where({id:item.id}).del()
   await MYSQL(T_RSS).insert(item)
   UserLogger.info(`${op}创建了RSS源${item.name}`)
   return createInfo

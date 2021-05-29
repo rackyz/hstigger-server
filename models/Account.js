@@ -2,7 +2,7 @@ const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
-const Message = require('./Message')
+
 const Enterprise = require('./Enterprise')
 const Module = require('./Module')
 const Permission = require('./Permission')
@@ -15,9 +15,9 @@ const FlowInstance = require('./FlowInstance')
 const { UserLogger } = require('../base/logger')
 const PMIS = require('./PMIS')
 const o = {
-  required:['Type','Enterprise','Message']
+  required:['Type','Enterprise','Rss','Message']
 }
-
+const Message = require('./Message')
 
 // Database Initalization
 const TABLE_ACCOUNT = 'account'

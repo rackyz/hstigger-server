@@ -1,11 +1,18 @@
 // 专栏
-const {Article} = require('../../models')
+const {
+  Article,
+  Message
+} = require('../../models')
 let out = {}
 
 out.List = async ctx=>{
   let q = ctx.query.q
-  if(q){
-    return Article.query(ctx.state, {
+  if(q == 'notice'){
+    return await Message.listNotices(ctx.state,ctx.query)
+  }else if(q == 'notice-count'){
+    return await Message.listNoticesCount(ctx.state)
+  }else{
+    return await Article.query(ctx.state, {
       where:{article_type: q}
     }, ctx.state.enterprise_id)
   }

@@ -9,8 +9,8 @@ out.Auth = async (method, {
 }) => {}
 
 out.List = async ctx => {
-  let ent_id = ctx.state.ent_id
-  
+  let ent_id = ctx.state.enterprise_id
+
   return await Rss.list({},ent_id)
 }
 

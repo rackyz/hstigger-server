@@ -8,7 +8,7 @@ out.Auth = (user_id,ent_id)=>{
 
 out.Get = async ctx => {
   let id = ctx.params.id
-  let data = await Rss.get(id,ctx.state.id)
+  let data = await Rss.get(id,ctx.state.enterprise_id)
 
   return data
 }
