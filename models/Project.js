@@ -219,7 +219,7 @@ o.GetList = async ent_id=>{
 
 o.query = async (ctx,condition,ent_id) => {
    const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
-  let items = await Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at','business_type')
+  let items = await Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at')
   return items
 }
 
