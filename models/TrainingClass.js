@@ -217,4 +217,48 @@ o.calcCount = async (state,project_id)=>{
 }
 
 
+o.addClass = async (state,project_id,class_plan)=>{
+  let sqlQueryPlan = DB.TrainingClass.Query(state.enterprise_id)
+  let item = {
+    project_id,
+    created_by:state.id,
+    created_at:UTIL.getTimeStamp(),
+    ...class_plan
+  }
+  await sqlQueryPlan.insert(item)
+}
+
+o.removeClass = async (state,class_id)=>{
+  let sqlQueryPlan = DB.TrainingClass.Query(state.enterprise_id)
+  await sqlQueryPlan.where({id:class_id}).del()
+}
+
+o.updateClass = async (state,class_id,item)=>{
+  let sqlQueryPlan = DB.TrainingClass.Query(state.enterprise_id)
+  await sqlQueryPlan.where({id:class_id}).update(item)
+}
+
+// ---------- Appraisal
+
+o.addAppraisal = async (state,project_id,class_plan)=>{
+  let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
+  let item = {
+    project_id,
+    created_by:state.id,
+    created_at:UTIL.getTimeStamp(),
+    ...class_plan
+  }
+  await sqlQueryPlan.insert(item)
+}
+
+o.removeAppraisal = async (state,class_id)=>{
+  let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
+  await sqlQueryPlan.where({id:class_id}).del()
+}
+
+o.updateAppraisal = async (state,class_id,item)=>{
+  let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
+  await sqlQueryPlan.where({id:class_id}).update(item)
+}
+
 module.exports = o
