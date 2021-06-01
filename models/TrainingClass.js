@@ -36,6 +36,7 @@ DB.TrainingProjectMember = MYSQL.Create('training_project_user',t=>{
   t.uuid('project_id')
   t.integer('score')
   t.text('comment')
+  t.datetime('joined_at')
 })
 
 DB.TrainingClass = MYSQL.Create('training_class',t=>{
@@ -90,11 +91,19 @@ o.initdb_e = async(ent_id,forced)=>{
 o.query = async (state,condition = {})=>{
   let page = condition.page || 1
   let pagesize = condition.pagesize || 12
-  let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).select('id','name','charger','created_at','created_by','avatar')
+  let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).select('id','name','charger','created_at','created_by','avatar','count','passed','enable_join')
+  if(condition.where)
+    sqlQuery =sqlQuery.where(condition.where)
   let items = await sqlQuery.orderBy('created_at','desc').offset((page-1)*pagesize).limit(pagesize)
-  console.log(page,pagesize,items.length)
   return items
 }
+
+o.queryUserItems = async (state,user_id)=>{
+  user_id = user_id || state.id
+  let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).select('training_project.id', 'name', 'charger', 'created_at', 'created_by', 'avatar', 'count', 'passed', 'enable_join').leftJoin('training_project_user','project_id','training_project.id').where({user_id})
+  return await sqlQuery
+}
+
 
 o.get = async (state,id)=>{
   let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).first()
@@ -103,6 +112,8 @@ o.get = async (state,id)=>{
   let sqlQueryTask = DB.TrainingAppraisal.Query(state.enterprise_id)
   let sqlQueryTaskUserRelation = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   let item = await sqlQuery.where({id})
+  if(!item)
+    throw "培训项目不存在"
   item.users = await sqlQueryUserRelation.where({project_id:id})
   item.plans = await sqlQueryClass.where({project_id:id})
   item.appraisals = await sqlQueryTask.where({project_id:id})
@@ -145,7 +156,65 @@ o.remove = async (state,id)=>{
   await sqlDeleteTaskUserRelation.where({project_id:id}).del()
 }
 
+// ---
 
+o.join = async (state, project_id, user_id) => {
+  user_id = user_id || state.id
+  let sqlTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let sqlExist = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let item = {
+    user_id,
+    project_id,
+    // jointed_at:
+  }
+  let isExist = await sqlExist.first('id').where(item)
+  if(isExist)
+    throw '您已报名'
+  await sqlTrainingUser.insert(item)
+  await o.calcCount(state,project_id)
+}
+
+o.unjoin = async (state, project_id, user_id) => {
+  user_id = user_id || state.id
+  let sqlTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let item = {
+    user_id,
+    project_id,
+    // jointed_at:
+  }
+  
+  await sqlTrainingUser.where(item).del()
+  await o.calcCount(state, project_id)
+}
+
+o.joinlist = async (state, project_id, user_map={}) => {
+  let sqlRemoveTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let sqlTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let users = Object.keys(user_map)
+  let insertUsers = users.filter(v=>user_map[v] == true)
+  let items = insertUsers.map(v => ({
+    user_id: v,
+    project_id,
+    joined_at:UTIL.getTimeStamp()
+  }))
+  await sqlRemoveTrainingUser.whereIn('user_id', users).where({
+    project_id
+  }).del()
+  await sqlTrainingUser.insert(items)
+  await o.calcCount(state, project_id)
+}
+
+
+o.calcCount = async (state,project_id)=>{
+  let sqlQueryUserRelation = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let users = await sqlQueryUserRelation.select('score').where({
+     project_id
+   })
+  let count = users.length
+  let passed = users.filter(v=>v.score > 60).length
+  await o.update(state,project_id,{count,passed})
+
+}
 
 
 module.exports = o

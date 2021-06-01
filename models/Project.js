@@ -214,12 +214,16 @@ const sychronize_oa_project = async (raw_projects)=>{
 }
 
 o.GetList = async ent_id=>{
-  return await o.query(null,null,ent_id)
+  return await o.query(null,{},ent_id)
 }
 
-o.query = async (ctx,condition,ent_id) => {
-   const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
-  let items = await Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at')
+o.query = async (ctx,condition = {},ent_id) => {
+  let Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
+  Q =  Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at')
+  if(condition.where){
+    Q = Q.where(condition.where)
+  }
+  let items = await Q
   return items
 }
 
