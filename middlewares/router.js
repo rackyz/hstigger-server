@@ -2,7 +2,7 @@ const auth = require('./auth')
 const routerAuthencation = require('./authRouter')
 let RestfulAPIMethods = {}
 let Methods = ['List', 'Get', 'Post', 'PostAction', 'Replace', 'Patch', 'Delete', 'GetRelated', 'Option',
-  'Related', 'AddRelated', 'DelRelated'
+  'Related', 'AddRelated', 'DelRelated','PatchRelated'
 ]
 
 let E = {
@@ -85,6 +85,7 @@ for (let i = 0; i < DefinedRouterDepth; i++) {
     .delete('/:object/:id', routerAuthencation, RestfulAPIMethods.Delete)
     .get('/:object/:id/:related', routerAuthencation, RestfulAPIMethods.Related)
     .get('/:object/:id/:related/:relatedId', routerAuthencation, RestfulAPIMethods.GetRelated)
+    .patch('/:object/:id/:related/:relatedId',routerAuthencation,RestfulAPIMethods.PatchRelated)
     .post('/:object/:id/:related', routerAuthencation, RestfulAPIMethods.AddRelated)
     .delete('/:object/:id/:related/:relatedId', routerAuthencation, RestfulAPIMethods.DelRelated)
   if (i != 0)

@@ -7,9 +7,10 @@ const APIMap = {
   Post: "POST {path}",
   Delete: "DELETE {path}/:id",
   PostAction: "POST {path}/:action",
-  Related: "GET {path}/:related",
-  AddRelated: "POST {path}/:related/:relatedId",
-  DelRelated: "DELETE {path}/:related/:relatedId"
+  Related: "GET {path}/:id/:related",
+  AddRelated: "POST {path}/:id/:related",
+  DelRelated: "DELETE {path}/:id/:related/:relatedId",
+  PatchRelated: "PATCH {path}/:id/:related/:relatedId"
 }
 
 

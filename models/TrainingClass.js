@@ -40,10 +40,12 @@ DB.TrainingProjectMember = MYSQL.Create('training_project_user',t=>{
 })
 
 DB.TrainingClass = MYSQL.Create('training_class',t=>{
-  t.uuid('id').primary()
+  t.increments('id').primary()
   t.uuid('project_id')
   t.string('name',32)
   t.text('desc')
+  t.string('address',256)
+  t.integer('state').defaultTo(0)
   t.datetime('started_at')
   t.integer('duration') // minutes
   t.datetime('created_at')
@@ -52,7 +54,7 @@ DB.TrainingClass = MYSQL.Create('training_class',t=>{
 
 
 DB.TrainingAppraisal = MYSQL.Create('training_appraisal',t=>{
-  t.uuid('id').primary()
+  t.increments('id').primary()
   t.uuid('project_id')
   t.string('name',32)
   t.text('desc')
@@ -69,7 +71,7 @@ DB.TrainingAppraisal = MYSQL.Create('training_appraisal',t=>{
 
 
 DB.TrainingAppraisalUser = MYSQL.Create('training_appraisal_user',t=>{
-  t.uuid('id').primary()
+  t.increments('id').primary()
   t.uuid('user_id')
   t.uuid('project_id')
   t.uuid('appraisal_id')
@@ -83,7 +85,7 @@ DB.TrainingAppraisalUser = MYSQL.Create('training_appraisal_user',t=>{
 
 
 o.initdb_e = async(ent_id,forced)=>{
-  // forced = true
+  
    await MYSQL.Migrate(DB, forced, ent_id)
 }
 
@@ -217,19 +219,28 @@ o.calcCount = async (state,project_id)=>{
 }
 
 
-o.addClass = async (state,project_id,class_plan)=>{
+o.listClass = async (state,project_id)=>{
+  let sqlQuery = DB.TrainingClass.Query(state.enterprise_id)
+  let items = await sqlQuery.where({project_id})
+  return items
+}
+
+o.addClass = async (state, project_id, item) => {
   let sqlQueryPlan = DB.TrainingClass.Query(state.enterprise_id)
-  let item = {
+  let updateInfo = {
     project_id,
     created_by:state.id,
     created_at:UTIL.getTimeStamp(),
-    ...class_plan
   }
-  await sqlQueryPlan.insert(item)
+  Object.assign(item, updateInfo)
+  let id = await sqlQueryPlan.insert(item).returning('id')
+  updateInfo.id = id
+  return updateInfo
 }
 
 o.removeClass = async (state,class_id)=>{
   let sqlQueryPlan = DB.TrainingClass.Query(state.enterprise_id)
+  console.log("remove:",class_id)
   await sqlQueryPlan.where({id:class_id}).del()
 }
 
@@ -240,15 +251,25 @@ o.updateClass = async (state,class_id,item)=>{
 
 // ---------- Appraisal
 
-o.addAppraisal = async (state,project_id,class_plan)=>{
+o.listAppraisal = async (state, project_id) => {
+  let sqlQuery = DB.TrainingAppraisal.Query(state.enterprise_id)
+  let items = await sqlQuery.where({
+    project_id
+  })
+  console.log(project_id,items.length)
+  return items
+}
+
+
+o.addAppraisal = async (state,project_id,item)=>{
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
-  let item = {
+  let updateInfo = {
     project_id,
-    created_by:state.id,
-    created_at:UTIL.getTimeStamp(),
-    ...class_plan
   }
-  await sqlQueryPlan.insert(item)
+  Object.assign(item, updateInfo)
+  let id = await sqlQueryPlan.insert(item).returning('id')
+  updateInfo.id = id
+  return updateInfo
 }
 
 o.removeAppraisal = async (state,class_id)=>{

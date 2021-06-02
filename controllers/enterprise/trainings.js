@@ -48,4 +48,56 @@ o.Delete = async ctx=>{
   await TrainingClass.remove(ctx.state,id)
 }
 
+o.Related = async ctx=>{
+  let id = ctx.params.id
+  let related = ctx.params.related
+  let items = []
+  if(related == 'plans'){
+    items = await TrainingClass.listClass(ctx.state,id)
+  }else if(related == 'appraisals'){
+    items = await TrainingClass.listAppraisal(ctx.state,id)
+  }
+
+  return items
+}
+
+o.AddRelated = async ctx=>{
+  let id = ctx.params.id
+  let data = ctx.request.body
+  let related = ctx.params.related
+  if (related == 'plans') {
+    let updateInfo = await TrainingClass.addClass(ctx.state, id, data)
+    return updateInfo
+  }else if(related == 'appraisals'){
+    let updateInfo = await TrainingClass.addAppraisal(ctx.state, id, data)
+    return updateInfo
+  }
+
+
+  
+}
+
+o.DelRelated = async ctx=>{
+  let id = ctx.params.id
+  let related = ctx.params.related
+  let relatedId = ctx.params.relatedId
+  if (related == 'plans') {
+    await TrainingClass.removeClass(ctx.state, relatedId)
+  } else if (related = 'appraisals') {
+     await TrainingClass.removeAppraisal(ctx.state, relatedId)
+  }
+}
+
+o.PatchRelated = async ctx => {
+  let id = ctx.params.id
+  let related = ctx.params.related
+  let relatedId = ctx.params.relatedId
+  let data = ctx.request.body
+  if(related == 'plans'){
+    await TrainingClass.updateClass(ctx.state,relatedId,data)
+  }else if(related = 'appraisals'){
+    await TrainingClass.updateAppraisal(ctx.state, relatedId, data)
+  }
+}
+
 module.exports = o
