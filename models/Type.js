@@ -24,12 +24,13 @@ o.initdb = async (forced) => {
  
 
   if(forced){
-    MYSQL(TABLE_TYPE).del()
+   // MYSQL(TABLE_TYPE).del()
    // MYSQL(TABLE_TYPE).insert(init_types)
+   await o.AddType('TEXT_CONT_TYPE',['text','md5','html'])
 
   }
 
-  await o.AddType('TEXT_CONT_TYPE',['text','md5','html'])
+  
 }
 
 o.initdb_e = async (ent_id,forced)=>{

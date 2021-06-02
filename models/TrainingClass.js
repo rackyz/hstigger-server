@@ -37,6 +37,7 @@ DB.TrainingProjectMember = MYSQL.Create('training_project_user',t=>{
   t.integer('score')
   t.text('comment')
   t.datetime('joined_at')
+  t.integer('joined_type').defaultTo(0)
 })
 
 DB.TrainingClass = MYSQL.Create('training_class',t=>{
@@ -87,6 +88,9 @@ DB.TrainingAppraisalUser = MYSQL.Create('training_appraisal_user',t=>{
 o.initdb_e = async(ent_id,forced)=>{
   
    await MYSQL.Migrate(DB, forced, ent_id)
+
+   if(forced)
+    await Type.AddType('TRAIN_JOIN_TYPE',['管理添加','自主报名'])
 }
 
 
@@ -167,7 +171,9 @@ o.join = async (state, project_id, user_id) => {
   let item = {
     user_id,
     project_id,
-    // jointed_at:
+    joined_at:UTIL.getTimeStamp(),
+    joined_type:1,
+    score:0
   }
   let isExist = await sqlExist.first('id').where(item)
   if(isExist)
@@ -181,30 +187,14 @@ o.unjoin = async (state, project_id, user_id) => {
   let sqlTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
   let item = {
     user_id,
-    project_id,
-    // jointed_at:
+    project_id
   }
   
   await sqlTrainingUser.where(item).del()
   await o.calcCount(state, project_id)
 }
 
-o.joinlist = async (state, project_id, user_map={}) => {
-  let sqlRemoveTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
-  let sqlTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
-  let users = Object.keys(user_map)
-  let insertUsers = users.filter(v=>user_map[v] == true)
-  let items = insertUsers.map(v => ({
-    user_id: v,
-    project_id,
-    joined_at:UTIL.getTimeStamp()
-  }))
-  await sqlRemoveTrainingUser.whereIn('user_id', users).where({
-    project_id
-  }).del()
-  await sqlTrainingUser.insert(items)
-  await o.calcCount(state, project_id)
-}
+
 
 
 o.calcCount = async (state,project_id)=>{
@@ -256,7 +246,6 @@ o.listAppraisal = async (state, project_id) => {
   let items = await sqlQuery.where({
     project_id
   })
-  console.log(project_id,items.length)
   return items
 }
 
@@ -266,7 +255,6 @@ o.addAppraisal = async (state,project_id,item)=>{
   let updateInfo = {
     project_id,
   }
-  Object.assign(item, updateInfo)
   let id = await sqlQueryPlan.insert(item).returning('id')
   updateInfo.id = id
   return updateInfo
@@ -280,6 +268,45 @@ o.removeAppraisal = async (state,class_id)=>{
 o.updateAppraisal = async (state,class_id,item)=>{
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
   await sqlQueryPlan.where({id:class_id}).update(item)
+}
+
+// --------------- Users
+
+o.listUser = async (state, project_id) => {
+  let sqlQuery = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let items = await sqlQuery.where({
+    project_id
+  })
+  console.log(items.length,project_id)
+  return items
+}
+
+
+o.addUsers = async (state,project_id,user_id_list = [])=>{
+  let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let paramData = user_id_list.map(v=>({
+    user_id:v,
+    project_id,
+    score:0,
+    joined_at:UTIL.getTimeStamp(),
+    joined_type:v.joined_type != undefined?v.joined_type:0
+  }))
+  await sqlQueryPlan.insert(paramData)
+}
+
+o.removeUser = async (state,record_id)=>{
+  let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
+  await sqlQueryPlan.where({id:record_id}).del()
+}
+
+o.removeUsersByIds  = async (state,project_id,user_list = [])=>{
+  let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
+  await sqlQueryPlan.where({project_id}).whereIn('user_id',user_list).del()
+}
+
+o.updateUser  = async (state,user_record_id,item)=>{
+  let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
+  await sqlQueryPlan.where({id:user_record_id}).update(item)
 }
 
 module.exports = o

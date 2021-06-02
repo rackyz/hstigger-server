@@ -34,9 +34,11 @@ o.Patch = async ctx => {
  
    }else if(q == 'unjoin'){
      await TrainingClass.unjoin(ctx.state,id)
-   }else if( q == 'joinlist'){
-      await TrainingClass.joinlist(ctx.state,id,data)
-   }else{
+   }else if(q == 'addusers'){
+    await TrainingClass.addUsers(ctx.state,id,data)
+  }else if(q == 'delusers'){
+    await TrainingClass.removeUsersByIds(ctx.state,id,data)
+  }else{
        await TrainingClass.update(ctx.state, id, item)
    }
 
@@ -56,26 +58,14 @@ o.Related = async ctx=>{
     items = await TrainingClass.listClass(ctx.state,id)
   }else if(related == 'appraisals'){
     items = await TrainingClass.listAppraisal(ctx.state,id)
+  }else if(related == 'users'){
+    items = await TrainingClass.listUser(ctx.state,id)
   }
 
   return items
 }
 
-o.AddRelated = async ctx=>{
-  let id = ctx.params.id
-  let data = ctx.request.body
-  let related = ctx.params.related
-  if (related == 'plans') {
-    let updateInfo = await TrainingClass.addClass(ctx.state, id, data)
-    return updateInfo
-  }else if(related == 'appraisals'){
-    let updateInfo = await TrainingClass.addAppraisal(ctx.state, id, data)
-    return updateInfo
-  }
 
-
-  
-}
 
 o.DelRelated = async ctx=>{
   let id = ctx.params.id
@@ -85,6 +75,8 @@ o.DelRelated = async ctx=>{
     await TrainingClass.removeClass(ctx.state, relatedId)
   } else if (related = 'appraisals') {
      await TrainingClass.removeAppraisal(ctx.state, relatedId)
+  }else if(related = 'users'){
+    await TrainingClass.removeUsers(ctx.state,relatedId)
   }
 }
 
@@ -97,6 +89,8 @@ o.PatchRelated = async ctx => {
     await TrainingClass.updateClass(ctx.state,relatedId,data)
   }else if(related = 'appraisals'){
     await TrainingClass.updateAppraisal(ctx.state, relatedId, data)
+  }else if(related == 'users'){
+    await TrainingClass.updateUser(ctx.state,relatedId,data)
   }
 }
 

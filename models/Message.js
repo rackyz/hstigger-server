@@ -49,7 +49,10 @@ const RSS_KEY = "ent_notices"
 Message.initdb = async (forced)=>{
   
   await MYSQL.Migrate(DB,forced)
-  MESSAGE_TYPE = await Type.AddType('MESSAGE_TYPE',['系统消息','企业通知','部门消息','项目部通知','站内信'])
+  if(!forced){
+    MESSAGE_TYPE = await Type.AddType('MESSAGE_TYPE',['系统消息','企业通知','部门消息','项目部通知','站内信'])
+  }
+  
 
   await Rss.create({
     id: RSS_KEY,
