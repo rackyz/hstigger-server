@@ -41,7 +41,8 @@ DB.task = MYSQL.Create('task',t=>{
   t.datetime('start_at')
   t.datetime('finished_at')
   t.integer('sub_task_count').defaultTo(0)
-  
+  //t.boolean('enabled_subtask')
+  //t.boolean('')
   // 创建信息
   t.uuid('created_by')
   t.datetime('created_at')
@@ -77,10 +78,10 @@ o.initdb = async (forced) => {
   
   await MYSQL.Migrate(DB,forced)
 
-  if(forced){
-    Type.AddType('TASK_TYPE',['任务','跟踪','工单','流程','数据','计划','审批'])
+ if(forced){
+    Type.AddType('TASK_TYPE',['任务','跟踪','工单','流程','数据','计划','审批','考核'])
     Type.AddType("TASK_STATE",['准备中','进行中','已完成','已失败','已关闭'])
-  }
+ }
 }
 
 o.initdb_e = async (ent_id, forced) => {
@@ -208,6 +209,30 @@ o.create = async (ctx, data, ent_id) => {
   Object.assign(data, updateInfo)
   await Q.insert(data)
   return updateInfo
+}
+
+o.createTasks = async (state,dataItems,ent_id)=>{
+  const Q = DB.task.Query(ent_id)
+   let created_at = UTIL.getTimeStamp()
+   let created_by = state.id
+
+  let updateinfos = []
+  dataItems = dataItems.map(data=>{
+         let updateInfo = {
+           id: data.id || UTIL.createUUID(),
+           state: 0,
+           base_type: data.base_type || 0,
+           created_at,
+           created_by
+         }
+
+        Object.assign(data, updateInfo)
+        updateinfos.push(updateInfo)
+        return data
+    })
+  
+   await Q.insert(dataItems)
+   return updateinfos
 }
 
 o.listTree = async (state, id, ent_id, table_name ,with_id_replaced,array_list) => {

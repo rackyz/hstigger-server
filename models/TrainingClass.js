@@ -79,6 +79,7 @@ DB.TrainingAppraisalUser = MYSQL.Create('training_appraisal_user',t=>{
   t.uuid('user_id')
   t.uuid('project_id')
   t.uuid('appraisal_id')
+  t.uuid('task_id')
   t.integer('state').defaultTo(0)
   t.text('file')
   t.datetime('submited_at')
@@ -264,9 +265,10 @@ o.addAppraisal = async (state,project_id,item)=>{
   let updateInfo = {
     project_id,
   }
+  Object.assign(item,updateInfo)
   let id = await sqlQueryPlan.insert(item).returning('id')
   updateInfo.id = id
-  await o.addAppraisalTrainingUsers(ctx,project_id,id)
+  await o.addAppraisalTrainingUsers(state, project_id, id)
   return updateInfo
 }
 
@@ -286,7 +288,7 @@ o.updateAppraisal = async (state,class_id,item)=>{
 
 // add all users of trainings to 
 o.addAppraisalTrainingUsers = async (state, project_id, appraisal_id) => {
-  let users = o.listUser(state,project_id)
+  let users = await o.listUser(state,project_id)
   let user_id_list = users.map(v=>v.user_id)
   await o.addAppraisalUsers(state,appraisal_id,user_id_list)
 }
@@ -421,33 +423,49 @@ o.listAppraisalUsers = async (state,appraisal_id)=>{
 
 o.getAppraisal = async (state,appraisal_id)=>{
   let query = DB.TrainingAppraisal.Query(state.enterprise_id)
-  let item = await query
+  let item = await query.first().where({id:appraisal_id})
   item.users = await o.listAppraisalUsers(state,appraisal_id)
   return item
 }
 
 
 o.addAppraisalUsers = async (state,appraisal_id,user_id_list)=>{
-  let queryAppraisal = DB.TrainingAppraisal.Query(state,enterprise_id)
-  let app = await queryAppraisal.first('project_id')
+  let queryAppraisal = DB.TrainingAppraisal.Query(state.enterprise_id)
+  let app = await queryAppraisal.first('name','project_id')
   let project_id = ""
   if(!app)
     project_id = app.project_id
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
-  let items = user_id_list.map(v=>({
-    user_id,
+  let generatedTaskIds = user_id_list.map(v=>({
+    user_id:v,
+    task_id:UTIL.createUUID()
+  }))
+  let items = generatedTaskIds.map(v => ({
+    user_id:v.user_id,
     appraisal_id,
+    task_id:v.task_id,
     project_id
   }))
+
+  let taskItems = generatedTaskIds.map(v=>({
+    id:v.task_id,
+    name:"[考核] "+app.name,
+    base_type:7,
+    project_id:app.project_id,
+    charger:v.user_id
+  }))
+
   query = query.insert(items)
+
   await query
+  await Task.createTasks(state, taskItems, state.enterprise_id)
 }
 
 o.removeAppraisalUsers = async (state,appraisal_id,user_id_list = [])=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   await query.whereIn('user_id',user_id_list).del()
   // remove
-  
+
 }
 
 o.eval = async (state,appraisal_id,data)=>{
