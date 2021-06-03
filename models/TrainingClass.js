@@ -446,6 +446,8 @@ o.addAppraisalUsers = async (state,appraisal_id,user_id_list)=>{
 o.removeAppraisalUsers = async (state,appraisal_id,user_id_list = [])=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   await query.whereIn('user_id',user_id_list).del()
+  // remove
+  
 }
 
 o.eval = async (state,appraisal_id,data)=>{
