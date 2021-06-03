@@ -4,6 +4,7 @@ const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
 const Task = require('./Task')
 const api = require('../base/api')
+const _ = require('lodash')
 const o = {
   required:['Type','Task']
 }
@@ -38,6 +39,8 @@ DB.TrainingProjectMember = MYSQL.Create('training_project_user',t=>{
   t.text('comment')
   t.datetime('joined_at')
   t.integer('joined_type').defaultTo(0)
+  t.datetime('evaluated_at')
+  t.datetime('evaluated_by')
 })
 
 DB.TrainingClass = MYSQL.Create('training_class',t=>{
@@ -180,6 +183,9 @@ o.join = async (state, project_id, user_id) => {
     throw '您已报名'
   await sqlTrainingUser.insert(item)
   await o.calcCount(state,project_id)
+
+  // add appraisal
+  // await o.addAppraisalUsers()
 }
 
 o.unjoin = async (state, project_id, user_id) => {
@@ -192,6 +198,9 @@ o.unjoin = async (state, project_id, user_id) => {
   
   await sqlTrainingUser.where(item).del()
   await o.calcCount(state, project_id)
+
+  // remove appraisal-users
+  // await 
 }
 
 
@@ -257,17 +266,29 @@ o.addAppraisal = async (state,project_id,item)=>{
   }
   let id = await sqlQueryPlan.insert(item).returning('id')
   updateInfo.id = id
+  await o.addAppraisalTrainingUsers(ctx,project_id,id)
   return updateInfo
 }
 
-o.removeAppraisal = async (state,class_id)=>{
+o.removeAppraisal = async (state, appraisal_id) => {
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
-  await sqlQueryPlan.where({id:class_id}).del()
+  let sqlQueryUsers = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  await sqlQueryPlan.where({
+    id: appraisal_id
+  }).del()
+  await sqlQueryUsers.where({appraisal_id}).del()
 }
 
 o.updateAppraisal = async (state,class_id,item)=>{
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
   await sqlQueryPlan.where({id:class_id}).update(item)
+}
+
+// add all users of trainings to 
+o.addAppraisalTrainingUsers = async (state, project_id, appraisal_id) => {
+  let users = o.listUser(state,project_id)
+  let user_id_list = users.map(v=>v.user_id)
+  await o.addAppraisalUsers(state,appraisal_id,user_id_list)
 }
 
 // --------------- Users
@@ -277,7 +298,6 @@ o.listUser = async (state, project_id) => {
   let items = await sqlQuery.where({
     project_id
   })
-  console.log(items.length,project_id)
   return items
 }
 
@@ -296,6 +316,7 @@ o.addUsers = async (state,project_id,user_id_list = [])=>{
 
 o.removeUser = async (state,record_id)=>{
   let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
+  console.log(record_id)
   await sqlQueryPlan.where({id:record_id}).del()
 }
 
@@ -308,5 +329,131 @@ o.updateUser  = async (state,user_record_id,item)=>{
   let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
   await sqlQueryPlan.where({id:user_record_id}).update(item)
 }
+
+o.evaludate = async (state,user_record_id,item)=>{
+  item.evaludated_at = UTIL.getTimeStamp()
+  item.evaludated_by = state.id
+  o.updateUser(state,user_record_id,item)
+}
+
+o.clearEval = async (state,user_record_id)=>{
+  o.updateUser(state,user_record_id,{
+    evaludated_at:null,
+    evaludated_by:null,
+    comment:null,
+    score:null
+  })
+}
+
+o.autoEval = async (state,project_id,user_record_id)=>{
+  let sqlQuery = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let record = await sqlQuery.first('user_id').where({id:user_record_id})
+  await o.autoEvalByUserIdList(state,project_id,[record.id])
+}
+
+o.autoEvalAll = async (state,project_id)=>{
+ await autoEvalByUserIdList(state,project_id,[],true,true)
+}
+
+o.autoEvalByUserIdList = async (state,project_id,user_id_list = [],forced=false,all=false)=>{
+   let sqlQuery = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+   sqlQuery = sqlQuery.select('user_id', 'appraisal_id', 'state', 'score').where({
+     project_id
+   })
+   let items = []
+   if(all){
+     items = await sqlQuery
+   }else{
+      items = await sqlQuery.whereIn('user_id', user_id_list)
+   }
+
+   if (!forced){
+     let sqlQueryEvaluated = DB.TrainingProjectMember.Query(state.enterprise_id).select('user_id', 'evaluated_at').where({
+       project_id
+     })
+     if(!all)
+      sqlQueryEvaluated = sqlQueryEvaluated.whereIn('user_list', user_id_list)
+     let ignore_items = await sqlQueryEvaluated
+     _.remove(items,v=>ignore_items.includes(v.user_id))
+   }
+   if(items.length == 0)
+    return
+   let scores = {}
+   items.forEach(v=>{
+     if(scores[v.user_id]){
+       scores[v.user_id] += v.score || 0
+     }else{
+       scores[v.user_id] = v.score || 0
+     }
+   })
+
+   let count = _.uniqueBy(items.map(v => v.appraisal_id),v=>v).length 
+   if(count == 0)
+    return
+
+   for(let user_id in scores){
+    await o.updateUser({
+      evaludated_at: UTIL.getTimeStamp(),
+      evaludated_by: state.id,
+      score:parseInt(scores[user_id] / count),
+      comment:"系统自动依据本次培训考核结果评价（取得分均值）"
+    }).where({
+      user_id,
+      project_id
+    })
+   }
+   
+}
+
+o.listAppraisals = async (state,condition = {})=>{
+  let query = DB.TrainingAppraisal.Query(state.enterprise_id)
+  MYSQL.parseCondition(query,condition)
+  let items = await query
+  return items
+}
+
+
+o.listAppraisalUsers = async (state,appraisal_id)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  let items = await query.where({appraisal_id})
+  return items
+}
+
+o.getAppraisal = async (state,appraisal_id)=>{
+  let query = DB.TrainingAppraisal.Query(state.enterprise_id)
+  let item = await query
+  item.users = await o.listAppraisalUsers(state,appraisal_id)
+  return item
+}
+
+
+o.addAppraisalUsers = async (state,appraisal_id,user_id_list)=>{
+  let queryAppraisal = DB.TrainingAppraisal.Query(state,enterprise_id)
+  let app = await queryAppraisal.first('project_id')
+  let project_id = ""
+  if(!app)
+    project_id = app.project_id
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  let items = user_id_list.map(v=>({
+    user_id,
+    appraisal_id,
+    project_id
+  }))
+  query = query.insert(items)
+  await query
+}
+
+o.removeAppraisalUsers = async (state,appraisal_id,user_id_list = [])=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  await query.whereIn('user_id',user_id_list).del()
+}
+
+o.eval = async (state,appraisal_id,data)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  data.evaluated_at = UTIL.getTimeStamp()
+  data.evaludated_by = state.id
+  await query.insert(data)
+}
+
 
 module.exports = o

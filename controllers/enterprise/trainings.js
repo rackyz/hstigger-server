@@ -38,11 +38,11 @@ o.Patch = async ctx => {
     await TrainingClass.addUsers(ctx.state,id,data)
   }else if(q == 'delusers'){
     await TrainingClass.removeUsersByIds(ctx.state,id,data)
+  }else if(q == 'autoevalall'){
+    await TrainingClass.autoEvalAll(ctx.state, id)
   }else{
        await TrainingClass.update(ctx.state, id, item)
    }
-
-  
 }
 
 o.Delete = async ctx=>{
@@ -65,18 +65,30 @@ o.Related = async ctx=>{
   return items
 }
 
-
+o.AddRelated = async ctx=>{
+  let id = ctx.params.id
+  let related = ctx.params.related
+  let data = ctx.request.body
+  if (related == 'plans') {
+    await TrainingClass.addClass(ctx.state,id, data)
+  } else if (related == 'appraisals') {
+    await TrainingClass.addAppraisal(ctx.state,id, data)
+  } else if (related == 'users') {
+    await TrainingClass.addUsers(ctx.state, id,data)
+  }
+}
 
 o.DelRelated = async ctx=>{
   let id = ctx.params.id
   let related = ctx.params.related
   let relatedId = ctx.params.relatedId
+  console.log(related,relatedId)
   if (related == 'plans') {
     await TrainingClass.removeClass(ctx.state, relatedId)
-  } else if (related = 'appraisals') {
+  } else if (related == 'appraisals') {
      await TrainingClass.removeAppraisal(ctx.state, relatedId)
-  }else if(related = 'users'){
-    await TrainingClass.removeUsers(ctx.state,relatedId)
+  }else if(related == 'users'){
+    await TrainingClass.removeUser(ctx.state, relatedId)
   }
 }
 
@@ -87,10 +99,17 @@ o.PatchRelated = async ctx => {
   let data = ctx.request.body
   if(related == 'plans'){
     await TrainingClass.updateClass(ctx.state,relatedId,data)
-  }else if(related = 'appraisals'){
+  }else if(related == 'appraisals'){
     await TrainingClass.updateAppraisal(ctx.state, relatedId, data)
   }else if(related == 'users'){
-    await TrainingClass.updateUser(ctx.state,relatedId,data)
+    if(q == 'cleareval')
+      await TrainingClass.updateUser(ctx.state,relatedId,data)
+    else if(q == 'autoeval')
+      await TrainingClass.autoEval(state, id, relatedId)
+    else 
+      await TrainingClass.evaluate(ctx.state,relatedId,data)
+  }else if(related == 'cleareval'){
+    await TrainingClass.clearEval(ctx.state,relatedId)
   }
 }
 
