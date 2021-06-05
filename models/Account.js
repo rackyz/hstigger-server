@@ -107,9 +107,10 @@ o.initdb = async (forced) => {
 
 
 
-  await MYSQL.schema.raw(`ALTER TABLE ${TABLE_ACCOUNT} AUTO_INCREMENT=1000`)
-
+  
   if(forced){
+    await MYSQL.schema.raw(`ALTER TABLE ${TABLE_ACCOUNT} AUTO_INCREMENT=1000`)
+
    let AccountType = await Type.AddType('AccountType', ACCOUNT_TYPES)
     let ROOT = {
       id:"ROOT",
@@ -300,12 +301,12 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
     enterprise_id: ent_id,id:user_id
   })
   
-  let PMIS_Projects = await PMIS.GetUserProject(user.name)
+  let PMIS_Projects = await Project.oa_query_mine({id:user_id})
   PMIS_Projects.forEach(v=>v.tmpl = "BaseProject")
   let Projects = await Project.query({id:user_id,enterprise_id:ent_id},{where:{charger:user_id}},ent_id)
   let TrainingProjects = await TrainingClass.query({enterprise_id:ent_id},{where:{charger:user_id}})
   user.my_projects = [...PMIS_Projects, ...Projects, ...TrainingProjects]
-  
+  console.log(user.my_projects)
   return user
 }
 

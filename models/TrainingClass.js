@@ -101,7 +101,7 @@ o.initdb_e = async(ent_id,forced)=>{
 o.query = async (state,condition = {})=>{
   let page = condition.page || 1
   let pagesize = condition.pagesize || 12
-  let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).select('id','name','charger','created_at','created_by','avatar','count','passed','enable_join')
+  let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).select('id','name','charger','created_at','created_by','avatar','count','passed','enable_join','started_at','finished_at')
   if(condition.where)
     sqlQuery =sqlQuery.where(condition.where)
   let items = await sqlQuery.orderBy('created_at','desc').offset((page-1)*pagesize).limit(pagesize)
@@ -110,7 +110,9 @@ o.query = async (state,condition = {})=>{
 
 o.queryUserItems = async (state,user_id)=>{
   user_id = user_id || state.id
-  let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).select('training_project.id', 'name', 'charger', 'created_at', 'created_by', 'avatar', 'count', 'passed', 'enable_join').leftJoin('training_project_user','project_id','training_project.id').where({user_id})
+  let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).select('training_project.id', 'name', 'charger', 'created_at', 'created_by', 'avatar', 'count', 'passed', 'started_at', 'finished_at','enable_join').leftJoin('training_project_user', 'project_id', 'training_project.id').where({
+    user_id
+  })
   return await sqlQuery
 }
 

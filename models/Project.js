@@ -7,9 +7,11 @@ const Type = require("./Type")
 const Permission = require('./Permission')
 const Rss = require('./Rss')
 const moment = require('moment')
+const _ = require('lodash')
 const {
   UserLogger
 } = require('../base/logger')
+const { mysql } = require('../base/config')
 
 let o = {
   required: ['Type']
@@ -301,6 +303,49 @@ o.patchEmployee = async (state,id,data,ent_id)=>{
   }
 }
 
+
+o.oa_query = async (state,condition = {})=>{
+ let query = GZSQL("gz_admin.contract")
+ MYSQL.ParseCondition(query,condition)
+ let items = await query
+  return items
+}
+
+o.oa_query_mine = async (state,)=>{
+   let me = await MYSQL('account').first('name').where({
+     id: state.id
+   })
+   if(!me)
+    return []
+   let work_durations = await GZSQL("gzadmin.contract_employee").select('contract_id','positionIndex as position').where({name:me.name})
+   console.log(work_durations.length)
+   let contract_ids = work_durations.map(v=>v.contract_id)
+   console.log(contract_ids)
+   _.uniq(contract_ids)
+   let queryContracts = GZSQL("gzadmin.contract").select('id', 'name', 'type_id', 'images', 'state', 'amount', 'dep_id').leftOuterJoin('gzadmin.contract_belongto_dep', 'contract_id', 'contract.id')
+   if(contract_ids && contract_ids.length > 1){
+      queryContracts = queryContracts.whereIn('id', contract_ids).orWhere('charger', 'like', `%${me.name}%`)
+   }
+    else {
+    queryContracts = queryContracts.where('charger', 'like', `%${me.name}%`)
+    }
+   let contracts = await queryContracts
+   
+   contracts.forEach(v=>{
+    let wd = work_durations.find(w=>w.contract_id == v.id) 
+    if(wd)
+      v.position = wd.position
+    else
+      v.position = "项目经理/总监"
+      v.type = ['未设置', '全过程咨询', '房建监理', 'BIM咨询', '造价咨询', '招标代理', '项目管理', '市政监理', '其他服务'][v.type_id]
+      v.dep = ['项目管理', '造价咨询', 'BIM咨询', '装修工程', '市政监理', '房建监理', '挂靠', '其他'][v.dep_id]
+      v.stateText = ["前期", "在建", "竣工", "结束", "中止", "待定"][v.state]
+    if(v.images)
+      v.avatar = JSON.parse(v.images)[0]
+   })
+   return contracts
+  
+}
 
 module.exports = o
 
