@@ -105,6 +105,7 @@ o.query = async (state,condition = {})=>{
   if(condition.where)
     sqlQuery =sqlQuery.where(condition.where)
   let items = await sqlQuery.orderBy('created_at','desc').offset((page-1)*pagesize).limit(pagesize)
+  items.forEach(v=>v.type = '培训')
   return items
 }
 

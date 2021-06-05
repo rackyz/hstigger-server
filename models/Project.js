@@ -221,11 +221,17 @@ o.GetList = async ent_id=>{
 
 o.query = async (ctx,condition = {},ent_id) => {
   let Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
-  Q =  Q.select('id', 'code','name', 'state','charger','avatar','created_by', 'created_at')
+  Q =  Q.select('id', 'code','name', 'state','charger','avatar','created_by','business_type','created_at')
   if(condition.where){
     Q = Q.where(condition.where)
   }
   let items = await Q
+  items.forEach(v=>{
+    if(v.business_type != undefined)
+      v.type = ['全过程咨询', '市政监理', '项目管理', '房建监理', 'BIM咨询', '造价咨询', '招标代理'][v.business_type]
+    else 
+      v.type = '其他项目'
+  })
   return items
 }
 
