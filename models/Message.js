@@ -113,8 +113,8 @@ Message.listMineUnreadCount = async (state, showDetail=false)=>{
 
 Message.get = async (state,id,ent_id)=>{
   let Query = DB.message.Query(ent_id)
-  let item = await Query.first("message.*","readed_at").leftOuterJoin('message_user_readed','message_id','message.id').where({user_id:state.id,"message.id":id})
-
+  let item = await Query.first("message.*","readed_at").leftOuterJoin('message_user_readed','message_id','message.id').where({user_id:state.id,"message.id":id}).orWhereNull('user_id')
+  console.log(id,item)
   await Message.mark_readed(state,[id],ent_id)
   let QueryPrev = DB.message_user_readed.Query(ent_id)
   let QueryNext = DB.message_user_readed.Query(ent_id)
@@ -122,6 +122,7 @@ Message.get = async (state,id,ent_id)=>{
   let next = await QueryNext.first('message_id').where("message_id", ">", id).where({
     user_id: state.id
   }).orderBy("message_id").limit(1)
+
   if(item){
     if(prev)
       item.prev = prev.message_id
@@ -131,6 +132,12 @@ Message.get = async (state,id,ent_id)=>{
   }
   
   throw "消息不存在"
+}
+
+Message.getNotice = async (state,id)=>{
+  let Query = DB.message.Query(state.enterprise_id)
+  let item = await Query.first().wherer({id})
+  return item
 }
 
 Message.mark_readed = async (state,id_list,ent_id)=>{

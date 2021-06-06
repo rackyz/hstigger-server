@@ -9,4 +9,10 @@ out.List = async ctx => {
   return items
 }
 
+out.Get = async ctx=>{
+  let id = ctx.params.id
+  let items = await Message.getNotice(ctx.state,id)
+  return items
+}
+
 module.exports = out
