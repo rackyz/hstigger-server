@@ -306,7 +306,7 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   let Projects = await Project.query({id:user_id,enterprise_id:ent_id},{where:{charger:user_id}},ent_id)
   let TrainingProjects = await TrainingClass.query({enterprise_id:ent_id},{where:{charger:user_id}})
   user.my_projects = [...PMIS_Projects, ...Projects, ...TrainingProjects]
-  console.log(user.my_projects)
+  
   return user
 }
 

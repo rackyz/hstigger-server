@@ -136,7 +136,7 @@ Message.get = async (state,id,ent_id)=>{
 
 Message.getNotice = async (state,id)=>{
   let Query = DB.message.Query(state.enterprise_id)
-  let item = await Query.first().wherer({id})
+  let item = await Query.first().where({id})
   return item
 }
 
