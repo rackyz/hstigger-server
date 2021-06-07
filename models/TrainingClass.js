@@ -286,6 +286,7 @@ o.removeAppraisal = async (state, appraisal_id) => {
 
 o.updateAppraisal = async (state,class_id,item)=>{
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
+  // update all task
   await sqlQueryPlan.where({id:class_id}).update(item)
 }
 
@@ -450,18 +451,18 @@ o.addAppraisalUsers = async (state,appraisal_id,user_id_list)=>{
     project_id
   }))
 
-  let taskItems = generatedTaskIds.map(v=>({
-    id:v.task_id,
-    name:"[考核] "+app.name,
-    base_type:7,
-    project_id:app.project_id,
-    charger:v.user_id
-  }))
+  // let taskItems = generatedTaskIds.map(v=>({
+  //   id:v.task_id,
+  //   name:"[考核] "+app.name,
+  //   base_type:7,
+  //   project_id:app.project_id,
+  //   charger:v.user_id
+  // }))
 
   query = query.insert(items)
 
   await query
-  await Task.createTasks(state, taskItems, state.enterprise_id)
+  // await Task.createTasks(state, taskItems, state.enterprise_id)
 }
 
 o.removeAppraisalUsers = async (state,appraisal_id,user_id_list = [])=>{
