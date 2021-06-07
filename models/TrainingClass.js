@@ -21,7 +21,7 @@ DB.TrainingProject = MYSQL.Create('training_project', t => {
   t.string('address',128)
   t.string('avatar',256)
   t.datetime('started_at')
-  t.integer('finished_at') // day
+  t.datetime('finished_at') // day
   t.datetime('created_at')
   t.uuid('created_by')
   t.integer('state').defaultTo(0)
