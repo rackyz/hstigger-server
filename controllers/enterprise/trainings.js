@@ -30,7 +30,7 @@ o.Patch = async ctx => {
    let q = ctx.query.q
    let data = ctx.request.body
    if(q == 'join'){
-     await TrainingClass.join(ctx.state,id)
+     await TrainingClass.join(ctx.state,id,ctx.id,data)
  
    }else if(q == 'unjoin'){
      await TrainingClass.unjoin(ctx.state,id)

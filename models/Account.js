@@ -283,7 +283,8 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   })
   
   user.task_count = 3
-  user.my_tasks = await Task.listMine({id:user_id,ent_id},ent_id)
+  // user.my_tasks = await Task.listMine({id:user_id,ent_id},ent_id)
+  user.my_tasks = await TrainingClass.listMyTasks({id:user_id,enterprise_id:ent_id})
   user.user_settings = await o.getUserSettings(user_id)
   user.user_menus = await o.getMenus(user_id)
   user.user_actions = await o.getActionMenus(user_id)

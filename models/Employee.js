@@ -158,7 +158,7 @@ o.Get = async (state,id)=>{
    if (!ent_id)
      return []
    let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
-   let u = await MYSQL('account').leftOuterJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').first('account.id as id', 'user', 'avatar', 'gender', 'name', 'frame', 'type', 'changed', 'lastlogin_at', 'created_at', 'phone', 'birthday', 'photo', 'employee_date', 'changed', 'ding_id', 'zzl_id', 'wechat_id', 'ding_open_id', 'email', 'personal_state', 'personal_focus','address','emergency_contact','emergency_phone',`${ENT_DB}.employee.*`).where('account.id', id)
+   let u = await MYSQL('account').leftOuterJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').first('account.id as id', 'user', 'avatar', 'gender', 'name', 'frame', 'type', 'changed', 'lastlogin_at', 'created_at', 'phone', 'birthday', 'photo', 'employee_date', 'changed', 'ding_id', 'zzl_id', 'wechat_id', 'ding_open_id', 'email', 'personal_state', 'personal_focus','address','emergency_contact','raw_dep','raw_project','raw_leader','emergency_phone',`${ENT_DB}.employee.*`).where('account.id', id)
    let depRelations = await Dep.listRelations(ent_id,{user_id:id})
    let roleRelations = await Role.listRelations(ent_id,{user_id:id})
    let educationHistory = await DB.employee_education_history.Query(ent_id).where({user_id:id})

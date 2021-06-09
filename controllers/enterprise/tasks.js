@@ -1,7 +1,8 @@
 let {
   Account,
   Enterprise,
-  Task
+  Task,
+  TrainingClass
 } = require('../../models')
 let out = {}
 
@@ -46,8 +47,12 @@ out.Patch = async ctx => {
   let data = ctx.request.body
   let q = ctx.query.q
   if(q == 'process'){
-    let updateInfo = await Task.process(state, id, data, ent_id)
+    let updateInfo = await TrainingClass.processTask(state, id, data, ent_id)
     return updateInfo
+  }
+
+  if(q == 'cancel'){
+    await TrainingClass.cancelTask(state, id,ent_id)
   }
 
   if(q == 'arrange'){
@@ -70,7 +75,7 @@ out.Get = async ctx=>{
    let id = ctx.params.id
    let state = ctx.state
    let ent_id = state.enterprise_id
-   let task = await Task.get(state, id, ent_id)
+   let task = await TrainingClass.getTask(state, id, ent_id)
    return task
 }
 

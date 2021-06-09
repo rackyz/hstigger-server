@@ -4,9 +4,12 @@ const {Archive} = require('../../models')
 let o = {}
 
 o.List = async ctx=>{
-  let queryParams = ctx.query
+  let project_id = ctx.query.project_id
   let state = ctx.state
-  let res = await Archive.query(state, queryParams, state.enterprise_id)
+  let condition = {}
+  if(project_id)
+    condition = {where:{project_id}}
+  let res = await Archive.query(state, condition, state.enterprise_id)
   return res
 }
 

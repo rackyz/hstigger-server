@@ -171,10 +171,14 @@ o.remove = async (state,id)=>{
 
 // ---
 
-o.join = async (state, project_id, user_id) => {
+o.join = async (state, project_id, user_id, extra_info) => {
   user_id = user_id || state.id
   let sqlTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
   let sqlExist = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let sqlUpdateEmployee = MYSQL.E(state.enterprise_id, 'employee').update(extra_info).where({
+    id: user_id
+  })
+
   let item = {
     user_id,
     project_id,
@@ -187,7 +191,7 @@ o.join = async (state, project_id, user_id) => {
     throw '您已报名'
   await sqlTrainingUser.insert(item)
   await o.calcCount(state,project_id)
-
+  await sqlUpdateEmployee
   // add appraisal
   // await o.addAppraisalUsers()
 }
@@ -447,6 +451,7 @@ o.addAppraisalUsers = async (state,appraisal_id,user_id_list)=>{
   let items = generatedTaskIds.map(v => ({
     user_id:v.user_id,
     appraisal_id,
+    state:1,
     task_id:v.task_id,
     project_id
   }))
@@ -479,5 +484,36 @@ o.eval = async (state,appraisal_id,data)=>{
   await query.insert(data)
 }
 
+// -------------------
+o.listMyTasks = async (state)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  let tasks = await query.select('training_appraisal.*', 'training_appraisal_user.*', 'training_appraisal.id as app_id','training_appraisal.state as app_state').where({
+    user_id: state.id
+  }).leftJoin('training_appraisal', 'training_appraisal.id', 'appraisal_id')
+  console.log(tasks[0])
+  return tasks
+}
+
+o.getTask = async (state,id)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  let task = await query.first().where({
+    'training_appraisal_user.id': id
+  }).leftJoin('training_appraisal', 'training_appraisal.id', 'appraisal_id')
+  return task
+}
+
+o.processTask = async (state,id,data)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  data.state = 2
+  await query.update(data).whrere({id})
+}
+
+o.cancelTask = async (state,id)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  let data = {state:1,result:""}
+  await query.update(data).whrere({
+    id
+  })
+}
 
 module.exports = o
