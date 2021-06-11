@@ -52,7 +52,18 @@ out.Patch = async ctx => {
   }
 
   if(q == 'cancel'){
-    await TrainingClass.cancelTask(state, id,ent_id)
+   let updateInfo = await TrainingClass.cancelTask(state, id, ent_id)
+    return updateInfo
+  }
+
+  if(q == 'accept'){
+    let updateInfo = await TrainingClass.cancelTask(state, id, data)
+    return updateInfo
+  }
+
+  if(q == 'reject'){
+       let updateInfo = await TrainingClass.rejectTask(state, id, data)
+       return updateInfo
   }
 
   if(q == 'arrange'){
@@ -62,6 +73,8 @@ out.Patch = async ctx => {
 
   let updateInfo = await Task.patch(state, id, data, ent_id)
   return updateInfo
+
+  
 }
 
 out.Delete = async ctx => {

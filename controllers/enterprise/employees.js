@@ -11,10 +11,9 @@ out.List = async ctx=>{
 
 out.Patch = async ctx=>{
   let state = ctx.state
-  let id = ctx.params.id
-  let data = ctx.request.data
+  let data = ctx.request.body
 
-  await Employee.ChangePersonalState(state,id,data)
+  await Employee.ChangePersonalState(state,data)
 }
 
 out.Get = async ctx=>{

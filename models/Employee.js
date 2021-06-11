@@ -49,6 +49,9 @@ DB.employee = MYSQL.Create('employee',t=>{
   t.string('graduate_institution',32)
   t.string('major',32)
   t.datetime('graduate_time')
+
+  t.stirng('saysth')
+  t.integer('status')
 })
 
 DB.employee_education_history = MYSQL.Create('employee_education_history',t=>{
@@ -268,11 +271,15 @@ o.Update = async (state,id,data)=>{
   
 }
 
-o.ChangePersonalState = async (state,id,data,ent_id)=>{
-  let {personal_state,personal_focus} = data
-  let employee = {personal_state,personal_focus}
-  let UpdateQuery = DB.employee.Query(ent_id)
-  await UpdateQuery.update(employee).where({id})
+o.ChangePersonalState = async (state,data)=>{
+  let {status,saysth} = data
+  let employee = {
+    status,
+    saysth
+  }
+  let UpdateQuery = DB.employee.Query(state.enterprise_id)
+  await UpdateQuery.update(employee).where({
+    id: state.id})
 }
 
 o.ChangeDeps = async (state,id,data)=>{

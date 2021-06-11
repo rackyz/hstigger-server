@@ -60,6 +60,8 @@ o.Related = async ctx=>{
     items = await TrainingClass.listAppraisal(ctx.state,id)
   }else if(related == 'users'){
     items = await TrainingClass.listUser(ctx.state,id)
+  }else if(related == 'mytasks'){
+    items = await TrainingClass.listMyTasks(ctx.state,id)
   }
 
   return items

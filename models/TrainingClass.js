@@ -82,7 +82,7 @@ DB.TrainingAppraisalUser = MYSQL.Create('training_appraisal_user',t=>{
   t.uuid('task_id')
   t.integer('state').defaultTo(0)
   t.text('file')
-  t.datetime('submited_at')
+  t.datetime('submitted_at')
   t.integer('score').defaultTo(60)
   t.text('comment')
   
@@ -205,6 +205,7 @@ o.unjoin = async (state, project_id, user_id) => {
   }
   
   await sqlTrainingUser.where(item).del()
+  
   await o.calcCount(state, project_id)
 
   // remove appraisal-users
@@ -485,35 +486,70 @@ o.eval = async (state,appraisal_id,data)=>{
 }
 
 // -------------------
-o.listMyTasks = async (state)=>{
+o.listMyTasks = async (state, project_id) => {
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
-  let tasks = await query.select('training_appraisal.*', 'training_appraisal_user.*', 'training_appraisal.id as app_id','training_appraisal.state as app_state').where({
+  query = query.select('training_appraisal_user.*', 'training_appraisal.*', 'training_appraisal_user.id as task_id', 'training_appraisal_user.state as task_state', 'training_appraisal.state as app_state').where({
     user_id: state.id
   }).leftJoin('training_appraisal', 'training_appraisal.id', 'appraisal_id')
-  console.log(tasks[0])
+   if (project_id)
+     query = query.where({
+       "training_appraisal.project_id": project_id
+     })
+    let tasks = await query
+  tasks.forEach(v=>{
+    v.id = v.task_id
+    v.state = v.task_state
+  })
+
+  console.log("MY:",tasks.length)
+ 
   return tasks
 }
 
 o.getTask = async (state,id)=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
-  let task = await query.first().where({
+  let task = await query.first('training_appraisal_user.*', 'training_appraisal.*', 'training_appraisal_user.id as task_id', 'training_appraisal_user.state as task_state').where({
     'training_appraisal_user.id': id
   }).leftJoin('training_appraisal', 'training_appraisal.id', 'appraisal_id')
+  task.id = task.task_id
   return task
 }
 
 o.processTask = async (state,id,data)=>{
+  console.log("process:",data)
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   data.state = 2
-  await query.update(data).whrere({id})
+  data.submitted_at = UTIL.getTimeStamp()
+  await query.update(data).where({id})
+  return data
 }
 
 o.cancelTask = async (state,id)=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   let data = {state:1,result:""}
-  await query.update(data).whrere({
+  await query.update(data).where({
     id
   })
+  return {state:1}
+}
+
+o.acceptTask = async (state,id,data)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  data.state = 3
+  await query.update(data).where({
+    id
+  })
+  return {state:3}
+}
+
+o.rejectTask = async (state,id,data)=>{
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  data.state = 4
+  await query.update(data).where({
+    id
+  })
+
+  return {state:4}
 }
 
 module.exports = o
