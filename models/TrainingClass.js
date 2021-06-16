@@ -341,11 +341,12 @@ o.updateUser  = async (state,user_record_id,item)=>{
   await sqlQueryPlan.where({id:user_record_id}).update(item)
 }
 
-o.evaludate = async (state,user_record_id,item)=>{
-  item.evaludated_at = UTIL.getTimeStamp()
-  item.evaludated_by = state.id
+o.evaluate = async (state, user_record_id, item) => {
+  item.evaluated_at = UTIL.getTimeStamp()
+  item.evaluated_by = state.id
   o.updateUser(state,user_record_id,item)
 }
+
 
 o.clearEval = async (state,user_record_id)=>{
   o.updateUser(state,user_record_id,{
@@ -516,12 +517,22 @@ o.getTask = async (state,id)=>{
 }
 
 o.processTask = async (state,id,data)=>{
-  console.log("process:",data)
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   data.state = 2
   data.submitted_at = UTIL.getTimeStamp()
   await query.update(data).where({id})
   return data
+}
+
+o.evalTask = async (state,id,data)=>{
+   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  
+   await query.update(data).where({
+     id
+   })
+     data.evaluated_at = UTIL.getTimeStamp()
+     data.evaludated_by = state.id
+   return data
 }
 
 o.cancelTask = async (state,id)=>{

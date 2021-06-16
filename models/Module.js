@@ -6,6 +6,7 @@ const Type = require("./Type")
 const Permission = require('./Permission')
 const Setting = require('./Setting')
 const { UserLogger } = require('../base/logger')
+const { client } = require('../base/mysql')
 let o = {
   required: ["Type","Setting"]
 }
@@ -183,6 +184,19 @@ o.getEntModules = async ()=>{
 }
 
 
+o.getUserPermissions = async (id,ent_id)=>{
+  let deps = await MYSQL.E(ent_id,'dep_employee').select('dep_id as id').where('user_id',id)
+  let roles = await MYSQL.E(ent_id, 'role_user').select('role_id as id').where('user_id', id)
+  let clients =  [...deps.map(v=>v.id),...roles.map(v=>v.id)]
+  let permissions = await MYSQL.E(ent_id, 'authed_permission').select('permission_id as key', 'value').whereIn('client_id', clients)
+  let p = {}
+  permissions.forEach(v=>{
+    p[v.key] = parseInt(v.value)
+  })
+
+  return p
+}
+
 
 // User-LEVEL
 const pred_ids = [
@@ -227,7 +241,8 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin, ignore_identify =
     queryModules = queryModules.where('level',3)
   
   let modules = await queryModules
-  
+  let permission = await o.getUserPermissions(user_id,ent_id)
+  console.log('permission:',permission)
   if(ent_id)
   {
     let mod_idlist = await MYSQL(T_ENTERPRISE_MODULE).where({ent_id})
@@ -241,6 +256,9 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin, ignore_identify =
     modules = modules.filter(v => {
       if (disbaled_list.includes(v.id))
         v.disabled = true
+
+      if (permission[v.id])
+        v.disabled = false
 
       if(v.private){
         if ((ignore_identify || pred_ids.includes(user_id) || isEntAdmin || isAdmin) && mod_idlist.find(m => m.mod_id == v.id))

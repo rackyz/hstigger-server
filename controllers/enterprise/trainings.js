@@ -99,6 +99,8 @@ o.PatchRelated = async ctx => {
   let related = ctx.params.related
   let relatedId = ctx.params.relatedId
   let data = ctx.request.body
+  let q = ctx.query.q
+  
   if(related == 'plans'){
     await TrainingClass.updateClass(ctx.state,relatedId,data)
   }else if(related == 'appraisals'){
@@ -112,6 +114,8 @@ o.PatchRelated = async ctx => {
       await TrainingClass.evaluate(ctx.state,relatedId,data)
   }else if(related == 'cleareval'){
     await TrainingClass.clearEval(ctx.state,relatedId)
+  }else if(related == 'task'){
+    await TrainingClass.processTask(ctx.state,relatedId,data)
   }
 }
 
