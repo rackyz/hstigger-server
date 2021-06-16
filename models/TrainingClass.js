@@ -526,7 +526,7 @@ o.processTask = async (state,id,data)=>{
 
 o.evalTask = async (state,id,data)=>{
    let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
-  
+   data.state = 3
    await query.update(data).where({
      id
    })

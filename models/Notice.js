@@ -54,7 +54,7 @@ o.initdb = async (forced) => {
           source_type:1,
           link:'/notices',
           subject_type:2,
-          media_type:2
+          media_type:3
         })
       }
 }

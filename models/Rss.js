@@ -37,7 +37,9 @@ o.initdb = async (forced)=>{
    
     t.datetime('created_at');
   },forced)
-  await MYSQL.seeds(T_RSS, Spiders.initData, forced)
+
+  if(forced)
+    await MYSQL.seeds(T_RSS, Spiders.initData, forced)
 }
 
 let PlatformRSS = {}

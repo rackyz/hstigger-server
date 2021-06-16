@@ -116,6 +116,8 @@ o.PatchRelated = async ctx => {
     await TrainingClass.clearEval(ctx.state,relatedId)
   }else if(related == 'task'){
     await TrainingClass.processTask(ctx.state,relatedId,data)
+  } else if (related == 'eval') {
+    await TrainingClass.evalTask(ctx.state, relatedId, data)
   }
 }
 
