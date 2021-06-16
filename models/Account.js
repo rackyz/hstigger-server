@@ -301,7 +301,7 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.my_trainings = await TrainingClass.queryUserItems({
     enterprise_id: ent_id,id:user_id
   })
-  
+  console.log('training',user.my_trainings)
   let PMIS_Projects = await Project.oa_query_mine({id:user_id})
   PMIS_Projects.forEach(v=>v.tmpl = "BaseProject")
   let Projects = await Project.query({id:user_id,enterprise_id:ent_id},{where:{charger:user_id}},ent_id)

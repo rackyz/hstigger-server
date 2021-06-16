@@ -537,7 +537,7 @@ o.evalTask = async (state,id,data)=>{
 
 o.cancelTask = async (state,id)=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
-  let data = {state:1,result:""}
+  let data = {state:1,file:""}
   await query.update(data).where({
     id
   })
