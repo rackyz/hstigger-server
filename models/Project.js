@@ -261,6 +261,22 @@ o.del = async (state,id_list,ent_id) => {
 }
 
 o.get = async (state,id,ent_id) => {
+  if(id.includes('CT')){
+    let item = await GZSQL('gzadmin.contract').first().where({id})
+    let charger = await MYSQL('account').first().where('name',item.charger)
+    if(charger)
+      item.charger = charger.id
+    if(item.images){
+      item.images = JSON.parse(item.images)
+      item.avatar = item.images[0]
+     
+    }
+
+     item.type = ['项目管理', '造价咨询', 'BIM咨询', '装修工程', '市政监理', '房建监理', '对外合作', '其他'][item.type_id]
+    return item
+  }
+
+
    const Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
   
   let item = await Q.first().where({

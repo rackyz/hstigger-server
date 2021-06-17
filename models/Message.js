@@ -60,7 +60,7 @@ Message.initdb = async (forced)=>{
     source_type: 2,
     link: '/core/exnotices',
     subject_type: 2,
-    media_type: 2
+    media_type: 3
   })
    
 }
