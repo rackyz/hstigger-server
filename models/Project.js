@@ -4,6 +4,7 @@ const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Enterprise = require('./Enterprise')
 const Type = require("./Type")
+const OA = require("./oa")
 const Permission = require('./Permission')
 const Rss = require('./Rss')
 const moment = require('moment')
@@ -12,6 +13,7 @@ const {
   UserLogger
 } = require('../base/logger')
 const { mysql } = require('../base/config')
+const { oaContract } = require('./oa')
 
 let o = {
   required: ['Type']
@@ -262,7 +264,8 @@ o.del = async (state,id_list,ent_id) => {
 
 o.get = async (state,id,ent_id) => {
   if(id.includes('CT')){
-    let item = await GZSQL('gzadmin.contract').first().where({id})
+    let item = await OA.oaContract.get(id)
+    //await GZSQL('gzadmin.contract').first().where({id})
     let charger = await MYSQL('account').first().where('name',item.charger)
     if(charger)
       item.charger = charger.id

@@ -2,13 +2,15 @@ const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
+
 const Task = require('./Task')
 const api = require('../base/api')
 const _ = require('lodash')
 const o = {
-  required:['Type','Task']
+  required:['Type','Task','Rss','Message']
 }
-
+const moment = require('moment')
+const Rss = require('./Rss')
 
 let DB = {}
 
@@ -85,9 +87,23 @@ DB.TrainingAppraisalUser = MYSQL.Create('training_appraisal_user',t=>{
   t.datetime('submitted_at')
   t.integer('score').defaultTo(60)
   t.text('comment')
-  
+  t.datetime('evaluted_at')
+  t.uuid('evaluated_by')
+  t.boolean('recommend')
 })
 
+const RSS_KEY = 'ent_recmdtask'
+o.initdb = async (forced)=>{
+  await Rss.create({
+    id: RSS_KEY,
+    name: "[员工技能培训] 优秀作品",
+    source_type: 2,
+    link: '/core/exnotices',
+    subject_type: 2,
+    state:1,
+    media_type: 2
+  })
+}
 
 o.initdb_e = async(ent_id,forced)=>{
   
@@ -562,5 +578,26 @@ o.rejectTask = async (state,id,data)=>{
 
   return {state:4}
 }
+
+
+// ----------------
+o.rss = async (ent_id) => {
+  let users = await MYSQL('account').select('id','name')
+  let items = await DB.TrainingAppraisalUser.Query(ent_id).select('training_appraisal_user.id as id', 'training_appraisal_user.file', 'training_appraisal_user.score', 'training_appraisal.name as app_name','user_id').leftOuterJoin('training_appraisal', 'appraisal_id', 'training_appraisal.id').where({recommend:1})
+
+  console.log('items:',items)
+  //.leftOuterJoin('gzcloud_orm.account', 'gzcloud_orm.account.id', 'user_id')
+  return items.map(v => 
+    {
+      let user = users.find(u => v.user_id == u.id)
+      return {
+    id: v.id,
+    title: `[${user?user.name:'NOBODY'}] ${v.app_name}`,
+    date: moment(v.evaluated_at).format('YYYY-MM-DD'),
+    link: v.file
+   }
+})
+}
+Rss.register(RSS_KEY, o.rss)
 
 module.exports = o
