@@ -2,7 +2,7 @@ const MYSQL = require('../base/mysql')
 const UTIL = require('../base/util')
 const EXCEPTION = require('../base/exception')
 const Type = require('./Type')
-
+const Dynamic = require('./Dynamic')
 const Task = require('./Task')
 const api = require('../base/api')
 const _ = require('lodash')
@@ -30,6 +30,7 @@ DB.TrainingProject = MYSQL.Create('training_project', t => {
   t.boolean('enable_join').defaultTo(1)
   t.integer('count').defaultTo(0)
   t.integer('passed').defaultTo(0)
+  t.text('images')
 })
 
 
@@ -96,7 +97,7 @@ const RSS_KEY = 'ent_recmdtask'
 o.initdb = async (forced)=>{
   await Rss.create({
     id: RSS_KEY,
-    name: "[员工技能培训] 优秀作品",
+    name: "[培训] 优秀作品",
     source_type: 2,
     link: '/core/exnotices',
     subject_type: 2,
@@ -164,12 +165,20 @@ o.create = async (state,item)=>{
   }
   Object.assign(item,updatedInfo)
   await sqlCreate.insert(item)
+  await Dynamic.write(state,{
+    project_id:updatedInfo.id,
+    content:"创建了项目"
+  })
   return updatedInfo
 }
 
 o.update = async (state,id,item)=>{
   let sqlUpdate = DB.TrainingProject.Query(state.enterprise_id)
   await sqlUpdate.update(item).where({id})
+  await Dynamic.write(state, {
+    project_id: id,
+    content: "更新了项目信息"
+  })
 }
 
 o.remove = async (state,id)=>{
@@ -183,6 +192,7 @@ o.remove = async (state,id)=>{
   await sqlDeleteClass.where({project_id:id}).del()
   await sqlDeleteTask.where({project_id:id}).del()
   await sqlDeleteTaskUserRelation.where({project_id:id}).del()
+  await Dynamic.removeByProjectId(state,id)
 }
 
 // ---
@@ -258,18 +268,27 @@ o.addClass = async (state, project_id, item) => {
   }
   Object.assign(item, updateInfo)
   let id = await sqlQueryPlan.insert(item).returning('id')
+  await Dynamic.write(state,{project_id,content:`创建了[课程]${item.name}`})
   updateInfo.id = id
   return updateInfo
 }
 
 o.removeClass = async (state,class_id)=>{
   let sqlQueryPlan = DB.TrainingClass.Query(state.enterprise_id)
-  console.log("remove:",class_id)
+  let c = await DB.training_class.first('project_id','name').where({id:class_id})
+  await Dynamic.write(state,{project_id:c.project_id,project_id,content:`移除了[课程]${c.name}`})
   await sqlQueryPlan.where({id:class_id}).del()
 }
 
 o.updateClass = async (state,class_id,item)=>{
   let sqlQueryPlan = DB.TrainingClass.Query(state.enterprise_id)
+  let c = await DB.training_class.first('project_id', 'name').where({
+    id: class_id
+  })
+  await Dynamic.write(state, {
+    project_id:c.project_id,
+    content: `修改了[课程]${c.name}的信息`
+  })
   await sqlQueryPlan.where({id:class_id}).update(item)
 }
 
@@ -290,6 +309,10 @@ o.addAppraisal = async (state,project_id,item)=>{
     project_id,
   }
   Object.assign(item,updateInfo)
+  await Dynamic.write(state, {
+     project_id,
+    content: `创建了 [考核] ${item.name}`
+  })
   let id = await sqlQueryPlan.insert(item).returning('id')
   updateInfo.id = id
   await o.addAppraisalTrainingUsers(state, project_id, id)
@@ -299,6 +322,11 @@ o.addAppraisal = async (state,project_id,item)=>{
 o.removeAppraisal = async (state, appraisal_id) => {
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
   let sqlQueryUsers = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  let item = await DB.TrainingAppraisal.Query(state.enterprise_id).first('name','project_id').where({id:appraisal_id})
+  await Dynamic.write(state, {
+    project_id:item.project_id,
+    content: `删除了 [考核] ${item.name}`
+  })
   await sqlQueryPlan.where({
     id: appraisal_id
   }).del()
@@ -338,18 +366,32 @@ o.addUsers = async (state,project_id,user_id_list = [])=>{
     joined_at:UTIL.getTimeStamp(),
     joined_type:v.joined_type != undefined?v.joined_type:0
   }))
+
+  await Dynamic.write(state, {
+    project_id: project_id,
+    content: `添加了${user_id_list.length}名培训人员`
+  })
   await sqlQueryPlan.insert(paramData)
 }
 
 o.removeUser = async (state,record_id)=>{
   let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
-  console.log(record_id)
+  let record = await DB.TrainingProjectMember.Query(state.enterprise_id).first('user_id').where({id:record_id})
+  let sqlTask = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   await sqlQueryPlan.where({id:record_id}).del()
+  await sqlTask.where({
+    project_id,
+    user_id:record.user_id
+  }).del()
 }
 
 o.removeUsersByIds  = async (state,project_id,user_list = [])=>{
   let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
+  let sqlTask = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   await sqlQueryPlan.where({project_id}).whereIn('user_id',user_list).del()
+  await sqlTask.where({
+    project_id
+  }).whereIn('user_id', user_list).del()
 }
 
 o.updateUser  = async (state,user_record_id,item)=>{
@@ -490,7 +532,7 @@ o.addAppraisalUsers = async (state,appraisal_id,user_id_list)=>{
 
 o.removeAppraisalUsers = async (state,appraisal_id,user_id_list = [])=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
-  await query.whereIn('user_id',user_id_list).del()
+  await query.where({appraisal_id}).whereIn('user_id',user_id_list).del()
   // remove
 
 }
@@ -518,7 +560,6 @@ o.listMyTasks = async (state, project_id) => {
     v.state = v.task_state
   })
 
-  console.log("MY:",tasks.length)
  
   return tasks
 }
@@ -534,8 +575,14 @@ o.getTask = async (state,id)=>{
 
 o.processTask = async (state,id,data)=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  let item = await DB.TrainingAppraisalUser.Query(state.enterprise_id).first('training_appraisal.project_id', 'name').where('training_appraisal_user.id', id).leftJoin('training_appraisal','appraisal_id', 'training_appraisal.id')
   data.state = 2
   data.submitted_at = UTIL.getTimeStamp()
+  await Dynamic.write(state,{
+    project_id:item.project_id,
+    module_id:id,
+    content:`提交了作业 [${item.name}]`
+  })
   await query.update(data).where({id})
   return data
 }
@@ -546,6 +593,14 @@ o.evalTask = async (state,id,data)=>{
    await query.update(data).where({
      id
    })
+
+   let item = await DB.TrainingAppraisalUser.Query(state.enterprise_id).first('training_appraisal.project_id', 'name','user_id').where('training_appraisal_user.id', id).leftJoin('training_appraisal', 'appraisal_id', 'training_appraisal.id')
+   let user = await MYSQL('account').first('name').where({id:item.user_id})
+
+   await Dynamic.write(state, {
+     project_id: item.project_id,
+     content: `批改了作业 [${user.name}/${item.name}]`
+   })
      data.evaluated_at = UTIL.getTimeStamp()
      data.evaludated_by = state.id
    return data
@@ -554,6 +609,7 @@ o.evalTask = async (state,id,data)=>{
 o.cancelTask = async (state,id)=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   let data = {state:1,file:""}
+  await Dynamic.removeByModuleId(id)
   await query.update(data).where({
     id
   })

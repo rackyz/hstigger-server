@@ -3,7 +3,7 @@ const Type =  require('./Type')
 const UTIL = require('../base/util')
 const Exception = require('../base/exception')
 const File = require('./File')
-
+const Dynamic = require('./Dynamic')
 let o = {}
 
 o.required = ['Type']
@@ -131,7 +131,10 @@ o.add = async (ctx,data,ent_id)=>{
   Object.assign(data, updateInfo)
   await Q.insert(data)
   await QF.insert(filelist)
-
+  await Dynamic.write(ctx,{
+    project_id:data.project_id,
+    content:`上传了 [${data.name}]`
+  })
   return updateInfo
 }
 
