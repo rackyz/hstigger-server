@@ -12,8 +12,6 @@ const _ = require('lodash')
 const {
   UserLogger
 } = require('../base/logger')
-const { mysql } = require('../base/config')
-const { oaContract } = require('./oa')
 
 let o = {
   required: ['Type']
