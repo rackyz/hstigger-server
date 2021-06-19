@@ -36,6 +36,9 @@ DB.reply = MYSQL.Create('reply',t=>{
   t.integer('reply_count').defaultTo(0)
 })
 let o = {
+  initdb_e:async (ent_id,forced)=>{
+    await MYSQL.Migrate(DB,forced,ent_id)
+  },
   query:async (state,condition={})=>{
     let queryTopics = DB.topic.Query(state.enterprise_id)
     queryTopics = queryTopics.select('id','title','created_at','created_by','replyed_at','replyed_by','readed_count','reply_count','good_count')
@@ -64,7 +67,7 @@ let o = {
     let item = await queryTopic.first().where({
       id
     })
-    item.replys = await queryReply.where({topic_id:id})
+    item.replys = await queryReply.where({topic_id:id}).orderBy('created_at','desc')
     return item
   },
   remove:async (state,id)=>{
@@ -95,7 +98,27 @@ let o = {
      Object.assign(item, updateInfo)
     let reply_id = await queryReply.insert(item).returning('id')
     updateInfo.id = reply_id
+
+    let queryReplyCount = DB.reply.Query(state.enterprise_id)
+    let resCount = await queryReplyCount.count('id as c').where({topic_id:id})
+    let c = resCount[0].c
+    let queryUpdateCount = DB.topic.Query(state.enterprise_id)
+    await queryUpdateCount.update({reply_count:c}).where({id})
     return updateInfo
+  },
+  removeReply:async(state,id)=>{
+     let queryReply = DB.reply.Query(state.enterprise_id)
+     await queryReply.where({id}).del()
+     let queryReplyCount = DB.reply.Query(state.enterprise_id)
+     let resCount = await queryReplyCount.count('id as c').where({
+       topic_id: id
+     })
+     let c = resCount[0].c
+  
+     let queryUpdateCount = DB.topic.Query(state.enterprise_id)
+     await queryUpdateCount.update({reply_count:c}).where({
+       id
+     })
   }
 
 }
