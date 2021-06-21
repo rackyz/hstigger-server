@@ -198,8 +198,10 @@ o.login = async (account,password)=>{
     throw EXCEPTION.E_INVALID_DATA
 
   let user = await MYSQL(TABLE_ACCOUNT).first('id','password','locked').where('user',account).orWhere('phone',account)
-  if(!user)
+  if(!user){
+    
     throw EXCEPTION.E_USER_UNREGISTERATED
+  }
 
   if(user.password != password)
     throw EXCEPTION.E_USER_INCCORECT_PASSWORD
@@ -452,6 +454,14 @@ o.register = async (phone)=>{
   }
 
   await MYSQL(TABLE_ACCOUNT).insert(account)
+  await Enterprise.addEnterprise(account.id,"NBGZ")
+  // 关联phone钉钉
+  // getDingIDFromPhone
+  // getDingDepFromPhone
+  // create employee
+  // create employee_dep
+  
+
   Message.sendSMS('REGISTER',phone,[UTIL.maskPhone(phone),temp_password])
 }
 
