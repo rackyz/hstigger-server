@@ -220,6 +220,7 @@ o.join = async (state, project_id, user_id, extra_info) => {
   await sqlUpdateEmployee
   // add appraisal
   // await o.addAppraisalUsers()
+  await o.addUserWithAppraisals(state,project_id,[user_id])
 }
 
 o.unjoin = async (state, project_id, user_id) => {
@@ -236,6 +237,7 @@ o.unjoin = async (state, project_id, user_id) => {
 
   // remove appraisal-users
   // await 
+  await o.removeUserAppraisals(state,project_id,[user_id])
 }
 
 
@@ -374,6 +376,7 @@ o.addUsers = async (state,project_id,user_id_list = [])=>{
     content: `添加了${user_id_list.length}名培训人员`
   })
   await sqlQueryPlan.insert(paramData)
+  await o.addUserWithAppraisals(state,project_id,user_id_list)
 }
 
 o.removeUser = async (state,record_id)=>{
@@ -498,6 +501,47 @@ o.getAppraisal = async (state,appraisal_id)=>{
   return item
 }
 
+
+o.addUserWithAppraisals = async (state,project_id,user_id_list = [])=>{
+  let queryAppraisal = DB.TrainingAppraisal.Query(state.enterprise_id)
+  let app = await queryAppraisal.first('name', 'project_id')
+ 
+  if (!app)
+    project_id = app.project_id
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  if(user_id_list.length == 0)
+    return
+
+  let params = []
+  let appraisals = await o.listAppraisal(state,project_id)
+  let exists = await DB.TrainingAppraisalUser.Query(state.enterprise_id).select('id').whereIn('user_id',user_id_list).where('project_id',project_id)
+  if(appraisals.length == 0)
+    return
+
+  appraisals.forEach(appraisal => {
+    params = params.concat(user_id_list.map(v => ({
+      user_id: v,
+      appraisal_id: appraisal.id,
+      state: 1,
+      project_id
+    })).filter(e=>{
+      let isExist = exists.find(v=>v.user_id == e.user_id && v.appraisal_id == e.appraisal_id)
+      return !isExist
+    }))
+  })
+
+   query = query.insert(params)
+
+   await query
+}
+
+o.removeUserAppraisals = async (state,project_id,user_id_list =[])=>{
+   if (user_id_list.length == 0)
+     return
+  let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
+  await query.where({project_id}).whereIn('user_id',user_id_list).del()
+
+}
 
 o.addAppraisalUsers = async (state,appraisal_id,user_id_list)=>{
   let queryAppraisal = DB.TrainingAppraisal.Query(state.enterprise_id)
