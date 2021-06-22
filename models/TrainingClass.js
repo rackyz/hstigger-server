@@ -526,6 +526,7 @@ o.addUserWithAppraisals = async (state,project_id,user_id_list = [])=>{
       project_id
     })).filter(e=>{
       let isExist = exists.find(v=>v.user_id == e.user_id && v.appraisal_id == e.appraisal_id)
+      console.log('isExist')
       return !isExist
     }))
   })

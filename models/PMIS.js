@@ -4,11 +4,16 @@ const GZSQL = require('../base/nbgz_db')
 const MYSQL = require('../base/mysql')
 const util = require('../base/util')
 const Account = require('./Account')
+const Rss = require('./Rss')
 let out = {}
 const TABLE_DATASOURCE = 'datasource'
 const TABLE_ACCOUNT_DATASOURCE = 'account_datasource'
 out.require = ['Account','Enterprise']
 
+
+
+const RSS_KEY = "projectintro"
+const RSS_KEY2 = "projectevent"
 out.initdb = async (forced)=>{
   
   await MYSQL.initdb(TABLE_DATASOURCE,t=>{
@@ -45,6 +50,24 @@ out.initdb = async (forced)=>{
     await MYSQL('account_enterprise').insert(enterprise_relations)
 
   }
+
+   await Rss.create({
+     id: RSS_KEY,
+     name: "项目展示",
+     source_type: 2,
+     link: '/core/projects',
+     subject_type: 2,
+     media_type: 1
+   })
+
+   await Rss.create({
+     id: RSS_KEY2,
+     name: "项目大事",
+     source_type: 2,
+     link: '/core/projects',
+     subject_type: 2,
+     media_type: 2
+   })
   
 }
 
@@ -67,7 +90,27 @@ out.GetUserProject = async (username)=>{
   return res
 }
 
+out.rss = async (ent_id) => {
+  let items = await GZSQL.withSchema('zzlatm').from('projectname').select('pid as id','项目名称 as name','类别 as type','mainPic as avatar').whereNotNull('mainPic').orderBy('addTime', 'desc').limit(10)
+  return items.map(v => ({
+    id: v.id,
+    title: v.name,
+    image: v.avatar?('http://zzlatm.gicp.net:10000' + v.avatar): 'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/timg.jpg',
+    link: "/core/projects/" + v.id
+  }))
+}
 
-
+const moment = require('moment')
+out.rss2 = async (ent_id) => {
+  let items = await GZSQL.withSchema('zzlatm').from('project_important_thing').select('projectName as name', 'title', 'inputDate as date').orderBy('inputDate', 'desc').limit(10)
+  return items.map(v => ({
+    id: v.id,
+    title: `[${v.name}] ${v.title}`,
+    date: moment(v.date, 'YYYY-MM-DD').format('YYYY-MM-DD'),
+    link: "/core/projects/" + v.id
+  }))
+}
+Rss.register(RSS_KEY, out.rss)
+Rss.register(RSS_KEY2,out.rss2)
 
 module.exports = out
