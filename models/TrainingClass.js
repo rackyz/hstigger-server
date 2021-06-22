@@ -278,7 +278,7 @@ o.removeClass = async (state,class_id)=>{
   let c = await DB.TrainingClass.Query(state.enterprise_id).first('project_id', 'name').where({
     id: class_id
   })
-  await Dynamic.write(state,{project_id:c.project_id,project_id,content:`移除了[课程]${c.name}`})
+  await Dynamic.write(state,{project_id:c.project_id,content:`移除了[课程]${c.name}`})
   await sqlQueryPlan.where({id:class_id}).del()
 }
 
