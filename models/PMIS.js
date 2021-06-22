@@ -91,11 +91,11 @@ out.GetUserProject = async (username)=>{
 }
 
 out.rss = async (ent_id) => {
-  let items = await GZSQL.withSchema('zzlatm').from('projectname').select('pid as id','项目名称 as name','类别 as type','mainPic as avatar').whereNotNull('mainPic').orderBy('addTime', 'desc').limit(10)
+  let items = await GZSQL.withSchema('gzadmin').from('contract').select('id', 'name', 'images').whereNotNull('images').orderBy('inputTime', 'desc').limit(10)
   return items.map(v => ({
     id: v.id,
     title: v.name,
-    image: v.avatar?('http://zzlatm.gicp.net:10000' + v.avatar): 'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/timg.jpg',
+    image: v.images ? (JSON.parse(v.images)[0]) : 'https://nbgz-pmis-1257839135.cos.ap-shanghai.myqcloud.com/timg.jpg',
     link: "/core/projects/" + v.id
   }))
 }

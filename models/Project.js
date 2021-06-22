@@ -268,9 +268,12 @@ o.get = async (state,id,ent_id) => {
     if(charger)
       item.charger = charger.id
     if(item.images){
+      try{
       item.images = JSON.parse(item.images)
       item.avatar = item.images[0]
-     
+      }catch(e){
+        
+      }
     }
 
      item.type = ['项目管理', '造价咨询', 'BIM咨询', '装修工程', '市政监理', '房建监理', '对外合作', '其他'][item.type_id]
