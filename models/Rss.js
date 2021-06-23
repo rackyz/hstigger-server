@@ -88,7 +88,7 @@ o.get = async (key,extra)=>{
 o.list = async (queryParam = {},ent_id,filtered)=>{
   let Query = MYSQL(T_RSS)
   if(queryParam.whereIn){
-    Query = Query.whereIn('id',queryParam.whereIn)
+    Query = Query.whereIn('id',queryParam.whereIn).orderBy('source_type','asc')
   }
   let items = await Query
 

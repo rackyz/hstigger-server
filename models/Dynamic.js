@@ -40,6 +40,7 @@ let o = {
     await query.where({project_id}).del()
   },
   removeByModuleId:async(state,module_id)=>{
+    console.log('remove:',module_id)
       let query = DB.dynamic.Query(state.enterprise_id)
       await query.where({
         module_id

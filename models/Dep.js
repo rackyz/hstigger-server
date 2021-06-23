@@ -79,6 +79,14 @@ o.getUserDeps = async (user_id,ent_id)=>{
   return res.map(v=>v.dep_id)
 }
 
+o.getDepUsers = async (state,dep_id)=>{
+  let res = await MYSQL.E(state.enterprise_id, "dep_employee").select('user_id').where({
+    dep_id
+  })
+  console.log('users:',res)
+  return res.map(v=>v.user_id)
+}
+
 o.list = async (ent_id)=>{
   let items = await MYSQL.E(ent_id,"dep")
   return items
@@ -95,6 +103,13 @@ o.patch = async (state,id,dep,ent_id)=>{
    await QueryPatch.update(dep).where({
      id
    })
+}
+
+o.get = async (state,id)=>{
+  let q = DB.dep.Query(state.enterprise_id)
+  let dep = await q.first().where({id})
+  dep.users = await o.getDepUsers(state,id)
+  return dep
 }
 
 o.remove = async (state,id,ent_id)=>{

@@ -656,7 +656,7 @@ o.evalTask = async (state,id,data)=>{
 o.cancelTask = async (state,id)=>{
   let query = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   let data = {state:1,file:""}
-  await Dynamic.removeByModuleId(id)
+  await Dynamic.removeByModuleId(state,id)
   await query.update(data).where({
     id
   })

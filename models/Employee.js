@@ -112,7 +112,7 @@ o.List = async (state, queryCondition)=>{
     return []
   let user_ids = await MYSQL('account_enterprise').select('user_id').where({enterprise_id:ent_id})
   let ENT_DB = UTIL.getEnterpriseSchemeName(ent_id)
-  let Query = MYSQL('account').leftOuterJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id', 'user', 'avatar', 'gender', 'name', 'frame', 'type', 'changed', 'lastlogin_at', 'created_at', 'phone', 'birthday', 'photo', 'employee_date', 'changed', 'ding_id', 'zzl_id', 'wechat_id', 'ding_open_id', 'email', 'employee_date','raw_dep','raw_project','raw_leader').whereIn('account.id', user_ids.map(v => v.user_id)).where({
+  let Query = MYSQL('account').leftOuterJoin(`${ENT_DB}.employee`, `${ENT_DB}.employee.id`, 'account.id').select('account.id as id', 'user', 'avatar', 'gender', 'name', 'frame', 'type', 'changed', 'lastlogin_at', 'created_at', 'phone', 'birthday', 'photo', 'employee_date', 'changed', 'ding_id', 'zzl_id', 'wechat_id', 'ding_open_id', 'email', 'employee_date','raw_dep','raw_project','raw_leader','saysth','status').whereIn('account.id', user_ids.map(v => v.user_id)).where({
     ['account.type']: 1
   })
 
