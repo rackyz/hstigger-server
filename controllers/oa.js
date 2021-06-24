@@ -50,7 +50,7 @@ const List = async ctx => {
   let queryTemplates = mysql_oa('user_template').where('user_id', ctx.state.id)
 
 
-  let contracts = await mysql_oa('contract').where('splited', '<>', 1).orWhereNull('splited').orWhere('virtualSplit', 1).limit(50)
+  let contracts = await mysql_oa('contract').where('splited', '<>', 1).orWhereNull('splited').orWhere('virtualSplit', 1)
   let bills = await queryBills
   let trans = await queryTrans
   let nodes = await queryNodes
