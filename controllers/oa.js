@@ -1,3 +1,4 @@
+const REDIS = require('../base/redis')
 const mysql_cloud = require('knex')({
     client: 'mysql',
     connection: {
@@ -133,8 +134,7 @@ const List = async ctx => {
   })
 
 
-
-  return {
+  let data = {
     contracts,
     bills,
     trans,
@@ -144,6 +144,9 @@ const List = async ctx => {
     monthDatas,
     employees: relEmployees
   }
+
+
+  return data
 }
 
 const Get = async ctx => {
