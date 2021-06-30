@@ -229,7 +229,6 @@ api.getGroups = async (parent_id=1) => {
      if(parent_id)
       service += `&id=${parent_id}`
      return axios.get(service).then(res => {
-      
        let data = res.data.department
        resolve(data)
      })

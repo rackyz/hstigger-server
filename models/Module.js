@@ -267,8 +267,10 @@ o.getAuthedModules = async (user_id,ent_id,isEntAdmin,isAdmin, ignore_identify =
          v.disabled = false
 
       if(v.private){
-        if ((ignore_identify || pred_ids.includes(user_id) || isEntAdmin || isAdmin) && mod_idlist.find(m => m.mod_id == v.id))
+        if ((ignore_identify || pred_ids.includes(user_id) || isEntAdmin || isAdmin) && mod_idlist.find(m => m.mod_id == v.id)){
+          v.disabled = false
           return true
+        }
         else
           return false
       }else{

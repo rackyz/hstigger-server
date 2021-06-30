@@ -688,7 +688,6 @@ o.rss = async (ent_id) => {
   let users = await MYSQL('account').select('id','name')
   let items = await DB.TrainingAppraisalUser.Query(ent_id).select('training_appraisal_user.id as id', 'training_appraisal_user.file', 'training_appraisal_user.score', 'training_appraisal.name as app_name','user_id').leftOuterJoin('training_appraisal', 'appraisal_id', 'training_appraisal.id').where({recommend:1})
 
-  console.log('items:',items)
   //.leftOuterJoin('gzcloud_orm.account', 'gzcloud_orm.account.id', 'user_id')
   return items.map(v => 
     {

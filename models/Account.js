@@ -300,14 +300,33 @@ o.getUserInfo = async (user_id,ent_id,isEntAdmin,isAdmin)=>{
   user.isAdmin = isAdmin
   user.my_deps = await Dep.getUserDeps(user_id,ent_id) 
   user.my_roles = await Role.getUserRoles({},user_id, ent_id)
-  user.my_trainings = await TrainingClass.queryUserItems({
-    enterprise_id: ent_id,id:user_id
-  })
-  console.log('training',user.my_trainings)
-  let PMIS_Projects = await Project.oa_query_mine({id:user_id})
-  PMIS_Projects.forEach(v=>v.tmpl = "BaseProject")
+   let TrainingProjects = []
+   let PMIS_Projects = []
+  if(ent_id == 'NBGZ'){
+     user.my_trainings = await TrainingClass.queryUserItems({
+       enterprise_id: ent_id,
+       id: user_id
+     })
+     TrainingProjects = await TrainingClass.query({
+       enterprise_id: ent_id
+     }, {
+       where: {
+         charger: user_id
+       }
+     })
+
+       PMIS_Projects = await Project.oa_query_mine({
+         id: user_id
+       })
+       PMIS_Projects.forEach(v => v.tmpl = "BaseProject")
+  }
+ 
+  
+
   let Projects = await Project.query({id:user_id,enterprise_id:ent_id},{where:{charger:user_id}},ent_id)
-  let TrainingProjects = await TrainingClass.query({enterprise_id:ent_id},{where:{charger:user_id}})
+ 
+  
+  
   user.my_projects = [...PMIS_Projects, ...Projects, ...TrainingProjects]
   
   return user
@@ -460,7 +479,7 @@ o.register = async (phone)=>{
   // getDingDepFromPhone
   // create employee
   // create employee_dep
-  
+
 
   Message.sendSMS('REGISTER',phone,[UTIL.maskPhone(phone),temp_password])
 }
