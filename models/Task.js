@@ -161,11 +161,14 @@ o.query = async (state, queryCondition = {}, ent_id) => {
   let pageSize = queryCondition.pageSize || 500
   let page = queryCondition.page || 1
   const condition = null
-  const Q = DB.task.Query(ent_id)
+  let Q = DB.task.Query(ent_id)
   if (condition) {
     Q = Q.where(condition)
   }
-  let items = await Q.offset((page - 1) * pageSize).limit(pageSize).orderBy('created_at','desc')
+  if(queryCondition.parent_id == -1)
+    Q = Q.whereNotNull('parent_id')
+  Q = Q.offset((page - 1) * pageSize).limit(pageSize).orderBy('created_at', 'desc')
+  let items = await Q
 
   return items
 }

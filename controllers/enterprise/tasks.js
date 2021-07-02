@@ -9,9 +9,14 @@ let out = {}
 
 out.List = async ctx => {
   let ent_id = ctx.state.enterprise_id
-   let state = ctx.state
+  let state = ctx.state
+  let query = ctx.query
+  let project_id = query.project_id
+  let parent_id = query.parent_id
   let items = await Task.query(state, {
-    parent_id: null
+   where: {
+     project_id
+   }, parent_id
   }, ent_id)
   return items
 }
