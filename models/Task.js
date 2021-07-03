@@ -160,7 +160,7 @@ o.count = async (state, queryCondition = {}, ent_id) => {
 o.query = async (state, queryCondition = {}, ent_id) => {
   let pageSize = queryCondition.pageSize || 500
   let page = queryCondition.page || 1
-  const condition = null
+  const condition = queryCondition.where
   let Q = DB.task.Query(ent_id)
   if (condition) {
     Q = Q.where(condition)

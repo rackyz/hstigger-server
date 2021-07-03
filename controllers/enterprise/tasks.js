@@ -44,6 +44,11 @@ out.ARRANGE_TASK = {
   desc:"分配任务,初始化"
 }
 
+out.DELETE_MORE_TASKS = {
+  url:"POST /enterprise/tasks/delete",
+  desc:"批量删除"
+}
+
 
 out.Patch = async ctx => {
   let id = ctx.params.id
@@ -97,22 +102,14 @@ out.Get = async ctx=>{
    return task
 }
 
-// out.PostAction = async ctx=>{
-//   let action = ctx.params.action
-//   let ent_id = ctx.state.enterprise_id
-//   let data = ctx.request.body
-//   if(action == 'delete'){
-//     await Enterprise.removeEnterprises(data,ent_id)
-//   }else if(action == 'post'){
-//     await Account.createAccounts(data,ctx.state.id)
-//   }else if(action == 'reset-pwd'){
-//     await Account.reset_password(data, ctx.state.id)
-//   }else if(action == 'lock'){
-//     await Account.lock(data, ctx.state.id)
-//   }else if(action == 'unlock'){
-//     await Account.unlock(data, ctx.state.id)
-//   }
-// }
+out.PostAction = async ctx=>{
+  let action = ctx.params.action
+  let ent_id = ctx.state.enterprise_id
+  let data = ctx.request.body
+  if(action == 'delete'){
+    await Task.remove(ctx.state,data,ent_id)
+  }
+}
 
 
 module.exports = out
