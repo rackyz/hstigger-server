@@ -35,7 +35,7 @@ out.Post = async ctx => {
   return updateInfo
 }
 out.PROCESS_TASK = {
-  url:"PATCH /enterprise/tasks/:id?q=process",
+  url:"PATCH /enterprise/tasks/:id?q=process&t=task",
   desc:"处理消息，提交数据"
 }
 
@@ -56,12 +56,19 @@ out.Patch = async ctx => {
   let ent_id = state.enterprise_id
   let data = ctx.request.body
   let q = ctx.query.q
+  let t = ctx.query.t
   if(q == 'process'){
+    if(t == 'task'){
+      return await Task.process(state,id,data,ent_id)
+    }    
     let updateInfo = await TrainingClass.processTask(state, id, data, ent_id)
     return updateInfo
   }
 
   if(q == 'cancel'){
+    if(t == 'task'){
+      return await Task.patch(state,id,{state:1,finished_at:null},ent_id)
+    }
    let updateInfo = await TrainingClass.cancelTask(state, id, ent_id)
     return updateInfo
   }

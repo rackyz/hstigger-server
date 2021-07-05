@@ -2,6 +2,7 @@ const MYSQL = require('../base/mysql')
 const GZSQL = require('../base/nbgz_db')
 const Type = require('./Type')
 const UTIL = require('../base/util')
+const Archive = require('./Archive')
 const Exception = require('../base/exception')
 let o = {}
 
@@ -355,16 +356,19 @@ o.patch = async (ctx, id, data, ent_id) => {
   await Q.update(data).where({
     id
   })
+  return data
 }
 
 o.process = async (state,id,data,ent_id)=>{
   //GET TYPE
   const Q = DB.task.Query(ent_id)
-  let task = await Q.first('base_type').where({id})
+  let task = await Q.first('base_type', 'name', 'business_type','project_id','result').where({
+    id
+  })
   if(!task){
     throw "任务ID不存在:"+id
   }
-
+  console.log(data)
   if(task.base_type == 0){
     const Update = DB.task.Query(ent_id)
     let updateInfo = {
@@ -372,6 +376,24 @@ o.process = async (state,id,data,ent_id)=>{
       finished_at: data.finished_at,
       comment: data.comment,
       state: data.state != undefined ? data.state : 2
+    }
+
+    if(data.type2){
+      let archive = {
+        code:moment().format("YYYYMMDDHms"),
+        type1: task.business_type,
+        files:data.files || task.result,
+        project_id:task.project_id,
+        created_at:UTIL.getTimeStamp(),
+        created_by:state.id,
+        desc:data.comment,
+        name:task.name,
+        type2:data.type2,
+        type3:data.type3
+      }
+      console.log('archive',archive)
+
+      await Archive.add(state,archive,ent_id)
     }
     await Update.update(updateInfo).where({
       id
