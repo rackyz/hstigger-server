@@ -30,9 +30,6 @@ DB.bidorder = MYSQL.Create('cocrecord',t=>{
 
 o.initdb_e = async (ent_id, forced) => {
   await MYSQL.Migrate(DB,forced, ent_id)
-  
- 
-
 }
 
 

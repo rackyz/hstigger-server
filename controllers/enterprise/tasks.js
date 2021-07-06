@@ -13,6 +13,8 @@ out.List = async ctx => {
   let query = ctx.query
   let project_id = query.project_id
   let parent_id = query.parent_id
+  let q = ctx.query.q
+
   let items = await Task.query(state, {
    where: {
      project_id
@@ -115,6 +117,8 @@ out.PostAction = async ctx=>{
   let data = ctx.request.body
   if(action == 'delete'){
     await Task.remove(ctx.state,data,ent_id)
+  }else if(action == 'charger'){
+    await Task.charge(ctx.state,data,ent_id)
   }
 }
 

@@ -4,6 +4,8 @@ const Type = require('./Type')
 const UTIL = require('../base/util')
 const Archive = require('./Archive')
 const Exception = require('../base/exception')
+const moment = require('moment')
+const { uniqueId } = require('lodash')
 let o = {}
 
 o.required = ['Type']
@@ -167,7 +169,7 @@ o.query = async (state, queryCondition = {}, ent_id) => {
     Q = Q.where(condition)
   }
   if(queryCondition.parent_id == -1)
-    Q = Q.whereNotNull('parent_id')
+    Q = Q.where('base_type',0)
   Q = Q.offset((page - 1) * pageSize).limit(pageSize).orderBy('created_at', 'desc')
   let items = await Q
 
@@ -239,13 +241,14 @@ o.createTasks = async (state,dataItems,ent_id)=>{
    return updateinfos
 }
 
-o.listTree = async (state, id, ent_id, table_name ,with_id_replaced,array_list) => {
+o.listTree = async (state, id, ent_id, table_name ,with_id_replaced,array_list,exist_id) => {
    let Query = DB[table_name].Query(ent_id)
    let item = await Query.first().where({id})
    if (with_id_replaced){
     delete item.parent_id
     item.unique_tmpl_key = item.id
-    item.id = UTIL.createUUID()
+    item.base_type = 1
+    item.id = exist_id || UTIL.createUUID()
    }
    
    let subs = await o.cascadedChildren(state, id, ent_id, "task_template", with_id_replaced ? item.id : null,array_list)
@@ -298,11 +301,18 @@ o.createFromTemplate =  async (state,tmpl_id,data,ent_id)=>{
     init_data.project_id = data.project_id
   if(list.length == 0)
     throw "未选择任务" 
-  let templates = await o.listTree(state,tmpl_id,ent_id,'task_template',true,list)
+
+  let queryExistTmplId = DB.task.Query(ent_id)
+   let uniqueIds = await queryExistTmplId.select('id', 'unique_tmpl_key').where('project_id', data.project_id)
+  let rootExist = uniqueIds.find(v=>v.unique_tmpl_key == tmpl_id)
+
+  let templates = await o.listTree(state, tmpl_id, ent_id, 'task_template', true, list, rootExist ? rootExist.id:undefined)
   
 
+  // remove exist
+
   // merge with param data
-  let tasks = templates.map(v => {
+  let tasks = templates.filter(v => !uniqueIds.find(t => t.unique_tmpl_key == v.unique_tmpl_key)).map(v => {
     return {
       id:v.id,
       base_type:v.base_type,
@@ -357,6 +367,12 @@ o.patch = async (ctx, id, data, ent_id) => {
     id
   })
   return data
+}
+
+o.charge = async (ctx,data,ent_id)=>{
+  const Q = DB.task.Query(ent_id)
+  console.log('charge',data)
+  await Q.update({charger:data.charger,state:1,finished_at:null}).whereIn('id',data.idlist)
 }
 
 o.process = async (state,id,data,ent_id)=>{
