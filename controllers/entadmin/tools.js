@@ -2,7 +2,7 @@ const MYSQL = require('../../base/mysql')
 const _ = require('lodash')
 const UTIL = require('../../base/util')
 const Exception = require('../../base/exception')
-const Ding = require('../../models/Ding')
+const Ding = require('../../models/Ding.js')
 const REDIS = require('../../base/redis')
 let o = {}
 
