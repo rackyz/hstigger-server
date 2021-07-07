@@ -230,7 +230,7 @@ o.join = async (state, project_id, user_id, extra_info) => {
     joined_type:1,
     score:0
   }
-  let isExist = await sqlExist.first('id').where(item)
+  let isExist = await sqlExist.first('id').where({user_id,project_id})
   if(isExist)
     throw '您已报名'
   await sqlTrainingUser.insert(item)
@@ -399,11 +399,11 @@ o.addUsers = async (state,project_id,user_id_list = [])=>{
 
 o.removeUser = async (state,record_id)=>{
   let sqlQueryPlan = DB.TrainingProjectMember.Query(state.enterprise_id)
-  let record = await DB.TrainingProjectMember.Query(state.enterprise_id).first('user_id').where({id:record_id})
+  let record = await DB.TrainingProjectMember.Query(state.enterprise_id).first('user_id','project_id').where({id:record_id})
   let sqlTask = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   await sqlQueryPlan.where({id:record_id}).del()
   await sqlTask.where({
-    project_id,
+    project_id:record.project_id,
     user_id:record.user_id
   }).del()
 }
