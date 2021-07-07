@@ -5,10 +5,19 @@ let o = {}
 
 o.List = async ctx=>{
   let project_id = ctx.query.project_id
+  let dep_id = ctx.query.dep_id
   let state = ctx.state
   let condition = {}
   if(project_id)
     condition = {where:{project_id}}
+  if(dep_id)
+  {
+    if(condition.where){
+      condition.where.dep_id = dep_id
+    }else{
+      condition.where = {dep_id}
+    }
+  }
   let res = await Archive.query(state, condition, state.enterprise_id)
   return res
 }

@@ -15,7 +15,10 @@ out.Patch = async ctx=>{
   let id = ctx.params.id
   console.log('id')
   if(id == 'self' || id == state.id)
-    await Employee.Update(state,id,data)
+  {
+      await Employee.Update(state,id,data)
+      return
+  }
   await Employee.ChangePersonalState(state,data)
 }
 

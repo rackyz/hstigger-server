@@ -164,6 +164,7 @@ o.query = async (state, queryCondition = {}, ent_id) => {
   let pageSize = queryCondition.pageSize || 500
   let page = queryCondition.page || 1
   const condition = queryCondition.where
+  console.log(condition)
   let Q = DB.task.Query(ent_id)
   if (condition) {
     Q = Q.where(condition)
@@ -378,7 +379,7 @@ o.charge = async (ctx,data,ent_id)=>{
 o.process = async (state,id,data,ent_id)=>{
   //GET TYPE
   const Q = DB.task.Query(ent_id)
-  let task = await Q.first('base_type', 'name', 'business_type','project_id','result').where({
+  let task = await Q.first('base_type', 'name', 'business_type','project_id','dep_id','result').where({
     id
   })
   if(!task){
@@ -400,6 +401,7 @@ o.process = async (state,id,data,ent_id)=>{
         type1: task.business_type,
         files:data.files || task.result,
         project_id:task.project_id,
+        dep_id:task.dep_id,
         created_at:UTIL.getTimeStamp(),
         created_by:state.id,
         desc:data.comment,

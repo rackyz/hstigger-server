@@ -13,13 +13,23 @@ out.List = async ctx => {
   let query = ctx.query
   let project_id = query.project_id
   let parent_id = query.parent_id
+  let dep_id = query.dep_id
   let q = ctx.query.q
 
-  let items = await Task.query(state, {
-   where: {
-     project_id
-   }, parent_id
-  }, ent_id)
+  let condition = {}
+  if(project_id && project_id != null)
+    condition = {where:{project_id}}
+  if(dep_id && dep_id != null)
+    if(condition.where){
+      condition.where.dep_id = dep_id
+    }else{
+      condition.where = {dep_id}
+    }
+  if(parent_id && parent_id != null){
+    condition.parent_id = parent_id
+  }
+
+  let items = await Task.query(state, condition, ent_id)
   return items
 }
 

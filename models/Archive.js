@@ -87,12 +87,12 @@ o.query = async (ctx,queryCondition={},ent_id)=>{
   let pageSize = queryCondition.pageSize || 100
   let page = queryCondition.page || 1
   const condition = queryCondition.where
+  
   let Q = ent_id ? MYSQL.E(ent_id, _T) : MYSQL(_T)
   if(condition){
     Q = Q.where(condition)
   }
   let items = await Q.offset((page - 1) * pageSize).limit(pageSize).orderBy('created_at','desc')
-  
   return items
 }
 
