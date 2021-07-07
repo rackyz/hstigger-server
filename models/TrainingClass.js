@@ -134,6 +134,12 @@ o.queryUserItems = async (state,user_id)=>{
   return await sqlQuery
 }
 
+o.joinpub = async (state,id,data)=>{
+  let user = await MYSQL('account').first('id').where('user',data.account).orWhere('phone',data.account)
+  if(!user)
+    throw '抱歉，该用户不存在，未注册或非绑定平台手机号，请登录网站进行报名'
+  await o.join(state,id,user.id)
+}
 
 o.get = async (state,id)=>{
   let sqlQuery = DB.TrainingProject.Query(state.enterprise_id).first()
@@ -142,8 +148,16 @@ o.get = async (state,id)=>{
   let sqlQueryTask = DB.TrainingAppraisal.Query(state.enterprise_id)
   let sqlQueryTaskUserRelation = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   let item = await sqlQuery.where({id})
+  
   if(!item)
     throw "培训项目不存在"
+  item.charger_user = {}
+  let user = await MYSQL('account').first('name', 'phone', 'avatar').where({
+    id: item.charger
+  })
+  if (user) {
+    item.charger_user = user
+  }
   item.users = await sqlQueryUserRelation.where({project_id:id})
   item.plans = await sqlQueryClass.where({project_id:id})
   item.appraisals = await sqlQueryTask.where({project_id:id})
@@ -201,9 +215,13 @@ o.join = async (state, project_id, user_id, extra_info) => {
   user_id = user_id || state.id
   let sqlTrainingUser = DB.TrainingProjectMember.Query(state.enterprise_id)
   let sqlExist = DB.TrainingProjectMember.Query(state.enterprise_id)
-  let sqlUpdateEmployee = MYSQL.E(state.enterprise_id, 'employee').update(extra_info).where({
-    id: user_id
-  })
+  if(extra_info){
+    let sqlUpdateEmployee = MYSQL.E(state.enterprise_id, 'employee').update(extra_info).where({
+      id: user_id
+    })
+     await sqlUpdateEmployee
+  }
+  
 
   let item = {
     user_id,
@@ -217,7 +235,7 @@ o.join = async (state, project_id, user_id, extra_info) => {
     throw '您已报名'
   await sqlTrainingUser.insert(item)
   await o.calcCount(state,project_id)
-  await sqlUpdateEmployee
+ 
   // add appraisal
   // await o.addAppraisalUsers()
   await o.addUserWithAppraisals(state,project_id,[user_id])
@@ -526,7 +544,6 @@ o.addUserWithAppraisals = async (state,project_id,user_id_list = [])=>{
       project_id
     })).filter(e=>{
       let isExist = exists.find(v=>v.user_id == e.user_id && v.appraisal_id == e.appraisal_id)
-      console.log('isExist')
       return !isExist
     }))
   })

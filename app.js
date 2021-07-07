@@ -14,7 +14,12 @@ API.install(true)
 app.use(Logger.accessLogger)
 app.use(cors())
 app.use(response)
-app.use(bodyParser({jsonLimit: 100 * 1024 * 1024}))
+app.use(bodyParser({
+  jsonLimit: 100 * 1024 * 1024,
+  onerror: function (err, ctx) {
+    console.log('body parse error', 422);
+  }
+}))
 app.use(restfulRouter.routes())
 app.listen(Config.port)
 

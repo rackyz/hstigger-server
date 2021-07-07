@@ -18,7 +18,7 @@ const Contract = require('./Contract')
 const Role = require('./Role')
 const { E_INVALID_DATA } = require('../base/exception')
 const o = {
-  required:['Type']
+  required:['Type','Account']
 }
 //const TABLE_SESSION = "session"
 const RKEY_SESSION = "SESSION_"
