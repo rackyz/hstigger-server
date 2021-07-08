@@ -51,6 +51,11 @@ out.PROCESS_TASK = {
   desc:"处理消息，提交数据"
 }
 
+out.PROCESS_TRAINING_TASK = {
+  url: "PATCH /enterprise/tasks/:id?q=process",
+  desc: "处理消息，提交数据"
+}
+
 out.ARRANGE_TASK = {
   url:"PATCH /enterprise/tasks/:id?q=arrange",
   desc:"分配任务,初始化"
