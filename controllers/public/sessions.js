@@ -14,6 +14,14 @@ out.Post = async ctx=>{
   
   let device  = ContextParser.getDevice(ctx)
   let ip = ContextParser.getIP(ctx)
+
+  //钉钉小程序接口
+  console.log('console:',ctx.headers)
+  if(ctx.headers['d-token'])
+  {
+    console.log("dingding")
+    return 'ok'
+  }
  
   let loginInfo = await Session.createSessionByLogin(account,password,device,ip)
   return loginInfo

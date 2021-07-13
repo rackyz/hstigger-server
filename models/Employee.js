@@ -15,7 +15,7 @@ const Flow = require('./Flow')
 const File = require('./File')
 const Task = require('./Task')
 const FlowInstance = require('./FlowInstance')
-
+const RestOrder = require('./RestOrder')
 
 let o = {
   required: ['Type','Enterprise','Account']
@@ -52,6 +52,7 @@ DB.employee = MYSQL.Create('employee',t=>{
 
   t.stirng('saysth')
   t.integer('status')
+  t.boolean('auto_rest_order')
 })
 
 DB.employee_education_history = MYSQL.Create('employee_education_history',t=>{
@@ -227,7 +228,7 @@ o.Create = async (state,data,ent_id)=>{
     type: 1
   }
 }
-
+const Schedule = require('node-schedule')
 o.Update = async (state,id,data)=>{
   if(!id)
     throw EXCEPTION.E_INVALID_DATA
@@ -239,10 +240,40 @@ o.Update = async (state,id,data)=>{
     education_history,
     work_history,
     family_contact,
-    certifications
+    certifications,
+    auto_rest_order
   } = data
+
+
+  if(auto_rest_order === 1){
+    console.log('order-service-open')
+    Schedule.scheduleJob(id+'_rest_order',
+    //{hour:08,minut:05}
+    {hour:17,minut:00}
+    ,async function(){
+      await RestOrder.auto_order({enterprise_id:state.enterprise_id,id:state.id})
+    })
+  }else if(auto_rest_order === 0){
+    console.log('order-service-close')
+    if (Schedule.scheduledJobs[id + '_rest_order'])
+      Schedule.scheduledJobs[id + '_rest_order'].cancel()
+  }
+
   let account = {user,name,phone,email}
-  let employee = {id:account.id,gender,birthday,native_place,photo,political_status,address,marital_status,emergency_phone,emergency_contact,employee_date,employee_state,
+  let employee = {
+      id: account.id,
+      gender,
+      birthday,
+      native_place,
+      photo,
+      political_status,
+      address,
+      marital_status,
+      emergency_phone,
+      emergency_contact,
+      employee_date,
+      employee_state,
+      auto_rest_order,
     personal_state,personal_focus,professor_rank,education,degree,graduate_institution,major,graduate_time}
   if(Object.values(account).filter(v=>v!==undefined).length > 0)
     await MYSQL("account").update(account).where({id})

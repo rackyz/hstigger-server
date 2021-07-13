@@ -4,9 +4,12 @@ const UTIL = require('../../base/util')
 const Exception = require('../../base/exception')
 const Ding = require('../../models/Ding.js')
 const REDIS = require('../../base/redis')
+const {Oa} = require('../../models')
+
 let o = {}
 
 const GZSQL = require('../../base/nbgz_db')
+const mysql_oa = GZSQL
 const OASQL = GZSQL.withSchema('gzadmin')
 const GetDDUsers = async (forced) => {
   let users = []
@@ -39,6 +42,7 @@ const GetDDUsers = async (forced) => {
 
 o.PostAction = async ctx=>{
   let a = ctx.params.action
+  let state= ctx.state
   let enterprise_id = ctx.state.enterprise_id
   if(a == 'synchronize_employee'){
     let users = await MYSQL('account_enterprise').select('user_id as id').where({enterprise_id}).leftJoin('account','account.id','user_id').where('type',1)
@@ -186,6 +190,108 @@ o.PostAction = async ctx=>{
 
 
 
+  } else if (a == 'sychronize_projects') {
+     let queryBills = mysql_oa.withSchema('gzadmin').from('contract_bill')
+     let queryTrans = mysql_oa.withSchema('gzadmin').from('contract_transfer')
+     let queryConditions = mysql_oa.withSchema('gzadmin').from('contract_payment_condition')
+     let queryC2B = mysql_oa.withSchema('gzadmin').from('contract_belongto_dep')
+     let queryDeps = mysql_oa.withSchema('gzadmin').from('department')
+     let queryNodes = mysql_oa.withSchema('gzadmin').from('contract_nodes')
+     let queryEmployees = mysql_oa.withSchema('gzadmin').from('rel_contract_employee')
+     let queryTemplates = mysql_oa.withSchema('gzadmin').from('user_template')
+
+
+     let contracts = await mysql_oa.withSchema('gzadmin').from('contract').where('splited', '<>', 1).orWhereNull('splited').orWhere('virtualSplit', 1)
+     let bills = await queryBills
+     let trans = await queryTrans
+     let nodes = await queryNodes
+     let conditions = await queryConditions
+     let rContract2Dep = await queryC2B
+     let relEmployees = await queryEmployees
+     let employees = await mysql_oa.withSchema('gzadmin').from('employee')
+     let monthDatas = await mysql_oa.withSchema('gzadmin').from('contract_month_data')
+
+     let templates = await queryTemplates
+
+     let contractMap = {}
+     contracts.forEach(v => {
+       let r = rContract2Dep.find(c => c.contract_id == v.id)
+       if (r) {
+         v.dep_id = r.dep_id
+       }
+       contractMap[v.id] = v
+       v.billedAmount = 0
+       v.transferredAmount = 0
+     })
+
+     let conditionMap = {}
+     conditions.forEach(v => {
+       conditionMap[v.id] = v
+     })
+
+     nodes.forEach(v => {
+       if (!contractMap[v.contract_id])
+         return
+
+       if (contractMap[v.contract_id].nodes) {
+         contractMap[v.contract_id].nodes.push(v)
+       } else {
+         contractMap[v.contract_id].nodes = [v]
+       }
+     })
+
+     bills.forEach(v => {
+       let c = contractMap[v.contract_id]
+       if (c && v.amount) {
+         c.billedAmount += v.amount
+         if (v.condition_id == '10086') {
+           c.billpoint = '(非常规)' + v.note
+         } else {
+           let condition = conditionMap[v.condition_id]
+           if (condition)
+             c.billpoint = condition.detail
+         }
+       }
+     })
+
+     trans.forEach(v => {
+       let c = contractMap[v.contract_id]
+       if (c && v.amount) {
+         c.transferredAmount += v.amount
+       }
+     })
+
+     const positions = [...(['项目经理', '项目经理助理', '前期工程师', '技术工程师', '合约工程师', '机电工程师', '项目副经理', '造价工程师', '现场工程师'].map((v, i) => ({
+       id: 'a' + (i + 1),
+       name: v
+     }))), ...(['总监', '总代', '土建工程师', '土建监理员', '安装工程师', '市政工程师', '市政监理员', '资料员', '安装监理员', '桩基监理员'].map((v, i) => ({
+       id: 'b' + (i + 1),
+       name: v
+     }))), {
+       id: "c3",
+       name: '其他岗位'
+     }]
+
+     relEmployees.forEach(v => {
+       let e = employees.find(s => s.id == v.employee_id)
+       v.name = e ? e.name : '未命名'
+       let p = positions.find(p => p.id == v.position_id)
+       v.position = p ? p.name : '未设置'
+
+     })
+
+     let data = {
+       contracts,
+       bills,
+       trans,
+       conditions,
+       nodes,
+       templates,
+       monthDatas,
+       employees: relEmployees
+     }
+
+    return data
   }
 }
 

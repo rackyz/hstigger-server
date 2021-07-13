@@ -28,6 +28,7 @@ module.exports = async function (ctx, next) {
   }else{
 
     let URL = ctx.url
+   
     if (URL.indexOf('/public') == 0) {
       ctx.headers["api-version"] = "v0"
       await next()

@@ -5,19 +5,27 @@ let out = {}
 
 out.List = async ctx=>{
   let date = ctx.query.date || moment().format("YYYYMMDD")
+  let q = ctx.query.q
+  if(q == 'week'){
+    let items = await RestOrder.queryWeek(ctx.state)
+    return items
+  }
   let items = await RestOrder.query(ctx.state,{where:{date}})
-  console.log('query:',items)
+  
   return items
 }
 
 out.Post = async ctx=>{
-  let updateInfo = await RestOrder.order(ctx.state)
+  let {date} = ctx.request.body
+  console.log(date)
+  let updateInfo = await RestOrder.order(ctx.state, [], date)
   return updateInfo
 }
 
 out.Delete =async ctx=>{
   let id = ctx.params.id
-  await RestOrder.remove(ctx.state,id)
+  let date = ctx.query.date
+  await RestOrder.remove(ctx.state, id, date)
 }
 
 module.exports = out
