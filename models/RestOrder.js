@@ -35,14 +35,16 @@ o.queryWeek = async (state,date)=>{
   let dates = []
   let start = date?moment(date,'YYYYMMDD'):moment()
   for(let i=0;i<7;i++){
-    let day = start.clone().add(i-1, 'day').format('YYYYMMDD')
-    dates.push(day)
+    let day = start.clone().add(i, 'day')
+    
+    if(day.day()!=6 && day.day()!=0)
+      dates.push(day.format('YYYYMMDD'))
   }
   let q = DB.restorder.Query(state.enterprise_id)
   let items = await q.whereIn('date',dates)
   let days = dates.map(v=>({
     date:v,
-    items:items.filter(u=>u.date == v)
+    items:items.filter(u=>u.date === v)
   }))
   return days
 
@@ -54,11 +56,10 @@ o.order = async (state,idlist=[],date)=>{
   if(idlist.length == 0){
     idlist = [state.id]  
   }
-  console.log(idlist,date)
-  let d = moment()
+  let d = moment().add(1, 'day')
   if(date)
     d = moment(date,'YYYYMMDD')
-  let exist = await qe.select('user_id').where('date', d.format("YYYYMMDD"))
+  let exist = await qe.select('user_id').where('date', d.format("YYYYMMDD")).where('user_id',state.id)
   let exist_users = exist.map(v=>v.user_id)
   let params = idlist.filter(v=>!exist_users.includes(v)).map(id=>({
     user_id:id,
@@ -68,6 +69,7 @@ o.order = async (state,idlist=[],date)=>{
   if(params.length == 0)
     throw '已预订'
   let ids = await q.insert(params).returning('id')
+  console.log(ids)
   return ids
 }
 
@@ -99,16 +101,17 @@ o.auto_order = async (state)=>{
 }
 
 o.remove = async (state,idlist=[],date)=>{
-   let d = moment()
+  
+   let d = moment().subtract(1, 'day')
   if (date)
-    d = moment(date, 'YYYYMMDD')
+    d = moment(date, 'YYYYMMDD').subtract(1, 'day')
   let q = DB.restorder.Query(state.enterprise_id)
 
   if (idlist.length == 0) {
     idlist = [state.id]
   }
-
-  await q.whereIn('id',idlist).where({date}).del()
+console.log(date)
+  await q.whereIn('user_id',idlist).where({date}).del()
 }
 
 module.exports = o

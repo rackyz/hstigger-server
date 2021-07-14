@@ -25,7 +25,7 @@ out.Post = async ctx=>{
 out.Delete =async ctx=>{
   let id = ctx.params.id
   let date = ctx.query.date
-  await RestOrder.remove(ctx.state, id, date)
+  await RestOrder.remove(ctx.state, [], date)
 }
 
 module.exports = out
