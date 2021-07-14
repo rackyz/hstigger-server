@@ -9,10 +9,23 @@ out.List = async ctx=>{
   return items
 }
 
+out.Post = async ctx=>{
+  let patch = ctx.query.patch
+ 
+  if(patch){
+     ctx.params.id = ctx.state.id
+     return await out.Patch(ctx)
+  }
+    
+}
+
 out.Patch = async ctx=>{
   let state = ctx.state
   let data = ctx.request.body
   let id = ctx.params.id
+  if(id == 'self')
+    id = ctx.state.id
+  console.log(id)
   let q = ctx.query.q
  
   if(id == 'self' || id == state.id)
