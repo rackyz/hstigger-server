@@ -1,5 +1,5 @@
 
-const {Session} = require('../../models')
+const {Session,Ding} = require('../../models')
 
 const {ContextParser} = require('../../base/util')
 const E = require('../../base/exception')
@@ -16,11 +16,14 @@ out.Post = async ctx=>{
   let ip = ContextParser.getIP(ctx)
 
   //钉钉小程序接口
-  console.log('console:',ctx.headers)
   if(ctx.headers['d-token'])
   {
-    console.log("dingding")
-    return 'ok'
+    let dtoken = ctx.headers['d-token']
+    let ding_id = await Ding.loginWithDDRest(dtoken)
+    
+    let loginInfo = await Session.createSessionByDingId(ding_id, device, ip)
+
+    return loginInfo
   }
  
   let loginInfo = await Session.createSessionByLogin(account,password,device,ip)

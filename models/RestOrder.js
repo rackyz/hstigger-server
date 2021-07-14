@@ -15,6 +15,9 @@ DB.restorder = MYSQL.Create('restorder',t=>{
   t.datetime('created_at')
 })
 
+o.loginWithDD = async (authCode)=>{
+
+}
 
 o.initdb_e = async (ent_id,forced) => {
   MYSQL.Migrate(DB, forced, ent_id)
@@ -32,7 +35,7 @@ o.queryWeek = async (state,date)=>{
   let dates = []
   let start = date?moment(date,'YYYYMMDD'):moment()
   for(let i=0;i<7;i++){
-    let day = start.clone().add(i, 'day').format('YYYYMMDD')
+    let day = start.clone().add(i-1, 'day').format('YYYYMMDD')
     dates.push(day)
   }
   let q = DB.restorder.Query(state.enterprise_id)

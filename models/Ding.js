@@ -27,6 +27,20 @@ api.LoginByScanCode = async (code)=>{
   return res.data.user_info.unionid
 }
 
+api.loginWithDDRest = async (code)=>{
+   const appid = "dingp5ncodispgvbyqbd"
+   const appSecret = "0pj4HUjh1I5ERjsDOljz9bplVm92wVmIn2_ktj1C3nfxsxgpXgXAXp7fFSabsXly"
+   let access_token = await api.getAccessToken(appid, appSecret, false)
+   let res = await axios.get(`https://oapi.dingtalk.com/user/getuserinfo?access_token=${access_token}&code=${code}`).catch(e => {
+     throw (e)
+   })
+   if (res.data.errcode) {
+     throw (res.data.errmsg)
+   }
+
+   return res.data.userid
+}
+
 api.loginWithH5 = async (code) => {
   const appid = "dingoixfxalle56pkkg7"
   const appSecret = "Ob0vWlulnQ7KLVSd-T0jIH94-8bPm7hAInslP9PZSPj1x4aYLyKYmGq0GJzJ5jYO"

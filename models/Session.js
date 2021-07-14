@@ -113,6 +113,14 @@ o.createSessionByLogin = async (account,password,device,ip)=>{
   }
 }
 
+o.createSessionByDingId = async (ding_id,device,ip) => {
+  let user = await MYSQL('account').first('id').where({ding_id})
+  if(!user){
+    throw('用户不存在或未绑定dingding账号')
+  }
+  return await o.createSessionById(user.id,device,ip)
+}
+
 // Create Session By OAuth Login with user_id
 o.createSessionById = async (user_id,device,ip)=>{
   let session_id = UTIL.encodeJWT({id:user_id})
@@ -244,6 +252,8 @@ o.changeForgetPwd = async (account,password)=>{
 o.register = async phone=>{
   await ACCOUNT.register(phone)
 }
+
+
 
 
 module.exports = o
