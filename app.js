@@ -8,9 +8,12 @@ const cors = require('koa2-cors')
 const Logger = require('./base/logger')
 const Config = require('./base/config')
 const Migration = require('./base/migration')
-
+const {Task} = require('./models')
 Migration.install(false)
 API.install(true)
+
+Task.installTimer()
+
 app.use(Logger.accessLogger)
 app.use(cors())
 app.use(response)

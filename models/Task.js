@@ -6,6 +6,8 @@ const Archive = require('./Archive')
 const Exception = require('../base/exception')
 const moment = require('moment')
 const { uniqueId } = require('lodash')
+const RestOrder =require('./RestOrder')
+const Message = require('./Message')
 let o = {}
 
 o.required = ['Type']
@@ -422,6 +424,29 @@ o.process = async (state,id,data,ent_id)=>{
     throw "暂不支持该类型任务处理"
   }
   
+}
+const Schedule = require('node-schedule')
+o.installTimer = async ()=>{
+  //for eatch enterprise
+
+     Schedule.scheduleJob('rest_order_timer',
+       //{hour:08,minut:05}
+       {
+         hour: 17,
+         minut: 00
+       }, async function () {
+         let entid = "NBGZ"
+         let userAutoRestOrders = await MYSQL.E('NBGZ', 'employee').select('id').where('auto_rest_order', 1)
+         for(let i=0;i<userAutoRestOrders.length;i++){
+            await RestOrder.auto_order({
+              enterprise_id: entid,
+              id: userAutoRestOrders[i].id
+            })
+         }
+         
+       })
+   
+      console.log('Timer started.')
 }
 
 o.arrange = async (state,id,data,ent_id)=>{

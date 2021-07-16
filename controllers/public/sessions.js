@@ -22,7 +22,6 @@ out.Post = async ctx=>{
     let ding_id = await Ding.loginWithDDRest(dtoken)
     
     let loginInfo = await Session.createSessionByDingId(ding_id, device, ip)
-    console.log('login-ding:',loginInfo.auto_rest_order)
     return loginInfo
   }
  

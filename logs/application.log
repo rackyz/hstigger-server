@@ -1,484 +1,96 @@
-[2021-02-22T00:00:13.522] [ERROR] app - 401
-[2021-02-22T00:00:13.525] [ERROR] app - 401
-[2021-02-22T00:00:25.084] [ERROR] app - TypeError: Account.Create is not a function
-    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\Employee.js:130:17)
-    at Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\entadmin\employees.js:14:35)
-    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:32:52)
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:9)
-    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:57:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:92:7
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:38:5)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:16:14)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-[2021-02-22T00:00:46.920] [ERROR] app - 401
-[2021-02-22T00:00:46.923] [ERROR] app - 401
-[2021-02-22T00:01:02.436] [ERROR] app - TypeError: Account.create is not a function
-    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\Employee.js:130:17)
-    at Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\entadmin\employees.js:14:35)
-    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:32:52)
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:9)
-    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:57:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:92:7
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:38:5)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:16:14)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-[2021-02-22T00:03:36.630] [ERROR] app - 401
-[2021-02-22T00:03:36.634] [ERROR] app - 401
-[2021-02-22T00:03:49.307] [ERROR] app - TypeError: Account.create is not a function
-    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\Employee.js:128:27)
-    at Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\entadmin\employees.js:14:35)
-    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:32:52)
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:9)
-    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:57:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:92:7
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:38:5)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:16:14)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-[2021-02-22T00:04:55.814] [ERROR] app - 401
-[2021-02-22T00:04:55.816] [ERROR] app - 401
-[2021-02-22T00:05:06.095] [ERROR] app - TypeError: Account.create is not a function
-    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\Employee.js:128:27)
-    at Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\entadmin\employees.js:14:35)
-    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:32:52)
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:9)
-    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:57:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:92:7
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:38:5)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:16:14)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-[2021-02-22T00:06:13.945] [ERROR] app - 401
-[2021-02-22T00:06:13.948] [ERROR] app - 401
-[2021-02-22T00:06:23.977] [ERROR] app - TypeError: Account.create is not a function
-    at Object.o.Create (C:\Users\racky\Desktop\project\hstigger-server\models\Employee.js:130:27)
-    at Object.out.Post (C:\Users\racky\Desktop\project\hstigger-server\controllers\entadmin\employees.js:14:35)
-    at RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:32:52)
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
-    at dispatch (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
-    at next (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
-    at module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:9)
-    at async Nest (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:57:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:92:7
-    at async RestfulAPIMethods.<computed> (C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:38:5)
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\authAccountType.js:34:3)
-    at async C:\Users\racky\Desktop\project\hstigger-server\middlewares\router.js:74:7
-    at async module.exports (C:\Users\racky\Desktop\project\hstigger-server\middlewares\response.js:16:14)
-    at async cors (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
-[2021-02-22T00:08:28.778] [ERROR] app - 401
-[2021-02-22T00:08:28.782] [ERROR] app - 401
-[2021-02-22T00:27:48.226] [ERROR] app - 401
-[2021-02-22T00:27:48.228] [ERROR] app - 401
-[2021-02-22T00:28:03.106] [ERROR] app - Error: ER_BAD_FIELD_ERROR: Unknown column 'emergency_photo' in 'field list'
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_BAD_FIELD_ERROR',
-  errno: 1054,
-  sqlMessage: "Unknown column 'emergency_photo' in 'field list'",
-  sqlState: '42S22',
-  index: 0,
-  sql: "insert into `ENT_aee3eea0_3b83_11eb_8e1e_c15d5c7db744`.`employee` (`address`, `birthday`, `degree`, `education`, `emergency_contact`, `emergency_photo`, `employee_date`, `employee_state`, `gender`, `graduate_institution`, `graduate_time`, `id`, `major`, `marital_status`, `native_place`, `personal_focus`, `personal_state`, `photo`, `political_status`, `professor_rank`) values (DEFAULT, DEFAULT, DEFAULT, 2, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 0, DEFAULT, DEFAULT, 'c4e89a40-7461-11eb-b1e1-136326cfb327', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT)"
-}
-[2021-02-22T00:29:09.964] [ERROR] app - 401
-[2021-02-22T00:29:09.967] [ERROR] app - 401
-[2021-02-22T00:29:34.317] [ERROR] app - 访问对象不存在该操作
-[2021-02-22T00:29:45.371] [ERROR] app - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'f45011f0-7461-11eb-9a54-419b1b38bc70'' at line 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_PARSE_ERROR',
-  errno: 1064,
-  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'f45011f0-7461-11eb-9a54-419b1b38bc70'' at line 1",
-  sqlState: '42000',
-  index: 0,
-  sql: "update `account` set  where `id` = 'f45011f0-7461-11eb-9a54-419b1b38bc70'"
-}
-[2021-02-22T00:34:11.549] [ERROR] app - 401
-[2021-02-22T00:34:11.552] [ERROR] app - 401
-[2021-02-22T00:35:39.821] [ERROR] app - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_PARSE_ERROR',
-  errno: 1064,
-  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1",
-  sqlState: '42000',
-  index: 0,
-  sql: "update `account` set  where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'"
-}
-[2021-02-22T00:36:29.124] [ERROR] app - 401
-[2021-02-22T00:36:29.127] [ERROR] app - 401
-[2021-02-22T00:36:54.797] [ERROR] app - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_PARSE_ERROR',
-  errno: 1064,
-  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1",
-  sqlState: '42000',
-  index: 0,
-  sql: "update `account` set  where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'"
-}
-[2021-02-22T00:37:53.421] [ERROR] app - 401
-[2021-02-22T00:37:53.425] [ERROR] app - 401
-[2021-02-22T00:38:09.970] [ERROR] app - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_PARSE_ERROR',
-  errno: 1064,
-  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1",
-  sqlState: '42000',
-  index: 0,
-  sql: "update `account` set  where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'"
-}
-[2021-02-22T00:38:40.972] [ERROR] app - 401
-[2021-02-22T00:38:40.975] [ERROR] app - 401
-[2021-02-22T00:38:54.026] [ERROR] app - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_PARSE_ERROR',
-  errno: 1064,
-  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1",
-  sqlState: '42000',
-  index: 0,
-  sql: "update `account` set  where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'"
-}
-[2021-02-22T00:42:27.224] [ERROR] app - Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1
-    at Query.Sequence._packetToError (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Sequence.js:47:14)
-    at Query.ErrorPacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\sequences\Query.js:79:18)
-    at Protocol._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:291:23)
-    at Parser._parsePacket (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:433:10)
-    at Parser.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Parser.js:43:10)
-    at Protocol.write (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:38:16)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:88:28)
-    at Socket.<anonymous> (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:526:10)
-    at Socket.emit (events.js:311:20)
-    at addChunk (_stream_readable.js:294:12)
-    at readableAddChunk (_stream_readable.js:275:11)
-    at Socket.Readable.push (_stream_readable.js:209:10)
-    at TCP.onStreamRead (internal/stream_base_commons.js:186:23)
-    at Protocol._enqueue (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Connection.query (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:198:25)
-    at C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:152:18
-    at Promise._execute (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Promise._then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
-    at Promise._passThrough (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:94:17)
-    at Promise.lastly.Promise.finally (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\finally.js:103:17)
-    at Function.Promise.using (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\using.js:192:37)
-    at Runner.run (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:31)
-    at Builder.Target.then (C:\Users\racky\Desktop\project\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43) {
-  code: 'ER_PARSE_ERROR',
-  errno: 1064,
-  sqlMessage: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'' at line 1",
-  sqlState: '42000',
-  index: 0,
-  sql: "update `account` set  where `id` = 'c4e89a40-7461-11eb-b1e1-136326cfb327'"
-}
-[2021-02-22T00:43:20.787] [ERROR] app - 401
-[2021-02-22T00:43:20.792] [ERROR] app - 401
-[2021-02-22T00:44:25.640] [ERROR] app - 401
-[2021-02-22T00:44:31.798] [ERROR] app - 401
-[2021-02-22T00:44:31.801] [ERROR] app - 401
-[2021-02-22T00:51:07.706] [ERROR] app - 401
-[2021-02-22T00:51:07.709] [ERROR] app - 401
-[2021-02-22T08:28:10.582] [ERROR] app - 登录已过期
-[2021-02-22T08:28:10.590] [ERROR] app - 登录已过期
-[2021-02-22T08:31:01.115] [ERROR] app - 401
-[2021-02-22T08:31:01.120] [ERROR] app - 401
-[2021-02-22T08:31:11.113] [ERROR] app - Error: connect ETIMEDOUT
-    at Connection._handleConnectTimeout (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:409:13)
-    at Object.onceWrapper (events.js:420:28)
-    at Socket.emit (events.js:314:20)
-    at Socket._onTimeout (net.js:483:8)
-    at listOnTimeout (internal/timers.js:551:17)
-    at processTimers (internal/timers.js:494:7)
-    at Protocol._enqueue (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Protocol.handshake (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:51:23)
-    at Connection.connect (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:116:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:106:18
-    at Promise._execute (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-    at new Promise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:103:10)
-    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:104:12)
-    at Object.create (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:239:16)
-    at Pool._createResource (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:354:17)
-    at Pool.dispense [as _dispense] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:314:10)
-    at Pool.acquire (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:436:8)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:289:19
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Function.Promise.attempt.Promise.try (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:29:9)
-    at Runner.ensureConnection (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:205:34)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:42)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
-  errorno: 'ETIMEDOUT',
-  code: 'ETIMEDOUT',
-  syscall: 'connect',
-  fatal: true
-}
-[2021-02-22T08:31:12.142] [ERROR] app - Error: getaddrinfo ENOTFOUND cdb-gtz432y7.gz.tencentcdb.com
-    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
-    at Protocol._enqueue (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Protocol.handshake (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:51:23)
-    at Connection.connect (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:116:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:106:18
-    at Promise._execute (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-    at new Promise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:103:10)
-    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:104:12)
-    at Object.create (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:239:16)
-    at Pool._createResource (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:354:17)
-    at Pool.dispense [as _dispense] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:314:10)
-    at Pool.acquire (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:436:8)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:289:19
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Function.Promise.attempt.Promise.try (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:29:9)
-    at Runner.ensureConnection (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:205:34)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:42)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
-  errno: -3008,
-  code: 'ENOTFOUND',
-  syscall: 'getaddrinfo',
-  hostname: 'cdb-gtz432y7.gz.tencentcdb.com',
-  fatal: true
-}
-[2021-02-22T08:31:16.000] [ERROR] app - Error: getaddrinfo ENOTFOUND cdb-gtz432y7.gz.tencentcdb.com
-    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
-    at Protocol._enqueue (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:144:48)
-    at Protocol.handshake (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\protocol\Protocol.js:51:23)
-    at Connection.connect (D:\hstigger\hstigger-server\hstigger-server\node_modules\_mysql@2.18.1@mysql\lib\Connection.js:116:18)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:106:18
-    at Promise._execute (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:384:9)
-    at Promise._resolveFromExecutor (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:518:18)
-    at new Promise (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:103:10)
-    at Client_MySQL.acquireRawConnection (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\dialects\mysql\index.js:104:12)
-    at Object.create (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:239:16)
-    at Pool._createResource (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:354:17)
-    at Pool.dispense [as _dispense] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:314:10)
-    at Pool.acquire (D:\hstigger\hstigger-server\hstigger-server\node_modules\_generic-pool@2.5.4@generic-pool\lib\generic-pool.js:436:8)
-    at D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\client.js:289:19
-From previous event:
-    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
-    at Function.Promise.attempt.Promise.try (D:\hstigger\hstigger-server\hstigger-server\node_modules\_bluebird@3.7.2@bluebird\js\release\method.js:29:9)
-    at Runner.ensureConnection (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:205:34)
-    at Runner.run (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\runner.js:51:42)
-    at Builder.Target.then (D:\hstigger\hstigger-server\hstigger-server\node_modules\_knex@0.13.0@knex\lib\interface.js:35:43)
-    at processTicksAndRejections (internal/process/task_queues.js:93:5) {
-  errno: -3008,
-  code: 'ENOTFOUND',
-  syscall: 'getaddrinfo',
-  hostname: 'cdb-gtz432y7.gz.tencentcdb.com',
-  fatal: true
-}
-[2021-02-22T08:56:25.320] [ERROR] app - 401
-[2021-02-22T08:56:25.323] [ERROR] app - 401
-[2021-02-22T08:59:28.103] [ERROR] app - 401
-[2021-02-22T08:59:28.106] [ERROR] app - 401
-[2021-02-22T09:49:01.892] [ERROR] app - 401
-[2021-02-22T09:49:01.894] [ERROR] app - 401
-[2021-02-22T09:50:07.306] [ERROR] app - ReferenceError: accont is not defined
-    at Object.o.Create (D:\hstigger\hstigger-server\hstigger-server\models\Employee.js:150:30)
-    at async Object.out.Post (D:\hstigger\hstigger-server\hstigger-server\controllers\entadmin\employees.js:14:20)
+[2021-07-16T08:22:05.692] [ERROR] app - 401
+[2021-07-16T08:22:05.700] [ERROR] app - 401
+[2021-07-16T08:22:05.711] [ERROR] app - 401
+[2021-07-16T08:22:05.711] [ERROR] app - 401
+[2021-07-16T08:22:05.712] [ERROR] app - 401
+[2021-07-16T08:22:05.712] [ERROR] app - 401
+[2021-07-16T08:22:05.712] [ERROR] app - 401
+[2021-07-16T08:22:05.716] [ERROR] app - 401
+[2021-07-16T08:22:05.716] [ERROR] app - 401
+[2021-07-16T08:22:05.721] [ERROR] app - 401
+[2021-07-16T08:22:05.721] [ERROR] app - 401
+[2021-07-16T08:22:05.722] [ERROR] app - 401
+[2021-07-16T08:22:05.722] [ERROR] app - 401
+[2021-07-16T08:22:05.725] [ERROR] app - 401
+[2021-07-16T08:22:05.725] [ERROR] app - 401
+[2021-07-16T08:22:05.728] [ERROR] app - 401
+[2021-07-16T08:22:05.729] [ERROR] app - 401
+[2021-07-16T08:28:17.773] [ERROR] app - 401
+[2021-07-16T08:28:19.718] [ERROR] app - 登录已过期
+[2021-07-16T08:28:19.719] [ERROR] app - 登录已过期
+[2021-07-16T08:39:11.147] [ERROR] app - 401
+[2021-07-16T08:39:20.388] [ERROR] app - 登录已过期
+[2021-07-16T08:39:20.390] [ERROR] app - 登录已过期
+[2021-07-16T11:30:32.047] [ERROR] app - ReferenceError: Cannot access 'data' before initialization
+    at Object.getData (D:\hstigger\hstigger-server\hstigger-server\spiders\NBFJJ.js:42:7)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.get (D:\hstigger\hstigger-server\hstigger-server\spiders\index.js:74:14)
+    at async Object.o.get (D:\hstigger\hstigger-server\hstigger-server\models\Rss.js:55:12)
+    at async Object.out.Get (D:\hstigger\hstigger-server\hstigger-server\controllers\rss.js:11:14)
     at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:32:26)
-    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authAccountType.js:34:3)
-    at async Nest (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:57:3)
-    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:92:7
-    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:38:5)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authRouter.js:13:4)
     at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authAccountType.js:34:3)
     at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:74:7
     at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:16:14)
     at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
     at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
-[2021-02-22T09:50:30.654] [ERROR] app - 401
-[2021-02-22T09:50:30.657] [ERROR] app - 401
-[2021-02-22T09:53:58.401] [ERROR] app - 401
-[2021-02-22T09:53:58.404] [ERROR] app - 401
-[2021-02-22T09:54:47.291] [ERROR] app - 401
-[2021-02-22T09:54:47.294] [ERROR] app - 401
-[2021-02-22T09:55:17.037] [ERROR] app - 数据传输错误,请联系管理员
-[2021-02-22T09:55:37.650] [ERROR] app - 401
-[2021-02-22T09:55:37.653] [ERROR] app - 401
-[2021-02-22T09:56:07.539] [ERROR] app - 数据传输错误,请联系管理员
-[2021-02-22T09:57:03.522] [ERROR] app - 401
-[2021-02-22T09:57:03.525] [ERROR] app - 401
-[2021-02-22T10:08:52.379] [ERROR] app - 数据传输错误,请联系管理员
-[2021-02-22T10:09:39.958] [ERROR] app - 401
-[2021-02-22T10:09:39.960] [ERROR] app - 401
-[2021-02-22T10:10:09.553] [ERROR] app - 数据传输错误,请联系管理员
-[2021-02-22T10:12:08.438] [ERROR] app - 401
-[2021-02-22T10:12:08.441] [ERROR] app - 401
+[2021-07-16T11:30:32.143] [ERROR] app - ReferenceError: Cannot access 'data' before initialization
+    at Object.getData (D:\hstigger\hstigger-server\hstigger-server\spiders\NBFJJ.js:42:7)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.get (D:\hstigger\hstigger-server\hstigger-server\spiders\index.js:74:14)
+    at async Object.o.get (D:\hstigger\hstigger-server\hstigger-server\models\Rss.js:55:12)
+    at async Object.out.Get (D:\hstigger\hstigger-server\hstigger-server\controllers\rss.js:11:14)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:32:26)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authRouter.js:13:4)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authAccountType.js:34:3)
+    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:74:7
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:16:14)
+    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2021-07-16T11:30:32.367] [ERROR] app - ReferenceError: Cannot access 'data' before initialization
+    at Object.getData (D:\hstigger\hstigger-server\hstigger-server\spiders\NBFJJ.js:42:7)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.get (D:\hstigger\hstigger-server\hstigger-server\spiders\index.js:74:14)
+    at async Object.o.get (D:\hstigger\hstigger-server\hstigger-server\models\Rss.js:55:12)
+    at async Object.out.Get (D:\hstigger\hstigger-server\hstigger-server\controllers\rss.js:11:14)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:32:26)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authRouter.js:13:4)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authAccountType.js:34:3)
+    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:74:7
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:16:14)
+    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2021-07-16T11:30:32.505] [ERROR] app - ReferenceError: Cannot access 'data' before initialization
+    at Object.getData (D:\hstigger\hstigger-server\hstigger-server\spiders\NBFJJ.js:42:7)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Object.get (D:\hstigger\hstigger-server\hstigger-server\spiders\index.js:74:14)
+    at async Object.o.get (D:\hstigger\hstigger-server\hstigger-server\models\Rss.js:55:12)
+    at async Object.out.Get (D:\hstigger\hstigger-server\hstigger-server\controllers\rss.js:11:14)
+    at async RestfulAPIMethods.<computed> (D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:32:26)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authRouter.js:13:4)
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\authAccountType.js:34:3)
+    at async D:\hstigger\hstigger-server\hstigger-server\middlewares\router.js:74:7
+    at async module.exports (D:\hstigger\hstigger-server\hstigger-server\middlewares\response.js:16:14)
+    at async cors (D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa2-cors@2.0.6@koa2-cors\dist\index.js:91:9)
+    at async D:\hstigger\hstigger-server\hstigger-server\node_modules\_koa-log4@2.3.2@koa-log4\koa-logger.js:86:7
+[2021-07-16T14:04:58.812] [ERROR] app - 401
+[2021-07-16T14:04:58.815] [ERROR] app - 401
+[2021-07-16T14:04:58.816] [ERROR] app - 401
+[2021-07-16T14:04:58.816] [ERROR] app - 401
+[2021-07-16T14:04:58.817] [ERROR] app - 401
+[2021-07-16T14:04:58.817] [ERROR] app - 401
+[2021-07-16T14:04:58.823] [ERROR] app - 401
+[2021-07-16T14:04:58.824] [ERROR] app - 401
+[2021-07-16T14:04:58.824] [ERROR] app - 401
+[2021-07-16T14:04:58.825] [ERROR] app - 401
+[2021-07-16T14:04:58.827] [ERROR] app - 401
+[2021-07-16T14:04:58.827] [ERROR] app - 401
+[2021-07-16T14:04:58.829] [ERROR] app - 401
+[2021-07-16T14:04:58.830] [ERROR] app - 401
+[2021-07-16T14:04:58.830] [ERROR] app - 401
+[2021-07-16T14:04:58.831] [ERROR] app - 401
+[2021-07-16T14:04:58.833] [ERROR] app - 401
+[2021-07-16T14:05:28.928] [ERROR] app - 401
+[2021-07-16T14:05:28.928] [ERROR] app - 401
+[2021-07-16T14:05:33.804] [ERROR] app - 登录已过期
+[2021-07-16T14:05:33.808] [ERROR] app - 登录已过期

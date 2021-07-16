@@ -76,7 +76,7 @@ o.order = async (state,idlist=[],date)=>{
 o.auto_order = async (state)=>{
   let qe = DB.restorder.Query(state.enterprise_id)
   let q = DB.restorder.Query(state.enterprise_id)
-  let nextday = moment().add(1, 'day')
+  let nextday = moment().startOf('day').add(1, 'day')
   if(nextday.day() === 5){
     nextday.add(2,'day')
   }

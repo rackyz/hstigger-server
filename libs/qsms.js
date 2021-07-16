@@ -24,7 +24,7 @@ const SMS_TEMPLATES = {
 }
 
 var sendSMS = function (tmpl_key, phone, params) {
-  let tmpl = SMS_TEMPLATES[tmpl_key]
+  let tmpl = SMS_TEMPLATES[tmpl_key] || tmpl_key
   if(!tmpl)
     throw "TMPL not exist"
 
