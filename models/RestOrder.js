@@ -78,7 +78,7 @@ o.auto_order = async (state)=>{
   let q = DB.restorder.Query(state.enterprise_id)
   let nextday = moment().startOf('day').add(1, 'day')
   if(nextday.day() === 5){
-    nextday.add(2,'day')
+    nextday = nextday.add(2, 'day')
   }
   let param = {
     user_id:state.id,

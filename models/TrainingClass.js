@@ -30,6 +30,7 @@ DB.TrainingProject = MYSQL.Create('training_project', t => {
   t.boolean('enable_join').defaultTo(1)
   t.integer('count').defaultTo(0)
   t.integer('passed').defaultTo(0)
+  t.integer('task_count').defaultTo(0)
   t.text('images')
 })
 
@@ -44,6 +45,7 @@ DB.TrainingProjectMember = MYSQL.Create('training_project_user',t=>{
   t.integer('joined_type').defaultTo(0)
   t.datetime('evaluated_at')
   t.datetime('evaluated_by')
+  t.integer('submitted_count').defaultTo(0)
 })
 
 DB.TrainingClass = MYSQL.Create('training_class',t=>{
@@ -327,9 +329,13 @@ o.listAppraisal = async (state, project_id) => {
 
 o.addAppraisal = async (state,project_id,item)=>{
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
+  let sqlUpateProject = DB.TrainingProject.Query(state,enterprise_id)
   let updateInfo = {
     project_id,
   }
+  
+  await sqlUpateProject.where({project_id}).increment({task_count:1})
+
   Object.assign(item,updateInfo)
   await Dynamic.write(state, {
      project_id,
@@ -345,6 +351,12 @@ o.removeAppraisal = async (state, appraisal_id) => {
   let sqlQueryPlan = DB.TrainingAppraisal.Query(state.enterprise_id)
   let sqlQueryUsers = DB.TrainingAppraisalUser.Query(state.enterprise_id)
   let item = await DB.TrainingAppraisal.Query(state.enterprise_id).first('name','project_id').where({id:appraisal_id})
+
+  await sqlUpateProject.where({
+    project_id
+  }).decrement({
+    task_count: 1
+  })
   await Dynamic.write(state, {
     project_id:item.project_id,
     content: `删除了 [考核] ${item.name}`

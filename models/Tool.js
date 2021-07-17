@@ -339,7 +339,7 @@ o.clear_training_dup = async state=>{
       res += '\n   ** 更新任务统计数据'
       await MYSQL.E(state.enterprise_id, 'training_appraisal').update({
         member_count: uniqUsers.length,
-        submited_count: uniqUsers.filter(v => v.state == 2).length,
+        submitted_count: uniqUsers.filter(v => v.state == 2).length,
         passed_count: uniqUsers.filter(v => v.state == 3).length
       }).where('id', tasks[j].id)
       res += `\n  [finish task] 任务(${tasks[j].name})处理完成`
@@ -348,6 +348,70 @@ o.clear_training_dup = async state=>{
     res+= `\n [finsih project] 项目(${projects[i].name})处理完成`
   }
 
+
+  // 检查重负人员作业及绑定情况
+
+  //  删除重复人员
+  return res
+}
+
+
+o.training_statistic = async state=>{
+  console.log('training_statistic')
+  let res = '统计培训数据\n 1 - 培训项目的任务数 \n 2 -培训人员的任务提交/得分汇总'
+
+  res += '\n 按培训项目逐步处理'
+  let projects = await MYSQL.E(state.enterprise_id, 'training_project').select('id', 'name').orderBy('created_at', 'asc')
+  for (let i = 0; i < projects.length; i++) {
+    let project = projects[i]
+    res += `\n [project] 处理项目${i+1} ${projects[i].name}`
+    let users = await MYSQL.E(state.enterprise_id, 'training_project_user').select('id', 'user_id').where('project_id', projects[i].id)
+    if (users.length == 0) {
+      res += '  [finish project] 未添加用户 跳过'
+      continue
+    }
+
+    let tasks = await MYSQL.E(state.enterprise_id, 'training_appraisal').where('project_id', projects[i].id)
+    // 更新项目的任务数
+    await MYSQL.E(state.enterprise_id, 'training_project').update({
+      task_count: tasks.length
+    }).where('id', projects[i].id)
+
+    res += '\n 本项目共有任务:' + tasks.length
+    users.forEach(v=>{
+      v.score = 0 
+      v.submitted_count = 0
+    })
+    for (let j = 0; j < tasks.length; j++) {
+      res += `\n  [task] ** 处理任务${j+1}: ${tasks[j].name} `
+      let task = tasks[j]
+      let user_tasks = await MYSQL.E(state.enterprise_id, 'training_appraisal_user').where('appraisal_id', task.id)
+      user_tasks.forEach(t=>{
+        let user = users.find(u=>u.user_id == t.user_id)
+        if(!user)
+        {
+          console.error('user is not exist');
+          return
+        }
+        user.score += t.score || 0
+        if(t.state > 1)
+          user.submitted_count++
+      })
+    }
+    res += '** 逐步更新用户得分汇总'
+    for(let j=0;j<users.length;j++){
+      await MYSQL.E(state.enterprise_id, 'training_project_user').update({
+        score: users[j].score,
+        submitted_count: users[j].submitted_count
+      }).where({
+        user_id: users[j].user_id,
+        project_id: project.id
+      })
+    } 
+
+    res += `\n [finsih project] 项目(${project.name})处理完成`
+  }
+  console.log(res)
 
   // 检查重负人员作业及绑定情况
 

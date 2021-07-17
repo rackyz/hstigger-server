@@ -228,7 +228,6 @@ o.Create = async (state,data,ent_id)=>{
     type: 1
   }
 }
-const Schedule = require('node-schedule')
 o.Update = async (state,id,data)=>{
   if(!id)
     throw EXCEPTION.E_INVALID_DATA
@@ -245,19 +244,19 @@ o.Update = async (state,id,data)=>{
   } = data
 
 
-  if(auto_rest_order === 1){
-    console.log('order-service-open')
-    Schedule.scheduleJob(id+'_rest_order',
-    //{hour:08,minut:05}
-    {hour:17,minut:00}
-    ,async function(){
-      await RestOrder.auto_order({enterprise_id:state.enterprise_id,id:state.id})
-    })
-  }else if(auto_rest_order === 0){
-    console.log('order-service-close')
-    if (Schedule.scheduledJobs[id + '_rest_order'])
-      Schedule.scheduledJobs[id + '_rest_order'].cancel()
-  }
+  // if(auto_rest_order === 1){
+  //   console.log('order-service-open')
+  //   Schedule.scheduleJob(id+'_rest_order',
+  //   //{hour:08,minut:05}
+  //   {hour:17,minut:00}
+  //   ,async function(){
+  //     await RestOrder.auto_order({enterprise_id:state.enterprise_id,id:state.id})
+  //   })
+  // }else if(auto_rest_order === 0){
+  //   console.log('order-service-close')
+  //   if (Schedule.scheduledJobs[id + '_rest_order'])
+  //     Schedule.scheduledJobs[id + '_rest_order'].cancel()
+  // }
 
   let account = {user,name,phone,email}
   let employee = {
