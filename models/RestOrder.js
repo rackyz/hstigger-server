@@ -79,6 +79,8 @@ o.auto_order = async (state)=>{
   let nextday = moment().startOf('day').add(1, 'day')
   if(nextday.day() === 5){
     nextday = nextday.add(2, 'day')
+  }else if(nextday.day() == 0 || nextday.day() == 6){
+    return
   }
   let param = {
     user_id:state.id,
@@ -87,7 +89,7 @@ o.auto_order = async (state)=>{
   let datestr = nextday.format('YYYY-MM-DD中午')
   let exist = await qe.first().where(param)
   if(exist){
-  console.log('预定失败'+state.id,param.data)
+    console.log('用户自行预定'+state.id,param.data)
     return
   }
   else

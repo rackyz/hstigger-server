@@ -387,7 +387,7 @@ o.process = async (state,id,data,ent_id)=>{
   if(!task){
     throw "任务ID不存在:"+id
   }
-  console.log(data)
+  
   if(task.base_type == 0){
     const Update = DB.task.Query(ent_id)
     let updateInfo = {
